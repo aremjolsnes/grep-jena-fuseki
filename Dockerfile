@@ -1,4 +1,4 @@
-# Plan E v8: Persistent lagring med ferdig opprettet mappe
+# Plan E v10: Den mest robuste konfigurasjonen for Fuseki 6 + Fly.io
 FROM eclipse-temurin:21-jre
 
 ENV FUSEKI_HOME=/opt/fuseki
@@ -6,7 +6,7 @@ ENV FUSEKI_BASE=/fuseki
 
 RUN apt-get update && apt-get install -y wget curl && rm -rf /var/lib/apt/lists/*
 
-# Lag alle nødvendige mapper på forhånd
+# Lag mapper og sørg for at de er skrivbare
 RUN mkdir -p $FUSEKI_HOME $FUSEKI_BASE/databases
 
 # Last ned Fuseki 6.0.0
@@ -16,10 +16,14 @@ RUN wget https://downloads.apache.org/jena/binaries/apache-jena-fuseki-6.0.0.tar
 
 WORKDIR $FUSEKI_HOME
 
-# Øker minnet til prosessen (Siden vi nå har 2GB på Fly)
+# RAM-innstillinger for stabil import
 ENV JAVA_OPTIONS="-Xmx1536m"
 
 EXPOSE 3030
 
-# --localhost=false er kritisk for å la Fly.io sin proxy slippe gjennom
-CMD ["./fuseki-server", "--loc=/fuseki/databases", "--localhost=false", "--update", "/ds"]
+# Her er den magiske kombinasjonen for Fuseki 6:
+# --tdb2 : Bruk den moderne databasetypen
+# --loc  : Her skal filene lagres
+# --localhost=false : Tillat tilgang fra nettet
+# /ds    : Navnet på datasettet helt til slutt
+CMD ["./fuseki-server", "--port=3030", "--tdb2", "--loc=/fuseki/databases", "--localhost=false", "--update", "/ds"]
