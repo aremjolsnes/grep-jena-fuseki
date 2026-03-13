@@ -23,6 +23,6 @@ primary_region = 'arn'
   min_machines_running = 1
 
 [[vm]]
-  memory = '1gb'
+  memory = '2gb'
   cpus = 1
-  memory_mb = 1024
+  memory_mb = 2048
