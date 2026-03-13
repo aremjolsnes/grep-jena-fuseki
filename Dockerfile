@@ -21,5 +21,5 @@ WORKDIR $FUSEKI_HOME
 # Eksponer porten
 EXPOSE 3030
 
-# Start serveren
-CMD ["sh", "-c", "./fuseki-server --loc=/fuseki/databases/ds --port=3030 --localhost=false"]
+# Start serveren med automatisk oppsett av kontrollpanelet
+CMD ["sh", "-c", "./fuseki-server --mem --dataset /ds --port=3030 --localhost=false"]
