@@ -21,5 +21,5 @@ ENV JAVA_OPTIONS="-Xmx1536m"
 
 EXPOSE 3030
 
-# Vi bruker /fuseki/databases som lokasjon - Fuseki vil nå finne denne!
-CMD ["./fuseki-server", "--loc=/fuseki/databases", "--update", "/ds"]
+# --localhost=false er kritisk for å la Fly.io sin proxy slippe gjennom
+CMD ["./fuseki-server", "--loc=/fuseki/databases", "--localhost=false", "--update", "/ds"]
