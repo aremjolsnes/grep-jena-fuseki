@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y wget curl && rm -rf /var/lib/apt/lists/
 RUN mkdir -p $FUSEKI_HOME $FUSEKI_BASE
 
 # Last ned og pakk ut Fuseki direkte fra Apache
-RUN wget https://dlcdn.apache.org/jena/binaries/apache-jena-fuseki-5.3.0.tar.gz -O /tmp/fuseki.tar.gz && \
+RUN wget https://downloads.apache.org/jena/binaries/apache-jena-fuseki-6.0.0.tar.gz -O /tmp/fuseki.tar.gz && \
     tar -xf /tmp/fuseki.tar.gz -C $FUSEKI_HOME --strip-components=1 && \
     rm /tmp/fuseki.tar.gz
 
