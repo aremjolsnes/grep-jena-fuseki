@@ -1,25 +1,42 @@
-app = "grep-fuseki" # Dette må være unikt på Fly side
-primary_region = "osl" # Oslo er nærmest og best for oss
+# fly.toml app configuration file generated for grep-fuseki on 2026-03-13T12:40:06+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-[build]
-  image = "apache/jena-fuseki:latest"
+app = 'grep-fuseki'
+primary_region = 'arn'
+
+# Vi bygger via Docker-fil eller GitHub Actions i stedet
 
 [env]
-  FUSEKI_PASSWORD = "admin" # Vi bør endre dette senere via en Secret
+  FUSEKI_PASSWORD = 'admin'
 
 [[mounts]]
-  source = "fuseki_data"
-  destination = "/fuseki"
+  source = 'fuseki_data'
+  destination = '/fuseki'
+
+[http_service]
+  internal_port = 3030
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
 
 [[services]]
+  protocol = 'tcp'
   internal_port = 3030
-  protocol = "tcp"
 
   [[services.ports]]
-    force_https = true
-    handlers = ["http"]
     port = 80
+    handlers = ['http']
+    force_https = true
 
   [[services.ports]]
-    handlers = ["tls", "http"]
     port = 443
+    handlers = ['tls', 'http']
+
+[[vm]]
+  memory = '1gb'
+  cpus = 1
+  memory_mb = 1024

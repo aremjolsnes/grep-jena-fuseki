@@ -1,0 +1,13 @@
+# Binaries
+flyctl.exe
+
+# Local data
+temp_data/
+*.zip
+
+# Docker
+.docker
+
+# OS files
+.DS_Store
+Thumbs.db
