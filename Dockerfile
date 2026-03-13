@@ -23,4 +23,4 @@ EXPOSE 3030
 
 # Start serveren med ett enkelt in-memory dataset
 ENTRYPOINT ["./fuseki-server"]
-CMD ["--mem", "/ds", "--port=3030", "--localhost=false"]
+CMD ["--port=3030", "--localhost=false", "--update", "--mem", "/ds"]
