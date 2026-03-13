@@ -20,21 +20,16 @@ jobs:
 
       - name: Wipe and Reload Fuseki
         env:
-          FUSEKI_URL: ${{ secrets.FUSEKI_PROD_URL }} # F.eks. https://grep-fuseki.fly.dev
+          FUSEKI_URL: ${{ secrets.FUSEKI_PROD_URL }}
           FUSEKI_USER: ${{ secrets.FUSEKI_USER }}
           FUSEKI_PASSWORD: ${{ secrets.FUSEKI_PASSWORD }}
-          DATASET: "201906"
+          DATASET: "ds"
         run: |
-          echo "Wiping existing dataset $DATASET..."
-          # 1. Slett datasettet (ignorer feil hvis det ikke finnes)
-          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X DELETE "$FUSEKI_URL/$/datasets/$DATASET" || true
+          echo "Wiping existing data in $DATASET..."
+          # Tømmer datasettet før vi starter
+          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X POST --data "update=CLEAR ALL" "$FUSEKI_URL/$DATASET/update" || true
           
-          echo "Recreating dataset $DATASET..."
-          # 2. Opprett nytt TDB2 datasett
-          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X POST --data "dbName=$DATASET&dbType=tdb2" "$FUSEKI_URL/$/datasets"
-          
-          echo "Uploading new data..."
-          # 3. Last opp alle filer
+          echo "Uploading new data to $DATASET..."
           for file in temp/extracted/*.jsonld; do
             echo "Uploading $file..."
             curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
