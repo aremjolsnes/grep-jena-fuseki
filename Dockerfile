@@ -21,6 +21,6 @@ WORKDIR $FUSEKI_HOME
 # Eksponer porten
 EXPOSE 3030
 
-# Start serveren direkte (uten sh -c) for bedre signalhåndtering
+# Start serveren med ett enkelt in-memory dataset
 ENTRYPOINT ["./fuseki-server"]
-CMD ["--mem", "--dataset", "/ds", "--port=3030", "--localhost=false"]
+CMD ["--mem", "/ds", "--port=3030", "--localhost=false"]
