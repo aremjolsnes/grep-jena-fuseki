@@ -24,6 +24,6 @@ EXPOSE 3030
 # Her er den magiske kombinasjonen for Fuseki 6:
 # --tdb2 : Bruk den moderne databasetypen
 # --loc  : Her skal filene lagres
-# --localhost=false : Tillat tilgang fra nettet
+# --host=0.0.0.0 : Tillat tilgang fra nettet (bind til alle adresser)
 # /ds    : Navnet på datasettet helt til slutt
-CMD ["./fuseki-server", "--port=3030", "--tdb2", "--loc=/fuseki/databases", "--localhost=false", "--update", "/ds"]
+CMD ["./fuseki-server", "--port=3030", "--tdb2", "--loc=/fuseki/databases", "--update", "--host=0.0.0.0", "/ds"]
