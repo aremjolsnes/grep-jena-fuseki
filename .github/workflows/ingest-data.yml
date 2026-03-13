@@ -1,0 +1,46 @@
+name: Ingest Grep Data
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Hver søndag kl 00:00
+  workflow_dispatch: # Mulighet for å starte manuelt
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download Data
+        run: |
+          mkdir temp
+          curl -L https://data.udir.no/kl06/v201906/dump/jsonld -o temp/data.zip
+          unzip temp/data.zip -d temp/extracted
+
+      - name: Wipe and Reload Fuseki
+        env:
+          FUSEKI_URL: ${{ secrets.FUSEKI_PROD_URL }} # F.eks. https://grep-fuseki.fly.dev
+          FUSEKI_USER: ${{ secrets.FUSEKI_USER }}
+          FUSEKI_PASSWORD: ${{ secrets.FUSEKI_PASSWORD }}
+          DATASET: "201906"
+        run: |
+          echo "Wiping existing dataset $DATASET..."
+          # 1. Slett datasettet (ignorer feil hvis det ikke finnes)
+          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X DELETE "$FUSEKI_URL/$/datasets/$DATASET" || true
+          
+          echo "Recreating dataset $DATASET..."
+          # 2. Opprett nytt TDB2 datasett
+          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X POST --data "dbName=$DATASET&dbType=tdb2" "$FUSEKI_URL/$/datasets"
+          
+          echo "Uploading new data..."
+          # 3. Last opp alle filer
+          for file in temp/extracted/*.jsonld; do
+            echo "Uploading $file..."
+            curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+                 -X POST \
+                 -H "Content-Type: application/ld+json" \
+                 --data-binary @"$file" \
+                 "$FUSEKI_URL/$DATASET/data"
+          done
+          echo "Ingest complete!"

@@ -1,0 +1,25 @@
+app = "grep-fuseki" # Dette må være unikt på Fly side
+primary_region = "osl" # Oslo er nærmest og best for oss
+
+[build]
+  image = "apache/jena-fuseki:latest"
+
+[env]
+  FUSEKI_PASSWORD = "admin" # Vi bør endre dette senere via en Secret
+
+[[mounts]]
+  source = "fuseki_data"
+  destination = "/fuseki"
+
+[[services]]
+  internal_port = 3030
+  protocol = "tcp"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443

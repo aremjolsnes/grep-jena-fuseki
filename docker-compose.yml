@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  fuseki:
+    image: apache/jena-fuseki:latest
+    container_name: grep-fuseki
+    ports:
+      - "3030:3030"
+    volumes:
+      - fuseki-data:/fuseki
+    environment:
+      - FUSEKI_PASSWORD=admin # Endre dette for produksjon!
+    restart: unless-stopped
+
+volumes:
+  fuseki-data:
