@@ -1,2 +1,25 @@
-# Bruker nøyaktig ID for Fuseki 5.3.0 for å unngå metadata-feil
-FROM apache/jena-fuseki@sha256:06337a7b97395563fa97609a632733d3c7eb1665a3818e547348984931980860
+# Plan E: Last ned Fuseki direkte fra Apache kodeservere
+FROM eclipse-temurin:21-jre
+
+ENV FUSEKI_HOME=/opt/fuseki
+ENV FUSEKI_BASE=/fuseki
+ENV PORT=3030
+
+# Installer nødvendige verktøy
+RUN apt-get update && apt-get install -y wget curl && rm -rf /var/lib/apt/lists/*
+
+# Lag mapper
+RUN mkdir -p $FUSEKI_HOME $FUSEKI_BASE
+
+# Last ned og pakk ut Fuseki direkte fra Apache
+RUN wget https://dlcdn.apache.org/jena/binaries/apache-jena-fuseki-5.3.0.tar.gz -O /tmp/fuseki.tar.gz && \
+    tar -xf /tmp/fuseki.tar.gz -C $FUSEKI_HOME --strip-components=1 && \
+    rm /tmp/fuseki.tar.gz
+
+WORKDIR $FUSEKI_HOME
+
+# Eksponer porten
+EXPOSE 3030
+
+# Start serveren
+CMD ["sh", "-c", "./fuseki-server --loc=/fuseki/databases/ds --port=3030"]
