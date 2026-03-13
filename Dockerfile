@@ -22,4 +22,4 @@ WORKDIR $FUSEKI_HOME
 EXPOSE 3030
 
 # Start serveren
-CMD ["sh", "-c", "./fuseki-server --loc=/fuseki/databases/ds --port=3030"]
+CMD ["sh", "-c", "./fuseki-server --loc=/fuseki/databases/ds --port=3030 --localhost=false"]
