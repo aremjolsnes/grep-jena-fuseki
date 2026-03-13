@@ -6,7 +6,8 @@
 app = 'grep-fuseki'
 primary_region = 'arn'
 
-# Vi bygger via Docker-fil eller GitHub Actions i stedet
+[build]
+  image = "apache/jena-fuseki:5.3.0"
 
 [env]
   FUSEKI_PASSWORD = 'admin'
