@@ -21,9 +21,6 @@ ENV JAVA_OPTIONS="-Xmx512m -Xms512m"
 
 EXPOSE 3030
 
-# Her er den magiske kombinasjonen for Fuseki 6:
-# --tdb2 : Bruk den moderne databasetypen
-# --loc  : Her skal filene lagres
-# (Lytter på alle adresser som standard i Fuseki 6)
-# /ds    : Navnet på datasettet helt til slutt
-CMD ["./fuseki-server", "--port=3030", "--tdb2", "--loc=/fuseki/databases", "--update", "/ds"]
+# Vi bruker en 'sh -c' for å sikre at databasemappen finnes på den monterte disken før start.
+# Dette er kritisk når man bruker Fly.io volumes.
+CMD ["sh", "-c", "mkdir -p /fuseki/databases && java $JAVA_OPTIONS -jar fuseki-server.jar --port=3030 --tdb2 --loc=/fuseki/databases --update /ds"]
