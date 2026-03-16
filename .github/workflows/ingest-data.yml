@@ -40,20 +40,21 @@ jobs:
             sleep 5
           done
 
-          echo "Tømmer gammelt datasett (Vasker gulvet skikkelig)..."
-          # Vi bruker Graph Store Protocol DELETE - dette er ofte det mest stabile for tømming av store volum.
+          echo "Tømmer gammelt datasett (Vasker gulvet skikkelig med CLEAR DEFAULT)..."
+          # Vi prøver først med Graph Store Protocol (GSP)
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -X DELETE \
-               --fail \
-               "$FUSEKI_URL/$DATASET/data?default" || echo "Kunne ikke tømme via GSP, prøver SPARQL CLEAR..."
+               "$FUSEKI_URL/$DATASET/data?default" || echo "GSP DELETE feilet (normalt hvis db er korrupt eller tom)"
 
+          # Så kjører vi SPARQL CLEAR DEFAULT som foreslått
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -X POST \
                -H "Content-Type: application/sparql-update" \
-               --data "update=CLEAR ALL" \
-               "$FUSEKI_URL/$DATASET/update" || echo "Db er sannsynligvis allerede tom."
+               --data "update=CLEAR DEFAULT" \
+               --fail \
+               "$FUSEKI_URL/$DATASET/update" || echo "SPARQL CLEAR feilet (vi fortsetter uansett)"
           
-          echo "Venter 15 sekunder på at disk-lyset skal slutte å blinke..."
+          echo "Venter 15 sekunder på at Fuseki skal rydde ferdig på disken..."
           sleep 15
 
           echo "Uploading new data to $DATASET (Sekvensiell modus for 100% stabilitet)..."
