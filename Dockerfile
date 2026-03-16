@@ -16,8 +16,8 @@ RUN wget https://downloads.apache.org/jena/binaries/apache-jena-fuseki-6.0.0.tar
 
 WORKDIR $FUSEKI_HOME
 
-# RAM-innstillinger for stabil drift på liten maskin (512MB VM)
-ENV JAVA_OPTIONS="-Xmx384m -Xms128m"
+# RAM-innstillinger: Gi Java lite minne slik at OS har mer til TDB2 (disk-caching)
+ENV JAVA_OPTIONS="-Xmx256m -Xms128m"
 
 EXPOSE 3030
 

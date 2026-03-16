@@ -30,14 +30,17 @@ jobs:
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X POST --data "update=CLEAR ALL" "$FUSEKI_URL/$DATASET/update" || true
           
           echo "Uploading new data to $DATASET..."
-          # Vi laster opp EN OG EN fil for å ikke overbelaste minnet på serveren.
-          find temp/extracted/ -name "*.jsonld" | xargs -I {} \
+          # Vi laster opp EN OG EN fil med en liten pause mellom hver for maksimal stabilitet.
+          find temp/extracted/ -name "*.jsonld" | while read file; do
+            echo "Processing $file..."
             curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-                 -s -S -o /dev/null -w "Status: %{http_code} - Fil: {} \n" \
+                 -s -S -o /dev/null -w "Status: %{http_code} - Fil: $file \n" \
                  --fail \
                  -X POST \
                  -H "Content-Type: application/ld+json" \
-                 --data-binary @"{}" \
+                 --data-binary @"$file" \
                  "$FUSEKI_URL/$DATASET/data"
+            sleep 1
+          done
           
           echo "Ingest complete!"
