@@ -30,11 +30,11 @@ jobs:
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X POST --data "update=CLEAR ALL" "$FUSEKI_URL/$DATASET/update" || true
           
           echo "Uploading new data to $DATASET..."
-          # Bruk xargs for å sende flere filer i parallell (5 av gangen)
-          # Dette er MYE raskere enn en vanlig loop.
-          find temp/extracted/ -name "*.jsonld" | xargs -I {} -P 5 \
+          # Vi laster opp EN OG EN fil for å ikke overbelaste minnet på serveren.
+          find temp/extracted/ -name "*.jsonld" | xargs -I {} \
             curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-                 -s -o /dev/null -w "Status: %{http_code} - FIl: {} \n" \
+                 -s -S -o /dev/null -w "Status: %{http_code} - Fil: {} \n" \
+                 --fail \
                  -X POST \
                  -H "Content-Type: application/ld+json" \
                  --data-binary @"{}" \
