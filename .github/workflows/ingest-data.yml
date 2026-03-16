@@ -41,21 +41,16 @@ jobs:
           done
 
           echo "Tømmer gammelt datasett (Vasker gulvet skikkelig med CLEAR DEFAULT)..."
-          # Vi prøver først med Graph Store Protocol (GSP)
-          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-               -X DELETE \
-               "$FUSEKI_URL/$DATASET/data?default" || echo "GSP DELETE feilet (normalt hvis db er korrupt eller tom)"
-
-          # Så kjører vi SPARQL CLEAR DEFAULT som foreslått
+          # Vi bruker --data-urlencode for korrekt SPARQL-overføring
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -X POST \
-               -H "Content-Type: application/sparql-update" \
-               --data "update=CLEAR DEFAULT" \
+               -H "Content-Type: application/x-www-form-urlencoded" \
+               --data-urlencode "update=CLEAR DEFAULT" \
                --fail \
-               "$FUSEKI_URL/$DATASET/update" || echo "SPARQL CLEAR feilet (vi fortsetter uansett)"
-          
-          echo "Venter 15 sekunder på at Fuseki skal rydde ferdig på disken..."
-          sleep 15
+               "$FUSEKI_URL/$DATASET/update" || echo "Kunne ikke tømme via SPARQL (normalt hvis db er korrupt)"
+
+          echo "Venter 20 sekunder på at Fuseki skal rydde ferdig på disken..."
+          sleep 20
 
           echo "Uploading new data to $DATASET (Sekvensiell modus for 100% stabilitet)..."
           # Vi kjører én og én fil (-P 1). Dette er 'slow and steady' som vinner løpet.
