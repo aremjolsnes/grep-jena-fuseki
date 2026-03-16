@@ -12,7 +12,7 @@ primary_region = 'arn'
   FUSEKI_PASSWORD = 'admin'
 
 [[mounts]]
-  source = 'fuseki_storage'
+  source = 'fuseki_data'
   destination = '/fuseki'
   initial_size = '10gb'
 
