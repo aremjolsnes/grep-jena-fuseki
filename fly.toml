@@ -14,6 +14,7 @@ primary_region = 'arn'
 [[mounts]]
   source = 'fuseki_data'
   destination = '/fuseki'
+  initial_size = '10gb'
 
 [http_service]
   internal_port = 3030
