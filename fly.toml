@@ -24,5 +24,5 @@ primary_region = 'arn'
   min_machines_running = 0
 
 [[vm]]
-  memory = '1gb'
+  memory = '2gb'
   cpus = 1

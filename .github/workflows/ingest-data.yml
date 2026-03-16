@@ -45,8 +45,8 @@ jobs:
           
           echo "Uploading new data to $DATASET..."
           # Vi bruker POST for å LEGGE TIL (append) data i stedet for PUT som erstatter.
-          # Vi bruker -P 3 for å kjøre 3 opplastinger samtidig - dette er trygt med 1GB RAM.
-          find temp/extracted -name "*.jsonld" | xargs -I {} -P 3 curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+          # Vi bruker -P 2 for å kjøre 2 opplastinger samtidig for maksimal stabilitet.
+          find temp/extracted -name "*.jsonld" | xargs -I {} -P 2 curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -X POST \
                -H "Content-Type: application/ld+json" \
                --data-binary @"{}" \
