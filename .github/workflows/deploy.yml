@@ -17,8 +17,8 @@ jobs:
         run: |
           # Prøv å opprette appen hvis den ikke finnes fra før
           flyctl apps create grep-fuseki --org personal || true
-          # Rull ut appen (ha-med --yes for å unngå interaktive spørsmål)
-          flyctl deploy --local-only --yes
+          # Rull ut appen (bruker immediate strategi for å prøve å overstyre låste maskiner)
+          flyctl deploy --local-only --yes --strategy immediate
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
           FLY_DEPOT_DISABLE: 1
