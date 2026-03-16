@@ -27,7 +27,8 @@ jobs:
         run: |
           echo "Wiping existing data in $DATASET..."
           # Tømmer datasettet før vi starter
-          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X POST --data "update=CLEAR ALL" "$FUSEKI_URL/$DATASET/update" || true
+          # Tømmer datasettet før vi starter (vi bruker GSP - Graph Store Protocol for tømming)
+          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X DELETE "$FUSEKI_URL/$DATASET/data?default" || true
           
           echo "Uploading new data to $DATASET..."
           # Vi laster opp EN OG EN fil med en liten pause mellom hver for maksimal stabilitet.

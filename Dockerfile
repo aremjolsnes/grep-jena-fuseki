@@ -16,8 +16,9 @@ RUN wget https://downloads.apache.org/jena/binaries/apache-jena-fuseki-6.0.0.tar
 
 WORKDIR $FUSEKI_HOME
 
-# RAM-innstillinger: 512MB til Java, 512MB til OS/Disk-cache (Optimalt for 1GB VM)
-ENV JAVA_OPTIONS="-Xmx512m -Xms256m"
+# Ultra-konservativ RAM: 128MB til Java, resten til OS og Disk-cache.
+# Dette hindrer "unsafe memory access" feil ved å gi OS mer kontroll.
+ENV JAVA_OPTIONS="-Xmx128m -Xms128m"
 
 EXPOSE 3030
 
