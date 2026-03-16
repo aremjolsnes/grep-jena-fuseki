@@ -40,27 +40,30 @@ jobs:
             sleep 5
           done
 
-          echo "Tømmer gammelt datasett (Vasker gulvet, brenner ikke ned huset)..."
-          # Vi bruker SPARQL Update CLEAR ALL, som er den mest robuste måten å tømme på.
+          echo "Tømmer gammelt datasett (Vasker gulvet skikkelig)..."
+          # Vi bruker Graph Store Protocol DELETE - dette er ofte det mest stabile for tømming av store volum.
+          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+               -X DELETE \
+               --fail \
+               "$FUSEKI_URL/$DATASET/data?default" || echo "Kunne ikke tømme via GSP, prøver SPARQL CLEAR..."
+
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -X POST \
                -H "Content-Type: application/sparql-update" \
                --data "update=CLEAR ALL" \
-               --fail \
-               "$FUSEKI_URL/$DATASET/update" || echo "Kunne ikke tømme (kanskje db er tom allerede?)"
+               "$FUSEKI_URL/$DATASET/update" || echo "Db er sannsynligvis allerede tom."
           
-          echo "Venter 10 sekunder så serveren får summet seg..."
-          sleep 10
+          echo "Venter 15 sekunder på at disk-lyset skal slutte å blinke..."
+          sleep 15
 
-          echo "Uploading new data to $DATASET..."
-          # Vi bruker -P 1 (sekvensiell) for 100% stabilitet. 
-          # Dette hindrer "ConcurrentModificationException" og 500-feil i TDB2.
+          echo "Uploading new data to $DATASET (Sekvensiell modus for 100% stabilitet)..."
+          # Vi kjører én og én fil (-P 1). Dette er 'slow and steady' som vinner løpet.
           find temp/extracted -name "*.jsonld" | xargs -I {} -P 1 curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -X POST \
                -H "Content-Type: application/ld+json" \
                --data-binary @"{}" \
-               --retry 3 --retry-delay 2 \
+               --retry 5 --retry-delay 5 \
                --fail \
                "$FUSEKI_URL/$DATASET/data?default"
           
-          echo "Ingest complete!"
+          echo "Ingest complete! 1.1 mill tripler er (forhåpentligvis) på plass."

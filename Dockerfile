@@ -16,8 +16,9 @@ RUN wget https://downloads.apache.org/jena/binaries/apache-jena-fuseki-6.0.0.tar
 
 WORKDIR $FUSEKI_HOME
 
-# Robust RAM: 512MB til Java, resten til OS og Disk-cache (TDB2).
-ENV JAVA_OPTIONS="-Xmx512m -Xms512m"
+# Balansert RAM: 768MB til Java, resten (over 1.2GB) til OS og Disk-cache (TDB2).
+# Dette er den gylne middelvei for 2GB VM-er.
+ENV JAVA_OPTIONS="-Xmx768m -Xms768m"
 
 EXPOSE 3030
 
