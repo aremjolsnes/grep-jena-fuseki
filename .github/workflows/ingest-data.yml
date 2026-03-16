@@ -44,18 +44,14 @@ jobs:
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X DELETE "$FUSEKI_URL/$DATASET/data?default" || true
           
           echo "Uploading new data to $DATASET..."
-          find temp/extracted -name "*.jsonld" | while read file; do
-            echo "Processing $file..."
-            # Vi legger til --retry her også, i tilfelle små nettverksutfall
-            curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -T "$file" \
-                 --retry 3 --retry-delay 2 \
-                 -H "Content-Type: application/ld+json" \
-                 --fail \
-                 "$FUSEKI_URL/$DATASET/data?default"
-            if [ $? -ne 0 ]; then
-              echo "Status: FEIL ved opplasting av $file"
-              exit 1
-            fi
-          done
+          # Vi bruker POST for å LEGGE TIL (append) data i stedet for PUT som erstatter.
+          # Vi bruker -P 3 for å kjøre 3 opplastinger samtidig - dette er trygt med 1GB RAM.
+          find temp/extracted -name "*.jsonld" | xargs -I {} -P 3 curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+               -X POST \
+               -H "Content-Type: application/ld+json" \
+               --data-binary @"{}" \
+               --retry 3 --retry-delay 2 \
+               --fail \
+               "$FUSEKI_URL/$DATASET/data?default"
           
           echo "Ingest complete!"
