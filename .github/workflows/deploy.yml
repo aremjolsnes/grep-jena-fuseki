@@ -13,7 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --local-only
+      - name: Deploy to Fly.io
+        run: |
+          # Prøv å opprette appen hvis den ikke finnes fra før
+          flyctl apps create grep-fuseki --org personal || true
+          # Rull ut appen (ha-med --yes for å unngå interaktive spørsmål)
+          flyctl deploy --local-only --yes
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
           FLY_DEPOT_DISABLE: 1
