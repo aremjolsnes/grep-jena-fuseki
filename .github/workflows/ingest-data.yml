@@ -40,7 +40,6 @@ jobs:
                  -H "Content-Type: application/ld+json" \
                  --data-binary @"$file" \
                  "$FUSEKI_URL/$DATASET/data"
-            sleep 1
           done
           
           echo "Ingest complete!"
