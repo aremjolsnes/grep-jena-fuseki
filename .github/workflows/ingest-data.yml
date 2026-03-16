@@ -25,22 +25,37 @@ jobs:
           FUSEKI_PASSWORD: ${{ secrets.FUSEKI_PASSWORD }}
           DATASET: "ds"
         run: |
-          echo "Wiping existing data in $DATASET..."
-          # Tømmer datasettet før vi starter
-          # Tømmer datasettet før vi starter (vi bruker GSP - Graph Store Protocol for tømming)
+          echo "Venter på at Fly.io maskinen skal våkne..."
+          # Vi prøver å treffe ping-endepunktet til det svarer. $/ping er standard i Fuseki.
+          for i in {1..30}; do
+            if curl -s -o /dev/null -u "$FUSEKI_USER:$FUSEKI_PASSWORD" --fail "$FUSEKI_URL/$/ping"; then
+              echo "Serveren er våken og klar etter $i forsøk!"
+              break
+            fi
+            if [ $i -eq 30 ]; then
+              echo "FEIL: Serveren våknet ikke i tide."
+              exit 1
+            fi
+            echo "Venter fremdeles (forsøk $i/30)..."
+            sleep 5
+          done
+
+          echo "Tømmer gammelt datasett (hvis det finnes)..."
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X DELETE "$FUSEKI_URL/$DATASET/data?default" || true
           
           echo "Uploading new data to $DATASET..."
-          # Vi laster opp EN OG EN fil med en liten pause mellom hver for maksimal stabilitet.
-          find temp/extracted/ -name "*.jsonld" | while read file; do
+          find temp/extracted -name "*.jsonld" | while read file; do
             echo "Processing $file..."
-            curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-                 -s -S -o /dev/null -w "Status: %{http_code} - Fil: $file \n" \
-                 --fail \
-                 -X POST \
+            # Vi legger til --retry her også, i tilfelle små nettverksutfall
+            curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -T "$file" \
+                 --retry 3 --retry-delay 2 \
                  -H "Content-Type: application/ld+json" \
-                 --data-binary @"$file" \
-                 "$FUSEKI_URL/$DATASET/data"
+                 --fail \
+                 "$FUSEKI_URL/$DATASET/data?default"
+            if [ $? -ne 0 ]; then
+              echo "Status: FEIL ved opplasting av $file"
+              exit 1
+            fi
           done
           
           echo "Ingest complete!"
