@@ -8,6 +8,7 @@ primary_region = 'arn'
 
 [env]
   FUSEKI_PASSWORD = 'admin'
+  TDB2_USE_MEMORY_SEGMENTS = 'false'
 
 [[mounts]]
   source = 'fuseki_storage_v4'
