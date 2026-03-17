@@ -23,5 +23,5 @@ primary_region = 'arn'
   min_machines_running = 0
 
 [[vm]]
+  size = 'shared-cpu-2x'
   memory = '4gb'
-  cpus = 1
