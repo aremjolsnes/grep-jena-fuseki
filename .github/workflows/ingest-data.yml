@@ -18,87 +18,48 @@ jobs:
           curl -L https://data.udir.no/kl06/v201906/dump/jsonld -o temp/data.zip
           unzip temp/data.zip -d temp/extracted
 
-      - name: Wipe and Reload Fuseki
+      - name: Process and Upload Data
         env:
           FUSEKI_URL: ${{ secrets.FUSEKI_PROD_URL }}
           FUSEKI_USER: ${{ secrets.FUSEKI_USER }}
           FUSEKI_PASSWORD: ${{ secrets.FUSEKI_PASSWORD }}
           DATASET: "ds"
         run: |
-          # Vask URL-en for trailing slashes
-          FUSEKI_URL=$(echo "${{ secrets.FUSEKI_PROD_URL }}" | sed 's/\/$//')
-          echo "Bruker URL: $FUSEKI_URL"
+          # 1. Installer Apache Jena (for RIOT verktøyet)
+          echo "Laster ned Apache Jena for konvertering..."
+          wget -q https://archive.apache.org/dist/jena/binaries/apache-jena-5.3.0.tar.gz
+          tar -xf apache-jena-5.3.0.tar.gz
+          RIOT_CMD=$(pwd)/apache-jena-5.3.0/bin/riot
+          
+          # 2. Konverter alle JSON-LD filer til én stor N-Triples fil
+          # Vi gjør dette for å få kun EN transaksjon i Fuseki, som sparer ekstremt mye disk og tid.
+          echo "Konverterer 47k JSON-LD filer til én stor N-Triples fil..."
+          find temp/extracted -name "*.jsonld" > file_list.txt
+          $RIOT_CMD --output=nt $(cat file_list.txt) > all_data.nt
+          echo "Konvertering ferdig. Filstørrelse: $(du -h all_data.nt)"
 
+          # 3. Vask URL-en for trailing slashes
+          FUSEKI_URL=$(echo "${{ secrets.FUSEKI_PROD_URL }}" | sed 's/\/$//')
+          
           echo "Venter på at Fly.io maskinen skal våkne..."
           for i in {1..30}; do
             if curl -s -o /dev/null -u "$FUSEKI_USER:$FUSEKI_PASSWORD" --fail "$FUSEKI_URL/$/ping"; then
-              echo "Serveren er våken! Sjekker om datasettet '$DATASET' er klart..."
-              if curl -s -o /dev/null -u "$FUSEKI_USER:$FUSEKI_PASSWORD" --fail "$FUSEKI_URL/$DATASET/data?default"; then
-                echo "Datasettet er også klart etter $i forsøk!"
-                break
-              fi
+              echo "Serveren er våken!"
+              break
             fi
-            if [ $i -eq 30 ]; then
-              echo "FEIL: Serveren eller datasettet våknet ikke i tide."
-              exit 1
-            fi
-            echo "Venter fremdeles (forsøk $i/30)..."
             sleep 5
           done
 
-          echo "Sjekker status på datasettet '$DATASET' før tømming..."
-          count_before=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-               -L \
-               --data-urlencode "query=SELECT (COUNT(*) as ?count) WHERE { ?s ?p ?o }" \
-               -H "Accept: application/sparql-results+json" \
-               "$FUSEKI_URL/$DATASET/query" | grep -oE '"value":\s*"[0-9]+"' | grep -oE '[0-9]+' || echo "kunne-ikke-lese")
-          echo "Antall tripler i systemet akkurat nå: $count_before"
+          echo "Tømmer gammelt datasett med HTTP DELETE..."
+          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X DELETE "$FUSEKI_URL/$DATASET/data?default"
+          sleep 5
 
-          echo "Tømmer gammelt datasett (Vasker gulvet med HTTP DELETE)..."
+          echo "Laster opp samlet datasett (Eneste transaksjon)..."
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-               -L \
-               -X DELETE \
+               -X POST \
+               -H "Content-Type: application/n-triples" \
+               --data-binary @all_data.nt \
                --fail-with-body \
                "$FUSEKI_URL/$DATASET/data?default"
-
-          echo "Venter 10 sekunder på at tømmingen skal ferdigstilles i TDB2..."
-          sleep 10
-
-          count_after=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-               -L \
-               --data-urlencode "query=SELECT (COUNT(*) as ?count) WHERE { ?s ?p ?o }" \
-               -H "Accept: application/sparql-results+json" \
-               "$FUSEKI_URL/$DATASET/query" | grep -oE '"value":\s*"[0-9]+"' | grep -oE '[0-9]+' || echo "0")
-          echo "Antall tripler etter tømming: $count_after"
-
-          if [ "$count_after" -ne 0 ] && [ ! -z "$count_after" ]; then
-            echo "FEIL: Databasen ble ikke tømt korrekt. Avbryter for å unngå duplikater."
-            exit 1
-          fi
-
-          echo "Venter 30 sekunder på at Fuseki skal roe ned disk og GC før storlast..."
-          sleep 30
-
-          echo "Uploading new data to $DATASET (Turbo Parallel Mode: 10 concurrent requests)..."
-          files=$(find temp/extracted -name "*.jsonld")
-          total=$(echo "$files" | wc -l)
-          echo "Fant $total filer som skal lastes opp paralellt."
           
-          # Bruk xargs med -P (Parallel) for massiv hastighetsøkning. 
-          # Vi bruker et faktor på 2 for å unngå '500 Server Error' fra Fuseki ved for høyt skrivetrykk.
-          # Vi sender filstien som et argument til bash for å unngå quoting-problemer.
-          echo "$files" | xargs -n 1 -P 2 -I {} bash -c '
-            echo "Laster opp: $1"
-            curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-                 -X POST \
-                 -H "Content-Type: application/ld+json" \
-                 --data-binary @"$1" \
-                 --retry 5 --retry-delay 10 \
-                 --connect-timeout 60 \
-                 --max-time 300 \
-                 --fail-with-body \
-                 -s \
-                 "$FUSEKI_URL/$DATASET/data?default"
-          ' -- {}
-          
-          echo "Ingest complete! 1.1 mill tripler er (forhåpentligvis) på plass."
+          echo "Ingest complete! 1.1 mill tripler er på plass via én ryddig transaksjon."

@@ -1,4 +1,4 @@
-# Plan E v10.4: Stabil og Persistent (Java 17 + Fuseki 5.3.0)
+# Plan E v10.5: Final Reset (Tøm full disk)
 FROM eclipse-temurin:17-jre
 
 ENV FUSEKI_HOME=/opt/fuseki
@@ -18,5 +18,5 @@ ENV JAVA_OPTIONS="-Xmx1g -Xms1g"
 
 EXPOSE 3030
 
-# Nå som vi har hatt en HARD RESET, kan vi gå tilbake til normal persistent lagring.
-CMD ["sh", "-c", "mkdir -p /fuseki/databases && java $JAVA_OPTIONS -jar fuseki-server.jar --port=3030 --tdb2 --loc=/fuseki/databases --update /ds"]
+# VIKTIG: Slett alt for å fikse 100% full disk
+CMD ["sh", "-c", "rm -rf /fuseki/databases/*; mkdir -p /fuseki/databases && java $JAVA_OPTIONS -jar fuseki-server.jar --port=3030 --tdb2 --loc=/fuseki/databases --update /ds"]
