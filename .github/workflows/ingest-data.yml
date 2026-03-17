@@ -56,8 +56,7 @@ jobs:
           echo "Tømmer gammelt datasett (Vasker gulvet med SPARQL: CLEAR ALL)..."
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -X POST \
-               -H "Content-Type: application/sparql-update" \
-               --data "CLEAR ALL" \
+               --data-urlencode "update=CLEAR ALL" \
                --fail \
                "$FUSEKI_URL/$DATASET/update"
 
@@ -67,7 +66,7 @@ jobs:
           count_after=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                --data-urlencode "query=SELECT (COUNT(*) as ?count) WHERE { ?s ?p ?o }" \
                -H "Accept: application/sparql-results+json" \
-               "$FUSEKI_URL/$DATASET/query" | grep -oP '"value":\s*"\K\d+')
+               "$FUSEKI_URL/$DATASET/query" | grep -oE '"value":\s*"[0-9]+"' | grep -oE '[0-9]+' || echo "0")
           echo "Antall tripler etter tømming: $count_after"
 
           if [ "$count_after" -ne 0 ] && [ ! -z "$count_after" ]; then
