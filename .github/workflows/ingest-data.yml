@@ -85,9 +85,9 @@ jobs:
           echo "Fant $total filer som skal lastes opp paralellt."
           
           # Bruk xargs med -P (Parallel) for massiv hastighetsøkning. 
-          # Vi bruker et faktor på 10 for å unngå å kvele en 4GB VM.
+          # Vi bruker et faktor på 2 for å unngå '500 Server Error' fra Fuseki ved for høyt skrivetrykk.
           # Vi sender filstien som et argument til bash for å unngå quoting-problemer.
-          echo "$files" | xargs -n 1 -P 10 -I {} bash -c '
+          echo "$files" | xargs -n 1 -P 2 -I {} bash -c '
             echo "Laster opp: $1"
             curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                  -X POST \
@@ -96,8 +96,8 @@ jobs:
                  --retry 5 --retry-delay 10 \
                  --connect-timeout 60 \
                  --max-time 300 \
-                 --fail \
-                 -s -o /dev/null \
+                 --fail-with-body \
+                 -s \
                  "$FUSEKI_URL/$DATASET/data?default"
           ' -- {}
           
