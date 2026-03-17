@@ -12,54 +12,74 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Download Data
-        run: |
-          mkdir temp
-          curl -L https://data.udir.no/kl06/v201906/dump/jsonld -o temp/data.zip
-          unzip temp/data.zip -d temp/extracted
-
-      - name: Process and Upload Data
+      - name: Download, Process and Upload
         env:
           FUSEKI_URL: ${{ secrets.FUSEKI_PROD_URL }}
           FUSEKI_USER: ${{ secrets.FUSEKI_USER }}
           FUSEKI_PASSWORD: ${{ secrets.FUSEKI_PASSWORD }}
           DATASET: "ds"
         run: |
-          # 1. Installer Apache Jena (for RIOT verktøyet)
-          echo "Laster ned Apache Jena for konvertering..."
+          # 1. Vask URL-en
+          F_URL=$(echo "$FUSEKI_URL" | sed 's/\/$//')
+          
+          # 2. Hent siste endrings-id fra Udir
+          LATEST_ID=$(curl -s "https://data.udir.no/kl06/v201906/endringer?antall=1" | grep -oE '"endrings-id":\s*"[^"]+"' | head -n 1 | cut -d'"' -f4)
+          echo "Siste endrings-id fra Udir: $LATEST_ID"
+
+          # 3. Sjekk hva vi har lagret i Fuseki fra før (Metadata-triple)
+          STORED_ID=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+               --data-urlencode "query=SELECT ?id WHERE { <https://grep.udir.no/meta> <https://grep.udir.no/schema/last-id> ?id }" \
+               -H "Accept: application/sparql-results+json" \
+               "$F_URL/$DATASET/query" | grep -oE '"value":\s*"[^"]+"' | head -n 1 | cut -d'"' -f4 || echo "ingenting")
+          echo "Lagret ID i Fuseki: $STORED_ID"
+
+          # 4. Sammenlign (hopp over hvis like, med mindre det er manuell start)
+          if [ "$LATEST_ID" == "$STORED_ID" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            echo "Ingen nye endringer hos Udir. Hopper over oppdatering."
+            exit 0
+          fi
+          echo "Endring oppdaget eller manuell kjøring! Starter prosess..."
+
+          # 5. Last ned rådata
+          mkdir temp
+          curl -L https://data.udir.no/kl06/v201906/dump/jsonld -o temp/data.zip
+          unzip temp/data.zip -d temp/extracted
+
+          # 6. Installer Apache Jena (RIOT)
           wget -q https://archive.apache.org/dist/jena/binaries/apache-jena-5.3.0.tar.gz
           tar -xf apache-jena-5.3.0.tar.gz
           RIOT_CMD=$(pwd)/apache-jena-5.3.0/bin/riot
           
-          # 2. Konverter alle JSON-LD filer til én stor N-Triples fil
-          # Vi gjør dette for å få kun EN transaksjon i Fuseki, som sparer ekstremt mye disk og tid.
-          echo "Konverterer 47k JSON-LD filer til én stor N-Triples fil..."
+          # 7. Konverter til én stor N-Triples fil
           find temp/extracted -name "*.jsonld" > file_list.txt
           $RIOT_CMD --output=nt $(cat file_list.txt) > all_data.nt
-          echo "Konvertering ferdig. Filstørrelse: $(du -h all_data.nt)"
-
-          # 3. Vask URL-en for trailing slashes
-          FUSEKI_URL=$(echo "${{ secrets.FUSEKI_PROD_URL }}" | sed 's/\/$//')
           
-          echo "Venter på at Fly.io maskinen skal våkne..."
+          # 8. Sørg for at Fuseki er våken
           for i in {1..30}; do
-            if curl -s -o /dev/null -u "$FUSEKI_USER:$FUSEKI_PASSWORD" --fail "$FUSEKI_URL/$/ping"; then
-              echo "Serveren er våken!"
+            if curl -s -o /dev/null -u "$FUSEKI_USER:$FUSEKI_PASSWORD" --fail "$F_URL/$/ping"; then
               break
             fi
             sleep 5
           done
 
-          echo "Tømmer gammelt datasett med HTTP DELETE..."
-          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X DELETE "$FUSEKI_URL/$DATASET/data?default"
-          sleep 5
-
-          echo "Laster opp samlet datasett (Eneste transaksjon)..."
+          # 9. Tøm og Last opp
+          echo "Tømmer gammelt datasett..."
+          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X DELETE "$F_URL/$DATASET/data?default"
+          
+          echo "Laster opp 1.1 mill tripler..."
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -X POST \
                -H "Content-Type: application/n-triples" \
                --data-binary @all_data.nt \
                --fail-with-body \
-               "$FUSEKI_URL/$DATASET/data?default"
+               "$F_URL/$DATASET/data?default"
+
+          # 10. Lagre den nye ID-en som metadata i Fuseki
+          echo "<https://grep.udir.no/meta> <https://grep.udir.no/schema/last-id> \"$LATEST_ID\" ." > metadata.nt
+          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+               -X POST \
+               -H "Content-Type: application/n-triples" \
+               --data-binary @metadata.nt \
+               "$F_URL/$DATASET/data?default"
           
-          echo "Ingest complete! 1.1 mill tripler er på plass via én ryddig transaksjon."
+          echo "Fullført! Oppdatert til ID: $LATEST_ID"
