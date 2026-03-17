@@ -46,17 +46,23 @@ jobs:
             sleep 5
           done
 
-          echo "Tømmer gammelt datasett (Vasker gulvet ved å overskrive default graph)..."
+          echo "Sjekker status på datasettet '$DATASET' før tømming..."
+          count_before=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+               -L \
+               --data-urlencode "query=SELECT (COUNT(*) as ?count) WHERE { ?s ?p ?o }" \
+               -H "Accept: application/sparql-results+json" \
+               "$FUSEKI_URL/$DATASET/query" | grep -oE '"value":\s*"[0-9]+"' | grep -oE '[0-9]+' || echo "kunne-ikke-lese")
+          echo "Antall tripler i systemet akkurat nå: $count_before"
+
+          echo "Tømmer gammelt datasett (Vasker gulvet med HTTP DELETE)..."
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -L \
-               -X PUT \
-               -H "Content-Type: text/turtle" \
-               --data "" \
-               --fail \
+               -X DELETE \
+               --fail-with-body \
                "$FUSEKI_URL/$DATASET/data?default"
 
-          echo "Venter 5 sekunder på at tømmingen skal ferdigstilles..."
-          sleep 5
+          echo "Venter 10 sekunder på at tømmingen skal ferdigstilles i TDB2..."
+          sleep 10
 
           count_after=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -L \
