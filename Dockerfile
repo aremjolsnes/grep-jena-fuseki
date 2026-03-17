@@ -17,8 +17,8 @@ RUN wget https://downloads.apache.org/jena/binaries/apache-jena-fuseki-6.0.0.tar
 WORKDIR $FUSEKI_HOME
 
 # Sjenerøs RAM: 1GB til Java, resten (over 3GB) til OS og Disk-cache (TDB2).
-# Dette er den tryggeste konfigurasjonen for 4GB VM-er.
-ENV JAVA_OPTIONS="-Xmx1g -Xms1g"
+# Vi deaktiverer Memory Segments (FFM API) fordi det kan gi 'unsafe memory access' feil på visse kjerner.
+ENV JAVA_OPTIONS="-Xmx1g -Xms1g -Djena.tdb.useMemorySegments=false"
 
 EXPOSE 3030
 
