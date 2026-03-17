@@ -46,24 +46,20 @@ jobs:
             sleep 5
           done
 
-          echo "Sjekker status på datasettet '$DATASET' før tømming..."
-          count_before=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-               --data-urlencode "query=SELECT (COUNT(*) as ?count) WHERE { ?s ?p ?o }" \
-               -H "Accept: application/sparql-results+json" \
-               "$FUSEKI_URL/$DATASET/query" | grep -oP '"value":\s*"\K\d+')
-          echo "Antall tripler før tømming: $count_before"
-
-          echo "Tømmer gammelt datasett (Vasker gulvet med SPARQL: CLEAR ALL)..."
+          echo "Tømmer gammelt datasett (Vasker gulvet ved å overskrive default graph)..."
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-               -X POST \
-               --data-urlencode "update=CLEAR ALL" \
+               -L \
+               -X PUT \
+               -H "Content-Type: text/turtle" \
+               --data "" \
                --fail \
-               "$FUSEKI_URL/$DATASET/update"
+               "$FUSEKI_URL/$DATASET/data?default"
 
           echo "Venter 5 sekunder på at tømmingen skal ferdigstilles..."
           sleep 5
 
           count_after=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+               -L \
                --data-urlencode "query=SELECT (COUNT(*) as ?count) WHERE { ?s ?p ?o }" \
                -H "Accept: application/sparql-results+json" \
                "$FUSEKI_URL/$DATASET/query" | grep -oE '"value":\s*"[0-9]+"' | grep -oE '[0-9]+' || echo "0")
