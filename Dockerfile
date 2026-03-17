@@ -1,4 +1,4 @@
-# Plan E v10.3: HARD RESET (Fjern alle korrupte filer)
+# Plan E v10.4: Stabil og Persistent (Java 17 + Fuseki 5.3.0)
 FROM eclipse-temurin:17-jre
 
 ENV FUSEKI_HOME=/opt/fuseki
@@ -18,6 +18,5 @@ ENV JAVA_OPTIONS="-Xmx1g -Xms1g"
 
 EXPOSE 3030
 
-# TVUNGET RESET: Vi sletter alt på disken VED HVER START i denne versjonen.
-# Dette er den eneste måten å bli kvitt de korrupte filene som krasjer JVM-en.
-CMD ["sh", "-c", "echo 'TVUNGET RESET: Sletter alle databaser på disk...'; rm -rf /fuseki/databases/*; mkdir -p /fuseki/databases && java $JAVA_OPTIONS -jar fuseki-server.jar --port=3030 --tdb2 --loc=/fuseki/databases --update /ds"]
+# Nå som vi har hatt en HARD RESET, kan vi gå tilbake til normal persistent lagring.
+CMD ["sh", "-c", "mkdir -p /fuseki/databases && java $JAVA_OPTIONS -jar fuseki-server.jar --port=3030 --tdb2 --loc=/fuseki/databases --update /ds"]
