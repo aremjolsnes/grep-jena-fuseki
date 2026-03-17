@@ -58,25 +58,26 @@ jobs:
           echo "Venter 30 sekunder på at Fuseki skal roe ned disk og GC..."
           sleep 30
 
-          echo "Uploading new data to $DATASET (Sekvensiell modus med progress-logging)..."
+          echo "Uploading new data to $DATASET (Turbo Parallel Mode: 10 concurrent requests)..."
           files=$(find temp/extracted -name "*.jsonld")
           total=$(echo "$files" | wc -l)
-          current=0
+          echo "Fant $total filer som skal lastes opp paralellt."
           
-          echo "Fant $total filer som skal lastes opp."
-          
-          while read -r file; do
-            current=$((current+1))
-            echo "[$current/$total] Laster opp $file..."
+          # Bruk xargs med -P (Parallel) for massiv hastighetsøkning. 
+          # Vi bruker et faktor på 10 for å unngå å kvele en 4GB VM.
+          # Vi sender filstien som et argument til bash for å unngå quoting-problemer.
+          echo "$files" | xargs -n 1 -P 10 -I {} bash -c '
+            echo "Laster opp: $1"
             curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                  -X POST \
                  -H "Content-Type: application/ld+json" \
-                 --data-binary @"$file" \
+                 --data-binary @"$1" \
                  --retry 5 --retry-delay 10 \
                  --connect-timeout 60 \
                  --max-time 300 \
                  --fail \
+                 -s -o /dev/null \
                  "$FUSEKI_URL/$DATASET/data?default"
-          done <<< "$files"
+          ' -- {}
           
           echo "Ingest complete! 1.1 mill tripler er (forhåpentligvis) på plass."
