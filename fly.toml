@@ -1,8 +1,7 @@
-#
+# fly.toml app configuration file for grep-fuseki-v3
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
 
-app = 'grep-fuseki-v2'
+app = 'grep-fuseki-v3'
 primary_region = 'arn'
 
 # Bygges via Dockerfile på GitHub
@@ -11,7 +10,7 @@ primary_region = 'arn'
   FUSEKI_PASSWORD = 'admin'
 
 [[mounts]]
-  source = 'fuseki_storage_v3'
+  source = 'fuseki_storage_v4'
   destination = '/fuseki'
   initial_size = '10gb'
 

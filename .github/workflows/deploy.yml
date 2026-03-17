@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -16,7 +17,7 @@ jobs:
       - name: Deploy to Fly.io
         run: |
           # Prøv å opprette appen hvis den ikke finnes fra før
-          flyctl apps create grep-fuseki-v2 --org personal || true
+          flyctl apps create grep-fuseki-v3 --org personal || true
           # Rull ut appen (bruker immediate strategi for å prøve å overstyre låste maskiner)
           flyctl deploy --local-only --yes --strategy immediate
         env:
