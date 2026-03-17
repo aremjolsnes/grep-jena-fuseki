@@ -1,4 +1,4 @@
-# Plan E v10.2: Nød-sletting og Java 17 (Den tryggeste ruten)
+# Plan E v10.3: HARD RESET (Fjern alle korrupte filer)
 FROM eclipse-temurin:17-jre
 
 ENV FUSEKI_HOME=/opt/fuseki
@@ -18,6 +18,6 @@ ENV JAVA_OPTIONS="-Xmx1g -Xms1g"
 
 EXPOSE 3030
 
-# NØD-Grep: Hvis miljøvariabelen WIPE_DB er satt til 'true', sletter vi alt i databasemappen før start.
-# Dette unngår 'unsafe memory access' krasj ved sletting av store datasett.
-CMD ["sh", "-c", "if [ \"$WIPE_DB\" = \"true\" ]; then echo 'Wiping database folder...'; rm -rf /fuseki/databases/*; fi && mkdir -p /fuseki/databases && java $JAVA_OPTIONS -jar fuseki-server.jar --port=3030 --tdb2 --loc=/fuseki/databases --update /ds"]
+# TVUNGET RESET: Vi sletter alt på disken VED HVER START i denne versjonen.
+# Dette er den eneste måten å bli kvitt de korrupte filene som krasjer JVM-en.
+CMD ["sh", "-c", "echo 'TVUNGET RESET: Sletter alle databaser på disk...'; rm -rf /fuseki/databases/*; mkdir -p /fuseki/databases && java $JAVA_OPTIONS -jar fuseki-server.jar --port=3030 --tdb2 --loc=/fuseki/databases --update /ds"]
