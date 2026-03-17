@@ -7,7 +7,7 @@ primary_region = 'arn'
 # Bygges via Dockerfile på GitHub
 
 [env]
-  FUSEKI_PASSWORD = 'admin'
+  FUSEKI_PASSWORD = '+01Raspeballer'
   TDB2_USE_MEMORY_SEGMENTS = 'false'
 
 [[mounts]]
