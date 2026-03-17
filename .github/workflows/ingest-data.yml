@@ -46,16 +46,36 @@ jobs:
             sleep 5
           done
 
-          echo "Tømmer gammelt datasett (Vasker gulvet med SPARQL)..."
-          # Vi bruker rå SPARQL-update content type, det er mest robust
+          echo "Sjekker status på datasettet '$DATASET' før tømming..."
+          count_before=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+               --data-urlencode "query=SELECT (COUNT(*) as ?count) WHERE { ?s ?p ?o }" \
+               -H "Accept: application/sparql-results+json" \
+               "$FUSEKI_URL/$DATASET/query" | grep -oP '"value":\s*"\K\d+')
+          echo "Antall tripler før tømming: $count_before"
+
+          echo "Tømmer gammelt datasett (Vasker gulvet med SPARQL: CLEAR ALL)..."
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -X POST \
                -H "Content-Type: application/sparql-update" \
                --data "CLEAR ALL" \
                --fail \
-               "$FUSEKI_URL/$DATASET/update" || echo "Kunne ikke tømme via SPARQL (går videre)"
+               "$FUSEKI_URL/$DATASET/update"
 
-          echo "Venter 30 sekunder på at Fuseki skal roe ned disk og GC..."
+          echo "Venter 5 sekunder på at tømmingen skal ferdigstilles..."
+          sleep 5
+
+          count_after=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+               --data-urlencode "query=SELECT (COUNT(*) as ?count) WHERE { ?s ?p ?o }" \
+               -H "Accept: application/sparql-results+json" \
+               "$FUSEKI_URL/$DATASET/query" | grep -oP '"value":\s*"\K\d+')
+          echo "Antall tripler etter tømming: $count_after"
+
+          if [ "$count_after" -ne 0 ] && [ ! -z "$count_after" ]; then
+            echo "FEIL: Databasen ble ikke tømt korrekt. Avbryter for å unngå duplikater."
+            exit 1
+          fi
+
+          echo "Venter 30 sekunder på at Fuseki skal roe ned disk og GC før storlast..."
           sleep 30
 
           echo "Uploading new data to $DATASET (Turbo Parallel Mode: 10 concurrent requests)..."
