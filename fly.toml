@@ -1,4 +1,3 @@
-# fly.toml app configuration file generated for grep-fuseki on 2026-03-13T12:40:06+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -24,5 +23,5 @@ primary_region = 'arn'
   min_machines_running = 0
 
 [[vm]]
-  memory = '2gb'
+  memory = '4gb'
   cpus = 1

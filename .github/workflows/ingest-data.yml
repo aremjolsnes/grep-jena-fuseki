@@ -2,7 +2,7 @@ name: Ingest Grep Data
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # Hver søndag kl 00:00
+    - cron: '0 21 * * *' # Hver natt kl 22:00 (Norsk tid / CET)
   workflow_dispatch: # Mulighet for å starte manuelt
 
 jobs:
@@ -49,17 +49,29 @@ jobs:
                --fail \
                "$FUSEKI_URL/$DATASET/update" || echo "Kunne ikke tømme via SPARQL (normalt hvis db er korrupt)"
 
-          echo "Venter 20 sekunder på at Fuseki skal rydde ferdig på disken..."
-          sleep 20
+          echo "Venter 30 sekunder på at Fuseki skal rydde ferdig på disken og roe ned GC..."
+          sleep 30
 
-          echo "Uploading new data to $DATASET (Sekvensiell modus for 100% stabilitet)..."
-          # Vi kjører én og én fil (-P 1). Dette er 'slow and steady' som vinner løpet.
-          find temp/extracted -name "*.jsonld" | xargs -I {} -P 1 curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-               -X POST \
-               -H "Content-Type: application/ld+json" \
-               --data-binary @"{}" \
-               --retry 5 --retry-delay 5 \
-               --fail \
-               "$FUSEKI_URL/$DATASET/data?default"
+          echo "Uploading new data to $DATASET (Sekvensiell modus med progress-logging)..."
+          # Vi bruker en vanlig loop for bedre kontroll og logging
+          files=$(find temp/extracted -name "*.jsonld")
+          total=$(echo "$files" | wc -l)
+          current=0
+          
+          echo "Fant $total filer som skal lastes opp."
+          
+          while read -r file; do
+            current=$((current+1))
+            echo "[$current/$total] Laster opp $file..."
+            curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
+                 -X POST \
+                 -H "Content-Type: application/ld+json" \
+                 --data-binary @"$file" \
+                 --retry 5 --retry-delay 10 \
+                 --connect-timeout 60 \
+                 --max-time 300 \
+                 --fail \
+                 "$FUSEKI_URL/$DATASET/data?default"
+          done <<< "$files"
           
           echo "Ingest complete! 1.1 mill tripler er (forhåpentligvis) på plass."
