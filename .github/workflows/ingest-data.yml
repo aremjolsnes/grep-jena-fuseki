@@ -25,35 +25,40 @@ jobs:
           FUSEKI_PASSWORD: ${{ secrets.FUSEKI_PASSWORD }}
           DATASET: "ds"
         run: |
+          # Vask URL-en for trailing slashes
+          FUSEKI_URL=$(echo "${{ secrets.FUSEKI_PROD_URL }}" | sed 's/\/$//')
+          echo "Bruker URL: $FUSEKI_URL"
+
           echo "Venter på at Fly.io maskinen skal våkne..."
-          # Vi prøver å treffe ping-endepunktet til det svarer. $/ping er standard i Fuseki.
           for i in {1..30}; do
             if curl -s -o /dev/null -u "$FUSEKI_USER:$FUSEKI_PASSWORD" --fail "$FUSEKI_URL/$/ping"; then
-              echo "Serveren er våken og klar etter $i forsøk!"
-              break
+              echo "Serveren er våken! Sjekker om datasettet '$DATASET' er klart..."
+              if curl -s -o /dev/null -u "$FUSEKI_USER:$FUSEKI_PASSWORD" --fail "$FUSEKI_URL/$DATASET/data?default"; then
+                echo "Datasettet er også klart etter $i forsøk!"
+                break
+              fi
             fi
             if [ $i -eq 30 ]; then
-              echo "FEIL: Serveren våknet ikke i tide."
+              echo "FEIL: Serveren eller datasettet våknet ikke i tide."
               exit 1
             fi
             echo "Venter fremdeles (forsøk $i/30)..."
             sleep 5
           done
 
-          echo "Tømmer gammelt datasett (Vasker gulvet skikkelig med CLEAR DEFAULT)..."
-          # Vi bruker --data-urlencode for korrekt SPARQL-overføring
+          echo "Tømmer gammelt datasett (Vasker gulvet med SPARQL)..."
+          # Vi bruker rå SPARQL-update content type, det er mest robust
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
                -X POST \
-               -H "Content-Type: application/x-www-form-urlencoded" \
-               --data-urlencode "update=CLEAR DEFAULT" \
+               -H "Content-Type: application/sparql-update" \
+               --data "CLEAR ALL" \
                --fail \
-               "$FUSEKI_URL/$DATASET/update" || echo "Kunne ikke tømme via SPARQL (normalt hvis db er korrupt)"
+               "$FUSEKI_URL/$DATASET/update" || echo "Kunne ikke tømme via SPARQL (går videre)"
 
-          echo "Venter 30 sekunder på at Fuseki skal rydde ferdig på disken og roe ned GC..."
+          echo "Venter 30 sekunder på at Fuseki skal roe ned disk og GC..."
           sleep 30
 
           echo "Uploading new data to $DATASET (Sekvensiell modus med progress-logging)..."
-          # Vi bruker en vanlig loop for bedre kontroll og logging
           files=$(find temp/extracted -name "*.jsonld")
           total=$(echo "$files" | wc -l)
           current=0
