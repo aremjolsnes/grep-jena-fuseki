@@ -2,7 +2,7 @@ name: Ingest Grep Data
 
 on:
   schedule:
-    - cron: '0 21 * * *' # Hver natt kl 22:00 (Norsk tid / CET)
+    - cron: '40 23 * * *' # 00:40 norsk vintertid (CET) / 01:40 sommertid (CEST). Cron i GitHub går i UTC.
   workflow_dispatch: # Mulighet for å starte manuelt
 
 jobs:
