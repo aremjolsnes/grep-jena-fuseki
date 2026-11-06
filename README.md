@@ -1,37 +1,174 @@
-# Grep SPARQL Sandbox
+# Grep SPARQL-sandkasse (Apache Jena Fuseki på Fly.io)
 
-Dette prosjektet er satt opp for å teste ut Apache Jena Fuseki som en triple-store for Grep-data.
+Driftsdokumentasjon. Brukerveiledning for endepunktet ligger i [docs/bruk.md](docs/bruk.md).
 
-## Kom i gang (Lokalt)
+En uoffisiell kopi av Grep-dataene (læreplandata fra Udir) i Apache Jena Fuseki, med en Grep-ontologi
+lagt ved. Formålet er å eksperimentere med ontologi og kunnskapsgraf uten å røre Udirs produksjonsendepunkt
+(`https://sparql-data.udir.no/repositories/201906`, GraphDB).
 
-1. **Start Fuseki**:
-   Sørg for at du har Docker installert, og kjør:
-   ```bash
-   docker-compose up -d
-   ```
-   Fuseki vil da være tilgjengelig på [http://localhost:3030](http://localhost:3030).
+- **Spørringer:** `https://grep-fuseki-v3.fly.dev/ds/query` (åpent)
+- **Nettgrensesnitt:** `https://grep-fuseki-v3.fly.dev/#/dataset/ds/query`
+- **Repo:** `github.com/aremjolsnes/grep-jena-fuseki` (offentlig)
+- **Videre plan:** [docs/plan-nattlig-normalisering.md](docs/plan-nattlig-normalisering.md)
 
-2. **Opprett et Datasett**:
-   - Gå til web-grensesnittet.
-   - Klikk på "Manage datasets" -> "add new dataset".
-   - Gi det navnet `201906`.
-   - Velg "Persistent (TDB2)".
+## Oversikt
 
-3. **Last inn data**:
-   Du kan bruke scriptet `ingest.ps1` (for Windows) eller manuelt laste opp JSON-LD filene via UI-et.
+```
+data.udir.no (nattlig JSON-LD-dump)
+        │
+        ▼
+GitHub Actions: ingest-data.yml ──► scripts/nattlig-innlasting.sh
+        │  (riot: JSON-LD → N-Triples, PUT til Fuseki)
+        ▼
+Fly.io: app grep-fuseki-v3 (Udir-kontoen), region arn
+        Fuseki 5.3.0, TDB2 på volumet fuseki_storage_v4 (/fuseki)
+        ▲
+GitHub Actions: deploy.yml (bygger Dockerfile, flyctl deploy)
+```
 
-## Arkitektur for Sky (SaaS)
+## Tilgang
 
-For å kjøre dette i produksjon uten å drifte egen server:
+| Endepunkt | Tilgang |
+|---|---|
+| `/ds/query`, `/ds/sparql` (SPARQL-spørringer) | Åpent |
+| `/ds/get` (lesing via Graph Store Protocol) | Åpent |
+| `/ds/update` (SPARQL Update), `/ds/data` (skriving via Graph Store Protocol) | Brukeren `admin` med passord |
+| `/$/...` (administrasjons-API) | Bare fra localhost, altså via `fly ssh console` |
+| `/$/ping`, `/$/server` | Åpent |
 
-- **Hosting**: Bruk [Fly.io](https://fly.io) til å kjøre det samme Docker-imaget. Det støtter "Volumes" slik at dataene dine ikke forsvinner.
-- **Automatisering**: Bruk GitHub Actions for å hente data fra Udir og dytte det inn i Fuseki via HTTP API.
+Oppsettet ligger i [fuseki/config.ttl](fuseki/config.ttl) (endepunkter og `fuseki:allowedUsers`) og
+[fuseki/shiro.ini](fuseki/shiro.ini) (administrasjons-API). [fuseki/entrypoint.sh](fuseki/entrypoint.sh)
+skriver passordfilen fra miljøvariabelen `FUSEKI_PASSWORD` ved oppstart, og **nekter å starte uten den**.
 
-## Eksempel på spørring (Machine-to-Machine)
+## Grafer
 
-Når datasettet er opprettet, kan du bruke `curl` som i dag, men mot din nye URL:
+Datasettet `ds` kjører med `tdb2:unionDefaultGraph true`: spørringer uten `GRAPH`/`FROM` ser unionen av alle
+named graphs. Den lagrede default graph er usynlig og skal være tom.
+
+| Graf | Innhold | Kilde |
+|---|---|---|
+| `urn:graph:grep` | Rådata fra dumpen, uendret (omtrent 1,2 millioner tripler) | Erstattes i sin helhet hver natt (`PUT`) |
+| `urn:graph:ontologi` | `ontologi/ontologi_kl06_rettet.ttl` og `ontologi/grep_type_mapping.ttl` | Lastes fra repoet ved hver innlasting |
+| `urn:graph:meta` | `last-id` (endrings-id), `lastet` (tidspunkt), `antall-tripler` | Skrives sist i hver innlasting |
+
+Planlagt (fase 2–3): `urn:graph:normalisert` og `urn:graph:utledet`.
+
+## Filer
+
+| Fil | Hva |
+|---|---|
+| `Dockerfile` | Bygger Fuseki 5.3.0 fra Maven Central (fast SHA-512), og kopierer inn `fuseki/` |
+| `fuseki/config.ttl`, `fuseki/shiro.ini`, `fuseki/entrypoint.sh` | Fuseki-konfigurasjon og oppstart |
+| `fly.toml` | Fly-app: volum, VM (shared-cpu-2x, 4 GB), stopp ved inaktivitet. **Ingen hemmeligheter her.** |
+| `scripts/nattlig-innlasting.sh` | Innlastingen, som kan testes lokalt (se under) |
+| `scripts/rett_ontologi.py` | Lager `ontologi_kl06_rettet.ttl` og endringsloggen fra originalen og bruksstatistikk |
+| `ontologi/ontologi_kl06_20240523.ttl` | Original Grep-ontologi (klasser med stor forbokstav). Rør ikke. |
+| `ontologi/ontologi_kl06_rettet.ttl` (+ `_endringslogg.md`) | Ontologi med rettet domene og rekkevidde. Den som lastes inn. |
+| `ontologi/grep_type_mapping.ttl` | 44 koblinger, f.eks. `u:Kompetansemaal ≡ u:kompetansemaal`, med `owl:equivalentClass` og `rdfs:subClassOf` begge veier |
+| `.github/workflows/ingest-data.yml` | Nattlig innlasting og keepalive |
+| `.github/workflows/deploy.yml` | Deploy til Fly |
+| `docs/` | Plan og brukerveiledning |
+
+## Nattlig innlasting
+
+- **Når:** `cron: '30 1 * * *'`, det vil si 02:30 vintertid og 03:30 sommertid. Udirs eksport er ferdig omtrent kl. 01:20.
+  GitHub starter ofte planlagte jobber 5–30 minutter for sent.
+- **Hopper over** når Udirs siste `endrings-id` er lik den i `urn:graph:meta`. Gjelder bare planlagt kjøring.
+  Manuell start og `push` laster alltid inn.
+- **Starter også ved push** til `ontologi/**`, `scripts/nattlig-innlasting.sh` eller `ingest-data.yml`.
+- **Rekkefølge:** vekk Fuseki → sammenlign endrings-id → last ned og konverter → `PUT` rådata → last inn ontologi
+  → `DROP SILENT DEFAULT` → røyktest (minst 1 000 000 tripler i rådata) → skriv metadata.
+  Metadata skrives sist, så en kjøring som feiler, blir forsøkt på nytt neste natt.
+- Tar omtrent 3 minutter. `concurrency: ingest` hindrer at to innlastinger kjører samtidig.
+- **Keepalive:** GitHub slår av planlagte workflows etter 60 dager uten aktivitet i repoet. Det skjedde
+  16.05.2026. Jobben `keepalive` lager derfor en tom commit (`[skip ci]`) når siste commit er eldre enn 50 dager.
+
+## Deploy
+
+`deploy.yml` kjører ved push til `main`, men **ikke** når bare `ontologi/`, `scripts/`, `docs/`, `sparql/`,
+`ingest-data.yml` eller `*.md` er endret (`paths-ignore`). Den kan også startes manuelt.
+
+**Når deploy og innlasting må skje i rekkefølge**, for eksempel ved endringer i `fuseki/config.ttl` som påvirker
+hvor data ligger:
+
+1. Commit med `[skip ci]` i meldingen, slik at ingenting starter automatisk.
+2. Actions → **PLAN-E-DEPLOY** → *Run workflow*. Vent til den er grønn.
+3. Actions → **Ingest Grep Data** → *Run workflow*.
+
+Meldingen «Name has already been taken» i deploy-loggen er ufarlig. Den kommer fra `flyctl apps create || true`.
+
+## Hemmeligheter
+
+| Hvor | Navn | Merknad |
+|---|---|---|
+| Fly, app `grep-fuseki-v3` | `FUSEKI_PASSWORD` | Appen ligger på **Udir-kontoen** (are.mjolsnes@udir.no), ikke Gmail-kontoen |
+| GitHub, repo → Settings → Secrets and variables → Actions | `FUSEKI_PASSWORD`, `FUSEKI_USER` (= `admin`), `FUSEKI_PROD_URL`, `FLY_API_TOKEN` | Passordet må være likt i Fly og GitHub |
+
+**Bytte passord.** Bruk Git Bash. PowerShell på maskinen kjører i Constrained Language Mode og kan ikke lage
+passord med .NET. Kjør én linje om gangen, fra repo-mappen:
 
 ```bash
-curl -H "Accept:application/json" \
-     "http://localhost:3030/201906/query?query=..."
+pw=$(openssl rand -base64 48 | tr -dc 'A-Za-z0-9' | head -c 32)
+echo ${#pw}                                   # skal gi 32
+./flyctl.exe auth whoami                      # skal vise Udir-kontoen
+printf 'FUSEKI_PASSWORD=%s\n' "$pw" | ./flyctl.exe secrets import --stage -a grep-fuseki-v3
+printf '%s' "$pw" | clip                      # lim inn i GitHub-secreten FUSEKI_PASSWORD
+printf ' ' | clip; unset pw
 ```
+
+Deretter: kjør PLAN-E-DEPLOY (`--stage` gjør at passordet først tas i bruk ved deploy), og så Ingest Grep Data
+for å bekrefte.
+
+Merk: eldre passord ligger i git-historikken til `fly.toml`, og repoet er offentlig. De gir ikke tilgang lenger.
+
+## Lokal testing
+
+Docker finnes ikke på maskinen. Test med Java og den samme Fuseki-distribusjonen:
+
+```bash
+M=https://repo1.maven.org/maven2/org/apache/jena
+curl -sSfO $M/apache-jena-fuseki/5.3.0/apache-jena-fuseki-5.3.0.tar.gz && tar -xzf apache-jena-fuseki-5.3.0.tar.gz
+sed 's#"/fuseki/databases"#"'"$PWD"'/testdb"#' fuseki/config.ttl > /tmp/config.ttl
+printf 'admin: testpass\n' > /tmp/passwd
+java -Xmx2g -jar apache-jena-fuseki-5.3.0/fuseki-server.jar --port=3399 \
+     --config=/tmp/config.ttl --passwd=/tmp/passwd --auth=basic &
+
+FUSEKI_URL=http://localhost:3399 FUSEKI_USER=admin FUSEKI_PASSWORD=testpass TVING=1 \
+  NT_FIL=grep.nt bash scripts/nattlig-innlasting.sh
+```
+
+`NT_FIL` hopper over nedlasting og konvertering. **Fallgruve:** RIOT kjørt som
+`java -cp fuseki-server.jar riotcmd.riot` på Windows skriver logglinjer (`… INFO riot :: File: …`) til
+standard output, altså rett inn i N-Triples-filen. Rens med
+`tr -d '\r' < grep.nt | grep -E '^(<|_:)' > grep-ren.nt`. Det offisielle `riot`-skriptet på GitHub-runneren
+har ikke dette problemet.
+
+## Ontologien
+
+- Tre lag (avtalt 06.11.2026): `udir:` (`http://psi.udir.no/ontologi/`) for begreper som ikke er knyttet til
+  én reform, `u:` med stor forbokstav for Grep-klasser, og `u:` med liten forbokstav for typene i dataene.
+  `udir:`-laget er ikke laget ennå.
+- **Domene og rekkevidde** i originalen var skrevet som lister over hvor egenskapen brukes. I RDFS/OWL betyr flere
+  domener *snitt*, så resonnering ville gitt feil typer. `scripts/rett_ontologi.py` retter dette. Kjør det på
+  nytt hvis dataene endrer seg: `python scripts/rett_ontologi.py`.
+- Domene og rekkevidde brukes **ikke** til utledning. Utledninger skal beregnes hver natt med egne SPARQL-regler
+  (fase 3).
+- Klassene med stor forbokstav ble valgt fordi mange URI-er med liten forbokstav også brukes som egenskaper,
+  f.eks. `u:kompetansemaalsett` og `u:opplaeringsfag`.
+
+## Feilsøking
+
+| Symptom | Årsak og tiltak |
+|---|---|
+| Data er gamle, ingen nattlige kjøringer | Workflowen er slått av etter 60 dager uten aktivitet. Actions → Ingest Grep Data → *Enable workflow* (krever innlogging på GitHub). |
+| Deploy feiler ved nedlasting av Fuseki | Nettverksproblem. Vi bruker Maven Central; `archive.apache.org` har vært utilgjengelig. |
+| Innlasting feiler med 401 | Passordet er ulikt i Fly og GitHub. Bytt det begge steder (se over). |
+| Første spørring tar 5–10 sekunder | Maskinen var stoppet ved inaktivitet (`auto_stop_machines`). Den neste går raskt. |
+| Spørringer gir 0 treff etter en endring i konfigurasjonen | Data ligger i lagret default graph, som er usynlig med union. Kjør Ingest Grep Data. |
+| `flyctl`: «Could not find App» | Feil konto. `./flyctl.exe auth logout` og logg inn med Udir-kontoen. |
+
+## Løse tråder
+
+- Utdaterte filer i repo-mappen som ikke er i bruk: `ingest.ps1` (laster til default graph), `docker-compose.yml`
+  (annet image, ingen konfigurasjon) og `shiro.ini` i roten. Den som brukes, ligger i `fuseki/`.
+- `Rapport_Fuseki_Azure*.docx` og `generate_report.py` er ikke committet.
