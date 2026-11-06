@@ -178,6 +178,7 @@ har ikke dette problemet.
 |---|---|
 | Data er gamle, ingen nattlige kjøringer | Workflowen er slått av etter 60 dager uten aktivitet. Actions → Ingest Grep Data → *Enable workflow* (krever innlogging på GitHub). |
 | Deploy feiler ved nedlasting av Fuseki | Nettverksproblem. Vi bruker Maven Central; `archive.apache.org` har vært utilgjengelig. |
+| Innlasting feiler med 502 midt i en `PUT` | Fly-proxyen mistet forbindelsen til maskinen. Skriptet prøver tre ganger til (`RETRY`). Feiler det likevel, kjør Ingest Grep Data på nytt. De gamle dataene står, fordi transaksjonen avbrytes. |
 | Innlasting feiler med 401 | Passordet er ulikt i Fly og GitHub. Bytt det begge steder (se over). |
 | Første spørring tar 5–10 sekunder | Maskinen var stoppet ved inaktivitet (`auto_stop_machines`). Den neste går raskt. |
 | Spørringer gir 0 treff etter en endring i konfigurasjonen | Data ligger i lagret default graph, som er usynlig med union. Kjør Ingest Grep Data. |

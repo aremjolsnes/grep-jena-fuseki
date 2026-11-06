@@ -37,6 +37,9 @@ QUERY="$BASE/$DATASET/query"
 UPDATE="$BASE/$DATASET/update"
 GSP="$BASE/$DATASET/data"
 AUTH=(-u "$FUSEKI_USER:$FUSEKI_PASSWORD")
+# Nye forsøk ved forbigående feil (tidsavbrudd, 5xx). Fly-proxyen har gitt 502 midt i en PUT (2026-11-06).
+# Trygt fordi alle kallene kan gjentas: PUT erstatter grafen, og reglene gir samme resultat to ganger.
+RETRY=(--retry 3 --retry-delay 15 --retry-connrefused)
 
 G_GREP="urn:graph:grep"
 G_ONTOLOGI="urn:graph:ontologi"
@@ -49,17 +52,17 @@ logg() { echo "[$(date -u +%H:%M:%S)] $*"; }
 
 # Første verdi i første rad av et SELECT-svar (CSV), tom streng hvis ingen treff
 sporr() {
-  curl -sS --fail-with-body -H 'Accept: text/csv' --data-urlencode "query=$1" "$QUERY" \
+  curl -sS "${RETRY[@]}" --fail-with-body -H 'Accept: text/csv' --data-urlencode "query=$1" "$QUERY" \
     | tr -d '\r' | sed -n '2p' | cut -d, -f1
 }
 
 oppdater() {
-  curl -sS --fail-with-body "${AUTH[@]}" --data-urlencode "update=$1" "$UPDATE" > /dev/null
+  curl -sS "${RETRY[@]}" --fail-with-body "${AUTH[@]}" --data-urlencode "update=$1" "$UPDATE" > /dev/null
 }
 
 # Erstatter (PUT) eller legger til (POST) innhold i en named graph
 last_graf() {  # metode graf filtype fil
-  curl -sS --fail-with-body "${AUTH[@]}" -X "$1" -H "Content-Type: $3" \
+  curl -sS "${RETRY[@]}" --fail-with-body "${AUTH[@]}" -X "$1" -H "Content-Type: $3" \
        --data-binary "@$4" "$GSP?graph=$2" > /dev/null
 }
 
@@ -70,7 +73,7 @@ kjor_regler() {  # mappe
   local f t0
   for f in "$1"/*.ru; do
     t0=$(date +%s)
-    curl -sS --fail-with-body "${AUTH[@]}" -H 'Content-Type: application/sparql-update' \
+    curl -sS "${RETRY[@]}" --fail-with-body "${AUTH[@]}" -H 'Content-Type: application/sparql-update' \
          --data-binary "@$f" "$UPDATE" > /dev/null
     logg "  ${f#"$REPO"/}: $(( $(date +%s) - t0 )) s"
   done
@@ -78,7 +81,7 @@ kjor_regler() {  # mappe
 
 # Skriver ut alle rader i et SELECT-svar (CSV) uten overskrift
 sporr_alle() {
-  curl -sS --fail-with-body -H 'Accept: text/csv' --data-urlencode "query=$1" "$QUERY" | tr -d '\r' | sed '1d'
+  curl -sS "${RETRY[@]}" --fail-with-body -H 'Accept: text/csv' --data-urlencode "query=$1" "$QUERY" | tr -d '\r' | sed '1d'
 }
 
 # 1. Sørg for at Fuseki er våken (Fly stopper maskinen ved inaktivitet)
@@ -90,7 +93,7 @@ for i in $(seq 1 30); do
 done
 
 # 2. Sammenlign siste endrings-id hos Udir med den lagrede
-SISTE_ID=$(curl -sS --fail "https://data.udir.no/kl06/v201906/endringer?antall=1" \
+SISTE_ID=$(curl -sS "${RETRY[@]}" --fail "https://data.udir.no/kl06/v201906/endringer?antall=1" \
   | grep -oE '"endrings-id":\s*"[^"]+"' | head -n 1 | cut -d'"' -f4)
 LAGRET_ID=$(sporr "SELECT ?id WHERE { GRAPH <$G_META> { <$META> <$SCHEMA/last-id> ?id } }" || true)
 logg "Siste endrings-id hos Udir: $SISTE_ID"
@@ -103,7 +106,7 @@ fi
 # 3. Last ned dumpen og konverter til N-Triples (med mindre NT_FIL er gitt)
 if [ -z "$NT_FIL" ]; then
   logg "Laster ned JSON-LD-dump ..."
-  curl -sS --fail -L "https://data.udir.no/kl06/v201906/dump/jsonld" -o "$ARBEID/dump.zip"
+  curl -sS "${RETRY[@]}" --fail -L "https://data.udir.no/kl06/v201906/dump/jsonld" -o "$ARBEID/dump.zip"
   unzip -q "$ARBEID/dump.zip" -d "$ARBEID/dump"
   logg "Konverterer til N-Triples ..."
   find "$ARBEID/dump" -name '*.jsonld' -print0 | xargs -0 $RIOT --output=nt > "$ARBEID/grep.nt"
