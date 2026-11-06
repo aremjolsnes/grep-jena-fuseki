@@ -7,8 +7,10 @@ ENV FUSEKI_BASE=/fuseki
 RUN apt-get update && apt-get install -y wget curl && rm -rf /var/lib/apt/lists/*
 RUN mkdir -p $FUSEKI_HOME $FUSEKI_BASE/databases
 
-# Last ned Fuseki 5.3.0
-RUN wget https://archive.apache.org/dist/jena/binaries/apache-jena-fuseki-5.3.0.tar.gz -O /tmp/fuseki.tar.gz && \
+# Last ned Fuseki 5.3.0 fra Maven Central (archive.apache.org har vært utilgjengelig fra runneren).
+# SHA-512 er kontrollert mot Apaches offisielle .sha512 (archive.apache.org/dist/jena/binaries/).
+RUN wget -q https://repo1.maven.org/maven2/org/apache/jena/apache-jena-fuseki/5.3.0/apache-jena-fuseki-5.3.0.tar.gz -O /tmp/fuseki.tar.gz && \
+    echo "5204eefefb921ec029346139f5cb768fe298c816c8642ab590c9bdcee4f24cfacfb15c4266f7acf020d0d5232eea909e4af876f1d5162231ea4b8f8fe0feb3cf  /tmp/fuseki.tar.gz" | sha512sum -c - && \
     tar -xf /tmp/fuseki.tar.gz -C $FUSEKI_HOME --strip-components=1 && \
     rm /tmp/fuseki.tar.gz
 
