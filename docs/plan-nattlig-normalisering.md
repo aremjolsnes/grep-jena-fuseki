@@ -1,6 +1,6 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
-Status: utkast 2026-11-06, til diskusjon. Ingenting er bygget ennå.
+Status 2026-11-06: fase 0 og fase 1 er gjennomført og i drift. Fase 2–4 gjenstår.
 
 ## Mål
 
@@ -19,7 +19,7 @@ Beslutninger som ligger til grunn (tatt 2026-11-06):
 - `rdfs:domain`/`rdfs:range` brukes **ikke** til utledning. De står i ontologien som dokumentasjon.
 - `u:erstatter` gjøres **ikke** transitiv.
 
-## Fase 0: Sikre skrivetilgangen (forutsetning)
+## Fase 0: Sikre skrivetilgangen ✅ (i drift 2026-11-06)
 
 **Problem:** Den deployede containeren kjører `fuseki-server --update /ds` uten tilgangskontroll. Både `/ds/update` og `/ds/data` (Graph Store Protocol) tar imot skriving anonymt.
 
@@ -37,7 +37,7 @@ Workflowen sender allerede `-u $FUSEKI_USER:$FUSEKI_PASSWORD`, så den trenger i
 
 **Verifisering:** En anonym `POST` til `/ds/update` og `/ds/data` skal gi 401. Spørringer skal fortsatt fungere uten innlogging.
 
-## Fase 1: Grafstruktur
+## Fase 1: Grafstruktur ✅ (i drift 2026-11-06, `scripts/nattlig-innlasting.sh`)
 
 | Graf | Innhold | Hvordan den oppdateres |
 |---|---|---|
