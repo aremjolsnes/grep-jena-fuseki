@@ -47,11 +47,12 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 
 | Graf | Innhold | Kilde |
 |---|---|---|
-| `urn:graph:grep` | Rådata fra dumpen, uendret (omtrent 1,2 millioner tripler) | Erstattes i sin helhet hver natt (`PUT`) |
+| `urn:graph:grep` | Rådata fra dumpen (omtrent 1,2 millioner tripler). Datoer og tall gjøres om til riktige datatyper (N3, B4), ellers uendret. | Erstattes i sin helhet hver natt (`PUT`) |
 | `urn:graph:ontologi` | `ontologi/ontologi_kl06_rettet.ttl` og `ontologi/grep_type_mapping.ttl` | Lastes fra repoet ved hver innlasting |
-| `urn:graph:meta` | `last-id` (endrings-id), `lastet` (tidspunkt), `antall-tripler` | Skrives sist i hver innlasting |
+| `urn:graph:normalisert` | `udir:Gyldighet`-ressurser (N1) og `udir:status` (N2), omtrent 244 000 tripler | Tømmes og bygges på nytt av `sparql/normalisering/*.ru` |
+| `urn:graph:meta` | `last-id` (endrings-id), `lastet` (tidspunkt), `antall-tripler`, `antall-tripler-normalisert` | Skrives sist i hver innlasting |
 
-Planlagt (fase 2–3): `urn:graph:normalisert` og `urn:graph:utledet`.
+Planlagt (fase 3): `urn:graph:utledet`.
 
 ## Filer
 
@@ -61,7 +62,9 @@ Planlagt (fase 2–3): `urn:graph:normalisert` og `urn:graph:utledet`.
 | `fuseki/config.ttl`, `fuseki/shiro.ini`, `fuseki/entrypoint.sh` | Fuseki-konfigurasjon og oppstart |
 | `fly.toml` | Fly-app: volum, VM (shared-cpu-2x, 4 GB), stopp ved inaktivitet. **Ingen hemmeligheter her.** |
 | `scripts/nattlig-innlasting.sh` | Innlastingen, som kan testes lokalt (se under) |
-| `scripts/rett_ontologi.py` | Lager `ontologi_kl06_rettet.ttl` og endringsloggen fra originalen og bruksstatistikk |
+| `scripts/rapporter-avvik.sh` | Gjør avvik i dataene om til en GitHub-issue og et sammendrag for kjøringen |
+| `scripts/rett_ontologi.py` | Lager `ontologi_kl06_rettet.ttl` og endringsloggen fra originalen og bruksstatistikk. `TYPEDE` bestemmer hvilke egenskaper N3 gjør om. |
+| `sparql/normalisering/*.ru` | Normaliseringsreglene (fase 2), kjøres i alfabetisk rekkefølge: `01-gyldighet`, `02-status`, `03-datatyper` |
 | `ontologi/ontologi_kl06_20240523.ttl` | Original Grep-ontologi (klasser med stor forbokstav). Rør ikke. |
 | `ontologi/ontologi_kl06_rettet.ttl` (+ `_endringslogg.md`) | Ontologi med rettet domene og rekkevidde. Den som lastes inn. |
 | `ontologi/grep_type_mapping.ttl` | 44 koblinger, f.eks. `u:Kompetansemaal ≡ u:kompetansemaal`, med `owl:equivalentClass` og `rdfs:subClassOf` begge veier |
@@ -75,11 +78,20 @@ Planlagt (fase 2–3): `urn:graph:normalisert` og `urn:graph:utledet`.
   GitHub starter ofte planlagte jobber 5–30 minutter for sent.
 - **Hopper over** når Udirs siste `endrings-id` er lik den i `urn:graph:meta`. Gjelder bare planlagt kjøring.
   Manuell start og `push` laster alltid inn.
-- **Starter også ved push** til `ontologi/**`, `scripts/nattlig-innlasting.sh` eller `ingest-data.yml`.
+- **Starter også ved push** til `ontologi/**`, `sparql/**`, `scripts/nattlig-innlasting.sh` eller `ingest-data.yml`.
 - **Rekkefølge:** vekk Fuseki → sammenlign endrings-id → last ned og konverter → `PUT` rådata → last inn ontologi
-  → `DROP SILENT DEFAULT` → røyktest (minst 1 000 000 tripler i rådata) → skriv metadata.
+  → `DROP SILENT DEFAULT` → normalisering (`DROP` av `urn:graph:normalisert`, så `sparql/normalisering/*.ru`)
+  → røyktest og kontroller → skriv metadata.
   Metadata skrives sist, så en kjøring som feiler, blir forsøkt på nytt neste natt.
-- Tar omtrent 3 minutter. `concurrency: ingest` hindrer at to innlastinger kjører samtidig.
+- **Røyktest:** minst 1 000 000 tripler i rådata (`MIN_TRIPLER`), minst 36 000 `udir:Gyldighet` (`MIN_GYLDIGHET`)
+  og minst én `udir:status`.
+- **Avvik i dataene** stopper ikke jobben, men skal ses av et menneske. Kontrollene er datoer med årstall før 1990
+  eller etter 2100, gyldighet uten kobling og verdier N3 ikke kunne gjøre om. `nattlig-innlasting.sh` skriver dem
+  til `AVVIK_FIL`, og `scripts/rapporter-avvik.sh` lager issuen **«Avvik i Grep-dataene»**. Den tildeles
+  repo-eieren, som får varsel. Issuen kommenteres bare når avvikene endrer seg og lukkes når de er borte.
+  Avvikene står også i sammendraget for kjøringen i Actions, med en gul advarsel. Avvik rettes i Grep (prod)
+  og forsvinner da etter neste innlasting. Test lokalt med `TORRKJORING=1 bash scripts/rapporter-avvik.sh avvik.md`.
+- Tar omtrent 4–5 minutter. Normaliseringen tar rundt ett minutt lokalt. `concurrency: ingest` hindrer at to innlastinger kjører samtidig.
 - **Keepalive:** GitHub slår av planlagte workflows etter 60 dager uten aktivitet i repoet. Det skjedde
   16.05.2026. Jobben `keepalive` lager derfor en tom commit (`[skip ci]`) når siste commit er eldre enn 50 dager.
 
@@ -151,6 +163,10 @@ har ikke dette problemet.
 - **Domene og rekkevidde** i originalen var skrevet som lister over hvor egenskapen brukes. I RDFS/OWL betyr flere
   domener *snitt*, så resonnering ville gitt feil typer. `scripts/rett_ontologi.py` retter dette. Kjør det på
   nytt hvis dataene endrer seg: `python scripts/rett_ontologi.py`.
+- **Datatyper (B4):** `TYPEDE` i `scripts/rett_ontologi.py` setter `rdfs:range` til `xsd:dateTime`, `xsd:integer`
+  eller `xsd:decimal`. Regelen `03-datatyper.ru` leser rekkevidden fra `urn:graph:ontologi` og gjør om verdiene.
+  Skal en ny egenskap få datatype, legger du den i `TYPEDE` og kjører skriptet. Skriptet henter statistikk bare
+  fra `urn:graph:grep`.
 - Domene og rekkevidde brukes **ikke** til utledning. Utledninger skal beregnes hver natt med egne SPARQL-regler
   (fase 3).
 - Klassene med stor forbokstav ble valgt fordi mange URI-er med liten forbokstav også brukes som egenskaper,

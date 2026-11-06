@@ -39,7 +39,7 @@ u:aarstimer a owl:DatatypeProperty ;
     rdfs:comment "Attribute for \"programomraade\" (program area) to specify how many hours (60 min-units) allocated for one school year"@en,
         "Egenskap for programområde for å angi hvor mange timer (60 min.-enheter) det er tildelt for et undervisningsår."@nb ;
     rdfs:domain u:Programomraade ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:integer .
 
 u:aarstimer-doeve-og-tunghoerte a owl:DatatypeProperty ;
     rdfs:label "school year hours deaf and hard of hearing"@en,
@@ -47,7 +47,7 @@ u:aarstimer-doeve-og-tunghoerte a owl:DatatypeProperty ;
     rdfs:comment "Attribute for \"programomraade\" (program area) to specify how many hours (60 min-units) allocated for one school year for the deaf and hard-of-hearing"@en,
         "Egenskap for programområde for å angi hvor mange timer (60 min.-enheter) det er tildelt for et undervisningsår for døve og tunghørte."@nb ;
     rdfs:domain u:Programomraade ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:integer .
 
 u:aarstimer-formgivningsfag a owl:DatatypeProperty ;
     rdfs:label "school year hours - art, craft and design"@en,
@@ -55,7 +55,7 @@ u:aarstimer-formgivningsfag a owl:DatatypeProperty ;
     rdfs:comment "Attribute for \"programomraade\" (program area) to specify how many hours (60 min-units) allocated for one school year for Art, Craft and Design Studies"@en,
         "Egenskap for programområde for å angi hvor mange timer (60 min.-enheter) det er tildelt for et undervisningsår for forgivingsfag"@nb ;
     rdfs:domain u:Programomraade ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:integer .
 
 u:aarstimer-samisk a owl:DatatypeProperty ;
     rdfs:label "school year hours sami"@en,
@@ -63,7 +63,7 @@ u:aarstimer-samisk a owl:DatatypeProperty ;
     rdfs:comment "Attribute for \"programomraade\" (program area) to specify how many hours (60 min-units) allocated for one school year for students who follow the Knowledge Promotion - Sami"@en,
         "Egenskap for programområde for å angi hvor mange timer (60 min.-enheter) det er tildelt for et undervisningsår for elever som følger Kunnskapsløftet samisk"@nb ;
     rdfs:domain u:Programomraade ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:integer .
 
 u:benyttes-paa-aarstrinn a owl:ObjectProperty ;
     rdfs:label "taught in year levels"@en,
@@ -218,7 +218,7 @@ u:fastsatt-dato a owl:DatatypeProperty ;
         "Egenskap for læreplan for å angi dato for når læreplanen er fastsatt som forskrift"@nb ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( u:Laereplan u:Laereplan_lk20 ) ] ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:dateTime .
 
 u:fastsatt-spraak a owl:ObjectProperty ;
     rdfs:label "determination language"@en,
@@ -377,14 +377,14 @@ u:gyldig-fra a owl:DatatypeProperty ;
         "gyldig-fra"@nb ;
     rdfs:comment "Attribute for several types of elements to specify from the date the element is valid"@en,
         "Egenskap for flere typer elementer for å angi fra når elementet er gyldig"@nb ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:dateTime .
 
 u:gyldig-til a owl:DatatypeProperty ;
     rdfs:label "valid until"@en,
         "gyldig til"@nb ;
     rdfs:comment "Attribute for several types of elements to specify the last date the element is valid"@en,
         "Egenskap for flere typer elementer for å angi siste dato elementet er gyldig"@nb ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:dateTime .
 
 u:hovedomraade-fritekst a owl:DatatypeProperty ;
     rdfs:label "main area, freetext"@en,
@@ -607,7 +607,7 @@ u:omfang-til-naa a owl:DatatypeProperty ;
     rdfs:comment "Attribute for \"fagkode\" (subject code) to specify how many hours (units of 60 minutes) which the student has so far obtained by interrupted multiannual subjects"@en,
         "Egenskap for fagkode for å angi hvor mange timer (60 min.-enheter) som eleven hittil har oppnådd ved avbrutt flerårig fag."@nb ;
     rdfs:domain u:Fagkode ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:integer .
 
 u:omfang-totalt a owl:DatatypeProperty ;
     rdfs:label "extent total"@en,
@@ -615,7 +615,12 @@ u:omfang-totalt a owl:DatatypeProperty ;
     rdfs:comment "Attribute for \"fagkode\" (subject code) to specify how many hours (units of 60 minutes) it is allocated for an entire school year"@en,
         "Egenskap for fagkode for å angi hvor mange årstimer (60 min.-enheter) den er tildelt for et helt undervisningsår"@nb ;
     rdfs:domain u:Fagkode ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:integer .
+
+u:omfang-vitnemaal a owl:DatatypeProperty ;
+    rdfs:comment "Brukes i Grep-dataene, men mangler i ontologi_kl06_20240523.ttl. Lagt til av scripts/rett_ontologi.py."@nb ;
+    rdfs:domain u:Fagkode ;
+    rdfs:range xsd:integer .
 
 u:omfang-vitnemål a owl:DatatypeProperty ;
     rdfs:label "extent diploma"@en,
@@ -664,7 +669,7 @@ u:opplaeringstid a owl:DatatypeProperty ;
     rdfs:comment "Attribute for \"programomraade\" (programme area) to specify how many years of apprenticeship the apprentice is being trained, or how many years an education in school is for a pupil"@en,
         "Egenskap for programområde for å angi hvor mange år av læretiden lærlingen er under opplæring, evt. hvor mange år en opplæring i skole er for en elev"@nb ;
     rdfs:domain u:Programomraade ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:decimal .
 
 u:ordforklaringer a owl:ObjectProperty ;
     rdfs:label "glossaries"@en,
@@ -727,7 +732,7 @@ u:sist-endret a owl:DatatypeProperty ;
         "sist endret"@nb ;
     rdfs:comment "Property for multiple types of element to specify when it was last modified"@en,
         "Egenskap for flere typer elementer for å angi når det sist er endret"@nb ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:dateTime .
 
 u:siste-eksamen a owl:DatatypeProperty ;
     rdfs:label "last examination"@en,
@@ -736,7 +741,7 @@ u:siste-eksamen a owl:DatatypeProperty ;
         "Egenskap for læreplan for å angi siste mulige dato det kan tas eksamen"@nb ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( u:Laereplan u:Laereplan_lk20 ) ] ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:dateTime .
 
 u:siste-semester a owl:ObjectProperty ;
     rdfs:label "last semester"@en,
@@ -991,7 +996,7 @@ u:verdiskapingstid a owl:DatatypeProperty ;
     rdfs:comment "Attribute for \"programomraade\" (programme area) to specify how many years of the apprenticeship apprentice creates products or services the company/enterprise may sell or offer their customers or users"@en,
         "Egenskap for programområde for å angi hvor mange år av læretiden lærlingen skaper produkter eller tjenester som bedriften kan selge eller tilby sine kunder eller brukere"@nb ;
     rdfs:domain u:Programomraade ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:decimal .
 
 u:vurdering a owl:DatatypeProperty ;
     rdfs:label "assesment-chapter"@en,

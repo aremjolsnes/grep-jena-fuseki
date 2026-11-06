@@ -1,6 +1,6 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
-Status 2026-11-06: fase 0 og fase 1 er gjennomført og i drift. Fase 2–4 gjenstår.
+Status 2026-11-06: fase 0 og fase 1 er gjennomført og i drift. Fase 2 er bygget og testet lokalt. Fase 3–4 gjenstår.
 
 ## Mål
 
@@ -51,9 +51,15 @@ Workflowen sender allerede `-u $FUSEKI_USER:$FUSEKI_PASSWORD`, så den trenger i
 
 Merk: i TDB2 betyr union at default graph er *bare* unionen av named graphs. Den lagrede default graph blir usynlig. Derfor må rådataene flyttes fra default graph til `urn:graph:grep`. Det er den største endringen i den eksisterende workflowen. Steget `DELETE ?default` + `POST` erstattes av én `PUT` til `?graph=urn:graph:grep`, som også gir kortere tid med tomt datasett.
 
-## Fase 2: Normalisering (`urn:graph:normalisert`)
+## Fase 2: Normalisering (`urn:graph:normalisert`) ✅ (testet lokalt 2026-11-06)
 
-Reglene ligger som `.ru`-filer i `sparql/normalisering/` og kjøres i nummerert rekkefølge.
+Reglene ligger som `.ru`-filer i `sparql/normalisering/` og kjøres i nummerert rekkefølge:
+`01-gyldighet.ru` (N1), `02-status.ru` (N2) og `03-datatyper.ru` (N3).
+
+**Resultat ved lokal test** (rådata fra 2026-11-06, Fuseki 5.3.0, `-Xmx2g`): 36 210 `udir:Gyldighet`,
+46 383 `udir:status` og 244 052 tripler i `urn:graph:normalisert`. Alle 118 905 dato- og tallverdier ble gjort
+om, og ingen ble stående som streng. Tid: N1 29 s, N2 5 s, N3 33 s. Hele jobben tok 2 min 10 s. En ny kjøring
+av N3 endrer ingenting. Anonym `POST` til `/ds/update` gir fortsatt 401.
 
 ### N1: Gyldighet som kvalifisert relasjon
 
@@ -68,16 +74,35 @@ d:ADI2001 udir:gyldighet <…/gyldighet/ADI2001/opplaeringsfag/ADI2Z01> .
 ```
 
 - Koblingen gjøres med eksakt strengsammenligning: `gyldighet-<lokalnavn(egenskap)>-<siste del av objekt-IRI>`. Testet 2026-11-06: 36 207 av 36 210 treff.
-- De tre med prefikset `gyldighet-2-…` (DTDGH2----, HSPOR3---- ×2) logges og hoppes over inntil videre.
-- IRI-ene bygges av subjekt, relasjon og objekt. Da er de stabile fra natt til natt og kan refereres direkte.
+- De tre med prefikset `gyldighet-2-…` er en **andre gyldighetsperiode** for den samme koblingen, ikke feil. Først ble de hoppet over, men nå tas de med (avgjort 2026-11-06), med `/2` bak IRI-en. Alle 36 210 kommer med.
+  - DTDGH2---- → TPTIP1----: 2021-08-01 til 2022-07-31, så igjen fra 2023-08-01. En reell andre periode.
+  - HSPOR3---- → HSAMB2---- og → HSHEA2----: to perioder som til sammen dekker all tid, uten opphold (til 2021-07-31 og fra 2021-08-01). Det er neppe meningen. Begge koblingene står også som `u:loepstype-kryssloep`. Bør sjekkes i prod.
+- IRI-ene bygges av subjekt, relasjon, objekt og eventuelt periodenummer. Da er de stabile fra natt til natt og kan refereres direkte.
+  Kontrollert: alle er unike, og alle subjekter ligger i `http://psi.udir.no/kl06/`.
+- Datoene på `udir:Gyldighet` er `xsd:dateTime`. Verdier som ikke lar seg gjøre om, beholdes som streng.
+- Funn: to koblinger har feil årstall i `gyldig-fra` i dumpen, MAT1106–MAT1Z10 (`0209-08-01`) og
+  PSP6092–PSP1Z04 (`2626-01-01`). Feilen står på begge sider av koblingen, altså fire verdier. Rettet i prod
+  2026-11-06, og rettelsen kommer med i dumpen natt til 2026-11-07.
+- Avvik i dataene (urimelige årstall, gyldighet uten kobling, verdier med feil format) rapporteres i issuen
+  «Avvik i Grep-dataene» via `scripts/rapporter-avvik.sh`. Se README-filen.
 
 ### N2: Status til PSI
 
 `?s u:status st:publisert` gir `?s udir:status d:status_publisert` (fem verdier). Da kan man gå videre til tittelen og de andre egenskapene til statusressursen.
 
+Koblingen går via `u:url-data` på statusressursen, som har den samme REST-adressen. Regelen trenger derfor ingen strengbehandling, og nye statusverdier kommer med automatisk.
+
 ### N3: Typede datoer og tall
 
 Datoer og tall ligger i dumpen som `xsd:string`. Gjelder blant annet `sist-endret`, `gyldig-fra`, `gyldig-til`, `fastsatt-dato`, `siste-eksamen`, `aarstimer*` og `omfang-*`. Verdiene valideres med regex før de gjøres om. Verdier som ikke passer, beholdes som streng og telles i loggen. Se beslutning B4 for hvor de typede verdiene skal ligge.
+
+Gjennomføring:
+
+- Ontologien styrer hvilke egenskaper som gjøres om. `TYPEDE` i `scripts/rett_ontologi.py` setter `rdfs:range`, og `03-datatyper.ru` gjør om strengverdiene til egenskaper med rekkevidde `xsd:dateTime`, `xsd:integer` eller `xsd:decimal` i `urn:graph:ontologi`. Listen finnes bare ett sted.
+- 14 egenskaper: fem datoer, sju heltall og to desimaltall (`opplaeringstid` og `verdiskapingstid`, som har desimalkomma i dumpen, «1,00»).
+- `u:omfang-vitnemaal` manglet i originalontologien, der den heter `u:omfang-vitnemål`. Skriptet legger den til.
+- Kartlagt 2026-11-06: ingen andre strengegenskaper har verdier som ligner datoer eller tall. Sannhetsverdier er allerede `xsd:boolean` i dumpen.
+- Konsekvens av B4: spørringer som sammenligner med en tekststreng, for eksempel `FILTER(?d >= "2026-01-01")`, gir ingen treff her, men gjør det hos Udir. Dette står i `docs/bruk.md`.
 
 ## Fase 3: Utledning (`urn:graph:utledet`)
 
@@ -115,7 +140,7 @@ Innhold: overbegreper (gruppe 1), `udir:Reform` og `udir:Revisjon` med individen
 
 ## Risiko
 
-- **Minne:** den deployede containeren har `-Xmx1g` på en maskin med 4 GB. `INSERT`-regler over 1,2 millioner tripler kan bli tunge. Vi måler N1 og R1 først, og øker eventuelt til `-Xmx2g`/`3g`.
+- **Minne:** containeren kjører med `-Xmx2g` på en maskin med 4 GB. Fase 2 gikk fint med `-Xmx2g` lokalt. R1 er ikke målt ennå.
 - **Tid:** dagens jobb tar omtrent 2 minutter. Normalisering og utledning legger trolig til noen minutter. Det er godt innenfor grensene til GitHub Actions.
 - **Avvik fra prod:** sandkassen er ikke lenger en ren kopi av prod. Rådatagrafen er det fortsatt, så sammenligninger må bruke `GRAPH <urn:graph:grep>`.
 - **Den lokale `Dockerfile`-endringen** (offisielt image, `shiro.ini`, `-Xmx2g`) er ikke committet. Vi må avklare om den skal tas med i fase 0 eller forkastes.

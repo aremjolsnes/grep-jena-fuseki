@@ -6,8 +6,9 @@ on:
   workflow_dispatch: # Mulighet for å starte manuelt
   push:
     branches: [main]
-    paths: # Endringer i ontologi eller innlastingslogikk skal slå gjennom uten å vente på Udir
+    paths: # Endringer i ontologi, regler eller innlastingslogikk skal slå gjennom uten å vente på Udir
       - 'ontologi/**'
+      - 'sparql/**'
       - 'scripts/nattlig-innlasting.sh'
       - '.github/workflows/ingest-data.yml'
 
@@ -18,6 +19,9 @@ concurrency:
 jobs:
   ingest:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write # scripts/rapporter-avvik.sh oppretter, kommenterer og lukker issuen «Avvik i Grep-dataene»
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -38,7 +42,13 @@ jobs:
           DATASET: "ds"
           # Planlagt kjøring hopper over når endrings-id er uendret; manuell kjøring og push laster alltid
           TVING: ${{ github.event_name != 'schedule' && '1' || '0' }}
+          AVVIK_FIL: ${{ runner.temp }}/avvik.md
         run: bash scripts/nattlig-innlasting.sh
+
+      - name: Rapporter avvik i dataene
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/rapporter-avvik.sh "${{ runner.temp }}/avvik.md"
 
   # GitHub deaktiverer planlagte workflows når repoet har vært uten aktivitet i 60 dager
   # (det skjedde i mai 2026). Denne jobben lager en tom commit når siste commit er eldre

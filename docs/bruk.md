@@ -36,28 +36,32 @@ SPARQLWrapper og YASGUI. Bruk `Accept: text/csv` hvis du vil ha CSV.
 ```sparql
 PREFIX u:    <http://psi.udir.no/ontologi/kl06/>   # egenskaper og typer i Grep
 PREFIX d:    <http://psi.udir.no/kl06/>            # Grep-ressurser (læreplaner, kompetansemål, ...)
+PREFIX udir: <http://psi.udir.no/ontologi/>        # sandkassens egne begreper, se «Normaliserte data»
 PREFIX st:   <https://data.udir.no/kl06/v201906/status/status_>   # statusverdier, se «Egenheter»
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 ```
 
 Eksemplene under forutsetter disse prefiksene.
 
 ## Hvordan dataene er organisert
 
-Dataene ligger i tre navngitte grafer. **Spørringer uten `GRAPH` ser alle samlet**, så de fleste spørringer
+Dataene ligger i fire navngitte grafer. **Spørringer uten `GRAPH` ser alle samlet**, så de fleste spørringer
 trenger ikke å bry seg om grafene.
 
 | Graf | Innhold |
 |---|---|
-| `urn:graph:grep` | Grep-dataene, slik de kommer fra Udir (omtrent 1,2 millioner tripler) |
+| `urn:graph:grep` | Grep-dataene fra Udir (omtrent 1,2 millioner tripler). Datoer og tall har riktige datatyper, ellers uendret. |
 | `urn:graph:ontologi` | Ontologien: klasser, egenskaper og koblinger til typene i dataene |
+| `urn:graph:normalisert` | Gyldighet som egne ressurser og status koblet til statusressursene (omtrent 240 000 tripler) |
 | `urn:graph:meta` | Når dataene sist ble oppdatert |
 
 Vil du ha *bare* Grep-dataene, for eksempel for å sammenligne med Udirs offisielle endepunkt, pakker du
 spørringen inn i `GRAPH <urn:graph:grep> { … }`. Det gjelder særlig spørringer som teller eller lister *alt*
-(alle tripler, alle typer, alle egenskaper). Uten `GRAPH` er ontologien også med i tallene.
+(alle tripler, alle typer, alle egenskaper). Uten `GRAPH` er ontologien og de normaliserte dataene også med i
+tallene.
 
 **Hvor ferske er dataene?**
 
@@ -165,6 +169,74 @@ SELECT ?klasse (COUNT(?s) AS ?antall) WHERE {
 } GROUP BY ?klasse
 ```
 
+## Normaliserte data
+
+Hver natt, etter innlastingen, retter sandkassen tre svakheter i dumpen. Reglene ligger som SPARQL Update i
+`sparql/normalisering/` i repoet.
+
+**Gyldighet som egne ressurser.** Hver kobling med fra–til-dato får en ressurs av typen `udir:Gyldighet` med
+egenskapene `udir:relasjon`, `udir:objekt`, `udir:gyldigFra` og `udir:gyldigTil`. Ressursen henger på subjektet
+med `udir:gyldighet`. IRI-en er satt sammen av subjekt, relasjon og objekt, for eksempel
+`http://psi.udir.no/kl06/gyldighet/ADI2001/opplaeringsfag/ADI2Z01`, og er den samme fra natt til natt.
+
+```sparql
+SELECT ?fag ?fra ?til WHERE {
+  d:ADI2001 udir:gyldighet ?g .
+  ?g udir:relasjon u:opplaeringsfag ;
+     udir:objekt ?fag .
+  OPTIONAL { ?g udir:gyldigFra ?fra }
+  OPTIONAL { ?g udir:gyldigTil ?til }
+}
+```
+
+Alle koblinger som var gyldige på en bestemt dato:
+
+```sparql
+SELECT ?s ?relasjon ?objekt WHERE {
+  ?s udir:gyldighet ?g .
+  ?g udir:relasjon ?relasjon ; udir:objekt ?objekt .
+  OPTIONAL { ?g udir:gyldigFra ?fra }
+  OPTIONAL { ?g udir:gyldigTil ?til }
+  FILTER((!BOUND(?fra) || ?fra <= "2020-08-01T00:00:00"^^xsd:dateTime)
+      && (!BOUND(?til) || ?til >= "2020-08-01T00:00:00"^^xsd:dateTime))
+} LIMIT 100
+```
+
+En kobling kan ha flere gyldighetsperioder. Periode nummer 2 og videre får nummeret bak IRI-en, for eksempel
+`…/gyldighet/DTDGH2----/bygger-paa-programomraade/TPTIP1----/2` (gyldig fra 2023-08-01, etter at den første
+perioden sluttet 2022-07-31). I dumpen heter slike egenskaper `u:gyldighet-2-…`.
+
+**Status som ressurs.** `udir:status` peker til statusressursen, for eksempel `d:status_publisert`, og ikke
+til REST-adressen. Da kan du hente tittelen direkte:
+
+```sparql
+SELECT ?status (COUNT(*) AS ?antall) WHERE {
+  ?lp a u:laereplan_lk20 ; udir:status/u:tittel ?status .
+  FILTER(LANG(?status) = "default")
+} GROUP BY ?status
+```
+
+**Datoer og tall med riktige datatyper.** Disse egenskapene er gjort om fra tekst direkte i
+`urn:graph:grep`:
+
+| Datatype | Egenskaper |
+|---|---|
+| `xsd:dateTime` | `u:sist-endret`, `u:gyldig-fra`, `u:gyldig-til`, `u:fastsatt-dato`, `u:siste-eksamen` |
+| `xsd:integer` | `u:aarstimer`, `u:aarstimer-doeve-og-tunghoerte`, `u:aarstimer-formgivningsfag`, `u:aarstimer-samisk`, `u:omfang-totalt`, `u:omfang-vitnemaal`, `u:omfang-til-naa` |
+| `xsd:decimal` | `u:opplaeringstid`, `u:verdiskapingstid` (desimalkomma i dumpen, «1,00» blir 1.00) |
+
+Datofunksjoner og sammenligninger virker direkte:
+
+```sparql
+SELECT ?s ?endret WHERE {
+  ?s u:sist-endret ?endret .
+  FILTER(?endret >= "2026-01-01T00:00:00"^^xsd:dateTime)
+} ORDER BY DESC(?endret) LIMIT 20
+```
+
+**Dette fungerer annerledes enn hos Udir.** Sammenligner du med en tekststreng, for eksempel
+`FILTER(?d >= "2026-01-01")`, gir det ingen treff her. Bruk en typet verdi som over, eller `STR(?d)`.
+
 ### Det som kommer
 
 Under arbeid, og ikke tilgjengelig ennå:
@@ -173,14 +245,14 @@ Under arbeid, og ikke tilgjengelig ennå:
   kan man spørre etter alle læreplaner på tvers av LK06 og LK20.
 - **Reform og revisjon** som egne ressurser: Kunnskapsløftet med revisjonene LK06 og LK20.
 - **Utledninger beregnet på forhånd**, slik at `?s a u:Kompetansemaal` fungerer direkte.
-- **Gyldighet** modellert som egne ressurser (se «Egenheter»), og datoer og tall med riktige datatyper.
 - **Koblinger til felles vokabularer**: SKOS-begrepssystemer, EUs språktabell (ISO 639) og Dublin Core.
 
 ## Egenheter i dataene
 
 Dette gjelder Grep-dataene generelt, ikke bare sandkassen.
 
-- **Status** peker til REST-API-adresser og ikke til PSI-ressurser. Bruk prefikset `st:`:
+- **Status** peker til REST-API-adresser og ikke til PSI-ressurser. Bruk prefikset `st:`, eller
+  `udir:status` (se «Normaliserte data»):
   ```sparql
   SELECT ?status (COUNT(*) AS ?antall) WHERE {
     ?lp a u:laereplan_lk20 ; u:status ?status
@@ -198,10 +270,9 @@ Dette gjelder Grep-dataene generelt, ikke bare sandkassen.
   }
   ```
   Ved listing av alle egenskaper dukker det opp nesten 13 000 slike. Filtrer dem bort med
-  `FILTER(!CONTAINS(STR(?p), "gyldighet-"))`.
-- **Datoer og tall** (`u:sist-endret`, `u:gyldig-fra`, `u:aarstimer`, …) er foreløpig tekststrenger. Sortering
-  fungerer fordi datoene har ISO-format, men datofunksjoner krever omgjøring, for eksempel
-  `xsd:dateTime(?d)`.
+  `FILTER(!CONTAINS(STR(?p), "gyldighet-"))`. Enklere: bruk `udir:gyldighet` (se «Normaliserte data»).
+- **Datoer og tall** (`u:sist-endret`, `u:gyldig-fra`, `u:aarstimer`, …) er tekststrenger i dumpen og hos Udir.
+  Her er de gjort om til riktige datatyper (se «Normaliserte data»).
 
 ## Mer om Grep og SPARQL
 
