@@ -1,6 +1,6 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
-Status 2026-11-06: fase 0 og fase 1 er gjennomført og i drift. Fase 2 er bygget og testet lokalt. Fase 3–4 gjenstår.
+Status 2026-11-06: fase 0, 1 og 2 er gjennomført og i drift. Fase 3–4 gjenstår.
 
 ## Mål
 
@@ -51,7 +51,7 @@ Workflowen sender allerede `-u $FUSEKI_USER:$FUSEKI_PASSWORD`, så den trenger i
 
 Merk: i TDB2 betyr union at default graph er *bare* unionen av named graphs. Den lagrede default graph blir usynlig. Derfor må rådataene flyttes fra default graph til `urn:graph:grep`. Det er den største endringen i den eksisterende workflowen. Steget `DELETE ?default` + `POST` erstattes av én `PUT` til `?graph=urn:graph:grep`, som også gir kortere tid med tomt datasett.
 
-## Fase 2: Normalisering (`urn:graph:normalisert`) ✅ (testet lokalt 2026-11-06)
+## Fase 2: Normalisering (`urn:graph:normalisert`) ✅ (i drift 2026-11-06)
 
 Reglene ligger som `.ru`-filer i `sparql/normalisering/` og kjøres i nummerert rekkefølge:
 `01-gyldighet.ru` (N1), `02-status.ru` (N2) og `03-datatyper.ru` (N3).
