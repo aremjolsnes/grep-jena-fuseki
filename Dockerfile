@@ -14,9 +14,14 @@ RUN wget https://archive.apache.org/dist/jena/binaries/apache-jena-fuseki-5.3.0.
 
 WORKDIR $FUSEKI_HOME
 
-ENV JAVA_OPTIONS="-Xmx1g -Xms1g"
+# Konfigurasjon: åpen lesing, skriving krever innlogging (se fuseki/config.ttl og fuseki/entrypoint.sh)
+COPY fuseki/config.ttl fuseki/shiro.ini fuseki/entrypoint.sh $FUSEKI_HOME/
+RUN sed -i 's/\r$//' $FUSEKI_HOME/entrypoint.sh && chmod 755 $FUSEKI_HOME/entrypoint.sh
+
+# 2 GB heap (VM har 4 GB) – gir rom for nattlige SPARQL Update-regler
+ENV JAVA_OPTIONS="-Xmx2g -Xms2g"
 
 EXPOSE 3030
 
-# Bruker persistent lagring på Fly.io volumet
-CMD ["sh", "-c", "mkdir -p /fuseki/databases && java $JAVA_OPTIONS -jar fuseki-server.jar --port=3030 --tdb2 --loc=/fuseki/databases --update /ds"]
+# Bruker persistent lagring på Fly.io-volumet (/fuseki). Krever Fly-secret FUSEKI_PASSWORD.
+CMD ["/opt/fuseki/entrypoint.sh"]

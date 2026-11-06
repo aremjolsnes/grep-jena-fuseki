@@ -64,7 +64,7 @@ jobs:
 
           # 9. Tøm og Last opp
           echo "Tømmer gammelt datasett..."
-          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" -X DELETE "$F_URL/$DATASET/data?default"
+          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" --fail-with-body -X DELETE "$F_URL/$DATASET/data?default"
           
           echo "Laster opp 1.1 mill tripler..."
           curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
@@ -80,6 +80,7 @@ jobs:
                -X POST \
                -H "Content-Type: application/n-triples" \
                --data-binary @metadata.nt \
+               --fail-with-body \
                "$F_URL/$DATASET/data?default"
           
           echo "Fullført! Oppdatert til ID: $LATEST_ID"
