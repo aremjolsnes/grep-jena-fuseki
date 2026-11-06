@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download, Process and Upload
         env:
@@ -83,3 +83,30 @@ jobs:
                "$F_URL/$DATASET/data?default"
           
           echo "Fullført! Oppdatert til ID: $LATEST_ID"
+
+  # GitHub deaktiverer planlagte workflows når repoet har vært uten aktivitet i 60 dager
+  # (det skjedde i mai 2026). Denne jobben lager en tom commit når siste commit er eldre
+  # enn 50 dager. "[skip ci]" hindrer at commiten trigger deploy.yml (ny Fly-deploy).
+  keepalive:
+    runs-on: ubuntu-latest
+    if: always()
+    needs: ingest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Lag tom commit ved lang inaktivitet
+        run: |
+          LAST=$(git log -1 --format=%ct)
+          AGE_DAYS=$(( ( $(date +%s) - LAST ) / 86400 ))
+          echo "Siste commit er $AGE_DAYS dager gammel."
+          if [ "$AGE_DAYS" -lt 50 ]; then
+            echo "Ingen keepalive nødvendig."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Keepalive: hindrer at planlagte workflows deaktiveres [skip ci]"
+          git push
