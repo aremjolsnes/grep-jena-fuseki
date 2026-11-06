@@ -1,0 +1,2177 @@
+@prefix : <http://psi.udir.no/ontologi/kl06/> .
+@prefix d: <http://psi.udir.no/kl06/> .
+@prefix u: <http://psi.udir.no/ontologi/kl06/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix udir: <http://psi.udir.no/ontologi/> .
+@base <http://psi.udir.no/ontologi/kl06/> .
+
+<http://psi.udir.no/ontologi/kl06/> rdf:type owl:Ontology ;
+                                     rdfs:comment "Ontologi for Grep – den nasjonale databasen for fag, læreplaner og opplæringstilbud i grunnopplæringen i Norge"@nb ,
+                                                  "Ontology for Grep (\"grip\"@en) – the national database for subjects, curricula and training offers in basic education in Norway"@en ;
+                                     rdfs:label "OWL for Grep (draft)"@en ,
+                                                "OWL for Grep (utkast)"@nb ;
+                                     rdfs:seeAlso <https://github.com/Utdanningsdirektoratet/Grep_SPARQL/wiki> ,
+                                                  <https://github.com/Utdanningsdirektoratet/KL06-LK20-public/wiki/> .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#float
+xsd:float owl:equivalentClass xsd:float .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://psi.udir.no/ontologi/kl06/benyttes-paa-aarstrinn
+u:benyttes-paa-aarstrinn rdf:type owl:ObjectProperty ;
+                         rdfs:domain u:Kompetansemaalsett ,
+                                     u:Kompetansemaalsett_lk20 ;
+                         rdfs:range u:Aarstrinn ;
+                         rdfs:comment "Egenskap for kompetansemålsett for å angi hvilke(t) årstrinn det benyttes på"@nb ,
+                                      "Property for \"kompetansemaalsett\" (competence aim set) to specify which \"aarstrinn\" (year level(s)) it is used for"@en ;
+                         rdfs:label "benyttes på årstrinn"@nb ,
+                                    "taught in year levels"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/benyttes-sammen-med
+u:benyttes-sammen-med rdf:type owl:ObjectProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain u:Fagkode ;
+                      rdfs:range u:Fagkode ;
+                      rdfs:comment "Attribute for \"fagkode\" (subject code) that shows which other subject codes that are part of the overall assessment of the same subject (where there are several within the same \"opplaeringsfag\" (teaching subject))"@en ,
+                                   "Egenskap for fagkode som viser hvilke andre fagkoder som inngår i helhetsvurderingen av samme fag (der det er flere innenfor samme opplaeringsfag)"@nb ;
+                      rdfs:label "benyttes sammen med"@nb ,
+                                 "used together with"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/bygger-paa
+u:bygger-paa rdf:type owl:ObjectProperty ,
+                      owl:IrreflexiveProperty ;
+             rdfs:domain u:Kompetansemaal_lk20 ;
+             rdfs:range u:Kompetansemaalsett_lk20 ;
+             rdfs:comment "Attribute to competence aims to specify progression between competence aims"@en ,
+                          "Egenskap for kompetansemål for angi progresjon mellom kompetansemål"@nb ;
+             rdfs:label "based on"@en ,
+                        "bygger på"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/bygger-paa-fag
+u:bygger-paa-fag rdf:type owl:ObjectProperty ,
+                          owl:IrreflexiveProperty ;
+                 rdfs:domain u:Fagkode ,
+                             u:Opplaeringsfag ;
+                 rdfs:range u:Fagkode ;
+                 rdfs:comment "Egenskap for fagkode og opplæringsfag for å angi hvilken av samme type som dette elementet bygger på"@nb ,
+                              "Property for \"fagkode\" (subject code) and \"opplaeringsfag\" (teaching subject) to specify on which of the same type this specific item is based"@en ;
+                 rdfs:label "based on subject(s)"@en ,
+                            "bygger på fag"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/bygger-paa-programomraade
+u:bygger-paa-programomraade rdf:type owl:ObjectProperty ,
+                                     owl:IrreflexiveProperty ;
+                            rdfs:domain u:Programomraade ;
+                            rdfs:range u:Programomraade ;
+                            rdfs:comment "Egenskap for programområde som angir hvilke(t) programområde(r) programområdet bygger på"@nb ,
+                                         "Property for \"programomraade\" (programme area) indicating what/which programme area(s) the programme area is based"@en ;
+                            rdfs:label "based on programme area"@en ,
+                                       "bygger på programområde"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/dokumenttype
+u:dokumenttype rdf:type owl:ObjectProperty ;
+               rdfs:domain u:Merknad ;
+               rdfs:range u:Dokumenttype ;
+               rdfs:comment "Egenskap for merknad for å angi om den gjelder for enten “Vitnemål” eller “Kompetansebevis”"@nb ,
+                            "Property for notice (\"merknad\") to specify whether it applies to either \"diploma\" or \"certificate of competence/vocational training certificate\""@nb ;
+               rdfs:label "document type"@en ,
+                          "dokumenttype"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/erstatter
+u:erstatter rdf:type owl:ObjectProperty ,
+                     owl:IrreflexiveProperty ;
+            rdfs:domain u:Fagkode ,
+                        u:Laereplan ,
+                        u:Laereplan_lk20 ,
+                        u:Opplaeringsfag ,
+                        u:Programomraade ,
+                        u:Utdanningsprogram ;
+            rdfs:range u:Fagkode ,
+                       u:Laereplan ,
+                       u:Laereplan_lk20 ,
+                       u:Opplaeringsfag ,
+                       u:Programomraade ,
+                       u:Utdanningsprogram ;
+            rdfs:comment "Egenskap for flere typer elementer for å angi hvilke(t) element(er) av samme type dette elementet erstatter"@nb ,
+                         "Property for several types of elements to specify which element(s) of same type this element replaces"@en ;
+            rdfs:label "erstatter"@nb ,
+                       "replaces"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/erstattes-av
+u:erstattes-av rdf:type owl:ObjectProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain u:Fagkode ,
+                           u:Laereplan ,
+                           u:Laereplan_lk20 ,
+                           u:Opplaeringsfag ,
+                           u:Programomraade ,
+                           u:Utdanningsprogram ;
+               rdfs:range u:Fagkode ,
+                          u:Laereplan ,
+                          u:Laereplan_lk20 ,
+                          u:Opplaeringsfag ,
+                          u:Programomraade ,
+                          u:Utdanningsprogram ;
+               rdfs:comment "Egenskap for flere typer elementer for å angi hvilke(t) element(er) dette elementet er erstattet av"@nb ,
+                            "Property for several type elements to specify which element(s) this element is replaced by"@en ;
+               rdfs:label "erstattes av"@nb ,
+                          "replaced by"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/etter-aarstrinn
+u:etter-aarstrinn rdf:type owl:ObjectProperty ;
+                  rdfs:domain u:Kompetansemaalsett ,
+                              u:Kompetansemaalsett_lk20 ;
+                  rdfs:range u:Aarstrinn ;
+                  rdfs:comment "Egenskap for \"kompetansemaalsett\" for å angi etter hvilket årstrinn kompetansen skal være oppnådd"@nb ,
+                               "Property for \"kompetansemaalsett\" (competence aim set), indicating by what year the learner will have aquired the competences described by the set"@en ;
+                  rdfs:label "achieved after year level"@en ,
+                             "etter årstrinn"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/etter-fag
+u:etter-fag rdf:type owl:ObjectProperty ;
+            rdfs:domain u:Kompetansemaalsett ,
+                        u:Kompetansemaalsett_lk20 ;
+            rdfs:range u:Opplaeringsfag ;
+            rdfs:comment "Egenskap for kompetansemaalsett for å angi opplæringsfag som et samleuttrykk for den totale kompetansen som skal være oppnåd, knyttet til det refererte opplæringsfagets fagkode-referanser"@nb ,
+                         "Property for \"kompetansemaalsett\"/\"kompetansemaalsett_lk20\" (competence-aim-set) to specify teaching-subject as a collective expression for the total competence that must be achieved in connection with the subject training subject's \"fagkode\" (subject-code) references"@en ;
+            rdfs:label "achieved after subject"@en ,
+                       "etter fag"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/fagkategori
+u:fagkategori rdf:type owl:ObjectProperty ;
+              rdfs:domain u:Fagomraade ;
+              rdfs:range u:Fagkategori ;
+              rdfs:comment "Attribute for \"fagomraade\" (subject area) to specify a hierarchically parent academic content category (for statistical purposes)"@en ,
+                           "Egenskap for fagområde for å angi hierarkisk overordnet faglig innholdskategori (for statistisk bruk)"@nb ;
+              rdfs:label "Fagkategori"@nb ,
+                         "subject category"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/fagkode-referanser
+u:fagkode-referanser rdf:type owl:ObjectProperty ;
+                     rdfs:domain u:Opplaeringsfag ;
+                     rdfs:range u:Fagkode ;
+                     rdfs:comment "Connection between \"opplaeringsfag\" (teaching subject) and \"fagkode\" (subject code)"@en ,
+                                  "Kobling mellom fagkode og opplæringsfag"@nb ;
+                     rdfs:label "fagkodereferanse(r)"@nb ,
+                                "subject code reference(s)"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/fagomraade-referanser
+u:fagomraade-referanser rdf:type owl:ObjectProperty ;
+                        rdfs:domain u:Opplaeringsfag ;
+                        rdfs:range u:Fagomraade ;
+                        rdfs:comment "Connection between \"opplaeringsfag\" (teaching subject) and \"fagomraade\" (subject area)"@en ,
+                                     "Kobling mellom opplæringsfag og fagområde"@nb ;
+                        rdfs:label "fagområdereferanse(r)"@nb ,
+                                   "subject area reference(s)" .
+
+
+###  http://psi.udir.no/ontologi/kl06/fagtype
+u:fagtype rdf:type owl:ObjectProperty ;
+          rdfs:domain u:Fagkode ,
+                      u:Laereplan ,
+                      u:Laereplan_lk20 ,
+                      u:Opplaeringsfag ;
+          rdfs:range u:Fagtype ;
+          rdfs:comment "Grouping subjects according to Circular Udir-1-[a certain year]"@en ,
+                       "Gruppering av fag etter Rundskriv Udir-1-[et gitt årstall]"@nb ;
+          rdfs:label "fagtype"@nb ,
+                     "subject type"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/fastsatt-spraak
+u:fastsatt-spraak rdf:type owl:ObjectProperty ;
+                  rdfs:domain u:Laereplan ,
+                              u:Laereplan_lk20 ;
+                  rdfs:range u:Spraak ;
+                  rdfs:comment "Attribute for \"laereplan\" and \"laereplan_lk20\" (curriculum) to specify the original language / language form for the curriculum"@en ,
+                               "Egenskap for \"laereplan\" og \"laereplan_lk20\" for å angi hvilket språk/målform læreplanen er fastsatt på"@nb ;
+                  rdfs:label "determination language"@en ,
+                             "fastsatt-språk"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/foerste-semester
+u:foerste-semester rdf:type owl:ObjectProperty ;
+                   rdfs:domain u:Programomraade ,
+                               u:Utdanningsprogram ;
+                   rdfs:range u:Semester ;
+                   rdfs:comment "Egenskap som brukes av flere grep-typer for å angi første mulige semester elementet gjelder for"@nb ,
+                                "Property used by several grep-types to enter the first possible \"semester\" the element applies"@en ;
+                   rdfs:label "first semester"@en ,
+                              "første semester"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/for-aarstrinn
+u:for-aarstrinn rdf:type owl:ObjectProperty ;
+                rdfs:domain u:Opplaeringsfag ;
+                rdfs:range u:Aarstrinn ;
+                rdfs:comment "Egenskap for opplæringsfag for å angi hvilket årstrinn det gjelder for"@nb ,
+                             "Property for \"opplæringsfag\" (teaching subject) to specify which teaching level it applies"@en ;
+                rdfs:label "applies to year level"@en ,
+                           "for årstrinn"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/fortsetter-opplaering-i-samme-kompetansemaalsett-som
+u:fortsetter-opplaering-i-samme-kompetansemaalsett-som rdf:type owl:ObjectProperty ,
+                                                                owl:IrreflexiveProperty ;
+                                                       rdfs:domain u:Opplaeringsfag ;
+                                                       rdfs:range u:Opplaeringsfag ;
+                                                       rdfs:comment "Egenskap for opplæringsfag for å angi forrige opplæringsfag innenfor samme kompetansemålsett"@nb ,
+                                                                    "Property for \"opplaeringsfag\" (teaching subject) to enter the previous \"opplaeringsfag\" within the same \"kompetansemaalsett\" (competence aim set)"@en ;
+                                                       rdfs:label "continuing training in same competence aim set as"@en ,
+                                                                  "fortsetter opplæring i samme kompetansemålsett som"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/gjenbruk-av
+u:gjenbruk-av rdf:type owl:ObjectProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain u:Kompetansemaal_lk20 ;
+              rdfs:range u:Kompetansemaal_lk20 ;
+              rdfs:comment "Egenskap for kompetansemaal_lk20 for å angi hvilket kompetansemål (LK20) fra forrige læreplanrevisjon dette er gjenbruk av"@nb ,
+                           "Property for competence aims in lk20 to indicate which competence aim (LK20) from the previous curriculum revision this is reuse of"@en ;
+              rdfs:label "gjenbruk av"@nb ,
+                         "reuse of"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/grunnleggende-ferdigheter
+u:grunnleggende-ferdigheter rdf:type owl:ObjectProperty ;
+                            rdfs:domain u:Laereplan_lk20 ;
+                            rdfs:range u:Grunnleggende_ferdighet_lk20 ;
+                            rdfs:comment "Egenskap for \"laereplan_lk20\" (LK20-læreplaner) for å referere til læreplanens grunnleggende ferdigheter"@nb ,
+                                         "Property for \"laereplan_lk20\" (LK20 Curricula) to refer to the curriculum's basic skills"@en ;
+                            rdfs:label "basic skillls"@en ,
+                                       "grunnleggende ferdigheter"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/hovedomraader
+u:hovedomraader rdf:type owl:ObjectProperty ;
+                rdfs:domain u:Laereplan ;
+                rdfs:range u:Hovedomraade ;
+                rdfs:comment "Egenskap for \"laereplan\" (LK06) for å referere til læreplanens hovedområder"@nb ,
+                             "Property for \"laereplan\" (curriculum) (LK06) to refer to the curriculum's main areas"@en ;
+                rdfs:label "hovedområder"@nb ,
+                           "main areas"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/hovedomraader-i-kontekst-av-kompetansemaalsett
+u:hovedomraader-i-kontekst-av-kompetansemaalsett rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain u:Kompetansemaalsett ;
+                                                 rdfs:range u:Hovedomraade ;
+                                                 rdfs:comment "Egenskap for kompetansemålsett for å angi hvilke hovedområder det inneholder"@nb ,
+                                                              "Property for competence aim set to indicate which main areas it contains"@en ;
+                                                 rdfs:label "hovedområder i kontekst av kompetansemålsett"@nb ,
+                                                            "main areas in the context of competence aim set"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/kjerneelementer
+u:kjerneelementer rdf:type owl:ObjectProperty ;
+                  rdfs:domain u:Laereplan_lk20 ;
+                  rdfs:range u:Kjerneelement_lk20 ;
+                  rdfs:comment "Egenskap for \"laereplan_lk20\" for å angi hvilke kjerneelemeter det har"@nb ,
+                               "Property for \"laereplan_lk20\" (curriculum_lk20) to indicate what core elements it has"@en ;
+                  rdfs:label "core elements"@en ,
+                             "kjerneelementer"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/kompetansemaalsett
+u:kompetansemaalsett rdf:type owl:ObjectProperty ;
+                     rdfs:domain u:Laereplan ,
+                                 u:Laereplan_lk20 ;
+                     rdfs:range u:Kompetansemaalsett ,
+                                u:Kompetansemaalsett_lk20 ;
+                     rdfs:comment "Egenskap for 'Laereplan' og 'Laereplan_lk20' for å angi hvilke competence aim set den består av"@nb ,
+                                  "Property for 'Laereplan' and 'Laereplan_lk20' to indicate which competency aim set it consists of"@en ;
+                     rdfs:label "kompetansemålsett"@nb ,
+                                "kompetence aim set"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/laaereplanstruktur
+u:laaereplanstruktur rdf:type owl:ObjectProperty ;
+                     rdfs:domain u:Laereplan_lk20 ;
+                     rdfs:range u:Laereplanstruktur ;
+                     rdfs:comment "curriculum property (lk20) to indicate which structure it follows (currently) either \"regular\" (structured by year level/subject) or \"module structured\" (structured by specified modules)"@en ,
+                                  "egenskap for læreplan (lk20) for å angi om hvilken struktur den følger (foreløpig) enten \"vanlig\" (strukturert etter årstrinn/fag) eller \"modulstrukturert\" (strukturert etter angitte moduler)"@nb ;
+                     rdfs:label "curriculum-structure"@en ,
+                                "læreplanstruktur"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/laereplan-referanse
+u:laereplan-referanse rdf:type owl:ObjectProperty ;
+                      rdfs:domain u:Opplaeringsfag ;
+                      rdfs:range u:Laereplan ,
+                                 u:Laereplan_lk20 ;
+                      rdfs:comment "Egenskap for \"opplaeringsfag\" for å angi kobling til læreplan (array)"@nb ,
+                                   "Property for \"opplaeringsfag\" (teaching subject) to indicate link to curriculum (array)"@en ;
+                      rdfs:label "curriculum reference"@en ,
+                                 "læreplan-referanse"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/loepstype-kryssloep
+u:loepstype-kryssloep rdf:type owl:ObjectProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain u:Programomraade ;
+                      rdfs:range u:Programomraade ;
+                      rdfs:comment """Egenskap for programområde for å angi programområde som er kryssløp til dette programområdet.
+Kryssløp:
+Ordning som tillater valg av et Vg2-programområde som normalt krever et annet Vg1-programområde enn det en elev har fullført, eller valg av et Vg3-programområde/lærlingeløp som normalt krever et annet Vg2 enn det eleven har fullført."""@nb ,
+                                   """Property for program area to specify a program area that is cross-discipline / cross-area specialization to this program area.
+Cross-area specialization, Cross-discipline:
+Arrangement allowing the selection of a Vg2 course that normally requires a different Vg1 course than a pupil has completed, or the selection of a Vg3 course or an apprenticeship that normally requires a different Vg2 than the pupil has completed."""@en ;
+                      rdfs:label "løpstype, kryssløp"@nb ,
+                                 "type of educational pathway: cross-discipline / cross-area specialization"@en ;
+                      rdfs:seeAlso u:loepstype .
+
+
+###  http://psi.udir.no/ontologi/kl06/merkelapper
+u:merkelapper rdf:type owl:ObjectProperty ;
+              rdfs:domain u:Fagkode ,
+                          u:Laereplan ,
+                          u:Laereplan_lk20 ,
+                          u:Opplaeringsfag ,
+                          u:Programomraade ;
+              rdfs:range u:Merkelapp ;
+              rdfs:comment "Egenskap for flere typer elementer for å angi hvilke(n) merkelapp(er) (s.d) disse er koblet til"@nb ,
+                           "Property for several types of elements to specify which \"merkelapp\" (tags) these are connected to"@en ;
+              rdfs:label "merkelapper"@nb ,
+                         "tags"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/merknads-type
+u:merknads-type rdf:type owl:ObjectProperty ;
+                rdfs:domain u:Merknad ;
+                rdfs:range u:Merknadstype ;
+                rdfs:comment "Egenskap for merknad for å angi om den enten er en Fagmerknad eller Vitnemålsmerknad"@nb ,
+                             "Property of \"merknad\" (note) to specify whether it is either a \"Fagmerknad\" (subject note) or \"Vitnemålsmerknad\" (diploma note)"@en ;
+                rdfs:label "merknadstype"@nb ,
+                           "note-type"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/naar-gis-det-undervisning-foerste-semester
+u:naar-gis-det-undervisning-foerste-semester rdf:type owl:ObjectProperty ;
+                                             rdfs:domain u:Fagkode ;
+                                             rdfs:range u:Semester ;
+                                             rdfs:comment "Egenskap for fagkode for å angi første mulige semester det kan gis undervisning"@nb ,
+                                                          "Property for \"fagkode\" (subject code) to enter the first possible term it can be taught"@en ;
+                                             rdfs:label "når det gis undervisning første semester"@nb ,
+                                                        "the first semester the teaching is or was administered"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/naar-gis-det-undervisning-siste-semester
+u:naar-gis-det-undervisning-siste-semester rdf:type owl:ObjectProperty ;
+                                           rdfs:domain u:Fagkode ;
+                                           rdfs:range u:Semester ;
+                                           rdfs:comment "Egenskap for fagkode for å angi siste mulige semester det kan gis undervisning"@nb ,
+                                                        "Property for \"fagkode\" (subject code) to enter the last possible term it can be taught"@en ;
+                                           rdfs:label "når gis det undervisning siste semester"@nb ,
+                                                      "the last semester the teaching is or was administered"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/naar-kan-man-ta-eksamen-foerste-semester
+u:naar-kan-man-ta-eksamen-foerste-semester rdf:type owl:ObjectProperty ;
+                                           rdfs:domain u:Fagkode ;
+                                           rdfs:range u:Semester ;
+                                           rdfs:comment "Egenskap for fagkode for å angi første mulige semester det kan tas eksamen"@nb ,
+                                                        "Property for \"fagkode\" (subject code) to enter the first possible term it may be exam"@en ;
+                                           rdfs:label "når kan man ta eksamen første semester"@nb ,
+                                                      "the first semester you can take exam"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/naar-kan-man-ta-eksamen-siste-semester
+u:naar-kan-man-ta-eksamen-siste-semester rdf:type owl:ObjectProperty ;
+                                         rdfs:domain u:Fagkode ;
+                                         rdfs:range u:Semester ;
+                                         rdfs:comment "Egenskap for fagkode for å angi siste mulige semester det kan tas eksamen"@nb ,
+                                                      "Property for \"fagkode\" (subject code) to enter the last possible term it may be exam"@en ;
+                                         rdfs:label "når kan man ta eksamen siste semester"@nb ,
+                                                    "the last semester you can take exam"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/oppgave
+u:oppgave rdf:type owl:ObjectProperty ;
+          rdfs:domain u:Fagkode ;
+          rdfs:range u:Oppgave ;
+          rdfs:comment "Egenskap for fagkode for å angi om eksamen er sentralgitt, eller lokalt gitt (URIen til denne typen er også brukt som egenskap)"@nb ,
+                       "Property for \"fagkode\" (subject code) to specify whether the exam is centrally provided, or locally provided (the URI for this type is also used as a property)"@en ;
+          rdfs:label "examination-arrangement"@en ,
+                     "oppgave"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/opplaaeringssted
+u:opplaaeringssted rdf:type owl:ObjectProperty ;
+                   rdfs:domain u:Programomraade ;
+                   rdfs:range u:Opplaeringssted ;
+                   rdfs:comment "Egenskap for programområde for å angi hvor opplæringen skjer, enten i \"Skole\" eller \"Bedrift\""@nb ,
+                                "Property for programomraade (programme area) to specify where the training takes place either in \"skole\" (school) or \"bedrift\" (company/enterprice)"@en ;
+                   rdfs:label "opplæringssted"@nb ,
+                              "place of training"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/opplaeringsfag
+u:opplaeringsfag rdf:type owl:ObjectProperty ;
+                 rdfs:domain u:Fagkode ;
+                 rdfs:range u:Opplaeringsfag ;
+                 rdfs:comment "Attribute for 'fagkode' (subject code) to define what a group of learners at a given grade should be taught"@en ,
+                              "Egenskap for fagkode for å angi hva en gruppe elever/lærlinger/praksiskandidater/deltakere på et gitt årstrinn skal undervises i"@nb ;
+                 rdfs:label "opplæringsfag"@nb ,
+                            "teaching subject"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/opplaeringsnivaa
+u:opplaeringsnivaa rdf:type owl:ObjectProperty ;
+                   rdfs:domain u:Fagkode ,
+                               u:Fagtype ,
+                               u:Laereplan ,
+                               u:Laereplan_lk20 ,
+                               u:Merknad ,
+                               u:Opplaeringsfag ;
+                   rdfs:range u:Opplaeringsnivaa ;
+                   rdfs:comment "Egenskap for læreplan, fagtype og fag- og vitnemålsmerknader for å angi hvilke(t) opplæringsnivå den gjelder for"@nb ,
+                                "Property for \"laereplan\" (curriculum), \"fagtype\" (subject type) and \"merknad\" (notice) to specify which teaching level it applies"@en ;
+                   rdfs:label "opplæringsnivå"@nb ,
+                              "teaching level"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/ordforklaringer
+u:ordforklaringer rdf:type owl:ObjectProperty ;
+                  rdfs:domain u:Laereplan_lk20 ;
+                  rdfs:range u:Ordforklaring_lk20 ;
+                  rdfs:comment "Egenskap for \"laereplan_lk20\" for å angi hvilke ordforklaringer som er tilgjengelige i denne læreplanen"@nb ,
+                               "Property for \"laereplan_lk20\" (curriculum_lk20) to indicate which glossaries are available in this curriculum"@en ;
+                  rdfs:label "glossaries"@en ,
+                             "ordforklaringer"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/programfag
+u:programfag rdf:type owl:ObjectProperty ;
+             rdfs:domain u:Kompetansemaalsett ,
+                         u:Laereplan ;
+             rdfs:range u:Programfag ;
+             rdfs:comment "Delmengde av læreplan (LK06) for inndeling av det faglige innholdet i logiske blokker for læreplaner som har programfag i stedet for hovedområder"@nb ,
+                          "Part of curriculum (LK06) for division of the academic content into logical blocks for curricula having Programfag (Programme-subject) in stead of Hovedomraade (Main-subject)"@en ;
+             rdfs:label "programfag"@nb ,
+                        "programme subject"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/programomraade-type
+u:programomraade-type rdf:type owl:ObjectProperty ;
+                      rdfs:domain u:Programomraade ;
+                      rdfs:range u:Programomraadetype ;
+                      rdfs:comment "Instance of \"programomraadetype\" (programme area type), either \"Bedrift(Lærling)\" (company/enterprise (Apprentice)), \"Skole(Elev)\" (School (Pupil)) or \"Særløp\" (special pathway)"@en ,
+                                   "Instans av programområdetype, enten Bedrift(Lærling), Skole(Elev) eller Særløp"@nb ;
+                      rdfs:label "programme area type"@en ,
+                                 "programområdetype"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/programomraader-referanse
+u:programomraader-referanse rdf:type owl:ObjectProperty ;
+                            rdfs:domain u:Opplaeringsfag ;
+                            rdfs:range u:Programomraade ;
+                            rdfs:comment "Connection between \"opplaeringsfag\" (teaching subject) and \"programomraade\" (programme area)"@en ,
+                                         "Kobling mellom opplæringsfag og programområde"@nb ;
+                            rdfs:label "programme areas reference"@en ,
+                                       "programområde-referanse"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/relaterte-aarstrinn
+u:relaterte-aarstrinn rdf:type owl:ObjectProperty ;
+                      rdfs:domain u:Merknad ;
+                      rdfs:range u:Aarstrinn ;
+                      rdfs:comment "Egenskap for merknad for å angi hvilke årstrinn merknaden er aktuell for"@nb ,
+                                   "Property for \"merknad\" (note) to specify wich \"aarstrinn\" (year level(s)) the note is appropriate for"@en ;
+                      rdfs:label "related year levels"@en ,
+                                 "relaterte årstrinn"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/relaterte-fag
+u:relaterte-fag rdf:type owl:ObjectProperty ;
+                rdfs:domain u:Merknad ;
+                rdfs:range u:Fagkode ;
+                rdfs:comment "Egenskap for merknad som viser hvilke fagkoder den gjelder for"@nb ,
+                             "Property for \"merknad\" (notice) showing which \"fagkode\" (subject codes) it applies"@en ;
+                rdfs:label "related subjcts"@en ,
+                           "relaterte fag"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/sensur
+u:sensur rdf:type owl:ObjectProperty ;
+         rdfs:domain u:Fagkode ;
+         rdfs:range u:Sensur ;
+         rdfs:comment "Egenskap for fagkode for å angi om sensuren er administrert sentralt eller lokalt"@nb ,
+                      "Property for \"fagkode\" (subject code) to specify whether the censorship is managed centrally or locally"@nb ;
+         rdfs:label "censorship-arrangement"@en ,
+                    "sensur"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/siste-semester
+u:siste-semester rdf:type owl:ObjectProperty ;
+                 rdfs:domain u:Programomraade ,
+                             u:Utdanningsprogram ;
+                 rdfs:range u:Semester ;
+                 rdfs:comment "Egenskap som brukes av flere grep-typer for å angi siste mulige semester elementet gjelder for"@nb ,
+                              "Property used by several Grep-types to enter the last possible \"semester\" the element applies"@en ;
+                 rdfs:label "last semester"@en ,
+                            "siste semester"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/sluttkompetanse
+u:sluttkompetanse rdf:type owl:ObjectProperty ;
+                  rdfs:domain u:Programomraade ;
+                  rdfs:range u:Sluttkompetanse ;
+                  rdfs:comment "Egenskap for programområde for å angi om eleven/lærlingen eller praksiskandidaten oppnår studiekompetanse, yrkeskompetanse eller et fag- eller svennebrev etter endt utdanning"@nb ,
+                               "Property for program area to indicate whether the pupil/apprentice or practice candidate obtains university and college admissions certification, vocational qualifications or a trade certificate or journeyman's certificate after graduation"@en ;
+                  rdfs:label "final competence"@en ,
+                             "sluttkompetanse"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/spraaknivaa
+u:spraaknivaa rdf:type owl:ObjectProperty ;
+              rdfs:domain u:Fagkode ;
+              rdfs:range u:Spraaknivaa ;
+              rdfs:comment "Egenskap for fagkoder som er språkfag, for å angi nivåer etter CEFR-rammeverket"@nb ,
+                           "Property for fagkode (Subject-code) that are language subjects, to indicate levels according to the CEFR framework"@en ;
+              rdfs:label "language level"@en ,
+                         "språknivå"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/status
+u:status rdf:type owl:ObjectProperty ;
+         rdfs:domain u:Aarstrinn ,
+                     u:Dokumenttype ,
+                     u:Eksamensform ,
+                     u:Eksamensordning ,
+                     u:Fagkategori ,
+                     u:Fagkode ,
+                     u:Fagomraade ,
+                     u:Fagtype ,
+                     u:Grunnleggende_ferdighet_lk20 ,
+                     u:Karakter ,
+                     u:Kjerneelement_lk20 ,
+                     u:Kompetansemaal ,
+                     u:Kompetansemaal_lk20 ,
+                     u:Kompetansemaalsett_lk20 ,
+                     u:Laereplan ,
+                     u:Laereplan_lk20 ,
+                     u:Laereplanstruktur ,
+                     u:Loepstype ,
+                     u:Merkelapp ,
+                     u:Merknad ,
+                     u:Merknadstype ,
+                     u:Oppgave ,
+                     u:Opplaeringsfag ,
+                     u:Opplaeringsnivaa ,
+                     u:Opplaeringssted ,
+                     u:Ordforklaring_lk20 ,
+                     u:Programfag ,
+                     u:Programomraade ,
+                     u:Programomraadetype ,
+                     u:Semester ,
+                     u:Sensur ,
+                     u:Sluttkompetanse ,
+                     u:Spraak ,
+                     u:Spraaknivaa ,
+                     u:Status ,
+                     u:Tidligere_navn ,
+                     u:Trekkordning ,
+                     u:Tverrfaglig_tema_lk20 ,
+                     u:Utdanningsprogram ,
+                     u:Utdanningsprogramtype ,
+                     u:Verb_lk20 ,
+                     u:Vurderingsuttrykk ;
+         rdfs:range u:Status ;
+         rdfs:comment "Egenskap som angir om elementet det opptrer i er “Publisert” (del av gjeldende tilbud), eller “Utgått” (ikke lenger tilbudt)"@nb ,
+                      "Property indicating whether the item is \"Publisert\" (\"Published\" i.e. part of current offers), or \"Utgått\" (\"Expired\" i.e. no longer offered)"@en ;
+         rdfs:label "language level"@en ,
+                    "status"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tidligere-navn
+u:tidligere-navn rdf:type owl:ObjectProperty ;
+                 rdfs:domain u:Merknad ,
+                             u:Programomraade ,
+                             u:Utdanningsprogram ;
+                 rdfs:range u:Tidligere_navn ;
+                 rdfs:comment "Egenskap for for flere typer elementer for å angi tidligere tittel for elementet"@nb ,
+                              "Property for for multiple types of elements to specify the previous title of the element"@en ;
+                 rdfs:label "previous name"@en ,
+                            "tidligere navn"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tidligere-navn-for
+u:tidligere-navn-for rdf:type owl:ObjectProperty ;
+                     rdfs:domain u:Tidligere_navn ;
+                     rdfs:range u:Merknad ,
+                                u:Programomraade ,
+                                u:Utdanningsprogram ;
+                     rdfs:comment "Egenskap for \"tidligere_navn\" for å angi hvilket element det er tidligere navn for"@nb ,
+                                  "Property for \"tidligere_navn\" (previous_name) to indicate which element it is a previous name for"@en ;
+                     rdfs:label "previous name for"@en ,
+                                "tidligere navn for"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilgjengelige-spraak
+u:tilgjengelige-spraak rdf:type owl:ObjectProperty ;
+                       rdfs:domain u:Laereplan ,
+                                   u:Laereplan_lk20 ;
+                       rdfs:range u:Spraak ;
+                       rdfs:comment "Attribute for \"laereplan\" and \"laereplan_lk20\" (curriculum) to list the languages the curriculum exists on"@en ,
+                                    "Egenskap for læreplan for å angi liste over språk som læreplanen foreligger på"@nb ;
+                       rdfs:label "available-languages"@en ,
+                                  "tilgjengelige språk"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilhoerende-kompetansemaalsett
+u:tilhoerende-kompetansemaalsett rdf:type owl:ObjectProperty ;
+                                 rdfs:domain u:Opplaeringsfag ;
+                                 rdfs:range u:Kompetansemaalsett ,
+                                            u:Kompetansemaalsett_lk20 ;
+                                 rdfs:comment "Egenskap for opplæringsfag for å angi hvilke kompetansemålsett som hører til dette opplæringsfaget"@nb ,
+                                              "Property for education subject to indicate which competence aim sets belong to this education subject"@en ;
+                                 rdfs:label "associated competence aim set"@en ,
+                                            "tilhørende kompetansemålsett"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilhoerer-kompetansemaalsett
+u:tilhoerer-kompetansemaalsett rdf:type owl:ObjectProperty ;
+                               rdfs:domain u:Kompetansemaal ,
+                                           u:Kompetansemaal_lk20 ;
+                               rdfs:range u:Kompetansemaalsett ,
+                                          u:Kompetansemaalsett_lk20 ;
+                               rdfs:comment "Egenskap for kompetansemål for å angi hvilket kompetansemålsett det tilhører"@nb ,
+                                            "Property for competence aim to indicate which competence aim set it belongs to"@en ;
+                               rdfs:label "belongs to competence aim set"@en ,
+                                          "tilhører kompetansemålsett"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilhoerer-laereplan
+u:tilhoerer-laereplan rdf:type owl:ObjectProperty ;
+                      rdfs:domain u:Kompetansemaal ,
+                                  u:Kompetansemaal_lk20 ,
+                                  u:Kompetansemaalsett ,
+                                  u:Kompetansemaalsett_lk20 ,
+                                  u:Ordforklaring_lk20 ,
+                                  u:Verb_lk20 ;
+                      rdfs:range u:Laereplan ,
+                                 u:Laereplan_lk20 ;
+                      rdfs:comment "Egenskap for flere typer elementer for å angi hvilken læreplan den tilhører"@nb ,
+                                   "Property for several types of items to indicate which curriculum it belongs to"@en ;
+                      rdfs:label "belongs to curriculum"@en ,
+                                 "tilhører læreplan"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilknyttede-fag
+u:tilknyttede-fag rdf:type owl:ObjectProperty ;
+                  rdfs:domain u:Merkelapp ;
+                  rdfs:range u:Fagkode ;
+                  rdfs:comment "Egenskap for Merkelapp for å angi hvilke fagkoder som er knyttet til denne merkelappen"@nb ,
+                               "Property for Tag to indicate which subject codes are associated with this tag"@en ;
+                  rdfs:label "affiliated subjects"@en ,
+                             "tilknyttede fag"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilknyttede-grunnleggende-ferdigheter
+u:tilknyttede-grunnleggende-ferdigheter rdf:type owl:ObjectProperty ;
+                                        rdfs:domain u:Kompetansemaal_lk20 ;
+                                        rdfs:range u:Grunnleggende_ferdighet_lk20 ;
+                                        rdfs:comment "Egenskap for kompetansemål for å angi en relasjon til grunnleggende ferdigheter"@nb ,
+                                                     "Property for competence aim to specify a relationship to basic skills"@en ;
+                                        rdfs:label "associated basic skills"@en ,
+                                                   "tilknyttede grunnleggende ferdigheter"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilknyttede-kjerneelementer
+u:tilknyttede-kjerneelementer rdf:type owl:ObjectProperty ;
+                              rdfs:domain u:Kompetansemaal_lk20 ;
+                              rdfs:range u:Kjerneelement_lk20 ;
+                              rdfs:comment "Egenskap for kompetansemål for å angi en relasjon tilkjerneelementer"@nb ,
+                                           "Property for competence aim to specify a relationship to basic skills"@en ;
+                              rdfs:label "associated core elements"@en ,
+                                         "tilknyttede kjerneelementer"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilknyttede-laereplaner
+u:tilknyttede-laereplaner rdf:type owl:ObjectProperty ;
+                          rdfs:domain u:Merkelapp ;
+                          rdfs:range u:Laereplan ,
+                                     u:Laereplan_lk20 ;
+                          rdfs:comment "Egenskap for Merkelapp for å angi hvilke læreplaner som er knyttet til denne merkelappen"@nb ,
+                                       "Property for Tag to indicate which curricula are associated with this tag"@en ;
+                          rdfs:label "associated curricula"@en ,
+                                     "tilknyttede læreplaner"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilknyttede-programomraader
+u:tilknyttede-programomraader rdf:type owl:ObjectProperty ;
+                              rdfs:domain u:Merkelapp ;
+                              rdfs:range u:Programomraade ;
+                              rdfs:comment "Egenskap for Merkelapp for å angi hvilke programområder som er knyttet til denne merkelappen"@nb ,
+                                           "Property for Tag to indicate which programme areas are associated with this tag"@en ;
+                              rdfs:label "associated programme areas"@en ,
+                                         "tilknyttede programområder"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilknyttede-tverrfaglige-temaer
+u:tilknyttede-tverrfaglige-temaer rdf:type owl:ObjectProperty ;
+                                  rdfs:domain u:Kompetansemaal_lk20 ;
+                                  rdfs:range u:Tverrfaglig_tema_lk20 ;
+                                  rdfs:comment "Egenskap for kompetansemål for å angi en relasjon til tverrfaglige temaer"@nb ,
+                                               "Property for competence aim to specify a relationship to interdisciplinary-topics"@en ;
+                                  rdfs:label "associated interdisciplinary-topics"@en ,
+                                             "tilknyttede tverrfaglige temaer"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilknyttede-verb
+u:tilknyttede-verb rdf:type owl:ObjectProperty ;
+                   rdfs:domain u:Kompetansemaal_lk20 ;
+                   rdfs:range u:Verb_lk20 ;
+                   rdfs:comment "Egenskap for kompetansemål for å angi en relasjon til verb som har en forklaring"@nb ,
+                                "Property for competence aim to to indicate a relation to verbs that have an explanation"@en ;
+                   rdfs:label "associated verbs"@en ,
+                              "tilknyttede verb"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tverrfaglige-temaer
+u:tverrfaglige-temaer rdf:type owl:ObjectProperty ;
+                      rdfs:domain u:Kompetansemaal_lk20 ;
+                      rdfs:range u:Tverrfaglig_tema_lk20 ;
+                      rdfs:comment "Egenskap for læreplan (LK20) for å angi hvilke tverrfaglige temaer det inneholder"@nb ,
+                                   "Property for curriculum (LK20) to indicate which interdisciplinary topics it contains"@en ;
+                      rdfs:label "interdisciplinary topics"@en ,
+                                 "tverrfaglige temaer"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/type-utdanningsprogram
+u:type-utdanningsprogram rdf:type owl:ObjectProperty ;
+                         rdfs:domain u:Utdanningsprogram ;
+                         rdfs:range u:Utdanningsprogramtype ;
+                         rdfs:comment "Egenskap for utdanningsprogram for å angi om utdanningsprogrammet enten er Studieforberedende utdanningsprogram eller Yrkesfaglig utdanningsprogram"@nb ,
+                                      "Property of \"utdanningsprogram\" (education programme) to determine whether the education program is either \"Studieforberedende utdanningsprogram\" (Programme for General Studies) or \"Studieforberedende utdanningsprogram\" (Vocational Education Programme)"@en ;
+                         rdfs:label "type education programme"@en ,
+                                    "type utdanningsprogram"@nb ;
+                         rdfs:seeAlso u:utdanningsprogramtype .
+
+
+###  http://psi.udir.no/ontologi/kl06/underliggende-hovedomraader
+u:underliggende-hovedomraader rdf:type owl:ObjectProperty ;
+                              rdfs:domain u:Programfag ;
+                              rdfs:range u:Hovedomraade ;
+                              rdfs:comment "Egenskap for programfag for å angi hierarkisk underliggende hovedområde og/eller programfag"@nb ,
+                                           "Property for \"programfag\" (programme subject) for specifying hierarchical underlying \"hovedomraade\" (main area) and/or \"programfag\" (programme subject)"@en ;
+                              rdfs:label "underliggende hovedområder"@nb ,
+                                         "underlying main areas"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/utdanningsprogram-referanse
+u:utdanningsprogram-referanse rdf:type owl:ObjectProperty ;
+                              rdfs:domain u:Programomraade ;
+                              rdfs:range u:Utdanningsprogram ;
+                              rdfs:comment "Egenskap for programområde som angir hvilke utdanningsprogram det hører til"@nb ,
+                                           "Property for \"programomraade\" (programme area) specifies the \"utdanningsprogram\" (education programme) it belongs"@en ;
+                              rdfs:label "education programme-reference"@en ,
+                                         "utdanningsprogram-referanse"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-eksamensform-paa-vitnemaalet-elev
+u:vurderingsordning-eksamensform-paa-vitnemaalet-elev rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain u:Fagkode ;
+                                                      rdfs:range u:Eksamensform ;
+                                                      rdfs:comment "Egenskap for fagkode for å angi hvilken eksamensform som skal påføres vitnemålet for elever"@nb ,
+                                                                   "Property for \"fagkode\" (subject code) to specify the examination form to be applied the certificate/testimony for pupils"@en ;
+                                                      rdfs:label "examination and assesment, examination-form to certificate, pupil"@en ,
+                                                                 "vurderingsordning - eksamensform på vitnemålet, elev"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-eksamensform-paa-vitnemaalet-privatist
+u:vurderingsordning-eksamensform-paa-vitnemaalet-privatist rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain u:Fagkode ;
+                                                           rdfs:range u:Eksamensform ;
+                                                           rdfs:comment "Egenskap for fagkode (i vurderingsordning-objektet i REST) for å angi hvilken eksamensform som skal påføres vitnemålet for privatister"@nb ,
+                                                                        "Property for \"fagkode\" (subject code) and it's \"vurderingsordning\" (examination-and-assesment object in REST) to specify the examination form to be applied the certificate/testimony for external candidates"@en ;
+                                                           rdfs:label "examination and assesment, examination form to certificate, external candidates"@en ,
+                                                                      "vurderingsordning - eksamensform på vitnemålet, privatist"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-type-eksamensordning-elev
+u:vurderingsordning-type-eksamensordning-elev rdf:type owl:ObjectProperty ;
+                                              rdfs:domain u:Fagkode ;
+                                              rdfs:range u:Eksamensordning ;
+                                              rdfs:comment "Egenskap for fagkode for å angi hvilken eksamensordning som gjelder for elever"@nb ,
+                                                           "Property for \"fagkode\" (subject code) to specify what type of \"ekamensordning\" (examination arrangement) applicable to pupils/students"@en ;
+                                              rdfs:label "examination and assesment, type of examination arrangement, pupil"@en ,
+                                                         "vurderingsordning, type eksamensordning, elev"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-type-eksamensordning-privatist
+u:vurderingsordning-type-eksamensordning-privatist rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain u:Fagkode ;
+                                                   rdfs:range u:Eksamensordning ;
+                                                   rdfs:comment "Egenskap for fagkode for å angi hvilken eksamensordning som gjelder for elever"@nb ,
+                                                                "Property for \"fagkode\" (subject code) to specify what type of \"ekamensordning\" (examination arrangement) applicable to external candidates"@en ;
+                                                   rdfs:label "examination and assesment, type of examination arrangement, external candidate"@en ,
+                                                              "vurderingsordning, type eksamensordning, privatist"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-vurderingsuttrykk-elev
+u:vurderingsordning-vurderingsuttrykk-elev rdf:type owl:ObjectProperty ;
+                                           rdfs:domain u:Fagkode ;
+                                           rdfs:range u:Vurderingsuttrykk ;
+                                           rdfs:comment "Egenskap for fagkode for å angi om det skal gis tallkarakterer eller om det skal benyttes andre uttrykk for vurderingen for elever"@nb ,
+                                                        "Property for \"fagkode\" (subject code) to specify whether it should be given numerical grades or whether to use other expressions of assessment for pupils/students"@en ;
+                                           rdfs:label "examination and assesment, expression-of-assessment, pupil"@en ,
+                                                      "vurderingsordning, vurderingsuttrykk, elev"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-vurderingsuttrykk-privatist
+u:vurderingsordning-vurderingsuttrykk-privatist rdf:type owl:ObjectProperty ;
+                                                rdfs:domain u:Fagkode ;
+                                                rdfs:range u:Vurderingsuttrykk ;
+                                                rdfs:comment "Egenskap for fagkode for å angi om det skal gis tallkarakterer eller om det skal benyttes andre uttrykk for vurderingen for privatister"@nb ,
+                                                             "Property for \"fagkode\" (subject code) to specify whether it should be given numerical grades or whether to use other expressions of assessment for external candidates"@en ;
+                                                rdfs:label "examination and assesment, expression of assessment, external candidate"@en ,
+                                                           "vurderingsordning, vurderingsuttrykk, privatist"@nb .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://psi.udir.no/ontologi/kl06/aarstimer
+u:aarstimer rdf:type owl:DatatypeProperty ;
+            rdfs:domain u:Programomraade ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "Attribute for \"programomraade\" (program area) to specify how many hours (60 min-units) allocated for one school year"@en ,
+                         "Egenskap for programområde for å angi hvor mange timer (60 min.-enheter) det er tildelt for et undervisningsår."@nb ;
+            rdfs:label "school year hours"@en ,
+                       "årstimer"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/aarstimer-doeve-og-tunghoerte
+u:aarstimer-doeve-og-tunghoerte rdf:type owl:DatatypeProperty ;
+                                rdfs:domain u:Programomraade ;
+                                rdfs:range xsd:integer ;
+                                rdfs:comment "Attribute for \"programomraade\" (program area) to specify how many hours (60 min-units) allocated for one school year for the deaf and hard-of-hearing"@en ,
+                                             "Egenskap for programområde for å angi hvor mange timer (60 min.-enheter) det er tildelt for et undervisningsår for døve og tunghørte."@nb ;
+                                rdfs:label "school year hours deaf and hard of hearing"@en ,
+                                           "årstimer døve og tunghørte"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/aarstimer-formgivningsfag
+u:aarstimer-formgivningsfag rdf:type owl:DatatypeProperty ;
+                            rdfs:domain u:Programomraade ;
+                            rdfs:range xsd:integer ;
+                            rdfs:comment "Attribute for \"programomraade\" (program area) to specify how many hours (60 min-units) allocated for one school year for Art, Craft and Design Studies"@en ,
+                                         "Egenskap for programområde for å angi hvor mange timer (60 min.-enheter) det er tildelt for et undervisningsår for forgivingsfag"@nb ;
+                            rdfs:label "school year hours - art, craft and design"@en ,
+                                       "årstimer formgivingsfag"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/aarstimer-samisk
+u:aarstimer-samisk rdf:type owl:DatatypeProperty ;
+                   rdfs:domain u:Programomraade ;
+                   rdfs:range xsd:integer ;
+                   rdfs:comment "Attribute for \"programomraade\" (program area) to specify how many hours (60 min-units) allocated for one school year for students who follow the Knowledge Promotion - Sami"@en ,
+                                "Egenskap for programområde for å angi hvor mange timer (60 min.-enheter) det er tildelt for et undervisningsår for elever som følger Kunnskapsløftet samisk"@nb ;
+                   rdfs:label "school year hours sami"@en ,
+                              "årstimer samisk"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/cefr
+u:cefr rdf:type owl:DatatypeProperty ;
+       rdfs:domain u:Spraaknivaa ;
+       rdfs:range xsd:string ;
+       rdfs:comment "Egenskap for \"spraakninaa\" som angir et nivå etter CEFR-rammeverket, (f.eks \"A1\")"@nb ,
+                    "Property for \"spraakninaa\" (language level) indicating a level according to the CEFR framework, (e.g. \"A1\")"@en ;
+       rdfs:label "CEFR"@en ,
+                  "CEFR"@nb ;
+       rdfs:seeAlso "https://www.coe.int/en/web/common-european-framework-reference-languages/level-descriptions"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/fagets-relevans
+u:fagets-relevans rdf:type owl:DatatypeProperty ;
+                  rdfs:domain u:Laereplan_lk20 ;
+                  rdfs:range rdf:langString ;
+                  rdfs:comment "Free text field for the object \"subject-relevance-and-values\" in the (LK20) curriculum's \"about-the-subject-chapter\""@en ,
+                               "Fritekstfelt for objektet \"fagets-relevans-og-verdier\" i (LK20) læreplanens \"om-faget-kapittel\""@nb ;
+                  rdfs:label "fagets relevans"@nb ,
+                             "the subject's relevance"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/fastsatt-dato
+u:fastsatt-dato rdf:type owl:DatatypeProperty ;
+                rdfs:domain u:Laereplan ,
+                            u:Laereplan_lk20 ;
+                rdfs:range xsd:dateTime ;
+                rdfs:comment "Attribute for \"laereplan\" and \"laereplan_lk20\" (curriculum) to specify the date the curriculum is established as a regulation"@en ,
+                             "Egenskap for læreplan for å angi dato for når læreplanen er fastsatt som forskrift"@nb ;
+                rdfs:label "determination date"@en ,
+                           "fastsatt dato"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/fastsettelsestekst
+u:fastsettelsestekst rdf:type owl:DatatypeProperty ;
+                     rdfs:domain u:Laereplan ,
+                                 u:Laereplan_lk20 ;
+                     rdfs:range rdf:langString ;
+                     rdfs:comment "Free text field for \"laereplan\" and \"laereplan_lk20\" (curriculum) to hold information about who has established the curriculum and there are special restrictions on who can use use it"@en ,
+                                  "Fritekstfelt for læreplan for informasjon om hvem som har fastsatt læreplanen og om det finnes spesielle begrensninger for hvem som kan benytte læreplanen"@nb ;
+                     rdfs:label "determination-text"@en ,
+                                "fastsettelsestekst"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/forklaring
+u:forklaring rdf:type owl:DatatypeProperty ;
+             rdfs:domain u:Kjerneelement_lk20 ,
+                         u:Kompetansemaal_lk20 ;
+             rdfs:range rdf:langString ;
+             rdfs:comment "Attribute for kjerneelement_lk20 (core-element_lk20) and kompetansemaal_lk20 (competence-aim-lk20) for keeping a pedagogical text that is not part of the regulatory text, but written by the curriculum authors or those who manage the curriculum"@en ,
+                          "Egenskap for kjerneelement_lk20 og kompetansemaal_lk20 for å holde en pedagogisk tekst som ikke er en del av forskrifsteksten, men skrevet av læreplanforfatterne eller de som forvalter læreplanen"@nb ;
+             rdfs:label "explanation"@en ,
+                        "forklaring"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/formaal
+u:formaal rdf:type owl:DatatypeProperty ;
+          rdfs:domain u:Laereplan ;
+          rdfs:range rdf:langString ;
+          rdfs:comment "Egenskap for \"laereplan\" for formålskapittelet i læreplanen"@nb ,
+                       "Property for \"laereplan\" (curriculum) to hold the \"formaal\" (purpose) chapter of the curriculum"@en ;
+          rdfs:label "formål"@nb ,
+                     "purpose-chapter"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/globalt-verb
+u:globalt-verb rdf:type owl:DatatypeProperty ;
+               rdfs:domain u:Verb_lk20 ;
+               rdfs:range xsd:boolean ;
+               rdfs:comment "Egenskap for \"verb_lk20\" for å angi om verbet kan være assosiert til alle verb i kompetansemål (LK20) – hvis ikke, at det kun gjelder tilhørende kompetansemål"@nb ,
+                            "Property for \"verb_lk20\" to indicate whether the verb can be associated with all verbs in competence aim (LK20) - if not, that it only applies to associated competence aim"@en ;
+               rdfs:label "global verb"@en ,
+                          "globalt verb"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/grep-type
+u:grep-type rdf:type owl:DatatypeProperty ;
+            rdfs:domain u:Aarstrinn ,
+                        u:Fagkategori ,
+                        u:Fagkode ,
+                        u:Fagomraade ,
+                        u:Fagtype ,
+                        u:Grunnleggende_ferdighet_lk20 ,
+                        u:Hovedomraade ,
+                        u:Karakter ,
+                        u:Kjerneelement_lk20 ,
+                        u:Kompetansemaal ,
+                        u:Kompetansemaal_lk20 ,
+                        u:Kompetansemaalsett ,
+                        u:Kompetansemaalsett_lk20 ,
+                        u:Laereplan ,
+                        u:Laereplan_lk20 ,
+                        u:Merkelapp ,
+                        u:Merknad ,
+                        u:Opplaeringsfag ,
+                        u:Opplaeringsnivaa ,
+                        u:Ordforklaring_lk20 ,
+                        u:Programfag ,
+                        u:Programomraade ,
+                        u:Semester ,
+                        u:Spraak ,
+                        u:Spraaknivaa ,
+                        u:Status ,
+                        u:Tidligere_navn ,
+                        u:Tverrfaglig_tema_lk20 ,
+                        u:Utdanningsprogram ,
+                        u:Verb_lk20 ;
+            rdfs:range xsd:anyURI ;
+            rdfs:comment "Attribute for all elements to specify what type the element is in Greps's data model (ontology), whose value is a link to detailed information about the type"@en ,
+                         "Egenskap for alle elementer for å angi hvilken type element det er i datamodellen til Grep (ontologi), der verdien er en lenke til detaljert informasjon om typen"@nb ;
+            rdfs:label "grep-type"@en ,
+                       "grep-type"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/grunnleggende-ferdigheter-digitale
+u:grunnleggende-ferdigheter-digitale rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain u:Laereplan ;
+                                     rdfs:range rdf:langString ;
+                                     rdfs:comment "Freetext field for \"laereplan\" (curriculum) to hold the section on \"grunnleggende-ferdigheter-digitale\" (digital skills) in the subject"@en ,
+                                                  "Fritekstfelt for \"laereplan\" for avsnittet om digitale ferdigheter i faget"@nb ;
+                                     rdfs:label "basic skills, digital"@en ,
+                                                "grunnleggende ferdigheter, digitale"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/grunnleggende-ferdigheter-fritekst
+u:grunnleggende-ferdigheter-fritekst rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain u:Laereplan ;
+                                     rdfs:range rdf:langString ;
+                                     rdfs:comment "Freetext field for \"laereplan\" (curriculum) to store the entire chapter on basic skills where the description of the individual skills deviate from the template by any of them have been merged; the text representation of the curriculum as determined text, this (when used) will replace the five specific descriptions."@en ,
+                                                  "Fritekstfelt for læreplan for å gjengi hele kapittelet om grunnleggende ferdigheter der beskrivelsen av de enkelte ferdighetene avviker fra malen ved at noen av dem er slått sammen; ved tekstgjengivelse av læreplanen som fastsatt tekst, skal denne (når den er brukt) erstatte de fem spesifikke beskrivelsene."@nb ;
+                                     rdfs:label "basic skills, freetext"@en ,
+                                                "grunnleggende ferdigheter, fritekst"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/grunnleggende-ferdigheter-innledning
+u:grunnleggende-ferdigheter-innledning rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain u:Laereplan ;
+                                       rdfs:range rdf:langString ;
+                                       rdfs:comment "Freetext field for \"laereplan\" (curriculum) to hold \"grunnleggende-ferdigheter-innledning\" (the introduction of basic skills) in the curriculum"@en ,
+                                                    "Fritekstfelt for \"laereplan\" for innledningen til kapittelet om grunnleggende ferdigeter i læreplanen"@nb ;
+                                       rdfs:label "basic-skills-introduction"@en ,
+                                                  "grunnleggende ferdigheter, innledning"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/grunnleggende-ferdigheter-lese
+u:grunnleggende-ferdigheter-lese rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain u:Laereplan ;
+                                 rdfs:range rdf:langString ;
+                                 rdfs:comment "Freetext field for \"laereplan\" (curriculum) to hold the section on \"grunnleggende-ferdigheter-lese\" (reading skills) in the subject"@en ,
+                                              "Fritekstfelt for \"laereplan\" for avsnittet om å kunne lese i faget"@nb ;
+                                 rdfs:label "basic skills, reading skills"@en ,
+                                            "grunnleggende ferdigheter, lese"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/grunnleggende-ferdigheter-muntlig
+u:grunnleggende-ferdigheter-muntlig rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain u:Laereplan ;
+                                    rdfs:range rdf:langString ;
+                                    rdfs:comment "Freetext field for \"laereplan\" (curriculum) to hold the section on \"grunnleggende-ferdigheter-muntlig\" (oral skills) in the subject"@en ,
+                                                 "Fritekstfelt for læreplan for avsnittet om muntlige ferdigheter i faget"@nb ;
+                                    rdfs:label "basic skills, oral skills"@en ,
+                                               "grunnleggende ferdigheter, muntlig"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/grunnleggende-ferdigheter-regne
+u:grunnleggende-ferdigheter-regne rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain u:Laereplan ;
+                                  rdfs:range rdf:langString ;
+                                  rdfs:comment "Freetext field for \"laereplan\" (curriculum) to hold the section on \"grunnleggende-ferdigheter-regne\" (numeracy) in the subject"@en ,
+                                               "Fritekstfelt for læreplan for avsnittet om å kunne regne i faget"@nb ;
+                                  rdfs:label "basic skills, numeracy"@en ,
+                                             "grunnleggende ferdigheter, regne"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/grunnleggende-ferdigheter-skriftlig
+u:grunnleggende-ferdigheter-skriftlig rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain u:Laereplan ;
+                                      rdfs:range rdf:langString ;
+                                      rdfs:comment "Freetext field for \"laereplan\" (curriculum) to hold the section on \"grunnleggende-ferdigheter-skriftlig\" (writing skills) in the subject"@en ,
+                                                   "Fritekstfelt for læreplan for avsnittet om å kunne skrive i faget"@nb ;
+                                      rdfs:label "basic skills, writing skills"@en ,
+                                                 "grunnleggende ferdigheter, skriftlig"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/gyldig-fra
+u:gyldig-fra rdf:type owl:DatatypeProperty ;
+             rdfs:domain u:Fagkode ,
+                         u:Laereplan ,
+                         u:Laereplan_lk20 ,
+                         u:Merknad ;
+             rdfs:range xsd:dateTime ;
+             rdfs:comment "Attribute for several types of elements to specify from the date the element is valid"@en ,
+                          "Egenskap for flere typer elementer for å angi fra når elementet er gyldig"@nb ;
+             rdfs:label "gyldig-fra"@nb ,
+                        "valid from"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/gyldig-til
+u:gyldig-til rdf:type owl:DatatypeProperty ;
+             rdfs:domain u:Fagkode ,
+                         u:Laereplan ,
+                         u:Laereplan_lk20 ,
+                         u:Merknad ;
+             rdfs:range xsd:dateTime ;
+             rdfs:comment "Attribute for several types of elements to specify the last date the element is valid"@en ,
+                          "Egenskap for flere typer elementer for å angi siste dato elementet er gyldig"@nb ;
+             rdfs:label "gyldig til"@nb ,
+                        "valid until"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/hoeyeste-nivaa
+u:hoeyeste-nivaa rdf:type owl:DatatypeProperty ;
+                 rdfs:domain u:Fagkode ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:comment "Attribute for \"fagkode\" (subject code) to specify whether it represents the highest level for pupils and apprentices"@en ,
+                              "Egenskap for fagkode for å angi om den representerer høyeste nivå"@nb ;
+                 rdfs:label "highest-level"@en ,
+                            "høyeste nivå"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/hovedomraade-fritekst
+u:hovedomraade-fritekst rdf:type owl:DatatypeProperty ;
+                        rdfs:domain u:Laereplan ;
+                        rdfs:range rdf:langString ;
+                        rdfs:comment "Freetext field for \"laereplan\" (curriculum) to recreate main area chapter as established in those cases this deviate from the template / can not be describe using Grep's data model (if used, please replace the \"hovedomraade-tittel\" (main area title) and the \"hovedomraade-beskrivelse\" (main area-description))"@en ,
+                                     "Fritekstfelt for læreplan for å gjenskape hovedområdekapittelet slik den er fastsatt i de tilfellene denne avviker fra malen/ikke lar seg beskrive ved hjelp av Greps datamodell (skal når den er brukt, erstatte hovedomraade-tittel og hovedomraade-beskrivelse)"@nb ;
+                        rdfs:label "hovedområde fritekst"@nb ,
+                                   "main area, freetext"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/hovedomraade-innledning
+u:hovedomraade-innledning rdf:type owl:DatatypeProperty ;
+                          rdfs:domain u:Laereplan ;
+                          rdfs:range rdf:langString ;
+                          rdfs:comment "Freetext field for \"laereplan\" (curriculum) to hold the introduction on main areas of the curriculum"@en ,
+                                       "Fritekstfelt for læreplan for innledningen til hovedområdekapittelet i læreplanen"@nb ;
+                          rdfs:label "hovedområde, innledning"@nb ,
+                                     "main area introduction"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/id
+u:id rdf:type owl:DatatypeProperty ;
+     rdfs:domain u:Aarstrinn ,
+                 u:Fagkategori ,
+                 u:Fagkode ,
+                 u:Fagomraade ,
+                 u:Fagtype ,
+                 u:Grunnleggende_ferdighet_lk20 ,
+                 u:Hovedomraade ,
+                 u:Karakter ,
+                 u:Kjerneelement_lk20 ,
+                 u:Kompetansemaal ,
+                 u:Kompetansemaal_lk20 ,
+                 u:Kompetansemaalsett ,
+                 u:Kompetansemaalsett_lk20 ,
+                 u:Laereplan ,
+                 u:Laereplan_lk20 ,
+                 u:Merkelapp ,
+                 u:Merknad ,
+                 u:Opplaeringsfag ,
+                 u:Opplaeringsnivaa ,
+                 u:Ordforklaring_lk20 ,
+                 u:Programfag ,
+                 u:Programomraade ,
+                 u:Semester ,
+                 u:Spraak ,
+                 u:Spraaknivaa ,
+                 u:Status ,
+                 u:Tidligere_navn ,
+                 u:Tverrfaglig_tema_lk20 ,
+                 u:Utdanningsprogram ,
+                 u:Verb_lk20 ;
+     rdfs:range xsd:string ;
+     rdfs:comment "Attribute for all elements to provide a unique identifier, either as UUID, or equally as a \"uri\" or \"psi\" (we recomand uri as a identifier)"@en ,
+                  "Egenskap for alle elementer for å angi en unik identifikator, enten som uuid, eller likt som en uri eller psi (vi anbefaler bruk av uri som identifikator)"@nb ;
+     rdfs:label "id"@en ,
+                "id"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/iso-639-2-kode
+u:iso-639-2-kode rdf:type owl:DatatypeProperty ;
+                 rdfs:domain u:Fagkode ;
+                 rdfs:range xsd:anyURI ;
+                 rdfs:comment "Egenskap for fagkoder for språkfag for å angi hvilket språk det handler om. Verdier fra navnerommet http://psi.oasis-open.org/iso/639#"@nb ,
+                              "Property for subject codes for language subjects to indicate which language it is about. Values from the namespace http://psi.oasis-open.org/iso/639#"@en ;
+                 rdfs:label "iso-639-2-code"@en ,
+                            "iso-639-2-kode"@nb ;
+                 rdfs:seeAlso "http://psi.oasis-open.org/iso/639#"^^xsd:anyURI .
+
+
+###  http://psi.udir.no/ontologi/kl06/kan-knyttes-til-fag
+u:kan-knyttes-til-fag rdf:type owl:DatatypeProperty ;
+                      rdfs:domain u:Merkelapp ;
+                      rdfs:range xsd:boolean ;
+                      rdfs:comment "Attribute for \"merkelapp\" (tag) to specify that it can be used for \"fagkode\" (subject codes)"@en ,
+                                   "Egenskap for merkelapp for å angi at den kan benyttes for fagkoder"@nb ;
+                      rdfs:label "can be connected to subject code"@en ,
+                                 "kan knyttes til fag"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/kan-knyttes-til-laereplan
+u:kan-knyttes-til-laereplan rdf:type owl:DatatypeProperty ;
+                            rdfs:domain u:Merkelapp ;
+                            rdfs:range xsd:boolean ;
+                            rdfs:comment "Attribute for \"merkelapp\" (tag) to specify that it can be used for \"laereplan\" (curricula)"@en ,
+                                         "Egenskap for merkelapp for å angi at den kan benyttes for læreplaner"@nb ;
+                            rdfs:label "kan knyttes til læreplan"@nb ,
+                                       "tag can be connected to curriculum"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/kan-knyttes-til-programomraade
+u:kan-knyttes-til-programomraade rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain u:Merkelapp ;
+                                 rdfs:range xsd:boolean ;
+                                 rdfs:comment "Attribute for \"merkelapp\" (tag) to specify that it can be used for \"programomraade\" (programme areas)"@en ,
+                                              "Egenskap for merkelapp for å angi at den kan benyttes for programområder"@nb ;
+                                 rdfs:label "kan knyttes til programområde"@nb ,
+                                            "tag can be connected to programme areas"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/kode
+u:kode rdf:type owl:DatatypeProperty ;
+       rdfs:domain u:Aarstrinn ,
+                   u:Fagkategori ,
+                   u:Fagkode ,
+                   u:Fagomraade ,
+                   u:Fagtype ,
+                   u:Grunnleggende_ferdighet_lk20 ,
+                   u:Hovedomraade ,
+                   u:Karakter ,
+                   u:Kjerneelement_lk20 ,
+                   u:Kompetansemaal ,
+                   u:Kompetansemaal_lk20 ,
+                   u:Kompetansemaalsett ,
+                   u:Kompetansemaalsett_lk20 ,
+                   u:Laereplan ,
+                   u:Laereplan_lk20 ,
+                   u:Merkelapp ,
+                   u:Merknad ,
+                   u:Opplaeringsfag ,
+                   u:Opplaeringsnivaa ,
+                   u:Ordforklaring_lk20 ,
+                   u:Programfag ,
+                   u:Programomraade ,
+                   u:Semester ,
+                   u:Spraak ,
+                   u:Spraaknivaa ,
+                   u:Status ,
+                   u:Tidligere_navn ,
+                   u:Tverrfaglig_tema_lk20 ,
+                   u:Utdanningsprogram ,
+                   u:Verb_lk20 ;
+       rdfs:range xsd:string ;
+       rdfs:comment "Attribute for all types in Grep's data model to provide a unique identifier in this namespace"@en ,
+                    "Egenskap for alle typer i Greps datamodell for å angi en unik identifikator i dette navnerommet"@nb ;
+       rdfs:label "code"@en ,
+                  "kode"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/kompetansemaal-innledning
+u:kompetansemaal-innledning rdf:type owl:DatatypeProperty ;
+                            rdfs:domain u:Laereplan ;
+                            rdfs:range rdf:langString ;
+                            rdfs:comment "Freetext field for \"laereplan\" (curriculum) to hold the introduction on the competence aim chapter"@en ,
+                                         "Fritekstfelt for \"laereplan\" for å lagre innledningen til kompetansemålkapittelet i læreplanen"@nb ;
+                            rdfs:label "competence aim, introduction"@en ,
+                                       "kompetansemål, innledning"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/kortform
+u:kortform rdf:type owl:DatatypeProperty ;
+           rdfs:domain u:Aarstrinn ,
+                       u:Fagkategori ,
+                       u:Fagkode ,
+                       u:Fagtype ,
+                       u:Kompetansemaalsett_lk20 ,
+                       u:Laereplan_lk20 ,
+                       u:Merknad ,
+                       u:Opplaeringsfag ,
+                       u:Programomraade ,
+                       u:Semester ,
+                       u:Spraaknivaa ,
+                       u:Utdanningsprogram ;
+           rdfs:range rdf:langString ;
+           rdfs:comment "Attribute for several types of elements to give a title not exceeding 30 characters, for reasons of printing on form, like diploma"@en ,
+                        "Egenskap for flere typer elementer for å gi en tittel som ikke overstiger 30 tegn, av hensyn til utskrift på formular som f.eks. vitnemål"@nb ;
+           rdfs:label "abbreviation"@en ,
+                      "kortform"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/krav-om-vedlegg
+u:krav-om-vedlegg rdf:type owl:DatatypeProperty ;
+                  rdfs:domain u:Merknad ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:comment "Egenskap for Merknad (fag- og vitnemålsmerknader) for å angi om det er krav til vedlegg til vitnemålet knyttet til informasjonen i merknaden"@nb ,
+                               "Property for Merknad (Note) (subject and diploma notes) to indicate whether there is a requirement for an attachment to the diploma related to the information in the note"@en ;
+                  rdfs:label "krav om vedlegg"@nb ,
+                             "requirement for attachment"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/landsdekkende-linje
+u:landsdekkende-linje rdf:type owl:DatatypeProperty ;
+                      rdfs:domain u:Programomraade ;
+                      rdfs:range xsd:boolean ;
+                      rdfs:comment "If the program area represents a nationwide programme/offer, financed by the county authorities"@en ,
+                                   "Om programområdet representerer en landsdekkende linje/tilbud, finansiert av fylket"@nb ;
+                      rdfs:label "landsdekkende linje"@nb ,
+                                 "nationwide programme"@en ;
+                      rdfs:seeAlso "https://www.vilbli.no/en/en/no/landslinjer-og-landsdekkende-tilbud/a/034930"@en ,
+                                   "https://www.vilbli.no/nb/nb/no/landslinjer-og-landsdekkende-tilbud/a/034930"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/landslinje
+u:landslinje rdf:type owl:DatatypeProperty ;
+             rdfs:domain u:Programomraade ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "If the programme-area represents a state-financed educational offer for applicants from all over the country"@en ,
+                          "Om programområdet representerer et statsfinansiert utdanningstilbud for søkere fra hele landet"@nb ;
+             rdfs:label "landslinje"@nb ,
+                        "national course"@en ;
+             rdfs:seeAlso "https://www.vilbli.no/en/en/no/landslinjer-og-landsdekkende-tilbud/a/034930"@en ,
+                          "https://www.vilbli.no/nb/nb/no/landslinjer-og-landsdekkende-tilbud/a/034930"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/merknad-bruksomraade
+u:merknad-bruksomraade rdf:type owl:DatatypeProperty ;
+                       rdfs:domain u:Merknad ;
+                       rdfs:range rdf:langString ;
+                       rdfs:comment "Egenskap for fagmerknad (se merknad) for å beskrive når den skal benyttes"@nb ,
+                                    "Property for subject note (see \"merknad\" (note)) which describes when to apply the note on documentation"@en ;
+                       rdfs:label "merknad, bruksområde"@nb ,
+                                  "note usage"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/numerisk-verdi
+u:numerisk-verdi rdf:type owl:DatatypeProperty ;
+                 rdfs:domain u:Fagkode ;
+                 rdfs:range xsd:integer ;
+                 rdfs:comment "Denne egenskapen er foreløpig ikke i bruk (elle forekomster er satt til \"0\")"@nb ,
+                              "This property is currently not in use (all occurrences are set to \"0\")"@en ;
+                 rdfs:label "numerical value"@en ,
+                            "numerisk verdi"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/omfang-til-naa
+u:omfang-til-naa rdf:type owl:DatatypeProperty ;
+                 rdfs:domain u:Fagkode ;
+                 rdfs:range xsd:integer ;
+                 rdfs:comment "Attribute for \"fagkode\" (subject code) to specify how many hours (units of 60 minutes) which the student has so far obtained by interrupted multiannual subjects"@en ,
+                              "Egenskap for fagkode for å angi hvor mange timer (60 min.-enheter) som eleven hittil har oppnådd ved avbrutt flerårig fag."@nb ;
+                 rdfs:label "extent so far"@en ,
+                            "omfang til nå"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/omfang-totalt
+u:omfang-totalt rdf:type owl:DatatypeProperty ;
+                rdfs:domain u:Fagkode ;
+                rdfs:range xsd:integer ;
+                rdfs:comment "Attribute for \"fagkode\" (subject code) to specify how many hours (units of 60 minutes) it is allocated for an entire school year"@en ,
+                             "Egenskap for fagkode for å angi hvor mange årstimer (60 min.-enheter) den er tildelt for et helt undervisningsår"@nb ;
+                rdfs:label "extent total"@en ,
+                           "omfang totalt"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/omfang-vitnemål
+u:omfang-vitnemål rdf:type owl:DatatypeProperty ;
+                  rdfs:domain u:Fagkode ;
+                  rdfs:range xsd:integer ;
+                  rdfs:comment "Attribute for \"fagkode\" (subject code) to specify how many hours (units of 60 minutes) which is applied to the documentation, and corresponds to one-year hours for one-year subjects, and accumulated for multi-year subjects"@en ,
+                               "Egenskap for fagkode for å angi hvor mange timer (60 min.-enheter) som skal benyttes på dokumentasjon, og tilsvarer timer for ett år for ettårige fag, og akkumulert for flerårige fag"@nb ;
+                  rdfs:label "extent diploma"@en ,
+                             "omfang, vitnemål"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/opplaeringstid
+u:opplaeringstid rdf:type owl:DatatypeProperty ;
+                 rdfs:domain u:Programomraade ;
+                 rdfs:range xsd:float ;
+                 rdfs:comment "Attribute for \"programomraade\" (programme area) to specify how many years of apprenticeship the apprentice is being trained, or how many years an education in school is for a pupil"@en ,
+                              "Egenskap for programområde for å angi hvor mange år av læretiden lærlingen er under opplæring, evt. hvor mange år en opplæring i skole er for en elev"@nb ;
+                 rdfs:label "opplæringstid"@nb ,
+                            "training period"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/rekkefoelge
+u:rekkefoelge rdf:type owl:DatatypeProperty ;
+              rdfs:domain u:Aarstrinn ,
+                          u:Fagtype ,
+                          u:Grunnleggende_ferdighet_lk20 ,
+                          u:Kjerneelement_lk20 ,
+                          u:Kompetansemaal_lk20 ,
+                          u:Kompetansemaalsett_lk20 ,
+                          u:Opplaeringsnivaa ,
+                          u:Ordforklaring_lk20 ,
+                          u:Semester ,
+                          u:Spraak ,
+                          u:Spraaknivaa ,
+                          u:Tverrfaglig_tema_lk20 ,
+                          u:Verb_lk20 ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "Egenskap for flere typer objekter for å angi hvilken rekkefølge det opprer i, sammen med andre av samme type objekt"@nb ,
+                           "Property for multiple types of objects to specify the order it appears, along with others of the same type of object"@en ;
+              rdfs:label "order"@en ,
+                         "rekkefølge"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/sist-endret
+u:sist-endret rdf:type owl:DatatypeProperty ;
+              rdfs:domain u:Fagkategori ,
+                          u:Fagkode ,
+                          u:Fagomraade ,
+                          u:Grunnleggende_ferdighet_lk20 ,
+                          u:Kjerneelement_lk20 ,
+                          u:Kompetansemaal ,
+                          u:Kompetansemaal_lk20 ,
+                          u:Kompetansemaalsett_lk20 ,
+                          u:Laereplan ,
+                          u:Laereplan_lk20 ,
+                          u:Merkelapp ,
+                          u:Opplaeringsfag ,
+                          u:Ordforklaring_lk20 ,
+                          u:Programomraade ,
+                          u:Tidligere_navn ,
+                          u:Tverrfaglig_tema_lk20 ,
+                          u:Utdanningsprogram ,
+                          u:Verb_lk20 ;
+              rdfs:range xsd:dateTime ;
+              rdfs:comment "Egenskap for flere typer elementer for å angi når det sist er endret"@nb ,
+                           "Property for multiple types of element to specify when it was last modified"@en ;
+              rdfs:label "last modified"@en ,
+                         "sist endret"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/siste-eksamen
+u:siste-eksamen rdf:type owl:DatatypeProperty ;
+                rdfs:domain u:Laereplan ,
+                            u:Laereplan_lk20 ;
+                rdfs:range xsd:dateTime ;
+                rdfs:comment "Attribute for \"laereplan\" (curriculum) to enter the latest possible date that can be taken exam"@en ,
+                             "Egenskap for læreplan for å angi siste mulige dato det kan tas eksamen"@nb ;
+                rdfs:label "last examination"@en ,
+                           "siste eksamen"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/soekehjelp-navn-motsatt-maalform
+u:soekehjelp-navn-motsatt-maalform rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain u:Laereplan ;
+                                   rdfs:range rdf:langString ;
+                                   rdfs:comment "Attribute for \"laereplan\" (curriculum) to specify the curriculum title on the opposite language variant (@nob or @nno) than the one established - this to make it more accessible to search"@en ,
+                                                "Egenskap for læreplan for å angi læreplanens tittel på motsatt målform enn den som er fastsatt - dette for å gjøre den lettere tilgjengelig for søk"@nb ;
+                                   rdfs:label "search-aid, name in opposite language-variant"@en ,
+                                              "søkehjelp, navn på motsatt målform"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/standpunktvurdering
+u:standpunktvurdering rdf:type owl:DatatypeProperty ;
+                      rdfs:domain u:Kompetansemaalsett_lk20 ;
+                      rdfs:range rdf:langString ;
+                      rdfs:comment "Attribute for \"fagkode\" (subject code) to specify whether pupil or the apprentice will be given overall achievement grades"@en ,
+                                   "Egenskap for fagkode for å angi om det gis standpunktvurdering"@nb ;
+                      rdfs:label "overall achievement-grades"@en ,
+                                 "standpunktvurdering"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/struktur
+u:struktur rdf:type owl:DatatypeProperty ;
+           rdfs:domain u:Laereplan ;
+           rdfs:range rdf:langString ;
+           rdfs:comment "Freetext field for \"laereplan\" (curriculum) to hold the \"struktur\" (structure) chapter of the curriculum"@en ,
+                        "Fritekstfelt for læreplan for strukturkapittelet i læreplanen (i de tilfellene læreplanen er for et programfag)"@nb ;
+           rdfs:label "structure-chapter"@en ,
+                      "struktur-kapittel"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tilleggsopplysninger
+u:tilleggsopplysninger rdf:type owl:DatatypeProperty ;
+                       rdfs:domain u:Fagkode ,
+                                   u:Laereplan ,
+                                   u:Laereplan_lk20 ,
+                                   u:Opplaeringsfag ,
+                                   u:Programomraade ,
+                                   u:Utdanningsprogram ;
+                       rdfs:range rdf:langString ;
+                       rdfs:comment "Attribute for sveral elements to set administrative additional information"@en ,
+                                    "Egenskap for flere elementer for å angi administrativ tilleggsinformasjon"@nb ;
+                       rdfs:label "comments and annotations"@en ,
+                                  "tilleggsopplysninger"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/timetall
+u:timetall rdf:type owl:DatatypeProperty ;
+           rdfs:domain u:Laereplan ;
+           rdfs:range rdf:langString ;
+           rdfs:comment "Freetext field for \"laereplan\" (curriculum, LK06) to hold the chapter on number of teaching hours in the curriculum"@en ,
+                        "Fritekstfelt(HTML) for læreplan (LK06) for å lagre timetallskapittelet i læreplanen"@nb ;
+           rdfs:label "teaching-hours-chapter"@en ,
+                      "timetall-kapittel"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/tittel
+u:tittel rdf:type owl:DatatypeProperty ;
+         rdfs:domain u:Aarstrinn ,
+                     u:Fagkategori ,
+                     u:Fagkode ,
+                     u:Fagomraade ,
+                     u:Fagtype ,
+                     u:Grunnleggende_ferdighet_lk20 ,
+                     u:Hovedomraade ,
+                     u:Karakter ,
+                     u:Kjerneelement_lk20 ,
+                     u:Kompetansemaal ,
+                     u:Kompetansemaal_lk20 ,
+                     u:Kompetansemaalsett ,
+                     u:Kompetansemaalsett_lk20 ,
+                     u:Laereplan ,
+                     u:Laereplan_lk20 ,
+                     u:Merkelapp ,
+                     u:Merknad ,
+                     u:Opplaeringsfag ,
+                     u:Ordforklaring_lk20 ,
+                     u:Programfag ,
+                     u:Programomraade ,
+                     u:Semester ,
+                     u:Spraak ,
+                     u:Spraaknivaa ,
+                     u:Status ,
+                     u:Tidligere_navn ,
+                     u:Tverrfaglig_tema_lk20 ,
+                     u:Utdanningsprogram ,
+                     u:Verb_lk20 ;
+         rdfs:range rdf:langString ;
+         rdfs:comment "Attribute for several types of elements to give it a term or a name/label"@en ,
+                      "Egenskap for flere typer elementer for å gi det en benevnelse eller et navn/etikett"@nb ;
+         rdfs:label "title"@en ,
+                    "tittel"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/underveisvurdering
+u:underveisvurdering rdf:type owl:DatatypeProperty ;
+                     rdfs:domain u:Kompetansemaalsett_lk20 ;
+                     rdfs:range rdf:langString ;
+                     rdfs:comment "Egenskap for kompetansemålsett (LK20) for å holde på underkapittelet om underveisvurdering"@nb ,
+                                  "Property for competence aim set (LK20) to hold the sub-chapter on mid-term assessment"@en ;
+                     rdfs:label "formative assessment"@en ,
+                                "underveisvurdering"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/uri
+u:uri rdf:type owl:DatatypeProperty ;
+      rdfs:domain u:Aarstrinn ,
+                  u:Fagkategori ,
+                  u:Fagkode ,
+                  u:Fagomraade ,
+                  u:Fagtype ,
+                  u:Grunnleggende_ferdighet_lk20 ,
+                  u:Hovedomraade ,
+                  u:Karakter ,
+                  u:Kjerneelement_lk20 ,
+                  u:Kompetansemaal ,
+                  u:Kompetansemaal_lk20 ,
+                  u:Kompetansemaalsett ,
+                  u:Kompetansemaalsett_lk20 ,
+                  u:Laereplan ,
+                  u:Laereplan_lk20 ,
+                  u:Merkelapp ,
+                  u:Merknad ,
+                  u:Opplaeringsfag ,
+                  u:Opplaeringsnivaa ,
+                  u:Ordforklaring_lk20 ,
+                  u:Programfag ,
+                  u:Programomraade ,
+                  u:Semester ,
+                  u:Spraak ,
+                  u:Spraaknivaa ,
+                  u:Status ,
+                  u:Tidligere_navn ,
+                  u:Tverrfaglig_tema_lk20 ,
+                  u:Utdanningsprogram ,
+                  u:Verb_lk20 ;
+      rdfs:range xsd:anyURI ;
+      rdfs:comment "Attribute for all types of elements to provide a unique identifier"@en ,
+                   "Egenskap for alle typer elementer for å angi en unik URL-basert identifikator"@nb ;
+      rdfs:label "URI"@en ,
+                 "URI"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/url-data
+u:url-data rdf:type owl:DatatypeProperty ;
+           rdfs:domain u:Aarstrinn ,
+                       u:Fagkategori ,
+                       u:Fagkode ,
+                       u:Fagomraade ,
+                       u:Fagtype ,
+                       u:Grunnleggende_ferdighet_lk20 ,
+                       u:Hovedomraade ,
+                       u:Karakter ,
+                       u:Kjerneelement_lk20 ,
+                       u:Kompetansemaal ,
+                       u:Kompetansemaal_lk20 ,
+                       u:Kompetansemaalsett ,
+                       u:Kompetansemaalsett_lk20 ,
+                       u:Laereplan ,
+                       u:Laereplan_lk20 ,
+                       u:Merkelapp ,
+                       u:Merknad ,
+                       u:Opplaeringsfag ,
+                       u:Opplaeringsnivaa ,
+                       u:Ordforklaring_lk20 ,
+                       u:Programfag ,
+                       u:Programomraade ,
+                       u:Semester ,
+                       u:Spraak ,
+                       u:Spraaknivaa ,
+                       u:Status ,
+                       u:Tidligere_navn ,
+                       u:Tverrfaglig_tema_lk20 ,
+                       u:Utdanningsprogram ,
+                       u:Verb_lk20 ;
+           rdfs:range xsd:anyURI ;
+           rdfs:comment "Attribute for several types of elements to set a unique URL based link for detailed information about the element"@en ,
+                        "Egenskap for flere typer elementer for å angi en unik, URL-basert lenke til detaljert informasjon om elementet"@nb ;
+           rdfs:label "URL-data"@en ,
+                      "URL-data"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/verdier-og-prinsipper
+u:verdier-og-prinsipper rdf:type owl:DatatypeProperty ;
+                        rdfs:domain u:Laereplan_lk20 ;
+                        rdfs:range rdf:langString ;
+                        rdfs:comment "Egenskap for læreplan (LK20) for å holde på avsnittet om verdier og prinsipper i kapittelet \"Fagets relevans og sentrale verdier\""@nb ,
+                                     "Property for curriculum (LK20) to hold the section on central values ​​and principles in the chapter \"Relevance and central values\""@en ;
+                        rdfs:label "values and principles"@en ,
+                                   "verdier og prinsipper"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/verdiskapingstid
+u:verdiskapingstid rdf:type owl:DatatypeProperty ;
+                   rdfs:domain u:Programomraade ;
+                   rdfs:range xsd:float ;
+                   rdfs:comment "Attribute for \"programomraade\" (programme area) to specify how many years of the apprenticeship apprentice creates products or services the company/enterprise may sell or offer their customers or users"@en ,
+                                "Egenskap for programområde for å angi hvor mange år av læretiden lærlingen skaper produkter eller tjenester som bedriften kan selge eller tilby sine kunder eller brukere"@nb ;
+                   rdfs:label "productive-work-period"@en ,
+                              "verdiskapingstid"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurdering
+u:vurdering rdf:type owl:DatatypeProperty ;
+            rdfs:domain u:Laereplan ;
+            rdfs:range rdf:langString ;
+            rdfs:comment "Egenskap for læreplan (LK06) for å holde på vurderingskapittelet i læreplanen"@nb ,
+                         "Property for curriculum (LK06) to hold the assessment-chapter"@en ;
+            rdfs:label "assesment-chapter"@en ,
+                       "vurderingskapittel"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning
+u:vurderingsordning rdf:type owl:DatatypeProperty ;
+                    rdfs:domain u:Laereplan_lk20 ;
+                    rdfs:range rdf:langString ;
+                    rdfs:comment "Egenskap for læreplan (LK20) for vurderingsordnings-kapittelet (enkel HTML-streng). Se også egenskapen \"vurderingsordninger-kapittel\""@nb ,
+                                 "Property for curriculum (LK20) to hold the examination-and-assesment chapter (simpel HTML-string). See also the property \"vurderingsordninger-kapittel\""@en ;
+                    rdfs:label "examination and assesment"@en ,
+                               "vurderingsordning"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-eksemen-for-elever
+u:vurderingsordning-eksemen-for-elever rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain u:Laereplan_lk20 ;
+                                       rdfs:range rdf:langString ;
+                                       rdfs:comment "Egenskap for laereplan_lk20 for å angi den delen av vurderingsordningen som handler om eksamen som gjelder for elever"@nb ,
+                                                    "Property for laereplan_lk20 to specify the part of the examination and assessments that deals with the examination that applies to pupils"@en ;
+                                       rdfs:label "examination and assessments, examination for pupils"@en ,
+                                                  "vurderingsordning, eksamen for elever"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-eksemen-for-privatister
+u:vurderingsordning-eksemen-for-privatister rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain u:Laereplan_lk20 ;
+                                            rdfs:range rdf:langString ;
+                                            rdfs:comment "Egenskap for laereplan_lk20 for å angi den delen av vurderingsordningen som handler om eksamen som gjelder for elever"@nb ,
+                                                         "Property for laereplan_lk20 to specify the part of the examination and assessments that deals with the examination that applies to external candidates"@en ;
+                                            rdfs:label "examination and assessments, examination, external candidates"@en ,
+                                                       "vurderingsordning,eksemen for privatister"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-halvaarsvurdering-2-benyttes-ved-inntak-til-hoeyere-trinn-VIGO-elev
+u:vurderingsordning-halvaarsvurdering-2-benyttes-ved-inntak-til-hoeyere-trinn-VIGO-elev rdf:type owl:DatatypeProperty ;
+                                                                                        rdfs:domain u:Fagkode ;
+                                                                                        rdfs:range xsd:boolean ;
+                                                                                        rdfs:comment "Egenskap for vurderingsordning uten standpunktvurdering for å angi om halvårsvurdering benyttes ved inntak til høyere trinn i videregående skole (http://vigo.no), for elever"@nb ,
+                                                                                                     "Property for \"fagkode\" (subject code) without \"standpunktvurdering\" (overall-achievement-grades) to indicate whether half-year assessment is used for admission to higher level in upper secondary school (http://vigo.no), for pupils/studens"@en ;
+                                                                                        rdfs:label "examination-and-assesment - half year-assessment 2, used for admission to higher level in upper scondary school, VIGO, for pupils/students"@en ,
+                                                                                                   "vurderingsordning - halvaarsvurdering 2, benyttes ved inntak til høyere trinn, VIGO, for elever"@nb ;
+                                                                                        rdfs:seeAlso "https://www.vigo.no"^^xsd:anyURI .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-halvaarsvurdering-2-benyttes-ved-inntak-til-hoeyere-trinn-VIGO-privatist
+u:vurderingsordning-halvaarsvurdering-2-benyttes-ved-inntak-til-hoeyere-trinn-VIGO-privatist rdf:type owl:DatatypeProperty ;
+                                                                                             rdfs:domain u:Fagkode ;
+                                                                                             rdfs:range xsd:anyURI ;
+                                                                                             rdfs:comment "Egenskap for vurderingsordning uten standpunktvurdering for å angi om halvårsvurdering benyttes ved inntak til høyere trinn i videregående skole (http://vigo.no), for privatister, for privatister"@nb ,
+                                                                                                          "Property for \"fagkode\" (subject code) without \"standpunktvurdering\" (overall-achievement-grades) to indicate whether half-year assessment is used for admission to higher level in upper secondary school (http://vigo.no), for external candidates"@en ;
+                                                                                             rdfs:label "examination-and-assesment - half year-assessment 2, used for admission to higher level in upper scondary school, VIGO, for external candidates"@en ,
+                                                                                                        "vurderingsordning - halvårsvurdering 2 benyttes ved inntak til høyere trinn, VIGO, for privatist"@nb ;
+                                                                                             rdfs:seeAlso "http://vigo.no"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-hoeyeste-nivaa-elev
+u:vurderingsordning-hoeyeste-nivaa-elev rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf u:hoeyeste-nivaa ;
+                                        rdfs:domain u:Fagkode ;
+                                        rdfs:range xsd:boolean ;
+                                        rdfs:comment "Boolsk egenskap for fagkode for å angi om vurderingsordningen er høyeste nivå for eleven"@nb ,
+                                                     "Boolean property for subject code to indicate if the examination and assessments is the highest level for the pupil" ;
+                                        rdfs:label "examination and assessments, highest level, pupil"@en ,
+                                                   "vurderingsordning, høyeste nivå, elev"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-hoeyeste-nivaa-privatist
+u:vurderingsordning-hoeyeste-nivaa-privatist rdf:type owl:DatatypeProperty ;
+                                             rdfs:subPropertyOf u:hoeyeste-nivaa ;
+                                             rdfs:domain u:Fagkode ;
+                                             rdfs:range xsd:boolean ;
+                                             rdfs:comment "Boolean property for subject code to indicate if the examination and assessments is the highest level for the external candidate"@en ,
+                                                          "Boolsk egenskap for fagkode for å angi om vurderingsordningen er høyeste nivå for privatisten"@nb ;
+                                             rdfs:label "examination and assessments, highest level, external candidate"@en ,
+                                                        "vurderingsordning, høyeste nivå, privatist"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-modulvurdering
+u:vurderingsordning-modulvurdering rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain u:Laereplan_lk20 ;
+                                   rdfs:range rdf:langString ;
+                                   rdfs:comment "Property for laereplan_lk20 to specify the part of the examination and assessments that deals with module assesment"@en ,
+                                                "genskap for laereplan_lk20 for å angi den delen av vurderingsordningen som handler om modulvurdering"@nb ;
+                                   rdfs:label "examination and assessments, module assessment"@en ,
+                                              "vurderingsordning, modulvurdering"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-sluttvurdering
+u:vurderingsordning-sluttvurdering rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain u:Laereplan_lk20 ;
+                                   rdfs:range rdf:langString ;
+                                   rdfs:comment "Egenskap for laereplan_lk20 for å angi den delen av vurderingsordningen som handler om sluttvurdering"@nb ,
+                                                "Property for laereplan_lk20 to specify the part of the examination and assessments that deals with final assesment"@en ;
+                                   rdfs:label "examination and assessments, final assessment"@en ,
+                                              "vurderingsordning, sluttvurdering"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-standpunktvurdering
+u:vurderingsordning-standpunktvurdering rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain u:Laereplan_lk20 ;
+                                        rdfs:range rdf:langString ;
+                                        rdfs:comment "Attribute for \"laereplan_lk20\" (curriculum LK20) to specify the part of the examination and assessments that applies to the overall achievement grade"@en ,
+                                                     "Egenskap for laereplan_lk20 for å angi den delen av vurderingsordningen som gjelder standpunktvurdering"@nb ;
+                                        rdfs:label "examination and assessments, overall achievement grade"@en ,
+                                                   "vurderingsordning, standpunktvurdering"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-standpunktvurdering-elev
+u:vurderingsordning-standpunktvurdering-elev rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain u:Fagkode ;
+                                             rdfs:range xsd:boolean ;
+                                             rdfs:comment "Attribute for \"fagkode\" (subject code) to specify whether pupil will be given overall achievement grades"@en ,
+                                                          "Egenskap for fagkode for å angi om det gis standpunktvurdering for elever"@nb ;
+                                             rdfs:label "overall achievement grade, pupil"@en ,
+                                                        "vurderingsordning, standpunktvurdering elev"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-standpunktvurdering-privatist
+u:vurderingsordning-standpunktvurdering-privatist rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain u:Fagkode ;
+                                                  rdfs:range xsd:boolean ;
+                                                  rdfs:comment "Attribute for \"fagkode\" (subject code) to specify whether the apprentices will be given overall achievement grade"@en ,
+                                                               "Egenskap for fagkode for å angi om det gis standpunktvurdering for privatister"@nb ;
+                                                  rdfs:label "overall achievement grade, apprentices"@en ,
+                                                             "vurderingsordning, standpunktvurdering privatist"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-trekkordning-elev
+u:vurderingsordning-trekkordning-elev rdf:type owl:DatatypeProperty ;
+                                      rdfs:domain u:Fagkode ;
+                                      rdfs:range xsd:anyURI ;
+                                      rdfs:comment "Egenskap for fagkode, for å angi om faget er trekkfag eller om det er obligatorisk eksamen for elever"@nb ,
+                                                   "Property for \"fagkode\" (subject code) to determine whether the subject is \"trekkfag\" (subject which examination you were drawn out in) or whether it is \"obligatorsik\" (mandatory) exam for pupils"@en ;
+                                      rdfs:label "examination-and-assesment - draw-system, pupil"@en ,
+                                                 "vurderingsordning - trekkordning, elev"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordning-trekkordning-privatist
+u:vurderingsordning-trekkordning-privatist rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain u:Fagkode ;
+                                           rdfs:range xsd:anyURI ;
+                                           rdfs:comment "Egenskap for fagkode, for å angi om faget er trekkfag eller om det er obligatorisk eksamen for privatister"@nb ,
+                                                        "Property for \"fagkode\" (subject code) to determine whether the subject is \"trekkfag\" (subject which examination you were drawn out in) or whether it is \"obligatorsik\" (mandatory) exam for external candidates"@en ;
+                                           rdfs:label "examination-and-assesment - draw-system, external candidate"@en ,
+                                                      "vurderingsordning - trekkordning, privatist"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/vurderingsordninger-kapittel
+u:vurderingsordninger-kapittel rdf:type owl:DatatypeProperty ;
+                               rdfs:domain u:Laereplan_lk20 ;
+                               rdfs:range xsd:anyURI ;
+                               rdfs:comment "Egenskap for læreplan (LK20) for vurderingsordnings-kapittelet (objekt med flere egenskaper)"@nb ,
+                                            "Property for curriculum (LK20) to hold the examination-and-assesment chapter (object with more properties)"@en ;
+                               rdfs:label "examination and assesment chapter"@en ,
+                                          "vurderingsordning-kapittel"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/yrkestittel
+u:yrkestittel rdf:type owl:DatatypeProperty ;
+              rdfs:domain u:Programomraade ;
+              rdfs:range rdf:langString ;
+              rdfs:comment "Attribute for \"programomraade\" (program area) to specify which \"yrkestittel\" (professional title) this causes"@en ,
+                           "Egenskap for programområde for å angi hvilken yrkestittel dette fører til"@nb ;
+              rdfs:label "professional title"@en ,
+                         "yrkestittel"@nb .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://psi.udir.no/ontologi/kl06/Aarstrinn
+u:Aarstrinn rdf:type owl:Class ;
+            rdfs:comment "Educational level indicating progression for the the thirteen years of primary and secondary education"@en ,
+                         "Utdanningsnivå som angir progresjon for det 13-årige utdanningsløpet"@nb ;
+            rdfs:label "Year level"@en ,
+                       "Årstrinn"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Dokumenttype
+u:Dokumenttype rdf:type owl:Class ;
+               rdfs:comment "Egenskap for merknad for å angi om den gjelder for enten “Vitnemål” eller “Kompetansebevis”"@nb ,
+                            "Property for notice (\"merknad\") to specify whether it applies to either \"diploma\" or \"certificate of competence/vocational training certificate\""@en ;
+               rdfs:label "Document type"@en ,
+                          "Dokumenttype"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Eksamensform
+u:Eksamensform rdf:type owl:Class ;
+               rdfs:comment "Element for å angi hvilken eksamensform som skal påføres vitnemålet"@nb ,
+                            "Element to specify the examination form to be applied the certificate/testimony"@en ;
+               rdfs:label "Eksamensform"@nb ,
+                          "examination-form to certificate"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Eksamensordning
+u:Eksamensordning rdf:type owl:Class ;
+                  rdfs:comment "Element for \"vurderingsordning\" (examination-and-assesment) to specify what type of \"ekamensordning\" (examination arrangement) applicable to students and external candidates"@en ,
+                               "Element for å angi hva slags eksamensordning som gjelder for elever og privatister"@nb ;
+                  rdfs:label "Eksamensordning"@nb ,
+                             "Type of examination arrangement"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Fagkategori
+u:Fagkategori rdf:type owl:Class ;
+              rdfs:comment "Attribute for \"fagomraade\" (subject area) to specify a hierarchically parent academic content category (for statistical purposes)"@en ,
+                           "Egenskap for fagområde for å angi hierarkisk overordnet faglig innholdskategori (for statistisk bruk)"@nb ;
+              rdfs:label "Fagketegori"@nb ,
+                         "Subject category"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Fagkode
+u:Fagkode rdf:type owl:Class ;
+          rdfs:comment "Element som fungerer som identifikator for et fag eller del av et fag, for presist å kunne angi opplæring, eksamensgjennomføring, vurdering og dokumentasjon, for eksempel MAT0011 \"Matematikk 10.årstrinn, muntlig\""@nb ,
+                       "Element that acts as an identifier for a subject or single part of a subject, for precisely to enter training, examination implementation, evaluation and documentation, such as MAT0011 \"Mathematics 10. year level, orally exam\""@en ;
+          rdfs:label "Fagkode"@nb ,
+                     "Subject code"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Fagomraade
+u:Fagomraade rdf:type owl:Class ;
+             rdfs:comment "Grouping opplaeringsfag (teaching subjects) in academic content categories under topic categories (see fagkategorier) for statistical purposes"@en ,
+                          "Gruppering av opplæringsfag i faglige innholdskategorier under fagketegorier (se fagkategori) for statistisk bruk"@nb ;
+             rdfs:label "Fagområde"@nb ,
+                        "Subject area"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Fagtype
+u:Fagtype rdf:type owl:Class ;
+          rdfs:comment "Grouping subjects according to Circular Udir-1-[a certain year]"@en ,
+                       "Gruppering av fag etter Rundskriv Udir-1-[et gitt årstall]"@nb ;
+          rdfs:label "Fagtype"@nb ,
+                     "Subject type"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Grunnleggende_ferdighet_lk20
+u:Grunnleggende_ferdighet_lk20 rdf:type owl:Class ;
+                               rdfs:comment "A subset of the total competence in subjects that involves in showing the five of the selected skills: Literacy, being able to write, numeracy, oral and digital skills"@en ,
+                                            "Den delmengden av den totale kompetansen i fag som handler å vise de fem utvalgte ferdighetene: Å kunne lese, å kunne skrive, å kunne regne, muntlige og digitale ferdiheter"@nb ;
+                               rdfs:label "Basic skill"@en ,
+                                          "Grunnleggende ferdighet"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Hovedomraade
+u:Hovedomraade rdf:type owl:Class ;
+               rdfs:comment "Delmengde av læreplan for inndeling av det faglige innholdet i logiske blokker"@nb ,
+                            "Part of curriculum for division of the academic content into logical blocks"@en ;
+               rdfs:label "Hovedområde"@nb ,
+                          "Main area"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Karakter
+u:Karakter rdf:type owl:Class ;
+           rdfs:comment "Class in Grep, used by other systems as a authority register to indicate legal character expressions in documentation (certificates etc.), e.g. \"PASSED\", \"FIVE\", \"FAILED\""@en ,
+                        "Grep-type som brukes av andre systemer som autoritetsregister til å angi lovlige karakteruttrykk i dokumentasjon (vitnemål o.l), f.eks. \"BESTÅTT\", \"FEM\", \"IKKE BESTÅTT\""@nb ;
+           rdfs:label "Grade"@en ,
+                      "Karakter"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Kjerneelement_lk20
+u:Kjerneelement_lk20 rdf:type owl:Class ;
+                     rdfs:comment "Element som sammen med de andre i samme læreplan, uttrykker hva som er det viktigste i faget og hva elevene/lærlingene/praksiskandidatene må lære for å mestre og bruke faget (kan være kunnskapsområder, metoder, begreper, tenkemåter og uttrykksformer)"@nb ,
+                                  "Element which, together with the others in the same curriculum, expresses what is most important in the subject and what the students/apprentices/practice candidates must learn in order to master and use the subject (can be areas of knowledge, methods, concepts, ways of thinking and forms of expression)"@en ;
+                     rdfs:label "Core element"@en ,
+                                "Kjerneelement"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Kompetansemaal
+u:Kompetansemaal rdf:type owl:Class ;
+                 rdfs:comment "Element (for curricula in LK06) which indicates a subset of the competence a student/apprentice/practice candidate must have achieved after completing training at a given level/year-level"@en ,
+                              "Element (for læreplaner i LK06) som angir en delmengde av den kompetanse en elev/lærling/praksiskandidat skal ha oppnådd etter endt opplæring på et gitt nivå/trinn"@nb ;
+                 rdfs:label "Competence aim (LK06)"@en ,
+                            "Kompetansemål (LK06)"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Kompetansemaal_lk20
+u:Kompetansemaal_lk20 rdf:type owl:Class ;
+                      rdfs:comment "Element (for curricula in LK20) which indicates a subset of the competence a student/apprentice/practice candidate/participant must have achieved after completing training at a given level/year-level"@en ,
+                                   "Element (for læreplaner i LK20) som angir en delmengde av den kompetanse en elev/lærling/praksiskandidat/deltaker skal ha oppnådd etter endt opplæring på et gitt nivå/trinn"@nb ;
+                      rdfs:label "Competence aim (LK20)"@en ,
+                                 "Kompetansemål (LK20)"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Kompetansemaalsett
+u:Kompetansemaalsett rdf:type owl:Class ;
+                     rdfs:comment "A set of competence aims, grouped under the main areas, applies to a specified set of steps or levels"@en ,
+                                  "Et sett med kompetansemål, gruppert under hovedområder  som gjelder for et spesifisert sett med trinn eller nivåer"@nb ;
+                     rdfs:label "kompetansemålsett (LK06)"@nb ,
+                                "kompetence aim set (LK06)"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Kompetansemaalsett_lk20
+u:Kompetansemaalsett_lk20 rdf:type owl:Class ;
+                          rdfs:comment "A set of competance aims that apply to a specified set of steps or levels"@en ,
+                                       "Et sett med kompetansemål som gjelder for et spesifisert sett med trinn eller nivåer"@nb ;
+                          rdfs:label "Competence aim set (LK20)"@en ,
+                                     "Kompetansemålsett (LK20)"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Laereplan
+u:Laereplan rdf:type owl:Class ;
+            rdfs:comment "Element som uttrykker den samlede kompetansen en elev, lærling eller lærekandidat skal ha etter endt opplæring på et gitt nivå/trinn i ett eller flere fag etter Kunnskapsløftet LK06)"@nb ,
+                         "Element that indicates the overall competence a student, apprentice or training candidate must have after completing training at a specified level/year-level in one or more subjects according to the Knowledge promotion (LK06)"@en ;
+            rdfs:label "Curriculum (LK06)"@en ,
+                       "Læreplan (LK06)"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Laereplan_lk20
+u:Laereplan_lk20 rdf:type owl:Class ;
+                 rdfs:comment "Element som uttrykker den samlede kompetansen en elev, lærling,  lærekandidat eller deltaker skal ha etter endt opplæring på et gitt nivå/trinn i ett eller flere fag etter Kunnskapsløftet LK20, fagfornyelsen"@nb ,
+                              "Element that indicates the overall competence a student, apprentice, training candidate or participant must have after completing training at a specified level/year-level in one or more subjects according to the Knowledge promotion (LK20)"@en ;
+                 rdfs:label "Curriculum (LK20)"@en ,
+                            "Læreplan (LK20)"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Laereplanstruktur
+u:Laereplanstruktur rdf:type owl:Class ;
+                    rdfs:comment "Curriculum element (lk20) to indicate which structure it follows (currently) either \"regular\" (structured by year level/subject) or \"module structured\" (structured by specified modules)"@en ,
+                                 "Egenskap for læreplan (lk20) for å angi om hvilken struktur den følger (foreløpig) enten \"vanlig\" (strukturert etter årstrinn/fag) eller \"modulstrukturert\" (strukturert etter angitte moduler)"@nb ;
+                    rdfs:label "Curriculum Structure"@en ,
+                               "Læreplanstruktur"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Loepstype
+u:Loepstype rdf:type owl:Class ;
+            rdfs:comment "Element for \"programomraade\" for å angi hvilken løpstype det er (p.t. er kun kryssløp tilgjengelig). Se også egenskapen \"loepstype-kryssloep\""@nb ;
+            rdfs:label "Element for \"programomraade\" (programme area) to specify what type of educational pathway it is. See also the property \"loepstype-kryssloep\" (type of educational pathway: cross-discipline / cross-area specialization)"@en ,
+                       "educational pathway type"@en ,
+                       "løpstype"@nb ;
+            rdfs:seeAlso u:loepstype-kryssloep .
+
+
+###  http://psi.udir.no/ontologi/kl06/Merkelapp
+u:Merkelapp rdf:type owl:Class ;
+            rdfs:comment "Element for å angi spesifikke egenskaper for forekomster av fagkode, laereplan,  laereplan_lk20, opplaeringsfag og programomraade"@nb ,
+                         "Element to specify specific characteristics for instances of Fagkode (Subject.code), Laereplan (LK06/LK20) (Curriculum/Curriculum_lk20), Opplaeringsfag (Training subject) and Programomraade (Programme-area)."@en ;
+            rdfs:label "Merkelapp"@nb ,
+                       "Tag"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Merknad
+u:Merknad rdf:type owl:Class ;
+          rdfs:comment "Fag- og vitnemålsmerknader som kan benyttes ved dokumentasjon av opplæringen, angitt i retningslinjer for føring av vitnemål og kompetansebevis fra Utdanningsdirektoratet"@nb ,
+                       "Subject and diploma notes that can be used for documentation of the training, stated in guidelines for recognition of diplomas and certificates of competence of The Norwegian Directorate for Education and Training"@en ;
+          rdfs:label "Merknad"@nb ,
+                     "Note"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Merknadstype
+u:Merknadstype rdf:type owl:Class ;
+               rdfs:comment "Element for å angi hvilken type merknad en merknad er,  enten fag- eller vitnemålsmerknad"@nb ,
+                            "Element to spcify what type the \"merknad\" (Note) is, either \"fagmerknad\" (subject note) or \"vitnemålsmerknad\" (diploma note)."@en ;
+               rdfs:label "Merknadstype"@nb ,
+                          "Note type"@en ;
+               rdfs:seeAlso u:merknads-type .
+
+
+###  http://psi.udir.no/ontologi/kl06/Oppgave
+u:Oppgave rdf:type owl:Class ;
+          rdfs:comment "Egenskap for fagkode for å angi om eksamen er sentralgitt, eller lokalt gitt (URIen til denne typen er også brukt som egenskap)"@nb ,
+                       "Property for \"fagkode\" (subject code) to specify whether the exam is centrally provided, or locally provided (the URI for this type is also used as a property)"@en ;
+          rdfs:label "Examination-arrangement"@en ,
+                     "Oppgave"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Opplaeringsfag
+u:Opplaeringsfag rdf:type owl:Class ;
+                 rdfs:comment "Structural element to define what a group of learners at a given grade should be taught"@en ,
+                              "Strukturelt element for å angi hva en gruppe elever/lærlinger/praksiskandidater/deltakere på et gitt årstrinn skal undervises i"@nb ;
+                 rdfs:label "Opplæringsfag"@nb ,
+                            "Teaching subject"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Opplaeringsnivaa
+u:Opplaeringsnivaa rdf:type owl:Class ;
+                   rdfs:comment "Egenskap for læreplan, fagtype og fag- og vitnemålsmerknader for å angi hvilke(t) opplæringsnivå den gjelder for"@nb ,
+                                "Property for \"laereplan\" (curriculum), \"fagtype\" (subject type) and \"merknad\" (notice) to specify which teaching level it applies"@en ;
+                   rdfs:label "Opplærignsnivå"@nb ,
+                              "Teaching level"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Opplaeringssted
+u:Opplaeringssted rdf:type owl:Class ;
+                  rdfs:comment "Egenskap for programområde for å angi hvor opplæringen skjer, enten i \"Skole\" eller \"Bedrift\""@nb ;
+                  rdfs:label "Opplaeringssted"@nb ,
+                             "Place of training"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Ordforklaring_lk20
+u:Ordforklaring_lk20 rdf:type owl:Class ;
+                     rdfs:comment "Element containing an educational text that is not part of the prescriptive text, but written by the curriculum authors or those who manage the curriculum to explain a word or phrase"@en ,
+                                  "Element som inneholder en pedagogisk tekst som ikke er en del av forskrifsteksten, men skrevet av læreplanforfatterne eller de som forvalter læreplanen for å forklare et ord eller uttrykk"@nb ;
+                     rdfs:label "Glossary entity"@en ,
+                                "Ordforklaring"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Programfag
+u:Programfag rdf:type owl:Class ;
+             rdfs:comment "Delmengde av læreplan for inndeling av det faglige innholdet i logiske blokker for læreplaner som har programfag i stedet for hovedområder"@nb ,
+                          "Part of curriculum for division of the academic content into logical blocks for curricula having Programfag (Programme-subject) in stead of Hovedomraade (Main-subject)"@en ;
+             rdfs:label "Programfag"@nb ,
+                        "Programme subject"@en .
+
+
+###  http://psi.udir.no/ontologi/kl06/Programomraade
+u:Programomraade rdf:type owl:Class ;
+                 rdfs:comment "Adopted package of subjects with a given total teaching hours for a year, and taken under an education programme"@en ,
+                              "Fastsatt pakke av fag, med et gitt samlet årstimetall, og som tas under et utdanningsprogram"@nb ;
+                 rdfs:label "Programme area"@en ,
+                            "Programområde"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Programomraadetype
+u:Programomraadetype rdf:type owl:Class ;
+                     rdfs:comment "Instance of \"programomraadetype\" (programme area type), either \"Bedrift(Lærling)\" (company/enterprise (Apprentice)), \"Skole(Elev)\" (School (Pupil)) or \"Særløp\" (special pathway)"@en ,
+                                  "Instans av programområdetype, enten Bedrift(Lærling), Skole(Elev) eller Særløp"@nb ;
+                     rdfs:label "Programme area type"@en ,
+                                "Programområdetype"@nb ;
+                     rdfs:seeAlso u:programomraade-type .
+
+
+###  http://psi.udir.no/ontologi/kl06/Semester
+u:Semester rdf:type owl:Class ;
+           rdfs:comment "Tidsperiode som viser til et konkret skolesemester i et gitt skoleår, f.eks. vår 2016"@nb ,
+                        "Time that refer to a specific school term in a given school year, for example. spring 2016"@en ;
+           rdfs:label "Semester"@en ,
+                      "Semester"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Sensur
+u:Sensur rdf:type owl:Class ;
+         rdfs:comment "Element som brukes som egenskap for fagkode for å angi om sensuren er administrert sentralt eller lokalt"@nb ,
+                      "Element, used as property for \"fagkode\" (subject code) to specify whether the censorship is managed centrally or locally"@en ;
+         rdfs:label "Censorship-arrangement"@en ,
+                    "Sensur"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Sluttkompetanse
+u:Sluttkompetanse rdf:type owl:Class ;
+                  rdfs:comment "Egenskap for programområde for å angi om eleven/lærlingen eller praksiskandidaten oppnår studiekompetanse, yrkeskompetanse eller et fag- eller svennebrev etter endt utdanning"@nb ,
+                               "Property for program area to indicate whether the pupil/apprentice or practice candidate obtains university and college admissions certification, vocational qualifications or a trade certificate or journeyman's certificate after graduation"@en ;
+                  rdfs:label "Final competence"@en ,
+                             "Sluttkompetanse"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Spraak
+u:Spraak rdf:type owl:Class ;
+         rdfs:comment "Class to manage languages for this resource"@en ,
+                      "Klasse for å holde på språk for løsningen"@nb ;
+         rdfs:label "Language"@en ,
+                    "Språk"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Spraaknivaa
+u:Spraaknivaa rdf:type owl:Class ;
+              rdfs:comment "Element for fagkode (Subject-code) that are language subjects, and which indicate levels according to the CEFR framework"@en ,
+                           "Element for fagkoder som er språkfag, og som angir nivåer etter CEFR-rammeverket"@nb ;
+              rdfs:label "Language level"@en ,
+                         "Språknivå"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Status
+u:Status rdf:type owl:Class ;
+         rdfs:comment "Flag indicating whether the item is \"Publisert\" (\"Published\" i.e. part of current offers), or \"Utgått\" (\"Expired\" i.e. no longer offered)"@en ,
+                      "Flagg som angir om elementet det opptrer i er “Publisert” (del av gjeldende tilbud), eller “Utgått” (ikke lenger tilbudt)"@nb ;
+         rdfs:label "Status"@en ,
+                    "Status"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Tidligere_navn
+u:Tidligere_navn rdf:type owl:Class ;
+                 rdfs:comment "Element som bærer informasjon om tidligere tittrl/navn/ordlyd på enten Utdanningsprogram, Programomraade eller Merknad, perioden disse egenskapene gjaldt, samt referanse til objektene som gjelder i dag."@nb ,
+                              "Element that holds information about the previous title / name / formulation of either the Education-programme, Programme-area or Note, the period to which these properties applied, as well as a reference to the objects that apply today"@en ;
+                 rdfs:label "Previous name"@en ,
+                            "Tidligere navn"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Trekkordning
+u:Trekkordning rdf:type owl:Class ;
+               rdfs:comment "Element for \"vurderingsordning\" (examination-and-assesment) to determine whether the subject is \"trekkfag\" (subject which examination you were drawn out in) or whether it is \"obligatorsik\" (mandatory) exam"@en ,
+                            "Element for å angi om faget er trekkfag eller om det er obligatorisk eksamen"@nb ;
+               rdfs:label "Draw system"@en ,
+                          "Trekkordning"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Tverrfaglig_tema_lk20
+u:Tverrfaglig_tema_lk20 rdf:type owl:Class ;
+                        rdfs:comment "Element describing each of the three prioritized topics \"Health and life skills\", \"Democracy and citizenship\" and \"Sustainability\" (occurs in the individual curricula where they are considered relevant for the subject, and has its own subject-specific description)"@en ,
+                                     "Element som beskriver hver av de tre prioriterte temaene folkehelse og lvsmestring, demokrati og medborgerskap og bærekraftig utvikling (forekommer i de enkelte læreplanene der de er ansett som aktuelle for for faget, og har der sin egen fagspesifikke beskrivelse)"@nb ;
+                        rdfs:label "Interdisciplinary topic"@en ,
+                                   "Tverrfaglig tema"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Utdanningsprogram
+u:Utdanningsprogram rdf:type owl:Class ;
+                    rdfs:comment "Educational pathway in upper secondary education leading to university and college admissions certification and or vocational qualifications or trade- or journeyman's certificate (certificate awarded on successful completion of a vocational training course, and entitling the holder to practice the trade concerned) cf. Circular Udir-1-[a given year]"@en ,
+                                 "Utdanningsløp i videregående utdanning som fører fram til studie- og eller yrkeskompetanse/fag- eller svennebrev jf. Rundskriv Udir-1-[et gitt årstall]"@nb ;
+                    rdfs:label "Eeducation programme"@en ,
+                               "Utdanningsprogram"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Utdanningsprogramtype
+u:Utdanningsprogramtype rdf:type owl:Class ;
+                        rdfs:comment "Element for \"utdanningsprogram\" (education programme) to determine whether the education program is either \"Studieforberedende utdanningsprogram\" (Programme for General Studies) or \"Studieforberedende utdanningsprogram\" (Vocational Education Programme)"@en ,
+                                     "Element for utdanningsprogram for å angi om utdanningsprogrammet enten er Studieforberedende utdanningsprogram eller Yrkesfaglig utdanningsprogram"@nb ;
+                        rdfs:label "Education programme type"@en ,
+                                   "Utdanningsprogramtype"@nb ;
+                        rdfs:seeAlso u:type-utdanningsprogram .
+
+
+###  http://psi.udir.no/ontologi/kl06/Verb_lk20
+u:Verb_lk20 rdf:type owl:Class ;
+            rdfs:comment "Bestanddel av læreplan som uttrykker anvendelse av kunnskaper og ferdigheter, og som i læreplanvisningen på udir.no er implementert slik at disse opptrer som ordforklaring til forekomster av utvalgte verb i læreplanens kompetansemål"@nb ,
+                         "Part of the curriculum that expresses the application of knowledge and skills, and which in the curriculum presentation on udir.no serves as a glossary for occurrences of selected verbs in the curriculum's competence aims"@en ;
+            rdfs:label "Verb"@en ,
+                       "Verb"@nb .
+
+
+###  http://psi.udir.no/ontologi/kl06/Vurderingsuttrykk
+u:Vurderingsuttrykk rdf:type owl:Class ;
+                    rdfs:comment "Element for \"vurderingsordning\" (examination-and-assesment) to specify whether it should be given numerical grades or whether to use other expressions of assessment"@en ,
+                                 "Element for vurderingsordning for å angi om det skal gis tallkarakterer eller om det skal benyttes andre uttrykk for vurderingen"@nb ;
+                    rdfs:label "Expression of assessment"@en ,
+                               "Vurderingsuttrykk"@nb .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

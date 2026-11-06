@@ -1,0 +1,194 @@
+@prefix u:    <http://psi.udir.no/ontologi/kl06/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Kobler OWL-klassene i ontologi_kl06_20240523.ttl (stor forbokstav) til typene
+# som brukes i Grep-dataene (?s a u:<liten forbokstav>).
+#
+# Hvorfor egne klasser med stor forbokstav: mange av små-bokstav-URI-ene brukes
+# OGSÅ som egenskaper i dataene (f.eks. u:kompetansemaalsett, u:opplaeringsfag,
+# u:status). Koblingen gjelder kun klassebetydningen av URI-en; bruken som
+# egenskap påvirkes ikke.
+#
+# Hver kobling uttrykkes både som owl:equivalentClass (OWL-semantikk) og som
+# rdfs:subClassOf begge veier, slik at også ren RDFS-resonnering (som ikke
+# kjenner owl:equivalentClass) gir samme resultat.
+#
+# Kun typer som faktisk forekommer som rdf:type i dataene er koblet.
+# Generert fra data per 2026-11-06: 44 klasser, 44 typer, ingen uten motpart.
+
+u:Aarstrinn owl:equivalentClass u:aarstrinn ;
+    rdfs:subClassOf u:aarstrinn .
+u:aarstrinn rdfs:subClassOf u:Aarstrinn .
+
+u:Dokumenttype owl:equivalentClass u:dokumenttype ;
+    rdfs:subClassOf u:dokumenttype .
+u:dokumenttype rdfs:subClassOf u:Dokumenttype .
+
+u:Eksamensform owl:equivalentClass u:eksamensform ;
+    rdfs:subClassOf u:eksamensform .
+u:eksamensform rdfs:subClassOf u:Eksamensform .
+
+u:Eksamensordning owl:equivalentClass u:eksamensordning ;
+    rdfs:subClassOf u:eksamensordning .
+u:eksamensordning rdfs:subClassOf u:Eksamensordning .
+
+u:Fagkategori owl:equivalentClass u:fagkategori ;
+    rdfs:subClassOf u:fagkategori .
+u:fagkategori rdfs:subClassOf u:Fagkategori .
+
+u:Fagkode owl:equivalentClass u:fagkode ;
+    rdfs:subClassOf u:fagkode .
+u:fagkode rdfs:subClassOf u:Fagkode .
+
+u:Fagomraade owl:equivalentClass u:fagomraade ;
+    rdfs:subClassOf u:fagomraade .
+u:fagomraade rdfs:subClassOf u:Fagomraade .
+
+u:Fagtype owl:equivalentClass u:fagtype ;
+    rdfs:subClassOf u:fagtype .
+u:fagtype rdfs:subClassOf u:Fagtype .
+
+u:Grunnleggende_ferdighet_lk20 owl:equivalentClass u:grunnleggende_ferdighet_lk20 ;
+    rdfs:subClassOf u:grunnleggende_ferdighet_lk20 .
+u:grunnleggende_ferdighet_lk20 rdfs:subClassOf u:Grunnleggende_ferdighet_lk20 .
+
+u:Hovedomraade owl:equivalentClass u:hovedomraade ;
+    rdfs:subClassOf u:hovedomraade .
+u:hovedomraade rdfs:subClassOf u:Hovedomraade .
+
+u:Karakter owl:equivalentClass u:karakter ;
+    rdfs:subClassOf u:karakter .
+u:karakter rdfs:subClassOf u:Karakter .
+
+u:Kjerneelement_lk20 owl:equivalentClass u:kjerneelement_lk20 ;
+    rdfs:subClassOf u:kjerneelement_lk20 .
+u:kjerneelement_lk20 rdfs:subClassOf u:Kjerneelement_lk20 .
+
+u:Kompetansemaal owl:equivalentClass u:kompetansemaal ;
+    rdfs:subClassOf u:kompetansemaal .
+u:kompetansemaal rdfs:subClassOf u:Kompetansemaal .
+
+u:Kompetansemaal_lk20 owl:equivalentClass u:kompetansemaal_lk20 ;
+    rdfs:subClassOf u:kompetansemaal_lk20 .
+u:kompetansemaal_lk20 rdfs:subClassOf u:Kompetansemaal_lk20 .
+
+u:Kompetansemaalsett owl:equivalentClass u:kompetansemaalsett ;
+    rdfs:subClassOf u:kompetansemaalsett .
+u:kompetansemaalsett rdfs:subClassOf u:Kompetansemaalsett .
+
+u:Kompetansemaalsett_lk20 owl:equivalentClass u:kompetansemaalsett_lk20 ;
+    rdfs:subClassOf u:kompetansemaalsett_lk20 .
+u:kompetansemaalsett_lk20 rdfs:subClassOf u:Kompetansemaalsett_lk20 .
+
+u:Laereplan owl:equivalentClass u:laereplan ;
+    rdfs:subClassOf u:laereplan .
+u:laereplan rdfs:subClassOf u:Laereplan .
+
+u:Laereplan_lk20 owl:equivalentClass u:laereplan_lk20 ;
+    rdfs:subClassOf u:laereplan_lk20 .
+u:laereplan_lk20 rdfs:subClassOf u:Laereplan_lk20 .
+
+u:Laereplanstruktur owl:equivalentClass u:laereplanstruktur ;
+    rdfs:subClassOf u:laereplanstruktur .
+u:laereplanstruktur rdfs:subClassOf u:Laereplanstruktur .
+
+u:Loepstype owl:equivalentClass u:loepstype ;
+    rdfs:subClassOf u:loepstype .
+u:loepstype rdfs:subClassOf u:Loepstype .
+
+u:Merkelapp owl:equivalentClass u:merkelapp ;
+    rdfs:subClassOf u:merkelapp .
+u:merkelapp rdfs:subClassOf u:Merkelapp .
+
+u:Merknad owl:equivalentClass u:merknad ;
+    rdfs:subClassOf u:merknad .
+u:merknad rdfs:subClassOf u:Merknad .
+
+u:Merknadstype owl:equivalentClass u:merknadstype ;
+    rdfs:subClassOf u:merknadstype .
+u:merknadstype rdfs:subClassOf u:Merknadstype .
+
+u:Oppgave owl:equivalentClass u:oppgave ;
+    rdfs:subClassOf u:oppgave .
+u:oppgave rdfs:subClassOf u:Oppgave .
+
+u:Opplaeringsfag owl:equivalentClass u:opplaeringsfag ;
+    rdfs:subClassOf u:opplaeringsfag .
+u:opplaeringsfag rdfs:subClassOf u:Opplaeringsfag .
+
+u:Opplaeringsnivaa owl:equivalentClass u:opplaeringsnivaa ;
+    rdfs:subClassOf u:opplaeringsnivaa .
+u:opplaeringsnivaa rdfs:subClassOf u:Opplaeringsnivaa .
+
+u:Opplaeringssted owl:equivalentClass u:opplaeringssted ;
+    rdfs:subClassOf u:opplaeringssted .
+u:opplaeringssted rdfs:subClassOf u:Opplaeringssted .
+
+u:Ordforklaring_lk20 owl:equivalentClass u:ordforklaring_lk20 ;
+    rdfs:subClassOf u:ordforklaring_lk20 .
+u:ordforklaring_lk20 rdfs:subClassOf u:Ordforklaring_lk20 .
+
+u:Programfag owl:equivalentClass u:programfag ;
+    rdfs:subClassOf u:programfag .
+u:programfag rdfs:subClassOf u:Programfag .
+
+u:Programomraade owl:equivalentClass u:programomraade ;
+    rdfs:subClassOf u:programomraade .
+u:programomraade rdfs:subClassOf u:Programomraade .
+
+u:Programomraadetype owl:equivalentClass u:programomraadetype ;
+    rdfs:subClassOf u:programomraadetype .
+u:programomraadetype rdfs:subClassOf u:Programomraadetype .
+
+u:Semester owl:equivalentClass u:semester ;
+    rdfs:subClassOf u:semester .
+u:semester rdfs:subClassOf u:Semester .
+
+u:Sensur owl:equivalentClass u:sensur ;
+    rdfs:subClassOf u:sensur .
+u:sensur rdfs:subClassOf u:Sensur .
+
+u:Sluttkompetanse owl:equivalentClass u:sluttkompetanse ;
+    rdfs:subClassOf u:sluttkompetanse .
+u:sluttkompetanse rdfs:subClassOf u:Sluttkompetanse .
+
+u:Spraak owl:equivalentClass u:spraak ;
+    rdfs:subClassOf u:spraak .
+u:spraak rdfs:subClassOf u:Spraak .
+
+u:Spraaknivaa owl:equivalentClass u:spraaknivaa ;
+    rdfs:subClassOf u:spraaknivaa .
+u:spraaknivaa rdfs:subClassOf u:Spraaknivaa .
+
+u:Status owl:equivalentClass u:status ;
+    rdfs:subClassOf u:status .
+u:status rdfs:subClassOf u:Status .
+
+u:Tidligere_navn owl:equivalentClass u:tidligere_navn ;
+    rdfs:subClassOf u:tidligere_navn .
+u:tidligere_navn rdfs:subClassOf u:Tidligere_navn .
+
+u:Trekkordning owl:equivalentClass u:trekkordning ;
+    rdfs:subClassOf u:trekkordning .
+u:trekkordning rdfs:subClassOf u:Trekkordning .
+
+u:Tverrfaglig_tema_lk20 owl:equivalentClass u:tverrfaglig_tema_lk20 ;
+    rdfs:subClassOf u:tverrfaglig_tema_lk20 .
+u:tverrfaglig_tema_lk20 rdfs:subClassOf u:Tverrfaglig_tema_lk20 .
+
+u:Utdanningsprogram owl:equivalentClass u:utdanningsprogram ;
+    rdfs:subClassOf u:utdanningsprogram .
+u:utdanningsprogram rdfs:subClassOf u:Utdanningsprogram .
+
+u:Utdanningsprogramtype owl:equivalentClass u:utdanningsprogramtype ;
+    rdfs:subClassOf u:utdanningsprogramtype .
+u:utdanningsprogramtype rdfs:subClassOf u:Utdanningsprogramtype .
+
+u:Verb_lk20 owl:equivalentClass u:verb_lk20 ;
+    rdfs:subClassOf u:verb_lk20 .
+u:verb_lk20 rdfs:subClassOf u:Verb_lk20 .
+
+u:Vurderingsuttrykk owl:equivalentClass u:vurderingsuttrykk ;
+    rdfs:subClassOf u:vurderingsuttrykk .
+u:vurderingsuttrykk rdfs:subClassOf u:Vurderingsuttrykk .
