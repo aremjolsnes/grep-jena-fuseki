@@ -4,6 +4,16 @@ on:
   schedule:
     - cron: '30 1 * * *' # 02:30 norsk vintertid (CET) / 03:30 sommertid (CEST). Cron i GitHub går i UTC. Udirs nattlige eksport er ferdig ca. 01:20.
   workflow_dispatch: # Mulighet for å starte manuelt
+  push:
+    branches: [main]
+    paths: # Endringer i ontologi eller innlastingslogikk skal slå gjennom uten å vente på Udir
+      - 'ontologi/**'
+      - 'scripts/nattlig-innlasting.sh'
+      - '.github/workflows/ingest-data.yml'
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
 
 jobs:
   ingest:
@@ -12,78 +22,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Download, Process and Upload
+      - name: Installer Apache Jena (RIOT)
+        run: |
+          wget -q https://archive.apache.org/dist/jena/binaries/apache-jena-5.3.0.tar.gz
+          tar -xf apache-jena-5.3.0.tar.gz
+          echo "RIOT=$(pwd)/apache-jena-5.3.0/bin/riot" >> "$GITHUB_ENV"
+
+      - name: Last inn til Fuseki
         env:
           FUSEKI_URL: ${{ secrets.FUSEKI_PROD_URL }}
           FUSEKI_USER: ${{ secrets.FUSEKI_USER }}
           FUSEKI_PASSWORD: ${{ secrets.FUSEKI_PASSWORD }}
           DATASET: "ds"
-        run: |
-          # 1. Vask URL-en
-          F_URL=$(echo "$FUSEKI_URL" | sed 's/\/$//')
-          
-          # 2. Hent siste endrings-id fra Udir
-          LATEST_ID=$(curl -s "https://data.udir.no/kl06/v201906/endringer?antall=1" | grep -oE '"endrings-id":\s*"[^"]+"' | head -n 1 | cut -d'"' -f4)
-          echo "Siste endrings-id fra Udir: $LATEST_ID"
-
-          # 3. Sjekk hva vi har lagret i Fuseki fra før (Metadata-triple)
-          STORED_ID=$(curl -s -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-               --data-urlencode "query=SELECT ?id WHERE { <https://grep.udir.no/meta> <https://grep.udir.no/schema/last-id> ?id }" \
-               -H "Accept: application/sparql-results+json" \
-               "$F_URL/$DATASET/query" | grep -oE '"value":\s*"[^"]+"' | head -n 1 | cut -d'"' -f4 || echo "ingenting")
-          echo "Lagret ID i Fuseki: $STORED_ID"
-
-          # 4. Sammenlign (hopp over hvis like, med mindre det er manuell start)
-          if [ "$LATEST_ID" == "$STORED_ID" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
-            echo "Ingen nye endringer hos Udir. Hopper over oppdatering."
-            exit 0
-          fi
-          echo "Endring oppdaget eller manuell kjøring! Starter prosess..."
-
-          # 5. Last ned rådata
-          mkdir temp
-          curl -L https://data.udir.no/kl06/v201906/dump/jsonld -o temp/data.zip
-          unzip temp/data.zip -d temp/extracted
-
-          # 6. Installer Apache Jena (RIOT)
-          wget -q https://archive.apache.org/dist/jena/binaries/apache-jena-5.3.0.tar.gz
-          tar -xf apache-jena-5.3.0.tar.gz
-          RIOT_CMD=$(pwd)/apache-jena-5.3.0/bin/riot
-          
-          # 7. Konverter til én stor N-Triples fil
-          find temp/extracted -name "*.jsonld" > file_list.txt
-          $RIOT_CMD --output=nt $(cat file_list.txt) > all_data.nt
-          
-          # 8. Sørg for at Fuseki er våken
-          for i in {1..30}; do
-            if curl -s -o /dev/null -u "$FUSEKI_USER:$FUSEKI_PASSWORD" --fail "$F_URL/$/ping"; then
-              break
-            fi
-            sleep 5
-          done
-
-          # 9. Tøm og Last opp
-          echo "Tømmer gammelt datasett..."
-          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" --fail-with-body -X DELETE "$F_URL/$DATASET/data?default"
-          
-          echo "Laster opp 1.1 mill tripler..."
-          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-               -X POST \
-               -H "Content-Type: application/n-triples" \
-               --data-binary @all_data.nt \
-               --fail-with-body \
-               "$F_URL/$DATASET/data?default"
-
-          # 10. Lagre den nye ID-en som metadata i Fuseki
-          echo "<https://grep.udir.no/meta> <https://grep.udir.no/schema/last-id> \"$LATEST_ID\" ." > metadata.nt
-          curl -u "$FUSEKI_USER:$FUSEKI_PASSWORD" \
-               -X POST \
-               -H "Content-Type: application/n-triples" \
-               --data-binary @metadata.nt \
-               --fail-with-body \
-               "$F_URL/$DATASET/data?default"
-          
-          echo "Fullført! Oppdatert til ID: $LATEST_ID"
+          # Planlagt kjøring hopper over når endrings-id er uendret; manuell kjøring og push laster alltid
+          TVING: ${{ github.event_name != 'schedule' && '1' || '0' }}
+        run: bash scripts/nattlig-innlasting.sh
 
   # GitHub deaktiverer planlagte workflows når repoet har vært uten aktivitet i 60 dager
   # (det skjedde i mai 2026). Denne jobben lager en tom commit når siste commit er eldre

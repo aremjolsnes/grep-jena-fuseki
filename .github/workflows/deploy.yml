@@ -5,6 +5,13 @@ on:
   push:
     branches:
       - main
+    paths-ignore: # Endringer som ikke påvirker containeren, skal ikke gi ny deploy
+      - 'ontologi/**'
+      - 'scripts/**'
+      - 'docs/**'
+      - 'sparql/**'
+      - '.github/workflows/ingest-data.yml'
+      - '**.md'
   workflow_dispatch:
 
 jobs:

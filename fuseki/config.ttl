@@ -26,5 +26,10 @@ PREFIX tdb2:   <http://jena.apache.org/2016/tdb#>
     fuseki:dataset <#tdb> .
 
 # Samme TDB2-lokasjon som tidligere (--tdb2 --loc=/fuseki/databases), så eksisterende data beholdes.
+#
+# unionDefaultGraph: spørringer uten GRAPH/FROM ser unionen av alle named graphs
+# (urn:graph:grep, urn:graph:ontologi, urn:graph:meta, ...). Den lagrede default graph
+# blir da usynlig for spørringer; derfor ligger alle data i named graphs.
 <#tdb> rdf:type tdb2:DatasetTDB2 ;
-    tdb2:location "/fuseki/databases" .
+    tdb2:location "/fuseki/databases" ;
+    tdb2:unionDefaultGraph true .
