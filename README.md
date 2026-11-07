@@ -18,7 +18,7 @@ data.udir.no (nattlig JSON-LD-dump)
         │
         ▼
 GitHub Actions: ingest-data.yml ──► scripts/nattlig-innlasting.sh
-        │  (riot: JSON-LD → N-Triples, PUT til Fuseki)
+        │  (riot: JSON-LD → N-Triples, PUT til mellomgraf, MOVE til Fuseki)
         ▼
 Fly.io: app grep-fuseki-v3 (Udir-kontoen), region arn
         Fuseki 5.3.0, TDB2 på volumet fuseki_storage_v4 (/fuseki)
@@ -47,7 +47,7 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 
 | Graf | Innhold | Kilde |
 |---|---|---|
-| `urn:graph:grep` | Rådata fra dumpen (omtrent 1,2 millioner tripler). Datoer og tall gjøres om til riktige datatyper (N3, B4), ellers uendret. | Erstattes i sin helhet hver natt (`PUT`) |
+| `urn:graph:grep` | Rådata fra dumpen (omtrent 1,2 millioner tripler). Datoer og tall gjøres om til riktige datatyper (N3, B4), ellers uendret. | Erstattes i sin helhet hver natt (`PUT` til `urn:graph:grep-ny`, så `MOVE`) |
 | `urn:graph:ontologi` | `ontologi/ontologi_kl06_rettet.ttl` og `ontologi/grep_type_mapping.ttl` | Lastes fra repoet ved hver innlasting |
 | `urn:graph:normalisert` | `udir:Gyldighet`-ressurser (N1) og `udir:status` (N2), omtrent 244 000 tripler | Tømmes og bygges på nytt av `sparql/normalisering/*.ru` |
 | `urn:graph:meta` | `last-id` (endrings-id), `lastet` (tidspunkt), `antall-tripler`, `antall-tripler-normalisert` | Skrives sist i hver innlasting |
@@ -62,13 +62,15 @@ Planlagt (fase 3): `urn:graph:utledet`.
 | `fuseki/config.ttl`, `fuseki/shiro.ini`, `fuseki/entrypoint.sh` | Fuseki-konfigurasjon og oppstart |
 | `fly.toml` | Fly-app: volum, VM (shared-cpu-2x, 4 GB), stopp ved inaktivitet. **Ingen hemmeligheter her.** |
 | `scripts/nattlig-innlasting.sh` | Innlastingen, som kan testes lokalt (se under) |
+| `scripts/komprimer.sh` | Komprimerer TDB2-databasen i prod via `flyctl ssh` (admin-API-et er bare åpent fra localhost) |
 | `scripts/rapporter-avvik.sh` | Gjør avvik i dataene om til en GitHub-issue og et sammendrag for kjøringen |
 | `scripts/rett_ontologi.py` | Lager `ontologi_kl06_rettet.ttl` og endringsloggen fra originalen og bruksstatistikk. `TYPEDE` bestemmer hvilke egenskaper N3 gjør om. |
 | `sparql/normalisering/*.ru` | Normaliseringsreglene (fase 2), kjøres i alfabetisk rekkefølge: `01-gyldighet`, `02-status`, `03-datatyper` |
 | `ontologi/ontologi_kl06_20240523.ttl` | Original Grep-ontologi (klasser med stor forbokstav). Rør ikke. |
 | `ontologi/ontologi_kl06_rettet.ttl` (+ `_endringslogg.md`) | Ontologi med rettet domene og rekkevidde. Den som lastes inn. |
 | `ontologi/grep_type_mapping.ttl` | 44 koblinger, f.eks. `u:Kompetansemaal ≡ u:kompetansemaal`, med `owl:equivalentClass` og `rdfs:subClassOf` begge veier |
-| `.github/workflows/ingest-data.yml` | Nattlig innlasting og keepalive |
+| `.github/workflows/ingest-data.yml` | Nattlig innlasting, komprimering og keepalive |
+| `.github/workflows/komprimer.yml` | Komprimering for hånd |
 | `.github/workflows/deploy.yml` | Deploy til Fly |
 | `docs/` | Plan og brukerveiledning |
 
@@ -77,11 +79,13 @@ Planlagt (fase 3): `urn:graph:utledet`.
 - **Når:** `cron: '30 1 * * *'`, det vil si 02:30 vintertid og 03:30 sommertid. Udirs eksport er ferdig omtrent kl. 01:20.
   GitHub starter ofte planlagte jobber 5–30 minutter for sent.
 - **Hopper over** når Udirs siste `endrings-id` er lik den i `urn:graph:meta`. Gjelder bare planlagt kjøring.
-  Manuell start og `push` laster alltid inn.
+  Manuell start og `push` laster alltid inn. Svarer endrings-API-et med en tom liste (skjedde 07.11.2026),
+  brukes `sha256:` av dump-filen som id, med en gul advarsel i Actions.
 - **Starter også ved push** til `ontologi/**`, `sparql/**`, `scripts/nattlig-innlasting.sh` eller `ingest-data.yml`.
-- **Rekkefølge:** vekk Fuseki → sammenlign endrings-id → last ned og konverter → `PUT` rådata → last inn ontologi
+- **Rekkefølge:** vekk Fuseki → sammenlign endrings-id → last ned og konverter → `PUT` rådata til den tomme
+  mellomgrafen `urn:graph:grep-ny` → `MOVE` til `urn:graph:grep` → last inn ontologi
   → `DROP SILENT DEFAULT` → normalisering (`DROP` av `urn:graph:normalisert`, så `sparql/normalisering/*.ru`)
-  → røyktest og kontroller → skriv metadata.
+  → røyktest og kontroller → skriv metadata → rapporter avvik → komprimer databasen.
   Metadata skrives sist, så en kjøring som feiler, blir forsøkt på nytt neste natt.
 - **Røyktest:** minst 1 000 000 tripler i rådata (`MIN_TRIPLER`), minst 36 000 `udir:Gyldighet` (`MIN_GYLDIGHET`)
   og minst én `udir:status`.
@@ -91,6 +95,13 @@ Planlagt (fase 3): `urn:graph:utledet`.
   repo-eieren, som får varsel. Issuen kommenteres bare når avvikene endrer seg og lukkes når de er borte.
   Avvikene står også i sammendraget for kjøringen i Actions, med en gul advarsel. Avvik rettes i Grep (prod)
   og forsvinner da etter neste innlasting. Test lokalt med `TORRKJORING=1 bash scripts/rapporter-avvik.sh avvik.md`.
+- **Hvorfor mellomgraf:** en `PUT` rett til `urn:graph:grep` leser den første bufferen og sletter så den gamle
+  grafen før den leser mer. På en nystartet maskin tar det over 30 sekunder, og da bryter Fly-proxyen forbindelsen
+  (502, 07.11.2026). `MOVE` er ett kall uten innhold å sende, og én transaksjon. Det prøves ikke på nytt
+  automatisk, for et nytt forsøk ville flyttet en tom graf over den riktige.
+- **Komprimering:** TDB2 beholder gamle versjoner av dataene, og volumet var fylt til 8,1 av 10 GB etter
+  noen måneders innlastinger. Gjeldende data tar rundt 0,7 GB. `scripts/komprimer.sh` kjører
+  `/$/compact/ds?deleteOld=true` etter hver innlasting som faktisk lastet noe.
 - Tar omtrent 4–5 minutter. Normaliseringen tar rundt ett minutt lokalt. `concurrency: ingest` hindrer at to innlastinger kjører samtidig.
 - **Keepalive:** GitHub slår av planlagte workflows etter 60 dager uten aktivitet i repoet. Det skjedde
   16.05.2026. Jobben `keepalive` lager derfor en tom commit (`[skip ci]`) når siste commit er eldre enn 50 dager.
@@ -178,7 +189,8 @@ har ikke dette problemet.
 |---|---|
 | Data er gamle, ingen nattlige kjøringer | Workflowen er slått av etter 60 dager uten aktivitet. Actions → Ingest Grep Data → *Enable workflow* (krever innlogging på GitHub). |
 | Deploy feiler ved nedlasting av Fuseki | Nettverksproblem. Vi bruker Maven Central; `archive.apache.org` har vært utilgjengelig. |
-| Innlasting feiler med 502 midt i en `PUT` | Fly-proxyen mistet forbindelsen til maskinen. Skriptet prøver tre ganger til (`RETRY`). Feiler det likevel, kjør Ingest Grep Data på nytt. De gamle dataene står, fordi transaksjonen avbrytes. |
+| Innlasting feiler med 502 midt i en `PUT` | Fly-proxyen mistet forbindelsen til maskinen. Se Fuseki-loggen i Grafana (fly.io → Monitoring), og se etter «Broken token» og `[PU02] … Operation timed out`. Skjedde før mellomgrafen ble innført, fordi Fuseki slettet den gamle grafen midt i opplastingen. De gamle dataene står, fordi transaksjonen avbrytes. |
+| Volumet fylles opp | Kjør «Komprimer databasen» under Actions. |
 | Innlasting feiler med 401 | Passordet er ulikt i Fly og GitHub. Bytt det begge steder (se over). |
 | Første spørring tar 5–10 sekunder | Maskinen var stoppet ved inaktivitet (`auto_stop_machines`). Den neste går raskt. |
 | Spørringer gir 0 treff etter en endring i konfigurasjonen | Data ligger i lagret default graph, som er usynlig med union. Kjør Ingest Grep Data. |

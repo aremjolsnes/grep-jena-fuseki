@@ -1,0 +1,22 @@
+name: Komprimer databasen
+
+# Fjerner gamle versjoner av dataene fra TDB2-volumet i prod (se scripts/komprimer.sh).
+on:
+  workflow_dispatch:
+
+# Samme gruppe som innlastingen, så de aldri skriver samtidig
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  komprimer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Komprimer TDB2
+        run: bash scripts/komprimer.sh
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

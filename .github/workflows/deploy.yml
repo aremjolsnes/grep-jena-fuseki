@@ -11,6 +11,7 @@ on:
       - 'docs/**'
       - 'sparql/**'
       - '.github/workflows/ingest-data.yml'
+      - '.github/workflows/komprimer.yml'
       - '**.md'
   workflow_dispatch:
 

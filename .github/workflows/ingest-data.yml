@@ -50,6 +50,19 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: bash scripts/rapporter-avvik.sh "${{ runner.temp }}/avvik.md"
 
+      # TDB2 beholder gamle versjoner av dataene, og hver innlasting legger igjen en hel kopi.
+      # Avviksfilen skrives bare når noe faktisk ble lastet inn, så den avgjør om det trengs.
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Komprimer databasen
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        run: |
+          if [ -f "${{ runner.temp }}/avvik.md" ]; then
+            bash scripts/komprimer.sh
+          else
+            echo "Ingenting ble lastet inn. Hopper over komprimering."
+          fi
+
   # GitHub deaktiverer planlagte workflows når repoet har vært uten aktivitet i 60 dager
   # (det skjedde i mai 2026). Denne jobben lager en tom commit når siste commit er eldre
   # enn 50 dager. "[skip ci]" hindrer at commiten trigger deploy.yml (ny Fly-deploy).

@@ -6,6 +6,7 @@
 #   urn:graph:ontologi     ontologi_kl06_rettet.ttl + grep_type_mapping.ttl fra repoet
 #   urn:graph:normalisert  resultatet av sparql/normalisering/*.ru (bygges på nytt hver gang)
 #   urn:graph:meta         siste endrings-id og tidspunkt (skrives sist)
+#   urn:graph:grep-ny      mellomgraf under innlasting; flyttes til urn:graph:grep med MOVE
 #
 # Miljøvariabler:
 #   FUSEKI_URL, FUSEKI_USER, FUSEKI_PASSWORD   påkrevd
@@ -42,6 +43,7 @@ AUTH=(-u "$FUSEKI_USER:$FUSEKI_PASSWORD")
 RETRY=(--retry 3 --retry-delay 15 --retry-connrefused)
 
 G_GREP="urn:graph:grep"
+G_GREP_NY="urn:graph:grep-ny"   # mellomgraf under innlasting (se steg 4)
 G_ONTOLOGI="urn:graph:ontologi"
 G_NORM="urn:graph:normalisert"
 G_META="urn:graph:meta"
@@ -93,8 +95,24 @@ for i in $(seq 1 30); do
 done
 
 # 2. Sammenlign siste endrings-id hos Udir med den lagrede
-SISTE_ID=$(curl -sS "${RETRY[@]}" --fail "https://data.udir.no/kl06/v201906/endringer?antall=1" \
-  | grep -oE '"endrings-id":\s*"[^"]+"' | head -n 1 | cut -d'"' -f4)
+last_ned_dump() {
+  [ -f "$ARBEID/dump.zip" ] && return 0
+  logg "Laster ned JSON-LD-dump ..."
+  curl -sS "${RETRY[@]}" --fail -L "https://data.udir.no/kl06/v201906/dump/jsonld" -o "$ARBEID/dump.zip"
+}
+ENDRINGER=$(curl -sS "${RETRY[@]}" --fail "https://data.udir.no/kl06/v201906/endringer?antall=1")
+SISTE_ID=$(printf '%s' "$ENDRINGER" | grep -oE '"endrings-id":\s*"[^"]+"' | head -n 1 | cut -d'"' -f4 || true)
+if [ -z "$SISTE_ID" ]; then
+  # Endrings-API-et har svart med en tom liste ([], 2026-11-07). Uten reserve døde skriptet
+  # stille her. Dumpen har verken ETag eller Last-Modified, så sjekksummen brukes som id.
+  echo "::warning::Endrings-API-et hos Udir ga ingen endrings-id (svar: ${ENDRINGER:0:100}). Bruker sjekksummen til dumpen i stedet."
+  if [ -z "$NT_FIL" ]; then
+    last_ned_dump
+    SISTE_ID="sha256:$(sha256sum "$ARBEID/dump.zip" | cut -c1-64)"
+  else
+    SISTE_ID="lokal:$(basename "$NT_FIL")"
+  fi
+fi
 LAGRET_ID=$(sporr "SELECT ?id WHERE { GRAPH <$G_META> { <$META> <$SCHEMA/last-id> ?id } }" || true)
 logg "Siste endrings-id hos Udir: $SISTE_ID"
 logg "Lagret endrings-id:         ${LAGRET_ID:-(ingen)}"
@@ -105,8 +123,7 @@ fi
 
 # 3. Last ned dumpen og konverter til N-Triples (med mindre NT_FIL er gitt)
 if [ -z "$NT_FIL" ]; then
-  logg "Laster ned JSON-LD-dump ..."
-  curl -sS "${RETRY[@]}" --fail -L "https://data.udir.no/kl06/v201906/dump/jsonld" -o "$ARBEID/dump.zip"
+  last_ned_dump
   unzip -q "$ARBEID/dump.zip" -d "$ARBEID/dump"
   logg "Konverterer til N-Triples ..."
   find "$ARBEID/dump" -name '*.jsonld' -print0 | xargs -0 $RIOT --output=nt > "$ARBEID/grep.nt"
@@ -114,9 +131,34 @@ if [ -z "$NT_FIL" ]; then
 fi
 logg "N-Triples: $(wc -l < "$NT_FIL") linjer"
 
-# 4. Rådata: erstatt hele urn:graph:grep i ett kall
-logg "Laster rådata til <$G_GREP> ..."
-last_graf PUT "$G_GREP" application/n-triples "$NT_FIL"
+# 4. Rådata: last opp til en tom mellomgraf, og bytt den inn med MOVE.
+#    En PUT rett til urn:graph:grep stopper opp: Fuseki leser den første bufferen og sletter
+#    så den gamle grafen (1,2 mill. tripler) før den leser mer. På en nystartet maskin tar det
+#    over 30 s, og da bryter Fly-proxyen forbindelsen (502, 2026-11-07). Mot en tom graf er det
+#    ingenting å slette, og slettingen skjer i stedet i MOVE, et kall uten innhold å sende.
+logg "Laster rådata til <$G_GREP_NY> ..."
+oppdater "DROP SILENT GRAPH <$G_GREP_NY>"
+last_graf PUT "$G_GREP_NY" application/n-triples "$NT_FIL"
+N_NY=$(tell_graf "$G_GREP_NY")
+logg "<$G_GREP_NY>: $N_NY tripler"
+# Mellomgrafen er synlig i union default graph, så den skal ikke bli liggende hvis noe feiler
+rydd_ny() { oppdater "DROP SILENT GRAPH <$G_GREP_NY>" || true; }
+if [ "${N_NY:-0}" -lt "$MIN_TRIPLER" ]; then
+  echo "FEIL: <$G_GREP_NY> har bare ${N_NY:-0} tripler (minst $MIN_TRIPLER). <$G_GREP> er ikke rørt." >&2
+  rydd_ny
+  exit 1
+fi
+logg "Bytter inn <$G_GREP> ..."
+t0=$(date +%s)
+# Ikke RETRY her: kjøres MOVE to ganger, er mellomgrafen tom andre gang og ville tømt urn:graph:grep.
+if ! curl -sS --fail-with-body "${AUTH[@]}" --data-urlencode "update=MOVE <$G_GREP_NY> TO <$G_GREP>" "$UPDATE" > /dev/null; then
+  # MOVE er én transaksjon: grafen er enten uendret eller helt byttet (fikk bare proxyen 502,
+  # kan Fuseki ha fullført). Meta er ikke skrevet, så neste kjøring laster uansett på nytt.
+  echo "FEIL: MOVE feilet." >&2
+  rydd_ny
+  exit 1
+fi
+logg "  MOVE: $(( $(date +%s) - t0 )) s"
 
 # 5. Ontologi fra repoet
 logg "Laster ontologi til <$G_ONTOLOGI> ..."
