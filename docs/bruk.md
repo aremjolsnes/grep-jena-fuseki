@@ -36,7 +36,7 @@ SPARQLWrapper og YASGUI. Bruk `Accept: text/csv` hvis du vil ha CSV.
 ```sparql
 PREFIX u:    <http://psi.udir.no/ontologi/kl06/>   # egenskaper og typer i Grep
 PREFIX d:    <http://psi.udir.no/kl06/>            # Grep-ressurser (læreplaner, kompetansemål, ...)
-PREFIX udir: <http://psi.udir.no/ontologi/>        # sandkassens egne begreper, se «Normaliserte data»
+PREFIX udir: <http://psi.udir.no/ontologi/>        # begreper sandkassen foreslår for Udir, se «Normaliserte data»
 PREFIX st:   <https://data.udir.no/kl06/v201906/status/status_>   # statusverdier, se «Egenheter»
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

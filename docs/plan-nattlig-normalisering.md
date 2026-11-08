@@ -211,3 +211,7 @@ Innhold: overbegreper (gruppe 1), `udir:Reform` og `udir:Revisjon` med individen
 - **B3:** Genererte IRI-er får navnerommet `http://psi.udir.no/kl06/gyldighet/…`.
 - **B4:** Datoer og tall gjøres om til riktige datatyper direkte i `urn:graph:grep`. Rekkeviddene i `ontologi_kl06_rettet.ttl` må da tilbake til `xsd:dateTime`/`xsd:integer` for de egenskapene som gjøres om.
 - **B5:** Den lokale `Dockerfile`-endringen forkastes. Vi bygger videre på den committede versjonen.
+- **B6 (2026-11-08):** Nye begreper legges direkte i `udir:` (`http://psi.udir.no/ontologi/`), ikke i et eget
+  navnerom for sandkassen. De er et forslag til Udir, og de brukes bare i sandkassen. Navnerommet viser hvor
+  begrepet hører hjemme: `udir:` er fagområdet uavhengig av reform, og `u:` er Greps eget vokabular (se
+  prinsippet under N2). Gjelder også `ontologi/udir.ttl` i fase 4.
