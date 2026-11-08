@@ -55,7 +55,7 @@ trenger ikke å bry seg om grafene.
 |---|---|
 | `urn:graph:grep` | Grep-dataene fra Udir (omtrent 1,2 millioner tripler). Datoer og tall har riktige datatyper, ellers uendret. |
 | `urn:graph:ontologi` | Ontologien: klasser, egenskaper og koblinger til typene i dataene |
-| `urn:graph:normalisert` | Gyldighet som egne ressurser og perioder som datoer (omtrent 250 000 tripler) |
+| `urn:graph:normalisert` | Gyldighet som egne ressurser, perioder som datoer og tittel per målform (omtrent 330 000 tripler) |
 | `urn:graph:utledet` | Typene fra ontologien, utledet fra typene i dataene (omtrent 50 000 tripler) |
 | `urn:graph:meta` | Når dataene sist ble oppdatert |
 
@@ -243,6 +243,30 @@ SELECT ?lp ?kode WHERE {
 Språknivåene svarer til CEFR-nivåene A1, A2 og B1, som står som tekst i `u:cefr`. CEFR har ikke noe offisielt
 vokabular med faste adresser ennå, så sandkassen kobler ikke nivåene videre.
 
+**Dublin Core.** Relasjonene i Grep finnes også med Dublin Core-navn (`dcterms:`), slik at verktøy som kjenner
+Dublin Core, forstår dem direkte:
+
+| Grep | Dublin Core |
+|---|---|
+| `u:erstatter` / `u:erstattes-av` | `dcterms:replaces` / `dcterms:isReplacedBy` |
+| `u:tilhoerer-laereplan` | `dcterms:isPartOf` |
+| `u:fastsatt-dato` (datoen planen ble vedtatt) | `dcterms:dateAccepted` |
+| `u:fastsatt-spraak` (språket planen er fastsatt på) | `dcterms:language` |
+
+`u:tilgjengelige-spraak` har ingen Dublin Core-utgave: den omfatter alle språkene planen finnes på, også det
+fastsatte. Tittel, kode, beskrivelse og sist endret har heller ingen ennå. Bruk `u:`-egenskapene for dem.
+
+Kjeden av læreplaner som erstatter hverandre, med Dublin Core:
+
+```sparql
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?fra ?til WHERE {
+  ?a dcterms:isReplacedBy ?b .
+  ?a u:kode ?fra . ?b u:kode ?til .
+  FILTER(STRSTARTS(?fra, "NOR1"))
+} ORDER BY ?fra
+```
+
 **Bruke ontologien i spørringer.** Hver natt utleder sandkassen typene fra ontologien (`urn:graph:utledet`),
 så klassene med stor forbokstav og overbegrepene kan brukes direkte:
 
@@ -338,6 +362,24 @@ SELECT ?fra ?til ?kanTaEksamen WHERE {
 }
 ```
 
+**Tittel på bokmål og nynorsk.** `u:tittel` med språket `default` er tittelen på fastsettelsesspråket. Det kan
+være nynorsk, og for 19 LK20-læreplaner nordsamisk. Det gjelder også kompetansemålene og kjerneelementene i dem.
+Læreplanene og alt som hører til dem har derfor én tittel per målform, med fast rekkefølge av reserver:
+
+| Egenskap | 1. valg | 2. valg | 3. valg |
+|---|---|---|---|
+| `udir:bokmaalTittel` | bokmål | nynorsk | fastsettelsesspråket |
+| `udir:nynorskTittel` | nynorsk | bokmål | fastsettelsesspråket |
+
+Verdien er merket med språket den faktisk er på (`nb`, `nn`, `se` …), så `LANG()` viser om en reserve er brukt.
+Kompetansemålene i en samisk læreplan, på bokmål:
+
+```sparql
+SELECT ?kode ?tittel WHERE {
+  ?km u:tilhoerer-laereplan d:DDU02-03 ; u:kode ?kode ; udir:bokmaalTittel ?tittel .
+} ORDER BY ?kode
+```
+
 **Datoer og tall med riktige datatyper.** Disse egenskapene er gjort om fra tekst direkte i
 `urn:graph:grep`:
 
@@ -358,12 +400,6 @@ SELECT ?s ?endret WHERE {
 
 **Dette fungerer annerledes enn hos Udir.** Sammenligner du med en tekststreng, for eksempel
 `FILTER(?d >= "2026-01-01")`, gir det ingen treff her. Bruk en typet verdi som over, eller `STR(?d)`.
-
-### Det som kommer
-
-Under arbeid, og ikke tilgjengelig ennå:
-
-- **Koblinger til felles vokabularer**: Dublin Core.
 
 ## Egenheter i dataene
 

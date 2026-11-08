@@ -1,8 +1,8 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
 Status 2026-11-08: fase 0, 1 og 2 er gjennomført og i drift. I fase 2 er N2 (status) fjernet og N4 (perioder) lagt
-til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper, steg 2: reform og revisjon med R3, steg 3: SKOS med R4, steg 4: språk med R5). Gyldighetsvokabularet
-og Dublin Core gjenstår i fase 4.
+til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper, steg 2: reform og revisjon med R3, steg 3: SKOS med R4, steg 4: språk med R5, steg 5: Dublin Core). Gyldighetsvokabularet
+gjenstår i fase 4.
 
 ## Mål
 
@@ -144,6 +144,28 @@ Beslutninger sammen med fagansvarlig 2026-11-08:
 med to verdier for samme egenskap. Til-datoen er siste gyldige dag (testet: AGR3001 eksamen til 2026-07-31 gir
 ja 31.07 og nei 01.08). I dag: 3 275 fagkoder gyldige, 2 344 med undervisning, 1 855 med eksamen.
 
+### N5: Tittel per målform ✅ (lagt til 2026-11-08)
+
+`u:tittel@default` er fastsettelsesspråket. For de 19 LK20-læreplanene fastsatt på nordsamisk er det samisk, også for
+kompetansemålene og kjerneelementene i dem. Mange ressurser i nynorsk-fastsatte planer mangler bokmålstittel, og
+de fleste i bokmåls-fastsatte mangler nynorsktittel.
+
+Avklart med fagansvarlig: to speilvendte egenskaper i `urn:graph:normalisert` (`04-titler.ru`), for læreplanene og
+alt som hører til dem (`u:tilhoerer-laereplan`):
+
+| Egenskap | 1. valg | 2. valg | 3. valg |
+|---|---|---|---|
+| `udir:bokmaalTittel` | `@nob` | `@nno` | `@default` |
+| `udir:nynorskTittel` | `@nno` | `@nob` | `@default` |
+
+Verdien merkes med språket den faktisk er på (`nb`, `nn`, `se`). Reserven fra `@default` får fastsettelsesspråket
+til læreplanen, eller ingen språkkode når ressursen hører til læreplaner med ulike språk.
+
+Dekning (rådata 2026-11-06): bokmåls-fastsatt 29 893 ressurser (alle har `@nob`, 4 302 har `@nno`), nynorsk-fastsatt
+6 981 (alle `@nno`, 2 535 `@nob`), nordsamisk 958 (953 `@nob`, ingen `@nno`). Resultat: 37 831 ressurser med én
+verdi per egenskap. Bokmål: 33 380 nb, 4 446 nn, 5 se. Nynorsk: 11 282 nn, 26 544 nb, 5 se. Regelen tar 7 s.
+Røyktesten krever begge egenskapene på alle ressurser i omfanget.
+
 ## Fase 3: Utledning (`urn:graph:utledet`)
 
 Reglene ligger i `sparql/utledning/`. Siden SPARQL property paths (`+`) gir den transitive lukningen i én spørring, trengs ingen iterasjon.
@@ -183,7 +205,7 @@ og skriver bare tripler som ikke står der fra før.
 
 Dette er et eget arbeid som gjøres stegvis i dialog og legges i `ontologi/udir.ttl`. Fasene 1–3 kan bygges og testes uten det, med den rettede ontologien og typekoblingene vi allerede har.
 
-Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2) ✅, SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde) ✅, språkkobling til EUs autoritetstabell ✅, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core.
+Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2) ✅, SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde) ✅, språkkobling til EUs autoritetstabell ✅, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core ✅.
 
 ### Steg 1: overbegreper ✅ (2026-11-08)
 
@@ -255,6 +277,22 @@ Avklart med fagansvarlig:
 R5 (`sparql/utledning/05-spraak.ru`) lager EU-adressen fra `u:kode` med store bokstaver, så nye språk kommer med
 automatisk. Resultat ved lokal test: 10 språk og 3 språknivåer som begreper, alle språk koblet, 67 læreplaner
 tilgjengelige på nordsamisk. Røyktesten krever fem begrepssystemer og EU-kobling på alle språk.
+
+### Steg 5: Dublin Core ✅ (2026-11-08)
+
+Avklart med fagansvarlig:
+
+- **Vi begynner med relasjonene:** `u:erstatter` → `dcterms:replaces`, `u:erstattes-av` → `dcterms:isReplacedBy`,
+  `u:tilhoerer-laereplan` → `dcterms:isPartOf`, `u:fastsatt-dato` → `dcterms:dateAccepted` og
+  `u:fastsatt-spraak` → `dcterms:language`. Tekst og datoer (tittel, kode, sist endret, beskrivelse, ca. 250 000
+  tripler) venter til noen trenger dem.
+- **Fastsatt dato er datoen planen ble vedtatt**, så `dcterms:dateAccepted`, ikke `dcterms:issued`.
+- **Fastsatt språk** er språket planen er fastsatt på: `dcterms:language`. `u:tilgjengelige-spraak` kobles ikke,
+  fordi den omfatter alle språkene planen er tilgjengelig på, også det fastsatte.
+
+Koblingene er `rdfs:subPropertyOf` i `udir.ttl`, og R2 følger dem uten regelendringer. Resultat ved lokal test:
+4 410 + 4 410 + 44 079 + 1 031 + 1 109 tripler, `urn:graph:utledet` fra 126 009 til 180 946. R2 tar 5 s.
+Røyktesten krever alle fem egenskapene.
 
 ## Den nattlige jobben, ny rekkefølge
 

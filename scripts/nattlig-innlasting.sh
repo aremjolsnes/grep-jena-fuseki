@@ -217,6 +217,16 @@ N_SPRAAK_UTEN_EU=$(sporr "PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PR
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_GREP> { ?s a u:spraak }
     FILTER NOT EXISTS { GRAPH <$G_UTLEDET> { ?s skos:exactMatch ?eu
       FILTER(STRSTARTS(STR(?eu), \"http://publications.europa.eu/resource/authority/language/\")) } } }")
+# N5: læreplaner og alt som hører til dem, skal ha udir:bokmaalTittel og udir:nynorskTittel
+N_UTEN_BOKMAALTITTEL=$(sporr "PREFIX u: <http://psi.udir.no/ontologi/kl06/> PREFIX udir: <http://psi.udir.no/ontologi/>
+  SELECT (COUNT(DISTINCT ?s) AS ?n) WHERE {
+    GRAPH <$G_GREP> { { ?s a u:laereplan } UNION { ?s a u:laereplan_lk20 } UNION { ?s u:tilhoerer-laereplan ?lp } ?s u:tittel ?x }
+    FILTER(NOT EXISTS { GRAPH <$G_NORM> { ?s udir:bokmaalTittel ?t } }
+        || NOT EXISTS { GRAPH <$G_NORM> { ?s udir:nynorskTittel ?t } }) }")
+# Dublin Core (fase 4 steg 5): relasjonene fra Grep-egenskapene via R2
+N_DCTERMS=$(sporr_alle "SELECT ?p (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s ?p ?o
+    FILTER(STRSTARTS(STR(?p), \"http://purl.org/dc/terms/\")) } } GROUP BY ?p ORDER BY ?p" \
+  | sed 's#http://purl.org/dc/terms/#dcterms:#' | tr '\n' ' ')
 N_GYLDIGHET=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_NORM> { ?g a udir:Gyldighet } }")
 # N4: alle fagkoder skal ha en gyldighetsperiode (eventuelt 1970-01-01–2100-12-31)
@@ -233,6 +243,8 @@ logg "Overbegreper (utledet): $N_OVERBEGREP"
 logg "Revisjon (utledet): $N_REVISJON, i begge revisjonene: $N_TO_REVISJONER"
 logg "SKOS-begreper (utledet): $N_SKOS, fagområder uten fagkategori: $N_FAGOMR_UTEN_KATEGORI"
 logg "Språk uten kobling til EUs språktabell: $N_SPRAAK_UTEN_EU"
+logg "Dublin Core (utledet): $N_DCTERMS"
+logg "Uten udir:bokmaalTittel eller udir:nynorskTittel (læreplaner og det som hører til dem): $N_UTEN_BOKMAALTITTEL"
 logg "udir:Gyldighet: $N_GYLDIGHET, fagkoder uten periode: $N_FAGKODER_UTEN_PERIODE"
 logg "Perioder: $N_PERIODER"
 
@@ -311,12 +323,14 @@ if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
    || [ "${N_KM_TYPE:-0}" -lt 1 ] || [ -z "${N_OVERBEGREP// /}" ] \
    || [ "$(printf '%s' "$N_REVISJON" | grep -o 'udir:LK' | wc -l)" -ne 2 ] || [ "${N_TO_REVISJONER:-1}" -ne 0 ] \
    || [ "$(printf '%s' "$N_SKOS" | grep -o 'udir:' | wc -l)" -ne 5 ] || [ "${N_FAGOMR_UTEN_KATEGORI:-1}" -ne 0 ] \
-   || [ "${N_SPRAAK_UTEN_EU:-1}" -ne 0 ]; then
+   || [ "${N_SPRAAK_UTEN_EU:-1}" -ne 0 ] || [ "$(printf '%s' "$N_DCTERMS" | grep -o 'dcterms:' | wc -l)" -ne 5 ] \
+   || [ "${N_UTEN_BOKMAALTITTEL:-1}" -ne 0 ]; then
   echo "Røyktest feilet (forventet minst $MIN_TRIPLER tripler i $G_GREP, >0 i $G_ONTOLOGI," \
        "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM," \
        ">0 u:Kompetansemaal_lk20, overbegreper fra udir.ttl og udir:revisjon for LK06 og LK20" \
        "(ingen ressurs i begge), begreper i alle fem SKOS-begrepssystemene, fagkategori på alle" \
-       "fagområder og EU-kobling på alle språk i $G_UTLEDET)"
+       "fagområder, EU-kobling på alle språk og alle fem Dublin Core-egenskapene i $G_UTLEDET," \
+       "og udir:bokmaalTittel og udir:nynorskTittel på alle læreplaner og det som hører til dem i $G_NORM)"
   exit 1
 fi
 

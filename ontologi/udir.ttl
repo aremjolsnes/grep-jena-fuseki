@@ -1,8 +1,10 @@
 @prefix udir: <http://psi.udir.no/ontologi/> .
 @prefix u:    <http://psi.udir.no/ontologi/kl06/> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
 # udir:-laget (fase 4): begreper fra fagområdet som ikke er knyttet til én revisjon.
@@ -209,3 +211,36 @@ udir:Spraaknivaaer a skos:ConceptScheme ;
 
 u:Spraak udir:begrepssystem udir:Spraak .
 u:Spraaknivaa udir:begrepssystem udir:Spraaknivaaer .
+
+# ---------------------------------------------------------------------------------------------------
+# Steg 5 (2026-11-08): Dublin Core
+# Avklart med fagansvarlig: vi begynner med relasjonene. Tekst og datoer som tittel, kode, sist endret og
+# beskrivelse (ca. 250 000 tripler) venter til noen trenger dem. R2 (sparql/utledning/02-egenskaper.ru)
+# følger rdfs:subPropertyOf, så ingen ny regel trengs.
+# - u:fastsatt-dato er datoen planen ble vedtatt: dcterms:dateAccepted (ikke dcterms:issued).
+# - u:fastsatt-spraak er språket planen er fastsatt på: dcterms:language. u:tilgjengelige-spraak kobles
+#   ikke: den omfatter alle språkene planen er tilgjengelig på, også det fastsatte.
+# ---------------------------------------------------------------------------------------------------
+
+u:erstatter rdfs:subPropertyOf dcterms:replaces .
+u:erstattes-av rdfs:subPropertyOf dcterms:isReplacedBy .
+u:tilhoerer-laereplan rdfs:subPropertyOf dcterms:isPartOf .
+u:fastsatt-dato rdfs:subPropertyOf dcterms:dateAccepted .
+u:fastsatt-spraak rdfs:subPropertyOf dcterms:language .
+
+# ---------------------------------------------------------------------------------------------------
+# N5 (2026-11-08): tittel per målform, med reserve (sparql/normalisering/04-titler.ru)
+# Avklart med fagansvarlig: u:tittel@default er fastsettelsesspråket, som kan være samisk (bare LK20) eller
+# nynorsk. To speilvendte egenskaper gir én tittel for hver målform. Verdien er merket med språket den
+# faktisk er på, så LANG() viser om en reserve er brukt.
+# ---------------------------------------------------------------------------------------------------
+
+udir:bokmaalTittel a owl:DatatypeProperty ;
+    rdfs:label "bokmålstittel"@nb, "bokmålstittel"@nn, "title in Bokmål"@en ;
+    rdfs:comment "Tittelen på bokmål. Reserve: nynorsk, deretter tittelen på fastsettelsesspråket. Gjelder læreplaner og alt som hører til dem."@nb ;
+    rdfs:range rdf:langString .
+
+udir:nynorskTittel a owl:DatatypeProperty ;
+    rdfs:label "nynorsktittel"@nb, "nynorsktittel"@nn, "title in Nynorsk"@en ;
+    rdfs:comment "Tittelen på nynorsk. Reserve: bokmål, deretter tittelen på fastsettelsesspråket. Gjelder læreplaner og alt som hører til dem."@nb ;
+    rdfs:range rdf:langString .

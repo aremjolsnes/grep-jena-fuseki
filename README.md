@@ -49,8 +49,8 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 |---|---|---|
 | `urn:graph:grep` | Rådata fra dumpen (omtrent 1,2 millioner tripler). Datoer og tall gjøres om til riktige datatyper (N3, B4), ellers uendret. | Erstattes i sin helhet hver natt (`PUT` til `urn:graph:grep-ny`, så `MOVE`) |
 | `urn:graph:ontologi` | `ontologi/ontologi_kl06_rettet.ttl`, `ontologi/grep_type_mapping.ttl` og `ontologi/udir.ttl` | Lastes fra repoet ved hver innlasting |
-| `urn:graph:normalisert` | `udir:Gyldighet`-ressurser (N1) og perioder som datoer (N4), omtrent 252 000 tripler | Tømmes og bygges på nytt av `sparql/normalisering/*.ru` |
-| `urn:graph:utledet` | Typer fra ontologien via `rdfs:subClassOf+` (R1), også overbegrepene i `udir.ttl`, revisjon (R3), SKOS-begreper (R4) og språk koblet til EUs språktabell (R5), omtrent 126 000 tripler | Tømmes og bygges på nytt av `sparql/utledning/*.ru` |
+| `urn:graph:normalisert` | `udir:Gyldighet`-ressurser (N1), perioder som datoer (N4) og tittel per målform (N5), omtrent 328 000 tripler | Tømmes og bygges på nytt av `sparql/normalisering/*.ru` |
+| `urn:graph:utledet` | Typer fra ontologien via `rdfs:subClassOf+` (R1), også overbegrepene i `udir.ttl`, revisjon (R3), SKOS-begreper (R4) språk koblet til EUs språktabell (R5) og Dublin Core-relasjoner (R2), omtrent 181 000 tripler | Tømmes og bygges på nytt av `sparql/utledning/*.ru` |
 | `urn:graph:meta` | `last-id` (endrings-id), `lastet` (tidspunkt), `antall-tripler`, `antall-tripler-normalisert`, `antall-tripler-utledet` | Skrives sist i hver innlasting |
 
 ## Filer
@@ -64,11 +64,11 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 | `scripts/komprimer.sh` | Komprimerer TDB2-databasen i prod via `flyctl ssh` (admin-API-et er bare åpent fra localhost) |
 | `scripts/rapporter-avvik.sh` | Gjør avvik i dataene om til en GitHub-issue og et sammendrag for kjøringen |
 | `scripts/rett_ontologi.py` | Lager `ontologi_kl06_rettet.ttl` og endringsloggen fra originalen og bruksstatistikk. `TYPEDE` bestemmer hvilke egenskaper N3 gjør om. |
-| `sparql/normalisering/*.ru` | Normaliseringsreglene (fase 2), kjøres i alfabetisk rekkefølge: `01-gyldighet` (N1), `02-datatyper` (N3), `03-perioder` (N4) |
+| `sparql/normalisering/*.ru` | Normaliseringsreglene (fase 2), kjøres i alfabetisk rekkefølge: `01-gyldighet` (N1), `02-datatyper` (N3), `03-perioder` (N4), `04-titler` (N5) |
 | `sparql/utledning/*.ru` | Utledningsreglene (fase 3), kjøres etter normaliseringen: `01-typer` (R1), `02-egenskaper` (R2), `03-revisjon` (R3), `04-skos` (R4), `05-spraak` (R5) |
 | `ontologi/ontologi_kl06_20240523.ttl` | Original Grep-ontologi (klasser med stor forbokstav). Rør ikke. |
 | `ontologi/ontologi_kl06_rettet.ttl` (+ `_endringslogg.md`) | Ontologi med rettet domene og rekkevidde. Den som lastes inn. |
-| `ontologi/udir.ttl` | `udir:`-laget (fase 4): overbegreper på tvers av revisjonene, reform og revisjon, SKOS-begrepssystemer, språk og språknivå. Skrives for hånd, stegvis. |
+| `ontologi/udir.ttl` | `udir:`-laget (fase 4): overbegreper på tvers av revisjonene, reform og revisjon, SKOS-begrepssystemer, språk og språknivå, Dublin Core. Skrives for hånd, stegvis. |
 | `ontologi/grep_type_mapping.ttl` | 44 koblinger, f.eks. `u:Kompetansemaal ≡ u:kompetansemaal`, med `owl:equivalentClass` og `rdfs:subClassOf` begge veier |
 | `.github/workflows/ingest-data.yml` | Nattlig innlasting, komprimering og keepalive |
 | `.github/workflows/komprimer.yml` | Komprimering for hånd |
@@ -93,7 +93,7 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
   en gyldighetsperiode (`udir:gyldigFra`/`udir:gyldigTil`) på alle fagkoder, minst én utledet
   `u:Kompetansemaal_lk20`, utledede overbegreper fra `udir.ttl` og `udir:revisjon` for både LK06 og LK20,
   uten at noen ressurs har begge, begreper i alle fem SKOS-begrepssystemene, fagkategori på alle fagområder og kobling til EUs
-  språktabell på alle språk.
+  språktabell på alle språk og alle fem Dublin Core-egenskapene.
 - **Avvik i dataene** stopper ikke jobben, men skal ses av et menneske. Kontrollene er datoer med årstall før 1990
   eller etter 2100, gyldighet uten kobling og verdier N3 ikke kunne gjøre om. `nattlig-innlasting.sh` skriver dem
   til `AVVIK_FIL`, og `scripts/rapporter-avvik.sh` lager issuen **«Avvik i Grep-dataene»**. Den tildeles
