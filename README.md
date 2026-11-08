@@ -49,7 +49,7 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 |---|---|---|
 | `urn:graph:grep` | Rådata fra dumpen (omtrent 1,2 millioner tripler). Datoer og tall gjøres om til riktige datatyper (N3, B4), ellers uendret. | Erstattes i sin helhet hver natt (`PUT` til `urn:graph:grep-ny`, så `MOVE`) |
 | `urn:graph:ontologi` | `ontologi/ontologi_kl06_rettet.ttl` og `ontologi/grep_type_mapping.ttl` | Lastes fra repoet ved hver innlasting |
-| `urn:graph:normalisert` | `udir:Gyldighet`-ressurser (N1) og `udir:status` (N2), omtrent 244 000 tripler | Tømmes og bygges på nytt av `sparql/normalisering/*.ru` |
+| `urn:graph:normalisert` | `udir:Gyldighet`-ressurser (N1) og perioder som datoer (N4), omtrent 252 000 tripler | Tømmes og bygges på nytt av `sparql/normalisering/*.ru` |
 | `urn:graph:meta` | `last-id` (endrings-id), `lastet` (tidspunkt), `antall-tripler`, `antall-tripler-normalisert` | Skrives sist i hver innlasting |
 
 Planlagt (fase 3): `urn:graph:utledet`.
@@ -65,7 +65,7 @@ Planlagt (fase 3): `urn:graph:utledet`.
 | `scripts/komprimer.sh` | Komprimerer TDB2-databasen i prod via `flyctl ssh` (admin-API-et er bare åpent fra localhost) |
 | `scripts/rapporter-avvik.sh` | Gjør avvik i dataene om til en GitHub-issue og et sammendrag for kjøringen |
 | `scripts/rett_ontologi.py` | Lager `ontologi_kl06_rettet.ttl` og endringsloggen fra originalen og bruksstatistikk. `TYPEDE` bestemmer hvilke egenskaper N3 gjør om. |
-| `sparql/normalisering/*.ru` | Normaliseringsreglene (fase 2), kjøres i alfabetisk rekkefølge: `01-gyldighet`, `02-status`, `03-datatyper` |
+| `sparql/normalisering/*.ru` | Normaliseringsreglene (fase 2), kjøres i alfabetisk rekkefølge: `01-gyldighet` (N1), `02-datatyper` (N3), `03-perioder` (N4) |
 | `ontologi/ontologi_kl06_20240523.ttl` | Original Grep-ontologi (klasser med stor forbokstav). Rør ikke. |
 | `ontologi/ontologi_kl06_rettet.ttl` (+ `_endringslogg.md`) | Ontologi med rettet domene og rekkevidde. Den som lastes inn. |
 | `ontologi/grep_type_mapping.ttl` | 44 koblinger, f.eks. `u:Kompetansemaal ≡ u:kompetansemaal`, med `owl:equivalentClass` og `rdfs:subClassOf` begge veier |
@@ -88,7 +88,7 @@ Planlagt (fase 3): `urn:graph:utledet`.
   → røyktest og kontroller → skriv metadata → rapporter avvik → komprimer databasen.
   Metadata skrives sist, så en kjøring som feiler, blir forsøkt på nytt neste natt.
 - **Røyktest:** minst 1 000 000 tripler i rådata (`MIN_TRIPLER`), minst 36 000 `udir:Gyldighet` (`MIN_GYLDIGHET`)
-  og minst én `udir:status`.
+  og en gyldighetsperiode (`udir:gyldigFra`/`udir:gyldigTil`) på alle fagkoder.
 - **Avvik i dataene** stopper ikke jobben, men skal ses av et menneske. Kontrollene er datoer med årstall før 1990
   eller etter 2100, gyldighet uten kobling og verdier N3 ikke kunne gjøre om. `nattlig-innlasting.sh` skriver dem
   til `AVVIK_FIL`, og `scripts/rapporter-avvik.sh` lager issuen **«Avvik i Grep-dataene»**. Den tildeles
@@ -102,7 +102,8 @@ Planlagt (fase 3): `urn:graph:utledet`.
 - **Komprimering:** TDB2 beholder gamle versjoner av dataene, og volumet var fylt til 8,1 av 10 GB etter
   noen måneders innlastinger. Gjeldende data tar rundt 0,7 GB. `scripts/komprimer.sh` kjører
   `/$/compact/ds?deleteOld=true` etter hver innlasting som faktisk lastet noe.
-- Tar omtrent 4–5 minutter. Normaliseringen tar rundt ett minutt lokalt. `concurrency: ingest` hindrer at to innlastinger kjører samtidig.
+- Tar rundt 30 minutter i prod når noe lastes inn (opplasting ca. 5 min, `MOVE` ca. 15 min, normalisering ca. 5 min,
+  komprimering ca. 4 min), og under ett minutt når ingenting er endret. Lokalt tar hele jobben ca. 3 minutter. `concurrency: ingest` hindrer at to innlastinger kjører samtidig.
 - **Keepalive:** GitHub slår av planlagte workflows etter 60 dager uten aktivitet i repoet. Det skjedde
   16.05.2026. Jobben `keepalive` lager derfor en tom commit (`[skip ci]`) når siste commit er eldre enn 50 dager.
 
@@ -175,7 +176,7 @@ har ikke dette problemet.
   domener *snitt*, så resonnering ville gitt feil typer. `scripts/rett_ontologi.py` retter dette. Kjør det på
   nytt hvis dataene endrer seg: `python scripts/rett_ontologi.py`.
 - **Datatyper (B4):** `TYPEDE` i `scripts/rett_ontologi.py` setter `rdfs:range` til `xsd:dateTime`, `xsd:integer`
-  eller `xsd:decimal`. Regelen `03-datatyper.ru` leser rekkevidden fra `urn:graph:ontologi` og gjør om verdiene.
+  eller `xsd:decimal`. Regelen `02-datatyper.ru` leser rekkevidden fra `urn:graph:ontologi` og gjør om verdiene.
   Skal en ny egenskap få datatype, legger du den i `TYPEDE` og kjører skriptet. Skriptet henter statistikk bare
   fra `urn:graph:grep`.
 - Domene og rekkevidde brukes **ikke** til utledning. Utledninger skal beregnes hver natt med egne SPARQL-regler

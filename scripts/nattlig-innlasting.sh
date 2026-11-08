@@ -181,10 +181,17 @@ N_ONT=$(tell_graf "$G_ONTOLOGI")
 N_NORM=$(tell_graf "$G_NORM")
 N_GYLDIGHET=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_NORM> { ?g a udir:Gyldighet } }")
-N_STATUS=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
-  SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_NORM> { ?s udir:status ?st } }")
+# N4: alle fagkoder skal ha en gyldighetsperiode (eventuelt 1970-01-01–2100-12-31)
+N_FAGKODER_UTEN_PERIODE=$(sporr "PREFIX u: <http://psi.udir.no/ontologi/kl06/> PREFIX udir: <http://psi.udir.no/ontologi/>
+  SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_GREP> { ?fk a u:fagkode }
+    FILTER NOT EXISTS { GRAPH <$G_NORM> { ?fk udir:gyldigFra ?fra ; udir:gyldigTil ?til } } }")
+N_PERIODER=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
+  SELECT ?p (COUNT(*) AS ?n) WHERE { GRAPH <$G_NORM> { ?r ?p ?d
+    VALUES ?p { udir:gyldigFra udir:undervisningFra udir:eksamenFra udir:startdato } } } GROUP BY ?p ORDER BY ?p" \
+  | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
 logg "Tripler: $G_GREP=$N_GREP, $G_ONTOLOGI=$N_ONT, $G_NORM=$N_NORM"
-logg "udir:Gyldighet: $N_GYLDIGHET, udir:status: $N_STATUS"
+logg "udir:Gyldighet: $N_GYLDIGHET, fagkoder uten periode: $N_FAGKODER_UTEN_PERIODE"
+logg "Perioder: $N_PERIODER"
 
 # Avvik i dataene: noe et menneske bør se på, men som ikke stopper innlastingen.
 # Hvert funn logges og samles i $ARBEID/avvik.md, som scripts/rapporter-avvik.sh gjør om til en GitHub-issue.
@@ -212,12 +219,13 @@ avvik() {  # overskrift forklaring kolonner(kommaseparert) csv-rader
 
 # Datoer med urimelige årstall. Blanke noder vises via gyldighetsressursen i urn:graph:normalisert.
 avvik "Datoer med urimelig årstall" \
-  "Årstall før 1990 eller etter 2100. Sannsynligvis en skrivefeil i Grep." \
+  "Årstall før 1990 eller etter 2100. Sannsynligvis en skrivefeil i Grep. 1970-01-01 og 2100-12-31 er sandkassens egne verdier for åpne ender og telles ikke." \
   "Ressurs,Egenskap,Dato" "$(sporr_alle "$(cat <<EOF
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 SELECT ?s ?p ?d WHERE {
   { GRAPH <$G_GREP> { ?s ?p ?d FILTER(!isBlank(?s)) } } UNION { GRAPH <$G_NORM> { ?s ?p ?d } }
-  FILTER(DATATYPE(?d) = xsd:dateTime && (YEAR(?d) < 1990 || YEAR(?d) > 2100))
+  FILTER(DATATYPE(?d) IN (xsd:dateTime, xsd:date) && (YEAR(?d) < 1990 || YEAR(?d) > 2100))
+  FILTER(?d NOT IN ("1970-01-01"^^xsd:date, "2100-12-31"^^xsd:date))
 } ORDER BY ?s ?p
 EOF
 )")"
@@ -256,9 +264,9 @@ EOF
 )")"
 
 if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
-   || [ "${N_GYLDIGHET:-0}" -lt "$MIN_GYLDIGHET" ] || [ "${N_STATUS:-0}" -lt 1 ]; then
+   || [ "${N_GYLDIGHET:-0}" -lt "$MIN_GYLDIGHET" ] || [ "${N_FAGKODER_UTEN_PERIODE:-1}" -ne 0 ]; then
   echo "Røyktest feilet (forventet minst $MIN_TRIPLER tripler i $G_GREP, >0 i $G_ONTOLOGI," \
-       "minst $MIN_GYLDIGHET udir:Gyldighet og >0 udir:status i $G_NORM)"
+       "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM)"
   exit 1
 fi
 

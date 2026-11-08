@@ -7,7 +7,7 @@
 #   d:ADI2001 udir:gyldighet <http://psi.udir.no/kl06/gyldighet/ADI2001/opplaeringsfag/ADI2Z01> .
 #   <…/gyldighet/ADI2001/opplaeringsfag/ADI2Z01> a udir:Gyldighet ;
 #       udir:relasjon u:opplaeringsfag ; udir:objekt d:ADI2Z01 ;
-#       udir:gyldigTil "2021-07-31T00:00:00"^^xsd:dateTime .
+#       udir:gyldigFra "1970-01-01"^^xsd:date ; udir:gyldigTil "2021-07-31"^^xsd:date .
 #
 # Koblingen finnes med eksakt sammenligning:
 #   gyldighet-<lokalnavn(egenskap)>-<siste del av objekt-IRI>
@@ -16,7 +16,10 @@
 # og får /<N> bak IRI-en, for eksempel <…/gyldighet/DTDGH2----/bygger-paa-programomraade/TPTIP1----/2>.
 # IRI-ene (B3) bygges av subjekt, relasjon, objekt og eventuelt periodenummer, og er stabile fra natt til natt.
 # Egenskaper som ikke matcher noen kobling, hoppes over og rapporteres av nattlig-innlasting.sh.
-# Datoer som ikke lar seg gjøre om til xsd:dateTime, beholdes som streng.
+# Datoene lagres som xsd:date uten klokkeslett og tidssone. Klokkeslettet i dumpen er redaksjonelt støy
+# (for eksempel T02:00:00); det er datoen som gjelder, og til-datoen er siste gyldige dag. Mangler en ende,
+# brukes 1970-01-01 eller 2100-12-31, slik at det synes at datoen er satt av sandkassen og ikke av Udir.
+# Datoer som ikke lar seg gjøre om, beholdes som streng og fanges av avvikskontrollen.
 
 PREFIX u:    <http://psi.udir.no/ontologi/kl06/>
 PREFIX udir: <http://psi.udir.no/ontologi/>
@@ -48,8 +51,8 @@ WHERE {
     OPTIONAL { ?b u:gyldig-fra ?fraTekst }
     OPTIONAL { ?b u:gyldig-til ?tilTekst }
   }
-  BIND(COALESCE(xsd:dateTime(?fraTekst), ?fraTekst) AS ?fra)
-  BIND(COALESCE(xsd:dateTime(?tilTekst), ?tilTekst) AS ?til)
+  BIND(IF(BOUND(?fraTekst), COALESCE(xsd:date(SUBSTR(STR(?fraTekst), 1, 10)), ?fraTekst), "1970-01-01"^^xsd:date) AS ?fra)
+  BIND(IF(BOUND(?tilTekst), COALESCE(xsd:date(SUBSTR(STR(?tilTekst), 1, 10)), ?tilTekst), "2100-12-31"^^xsd:date) AS ?til)
   BIND(IRI(CONCAT("http://psi.udir.no/kl06/gyldighet/", REPLACE(STR(?s), "^.*/", ""), "/", ?rel, "/", ?objekt,
                   IF(?nr = "", "", CONCAT("/", ?nr)))) AS ?g)
 }

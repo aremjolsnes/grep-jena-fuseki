@@ -1,6 +1,7 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
-Status 2026-11-06: fase 0, 1 og 2 er gjennomført og i drift. Fase 3–4 gjenstår.
+Status 2026-11-08: fase 0, 1 og 2 er gjennomført og i drift. I fase 2 er N2 (status) fjernet og N4 (perioder) lagt
+til 2026-11-08. Fase 3–4 gjenstår.
 
 ## Mål
 
@@ -8,14 +9,14 @@ Etter hver nattlige innlasting av Grep-dumpen skal Fuseki-sandkassen inneholde:
 
 1. **Rådataene** uendret, slik at eksisterende spørringer og eksemplene i Grep-wikien fungerer som før.
 2. **Ontologien** (rettet Grep-ontologi, typekoblinger og etter hvert `udir:`-laget).
-3. **Normaliserte data** som retter strukturelle svakheter i dumpen: gyldighet som kvalifiserte relasjoner, en kobling fra status til PSI-ressursene og typede datoer.
+3. **Normaliserte data** som retter strukturelle svakheter i dumpen: gyldighet som kvalifiserte relasjoner, typede datoer og tall, og perioder (gyldighet, undervisning, eksamen) som datoer.
 4. **Utledninger** fra ontologien, beregnet på forhånd, slik at `?s a u:Kompetansemaal` og `?s a udir:Laereplan` gir treff uten resonnering når spørringen kjøres.
 
 Beslutninger som ligger til grunn (tatt 2026-11-06):
 
 - Utledninger beregnes **hver natt** med SPARQL Update-regler som vi skriver selv, ikke med OWL-resonnering når spørringen kjøres.
 - Gyldighet modelleres som en **kvalifisert relasjon** (alternativ A).
-- Status kobles til PSI-ressursene med en **regel**, ikke med `owl:sameAs`.
+- Status kobles til PSI-ressursene med en **regel**, ikke med `owl:sameAs`. (Regelen, N2, ble fjernet 2026-11-08: status er Grep-teknisk.)
 - `rdfs:domain`/`rdfs:range` brukes **ikke** til utledning. De står i ontologien som dokumentasjon.
 - `u:erstatter` gjøres **ikke** transitiv.
 
@@ -54,7 +55,7 @@ Merk: i TDB2 betyr union at default graph er *bare* unionen av named graphs. Den
 ## Fase 2: Normalisering (`urn:graph:normalisert`) ✅ (i drift 2026-11-06)
 
 Reglene ligger som `.ru`-filer i `sparql/normalisering/` og kjøres i nummerert rekkefølge:
-`01-gyldighet.ru` (N1), `02-status.ru` (N2) og `03-datatyper.ru` (N3).
+`01-gyldighet.ru` (N1), `02-datatyper.ru` (N3) og `03-perioder.ru` (N4). N2 er fjernet (se under).
 
 **Resultat ved lokal test** (rådata fra 2026-11-06, Fuseki 5.3.0, `-Xmx2g`): 36 210 `udir:Gyldighet`,
 46 383 `udir:status` og 244 052 tripler i `urn:graph:normalisert`. Alle 118 905 dato- og tallverdier ble gjort
@@ -69,28 +70,34 @@ d:ADI2001 udir:gyldighet <…/gyldighet/ADI2001/opplaeringsfag/ADI2Z01> .
     a udir:Gyldighet ;
     udir:relasjon u:opplaeringsfag ;
     udir:objekt   d:ADI2Z01 ;
-    udir:gyldigFra "…"^^xsd:dateTime ;
-    udir:gyldigTil "2021-07-31T00:00:00"^^xsd:dateTime .
+    udir:gyldigFra "1970-01-01"^^xsd:date ;
+    udir:gyldigTil "2021-07-31"^^xsd:date .
 ```
 
 - Koblingen gjøres med eksakt strengsammenligning: `gyldighet-<lokalnavn(egenskap)>-<siste del av objekt-IRI>`. Testet 2026-11-06: 36 207 av 36 210 treff.
 - De tre med prefikset `gyldighet-2-…` er en **andre gyldighetsperiode** for den samme koblingen, ikke feil. Først ble de hoppet over, men nå tas de med (avgjort 2026-11-06), med `/2` bak IRI-en. Alle 36 210 kommer med.
   - DTDGH2---- → TPTIP1----: 2021-08-01 til 2022-07-31, så igjen fra 2023-08-01. En reell andre periode.
-  - HSPOR3---- → HSAMB2---- og → HSHEA2----: to perioder som til sammen dekker all tid, uten opphold (til 2021-07-31 og fra 2021-08-01). Det er neppe meningen. Begge koblingene står også som `u:loepstype-kryssloep`. Bør sjekkes i prod.
+  - HSPOR3---- → HSAMB2---- og → HSHEA2----: to perioder uten opphold (til 2021-07-31 og fra 2021-08-01). Sjekket med fagansvarlig 2026-11-08: «sært, men greit».
 - IRI-ene bygges av subjekt, relasjon, objekt og eventuelt periodenummer. Da er de stabile fra natt til natt og kan refereres direkte.
   Kontrollert: alle er unike, og alle subjekter ligger i `http://psi.udir.no/kl06/`.
-- Datoene på `udir:Gyldighet` er `xsd:dateTime`. Verdier som ikke lar seg gjøre om, beholdes som streng.
+- Datoene på `udir:Gyldighet` er `xsd:date` (endret 2026-11-08, se N4). Mangler en ende, brukes 1970-01-01 eller
+  2100-12-31. Verdier som ikke lar seg gjøre om, beholdes som streng.
 - Funn: to koblinger har feil årstall i `gyldig-fra` i dumpen, MAT1106–MAT1Z10 (`0209-08-01`) og
   PSP6092–PSP1Z04 (`2626-01-01`). Feilen står på begge sider av koblingen, altså fire verdier. Rettet i prod
   2026-11-06, og rettelsen kommer med i dumpen natt til 2026-11-07.
 - Avvik i dataene (urimelige årstall, gyldighet uten kobling, verdier med feil format) rapporteres i issuen
   «Avvik i Grep-dataene» via `scripts/rapporter-avvik.sh`. Se README-filen.
 
-### N2: Status til PSI
+### N2: Status til PSI ❌ (fjernet 2026-11-08)
 
-`?s u:status st:publisert` gir `?s udir:status d:status_publisert` (fem verdier). Da kan man gå videre til tittelen og de andre egenskapene til statusressursen.
+N2 ga `?s udir:status d:status_publisert`. Fjernet fordi status er et Grep-teknisk begrep (hvor posten er i det
+redaksjonelle løpet), ikke et begrep fra fagområdet, og fordi brukerne allerede har det innarbeidede mønsteret
+`PREFIX st: <https://data.udir.no/kl06/v201906/status/status_>` med `?s u:status st:publisert`. Bare
+`st:publisert` og `st:utgaatt` er i bruk.
 
-Koblingen går via `u:url-data` på statusressursen, som har den samme REST-adressen. Regelen trenger derfor ingen strengbehandling, og nye statusverdier kommer med automatisk.
+**Prinsipp for `udir:`:** bare begreper fra fagområdet (gyldighet, revisjon, fagtype, kompetansemål …).
+Grep-tekniske ting blir i Greps eget vokabular. Status kan eventuelt tas inn i fase 4 som et SKOS-begrepssystem
+og `adms:status`.
 
 ### N3: Typede datoer og tall
 
@@ -98,11 +105,43 @@ Datoer og tall ligger i dumpen som `xsd:string`. Gjelder blant annet `sist-endre
 
 Gjennomføring:
 
-- Ontologien styrer hvilke egenskaper som gjøres om. `TYPEDE` i `scripts/rett_ontologi.py` setter `rdfs:range`, og `03-datatyper.ru` gjør om strengverdiene til egenskaper med rekkevidde `xsd:dateTime`, `xsd:integer` eller `xsd:decimal` i `urn:graph:ontologi`. Listen finnes bare ett sted.
+- Ontologien styrer hvilke egenskaper som gjøres om. `TYPEDE` i `scripts/rett_ontologi.py` setter `rdfs:range`, og `02-datatyper.ru` gjør om strengverdiene til egenskaper med rekkevidde `xsd:dateTime`, `xsd:integer` eller `xsd:decimal` i `urn:graph:ontologi`. Listen finnes bare ett sted.
 - 14 egenskaper: fem datoer, sju heltall og to desimaltall (`opplaeringstid` og `verdiskapingstid`, som har desimalkomma i dumpen, «1,00»).
 - `u:omfang-vitnemaal` manglet i originalontologien, der den heter `u:omfang-vitnemål`. Skriptet legger den til.
 - Kartlagt 2026-11-06: ingen andre strengegenskaper har verdier som ligner datoer eller tall. Sannhetsverdier er allerede `xsd:boolean` i dumpen.
 - Konsekvens av B4: spørringer som sammenligner med en tekststreng, for eksempel `FILTER(?d >= "2026-01-01")`, gir ingen treff her, men gjør det hos Udir. Dette står i `docs/bruk.md`.
+
+### N4: Perioder som datoer ✅ (lagt til 2026-11-08)
+
+Grep uttrykker tid både med redaksjonelle datoer (`u:gyldig-fra`/`u:gyldig-til`) og med semestre. N4 gjør begge
+om til `xsd:date` i `urn:graph:normalisert`:
+
+| Egenskap | Hvor | Kilde |
+|---|---|---|
+| `udir:gyldigFra` / `udir:gyldigTil` | fagkoder, læreplaner (alle), andre ressurser med datoer | `u:gyldig-fra` / `u:gyldig-til` |
+| `udir:gyldigFra` / `udir:gyldigTil` | programområder (497), utdanningsprogram (18) | `u:foerste-semester` / `u:siste-semester` |
+| `udir:undervisningFra` / `udir:undervisningTil` | fagkoder med undervisning (4 483) | `u:naar-gis-det-undervisning-…-semester` |
+| `udir:eksamenFra` / `udir:eksamenTil` | fagkoder med eksamen (4 474) | `u:naar-kan-man-ta-eksamen-…-semester` |
+| `udir:startdato` / `udir:sluttdato` | semestre (49) | koden: vår 01.01–31.07, høst 01.08–31.12 |
+
+Beslutninger sammen med fagansvarlig 2026-11-08:
+
+- **Åpne ender:** ett par overalt, `1970-01-01` og `2100-12-31`, slik at det synes hva sandkassen har satt og
+  hva Udir har satt. Gjelder også N1. Avvikskontrollen for årstall unntar disse to.
+- **Undervisning og eksamen hver for seg.** Fagkoder kan ha begge (2 702), bare eksamen (1 772), bare
+  undervisning (1 781) eller ingen (365). En periode lages bare når minst én av de to semesteregenskapene finnes.
+- **De 365 uten semestre** er stort sett privatskolekoder (se `u:merkelapper`) og noen `uspesifisert_programfag`.
+  De får bare gyldighet 1970-01-01–2100-12-31.
+- **Gyldighetsdatoene settes redaksjonelt** og kan avvike litt fra semestrene. Begge beholdes, og det er ingen
+  avvikskontroll på sammenhengen.
+- **`xsd:date`, ikke `xsd:dateTime`.** Grep-datoene har ingen tidssone, men `NOW()` har det. Sammenligning av
+  verdier med og uten tidssone er ubestemt i XSD når de ligger under 14 timer fra hverandre, og Fuseki gir da
+  feil. Mønsteret er `BIND(xsd:date(SUBSTR(STR(NOW()), 1, 10)) AS ?idag)`. Klokkeslett i Grep-datoene (40 av
+  64 000, for eksempel `T02:00:00`) er redaksjonell støy og kuttes bort.
+
+**Resultat ved lokal test** (rådata fra 2026-11-06): N4 tok 9 s. 107 112 datoer, alle `xsd:date`, ingen ressurs
+med to verdier for samme egenskap. Til-datoen er siste gyldige dag (testet: AGR3001 eksamen til 2026-07-31 gir
+ja 31.07 og nei 01.08). I dag: 3 275 fagkoder gyldige, 2 344 med undervisning, 1 855 med eksamen.
 
 ## Fase 3: Utledning (`urn:graph:utledet`)
 

@@ -8,19 +8,19 @@ Se docstringen i skriptet for reglene. Egenskaper som ikke er nevnt her, er uend
 
 ## u:aarstimer
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:integer
-- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:aarstimer-doeve-og-tunghoerte
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:integer
-- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:aarstimer-formgivningsfag
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:integer
-- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:aarstimer-samisk
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:integer
-- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:bygger-paa
 - rdfs:range: unionOf(u:Kompetansemaal_lk20, u:Kompetansemaalsett_lk20) (lagt til fra data: u:Kompetansemaal_lk20). Var: u:Kompetansemaalsett_lk20
@@ -30,7 +30,7 @@ Se docstringen i skriptet for reglene. Egenskaper som ikke er nevnt her, er uend
 
 ## u:fastsatt-dato
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:dateTime
-- rdfs:range: xsd:dateTime (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:dateTime (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:grep-type
 - rdfs:domain: fjernet (generell egenskap, brukt på/deklarert for 44 klasser). Var: u:Aarstrinn, u:Fagkategori, u:Fagkode, u:Fagomraade, u:Fagtype, u:Grunnleggende_ferdighet_lk20, u:Hovedomraade, u:Karakter, u:Kjerneelement_lk20, u:Kompetansemaal, u:Kompetansemaal_lk20, u:Kompetansemaalsett, u:Kompetansemaalsett_lk20, u:Laereplan, u:Laereplan_lk20, u:Merkelapp, u:Merknad, u:Opplaeringsfag, u:Opplaeringsnivaa, u:Ordforklaring_lk20, u:Programfag, u:Programomraade, u:Semester, u:Spraak, u:Spraaknivaa, u:Status, u:Tidligere_navn, u:Tverrfaglig_tema_lk20, u:Utdanningsprogram, u:Verb_lk20
@@ -53,12 +53,12 @@ Se docstringen i skriptet for reglene. Egenskaper som ikke er nevnt her, er uend
 ## u:gyldig-fra
 - rdfs:domain: fjernet (30825 av 38110 forekomster mangler type i data). Var: u:Fagkode, u:Laereplan, u:Laereplan_lk20, u:Merknad
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:dateTime
-- rdfs:range: xsd:dateTime (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:dateTime (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:gyldig-til
 - rdfs:domain: fjernet (22004 av 26062 forekomster mangler type i data). Var: u:Fagkode, u:Laereplan, u:Laereplan_lk20, u:Merknad
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:dateTime
-- rdfs:range: xsd:dateTime (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:dateTime (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:hoeyeste-nivaa
 - brukes ikke i data (beholdt, eventuelle flere domener/rekkevidder slått sammen til union)
@@ -86,17 +86,17 @@ Se docstringen i skriptet for reglene. Egenskaper som ikke er nevnt her, er uend
 
 ## u:omfang-til-naa
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:integer
-- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:omfang-totalt
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:integer
-- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:omfang-vitnemaal
 - lagt til som owl:DatatypeProperty (brukes i data, mangler i originalen)
 - rdfs:domain: u:Fagkode (lagt til fra data: u:Fagkode). Var: –
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: 
-- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:integer (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:omfang-vitnemål
 - brukes ikke i data (beholdt, eventuelle flere domener/rekkevidder slått sammen til union)
@@ -106,7 +106,7 @@ Se docstringen i skriptet for reglene. Egenskaper som ikke er nevnt her, er uend
 
 ## u:opplaeringstid
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:float
-- rdfs:range: xsd:decimal (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:decimal (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:rekkefoelge
 - rdfs:domain: fjernet (generell egenskap, brukt på/deklarert for 30 klasser). Var: u:Aarstrinn, u:Fagtype, u:Grunnleggende_ferdighet_lk20, u:Kjerneelement_lk20, u:Kompetansemaal_lk20, u:Kompetansemaalsett_lk20, u:Opplaeringsnivaa, u:Ordforklaring_lk20, u:Semester, u:Spraak, u:Spraaknivaa, u:Tverrfaglig_tema_lk20, u:Verb_lk20
@@ -114,11 +114,11 @@ Se docstringen i skriptet for reglene. Egenskaper som ikke er nevnt her, er uend
 ## u:sist-endret
 - rdfs:domain: fjernet (generell egenskap, brukt på/deklarert for 41 klasser). Var: u:Fagkategori, u:Fagkode, u:Fagomraade, u:Grunnleggende_ferdighet_lk20, u:Kjerneelement_lk20, u:Kompetansemaal, u:Kompetansemaal_lk20, u:Kompetansemaalsett_lk20, u:Laereplan, u:Laereplan_lk20, u:Merkelapp, u:Opplaeringsfag, u:Ordforklaring_lk20, u:Programomraade, u:Tidligere_navn, u:Tverrfaglig_tema_lk20, u:Utdanningsprogram, u:Verb_lk20
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:dateTime
-- rdfs:range: xsd:dateTime (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:dateTime (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:siste-eksamen
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:dateTime
-- rdfs:range: xsd:dateTime (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:dateTime (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:soekehjelp-navn-motsatt-maalform
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: rdf:langString
@@ -159,7 +159,7 @@ Se docstringen i skriptet for reglene. Egenskaper som ikke er nevnt her, er uend
 
 ## u:verdiskapingstid
 - rdfs:range: xsd:string (observert i data: xsd:string). Var: xsd:float
-- rdfs:range: xsd:decimal (B4: verdiene gjøres om av sparql/normalisering/03-datatyper.ru). Var: xsd:string
+- rdfs:range: xsd:decimal (B4: verdiene gjøres om av sparql/normalisering/02-datatyper.ru). Var: xsd:string
 
 ## u:vurderingsordning
 - brukes ikke i data (beholdt, eventuelle flere domener/rekkevidder slått sammen til union)
