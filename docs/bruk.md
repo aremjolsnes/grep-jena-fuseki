@@ -115,7 +115,7 @@ SELECT ?kode ?erstatter ?erstattesAv WHERE {
 }
 ```
 
-Kjeden går på tvers av reformene: NOR1-04 → NOR1-05 (LK06) → NOR01-06 (LK20) → NOR01-07. «Erstatter» er en
+Kjeden går på tvers av revisjonene: NOR1-04 → NOR1-05 (LK06) → NOR01-06 (LK20) → NOR01-07. «Erstatter» er en
 faglig vurdering. Når en plan splittes i flere, eller bare en liten del av innholdet videreføres, finnes det
 ikke nødvendigvis en erstatter-kobling.
 
@@ -159,7 +159,7 @@ SELECT ?egenskap ?navn WHERE {
 Domene og rekkevidde i ontologien er justert etter hvordan dataene faktisk ser ut. Generelle egenskaper som
 `u:tittel`, `u:kode` og `u:status` brukes på nesten alle typer og har derfor ikke noe domene.
 
-**Overbegreper på tvers av reformene.** Læreplaner, kompetansemål og kompetansemålsett finnes i én utgave for
+**Overbegreper på tvers av revisjonene.** Læreplaner, kompetansemål og kompetansemålsett finnes i én utgave for
 LK06 og én for LK20. Sandkassen har et overbegrep for hver av dem, som omfatter begge utgavene:
 
 | Overbegrep | LK06 | LK20 |
@@ -168,7 +168,7 @@ LK06 og én for LK20. Sandkassen har et overbegrep for hver av dem, som omfatter
 | `udir:Kompetansemaal` | `u:Kompetansemaal` | `u:Kompetansemaal_lk20` |
 | `udir:Kompetansemaalsett` | `u:Kompetansemaalsett` | `u:Kompetansemaalsett_lk20` |
 
-Alle læreplaner, uansett reform:
+Alle læreplaner, uansett revisjon:
 
 ```sparql
 SELECT ?lp ?kode WHERE {
@@ -178,7 +178,27 @@ SELECT ?lp ?kode WHERE {
 
 Hovedområder (LK06) og kjerneelementer (LK20) har en lignende plass i læreplanen, men er ulike begreper. De har
 derfor ikke noe felles overbegrep, og det finnes ingen kobling mellom dem. Klasser som allerede gjelder begge
-reformene, for eksempel `u:Fagkode` og `u:Opplaeringsfag`, har heller ikke noe overbegrep.
+revisjonene, for eksempel `u:Fagkode` og `u:Opplaeringsfag`, har heller ikke noe overbegrep.
+
+**Reform og revisjon.** Kunnskapsløftet (`udir:KL06`) er reformen. LK06 (`udir:LK06`) og LK20, fagfornyelsen
+(`udir:LK20`), er revisjonene av den. Samiske læreplanverk er varianter innenfor hver revisjon. Ressurser som
+hører til én revisjon, har `udir:revisjon`:
+
+| Revisjon | Klasser |
+|---|---|
+| `udir:LK06` | læreplan, kompetansemål, kompetansemålsett, hovedområde og programfag |
+| `udir:LK20` | læreplan, kompetansemål, kompetansemålsett, kjerneelement, tverrfaglig tema, grunnleggende ferdighet, ordforklaring og verb |
+
+Fagkoder, opplæringsfag, programområder og andre ressurser som gjelder begge revisjonene, har ingen revisjon.
+
+Antall kompetansemål per revisjon:
+
+```sparql
+SELECT ?revisjon (COUNT(?km) AS ?antall) WHERE {
+  ?km a udir:Kompetansemaal ; udir:revisjon ?r .
+  ?r rdfs:label ?revisjon FILTER(LANG(?revisjon) = "nb")
+} GROUP BY ?revisjon
+```
 
 **Bruke ontologien i spørringer.** Hver natt utleder sandkassen typene fra ontologien (`urn:graph:utledet`),
 så klassene med stor forbokstav og overbegrepene kan brukes direkte:
@@ -300,7 +320,6 @@ SELECT ?s ?endret WHERE {
 
 Under arbeid, og ikke tilgjengelig ennå:
 
-- **Reform og revisjon** som egne ressurser: Kunnskapsløftet med revisjonene LK06 og LK20.
 - **Koblinger til felles vokabularer**: SKOS-begrepssystemer, EUs språktabell (ISO 639) og Dublin Core.
 
 ## Egenheter i dataene

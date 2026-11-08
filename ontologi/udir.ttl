@@ -2,12 +2,14 @@
 @prefix u:    <http://psi.udir.no/ontologi/kl06/> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
-# udir:-laget (fase 4): begreper fra fagområdet som ikke er knyttet til én reform.
+# udir:-laget (fase 4): begreper fra fagområdet som ikke er knyttet til én revisjon.
 #
 # Et forslag til Udir, brukt i Grep-sandkassen (beslutning B6, docs/plan-nattlig-normalisering.md).
-# udir: brukes bare der det tilfører noe, for eksempel et overbegrep på tvers av reformene.
-# Klasser som allerede gjelder begge reformene (u:Fagkode, u:Opplaeringsfag, ...) får ingen udir:-utgave.
+# udir: brukes bare der det tilfører noe, for eksempel et overbegrep på tvers av revisjonene.
+# Klasser som allerede gjelder begge revisjonene (u:Fagkode, u:Opplaeringsfag, ...) får ingen udir:-utgave.
 #
 # Lastes inn i urn:graph:ontologi av scripts/nattlig-innlasting.sh. Regel R1 (sparql/utledning/01-typer.ru)
 # følger rdfs:subClassOf, så ?s a udir:Laereplan gir treff uten endringer i reglene.
@@ -16,32 +18,32 @@
 
 udir: a owl:Ontology ;
     rdfs:label "Udir-ontologi (forslag)"@nb, "Udir-ontologi (forslag)"@nn, "Udir ontology (proposal)"@en ;
-    rdfs:comment "Begreper fra fagområdet som ikke er knyttet til én reform. Forslag fra Grep-sandkassen."@nb ;
+    rdfs:comment "Begreper fra fagområdet som ikke er knyttet til én revisjon. Forslag fra Grep-sandkassen."@nb ;
     rdfs:seeAlso <https://github.com/aremjolsnes/grep-jena-fuseki/blob/main/docs/plan-nattlig-normalisering.md> .
 
 # ---------------------------------------------------------------------------------------------------
-# Overbegreper på tvers av reformene (LK06 og LK20)
+# Overbegreper på tvers av revisjonene (LK06 og LK20)
 # Avklart med fagansvarlig 2026-11-08: læreplan, kompetansemål og kompetansemålsett er samme begrep
-# i begge reformene, i hver sin utgave.
+# i begge revisjonene, i hver sin utgave.
 # ---------------------------------------------------------------------------------------------------
 
 udir:Laereplan a owl:Class ;
     rdfs:label "Læreplan"@nb, "Læreplan"@nn, "Curriculum"@en ;
-    rdfs:comment "Læreplan uavhengig av reform. Omfatter læreplaner i LK06 og LK20."@nb,
-        "Læreplan uavhengig av reform. Omfattar læreplanar i LK06 og LK20."@nn,
-        "Curriculum regardless of reform. Covers curricula in LK06 and LK20."@en .
+    rdfs:comment "Læreplan uavhengig av revisjon. Omfatter læreplaner i LK06 og LK20."@nb,
+        "Læreplan uavhengig av revisjon. Omfattar læreplanar i LK06 og LK20."@nn,
+        "Curriculum regardless of revision. Covers curricula in LK06 and LK20."@en .
 
 udir:Kompetansemaal a owl:Class ;
     rdfs:label "Kompetansemål"@nb, "Kompetansemål"@nn, "Competence aim"@en ;
-    rdfs:comment "Kompetansemål uavhengig av reform. Omfatter kompetansemål i LK06 og LK20."@nb,
-        "Kompetansemål uavhengig av reform. Omfattar kompetansemål i LK06 og LK20."@nn,
-        "Competence aim regardless of reform. Covers competence aims in LK06 and LK20."@en .
+    rdfs:comment "Kompetansemål uavhengig av revisjon. Omfatter kompetansemål i LK06 og LK20."@nb,
+        "Kompetansemål uavhengig av revisjon. Omfattar kompetansemål i LK06 og LK20."@nn,
+        "Competence aim regardless of revision. Covers competence aims in LK06 and LK20."@en .
 
 udir:Kompetansemaalsett a owl:Class ;
     rdfs:label "Kompetansemålsett"@nb, "Kompetansemålsett"@nn, "Set of competence aims"@en ;
-    rdfs:comment "Kompetansemålsett uavhengig av reform. Omfatter kompetansemålsett i LK06 og LK20."@nb,
-        "Kompetansemålsett uavhengig av reform. Omfattar kompetansemålsett i LK06 og LK20."@nn,
-        "Set of competence aims regardless of reform. Covers sets in LK06 and LK20."@en .
+    rdfs:comment "Kompetansemålsett uavhengig av revisjon. Omfatter kompetansemålsett i LK06 og LK20."@nb,
+        "Kompetansemålsett uavhengig av revisjon. Omfattar kompetansemålsett i LK06 og LK20."@nn,
+        "Set of competence aims regardless of revision. Covers sets in LK06 and LK20."@en .
 
 u:Laereplan rdfs:subClassOf udir:Laereplan .
 u:Laereplan_lk20 rdfs:subClassOf udir:Laereplan .
@@ -69,3 +71,79 @@ u:Kjerneelement_lk20 rdfs:seeAlso u:Hovedomraade .
     owl:annotatedProperty rdfs:seeAlso ;
     owl:annotatedTarget u:Kjerneelement_lk20 ;
     rdfs:comment "Hovedområder (LK06) og kjerneelementer (LK20) har en lignende plass i læreplanen, men er ulike begreper. Det finnes ingen kobling mellom dem."@nb .
+
+# ---------------------------------------------------------------------------------------------------
+# Steg 2 (2026-11-08): reform og revisjon
+# Avklart med fagansvarlig: Én reform, Kunnskapsløftet (KL06), med to revisjoner: LK06 og LK20
+# (fagfornyelsen). Samiske læreplanverk (LK06S, LK20S) er varianter innenfor hver revisjon, ikke egne
+# revisjoner. Klasser som gjelder begge revisjonene (fagkode, opplæringsfag, programområde ...) har ingen
+# revisjon. Regel R3 (sparql/utledning/03-revisjon.ru) gir hver ressurs udir:revisjon fra klassen.
+# ---------------------------------------------------------------------------------------------------
+
+udir:Reform a owl:Class ;
+    rdfs:label "Reform"@nb, "Reform"@nn, "Reform"@en ;
+    rdfs:comment "En utdanningsreform, for eksempel Kunnskapsløftet."@nb,
+        "Ei utdanningsreform, til dømes Kunnskapsløftet."@nn,
+        "An education reform, for example the Knowledge Promotion."@en .
+
+udir:Revisjon a owl:Class ;
+    rdfs:label "Revisjon"@nb, "Revisjon"@nn, "Revision"@en ;
+    rdfs:comment "En revisjon av en reform, med eget læreplanverk. Samiske læreplanverk er varianter innenfor revisjonen."@nb,
+        "Ein revisjon av ei reform, med eige læreplanverk. Samiske læreplanverk er variantar innanfor revisjonen."@nn,
+        "A revision of a reform, with its own national curriculum. Sami curricula are variants within the revision."@en .
+
+udir:reform a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "reform"@nb, "reform"@nn, "reform"@en ;
+    rdfs:comment "Reformen revisjonen hører til."@nb ;
+    rdfs:domain udir:Revisjon ;
+    rdfs:range udir:Reform .
+
+udir:rekkefoelge a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "rekkefølge"@nb, "rekkjefølgje"@nn, "order"@en ;
+    rdfs:comment "Nummeret til revisjonen innenfor reformen: 1 for den første, 2 for den neste."@nb ;
+    rdfs:domain udir:Revisjon ;
+    rdfs:range xsd:integer .
+
+udir:revisjon a owl:ObjectProperty ;
+    rdfs:label "revisjon"@nb, "revisjon"@nn, "revision"@en ;
+    rdfs:comment "Revisjonen ressursen hører til. Utledes hver natt av regel R3 fra klassen (udir:gjelderRevisjon)."@nb ;
+    rdfs:range udir:Revisjon .
+
+udir:gjelderRevisjon a owl:AnnotationProperty ;
+    rdfs:label "gjelder revisjon"@nb, "gjeld revisjon"@nn, "applies to revision"@en ;
+    rdfs:comment "Sier at alle ressurser av klassen hører til revisjonen. Brukes av regel R3."@nb .
+
+udir:KL06 a udir:Reform ;
+    rdfs:label "Kunnskapsløftet"@nb, "Kunnskapsløftet"@nn, "The Knowledge Promotion"@en ;
+    skos:notation "KL06" .
+
+udir:LK06 a udir:Revisjon ;
+    rdfs:label "LK06"@nb, "LK06"@nn, "LK06"@en ;
+    rdfs:comment "Læreplanverket for Kunnskapsløftet, innført fra 2006."@nb ;
+    udir:reform udir:KL06 ;
+    udir:rekkefoelge 1 ;
+    skos:notation "LK06" .
+
+udir:LK20 a udir:Revisjon ;
+    rdfs:label "LK20 (fagfornyelsen)"@nb, "LK20 (fagfornyinga)"@nn, "LK20 (the subject renewal)"@en ;
+    rdfs:comment "Revisjonen av Kunnskapsløftet (fagfornyelsen), innført fra 2020."@nb ;
+    udir:reform udir:KL06 ;
+    udir:rekkefoelge 2 ;
+    skos:notation "LK20" .
+
+# LK06-klassene
+u:Laereplan udir:gjelderRevisjon udir:LK06 .
+u:Kompetansemaal udir:gjelderRevisjon udir:LK06 .
+u:Kompetansemaalsett udir:gjelderRevisjon udir:LK06 .
+u:Hovedomraade udir:gjelderRevisjon udir:LK06 .
+u:Programfag udir:gjelderRevisjon udir:LK06 .
+
+# LK20-klassene
+u:Laereplan_lk20 udir:gjelderRevisjon udir:LK20 .
+u:Kompetansemaal_lk20 udir:gjelderRevisjon udir:LK20 .
+u:Kompetansemaalsett_lk20 udir:gjelderRevisjon udir:LK20 .
+u:Kjerneelement_lk20 udir:gjelderRevisjon udir:LK20 .
+u:Tverrfaglig_tema_lk20 udir:gjelderRevisjon udir:LK20 .
+u:Grunnleggende_ferdighet_lk20 udir:gjelderRevisjon udir:LK20 .
+u:Ordforklaring_lk20 udir:gjelderRevisjon udir:LK20 .
+u:Verb_lk20 udir:gjelderRevisjon udir:LK20 .

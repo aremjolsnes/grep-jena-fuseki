@@ -197,6 +197,12 @@ N_OVERBEGREP=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT ?k (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s a ?k
     VALUES ?k { udir:Laereplan udir:Kompetansemaal udir:Kompetansemaalsett } } } GROUP BY ?k ORDER BY ?k" \
   | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
+# R3: revisjonstilhørighet, og ingen ressurs i begge revisjonene
+N_REVISJON=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
+  SELECT ?r (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s udir:revisjon ?r } } GROUP BY ?r ORDER BY ?r" \
+  | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
+N_TO_REVISJONER=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
+  SELECT (COUNT(DISTINCT ?s) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s udir:revisjon udir:LK06 , udir:LK20 } }")
 N_GYLDIGHET=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_NORM> { ?g a udir:Gyldighet } }")
 # N4: alle fagkoder skal ha en gyldighetsperiode (eventuelt 1970-01-01–2100-12-31)
@@ -210,6 +216,7 @@ N_PERIODER=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
 logg "Tripler: $G_GREP=$N_GREP, $G_ONTOLOGI=$N_ONT, $G_NORM=$N_NORM, $G_UTLEDET=$N_UTLEDET"
 logg "u:Kompetansemaal_lk20 (utledet): $N_KM_TYPE"
 logg "Overbegreper (utledet): $N_OVERBEGREP"
+logg "Revisjon (utledet): $N_REVISJON, i begge revisjonene: $N_TO_REVISJONER"
 logg "udir:Gyldighet: $N_GYLDIGHET, fagkoder uten periode: $N_FAGKODER_UTEN_PERIODE"
 logg "Perioder: $N_PERIODER"
 
@@ -285,10 +292,12 @@ EOF
 
 if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
    || [ "${N_GYLDIGHET:-0}" -lt "$MIN_GYLDIGHET" ] || [ "${N_FAGKODER_UTEN_PERIODE:-1}" -ne 0 ] \
-   || [ "${N_KM_TYPE:-0}" -lt 1 ] || [ -z "${N_OVERBEGREP// /}" ]; then
+   || [ "${N_KM_TYPE:-0}" -lt 1 ] || [ -z "${N_OVERBEGREP// /}" ] \
+   || [ "$(printf '%s' "$N_REVISJON" | grep -o 'udir:LK' | wc -l)" -ne 2 ] || [ "${N_TO_REVISJONER:-1}" -ne 0 ]; then
   echo "Røyktest feilet (forventet minst $MIN_TRIPLER tripler i $G_GREP, >0 i $G_ONTOLOGI," \
        "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM," \
-       ">0 u:Kompetansemaal_lk20 og overbegreper fra udir.ttl i $G_UTLEDET)"
+       ">0 u:Kompetansemaal_lk20, overbegreper fra udir.ttl og udir:revisjon for LK06 og LK20" \
+       "(ingen ressurs i begge) i $G_UTLEDET)"
   exit 1
 fi
 

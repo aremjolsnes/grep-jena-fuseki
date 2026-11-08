@@ -1,7 +1,7 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
 Status 2026-11-08: fase 0, 1 og 2 er gjennomført og i drift. I fase 2 er N2 (status) fjernet og N4 (perioder) lagt
-til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper). R3–R4 og resten
+til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper, steg 2: reform og revisjon med R3). R4 og resten
 av fase 4 gjenstår.
 
 ## Mål
@@ -152,7 +152,7 @@ Reglene ligger i `sparql/utledning/`. Siden SPARQL property paths (`+`) gir den 
 |---|---|---|
 | R1 Typer via subklasser ✅ | `?s a ?c . ?c rdfs:subClassOf+ ?d` gir `?s a ?d` | `u:kompetansemaal_lk20` → `u:Kompetansemaal_lk20` → `udir:Kompetansemaal` |
 | R2 Egenskaper via subegenskaper ✅ | `?s ?p ?o . ?p rdfs:subPropertyOf+ ?q` gir `?s ?q ?o` | `u:erstatter` → `dcterms:replaces` |
-| R3 Revisjonstilhørighet | `?s a ?c . ?c udir:gjelderRevisjon ?r` gir `?s udir:revisjon ?r` | Alle `kompetansemaal_lk20` får `udir:revisjon udir:LK20` |
+| R3 Revisjonstilhørighet ✅ | `?s a ?c . ?c udir:gjelderRevisjon ?r` gir `?s udir:revisjon ?r` | Alle `kompetansemaal_lk20` får `udir:revisjon udir:LK20` |
 | R4 SKOS-koblinger | Verdier med `skos:exactMatch` gjøres tilgjengelige via `udir:`-begrepene | `d:fagtype_fellesfag` → `udir:Fellesfag` |
 
 Bevisst **ikke** med: utledning fra domene og rekkevidde, transitiv `erstatter` og `owl:sameAs`.
@@ -183,7 +183,7 @@ og skriver bare tripler som ikke står der fra før.
 
 Dette er et eget arbeid som gjøres stegvis i dialog og legges i `ontologi/udir.ttl`. Fasene 1–3 kan bygges og testes uten det, med den rettede ontologien og typekoblingene vi allerede har.
 
-Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2), SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde), språkkobling til EUs autoritetstabell, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core.
+Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2) ✅, SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde), språkkobling til EUs autoritetstabell, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core.
 
 ### Steg 1: overbegreper ✅ (2026-11-08)
 
@@ -196,10 +196,28 @@ Avklart med fagansvarlig:
 - **Hovedområde (LK06) og kjerneelement (LK20) holdes adskilt.** De ligner, men en mapping mellom dem ville blitt en
   redaksjonell utfordring. `udir.ttl` sier `owl:disjointWith` (ingenting er begge deler) og `rdfs:seeAlso` med en
   forklaring, uten at noe utledes.
-- **Ingen `udir:`-utgave av klasser som allerede gjelder begge reformene** (`u:Fagkode`, `u:Opplaeringsfag`,
+- **Ingen `udir:`-utgave av klasser som allerede gjelder begge revisjonene** (`u:Fagkode`, `u:Opplaeringsfag`,
   `u:Programomraade` osv.). `udir:` brukes bare der det tilfører noe.
 - Navn og forklaringer på bokmål, nynorsk og engelsk.
 - Røyktest: overbegrepene skal ha utledede typer.
+
+### Steg 2: reform og revisjon ✅ (2026-11-08)
+
+Avklart med fagansvarlig:
+
+- **Én reform, to revisjoner.** Kunnskapsløftet (`udir:KL06`) er reformen. LK06 (`udir:LK06`, rekkefølge 1) og LK20,
+  fagfornyelsen (`udir:LK20`, rekkefølge 2), er revisjonene. Vi er fortsatt i KL06.
+- **Samiske læreplanverk** (LK06S, LK20S) er varianter innenfor hver revisjon, ikke egne revisjoner.
+- **LK06-klasser:** læreplan, kompetansemål, kompetansemålsett, hovedområde og programfag. **LK20-klasser:** alle
+  `_lk20`-klassene. Klasser som gjelder begge revisjonene, får ingen revisjon.
+- Ordbruk rettet: overbegrepene i steg 1 gjelder «på tvers av revisjonene», ikke «på tvers av reformene».
+
+Modell i `udir.ttl`: klassene `udir:Reform` og `udir:Revisjon`, egenskapene `udir:reform`, `udir:rekkefoelge` og
+`udir:revisjon`, og annotasjonen `udir:gjelderRevisjon` på Grep-klassene. R3 (`sparql/utledning/03-revisjon.ru`)
+går fra typen i dataene via `rdfs:subClassOf*` til klassen med `udir:gjelderRevisjon`.
+
+Resultat ved lokal test: 20 874 ressurser i LK06 og 18 922 i LK20, ingen i begge. R3 tar 2 s. Røyktesten krever
+begge revisjonene og ingen ressurs i begge.
 
 ## Den nattlige jobben, ny rekkefølge
 
@@ -230,5 +248,5 @@ Avklart med fagansvarlig:
 - **B5:** Den lokale `Dockerfile`-endringen forkastes. Vi bygger videre på den committede versjonen.
 - **B6 (2026-11-08):** Nye begreper legges direkte i `udir:` (`http://psi.udir.no/ontologi/`), ikke i et eget
   navnerom for sandkassen. De er et forslag til Udir, og de brukes bare i sandkassen. Navnerommet viser hvor
-  begrepet hører hjemme: `udir:` er fagområdet uavhengig av reform, og `u:` er Greps eget vokabular (se
+  begrepet hører hjemme: `udir:` er fagområdet uavhengig av revisjon, og `u:` er Greps eget vokabular (se
   prinsippet under N2). Gjelder også `ontologi/udir.ttl` i fase 4.
