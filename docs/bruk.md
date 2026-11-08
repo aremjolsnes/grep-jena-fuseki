@@ -200,6 +200,31 @@ SELECT ?revisjon (COUNT(?km) AS ?antall) WHERE {
 } GROUP BY ?revisjon
 ```
 
+**Begrepssystemer (SKOS).** Fagtyper, opplæringsnivåer, fagkategorier og fagområder er SKOS-begreper
+(`skos:Concept`) i tre begrepssystemer:
+
+| Begrepssystem | Begreper |
+|---|---|
+| `udir:Fagtyper` | fellesfag, valgfag, felles programfag … (10) |
+| `udir:Opplaeringsnivaaer` | grunnskole, videregående opplæring, forberedende opplæring for voksne (3) |
+| `udir:Fagkategorier` | fagkategoriene (8), med fagområdene (51) under seg (`skos:broader`/`skos:narrower`) |
+
+Begrepene er Grep-ressursene selv, for eksempel `d:fagtype_valgfag` og `d:FKAT100`. De har `skos:prefLabel` på
+bokmål (`nb`), nynorsk (`nn`) og, der Grep har det, engelsk (`en`) og nordsamisk (`se`), og koden som
+`skos:notation`. Fagtype og opplæringsnivå er egne begrepssystemer. At valgfag brukes i grunnskolen, står i
+Grep-dataene som `u:opplaeringsnivaa` på fagtypen.
+
+Fagområdene i hver fagkategori:
+
+```sparql
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?kategori ?omraade WHERE {
+  ?k skos:topConceptOf udir:Fagkategorier ; skos:prefLabel ?kategori ; skos:narrower ?o .
+  ?o skos:prefLabel ?omraade .
+  FILTER(LANG(?kategori) = "nb" && LANG(?omraade) = "nb")
+} ORDER BY ?kategori ?omraade
+```
+
 **Bruke ontologien i spørringer.** Hver natt utleder sandkassen typene fra ontologien (`urn:graph:utledet`),
 så klassene med stor forbokstav og overbegrepene kan brukes direkte:
 
@@ -320,7 +345,7 @@ SELECT ?s ?endret WHERE {
 
 Under arbeid, og ikke tilgjengelig ennå:
 
-- **Koblinger til felles vokabularer**: SKOS-begrepssystemer, EUs språktabell (ISO 639) og Dublin Core.
+- **Koblinger til felles vokabularer**: EUs språktabell (ISO 639) og Dublin Core.
 
 ## Egenheter i dataene
 

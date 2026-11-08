@@ -147,3 +147,41 @@ u:Tverrfaglig_tema_lk20 udir:gjelderRevisjon udir:LK20 .
 u:Grunnleggende_ferdighet_lk20 udir:gjelderRevisjon udir:LK20 .
 u:Ordforklaring_lk20 udir:gjelderRevisjon udir:LK20 .
 u:Verb_lk20 udir:gjelderRevisjon udir:LK20 .
+
+# ---------------------------------------------------------------------------------------------------
+# Steg 3 (2026-11-08): SKOS-begrepssystemer
+# Avklart med fagansvarlig: Grep-ressursene blir selv SKOS-begreper (regel R4,
+# sparql/utledning/04-skos.ru). Her står bare begrepssystemene og hvilke klasser som hører til dem,
+# så nye verdier i Grep kommer med automatisk.
+# - Fagområde er et underbegrep av fagkategori (ett system med to nivåer). Hierarkiet kommer fra
+#   u:fagkategori via R2.
+# - Fagtype er ikke et underbegrep av opplæringsnivå, og de kobles ikke i SKOS. Dataene har allerede
+#   u:opplaeringsnivaa på fagtypen (valgfag brukes i grunnskolen).
+# ---------------------------------------------------------------------------------------------------
+
+udir:begrepssystem a owl:AnnotationProperty ;
+    rdfs:label "begrepssystem"@nb, "omgrepssystem"@nn, "concept scheme"@en ;
+    rdfs:comment "Sier at alle ressurser av klassen er begreper i begrepssystemet. Brukes av regel R4."@nb .
+
+udir:Fagtyper a skos:ConceptScheme ;
+    rdfs:label "Fagtyper"@nb, "Fagtypar"@nn, "Subject types"@en ;
+    skos:prefLabel "Fagtyper"@nb, "Fagtypar"@nn, "Subject types"@en ;
+    rdfs:comment "Hva slags fag en fagkode er, for eksempel fellesfag, valgfag eller felles programfag."@nb .
+
+udir:Opplaeringsnivaaer a skos:ConceptScheme ;
+    rdfs:label "Opplæringsnivåer"@nb, "Opplæringsnivå"@nn, "Levels of education"@en ;
+    skos:prefLabel "Opplæringsnivåer"@nb, "Opplæringsnivå"@nn, "Levels of education"@en ;
+    rdfs:comment "Grunnskole, videregående opplæring og forberedende opplæring for voksne."@nb .
+
+udir:Fagkategorier a skos:ConceptScheme ;
+    rdfs:label "Fagkategorier og fagområder"@nb, "Fagkategoriar og fagområde"@nn, "Subject categories and areas"@en ;
+    skos:prefLabel "Fagkategorier og fagområder"@nb, "Fagkategoriar og fagområde"@nn, "Subject categories and areas"@en ;
+    rdfs:comment "Fagkategorier (for eksempel Estetiske fag) med fagområdene under (for eksempel Dansefag)."@nb .
+
+u:Fagtype udir:begrepssystem udir:Fagtyper .
+u:Opplaeringsnivaa udir:begrepssystem udir:Opplaeringsnivaaer .
+u:Fagkategori udir:begrepssystem udir:Fagkategorier .
+u:Fagomraade udir:begrepssystem udir:Fagkategorier .
+
+# Fagområdet peker på fagkategorien sin (bare fagområder bruker u:fagkategori, 51 av 51)
+u:fagkategori rdfs:subPropertyOf skos:broader .

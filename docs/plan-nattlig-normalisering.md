@@ -1,7 +1,7 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
 Status 2026-11-08: fase 0, 1 og 2 er gjennomført og i drift. I fase 2 er N2 (status) fjernet og N4 (perioder) lagt
-til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper, steg 2: reform og revisjon med R3). R4 og resten
+til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper, steg 2: reform og revisjon med R3, steg 3: SKOS med R4). Resten
 av fase 4 gjenstår.
 
 ## Mål
@@ -153,7 +153,7 @@ Reglene ligger i `sparql/utledning/`. Siden SPARQL property paths (`+`) gir den 
 | R1 Typer via subklasser ✅ | `?s a ?c . ?c rdfs:subClassOf+ ?d` gir `?s a ?d` | `u:kompetansemaal_lk20` → `u:Kompetansemaal_lk20` → `udir:Kompetansemaal` |
 | R2 Egenskaper via subegenskaper ✅ | `?s ?p ?o . ?p rdfs:subPropertyOf+ ?q` gir `?s ?q ?o` | `u:erstatter` → `dcterms:replaces` |
 | R3 Revisjonstilhørighet ✅ | `?s a ?c . ?c udir:gjelderRevisjon ?r` gir `?s udir:revisjon ?r` | Alle `kompetansemaal_lk20` får `udir:revisjon udir:LK20` |
-| R4 SKOS-koblinger | Verdier med `skos:exactMatch` gjøres tilgjengelige via `udir:`-begrepene | `d:fagtype_fellesfag` → `udir:Fellesfag` |
+| R4 SKOS-begreper ✅ | Ressurser av en klasse med `udir:begrepssystem` blir `skos:Concept` i begrepssystemet (endret 2026-11-08, se steg 3) | `d:fagtype_fellesfag` → `skos:Concept` i `udir:Fagtyper` |
 
 Bevisst **ikke** med: utledning fra domene og rekkevidde, transitiv `erstatter` og `owl:sameAs`.
 
@@ -183,7 +183,7 @@ og skriver bare tripler som ikke står der fra før.
 
 Dette er et eget arbeid som gjøres stegvis i dialog og legges i `ontologi/udir.ttl`. Fasene 1–3 kan bygges og testes uten det, med den rettede ontologien og typekoblingene vi allerede har.
 
-Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2) ✅, SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde), språkkobling til EUs autoritetstabell, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core.
+Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2) ✅, SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde) ✅, språkkobling til EUs autoritetstabell, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core.
 
 ### Steg 1: overbegreper ✅ (2026-11-08)
 
@@ -218,6 +218,27 @@ går fra typen i dataene via `rdfs:subClassOf*` til klassen med `udir:gjelderRev
 
 Resultat ved lokal test: 20 874 ressurser i LK06 og 18 922 i LK20, ingen i begge. R3 tar 2 s. Røyktesten krever
 begge revisjonene og ingen ressurs i begge.
+
+### Steg 3: SKOS-begrepssystemer ✅ (2026-11-08)
+
+Avklart med fagansvarlig:
+
+- **Grep-ressursene blir selv SKOS-begreper**, i stedet for egne `udir:`-begreper (`udir:Fellesfag`) med
+  `skos:exactMatch`, som planen først sa. `udir.ttl` har bare begrepssystemene og `udir:begrepssystem` på
+  Grep-klassene. Nye verdier i Grep kommer med automatisk, og ingen begreper må vedlikeholdes for hånd.
+- **Fagområde er et underbegrep av fagkategori:** ett begrepssystem, `udir:Fagkategorier`, med to nivåer.
+  Hierarkiet kommer fra `u:fagkategori rdfs:subPropertyOf skos:broader` (R2). Bare fagområder bruker
+  `u:fagkategori`.
+- **Fagtype er ikke et underbegrep av opplæringsnivå** («valgfag er bare en type fag som brukes i grunnskolen»).
+  De er egne begrepssystemer uten SKOS-kobling. `u:opplaeringsnivaa` på fagtypen sier det som trengs.
+
+R4 (`sparql/utledning/04-skos.ru`) gir `skos:Concept`, `skos:inScheme`, `skos:prefLabel` fra `u:tittel`
+(`nob`/`nno`/`eng`/`sme` blir `nb`/`nn`/`en`/`se`, `default` tas ikke med), `skos:notation` fra `u:kode`,
+`skos:narrower` og toppbegreper.
+
+Resultat ved lokal test: 72 begreper (59 + 10 + 3), 156 navn (høyst ett per språk), 51 `skos:broader` og
+`skos:narrower`, 21 toppbegreper. R4 tar 1 s. Røyktesten krever begreper i alle tre systemene og fagkategori på
+alle fagområder.
 
 ## Den nattlige jobben, ny rekkefølge
 

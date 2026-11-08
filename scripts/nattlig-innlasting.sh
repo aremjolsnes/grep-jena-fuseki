@@ -203,6 +203,15 @@ N_REVISJON=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
   | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
 N_TO_REVISJONER=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT (COUNT(DISTINCT ?s) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s udir:revisjon udir:LK06 , udir:LK20 } }")
+# R4: SKOS-begreper per begrepssystem, og fagområder uten fagkategori (skal være 0)
+N_SKOS=$(sporr_alle "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+  SELECT ?ks (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s a skos:Concept ; skos:inScheme ?ks } }
+  GROUP BY ?ks ORDER BY ?ks" \
+  | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
+N_FAGOMR_UTEN_KATEGORI=$(sporr "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+  PREFIX udir: <http://psi.udir.no/ontologi/> PREFIX u: <http://psi.udir.no/ontologi/kl06/>
+  SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_GREP> { ?fo a u:fagomraade }
+    FILTER NOT EXISTS { GRAPH <$G_UTLEDET> { ?fo skos:broader ?fk . ?fk skos:inScheme udir:Fagkategorier } } }")
 N_GYLDIGHET=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_NORM> { ?g a udir:Gyldighet } }")
 # N4: alle fagkoder skal ha en gyldighetsperiode (eventuelt 1970-01-01–2100-12-31)
@@ -217,6 +226,7 @@ logg "Tripler: $G_GREP=$N_GREP, $G_ONTOLOGI=$N_ONT, $G_NORM=$N_NORM, $G_UTLEDET=
 logg "u:Kompetansemaal_lk20 (utledet): $N_KM_TYPE"
 logg "Overbegreper (utledet): $N_OVERBEGREP"
 logg "Revisjon (utledet): $N_REVISJON, i begge revisjonene: $N_TO_REVISJONER"
+logg "SKOS-begreper (utledet): $N_SKOS, fagområder uten fagkategori: $N_FAGOMR_UTEN_KATEGORI"
 logg "udir:Gyldighet: $N_GYLDIGHET, fagkoder uten periode: $N_FAGKODER_UTEN_PERIODE"
 logg "Perioder: $N_PERIODER"
 
@@ -293,11 +303,13 @@ EOF
 if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
    || [ "${N_GYLDIGHET:-0}" -lt "$MIN_GYLDIGHET" ] || [ "${N_FAGKODER_UTEN_PERIODE:-1}" -ne 0 ] \
    || [ "${N_KM_TYPE:-0}" -lt 1 ] || [ -z "${N_OVERBEGREP// /}" ] \
-   || [ "$(printf '%s' "$N_REVISJON" | grep -o 'udir:LK' | wc -l)" -ne 2 ] || [ "${N_TO_REVISJONER:-1}" -ne 0 ]; then
+   || [ "$(printf '%s' "$N_REVISJON" | grep -o 'udir:LK' | wc -l)" -ne 2 ] || [ "${N_TO_REVISJONER:-1}" -ne 0 ] \
+   || [ "$(printf '%s' "$N_SKOS" | grep -o 'udir:' | wc -l)" -ne 3 ] || [ "${N_FAGOMR_UTEN_KATEGORI:-1}" -ne 0 ]; then
   echo "Røyktest feilet (forventet minst $MIN_TRIPLER tripler i $G_GREP, >0 i $G_ONTOLOGI," \
        "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM," \
        ">0 u:Kompetansemaal_lk20, overbegreper fra udir.ttl og udir:revisjon for LK06 og LK20" \
-       "(ingen ressurs i begge) i $G_UTLEDET)"
+       "(ingen ressurs i begge), begreper i alle tre SKOS-begrepssystemene og fagkategori på alle" \
+       "fagområder i $G_UTLEDET)"
   exit 1
 fi
 
