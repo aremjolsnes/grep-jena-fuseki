@@ -12,7 +12,7 @@ u: a owl:Ontology ;
         "Rettet versjon av ontologi_kl06_20240523.ttl: flere domener/rekkevidder (som i RDFS/OWL betyr snitt) er erstattet med owl:unionOf, generelle metadata-egenskaper har ikke lenger domene, og egenskapstyper og rekkevidder er justert etter faktisk bruk i Grep-dataene. Generert av scripts/rett_ontologi.py."@nb ;
     rdfs:seeAlso <https://github.com/Utdanningsdirektoratet/Grep_SPARQL/wiki>,
         <https://github.com/Utdanningsdirektoratet/KL06-LK20-public/wiki/> ;
-    owl:versionInfo "2026-11-06: rettet rdfs:domain/rdfs:range (se ontologi_kl06_rettet_endringslogg.md)" .
+    owl:versionInfo "2026-11-08: rettet rdfs:domain/rdfs:range (se ontologi_kl06_rettet_endringslogg.md)" .
 
 u:Karakter a owl:Class ;
     rdfs:label "Grade"@en,
@@ -385,6 +385,14 @@ u:gyldig-til a owl:DatatypeProperty ;
     rdfs:comment "Attribute for several types of elements to specify the last date the element is valid"@en,
         "Egenskap for flere typer elementer for å angi siste dato elementet er gyldig"@nb ;
     rdfs:range xsd:dateTime .
+
+u:hoeyeste-nivaa a owl:DatatypeProperty ;
+    rdfs:label "highest-level"@en,
+        "høyeste nivå"@nb ;
+    rdfs:comment "Attribute for \"fagkode\" (subject code) to specify whether it represents the highest level for pupils and apprentices"@en,
+        "Egenskap for fagkode for å angi om den representerer høyeste nivå"@nb ;
+    rdfs:domain u:Fagkode ;
+    rdfs:range xsd:boolean .
 
 u:hovedomraade-fritekst a owl:DatatypeProperty ;
     rdfs:label "main area, freetext"@en,
@@ -1070,8 +1078,7 @@ u:vurderingsordning-hoeyeste-nivaa-elev a owl:DatatypeProperty ;
     rdfs:comment "Boolean property for subject code to indicate if the examination and assessments is the highest level for the pupil",
         "Boolsk egenskap for fagkode for å angi om vurderingsordningen er høyeste nivå for eleven"@nb ;
     rdfs:domain u:Fagkode ;
-    rdfs:range xsd:boolean ;
-    rdfs:subPropertyOf u:hoeyeste-nivaa .
+    rdfs:range xsd:boolean .
 
 u:vurderingsordning-hoeyeste-nivaa-privatist a owl:DatatypeProperty ;
     rdfs:label "examination and assessments, highest level, external candidate"@en,
@@ -1079,8 +1086,7 @@ u:vurderingsordning-hoeyeste-nivaa-privatist a owl:DatatypeProperty ;
     rdfs:comment "Boolean property for subject code to indicate if the examination and assessments is the highest level for the external candidate"@en,
         "Boolsk egenskap for fagkode for å angi om vurderingsordningen er høyeste nivå for privatisten"@nb ;
     rdfs:domain u:Fagkode ;
-    rdfs:range xsd:boolean ;
-    rdfs:subPropertyOf u:hoeyeste-nivaa .
+    rdfs:range xsd:boolean .
 
 u:vurderingsordning-modulvurdering a owl:DatatypeProperty ;
     rdfs:label "examination and assessments, module assessment"@en,
@@ -1378,14 +1384,6 @@ u:Vurderingsuttrykk a owl:Class ;
         "Vurderingsuttrykk"@nb ;
     rdfs:comment "Element for \"vurderingsordning\" (examination-and-assesment) to specify whether it should be given numerical grades or whether to use other expressions of assessment"@en,
         "Element for vurderingsordning for å angi om det skal gis tallkarakterer eller om det skal benyttes andre uttrykk for vurderingen"@nb .
-
-u:hoeyeste-nivaa a owl:DatatypeProperty ;
-    rdfs:label "highest-level"@en,
-        "høyeste nivå"@nb ;
-    rdfs:comment "Attribute for \"fagkode\" (subject code) to specify whether it represents the highest level for pupils and apprentices"@en,
-        "Egenskap for fagkode for å angi om den representerer høyeste nivå"@nb ;
-    rdfs:domain u:Fagkode ;
-    rdfs:range xsd:boolean .
 
 u:Verb_lk20 a owl:Class ;
     rdfs:label "Verb"@en,

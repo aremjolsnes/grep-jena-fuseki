@@ -5,6 +5,7 @@
 #   urn:graph:grep         rådata fra dumpen (erstattes i sin helhet hver gang)
 #   urn:graph:ontologi     ontologi_kl06_rettet.ttl + grep_type_mapping.ttl fra repoet
 #   urn:graph:normalisert  resultatet av sparql/normalisering/*.ru (bygges på nytt hver gang)
+#   urn:graph:utledet      resultatet av sparql/utledning/*.ru (bygges på nytt hver gang)
 #   urn:graph:meta         siste endrings-id og tidspunkt (skrives sist)
 #   urn:graph:grep-ny      mellomgraf under innlasting; flyttes til urn:graph:grep med MOVE
 #
@@ -46,6 +47,7 @@ G_GREP="urn:graph:grep"
 G_GREP_NY="urn:graph:grep-ny"   # mellomgraf under innlasting (se steg 4)
 G_ONTOLOGI="urn:graph:ontologi"
 G_NORM="urn:graph:normalisert"
+G_UTLEDET="urn:graph:utledet"
 G_META="urn:graph:meta"
 META="https://grep.udir.no/meta"
 SCHEMA="https://grep.udir.no/schema"
@@ -175,10 +177,20 @@ logg "Normaliserer ..."
 oppdater "DROP SILENT GRAPH <$G_NORM>"
 kjor_regler "$REPO/sparql/normalisering"
 
+# 7b. Utledning (fase 3): typer og egenskaper fra ontologien, i urn:graph:utledet.
+#     Kjøres etter normaliseringen, slik at også udir:Gyldighet-ressursene er med.
+logg "Utleder ..."
+oppdater "DROP SILENT GRAPH <$G_UTLEDET>"
+kjor_regler "$REPO/sparql/utledning"
+
 # 8. Røyktest og kontroller
 N_GREP=$(tell_graf "$G_GREP")
 N_ONT=$(tell_graf "$G_ONTOLOGI")
 N_NORM=$(tell_graf "$G_NORM")
+N_UTLEDET=$(tell_graf "$G_UTLEDET")
+# R1: kompetansemål i LK20 skal ha typen fra Udirs ontologi
+N_KM_TYPE=$(sporr "PREFIX u: <http://psi.udir.no/ontologi/kl06/>
+  SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s a u:Kompetansemaal_lk20 } }")
 N_GYLDIGHET=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_NORM> { ?g a udir:Gyldighet } }")
 # N4: alle fagkoder skal ha en gyldighetsperiode (eventuelt 1970-01-01–2100-12-31)
@@ -189,7 +201,8 @@ N_PERIODER=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT ?p (COUNT(*) AS ?n) WHERE { GRAPH <$G_NORM> { ?r ?p ?d
     VALUES ?p { udir:gyldigFra udir:undervisningFra udir:eksamenFra udir:startdato } } } GROUP BY ?p ORDER BY ?p" \
   | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
-logg "Tripler: $G_GREP=$N_GREP, $G_ONTOLOGI=$N_ONT, $G_NORM=$N_NORM"
+logg "Tripler: $G_GREP=$N_GREP, $G_ONTOLOGI=$N_ONT, $G_NORM=$N_NORM, $G_UTLEDET=$N_UTLEDET"
+logg "u:Kompetansemaal_lk20 (utledet): $N_KM_TYPE"
 logg "udir:Gyldighet: $N_GYLDIGHET, fagkoder uten periode: $N_FAGKODER_UTEN_PERIODE"
 logg "Perioder: $N_PERIODER"
 
@@ -264,9 +277,11 @@ EOF
 )")"
 
 if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
-   || [ "${N_GYLDIGHET:-0}" -lt "$MIN_GYLDIGHET" ] || [ "${N_FAGKODER_UTEN_PERIODE:-1}" -ne 0 ]; then
+   || [ "${N_GYLDIGHET:-0}" -lt "$MIN_GYLDIGHET" ] || [ "${N_FAGKODER_UTEN_PERIODE:-1}" -ne 0 ] \
+   || [ "${N_KM_TYPE:-0}" -lt 1 ]; then
   echo "Røyktest feilet (forventet minst $MIN_TRIPLER tripler i $G_GREP, >0 i $G_ONTOLOGI," \
-       "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM)"
+       "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM," \
+       ">0 u:Kompetansemaal_lk20 i $G_UTLEDET)"
   exit 1
 fi
 
@@ -277,6 +292,7 @@ cat > "$ARBEID/meta.nt" <<EOF
 <$META> <$SCHEMA/lastet> "$NAA"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
 <$META> <$SCHEMA/antall-tripler> "$N_GREP"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <$META> <$SCHEMA/antall-tripler-normalisert> "$N_NORM"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<$META> <$SCHEMA/antall-tripler-utledet> "$N_UTLEDET"^^<http://www.w3.org/2001/XMLSchema#integer> .
 EOF
 last_graf PUT "$G_META" application/n-triples "$ARBEID/meta.nt"
 logg "Avvik i dataene: $N_AVVIK"

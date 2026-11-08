@@ -1,7 +1,7 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
 Status 2026-11-08: fase 0, 1 og 2 er gjennomført og i drift. I fase 2 er N2 (status) fjernet og N4 (perioder) lagt
-til 2026-11-08. Fase 3–4 gjenstår.
+til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. R3–R4 og fase 4 gjenstår.
 
 ## Mål
 
@@ -149,14 +149,34 @@ Reglene ligger i `sparql/utledning/`. Siden SPARQL property paths (`+`) gir den 
 
 | Regel | Mønster | Eksempel |
 |---|---|---|
-| R1 Typer via subklasser | `?s a ?c . ?c rdfs:subClassOf+ ?d` gir `?s a ?d` | `u:kompetansemaal_lk20` → `u:Kompetansemaal_lk20` → `udir:Kompetansemaal` |
-| R2 Egenskaper via subegenskaper | `?s ?p ?o . ?p rdfs:subPropertyOf+ ?q` gir `?s ?q ?o` | `u:erstatter` → `dcterms:replaces` |
+| R1 Typer via subklasser ✅ | `?s a ?c . ?c rdfs:subClassOf+ ?d` gir `?s a ?d` | `u:kompetansemaal_lk20` → `u:Kompetansemaal_lk20` → `udir:Kompetansemaal` |
+| R2 Egenskaper via subegenskaper ✅ | `?s ?p ?o . ?p rdfs:subPropertyOf+ ?q` gir `?s ?q ?o` | `u:erstatter` → `dcterms:replaces` |
 | R3 Revisjonstilhørighet | `?s a ?c . ?c udir:gjelderRevisjon ?r` gir `?s udir:revisjon ?r` | Alle `kompetansemaal_lk20` får `udir:revisjon udir:LK20` |
 | R4 SKOS-koblinger | Verdier med `skos:exactMatch` gjøres tilgjengelige via `udir:`-begrepene | `d:fagtype_fellesfag` → `udir:Fellesfag` |
 
 Bevisst **ikke** med: utledning fra domene og rekkevidde, transitiv `erstatter` og `owl:sameAs`.
 
 Regel R1 kjøres etter fase 2, slik at også `udir:Gyldighet`-nodene får sine typer.
+
+### R1 og R2 ✅ (bygget 2026-11-08)
+
+`sparql/utledning/01-typer.ru` og `02-egenskaper.ru`. Begge leser fra `urn:graph:grep` og `urn:graph:normalisert`
+og skriver bare tripler som ikke står der fra før.
+
+- **R1 i dag:** ontologien har ennå ikke noe hierarki. De 88 `rdfs:subClassOf` er 44 par begge veier mellom
+  typene i dataene og klassene i ontologien (`u:kompetansemaal ⇄ u:Kompetansemaal`). R1 gir derfor hver ressurs
+  klassen med stor forbokstav: 49 642 tripler, for eksempel 17 021 `u:Kompetansemaal` og 15 189
+  `u:Kompetansemaal_lk20`. Syklene håndteres av `+` og `FILTER(?d != ?c)`. Overbegrepene fra fase 4
+  (`udir:Kompetansemaal` osv.) følger med uten regelendringer.
+- **R2 i dag: ingen tripler.** Originalen har bare to subegenskaper, `u:vurderingsordning-hoeyeste-nivaa-elev`
+  og `-privatist` under `u:hoeyeste-nivaa`. Alle tre er ja/nei-verdier, og 606 fagkoder (for eksempel DAN2011)
+  har forskjellig verdi for elev og privatist. Sammenslått ville de fått `u:hoeyeste-nivaa` både `true` og
+  `false`. Fjernet i den rettede ontologien etter avtale med fagansvarlig 2026-11-08 (regel 6,
+  `FJERN_SUBEGENSKAP` i `scripts/rett_ontologi.py`). R2 blir stående som generell regel for fase 4
+  (`u:erstatter` → `dcterms:replaces`).
+- **Røyktest:** minst én utledet `u:Kompetansemaal_lk20`.
+- **Lokal test** (rådata fra 2026-11-06): R1 7–9 s, R2 1–2 s. Prod-kjøringen 2026-11-08 brukte omtrent like lang
+  tid som lokalt på normaliseringen, så utledningen bør legge til under et halvt minutt.
 
 ## Fase 4: `udir:`-laget i ontologien
 
@@ -179,7 +199,7 @@ Innhold: overbegreper (gruppe 1), `udir:Reform` og `udir:Revisjon` med individen
 
 ## Risiko
 
-- **Minne:** containeren kjører med `-Xmx2g` på en maskin med 4 GB. Fase 2 gikk fint med `-Xmx2g` lokalt. R1 er ikke målt ennå.
+- **Minne:** containeren kjører med `-Xmx2g` på en maskin med 4 GB. Fase 2 og R1–R2 gikk fint med `-Xmx2g` lokalt.
 - **Tid:** dagens jobb tar omtrent 2 minutter. Normalisering og utledning legger trolig til noen minutter. Det er godt innenfor grensene til GitHub Actions.
 - **Avvik fra prod:** sandkassen er ikke lenger en ren kopi av prod. Rådatagrafen er det fortsatt, så sammenligninger må bruke `GRAPH <urn:graph:grep>`.
 - **Den lokale `Dockerfile`-endringen** (offisielt image, `shiro.ini`, `-Xmx2g`) er ikke committet. Vi må avklare om den skal tas med i fase 0 eller forkastes.

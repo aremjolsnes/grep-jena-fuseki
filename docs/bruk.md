@@ -48,7 +48,7 @@ Eksemplene under forutsetter disse prefiksene.
 
 ## Hvordan dataene er organisert
 
-Dataene ligger i fire navngitte grafer. **Spørringer uten `GRAPH` ser alle samlet**, så de fleste spørringer
+Dataene ligger i fem navngitte grafer. **Spørringer uten `GRAPH` ser alle samlet**, så de fleste spørringer
 trenger ikke å bry seg om grafene.
 
 | Graf | Innhold |
@@ -56,12 +56,13 @@ trenger ikke å bry seg om grafene.
 | `urn:graph:grep` | Grep-dataene fra Udir (omtrent 1,2 millioner tripler). Datoer og tall har riktige datatyper, ellers uendret. |
 | `urn:graph:ontologi` | Ontologien: klasser, egenskaper og koblinger til typene i dataene |
 | `urn:graph:normalisert` | Gyldighet som egne ressurser og perioder som datoer (omtrent 250 000 tripler) |
+| `urn:graph:utledet` | Typene fra ontologien, utledet fra typene i dataene (omtrent 50 000 tripler) |
 | `urn:graph:meta` | Når dataene sist ble oppdatert |
 
 Vil du ha *bare* Grep-dataene, for eksempel for å sammenligne med Udirs offisielle endepunkt, pakker du
 spørringen inn i `GRAPH <urn:graph:grep> { … }`. Det gjelder særlig spørringer som teller eller lister *alt*
-(alle tripler, alle typer, alle egenskaper). Uten `GRAPH` er ontologien og de normaliserte dataene også med i
-tallene.
+(alle tripler, alle typer, alle egenskaper). Uten `GRAPH` er ontologien og de normaliserte og utledede dataene
+også med i tallene. For eksempel får hver ressurs to typer, `u:kompetansemaal` og `u:Kompetansemaal`.
 
 **Hvor ferske er dataene?**
 
@@ -158,16 +159,19 @@ SELECT ?egenskap ?navn WHERE {
 Domene og rekkevidde i ontologien er justert etter hvordan dataene faktisk ser ut. Generelle egenskaper som
 `u:tittel`, `u:kode` og `u:status` brukes på nesten alle typer og har derfor ikke noe domene.
 
-**Bruke ontologien i spørringer.** Sandkassen kjører ikke resonnering ennå, så `?s a u:Kompetansemaal` gir
-ingen treff. Gå via koblingen i stedet:
+**Bruke ontologien i spørringer.** Hver natt utleder sandkassen typene fra ontologien (`urn:graph:utledet`),
+så klassene med stor forbokstav kan brukes direkte:
 
 ```sparql
 SELECT ?klasse (COUNT(?s) AS ?antall) WHERE {
   VALUES ?klasse { u:Kompetansemaal u:Kompetansemaal_lk20 }
-  ?type rdfs:subClassOf ?klasse .
-  ?s a ?type
+  ?s a ?klasse
 } GROUP BY ?klasse
 ```
+
+Sandkassen kjører ikke en resonnerer. Utledningen er egne SPARQL-regler (`sparql/utledning/` i repoet) som
+følger `rdfs:subClassOf` og `rdfs:subPropertyOf` i ontologien. Domene og rekkevidde brukes bevisst ikke til å
+utlede typer. Hos Udir gir `?s a u:Kompetansemaal` ingen treff.
 
 ## Normaliserte data
 

@@ -21,6 +21,8 @@ Regler (data fra den nattlige dumpen er fasit, deklarert intensjon beholdes der 
      Unntak: egenskapene i TYPEDE får datatypen derfra (beslutning B4). Verdiene gjøres om
      hver natt av sparql/normalisering/02-datatyper.ru, som leser rekkevidden fra ontologien.
   5. Egenskaper som ikke brukes i data: flere domener/rekkevidder slås sammen til union.
+  6. rdfs:subPropertyOf i FJERN_SUBEGENSKAP fjernes, med begrunnelse i endringsloggen.
+     Fase 3 (sparql/utledning/02-egenskaper.ru) følger subegenskapene, så de må gi mening.
 
 Klassene i data har liten forbokstav (u:kompetansemaal); de knyttes til ontologiens
 klasser (u:Kompetansemaal) via grep_type_mapping.ttl. Her brukes klassene med stor forbokstav.
@@ -71,6 +73,16 @@ TYPEDE = {
     "aarstimer-formgivningsfag": XSD.integer, "aarstimer-samisk": XSD.integer,
     "omfang-totalt": XSD.integer, "omfang-vitnemaal": XSD.integer, "omfang-til-naa": XSD.integer,
     "opplaeringstid": XSD.decimal, "verdiskapingstid": XSD.decimal,  # "1,00": desimalkomma i dumpen
+}
+
+# Regel 6: subegenskaper i originalen som gir feil resultat når de følges (avklart med fagansvarlig 2026-11-08).
+# To ja/nei-egenskaper kan ikke slås sammen til én: fagkoder der verdien for elev og privatist er
+# forskjellig (606 stykker, for eksempel DAN2011), ville fått u:hoeyeste-nivaa både true og false.
+FJERN_SUBEGENSKAP = {
+    ("vurderingsordning-hoeyeste-nivaa-elev", "hoeyeste-nivaa"):
+        "ja/nei-verdien for elev og privatist kan være forskjellig, og sammenslått gir den både true og false",
+    ("vurderingsordning-hoeyeste-nivaa-privatist", "hoeyeste-nivaa"):
+        "ja/nei-verdien for elev og privatist kan være forskjellig, og sammenslått gir den både true og false",
 }
 
 
@@ -158,6 +170,7 @@ def main():
 
     for p in sorted(obj_props | dt_props, key=str):
         ps = str(p)
+        navn = ps[len(U):] if ps.startswith(U) else None
         a = art.get(ps, collections.Counter())
         totalt = sum(a.values())
         n_lit = sum(n for (k, _), n in a.items() if k == "lit")
@@ -186,7 +199,7 @@ def main():
             if n_lit:
                 logg[kort(p)].append(f"ADVARSEL: objektegenskap med {n_lit} literal-verdier i data")
             klasse_regel(p, RDFS.range, obj.get(ps, set()), n_iri, typede_o.get(ps, 0))
-        elif p in dt_props and not ubrukt:
+        elif p in dt_props and not ubrukt and navn not in TYPEDE:
             observert = {URIRef(dt) for (k, dt), n in a.items() if k == "lit" and dt}
             deklarert = set(g.objects(p, RDFS.range))
             if not observert <= deklarert:
@@ -197,14 +210,22 @@ def main():
                 logg[kort(p)].append(f"rdfs:range: {kort(ny)} (observert i data: "
                                      f"{', '.join(sorted(kort(dt) for (k, dt) in a if k == 'lit'))}). Var: {gamle}")
 
-        # B4: datatypen bestemmes her, og verdiene gjøres om av sparql/normalisering/02-datatyper.ru
-        navn = ps[len(U):] if ps.startswith(U) else None
-        if p in dt_props and navn in TYPEDE and set(g.objects(p, RDFS.range)) != {TYPEDE[navn]}:
+        # B4: datatypen bestemmes her, og verdiene gjøres om av sparql/normalisering/02-datatyper.ru.
+        # Logges alltid, også når rekkevidden er som i originalen: verdiene er tekst i dumpen, men
+        # statistikken hentes fra sandkassen, der de allerede er gjort om.
+        if p in dt_props and navn in TYPEDE and not ubrukt:
             gamle = ", ".join(sorted(kort(o) for o in g.objects(p, RDFS.range))) or "–"
             g.remove((p, RDFS.range, None))
             g.add((p, RDFS.range, TYPEDE[navn]))
-            logg[kort(p)].append(f"rdfs:range: {kort(TYPEDE[navn])} (B4: verdiene gjøres om av "
+            logg[kort(p)].append(f"rdfs:range: {kort(TYPEDE[navn])} (B4: verdiene er tekst i dumpen og gjøres om av "
                                  f"sparql/normalisering/02-datatyper.ru). Var: {gamle}")
+
+    # 6. Subegenskaper som ikke skal følges
+    for (sub, over), grunn in FJERN_SUBEGENSKAP.items():
+        t = (URIRef(U + sub), RDFS.subPropertyOf, URIRef(U + over))
+        assert t in g, f"finnes ikke i originalen: {t}"
+        g.remove(t)
+        logg[kort(t[0])].append(f"rdfs:subPropertyOf: fjernet ({grunn}). Var: u:{over}")
 
     # Versjonsinformasjon i ontologihodet
     ont = URIRef(U)
