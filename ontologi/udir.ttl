@@ -5,6 +5,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
 # udir:-laget (fase 4): begreper fra fagområdet som ikke er knyttet til én revisjon.
@@ -244,3 +245,79 @@ udir:nynorskTittel a owl:DatatypeProperty ;
     rdfs:label "nynorsktittel"@nb, "nynorsktittel"@nn, "title in Nynorsk"@en ;
     rdfs:comment "Tittelen på nynorsk. Reserve: bokmål, deretter tittelen på fastsettelsesspråket. Gjelder læreplaner og alt som hører til dem."@nb ;
     rdfs:range rdf:langString .
+
+# ---------------------------------------------------------------------------------------------------
+# Steg 6 (2026-11-08): gyldighetsvokabularet
+# Egenskapene finnes i data fra N1 (sparql/normalisering/01-gyldighet.ru) og N4 (03-perioder.ru). Her blir de
+# beskrevet formelt. Avklart med fagansvarlig:
+# - Alle datoer er xsd:date. Til-datoen er siste gyldige dag. 1970-01-01 og 2100-12-31 betyr at perioden er
+#   åpen i den enden (sandkassens egne verdier, ikke Udirs).
+# - Gyldighet (redaksjonell), undervisning og eksamen er tre ulike perioder.
+# - Bare gyldigFra/gyldigTil kobles til schema.org (validFrom/validThrough), via R2. Undervisning og eksamen
+#   kobles ikke, for da ville schema.org ikke lenger skille mellom de tre periodene.
+# ---------------------------------------------------------------------------------------------------
+
+udir:Gyldighet a owl:Class ;
+    rdfs:label "Gyldighet"@nb, "Gyldigheit"@nn, "Validity"@en ;
+    rdfs:comment "Gyldighetsperioden for én kobling mellom to ressurser, for eksempel hvilket opplæringsfag en fagkode hørte til i en periode. Lages av N1 fra de blanke nodene i Grep."@nb,
+        "Gyldigheitsperioden for éi kopling mellom to ressursar. Blir laga av N1 frå dei blanke nodane i Grep."@nn,
+        "The validity period of one link between two resources. Made by N1 from the blank nodes in Grep."@en .
+
+udir:gyldighet a owl:ObjectProperty ;
+    rdfs:label "gyldighet"@nb, "gyldigheit"@nn, "validity"@en ;
+    rdfs:comment "Fra ressursen til gyldighetsperioden for en av koblingene dens."@nb ;
+    rdfs:range udir:Gyldighet .
+
+udir:relasjon a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "relasjon"@nb, "relasjon"@nn, "relation"@en ;
+    rdfs:comment "Hvilken Grep-egenskap koblingen gjelder, for eksempel u:opplaeringsfag."@nb ;
+    rdfs:domain udir:Gyldighet .
+
+udir:objekt a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "objekt"@nb, "objekt"@nn, "object"@en ;
+    rdfs:comment "Ressursen koblingen peker til."@nb ;
+    rdfs:domain udir:Gyldighet .
+
+udir:gyldigFra a owl:DatatypeProperty ;
+    rdfs:label "gyldig fra"@nb, "gyldig frå"@nn, "valid from"@en ;
+    rdfs:comment "Første gyldige dag, satt redaksjonelt i Grep eller utledet fra første semester. 1970-01-01 betyr åpen start."@nb ;
+    rdfs:range xsd:date ;
+    rdfs:subPropertyOf schema:validFrom .
+
+udir:gyldigTil a owl:DatatypeProperty ;
+    rdfs:label "gyldig til"@nb, "gyldig til"@nn, "valid through"@en ;
+    rdfs:comment "Siste gyldige dag, satt redaksjonelt i Grep eller utledet fra siste semester. 2100-12-31 betyr inntil videre."@nb ;
+    rdfs:range xsd:date ;
+    rdfs:subPropertyOf schema:validThrough .
+
+udir:undervisningFra a owl:DatatypeProperty ;
+    rdfs:label "undervisning fra"@nb, "undervisning frå"@nn, "teaching from"@en ;
+    rdfs:comment "Første dag det gis undervisning i fagkoden (første dag i første undervisningssemester)."@nb ;
+    rdfs:range xsd:date .
+
+udir:undervisningTil a owl:DatatypeProperty ;
+    rdfs:label "undervisning til"@nb, "undervisning til"@nn, "teaching until"@en ;
+    rdfs:comment "Siste dag det gis undervisning i fagkoden (siste dag i siste undervisningssemester). 2100-12-31 betyr inntil videre."@nb ;
+    rdfs:range xsd:date .
+
+udir:eksamenFra a owl:DatatypeProperty ;
+    rdfs:label "eksamen fra"@nb, "eksamen frå"@nn, "exam from"@en ;
+    rdfs:comment "Første dag man kan ta eksamen i fagkoden (første dag i første eksamenssemester)."@nb ;
+    rdfs:range xsd:date .
+
+udir:eksamenTil a owl:DatatypeProperty ;
+    rdfs:label "eksamen til"@nb, "eksamen til"@nn, "exam until"@en ;
+    rdfs:comment "Siste dag man kan ta eksamen i fagkoden (siste dag i siste eksamenssemester). 2100-12-31 betyr inntil videre."@nb ;
+    rdfs:range xsd:date .
+
+udir:startdato a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "startdato"@nb, "startdato"@nn, "start date"@en ;
+    rdfs:comment "Første dag i semesteret: 1. januar for vår, 1. august for høst."@nb ;
+    rdfs:domain u:Semester ;
+    rdfs:range xsd:date .
+
+udir:sluttdato a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "sluttdato"@nb, "sluttdato"@nn, "end date"@en ;
+    rdfs:comment "Siste dag i semesteret: 31. juli for vår, 31. desember for høst."@nb ;
+    rdfs:domain u:Semester ;
+    rdfs:range xsd:date .

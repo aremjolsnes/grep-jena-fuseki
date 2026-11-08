@@ -1,8 +1,8 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
 Status 2026-11-08: fase 0, 1 og 2 er gjennomført og i drift. I fase 2 er N2 (status) fjernet og N4 (perioder) lagt
-til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper, steg 2: reform og revisjon med R3, steg 3: SKOS med R4, steg 4: språk med R5, steg 5: Dublin Core). Gyldighetsvokabularet
-gjenstår i fase 4.
+til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper, steg 2: reform og revisjon med R3, steg 3: SKOS med R4, steg 4: språk med R5, steg 5: Dublin Core, steg 6: gyldighetsvokabularet). Fase 4 er
+ferdig 2026-11-08, sammen med N5 (tittel per målform).
 
 ## Mål
 
@@ -205,7 +205,7 @@ og skriver bare tripler som ikke står der fra før.
 
 Dette er et eget arbeid som gjøres stegvis i dialog og legges i `ontologi/udir.ttl`. Fasene 1–3 kan bygges og testes uten det, med den rettede ontologien og typekoblingene vi allerede har.
 
-Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2) ✅, SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde) ✅, språkkobling til EUs autoritetstabell ✅, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core ✅.
+Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2) ✅, SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde) ✅, språkkobling til EUs autoritetstabell ✅, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) ✅ og koblinger til Dublin Core ✅.
 
 ### Steg 1: overbegreper ✅ (2026-11-08)
 
@@ -293,6 +293,18 @@ Avklart med fagansvarlig:
 Koblingene er `rdfs:subPropertyOf` i `udir.ttl`, og R2 følger dem uten regelendringer. Resultat ved lokal test:
 4 410 + 4 410 + 44 079 + 1 031 + 1 109 tripler, `urn:graph:utledet` fra 126 009 til 180 946. R2 tar 5 s.
 Røyktesten krever alle fem egenskapene.
+
+### Steg 6: gyldighetsvokabularet ✅ (2026-11-08)
+
+`udir.ttl` beskriver nå formelt det N1 og N4 har laget: klassen `udir:Gyldighet`, egenskapene `udir:gyldighet`,
+`udir:relasjon` og `udir:objekt`, de tre periodene (`gyldigFra`/`gyldigTil`, `undervisningFra`/`undervisningTil`,
+`eksamenFra`/`eksamenTil`) og `udir:startdato`/`udir:sluttdato` på semestre. Alle datoer er `xsd:date`, til-datoen
+er siste gyldige dag, og 1970-01-01 og 2100-12-31 står for åpne ender.
+
+Avklart med fagansvarlig: bare `gyldigFra`/`gyldigTil` kobles til schema.org (`schema:validFrom`/`validThrough`) via
+R2. Undervisning og eksamen kobles ikke, siden schema.org da ikke lenger ville skilt mellom de tre periodene.
+Resultat ved lokal test: 44 550 + 44 550 tripler, `urn:graph:utledet` fra 180 946 til 270 046. R2 tar 9 s.
+Røyktesten krever begge schema.org-egenskapene.
 
 ## Den nattlige jobben, ny rekkefølge
 

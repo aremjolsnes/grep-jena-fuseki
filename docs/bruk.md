@@ -267,6 +267,16 @@ SELECT ?fra ?til WHERE {
 } ORDER BY ?fra
 ```
 
+**Gyldighet og schema.org.** Alle `udir:`-egenskapene for gyldighet og perioder er beskrevet i ontologien,
+med navn og forklaring på bokmål, nynorsk og engelsk. `udir:gyldigFra` og `udir:gyldigTil` finnes også som
+`schema:validFrom` og `schema:validThrough`, som er det vanligste vokabularet for gyldighet på nettet.
+Undervisning og eksamen har ingen schema.org-utgave, for da ville schema.org ikke skilt mellom de tre periodene.
+
+```sparql
+PREFIX schema: <https://schema.org/>
+SELECT ?fra ?til WHERE { d:AGR3001 schema:validFrom ?fra ; schema:validThrough ?til }
+```
+
 **Bruke ontologien i spørringer.** Hver natt utleder sandkassen typene fra ontologien (`urn:graph:utledet`),
 så klassene med stor forbokstav og overbegrepene kan brukes direkte:
 

@@ -227,6 +227,10 @@ N_UTEN_BOKMAALTITTEL=$(sporr "PREFIX u: <http://psi.udir.no/ontologi/kl06/> PREF
 N_DCTERMS=$(sporr_alle "SELECT ?p (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s ?p ?o
     FILTER(STRSTARTS(STR(?p), \"http://purl.org/dc/terms/\")) } } GROUP BY ?p ORDER BY ?p" \
   | sed 's#http://purl.org/dc/terms/#dcterms:#' | tr '\n' ' ')
+# schema.org (fase 4 steg 6): udir:gyldigFra/gyldigTil som schema:validFrom/validThrough via R2
+N_SCHEMA=$(sporr_alle "SELECT ?p (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s ?p ?o
+    FILTER(STRSTARTS(STR(?p), \"https://schema.org/\")) } } GROUP BY ?p ORDER BY ?p" \
+  | sed 's#https://schema.org/#schema:#' | tr '\n' ' ')
 N_GYLDIGHET=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_NORM> { ?g a udir:Gyldighet } }")
 # N4: alle fagkoder skal ha en gyldighetsperiode (eventuelt 1970-01-01–2100-12-31)
@@ -244,6 +248,7 @@ logg "Revisjon (utledet): $N_REVISJON, i begge revisjonene: $N_TO_REVISJONER"
 logg "SKOS-begreper (utledet): $N_SKOS, fagområder uten fagkategori: $N_FAGOMR_UTEN_KATEGORI"
 logg "Språk uten kobling til EUs språktabell: $N_SPRAAK_UTEN_EU"
 logg "Dublin Core (utledet): $N_DCTERMS"
+logg "schema.org (utledet): $N_SCHEMA"
 logg "Uten udir:bokmaalTittel eller udir:nynorskTittel (læreplaner og det som hører til dem): $N_UTEN_BOKMAALTITTEL"
 logg "udir:Gyldighet: $N_GYLDIGHET, fagkoder uten periode: $N_FAGKODER_UTEN_PERIODE"
 logg "Perioder: $N_PERIODER"
@@ -324,13 +329,14 @@ if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
    || [ "$(printf '%s' "$N_REVISJON" | grep -o 'udir:LK' | wc -l)" -ne 2 ] || [ "${N_TO_REVISJONER:-1}" -ne 0 ] \
    || [ "$(printf '%s' "$N_SKOS" | grep -o 'udir:' | wc -l)" -ne 5 ] || [ "${N_FAGOMR_UTEN_KATEGORI:-1}" -ne 0 ] \
    || [ "${N_SPRAAK_UTEN_EU:-1}" -ne 0 ] || [ "$(printf '%s' "$N_DCTERMS" | grep -o 'dcterms:' | wc -l)" -ne 5 ] \
-   || [ "${N_UTEN_BOKMAALTITTEL:-1}" -ne 0 ]; then
+   || [ "${N_UTEN_BOKMAALTITTEL:-1}" -ne 0 ] || [ "$(printf '%s' "$N_SCHEMA" | grep -o 'schema:' | wc -l)" -ne 2 ]; then
   echo "Røyktest feilet (forventet minst $MIN_TRIPLER tripler i $G_GREP, >0 i $G_ONTOLOGI," \
        "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM," \
        ">0 u:Kompetansemaal_lk20, overbegreper fra udir.ttl og udir:revisjon for LK06 og LK20" \
        "(ingen ressurs i begge), begreper i alle fem SKOS-begrepssystemene, fagkategori på alle" \
        "fagområder, EU-kobling på alle språk og alle fem Dublin Core-egenskapene i $G_UTLEDET," \
-       "og udir:bokmaalTittel og udir:nynorskTittel på alle læreplaner og det som hører til dem i $G_NORM)"
+       "udir:bokmaalTittel og udir:nynorskTittel på alle læreplaner og det som hører til dem i $G_NORM," \
+       "og schema:validFrom og schema:validThrough i $G_UTLEDET)"
   exit 1
 fi
 
