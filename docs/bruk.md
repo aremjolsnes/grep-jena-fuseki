@@ -159,8 +159,29 @@ SELECT ?egenskap ?navn WHERE {
 Domene og rekkevidde i ontologien er justert etter hvordan dataene faktisk ser ut. Generelle egenskaper som
 `u:tittel`, `u:kode` og `u:status` brukes på nesten alle typer og har derfor ikke noe domene.
 
+**Overbegreper på tvers av reformene.** Læreplaner, kompetansemål og kompetansemålsett finnes i én utgave for
+LK06 og én for LK20. Sandkassen har et overbegrep for hver av dem, som omfatter begge utgavene:
+
+| Overbegrep | LK06 | LK20 |
+|---|---|---|
+| `udir:Laereplan` | `u:Laereplan` | `u:Laereplan_lk20` |
+| `udir:Kompetansemaal` | `u:Kompetansemaal` | `u:Kompetansemaal_lk20` |
+| `udir:Kompetansemaalsett` | `u:Kompetansemaalsett` | `u:Kompetansemaalsett_lk20` |
+
+Alle læreplaner, uansett reform:
+
+```sparql
+SELECT ?lp ?kode WHERE {
+  ?lp a udir:Laereplan ; u:kode ?kode .
+} ORDER BY ?kode
+```
+
+Hovedområder (LK06) og kjerneelementer (LK20) har en lignende plass i læreplanen, men er ulike begreper. De har
+derfor ikke noe felles overbegrep, og det finnes ingen kobling mellom dem. Klasser som allerede gjelder begge
+reformene, for eksempel `u:Fagkode` og `u:Opplaeringsfag`, har heller ikke noe overbegrep.
+
 **Bruke ontologien i spørringer.** Hver natt utleder sandkassen typene fra ontologien (`urn:graph:utledet`),
-så klassene med stor forbokstav kan brukes direkte:
+så klassene med stor forbokstav og overbegrepene kan brukes direkte:
 
 ```sparql
 SELECT ?klasse (COUNT(?s) AS ?antall) WHERE {
@@ -279,10 +300,7 @@ SELECT ?s ?endret WHERE {
 
 Under arbeid, og ikke tilgjengelig ennå:
 
-- **Overordnede begreper** som ikke er knyttet til én reform (`udir:Laereplan`, `udir:Kompetansemaal`, …). Da
-  kan man spørre etter alle læreplaner på tvers av LK06 og LK20.
 - **Reform og revisjon** som egne ressurser: Kunnskapsløftet med revisjonene LK06 og LK20.
-- **Utledninger beregnet på forhånd**, slik at `?s a u:Kompetansemaal` fungerer direkte.
 - **Koblinger til felles vokabularer**: SKOS-begrepssystemer, EUs språktabell (ISO 639) og Dublin Core.
 
 ## Egenheter i dataene

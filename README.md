@@ -48,9 +48,9 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 | Graf | Innhold | Kilde |
 |---|---|---|
 | `urn:graph:grep` | Rådata fra dumpen (omtrent 1,2 millioner tripler). Datoer og tall gjøres om til riktige datatyper (N3, B4), ellers uendret. | Erstattes i sin helhet hver natt (`PUT` til `urn:graph:grep-ny`, så `MOVE`) |
-| `urn:graph:ontologi` | `ontologi/ontologi_kl06_rettet.ttl` og `ontologi/grep_type_mapping.ttl` | Lastes fra repoet ved hver innlasting |
+| `urn:graph:ontologi` | `ontologi/ontologi_kl06_rettet.ttl`, `ontologi/grep_type_mapping.ttl` og `ontologi/udir.ttl` | Lastes fra repoet ved hver innlasting |
 | `urn:graph:normalisert` | `udir:Gyldighet`-ressurser (N1) og perioder som datoer (N4), omtrent 252 000 tripler | Tømmes og bygges på nytt av `sparql/normalisering/*.ru` |
-| `urn:graph:utledet` | Typer fra ontologien via `rdfs:subClassOf+` (R1), omtrent 50 000 tripler | Tømmes og bygges på nytt av `sparql/utledning/*.ru` |
+| `urn:graph:utledet` | Typer fra ontologien via `rdfs:subClassOf+` (R1), også overbegrepene i `udir.ttl`, omtrent 85 000 tripler | Tømmes og bygges på nytt av `sparql/utledning/*.ru` |
 | `urn:graph:meta` | `last-id` (endrings-id), `lastet` (tidspunkt), `antall-tripler`, `antall-tripler-normalisert`, `antall-tripler-utledet` | Skrives sist i hver innlasting |
 
 ## Filer
@@ -68,6 +68,7 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 | `sparql/utledning/*.ru` | Utledningsreglene (fase 3), kjøres etter normaliseringen: `01-typer` (R1), `02-egenskaper` (R2) |
 | `ontologi/ontologi_kl06_20240523.ttl` | Original Grep-ontologi (klasser med stor forbokstav). Rør ikke. |
 | `ontologi/ontologi_kl06_rettet.ttl` (+ `_endringslogg.md`) | Ontologi med rettet domene og rekkevidde. Den som lastes inn. |
+| `ontologi/udir.ttl` | `udir:`-laget (fase 4): overbegreper på tvers av reformene. Skrives for hånd, stegvis. |
 | `ontologi/grep_type_mapping.ttl` | 44 koblinger, f.eks. `u:Kompetansemaal ≡ u:kompetansemaal`, med `owl:equivalentClass` og `rdfs:subClassOf` begge veier |
 | `.github/workflows/ingest-data.yml` | Nattlig innlasting, komprimering og keepalive |
 | `.github/workflows/komprimer.yml` | Komprimering for hånd |
@@ -89,8 +90,8 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
   → røyktest og kontroller → skriv metadata → rapporter avvik → komprimer databasen.
   Metadata skrives sist, så en kjøring som feiler, blir forsøkt på nytt neste natt.
 - **Røyktest:** minst 1 000 000 tripler i rådata (`MIN_TRIPLER`), minst 36 000 `udir:Gyldighet` (`MIN_GYLDIGHET`),
-  en gyldighetsperiode (`udir:gyldigFra`/`udir:gyldigTil`) på alle fagkoder og minst én utledet
-  `u:Kompetansemaal_lk20`.
+  en gyldighetsperiode (`udir:gyldigFra`/`udir:gyldigTil`) på alle fagkoder, minst én utledet
+  `u:Kompetansemaal_lk20` og utledede overbegreper fra `udir.ttl`.
 - **Avvik i dataene** stopper ikke jobben, men skal ses av et menneske. Kontrollene er datoer med årstall før 1990
   eller etter 2100, gyldighet uten kobling og verdier N3 ikke kunne gjøre om. `nattlig-innlasting.sh` skriver dem
   til `AVVIK_FIL`, og `scripts/rapporter-avvik.sh` lager issuen **«Avvik i Grep-dataene»**. Den tildeles
@@ -173,7 +174,9 @@ har ikke dette problemet.
 
 - Tre lag (avtalt 06.11.2026): `udir:` (`http://psi.udir.no/ontologi/`) for begreper som ikke er knyttet til
   én reform, `u:` med stor forbokstav for Grep-klasser, og `u:` med liten forbokstav for typene i dataene.
-  `udir:`-laget er ikke laget ennå.
+  `udir:`-laget ligger i `ontologi/udir.ttl` og bygges stegvis (fase 4). Nye begreper legges direkte i `udir:`,
+  som et forslag til Udir (B6). `udir:` brukes bare der det tilfører noe, for eksempel et overbegrep på tvers av
+  reformene. Klasser som allerede gjelder begge reformene, som `u:Fagkode`, får ingen `udir:`-utgave.
 - **Domene og rekkevidde** i originalen var skrevet som lister over hvor egenskapen brukes. I RDFS/OWL betyr flere
   domener *snitt*, så resonnering ville gitt feil typer. `scripts/rett_ontologi.py` retter dette. Kjør det på
   nytt hvis dataene endrer seg: `python scripts/rett_ontologi.py`.

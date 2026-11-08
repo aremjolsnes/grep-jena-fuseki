@@ -3,7 +3,7 @@
 #
 # Grafstruktur (Fuseki kjører med tdb2:unionDefaultGraph, så spørringer uten GRAPH ser alt):
 #   urn:graph:grep         rådata fra dumpen (erstattes i sin helhet hver gang)
-#   urn:graph:ontologi     ontologi_kl06_rettet.ttl + grep_type_mapping.ttl fra repoet
+#   urn:graph:ontologi     ontologi_kl06_rettet.ttl + grep_type_mapping.ttl + udir.ttl fra repoet
 #   urn:graph:normalisert  resultatet av sparql/normalisering/*.ru (bygges på nytt hver gang)
 #   urn:graph:utledet      resultatet av sparql/utledning/*.ru (bygges på nytt hver gang)
 #   urn:graph:meta         siste endrings-id og tidspunkt (skrives sist)
@@ -166,6 +166,7 @@ logg "  MOVE: $(( $(date +%s) - t0 )) s"
 logg "Laster ontologi til <$G_ONTOLOGI> ..."
 last_graf PUT  "$G_ONTOLOGI" text/turtle "$REPO/ontologi/ontologi_kl06_rettet.ttl"
 last_graf POST "$G_ONTOLOGI" text/turtle "$REPO/ontologi/grep_type_mapping.ttl"
+last_graf POST "$G_ONTOLOGI" text/turtle "$REPO/ontologi/udir.ttl"
 
 # 6. Rydd bort data i den lagrede default graph (før B2 lå rådata der).
 #    Med unionDefaultGraph er den usynlig for spørringer; DROP DEFAULT rører ikke named graphs.
@@ -191,6 +192,11 @@ N_UTLEDET=$(tell_graf "$G_UTLEDET")
 # R1: kompetansemål i LK20 skal ha typen fra Udirs ontologi
 N_KM_TYPE=$(sporr "PREFIX u: <http://psi.udir.no/ontologi/kl06/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s a u:Kompetansemaal_lk20 } }")
+# Fase 4: overbegrepene i ontologi/udir.ttl (på tvers av LK06 og LK20)
+N_OVERBEGREP=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
+  SELECT ?k (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s a ?k
+    VALUES ?k { udir:Laereplan udir:Kompetansemaal udir:Kompetansemaalsett } } } GROUP BY ?k ORDER BY ?k" \
+  | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
 N_GYLDIGHET=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_NORM> { ?g a udir:Gyldighet } }")
 # N4: alle fagkoder skal ha en gyldighetsperiode (eventuelt 1970-01-01–2100-12-31)
@@ -203,6 +209,7 @@ N_PERIODER=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
   | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
 logg "Tripler: $G_GREP=$N_GREP, $G_ONTOLOGI=$N_ONT, $G_NORM=$N_NORM, $G_UTLEDET=$N_UTLEDET"
 logg "u:Kompetansemaal_lk20 (utledet): $N_KM_TYPE"
+logg "Overbegreper (utledet): $N_OVERBEGREP"
 logg "udir:Gyldighet: $N_GYLDIGHET, fagkoder uten periode: $N_FAGKODER_UTEN_PERIODE"
 logg "Perioder: $N_PERIODER"
 
@@ -278,10 +285,10 @@ EOF
 
 if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
    || [ "${N_GYLDIGHET:-0}" -lt "$MIN_GYLDIGHET" ] || [ "${N_FAGKODER_UTEN_PERIODE:-1}" -ne 0 ] \
-   || [ "${N_KM_TYPE:-0}" -lt 1 ]; then
+   || [ "${N_KM_TYPE:-0}" -lt 1 ] || [ -z "${N_OVERBEGREP// /}" ]; then
   echo "Røyktest feilet (forventet minst $MIN_TRIPLER tripler i $G_GREP, >0 i $G_ONTOLOGI," \
        "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM," \
-       ">0 u:Kompetansemaal_lk20 i $G_UTLEDET)"
+       ">0 u:Kompetansemaal_lk20 og overbegreper fra udir.ttl i $G_UTLEDET)"
   exit 1
 fi
 

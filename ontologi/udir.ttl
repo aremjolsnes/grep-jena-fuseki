@@ -1,0 +1,71 @@
+@prefix udir: <http://psi.udir.no/ontologi/> .
+@prefix u:    <http://psi.udir.no/ontologi/kl06/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# udir:-laget (fase 4): begreper fra fagområdet som ikke er knyttet til én reform.
+#
+# Et forslag til Udir, brukt i Grep-sandkassen (beslutning B6, docs/plan-nattlig-normalisering.md).
+# udir: brukes bare der det tilfører noe, for eksempel et overbegrep på tvers av reformene.
+# Klasser som allerede gjelder begge reformene (u:Fagkode, u:Opplaeringsfag, ...) får ingen udir:-utgave.
+#
+# Lastes inn i urn:graph:ontologi av scripts/nattlig-innlasting.sh. Regel R1 (sparql/utledning/01-typer.ru)
+# følger rdfs:subClassOf, så ?s a udir:Laereplan gir treff uten endringer i reglene.
+#
+# Bygges stegvis i dialog med fagansvarlig. Steg 1 (2026-11-08): overbegreper.
+
+udir: a owl:Ontology ;
+    rdfs:label "Udir-ontologi (forslag)"@nb, "Udir-ontologi (forslag)"@nn, "Udir ontology (proposal)"@en ;
+    rdfs:comment "Begreper fra fagområdet som ikke er knyttet til én reform. Forslag fra Grep-sandkassen."@nb ;
+    rdfs:seeAlso <https://github.com/aremjolsnes/grep-jena-fuseki/blob/main/docs/plan-nattlig-normalisering.md> .
+
+# ---------------------------------------------------------------------------------------------------
+# Overbegreper på tvers av reformene (LK06 og LK20)
+# Avklart med fagansvarlig 2026-11-08: læreplan, kompetansemål og kompetansemålsett er samme begrep
+# i begge reformene, i hver sin utgave.
+# ---------------------------------------------------------------------------------------------------
+
+udir:Laereplan a owl:Class ;
+    rdfs:label "Læreplan"@nb, "Læreplan"@nn, "Curriculum"@en ;
+    rdfs:comment "Læreplan uavhengig av reform. Omfatter læreplaner i LK06 og LK20."@nb,
+        "Læreplan uavhengig av reform. Omfattar læreplanar i LK06 og LK20."@nn,
+        "Curriculum regardless of reform. Covers curricula in LK06 and LK20."@en .
+
+udir:Kompetansemaal a owl:Class ;
+    rdfs:label "Kompetansemål"@nb, "Kompetansemål"@nn, "Competence aim"@en ;
+    rdfs:comment "Kompetansemål uavhengig av reform. Omfatter kompetansemål i LK06 og LK20."@nb,
+        "Kompetansemål uavhengig av reform. Omfattar kompetansemål i LK06 og LK20."@nn,
+        "Competence aim regardless of reform. Covers competence aims in LK06 and LK20."@en .
+
+udir:Kompetansemaalsett a owl:Class ;
+    rdfs:label "Kompetansemålsett"@nb, "Kompetansemålsett"@nn, "Set of competence aims"@en ;
+    rdfs:comment "Kompetansemålsett uavhengig av reform. Omfatter kompetansemålsett i LK06 og LK20."@nb,
+        "Kompetansemålsett uavhengig av reform. Omfattar kompetansemålsett i LK06 og LK20."@nn,
+        "Set of competence aims regardless of reform. Covers sets in LK06 and LK20."@en .
+
+u:Laereplan rdfs:subClassOf udir:Laereplan .
+u:Laereplan_lk20 rdfs:subClassOf udir:Laereplan .
+
+u:Kompetansemaal rdfs:subClassOf udir:Kompetansemaal .
+u:Kompetansemaal_lk20 rdfs:subClassOf udir:Kompetansemaal .
+
+u:Kompetansemaalsett rdfs:subClassOf udir:Kompetansemaalsett .
+u:Kompetansemaalsett_lk20 rdfs:subClassOf udir:Kompetansemaalsett .
+
+# ---------------------------------------------------------------------------------------------------
+# Hovedområde (LK06) og kjerneelement (LK20): beslektet, men ikke samme begrep
+# Avklart med fagansvarlig 2026-11-08: ingen felles overbegrep og ingen kobling mellom ressursene,
+# fordi en mapping mellom dem ville blitt en redaksjonell utfordring. De har en lignende plass i
+# læreplanen, og det dokumenteres her uten at noe utledes.
+# ---------------------------------------------------------------------------------------------------
+
+u:Hovedomraade owl:disjointWith u:Kjerneelement_lk20 ;
+    rdfs:seeAlso u:Kjerneelement_lk20 .
+
+u:Kjerneelement_lk20 rdfs:seeAlso u:Hovedomraade .
+
+[] a owl:Axiom ;
+    owl:annotatedSource u:Hovedomraade ;
+    owl:annotatedProperty rdfs:seeAlso ;
+    owl:annotatedTarget u:Kjerneelement_lk20 ;
+    rdfs:comment "Hovedområder (LK06) og kjerneelementer (LK20) har en lignende plass i læreplanen, men er ulike begreper. Det finnes ingen kobling mellom dem."@nb .

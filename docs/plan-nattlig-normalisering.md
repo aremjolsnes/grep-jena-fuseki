@@ -1,7 +1,8 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
 Status 2026-11-08: fase 0, 1 og 2 er gjennomført og i drift. I fase 2 er N2 (status) fjernet og N4 (perioder) lagt
-til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. R3–R4 og fase 4 gjenstår.
+til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper). R3–R4 og resten
+av fase 4 gjenstår.
 
 ## Mål
 
@@ -182,7 +183,23 @@ og skriver bare tripler som ikke står der fra før.
 
 Dette er et eget arbeid som gjøres stegvis i dialog og legges i `ontologi/udir.ttl`. Fasene 1–3 kan bygges og testes uten det, med den rettede ontologien og typekoblingene vi allerede har.
 
-Innhold: overbegreper (gruppe 1), `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2), SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde), språkkobling til EUs autoritetstabell, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core.
+Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2), SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde), språkkobling til EUs autoritetstabell, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core.
+
+### Steg 1: overbegreper ✅ (2026-11-08)
+
+Avklart med fagansvarlig:
+
+- **Tre overbegreper:** `udir:Laereplan`, `udir:Kompetansemaal` og `udir:Kompetansemaalsett`. Læreplan,
+  kompetansemål og kompetansemålsett er samme begrep i LK06 og LK20, i hver sin utgave. Begge Grep-klassene kobles
+  til overbegrepet med `rdfs:subClassOf`, og R1 gir typene uten regelendringer: 1 109 læreplaner, 32 210
+  kompetansemål og 2 517 kompetansemålsett. `urn:graph:utledet` vokser fra 49 642 til 85 478 tripler.
+- **Hovedområde (LK06) og kjerneelement (LK20) holdes adskilt.** De ligner, men en mapping mellom dem ville blitt en
+  redaksjonell utfordring. `udir.ttl` sier `owl:disjointWith` (ingenting er begge deler) og `rdfs:seeAlso` med en
+  forklaring, uten at noe utledes.
+- **Ingen `udir:`-utgave av klasser som allerede gjelder begge reformene** (`u:Fagkode`, `u:Opplaeringsfag`,
+  `u:Programomraade` osv.). `udir:` brukes bare der det tilfører noe.
+- Navn og forklaringer på bokmål, nynorsk og engelsk.
+- Røyktest: overbegrepene skal ha utledede typer.
 
 ## Den nattlige jobben, ny rekkefølge
 
