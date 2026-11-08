@@ -1,8 +1,8 @@
 # Plan: nattlig normalisering og utledning i Grep-sandkassen
 
 Status 2026-11-08: fase 0, 1 og 2 er gjennomført og i drift. I fase 2 er N2 (status) fjernet og N4 (perioder) lagt
-til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper, steg 2: reform og revisjon med R3, steg 3: SKOS med R4). Resten
-av fase 4 gjenstår.
+til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper, steg 2: reform og revisjon med R3, steg 3: SKOS med R4, steg 4: språk med R5). Gyldighetsvokabularet
+og Dublin Core gjenstår i fase 4.
 
 ## Mål
 
@@ -183,7 +183,7 @@ og skriver bare tripler som ikke står der fra før.
 
 Dette er et eget arbeid som gjøres stegvis i dialog og legges i `ontologi/udir.ttl`. Fasene 1–3 kan bygges og testes uten det, med den rettede ontologien og typekoblingene vi allerede har.
 
-Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2) ✅, SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde) ✅, språkkobling til EUs autoritetstabell, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core.
+Innhold: overbegreper (gruppe 1) ✅, `udir:Reform` og `udir:Revisjon` med individene KL06, LK06 (1) og LK20 (2) ✅, SKOS-begrepssystemer (fagtype, opplæringsnivå, fagkategori og fagområde) ✅, språkkobling til EUs autoritetstabell ✅, gyldighetsvokabularet (`udir:Gyldighet` med egenskaper) og koblinger til Dublin Core.
 
 ### Steg 1: overbegreper ✅ (2026-11-08)
 
@@ -239,6 +239,22 @@ R4 (`sparql/utledning/04-skos.ru`) gir `skos:Concept`, `skos:inScheme`, `skos:pr
 Resultat ved lokal test: 72 begreper (59 + 10 + 3), 156 navn (høyst ett per språk), 51 `skos:broader` og
 `skos:narrower`, 21 toppbegreper. R4 tar 1 s. Røyktesten krever begreper i alle tre systemene og fagkategori på
 alle fagområder.
+
+### Steg 4: språk og språknivå ✅ (2026-11-08)
+
+Avklart med fagansvarlig:
+
+- **Språkene i Grep er nøyaktig de samme som i EUs språktabell**, så de får `skos:exactMatch`. Begge bruker
+  ISO 639: `d:nob` blir `<http://publications.europa.eu/resource/authority/language/NOB>`. Alle ti språkene
+  (nob, nno, sme, sma, smj, eng, deu, fra, spa, ita) fantes der 2026-11-08.
+- **Språk og språknivå blir begrepssystemer** (`udir:Spraak`, `udir:Spraaknivaaer`) via `udir:begrepssystem` og R4.
+- **CEFR kobles ikke ennå.** Nivå I–III svarer til A1, A2 og B1 (`u:cefr` i Grep), men CEFR har ikke noe offisielt
+  vokabular med faste adresser (sjekket 2026-11-08: ESCO og Europass bruker CEFR, men gir ikke nivåene egne
+  URI-er). Vi lager ikke egne CEFR-begreper under `udir:`, siden de hører til Europarådet.
+
+R5 (`sparql/utledning/05-spraak.ru`) lager EU-adressen fra `u:kode` med store bokstaver, så nye språk kommer med
+automatisk. Resultat ved lokal test: 10 språk og 3 språknivåer som begreper, alle språk koblet, 67 læreplaner
+tilgjengelige på nordsamisk. Røyktesten krever fem begrepssystemer og EU-kobling på alle språk.
 
 ## Den nattlige jobben, ny rekkefølge
 

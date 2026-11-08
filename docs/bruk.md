@@ -200,14 +200,16 @@ SELECT ?revisjon (COUNT(?km) AS ?antall) WHERE {
 } GROUP BY ?revisjon
 ```
 
-**Begrepssystemer (SKOS).** Fagtyper, opplæringsnivåer, fagkategorier og fagområder er SKOS-begreper
-(`skos:Concept`) i tre begrepssystemer:
+**Begrepssystemer (SKOS).** Fagtyper, opplæringsnivåer, fagkategorier, fagområder, språk og språknivåer er
+SKOS-begreper (`skos:Concept`) i fem begrepssystemer:
 
 | Begrepssystem | Begreper |
 |---|---|
 | `udir:Fagtyper` | fellesfag, valgfag, felles programfag … (10) |
 | `udir:Opplaeringsnivaaer` | grunnskole, videregående opplæring, forberedende opplæring for voksne (3) |
 | `udir:Fagkategorier` | fagkategoriene (8), med fagområdene (51) under seg (`skos:broader`/`skos:narrower`) |
+| `udir:Spraak` | språkene i Grep (10), koblet til EUs språktabell |
+| `udir:Spraaknivaaer` | Nivå I, II og III i fremmedspråk (3) |
 
 Begrepene er Grep-ressursene selv, for eksempel `d:fagtype_valgfag` og `d:FKAT100`. De har `skos:prefLabel` på
 bokmål (`nb`), nynorsk (`nn`) og, der Grep har det, engelsk (`en`) og nordsamisk (`se`), og koden som
@@ -224,6 +226,22 @@ SELECT ?kategori ?omraade WHERE {
   FILTER(LANG(?kategori) = "nb" && LANG(?omraade) = "nb")
 } ORDER BY ?kategori ?omraade
 ```
+
+**Språk og EUs språktabell.** Hvert språk i Grep har `skos:exactMatch` til samme språk i
+[EUs språktabell](http://publications.europa.eu/resource/authority/language), som bruker de samme ISO 639-kodene:
+`d:nob` er `<http://publications.europa.eu/resource/authority/language/NOB>`. Da kan Grep brukes sammen med
+andre data som følger EU-standarden. Læreplaner som er tilgjengelige på nordsamisk:
+
+```sparql
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?lp ?kode WHERE {
+  ?lp u:tilgjengelige-spraak/skos:exactMatch <http://publications.europa.eu/resource/authority/language/SME> ;
+      u:kode ?kode .
+} ORDER BY ?kode
+```
+
+Språknivåene svarer til CEFR-nivåene A1, A2 og B1, som står som tekst i `u:cefr`. CEFR har ikke noe offisielt
+vokabular med faste adresser ennå, så sandkassen kobler ikke nivåene videre.
 
 **Bruke ontologien i spørringer.** Hver natt utleder sandkassen typene fra ontologien (`urn:graph:utledet`),
 så klassene med stor forbokstav og overbegrepene kan brukes direkte:
@@ -345,7 +363,7 @@ SELECT ?s ?endret WHERE {
 
 Under arbeid, og ikke tilgjengelig ennå:
 
-- **Koblinger til felles vokabularer**: EUs språktabell (ISO 639) og Dublin Core.
+- **Koblinger til felles vokabularer**: Dublin Core.
 
 ## Egenheter i dataene
 

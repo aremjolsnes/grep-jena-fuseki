@@ -185,3 +185,27 @@ u:Fagomraade udir:begrepssystem udir:Fagkategorier .
 
 # Fagområdet peker på fagkategorien sin (bare fagområder bruker u:fagkategori, 51 av 51)
 u:fagkategori rdfs:subPropertyOf skos:broader .
+
+# ---------------------------------------------------------------------------------------------------
+# Steg 4 (2026-11-08): språk og språknivå
+# Avklart med fagansvarlig:
+# - Språkene i Grep (d:nob, d:sme ...) er nøyaktig de samme som i EUs språktabell (ISO 639), så de får
+#   skos:exactMatch dit (regel R5, sparql/utledning/05-spraak.ru). Alle ti finnes der (sjekket 2026-11-08).
+# - Språknivå I–III blir et eget begrepssystem. De svarer til CEFR-nivåene A1, A2 og B1 (u:cefr i Grep),
+#   men CEFR har ikke noe offisielt endepunkt med faste adresser ennå. Vi lager ikke egne CEFR-begreper:
+#   de hører til Europarådet. Kobles når et offisielt vokabular finnes.
+# ---------------------------------------------------------------------------------------------------
+
+udir:Spraak a skos:ConceptScheme ;
+    rdfs:label "Språk"@nb, "Språk"@nn, "Languages"@en ;
+    skos:prefLabel "Språk"@nb, "Språk"@nn, "Languages"@en ;
+    rdfs:comment "Språkene i Grep, koblet til EUs språktabell (http://publications.europa.eu/resource/authority/language)."@nb ;
+    rdfs:seeAlso <http://publications.europa.eu/resource/authority/language> .
+
+udir:Spraaknivaaer a skos:ConceptScheme ;
+    rdfs:label "Språknivåer"@nb, "Språknivå"@nn, "Language levels"@en ;
+    skos:prefLabel "Språknivåer"@nb, "Språknivå"@nn, "Language levels"@en ;
+    rdfs:comment "Nivå I, II og III i fremmedspråk. Svarer til CEFR-nivåene A1, A2 og B1 (u:cefr)."@nb .
+
+u:Spraak udir:begrepssystem udir:Spraak .
+u:Spraaknivaa udir:begrepssystem udir:Spraaknivaaer .
