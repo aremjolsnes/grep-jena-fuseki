@@ -81,8 +81,10 @@ SELECT ?endretHosUdir ?lastet ?endringsId WHERE {
   endringsloggen var tom da dataene ble lastet.
 - `lastet` er når sandkassen ble oppdatert (UTC). Den nattlige jobben kjører ca. 02:30 norsk tid, så
   `lastet` ligger normalt noen timer etter `endretHosUdir`, og noen ganger mer hvis en kjøring feilet.
-- `endringsId` er id-en til siste innslag i endringsloggen. Er den lik id-en øverst i endringsloggen,
-  er sandkassen à jour.
+- `endringsId` er id-en til den nyeste endringen i endringsloggen *da sandkassen ble lastet*. Åpne
+  endringsloggen og sammenlign med `endrings-id` i det øverste innslaget, som er den nyeste endringen
+  *nå*. Er de like, har sandkassen alle Udirs endringer. Begynner `endringsId` med `sha256:`, var
+  endringsloggen tom ved innlastingen, og da kan du ikke sammenligne på denne måten.
 
 ## Eksempler
 
