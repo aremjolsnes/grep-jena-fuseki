@@ -176,6 +176,7 @@ Reglene ligger i `sparql/utledning/`. Siden SPARQL property paths (`+`) gir den 
 | R2 Egenskaper via subegenskaper ✅ | `?s ?p ?o . ?p rdfs:subPropertyOf+ ?q` gir `?s ?q ?o` | `u:erstatter` → `dcterms:replaces` |
 | R3 Revisjonstilhørighet ✅ | `?s a ?c . ?c udir:gjelderRevisjon ?r` gir `?s udir:revisjon ?r` | Alle `kompetansemaal_lk20` får `udir:revisjon udir:LK20` |
 | R4 SKOS-begreper ✅ | Ressurser av en klasse med `udir:begrepssystem` blir `skos:Concept` i begrepssystemet (endret 2026-11-08, se steg 3) | `d:fagtype_fellesfag` → `skos:Concept` i `udir:Fagtyper` |
+| R5 Språk koblet til EUs språktabell ✅ | `?s a u:spraak ; u:kode ?k` gir `?s skos:exactMatch <…/language/UCASE(?k)>` (se steg 4) | `d:nob` → `<http://publications.europa.eu/resource/authority/language/NOB>` |
 
 Bevisst **ikke** med: utledning fra domene og rekkevidde, transitiv `erstatter` og `owl:sameAs`.
 
@@ -317,14 +318,14 @@ Røyktesten krever begge schema.org-egenskapene.
 7. Røyktest: tellinger per graf, og et par kontrollspørringer (for eksempel at antall `udir:Gyldighet` er over 36 000). Jobben feiler hvis noe er tomt.
 8. Skriv `endrings-id` til `urn:graph:meta`. Dette skjer sist, så en kjøring som feiler, blir forsøkt på nytt neste natt.
 
-**Endringer i ontologi og regler skal slå gjennom uten å vente på Udir.** Workflowen bør i tillegg kunne startes av `push` til `ontologi/**` og `sparql/**`. Samtidig får `deploy.yml` `paths-ignore` for de samme stiene og `docs/**`, slik at vi slipper `[skip ci]` for slike endringer.
+**Endringer i ontologi og regler slår gjennom uten å vente på Udir.** Workflowen startes også av `push` til `ontologi/**`, `sparql/**`, `scripts/nattlig-innlasting.sh` og `ingest-data.yml`. `deploy.yml` har `paths-ignore` for de samme stiene og `docs/**`, slik at slike endringer ikke gir ny deploy. ✅
 
 ## Risiko
 
 - **Minne:** containeren kjører med `-Xmx2g` på en maskin med 4 GB. Fase 2 og R1–R2 gikk fint med `-Xmx2g` lokalt.
 - **Tid:** dagens jobb tar omtrent 2 minutter. Normalisering og utledning legger trolig til noen minutter. Det er godt innenfor grensene til GitHub Actions.
 - **Avvik fra prod:** sandkassen er ikke lenger en ren kopi av prod. Rådatagrafen er det fortsatt, så sammenligninger må bruke `GRAPH <urn:graph:grep>`.
-- **Den lokale `Dockerfile`-endringen** (offisielt image, `shiro.ini`, `-Xmx2g`) er ikke committet. Vi må avklare om den skal tas med i fase 0 eller forkastes.
+- **Disk:** volumet er på 10 GB. Etter mange innlastinger uten omstart holder Fuseki på slettede filer (mmap). Derfor komprimeres databasen etter hver innlasting som laster noe. 2026-11-09 var databasen 685 MB, med 8,6 GB ledig.
 
 ## Beslutninger (2026-11-06)
 
