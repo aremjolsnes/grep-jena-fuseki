@@ -67,15 +67,22 @@ også med i tallene. For eksempel får hver ressurs to typer, `u:kompetansemaal`
 **Hvor ferske er dataene?**
 
 ```sparql
-SELECT ?lastet ?endringsId WHERE {
+SELECT ?endretHosUdir ?lastet ?endringsId WHERE {
   GRAPH <urn:graph:meta> {
     ?m <https://grep.udir.no/schema/lastet> ?lastet ;
-       <https://grep.udir.no/schema/last-id> ?endringsId
+       <https://grep.udir.no/schema/last-id> ?endringsId .
+    OPTIONAL { ?m <https://grep.udir.no/schema/endret-hos-udir> ?endretHosUdir }
   }
 }
 ```
 
-`endringsId` tilsvarer siste innslag i Udirs endringslogg (`https://data.udir.no/kl06/v201906/endringer`).
+- `endretHosUdir` er tidspunktet for siste endring hos Udir (`tidspunkt` i
+  [endringsloggen](https://data.udir.no/kl06/v201906/endringer)), i norsk tid. Det mangler hvis
+  endringsloggen var tom da dataene ble lastet.
+- `lastet` er når sandkassen ble oppdatert (UTC). Den nattlige jobben kjører ca. 02:30 norsk tid, så
+  `lastet` ligger normalt noen timer etter `endretHosUdir`, og noen ganger mer hvis en kjøring feilet.
+- `endringsId` er id-en til siste innslag i endringsloggen. Er den lik id-en øverst i endringsloggen,
+  er sandkassen à jour.
 
 ## Eksempler
 

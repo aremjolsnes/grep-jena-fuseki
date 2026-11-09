@@ -104,6 +104,12 @@ last_ned_dump() {
 }
 ENDRINGER=$(curl -sS "${RETRY[@]}" --fail "https://data.udir.no/kl06/v201906/endringer?antall=1")
 SISTE_ID=$(printf '%s' "$ENDRINGER" | grep -oE '"endrings-id":\s*"[^"]+"' | head -n 1 | cut -d'"' -f4 || true)
+# Udirs tidspunkt for siste endring, i norsk lokal tid uten tidssone (slik API-et gir det).
+# Brøkdelen av sekundet kuttes. Tomt hvis API-et ikke ga noe gyldig.
+UDIR_TIDSPUNKT=$(printf '%s' "$ENDRINGER" | grep -oE '"tidspunkt":\s*"[^"]+"' | head -n 1 | cut -d'"' -f4 | cut -d. -f1 || true)
+if ! printf '%s' "$UDIR_TIDSPUNKT" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$'; then
+  UDIR_TIDSPUNKT=""
+fi
 if [ -z "$SISTE_ID" ]; then
   # Endrings-API-et har svart med en tom liste ([], 2026-11-07). Uten reserve døde skriptet
   # stille her. Dumpen har verken ETag eller Last-Modified, så sjekksummen brukes som id.
@@ -349,6 +355,9 @@ cat > "$ARBEID/meta.nt" <<EOF
 <$META> <$SCHEMA/antall-tripler-normalisert> "$N_NORM"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <$META> <$SCHEMA/antall-tripler-utledet> "$N_UTLEDET"^^<http://www.w3.org/2001/XMLSchema#integer> .
 EOF
+if [ -n "$UDIR_TIDSPUNKT" ]; then
+  echo "<$META> <$SCHEMA/endret-hos-udir> \"$UDIR_TIDSPUNKT\"^^<http://www.w3.org/2001/XMLSchema#dateTime> ." >> "$ARBEID/meta.nt"
+fi
 last_graf PUT "$G_META" application/n-triples "$ARBEID/meta.nt"
 logg "Avvik i dataene: $N_AVVIK"
 if [ -n "$AVVIK_FIL" ]; then cp "$ARBEID/avvik.md" "$AVVIK_FIL"; fi
