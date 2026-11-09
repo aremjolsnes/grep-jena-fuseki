@@ -8,7 +8,7 @@ Status: 🔜 påbegynt · 💡 idé · ✅ gjort
 | # | Idé | Status |
 |---|---|---|
 | 1 | [Læreplanutsnitt for KI](#1-læreplanutsnitt-for-ki) | ✅ |
-| 2 | [Fritekstsøk med jena-text](#2-fritekstsøk-med-jena-text) | 🔜 testet lokalt |
+| 2 | [Fritekstsøk med jena-text](#2-fritekstsøk-med-jena-text) | ✅ |
 | 3 | [Historikk: hva endret seg?](#3-historikk-hva-endret-seg) | 💡 |
 | 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 💡 |
 | 5 | [SHACL-former](#5-shacl-former) | 💡 |
@@ -51,13 +51,14 @@ Det er nyttig for alle som utforsker dataene. For KI er det et første steg mot 
 ut fra fri tekst. Krever endringer i `fuseki/config.ttl`, og indeksen må holdes oppdatert når
 rådatagrafen byttes ut hver natt.
 
-🔜 2026-11-09, testet lokalt med to hele innlastinger:
+✅ 2026-11-09, i drift fra versjon 32 (0d7d6b0). Testet først lokalt med to hele innlastinger:
 - `text:TextDataset` rundt TDB2 i `fuseki/config.ttl`.
 - Feltene er `udir:bokmaalTittel` og `udir:nynorskTittel` (begge med `NorwegianAnalyzer`) og `u:tittel` (med `StandardAnalyzer`).
 - `uidField` sørger for at slettede tripler også forsvinner fra indeksen.
 - Indeksen er 43 MB, og den var den samme etter andre innlasting, uten duplikater. MOVE tok 85 s lokalt.
 - Indeksen fylles først ved neste innlasting etter deploy.
 - Dokumentert i bruk.md under «Fritekstsøk».
+- I prod etter innlastingen: indeksen er 43 MB (databasen 686 MB). «kildekritikk» gir 16 treff, uten duplikater, og søkene svarer på under 0,5 s.
 
 ## 3. Historikk: hva endret seg?
 
