@@ -42,6 +42,7 @@ PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl:  <http://www.w3.org/2002/07/owl#>
 PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX text: <http://jena.apache.org/text#>        # fritekstsøk, se «Fritekstsøk»
 ```
 
 Eksemplene under forutsetter disse prefiksene.
@@ -419,6 +420,152 @@ SELECT ?s ?endret WHERE {
 
 **Dette fungerer annerledes enn hos Udir.** Sammenligner du med en tekststreng, for eksempel
 `FILTER(?d >= "2026-01-01")`, gir det ingen treff her. Bruk en typet verdi som over, eller `STR(?d)`.
+
+## Fritekstsøk
+
+Sandkassen har en fritekstindeks (Lucene via jena-text) over titlene. For kompetansemål er tittelen selve
+målteksten. Søket er mye raskere enn `FILTER(CONTAINS(…))` og finner også andre bøyningsformer av ordet:
+
+| Søk i | Egenskap | Analyse |
+|---|---|---|
+| Bokmål | `udir:bokmaalTittel` (standard) | Norsk stamming: «modellering» finner også «Modeller» |
+| Nynorsk | `udir:nynorskTittel` | Norsk stamming |
+| Alle språk | `u:tittel` | Ord for ord, uten stamming |
+
+`udir:bokmaalTittel` og `udir:nynorskTittel` finnes for læreplaner og alt som hører til dem (se «Tittel på
+bokmål og nynorsk»), men ikke for fagkoder og opplæringsfag. Dem finner du med `u:tittel`.
+
+**LK20-kompetansemål i matematikk om statistikk, de beste treffene først:**
+
+```sparql
+SELECT ?km ?tekst ?score WHERE {
+  (?km ?score) text:query (udir:bokmaalTittel "statistikk") .
+  ?km a u:kompetansemaal_lk20 ;
+      u:tilhoerer-laereplan d:MAT01-06 ;
+      udir:bokmaalTittel ?tekst .
+} ORDER BY DESC(?score)
+```
+
+**Søkesyntaks** (Lucene): `"kritisk tenking"` søker etter frasen, `modell*` etter ord som begynner på «modell»,
+og `kildekritikk OR kildebruk` etter ett av ordene. Et tall etter søket begrenser antall treff, for eksempel
+`(udir:bokmaalTittel "statistikk" 50)`. Uten tall gir søket opptil 10 000 treff.
+
+Indeksen oppdateres når dataene lastes inn hver natt. Den fins bare i sandkassen, ikke hos Udir.
+
+## Læreplanutsnitt for KI
+
+En løsning som bruker KI på vurderingsdata, trenger «relevant del av læreplanen» i prompten, og helst ikke mer.
+Spørringen under gir et lite og komplett utsnitt for **én fagkode på én dato** (LK20):
+
+- læreplanen som gjaldt på datoen, med fagets relevans;
+- kompetansemålsettet for trinnet, med underveisvurdering og standpunktvurdering;
+- kompetansemålene, med kjerneelementene de hører til;
+- kjerneelementene, med beskrivelse;
+- målene fra trinnet før som kompetansemålene bygger på (`u:bygger-paa`).
+
+Hvert ledd i kjeden fagkode → opplæringsfag → læreplan og kompetansemålsett velges ut fra gyldigheten på datoen
+(`udir:gyldighet`, se «Normaliserte data»). Da får man den versjonen som gjaldt da vurderingen ble gitt. For
+eksempel gir MAT0015 læreplanen MAT01-05 for 2025-01-01 og MAT01-06 for i dag. Tekstene er på bokmål, med
+`default` som reserve.
+
+Svaret er en graf. Be om `text/turtle` eller `application/ld+json`, så kan svaret legges rett inn i en prompt.
+For MAT0015 er det omtrent 16 kB, og spørringen tar under ett sekund. Spørringen ligger også i
+[docs/eksempler/laereplanutsnitt.rq](https://github.com/aremjolsnes/grep-jena-fuseki/blob/main/docs/eksempler/laereplanutsnitt.rq).
+
+Bytt fagkode og dato i `VALUES`. Med `UNDEF` brukes dagens dato. Fagkoder uten LK20-læreplan på datoen gir et
+tomt svar. Det gjelder blant annet privatskolekoder, uspesifiserte programfag (UPF) og utgåtte fagkoder som
+MAT0010.
+
+```sparql
+PREFIX u:    <http://psi.udir.no/ontologi/kl06/>
+PREFIX d:    <http://psi.udir.no/kl06/>
+PREFIX udir: <http://psi.udir.no/ontologi/>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?fk   a u:fagkode ; u:kode ?fkKode ; u:tittel ?fkTittel ; u:opplaeringsfag ?of .
+  ?of   a u:opplaeringsfag ; u:kode ?ofKode ; u:tittel ?ofTittel ;
+        u:laereplan-referanse ?lp ; u:tilhoerende-kompetansemaalsett ?kms .
+  ?lp   a u:laereplan ; u:kode ?lpKode ; u:tittel ?lpTittel ; u:gyldig-fra ?lpFra ;
+        u:fagets-relevans ?relevans ; u:kjerneelementer ?ke .
+  ?ke   a u:kjerneelement ; u:kode ?keKode ; u:tittel ?keTittel ; u:beskrivelse ?keBeskrivelse .
+  ?kms  a u:kompetansemaalsett ; u:kode ?kmsKode ; u:tittel ?kmsTittel ;
+        u:underveisvurdering ?underveis ; u:standpunktvurdering ?standpunkt ;
+        u:kompetansemaal ?km .
+  ?km   a u:kompetansemaal ; u:kode ?kmKode ; u:tittel ?kmTittel ; u:rekkefoelge ?kmNr ;
+        u:tilknyttede-kjerneelementer ?kmKe ; u:bygger-paa ?forrige .
+  ?forrige a u:kompetansemaal ; u:kode ?forrigeKode ; u:tittel ?forrigeTittel .
+}
+WHERE {
+  VALUES (?fk ?datoInn) { (d:MAT0015 UNDEF) }
+  BIND(COALESCE(?datoInn, xsd:date(SUBSTR(STR(NOW()), 1, 10))) AS ?dato)
+
+  # Fagkode → opplæringsfag, gyldig på datoen
+  ?fk u:kode ?fkKode .
+  ?fk udir:gyldighet [ udir:relasjon u:opplaeringsfag ; udir:objekt ?of ;
+                       udir:gyldigFra ?f1 ; udir:gyldigTil ?t1 ] .
+  FILTER(?f1 <= ?dato && ?dato <= ?t1)
+  ?of u:kode ?ofKode .
+
+  # Opplæringsfag → læreplan og kompetansemålsett, gyldig på datoen
+  ?of udir:gyldighet [ udir:relasjon u:laereplan-referanse ; udir:objekt ?lp ;
+                       udir:gyldigFra ?f2 ; udir:gyldigTil ?t2 ] .
+  FILTER(?f2 <= ?dato && ?dato <= ?t2)
+  ?of udir:gyldighet [ udir:relasjon u:tilhoerende-kompetansemaalsett ; udir:objekt ?kms ;
+                       udir:gyldigFra ?f3 ; udir:gyldigTil ?t3 ] .
+  FILTER(?f3 <= ?dato && ?dato <= ?t3)
+  ?kms u:tilhoerer-laereplan ?lp .
+  ?lp a u:laereplan_lk20 ; u:kode ?lpKode .   # Bare LK20
+  ?kms u:kode ?kmsKode .
+
+  # Titler og tekster. udir:bokmaalTittel (N5) finnes bare for læreplanen og det som hører til den,
+  # ikke for fagkode og opplæringsfag. Der brukes u:tittel på bokmål, med default som reserve.
+  OPTIONAL { ?fk  u:tittel ?fkN . FILTER(lang(?fkN) = "nob") }
+  OPTIONAL { ?fk  u:tittel ?fkD . FILTER(lang(?fkD) = "default") }
+  OPTIONAL { ?of  u:tittel ?ofN . FILTER(lang(?ofN) = "nob") }
+  OPTIONAL { ?of  u:tittel ?ofD . FILTER(lang(?ofD) = "default") }
+  OPTIONAL { ?lp  udir:bokmaalTittel ?lpTittel }
+  OPTIONAL { ?lp  u:gyldig-fra ?lpFra }
+  OPTIONAL { ?kms udir:bokmaalTittel ?kmsTittel }
+  OPTIONAL { ?lp  u:fagets-relevans ?rN . FILTER(lang(?rN) = "nob") }
+  OPTIONAL { ?lp  u:fagets-relevans ?rD . FILTER(lang(?rD) = "default") }
+  OPTIONAL { ?kms u:underveisvurdering ?uN . FILTER(lang(?uN) = "nob") }
+  OPTIONAL { ?kms u:underveisvurdering ?uD . FILTER(lang(?uD) = "default") }
+  OPTIONAL { ?kms u:standpunktvurdering ?sN . FILTER(lang(?sN) = "nob") }
+  OPTIONAL { ?kms u:standpunktvurdering ?sD . FILTER(lang(?sD) = "default") }
+  BIND(STR(COALESCE(?fkN, ?fkD)) AS ?fkTittel)
+  BIND(STR(COALESCE(?ofN, ?ofD)) AS ?ofTittel)
+  BIND(STR(COALESCE(?rN, ?rD)) AS ?relevans)
+  BIND(STR(COALESCE(?uN, ?uD)) AS ?underveis)
+  BIND(STR(COALESCE(?sN, ?sD)) AS ?standpunkt)
+
+  # Kjerneelementene i læreplanen.
+  # OPTIONAL og ikke UNION: Jena evaluerer OPTIONAL med ?lp og ?kms allerede bundet, mens en UNION-gren
+  # evalueres for seg (nedenfra og opp) og kan gi et kryssprodukt over hele databasen.
+  OPTIONAL {
+    ?lp u:kjerneelementer ?ke .
+    ?ke u:kode ?keKode .
+    OPTIONAL { ?ke udir:bokmaalTittel ?keTittel }
+    OPTIONAL { ?ke u:beskrivelse ?bN . FILTER(lang(?bN) = "nob") }
+    OPTIONAL { ?ke u:beskrivelse ?bD . FILTER(lang(?bD) = "default") }
+    BIND(STR(COALESCE(?bN, ?bD)) AS ?keBeskrivelse)
+  }
+
+  # Kompetansemålene i settet, med kjerneelementer og det de bygger på (trinnet før)
+  OPTIONAL {
+    ?kms u:kompetansemaal ?km .
+    ?km u:kode ?kmKode .
+    OPTIONAL { ?km udir:bokmaalTittel ?kmTittel }
+    OPTIONAL { ?km u:rekkefoelge ?kmNr }
+    OPTIONAL { ?km u:tilknyttede-kjerneelementer ?kmKe }
+    OPTIONAL {
+      ?km u:bygger-paa ?forrige .
+      ?forrige u:kode ?forrigeKode .
+      OPTIONAL { ?forrige udir:bokmaalTittel ?forrigeTittel }
+    }
+  }
+}
+```
 
 ## Egenheter i dataene
 

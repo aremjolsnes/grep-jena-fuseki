@@ -9,6 +9,9 @@
 PREFIX fuseki: <http://jena.apache.org/fuseki#>
 PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX tdb2:   <http://jena.apache.org/2016/tdb#>
+PREFIX text:   <http://jena.apache.org/text#>
+PREFIX u:      <http://psi.udir.no/ontologi/kl06/>
+PREFIX udir:   <http://psi.udir.no/ontologi/>
 
 [] rdf:type fuseki:Server .
 
@@ -23,7 +26,37 @@ PREFIX tdb2:   <http://jena.apache.org/2016/tdb#>
                       fuseki:allowedUsers "admin" ] ;
     fuseki:endpoint [ fuseki:operation fuseki:gsp-rw ; fuseki:name "data" ;
                       fuseki:allowedUsers "admin" ] ;
-    fuseki:dataset <#tdb> .
+    fuseki:dataset <#tekst> .
+
+# Fritekstsøk (jena-text med Lucene, innebygd i Fuseki). Indeksen ligger på volumet ved siden av
+# databasen og oppdateres av hver skriving (PUT, MOVE, INSERT, CLEAR). uidField gjør at slettede
+# tripler også forsvinner fra indeksen, slik at den ikke vokser fra natt til natt.
+#
+#   ?km text:query (udir:bokmaalTittel "kildekritikk") .   # bokmål, med norsk stamming
+#   ?x  text:query (u:tittel "modell*") .                   # alle titler, alle språk
+<#tekst> rdf:type text:TextDataset ;
+    text:dataset <#tdb> ;
+    text:index   <#indeks> .
+
+<#indeks> rdf:type text:TextIndexLucene ;
+    text:directory <file:/fuseki/lucene> ;
+    text:entityMap <#feltkart> ;
+    text:storeValues true .
+
+<#feltkart> rdf:type text:EntityMap ;
+    text:entityField  "uri" ;
+    text:uidField     "uid" ;
+    text:defaultField "bokmaal" ;
+    text:map (
+        [ text:field "bokmaal" ; text:predicate udir:bokmaalTittel ;
+          text:analyzer [ rdf:type text:GenericAnalyzer ;
+                          text:class "org.apache.lucene.analysis.no.NorwegianAnalyzer" ] ]
+        [ text:field "nynorsk" ; text:predicate udir:nynorskTittel ;
+          text:analyzer [ rdf:type text:GenericAnalyzer ;
+                          text:class "org.apache.lucene.analysis.no.NorwegianAnalyzer" ] ]
+        [ text:field "tittel"  ; text:predicate u:tittel ;
+          text:analyzer [ rdf:type text:StandardAnalyzer ] ]
+    ) .
 
 # Samme TDB2-lokasjon som tidligere (--tdb2 --loc=/fuseki/databases), så eksisterende data beholdes.
 #
