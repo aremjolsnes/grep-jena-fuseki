@@ -199,6 +199,12 @@ u:fagkategori rdfs:subPropertyOf skos:broader .
 #   de hører til Europarådet. Kobles når et offisielt vokabular finnes.
 # ---------------------------------------------------------------------------------------------------
 
+udir:yrkesklassifisering a owl:ObjectProperty ;
+    rdfs:label "yrkesklassifisering"@nb, "yrkesklassifisering"@nn, "occupation classification"@en ;
+    rdfs:comment "Yrket programområdet utdanner til (u:yrkestittel), som gruppe i STYRK-08 (udir:Styrk08). Kilden er ontologi/koblinger/styrk.csv, der det står om koblingen kommer fra SSBs Yrkeskatalog eller er vurdert manuelt. Ligger i urn:graph:koblinger. Gruppene har skos:exactMatch til ISCO-08 i ESCO."@nb ;
+    rdfs:domain u:Programomraade ;
+    rdfs:range skos:Concept .
+
 udir:Spraak a skos:ConceptScheme ;
     rdfs:label "Språk"@nb, "Språk"@nn, "Languages"@en ;
     skos:prefLabel "Språk"@nb, "Språk"@nn, "Languages"@en ;

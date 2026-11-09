@@ -10,7 +10,7 @@ Status: 🔜 påbegynt · 💡 idé · ✅ gjort
 | 1 | [Læreplanutsnitt for KI](#1-læreplanutsnitt-for-ki) | ✅ |
 | 2 | [Fritekstsøk med jena-text](#2-fritekstsøk-med-jena-text) | ✅ |
 | 3 | [Historikk: hva endret seg?](#3-historikk-hva-endret-seg) | 💡 |
-| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 💡 |
+| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker via ISCO ✅ |
 | 5 | [SHACL-former](#5-shacl-former) | 💡 |
 | 6 | [Beskrivelse av datasettet med DCAT og VoID](#6-beskrivelse-av-datasettet-med-dcat-og-void) | 💡 |
 | 7 | [Test eksemplene i bruk.md](#7-test-eksemplene-i-brukmd) | 💡 |
@@ -76,6 +76,23 @@ Vi har gjort det for språk med EUs språktabell (R5). De neste kandidatene er:
 - **Nasjonalt kvalifikasjonsrammeverk (NKR)** for kompetansenivå.
 
 Dette er det som gjør Grep til en *lenket* graf. Det krever fagavklaring, slik vi gjorde for språk.
+
+✅ 2026-11-09, STYRK-08:
+- `udir:yrkesklassifisering` går fra 286 av 309 programområder (Vg3 med `u:yrkestittel`) til STYRK-08, i
+  `urn:graph:koblinger`.
+- Kilden er `ontologi/koblinger/styrk.csv`. 194 koblinger kommer fra SSBs Yrkeskatalog (KLASS-tabell 426), og
+  92 er vurdert manuelt.
+- 22 programområder er bevisst uten kobling, og 1 venter på vurdering.
+- Hovedgruppe 1 og 2 brukes aldri, fordi de krever høyere utdanning. Utgåtte programområder er med.
+- STYRK-08 har `skos:exactMatch` til ISCO-08 i ESCO for alle koder unntatt de seks norske særkodene. Gruppene vi
+  bruker, har 519 ESCO-yrker under seg.
+- `scripts/lag-styrk-ttl.py` lager `styrk.ttl`.
+
+Gjenstår:
+- ESCO-ferdigheter for kompetansemål. Det er et større arbeid.
+- NUS for programområder. Det finnes ingen offisiell tabell.
+- NKR- og EQF-nivå for sluttkompetanse.
+- ELM.
 
 ## 5. SHACL-former
 

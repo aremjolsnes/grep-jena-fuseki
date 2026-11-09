@@ -43,13 +43,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl:  <http://www.w3.org/2002/07/owl#>
 PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 PREFIX text: <http://jena.apache.org/text#>        # fritekstsøk, se «Fritekstsøk»
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX styrk: <http://psi.udir.no/ontologi/styrk08/>  # yrkesgrupper i STYRK-08, se «Koblinger»
+PREFIX isco: <http://data.europa.eu/esco/isco/>     # ISCO-08-grupper i ESCO
 ```
 
 Eksemplene under forutsetter disse prefiksene.
 
 ## Hvordan dataene er organisert
 
-Dataene ligger i fem navngitte grafer. **Spørringer uten `GRAPH` ser alle samlet**, så de fleste spørringer
+Dataene ligger i seks navngitte grafer. **Spørringer uten `GRAPH` ser alle samlet**, så de fleste spørringer
 trenger ikke å bry seg om grafene.
 
 | Graf | Innhold |
@@ -58,6 +61,7 @@ trenger ikke å bry seg om grafene.
 | `urn:graph:ontologi` | Ontologien: klasser, egenskaper og koblinger til typene i dataene |
 | `urn:graph:normalisert` | Gyldighet som egne ressurser, perioder som datoer og tittel per målform (omtrent 330 000 tripler) |
 | `urn:graph:utledet` | Typene fra ontologien, utledet fra typene i dataene (omtrent 50 000 tripler) |
+| `urn:graph:koblinger` | Koblinger til andre kunnskapsgrafer: yrker i STYRK-08, med kobling videre til ESCO (se «Koblinger til andre kunnskapsgrafer») |
 | `urn:graph:meta` | Når dataene sist ble oppdatert |
 
 Vil du ha *bare* Grep-dataene, for eksempel for å sammenligne med Udirs offisielle endepunkt, pakker du
@@ -420,6 +424,45 @@ SELECT ?s ?endret WHERE {
 
 **Dette fungerer annerledes enn hos Udir.** Sammenligner du med en tekststreng, for eksempel
 `FILTER(?d >= "2026-01-01")`, gir det ingen treff her. Bruk en typet verdi som over, eller `STR(?d)`.
+
+## Koblinger til andre kunnskapsgrafer
+
+**Yrker (STYRK-08 og ESCO).** Programområdene på Vg3 som har en yrkestittel (`u:yrkestittel`), er koblet til
+yrkesgruppen sin i SSBs yrkesklassifisering STYRK-08 med `udir:yrkesklassifisering`. STYRK-08 bygger på
+ISCO-08, og hver gruppe har `skos:exactMatch` til samme ISCO-gruppe i ESCO, EUs klassifikasjon av yrker og
+ferdigheter. Derfra finner man ESCO-yrkene og ferdighetene deres.
+
+- **286 av 309 programområder** har en kobling, også utgåtte, slik at de som tok utdanningen tidligere er med.
+  194 koblinger kommer direkte fra SSBs Yrkeskatalog. De andre er vurdert manuelt.
+- Koblinger går aldri til STYRK-hovedgruppe 1 (ledere) eller 2 (akademiske yrker), som krever høyere utdanning.
+- STYRK-08 ligger som begrepssystem (`udir:Styrk08`) med alle 582 gruppene på fire nivåer og `skos:broader`
+  mellom dem. SSB har ingen faste URI-er for kodene, så sandkassen lager dem selv (`styrk:7231`).
+- Kilden er [ontologi/koblinger/styrk.csv](https://github.com/aremjolsnes/grep-jena-fuseki/blob/main/ontologi/koblinger/styrk.csv).
+  Der står det for hver kobling om den kommer fra SSB (`ssb-yrkeskatalog`) eller er vurdert manuelt.
+
+**Hvilke yrkesgrupper utdanner bilfagene til?** (yrkestitler som begynner på «Bil»)
+
+```sparql
+SELECT ?kode ?yrke ?styrk ?gruppe ?isco WHERE {
+  ?p u:yrkestittel ?yrke ; u:kode ?kode ; udir:yrkesklassifisering ?k .
+  FILTER(lang(?yrke) = "default" && STRSTARTS(?yrke, "Bil"))
+  ?k skos:notation ?styrk ; skos:prefLabel ?gruppe ; skos:exactMatch ?isco .
+} ORDER BY ?kode
+```
+
+**Hvor mange programområder utdanner til hver hovedgruppe?**
+
+```sparql
+SELECT ?hovedgruppe ?navn (COUNT(DISTINCT ?p) AS ?antall) WHERE {
+  ?p udir:yrkesklassifisering ?k .
+  ?k skos:broader+ ?h .
+  ?h skos:topConceptOf udir:Styrk08 ; skos:notation ?hovedgruppe ; skos:prefLabel ?navn .
+} GROUP BY ?hovedgruppe ?navn ORDER BY ?hovedgruppe
+```
+
+ESCO-yrkene under en ISCO-gruppe ligger hos ESCO, ikke i sandkassen. Slå opp `?isco` i
+[ESCOs API](https://ec.europa.eu/esco/api/resource/concept?uri=http://data.europa.eu/esco/isco/C7231&language=no),
+eller bruk `SERVICE` mot et SPARQL-endepunkt for ESCO hvis du har et.
 
 ## Fritekstsøk
 
