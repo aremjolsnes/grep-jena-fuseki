@@ -10,7 +10,7 @@ Status: 🔜 påbegynt · 💡 idé · ✅ gjort
 | 1 | [Læreplanutsnitt for KI](#1-læreplanutsnitt-for-ki) | ✅ |
 | 2 | [Fritekstsøk med jena-text](#2-fritekstsøk-med-jena-text) | ✅ |
 | 3 | [Historikk: hva endret seg?](#3-historikk-hva-endret-seg) | 💡 satt på vent |
-| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker ✅, NUS og ISCED ✅, ESCO-ferdigheter 💡, NKR/ELM venter |
+| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker ✅, NUS og ISCED ✅, ESCO-ferdigheter ✅, kompetansemål ↔ ferdigheter 💡, NKR/ELM venter |
 | 5 | [SHACL-former](#5-shacl-former) | 💡 |
 | 6 | [Beskrivelse av datasettet med DCAT og VoID](#6-beskrivelse-av-datasettet-med-dcat-og-void) | ✅ |
 | 7 | [Test eksemplene i bruk.md](#7-test-eksemplene-i-brukmd) | ✅ |
@@ -114,9 +114,20 @@ Dette er det som gjør Grep til en *lenket* graf. Det krever fagavklaring, slik 
   og tar flere minutter.
 - `SERVICE` står på i Fuseki, fordi det kan bli nyttig for ELM.
 
+✅ 2026-11-10, ESCO-ferdigheter:
+- ESCO v1.2.1 er lastet ned (classification, ttl; nedlastingen krever navn og e-post). Den ligger ikke i repoet.
+- `scripts/lag-esco-ferdigheter-ttl.py` leser N-Triples-filen linje for linje og henter ut ferdighetene til yrkene våre.
+  Resultatet er 26 650 koblinger fra 6 486 ferdigheter, med 932 ferdighetsgrupper og fagfelt, til sammen 82 234 tripler.
+  Alle har norsk navn og beskrivelse.
+- Filen har én trippel per linje og er sortert, så `git diff` viser endringene mellom ESCO-versjonene. Skriptet skriver
+  også en oppsummering av endringene.
+- `sjekk-koblinger.py esco-versjon` melder hver natt et avvik når ESCO har en nyere versjon.
+- Vilkårene for gjenbruk er oppfylt: kildesetningen står der den skal, og den endrede utgaven er merket.
+
 Gjenstår:
-- ESCO-ferdigheter. I snitt har hvert yrke 18,5 essensielle og 17 valgfrie, til sammen rundt 26 000 koblinger.
-  Først ferdighetene til yrkene, så eventuelt kobling til kompetansemål. Det er et større arbeid.
+- Kobling mellom kompetansemål og ESCO-ferdigheter. Den finnes ikke offisielt og må lages med tekstlikhet eller KI,
+  merkes som forslag og vurderes av fagfolk. Start med en pilot på én læreplan, for eksempel Vg3 i bilfaget.
+- Eventuelt fritekstsøk (jena-text) i ferdighetsnavnene.
 - Gå gjennom de 21 usikre NUS-forslagene.
 - NKR- og EQF-nivå for sluttkompetanse.
 - ELM.

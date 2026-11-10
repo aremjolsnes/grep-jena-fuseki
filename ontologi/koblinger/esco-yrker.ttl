@@ -1,6 +1,8 @@
 # GENERERT av scripts/lag-esco-ttl.py fra ESCO-API-et 2026-11-10. Ikke rediger for hånd.
 # ESCO-yrkene under ISCO-08-gruppene som programområdene er koblet til (ontologi/koblinger/styrk.csv).
-# Kilde: ESCO, © Den europeiske union, https://esco.ec.europa.eu (fri gjenbruk med kildehenvisning).
+# This service uses the ESCO classification of the European Commission. https://esco.ec.europa.eu
+# ENDRET UTGAVE: bare et utdrag av ESCO, og språkkoden er endret fra «no» til «nb». Koblingene fra Grep til ESCO er
+# Grep-sandkassens egne og ikke en del av ESCO. Vilkår: Kommisjonens beslutning 2011/833/EU om gjenbruk.
 #
 # Lastes inn i urn:graph:koblinger av scripts/nattlig-innlasting.sh.
 

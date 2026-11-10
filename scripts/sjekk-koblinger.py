@@ -4,6 +4,7 @@ Skriver CSV-rader (uten overskrift) for én sjekk til standard output, slik avvi
 
     python3 scripts/sjekk-koblinger.py utgaatte-koder          # Kode,Klassifikasjon,Programområde
     python3 scripts/sjekk-koblinger.py nye-programomraader     # Programområde,Tittel,Mangler i
+    python3 scripts/sjekk-koblinger.py esco-versjon            # Ny versjon,Sandkassen bruker,Nedlasting
 
 utgaatte-koder:      STYRK- og NUS-koder i CSV-filene som ikke finnes i versjonen av klassifikasjonen som gjelder i dag.
 nye-programomraader: programområder i Grep som ikke står i nus.csv, og programområder med yrkestittel som ikke står i
@@ -54,10 +55,24 @@ SELECT ?kode ?tittel ?yrke WHERE { GRAPH <urn:graph:grep> {
             w.writerow([k, po[k]['tittel'], ' og '.join(mangler)])
 
 
+def esco_versjon(w):
+    """Ny ESCO-versjon på nedlastingssiden enn den esco-ferdigheter.ttl bygger på."""
+    import re
+    var = re.search(r'^# ESCO-versjon: (v[\d.]+)', open(os.path.join(REPO, 'ontologi/koblinger/esco-ferdigheter.ttl'),
+                                                       encoding='utf-8').read(), re.M).group(1)
+    req = urllib.request.Request('https://esco.ec.europa.eu/en/use-esco/download', headers={'User-Agent': 'grep-sandkasse'})
+    side = urllib.request.urlopen(req, timeout=120).read().decode('utf-8', 'replace')
+    tall = lambda v: tuple(int(x) for x in v.lstrip('v').split('.'))
+    finnes = sorted({m for m in re.findall(r'ESCO dataset - (v\d+(?:\.\d+)+)', side)}, key=tall)
+    if finnes and tall(finnes[-1]) > tall(var):
+        w.writerow([finnes[-1], var, 'https://esco.ec.europa.eu/en/use-esco/download'])
+
+
 def main():
-    sjekk = {'utgaatte-koder': utgaatte_koder, 'nye-programomraader': nye_programomraader}.get(sys.argv[1] if len(sys.argv) > 1 else '')
+    sjekk = {'utgaatte-koder': utgaatte_koder, 'nye-programomraader': nye_programomraader,
+             'esco-versjon': esco_versjon}.get(sys.argv[1] if len(sys.argv) > 1 else '')
     if not sjekk:
-        sys.exit('Bruk: sjekk-koblinger.py utgaatte-koder | nye-programomraader')
+        sys.exit('Bruk: sjekk-koblinger.py utgaatte-koder | nye-programomraader | esco-versjon')
     class Rader:  # avvik() deler på komma, så komma inne i et felt blir semikolon
         def writerow(self, felt):
             print(','.join(str(f).replace(',', ';') for f in felt))

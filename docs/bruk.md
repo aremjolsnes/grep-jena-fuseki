@@ -49,6 +49,7 @@ PREFIX isco: <http://data.europa.eu/esco/isco/>     # ISCO-08-grupper i ESCO
 PREFIX nus: <http://psi.udir.no/ontologi/nus/>      # utdanninger i NUS, se «Koblinger»
 PREFIX iscedf: <http://data.europa.eu/esco/isced-f/>  # fagfelt i ISCED-F 2013 (ESCO)
 PREFIX isced2011: <http://psi.udir.no/ontologi/isced2011/>  # nivå i ISCED 2011
+PREFIX esco: <http://data.europa.eu/esco/model#>   # ESCO-modellen (yrker og ferdigheter)
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>          # beskrivelse av datasettet, se «Hvor ferske er dataene?»
 PREFIX void: <http://rdfs.org/ns/void#>
@@ -485,8 +486,28 @@ SELECT ?hovedgruppe ?navn (COUNT(DISTINCT ?p) AS ?antall) WHERE {
 **ESCO-yrkene.** Under ISCO-gruppene ligger ESCOs yrker. Sandkassen har med alle ESCO-yrkene under gruppene
 programområdene er koblet til, også underyrkene: rundt 700 yrker, hvert med norsk navn, norsk beskrivelse
 (`skos:definition`), ESCO-kode og `skos:broader` til ISCO-gruppen eller yrket over. URI-ene er ESCOs egne. ESCO har
-ikke noe offentlig SPARQL-endepunkt, så yrkene hentes fra ESCO-API-et med `scripts/lag-esco-ttl.py`. Ferdighetene
-til hvert yrke er ikke med ennå. Kilde: ESCO, © Den europeiske union.
+ikke noe offentlig SPARQL-endepunkt, så yrkene hentes fra ESCO-API-et med `scripts/lag-esco-ttl.py`.
+
+**ESCO-ferdighetene.** Ferdighetene til ESCO-yrkene er også med: rundt 6 500 ferdigheter og 26 000 koblinger fra
+ESCO-versjonen som står i `ontologi/koblinger/esco-ferdigheter.ttl`.
+- Koblingene går fra ferdighet til yrke, slik ESCO har dem: `esco:isEssentialSkillFor` (essensiell) og
+  `esco:isOptionalSkillFor` (valgfri).
+- Hver ferdighet har `skos:prefLabel`, `skos:altLabel` og `skos:definition` på norsk.
+- `esco:skillType` sier om det er en ferdighet/kompetanse eller kunnskap. `esco:skillReuseLevel` sier om den er
+  tverrgående, sektorovergripende, sektorspesifikk eller yrkesspesifikk.
+- Ferdighetsgruppene over ferdighetene ligger i `skos:broader`. Kunnskapsferdigheter peker også til fagfelt i
+  ISCED-F 2013, de samme som NUS-kodene peker til.
+- Ferdighetene lastes ned fra ESCO (en fil per versjon) og hentes ut med `scripts/lag-esco-ferdigheter-ttl.py`. Den
+  nattlige jobben melder et avvik når ESCO har en nyere versjon.
+
+Det finnes ennå ingen kobling mellom kompetansemål og ESCO-ferdigheter.
+
+> **This service uses the ESCO classification of the European Commission.** (Denne tjenesten bruker
+> EU-kommisjonens ESCO-klassifikasjon.) Sandkassen har en *endret* utgave av ESCO: bare et utdrag (yrkene under
+> ISCO-gruppene programområdene er koblet til, og ferdighetene deres), og språkkoden er endret fra `no` til `nb`. Koblingene fra Grep til
+> ESCO er sandkassens egne og ikke en del av ESCO. EU-kommisjonen garanterer ikke at ESCO, eller oversettelsene i
+> ESCO, er riktige, oppdaterte eller fullstendige. Vilkår: [ESCO, Download](https://esco.ec.europa.eu/en/use-esco/download)
+> (Kommisjonens beslutning 2011/833/EU om gjenbruk).
 
 **Hvilke ESCO-yrker utdanner Bilfaget, tunge kjøretøy til?**
 
@@ -495,6 +516,29 @@ SELECT ?kode ?yrke ?beskrivelse WHERE {
   d:TPBTK3---- udir:yrkesklassifisering/skos:exactMatch ?isco .
   ?y skos:broader+ ?isco ; skos:notation ?kode ; skos:prefLabel ?yrke ; skos:definition ?beskrivelse .
 } ORDER BY ?kode
+```
+
+**Hvilke ferdigheter er essensielle for en servicetekniker for bil, og hvor mange andre yrker deler dem?**
+
+```sparql
+PREFIX esco: <http://data.europa.eu/esco/model#>
+SELECT ?ferdighet ?type (COUNT(DISTINCT ?annet) AS ?andreYrker) WHERE {
+  ?y skos:prefLabel "servicetekniker, bil"@nb .
+  ?f esco:isEssentialSkillFor ?y ; skos:prefLabel ?ferdighet ; esco:skillType/skos:prefLabel ?type .
+  OPTIONAL { ?f esco:isEssentialSkillFor|esco:isOptionalSkillFor ?annet FILTER(?annet != ?y) }
+} GROUP BY ?ferdighet ?type ORDER BY DESC(?andreYrker)
+```
+
+**Ferdigheter innen samme fagfelt (ISCED-F) som utdanningen til et programområde:**
+
+```sparql
+PREFIX esco: <http://data.europa.eu/esco/model#>
+SELECT DISTINCT ?fagfelt ?ferdighet WHERE {
+  d:TPBTK3---- udir:utdanningsklassifisering/skos:broadMatch ?iscedf .
+  FILTER(STRSTARTS(STR(?iscedf), STR(iscedf:)))
+  ?iscedf skos:prefLabel ?fagfelt .
+  ?f a esco:Skill ; skos:broader ?iscedf ; skos:prefLabel ?ferdighet .
+} ORDER BY ?ferdighet LIMIT 50
 ```
 
 **Utdanninger (NUS og ISCED).** Alle programområdene, også Vg1 og Vg2, er koblet til utdanningen sin i SSBs

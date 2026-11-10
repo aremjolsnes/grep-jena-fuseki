@@ -182,6 +182,7 @@ logg "Laster koblinger til <$G_KOBLINGER> ..."
 last_graf PUT "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/styrk.ttl"
 last_graf POST "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/nus.ttl"   # lages av scripts/lag-nus-ttl.py
 last_graf POST "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/esco-yrker.ttl"   # lages av scripts/lag-esco-ttl.py
+last_graf POST "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/esco-ferdigheter.ttl"   # scripts/lag-esco-ferdigheter-ttl.py
 
 # 6. Rydd bort data i den lagrede default graph (før B2 lå rådata der).
 #    Med unionDefaultGraph er den usynlig for spørringer; DROP DEFAULT rører ikke named graphs.
@@ -213,6 +214,7 @@ N_NUS=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_KOBLINGER> { ?p udir:utdanningsklassifisering ?k } }")
 # ESCO: yrker under ISCO-gruppene programområdene er koblet til
 N_ESCO=$(sporr "SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_KOBLINGER> { ?y a <http://data.europa.eu/esco/model#Occupation> } }")
+N_ESCO_FERD=$(sporr "SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_KOBLINGER> { ?f a <http://data.europa.eu/esco/model#Skill> } }")
 # R1: kompetansemål i LK20 skal ha typen fra Udirs ontologi
 N_KM_TYPE=$(sporr "PREFIX u: <http://psi.udir.no/ontologi/kl06/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s a u:Kompetansemaal_lk20 } }")
@@ -266,7 +268,7 @@ N_PERIODER=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
     VALUES ?p { udir:gyldigFra udir:undervisningFra udir:eksamenFra udir:startdato } } } GROUP BY ?p ORDER BY ?p" \
   | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
 logg "Tripler: $G_GREP=$N_GREP, $G_ONTOLOGI=$N_ONT, $G_NORM=$N_NORM, $G_UTLEDET=$N_UTLEDET, $G_KOBLINGER=$N_KOBLINGER"
-logg "Programområder med STYRK-08 (koblinger): $N_STYRK, med NUS: $N_NUS. ESCO-yrker: $N_ESCO"
+logg "Programområder med STYRK-08 (koblinger): $N_STYRK, med NUS: $N_NUS. ESCO-yrker: $N_ESCO, ESCO-ferdigheter: $N_ESCO_FERD"
 logg "u:Kompetansemaal_lk20 (utledet): $N_KM_TYPE"
 logg "Overbegreper (utledet): $N_OVERBEGREP"
 logg "Revisjon (utledet): $N_REVISJON, i begge revisjonene: $N_TO_REVISJONER"
@@ -353,6 +355,9 @@ avvik "Kode tatt ut av klassifikasjonen hos SSB" \
 avvik "Nye programområder som ikke er vurdert" \
   "Programområdet finnes i Grep, men står ikke i ontologi/koblinger/nus.csv (alle programområder) eller styrk.csv (programområder med yrkestittel). Legg til en rad, eventuelt med metoden «ingen»." \
   "Programområde,Tittel,Mangler i" "$(FUSEKI_URL="$BASE" DATASET="$DATASET" "${PYTHON:-python3}" "$REPO/scripts/sjekk-koblinger.py" nye-programomraader)"
+avvik "Ny ESCO-versjon" \
+  "ESCO har publisert en nyere versjon enn den sandkassen bygger på. Last ned (classification, ttl), og kjør scripts/lag-esco-ferdigheter-ttl.py og lag-esco-ttl.py på nytt. Skriptet viser hva som er endret." \
+  "Ny versjon,Sandkassen bruker,Nedlasting" "$("${PYTHON:-python3}" "$REPO/scripts/sjekk-koblinger.py" esco-versjon)"
 
 # Verdier som N3 ikke kunne gjøre om (rekkevidden er typet, men verdien passer ikke formatet)
 avvik "Verdier med feil format" \
@@ -375,14 +380,14 @@ if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
    || [ "$(printf '%s' "$N_REVISJON" | grep -o 'udir:LK' | wc -l)" -ne 2 ] || [ "${N_TO_REVISJONER:-1}" -ne 0 ] \
    || [ "$(printf '%s' "$N_SKOS" | grep -o 'udir:' | wc -l)" -ne 5 ] || [ "${N_FAGOMR_UTEN_KATEGORI:-1}" -ne 0 ] \
    || [ "${N_SPRAAK_UTEN_EU:-1}" -ne 0 ] || [ "$(printf '%s' "$N_DCTERMS" | grep -o 'dcterms:' | wc -l)" -ne 5 ] \
-   || [ "${N_UTEN_BOKMAALTITTEL:-1}" -ne 0 ] || [ "$(printf '%s' "$N_SCHEMA" | grep -o 'schema:' | wc -l)" -ne 2 ] \n   || [ "${N_STYRK:-0}" -lt 1 ] || [ "${N_NUS:-0}" -lt 1 ] || [ "${N_ESCO:-0}" -lt 1 ]; then
+   || [ "${N_UTEN_BOKMAALTITTEL:-1}" -ne 0 ] || [ "$(printf '%s' "$N_SCHEMA" | grep -o 'schema:' | wc -l)" -ne 2 ] \n   || [ "${N_STYRK:-0}" -lt 1 ] || [ "${N_NUS:-0}" -lt 1 ] || [ "${N_ESCO:-0}" -lt 1 ] || [ "${N_ESCO_FERD:-0}" -lt 1 ]; then
   echo "Røyktest feilet (forventet minst $MIN_TRIPLER tripler i $G_GREP, >0 i $G_ONTOLOGI," \
        "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM," \
        ">0 u:Kompetansemaal_lk20, overbegreper fra udir.ttl og udir:revisjon for LK06 og LK20" \
        "(ingen ressurs i begge), begreper i alle fem SKOS-begrepssystemene, fagkategori på alle" \
        "fagområder, EU-kobling på alle språk og alle fem Dublin Core-egenskapene i $G_UTLEDET," \
        "udir:bokmaalTittel og udir:nynorskTittel på alle læreplaner og det som hører til dem i $G_NORM," \
-       "schema:validFrom og schema:validThrough i $G_UTLEDET, og STYRK-08- og NUS-koblinger og ESCO-yrker i $G_KOBLINGER)"
+       "schema:validFrom og schema:validThrough i $G_UTLEDET, og STYRK-08- og NUS-koblinger og ESCO-yrker og -ferdigheter i $G_KOBLINGER)"
   exit 1
 fi
 

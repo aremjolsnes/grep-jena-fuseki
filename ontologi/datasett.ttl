@@ -78,4 +78,4 @@ ds:koblinger a void:Dataset ; sd:name <urn:graph:koblinger> ;
     dcterms:title "Koblinger til andre kunnskapsgrafer"@nb ;
     dcterms:description "STYRK-08 og NUS som begrepssystemer, med kobling til ISCO-08, ISCED-F 2013 og ISCED 2011, yrkes- og utdanningsklassifisering av programområder, og ESCO-yrkene under ISCO-gruppene."@nb ;
     dcterms:source <https://www.ssb.no/klass/>, <https://esco.ec.europa.eu> ;
-    dcterms:rights "ESCO: © Den europeiske union, fri gjenbruk med kildehenvisning. STYRK-08 og NUS: SSB."@nb .
+    dcterms:rights "This service uses the ESCO classification of the European Commission. Endret utgave: utdrag av ESCO, språkkoden er endret fra no til nb, og koblingene fra Grep er sandkassens egne. STYRK-08 og NUS: SSB."@nb .

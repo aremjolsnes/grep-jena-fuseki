@@ -11,7 +11,8 @@ ISCO-08-gruppene STYRK-kodene i styrk.csv svarer til, også underyrkene, med ESC
 - skos:broader til ISCO-gruppen (http://data.europa.eu/esco/isco/C<kode>) eller til yrket over.
 
 Ferdighetene (hasEssentialSkill, hasOptionalSkill) er ikke med ennå (idé 4 i docs/ideer.md).
-ESCO kan brukes fritt med kildehenvisning: © Den europeiske union, https://esco.ec.europa.eu.
+Vilkår for gjenbruk (Kommisjonens beslutning 2011/833/EU): kildeformuleringen under skal publiseres, og en endret
+utgave skal merkes som endret. Begge deler står i filen som lages, i docs/bruk.md og i ontologi/datasett.ttl.
 """
 import csv, datetime, json, os, sys, time, urllib.parse, urllib.request
 
@@ -59,7 +60,9 @@ def main():
 
     ut = ['''# GENERERT av scripts/lag-esco-ttl.py fra ESCO-API-et %s. Ikke rediger for hånd.
 # ESCO-yrkene under ISCO-08-gruppene som programområdene er koblet til (ontologi/koblinger/styrk.csv).
-# Kilde: ESCO, © Den europeiske union, https://esco.ec.europa.eu (fri gjenbruk med kildehenvisning).
+# This service uses the ESCO classification of the European Commission. https://esco.ec.europa.eu
+# ENDRET UTGAVE: bare et utdrag av ESCO, og språkkoden er endret fra «no» til «nb». Koblingene fra Grep til ESCO er
+# Grep-sandkassens egne og ikke en del av ESCO. Vilkår: Kommisjonens beslutning 2011/833/EU om gjenbruk.
 #
 # Lastes inn i urn:graph:koblinger av scripts/nattlig-innlasting.sh.
 
