@@ -502,7 +502,7 @@ ESCO-versjonen som står i `ontologi/koblinger/esco-ferdigheter.ttl`.
 - Ferdighetene lastes ned fra ESCO (en fil per versjon) og hentes ut med `scripts/lag-esco-ferdigheter-ttl.py`. Den
   nattlige jobben melder et avvik når ESCO har en nyere versjon.
 
-Koblinger mellom kompetansemål og ESCO-ferdigheter finnes foreløpig for én læreplan (se «Kompetansemål og
+Koblinger mellom kompetansemål og ESCO-ferdigheter finnes foreløpig for tre læreplaner (se «Kompetansemål og
 ESCO-ferdigheter» under).
 
 > **This service uses the ESCO classification of the European Commission.** (Denne tjenesten bruker
@@ -544,8 +544,11 @@ SELECT DISTINCT ?fagfelt ?ferdighet WHERE {
 } ORDER BY ?ferdighet LIMIT 50
 ```
 
-**Kompetansemål og ESCO-ferdigheter (pilot).** For læreplanen BMK03-03 (Vg3 bilfaget, lette kjøretøy) er
-kompetansemålene koblet til ESCO-ferdighetene til yrkene programområdet utdanner til. Det finnes ingen offisiell
+**Kompetansemål og ESCO-ferdigheter (pilot).** For tre læreplaner er kompetansemålene koblet til
+ESCO-ferdighetene til yrkene programområdet utdanner til:
+- BMK03-03 (Vg3 bilfaget, lette kjøretøy): 95 koblinger;
+- HEA03-03 (Vg3 helsearbeiderfaget): 82 koblinger;
+- ELE03-04 (Vg3 elektrikerfaget): 85 koblinger. Det finnes ingen offisiell
 kobling mellom læreplaner og ESCO. Disse koblingene er sandkassens egne og ikke en del av ESCO. Koblingene ble
 foreslått av en språkmodell og vurdert én for én av et menneske.
 

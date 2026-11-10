@@ -138,8 +138,16 @@ Dette er det som gjør Grep til en *lenket* graf. Det krever fagavklaring, slik 
   tverrgående ferdigheter. Vurderingene fra piloten brukes som fasit og som eksempler. Først 2–3 piloter fra andre
   utdanningsprogram (for eksempel helsefag og elektro), og så skalering med menneskelig kontroll.
 
+✅ 2026-11-10, pilot 2 og 3 med samme metode og uten tilpasning: HEA03-03 (helsearbeiderfaget, 82 koblinger) og
+ELE03-04 (elektrikerfaget, 85 koblinger). Et menneske godkjente alle 262 forslagene i de tre pilotene, så
+presisjonen er høy. Dekningen er ikke målt. Arbeidslivsmålene, som partssamarbeid og bedriftsdemokrati, står uten
+kandidat i alle tre læreplanene. De trenger tverrgående ESCO-ferdigheter, og de er ikke med blant kandidatene ennå.
+
 Gjenstår:
-- Flere piloter, og så automatiske forslag for resten av læreplanene.
+- Mål dekningen med en stikkprøve av kandidater som ikke ble valgt.
+- Legg ESCOs tverrgående ferdigheter (gjenbruksnivå *transversal*) til som kandidater for alle fag.
+- Automatiske forslag for resten av læreplanene: et skript som kaller en språkmodell (krever API-nøkkel), med
+  pilotene som eksempler og fasit, og menneskelig kontroll før noe godkjennes.
 - Eventuelt fritekstsøk (jena-text) i ferdighetsnavnene.
 - Gå gjennom de 21 usikre NUS-forslagene.
 - NKR- og EQF-nivå for sluttkompetanse.
