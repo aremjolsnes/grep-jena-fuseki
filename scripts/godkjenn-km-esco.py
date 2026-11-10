@@ -74,16 +74,27 @@ def main():
     a = ap.parse_args()
 
     filer = {os.path.basename(f): Sssom(f) for f in sorted(glob.glob(os.path.join(KM_ESCO, '*.sssom.tsv')))}
-    indeks = {}
+    indeks, etter_navn = {}, {}
     for navn, s in filer.items():
         for r in s.rader:
             indeks[(r['subject_id'], r['object_id'])] = (s, r)
+            etter_navn.setdefault((r['subject_id'], r['object_label']), []).append(r['object_id'])
 
     teller = Counter()
     for sti in a.lister:
         for x in les_csv(sti):
-            nokkel = ('grep:' + x['kompetansemaal'].strip(),
-                      'escoskill:' + x['esco_ferdighet'].strip().rsplit('/', 1)[-1])
+            km = 'grep:' + x['kompetansemaal'].strip()
+            esco = x['esco_ferdighet'].strip()
+            if esco.startswith('http://data.europa.eu/esco/skill/'):
+                nokkel = (km, 'escoskill:' + esco.rsplit('/', 1)[-1])
+            else:  # kolonnen er overskrevet (for eksempel i Excel): finn ferdigheten på navnet i stedet
+                treff = etter_navn.get((km, (x.get('ferdighet_navn') or '').strip()), [])
+                if len(treff) != 1:
+                    print('  mangler ESCO-adresse og navnet gir %d treff: %s %s' % (len(treff), km, x.get('ferdighet_navn')))
+                    teller['uten ESCO-adresse'] += 1
+                    continue
+                nokkel = (km, treff[0])
+                teller['funnet på navn'] += 1
             vurdert = (x.get('vurdert') or '').strip().lower()
             if vurdert not in JA | NEI:
                 teller['urørt' if not vurdert else 'urørt (%s)' % vurdert] += 1
@@ -94,6 +105,8 @@ def main():
                 continue
             s, r = indeks[nokkel]
             kommentar = ' '.join((x.get('kommentar') or '').split())
+            if kommentar == ' '.join((x.get('forslag_begrunnelse') or '').split()):
+                kommentar = ''  # bare en kopi av begrunnelsen, ikke en egen kommentar
             if vurdert in NEI:
                 if kommentar:
                     r['comment'] = (r.get('comment', '') + ' Avvist: ' + kommentar).strip()
