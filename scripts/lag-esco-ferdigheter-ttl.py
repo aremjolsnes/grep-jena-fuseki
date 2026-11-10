@@ -1,4 +1,5 @@
-"""Lager ontologi/koblinger/esco-ferdigheter.ttl: ESCO-ferdighetene til ESCO-yrkene i esco-yrker.ttl.
+"""Lager ontologi/koblinger/esco-ferdigheter.ttl: ESCO-ferdighetene til ESCO-yrkene i esco-yrker.ttl, pluss alle
+tverrgående ferdigheter (gjenbruksnivå transversal) utenom språkferdighetene.
 
 ESCO har ikke noe SPARQL-endepunkt, og ferdighetene er for mange til API-et (over 6 000). Last derfor ned ESCO
 som Turtle (https://esco.ec.europa.eu/en/use-esco/download: «classification», «ttl»; krever navn og e-post),
@@ -24,6 +25,12 @@ SKOS = 'http://www.w3.org/2004/02/skos/core#'
 ESCO = 'http://data.europa.eu/esco/model#'
 LINJE = re.compile(r'^<([^>]+)> <([^>]+)> (<[^>]+>|"(?:[^"\\]|\\.)*"(?:@[\w-]+|\^\^<[^>]+>)?) \.$')
 RELASJONER = {ESCO + 'isEssentialSkillFor', ESCO + 'isOptionalSkillFor'}
+TVERRGAAENDE = 'http://data.europa.eu/esco/skill-reuse-level/transversal'
+SPRAAKGRUPPER = {  # språkferdighetene (70 språk × 4) og de klassiske språkene tas ikke med som tverrgående
+    'http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10',  # beherske språk
+    'http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66',  # Språk
+    'http://data.europa.eu/esco/skill/e434e71a-f068-44ed-8059-d1af9eb592d7',  # klassiske språk
+}
 
 
 def les(nt, filter_):
@@ -44,6 +51,24 @@ def main():
     # 1. Koblingene fra ferdighet til yrkene våre
     koblinger = [(s, p, o[1:-1]) for s, p, o in les(nt, lambda s, p, o: p in RELASJONER and o[1:-1] in yrker)]
     ferdigheter = {s for s, _, _ in koblinger}
+
+    # 1b. Alle tverrgående ferdigheter (gjenbruksnivå transversal), uansett yrke, men uten språkferdighetene.
+    #     De er kandidater for kompetansemål som ikke hører til ett yrke (arbeidsliv, etikk, HMS, bærekraft).
+    tverr = {s for s, _, _ in les(nt, lambda s, p, o: p == ESCO + 'skillReuseLevel' and o == '<%s>' % TVERRGAAENDE)}
+    over = collections.defaultdict(set)
+    behov = set(tverr)
+    while behov:
+        nye = set()
+        for s, _, o in les(nt, lambda s, p, o: s in behov and p == SKOS + 'broader'):
+            over[s].add(o[1:-1])
+            nye.add(o[1:-1])
+        behov = nye - set(over) - SPRAAKGRUPPER
+
+    def er_spraak(s, sett=()):
+        return any(g in SPRAAKGRUPPER or (g not in sett and er_spraak(g, sett + (s,))) for g in over.get(s, ()))
+    tverr = {s for s in tverr if not er_spraak(s)}
+    print('tverrgående ferdigheter utenom språk: %d, av dem %d nye' % (len(tverr), len(tverr - ferdigheter)))
+    ferdigheter |= tverr
 
     # 2. Egenskapene til ferdighetene og gruppene over dem. Gruppene finnes ved å følge skos:broader til ingen nye kommer.
     egenskaper = {SKOS + 'prefLabel', SKOS + 'altLabel', SKOS + 'broader', ESCO + 'skillType', ESCO + 'skillReuseLevel',
@@ -99,7 +124,7 @@ def main():
     linjer = sorted(trip)
     hode = '''# GENERERT av scripts/lag-esco-ferdigheter-ttl.py fra den nedlastede ESCO-klassifikasjonen. Ikke rediger for hånd.
 # ESCO-versjon: %s
-# Ferdighetene til ESCO-yrkene i esco-yrker.ttl, med gruppene over dem.
+# Ferdighetene til ESCO-yrkene i esco-yrker.ttl og de tverrgående ferdighetene (utenom språk), med gruppene over dem.
 # This service uses the ESCO classification of the European Commission. https://esco.ec.europa.eu
 # ENDRET UTGAVE: bare et utdrag av ESCO, og språkkoden er endret fra «no» til «nb». Vilkår: Kommisjonens beslutning
 # 2011/833/EU om gjenbruk.

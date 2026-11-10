@@ -1,6 +1,6 @@
 # GENERERT av scripts/lag-esco-ferdigheter-ttl.py fra den nedlastede ESCO-klassifikasjonen. Ikke rediger for hånd.
 # ESCO-versjon: v1.2.1
-# Ferdighetene til ESCO-yrkene i esco-yrker.ttl, med gruppene over dem.
+# Ferdighetene til ESCO-yrkene i esco-yrker.ttl og de tverrgående ferdighetene (utenom språk), med gruppene over dem.
 # This service uses the ESCO classification of the European Commission. https://esco.ec.europa.eu
 # ENDRET UTGAVE: bare et utdrag av ESCO, og språkkoden er endret fra «no» til «nb». Vilkår: Kommisjonens beslutning
 # 2011/833/EU om gjenbruk.
@@ -427,6 +427,7 @@
 <http://data.europa.eu/esco/skill/001115fb-569f-4ee6-8381-c6807ef2527f> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/91860993-1a8b-4473-91f3-600aa1924bd0> .
 <http://data.europa.eu/esco/skill/001115fb-569f-4ee6-8381-c6807ef2527f> <http://www.w3.org/2004/02/skos/core#definition> "Være proaktiv og ta første skritt uten å vente på hva andre sier eller gjør."@nb .
 <http://data.europa.eu/esco/skill/001115fb-569f-4ee6-8381-c6807ef2527f> <http://www.w3.org/2004/02/skos/core#prefLabel> "vise initiativ"@nb .
+<http://data.europa.eu/esco/skill/001115fb-569f-4ee6-8381-c6807ef2527f> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/001115fb-569f-4ee6-8381-c6807ef2527f> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/002b2e58-35ab-460c-be97-ca2f585fd990> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/d85e041f-8306-476e-a2cd-59baa1e61992> .
 <http://data.europa.eu/esco/skill/002b2e58-35ab-460c-be97-ca2f585fd990> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -777,6 +778,7 @@
 <http://data.europa.eu/esco/skill/0171653e-c8e9-4c24-bb86-a4b6fe038f25> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/80cf002a-6586-4db7-9c9a-88325a9a5e1b> .
 <http://data.europa.eu/esco/skill/0171653e-c8e9-4c24-bb86-a4b6fe038f25> <http://www.w3.org/2004/02/skos/core#definition> "Leve på en måte som bidrar til å opprettholde stabile økosystemer og bekjempe masseutryddelse, for eksempel ved å gjøre bevisste kostholdsvalg som støtter økologisk matproduksjon og dyrevelferd"@nb .
 <http://data.europa.eu/esco/skill/0171653e-c8e9-4c24-bb86-a4b6fe038f25> <http://www.w3.org/2004/02/skos/core#prefLabel> "bidra til å fremme biologisk mangfold og dyrevelferd"@nb .
+<http://data.europa.eu/esco/skill/0171653e-c8e9-4c24-bb86-a4b6fe038f25> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/0171653e-c8e9-4c24-bb86-a4b6fe038f25> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/01755f08-4df4-4cf0-8d22-08f94cad68b5> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/02bd7cac-8263-4425-b03d-19001ffe8787> .
 <http://data.europa.eu/esco/skill/01755f08-4df4-4cf0-8d22-08f94cad68b5> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
@@ -1594,6 +1596,7 @@
 <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/82463bb1-85d1-4e99-a4ce-08508fc3b2a3> .
 <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> <http://www.w3.org/2004/02/skos/core#definition> "Komme med forslag til hva som bør gjøres."@nb .
 <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> <http://www.w3.org/2004/02/skos/core#prefLabel> "gi råd"@nb .
+<http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/0460013b-e73a-4200-8c11-88b3b60a222a> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/49b21ca8-04be-4912-a2f7-0170550e18fa> .
 <http://data.europa.eu/esco/skill/0460013b-e73a-4200-8c11-88b3b60a222a> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
@@ -1957,6 +1960,7 @@
 <http://data.europa.eu/esco/skill/05aa7c09-46e7-433f-a81b-92841f4551e7> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/f5c9eef3-0495-4747-9519-d71a58d252bd> .
 <http://data.europa.eu/esco/skill/05aa7c09-46e7-433f-a81b-92841f4551e7> <http://www.w3.org/2004/02/skos/core#definition> "Håndtere negative tilbakemeldinger fra andre og være åpen for kritikk, og prøve å se hvor det er rom for forbedring."@nb .
 <http://data.europa.eu/esco/skill/05aa7c09-46e7-433f-a81b-92841f4551e7> <http://www.w3.org/2004/02/skos/core#prefLabel> "godta kritikk og veiledning"@nb .
+<http://data.europa.eu/esco/skill/05aa7c09-46e7-433f-a81b-92841f4551e7> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/05aa7c09-46e7-433f-a81b-92841f4551e7> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/05ab4b2c-7389-4495-9355-ba0a69effe4f> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/0c041d1e-1841-4acb-b0a1-2c387a61bf65> .
 <http://data.europa.eu/esco/skill/05ab4b2c-7389-4495-9355-ba0a69effe4f> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -3226,6 +3230,12 @@
 <http://data.europa.eu/esco/skill/09dea77e-870c-49eb-9a97-1398bee57bd0> <http://www.w3.org/2004/02/skos/core#prefLabel> "renholdsbransjens helse- og sikkerhetstiltak"@nb .
 <http://data.europa.eu/esco/skill/09dea77e-870c-49eb-9a97-1398bee57bd0> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/09dea77e-870c-49eb-9a97-1398bee57bd0> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/09e28145-e205-4b7a-8b3b-5c4876396069> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/09e28145-e205-4b7a-8b3b-5c4876396069> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/09e28145-e205-4b7a-8b3b-5c4876396069> <http://www.w3.org/2004/02/skos/core#definition> "Samhandle med andre ansikt til ansikt i en rekke situasjoner, ved å bruke strategier som passer ut fra sammenhengen og formålet."@nb .
+<http://data.europa.eu/esco/skill/09e28145-e205-4b7a-8b3b-5c4876396069> <http://www.w3.org/2004/02/skos/core#prefLabel> "samhandle med andre"@nb .
+<http://data.europa.eu/esco/skill/09e28145-e205-4b7a-8b3b-5c4876396069> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/09e28145-e205-4b7a-8b3b-5c4876396069> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/09e7cd13-ea36-4694-afe5-f34373759392> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/1aadb308-432a-4d01-b54b-b4f7f76dd419> .
 <http://data.europa.eu/esco/skill/09e7cd13-ea36-4694-afe5-f34373759392> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/35f62568-eb4e-4a09-9d83-ecc73116f94c> .
 <http://data.europa.eu/esco/skill/09e7cd13-ea36-4694-afe5-f34373759392> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/985400a7-362f-4f91-941a-2e149d94ac2a> .
@@ -3415,6 +3425,12 @@
 <http://data.europa.eu/esco/skill/0aa44b22-2da9-4704-aea0-b6289bee0462> <http://www.w3.org/2004/02/skos/core#prefLabel> "overvåke fiskedødelighetsrater"@nb .
 <http://data.europa.eu/esco/skill/0aa44b22-2da9-4704-aea0-b6289bee0462> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/0aa44b22-2da9-4704-aea0-b6289bee0462> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/0ab5084c-cbd0-46d5-b61f-f1b8e9cc0ca0> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/0ab5084c-cbd0-46d5-b61f-f1b8e9cc0ca0> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/0ab5084c-cbd0-46d5-b61f-f1b8e9cc0ca0> <http://www.w3.org/2004/02/skos/core#definition> "Vise engasjement for å gjøre noe som er vanskelig og krever hardt arbeid."@nb .
+<http://data.europa.eu/esco/skill/0ab5084c-cbd0-46d5-b61f-f1b8e9cc0ca0> <http://www.w3.org/2004/02/skos/core#prefLabel> "gjøre en innsats"@nb .
+<http://data.europa.eu/esco/skill/0ab5084c-cbd0-46d5-b61f-f1b8e9cc0ca0> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/0ab5084c-cbd0-46d5-b61f-f1b8e9cc0ca0> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/0ad6d5e8-593f-4191-843c-439b23a468ca> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/88a34087-311e-497e-ad81-a6843b9b461e> .
 <http://data.europa.eu/esco/skill/0ad6d5e8-593f-4191-843c-439b23a468ca> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/0ad6d5e8-593f-4191-843c-439b23a468ca> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -3712,6 +3728,7 @@
 <http://data.europa.eu/esco/skill/0b709c64-a57a-4976-86bd-34d2cf34fa4f> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/44ff6716-7d71-4a16-821b-61d10e9e290d> .
 <http://data.europa.eu/esco/skill/0b709c64-a57a-4976-86bd-34d2cf34fa4f> <http://www.w3.org/2004/02/skos/core#definition> "Utvikle et eget perspektiv rundt meningen og hensikten med livet og rollen til den enkelte, herunder hva det betyr å leve, å dø og å være et menneske."@nb .
 <http://data.europa.eu/esco/skill/0b709c64-a57a-4976-86bd-34d2cf34fa4f> <http://www.w3.org/2004/02/skos/core#prefLabel> "anvende kunnskap innen filosofi, etikk og religion"@nb .
+<http://data.europa.eu/esco/skill/0b709c64-a57a-4976-86bd-34d2cf34fa4f> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/0b709c64-a57a-4976-86bd-34d2cf34fa4f> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/0b832182-5fc8-49f8-8fb8-8ddc225f5580> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/bd22a34c-1dc2-48df-a254-66e5d03dec12> .
 <http://data.europa.eu/esco/skill/0b832182-5fc8-49f8-8fb8-8ddc225f5580> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/ddb3e6a4-5bae-480a-a49a-748f93022892> .
@@ -4463,6 +4480,7 @@
 <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/80cf002a-6586-4db7-9c9a-88325a9a5e1b> .
 <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> <http://www.w3.org/2004/02/skos/core#definition> "Bidra til å redusere luft-, støy-, lys-, vann- og miljøforurensning, for eksempel ved å bruke offentlig transport, ikke kaste avfall i naturen og redusere unødvendige lys- og støyutslipp, særlig om natten."@nb .
 <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> <http://www.w3.org/2004/02/skos/core#prefLabel> "bidra til redusert forurensning"@nb .
+<http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/0d7f2cce-245a-4d02-9b8d-2e9946cc4c5d> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/f9cbdeb4-1559-4d45-b2d7-edf8aebe400b> .
 <http://data.europa.eu/esco/skill/0d7f2cce-245a-4d02-9b8d-2e9946cc4c5d> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
@@ -5599,6 +5617,7 @@
 <http://data.europa.eu/esco/skill/113b4428-0a31-4199-8496-070af7854b91> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/14c41899-0224-4cbc-bd8c-e946ada2da87> .
 <http://data.europa.eu/esco/skill/113b4428-0a31-4199-8496-070af7854b91> <http://www.w3.org/2004/02/skos/core#definition> "Utføre oppgavene sine på en selvdisiplinert, pålitelig og målrettet måte."@nb .
 <http://data.europa.eu/esco/skill/113b4428-0a31-4199-8496-070af7854b91> <http://www.w3.org/2004/02/skos/core#prefLabel> "overholde forpliktelser"@nb .
+<http://data.europa.eu/esco/skill/113b4428-0a31-4199-8496-070af7854b91> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/113b4428-0a31-4199-8496-070af7854b91> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/113bbd65-c580-4155-b2d5-9f6d068712e2> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/0b5e4142-90ad-48a6-8407-ed47b2664954> .
 <http://data.europa.eu/esco/skill/113bbd65-c580-4155-b2d5-9f6d068712e2> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
@@ -6234,6 +6253,7 @@
 <http://data.europa.eu/esco/skill/13b4a3d2-abdf-4442-8e52-d7464a58ecbc> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/e52389a2-1a05-45b0-8db3-4bda0f0c0b48> .
 <http://data.europa.eu/esco/skill/13b4a3d2-abdf-4442-8e52-d7464a58ecbc> <http://www.w3.org/2004/02/skos/core#definition> "Utvise evnen til å tåle høy fysisk belastning i jobb eller idrett. Dette omfatter å sitte på kne, stå eller løpe lenge og arbeide under vanskelige værforhold som sterk varme, kulde eller regn."@nb .
 <http://data.europa.eu/esco/skill/13b4a3d2-abdf-4442-8e52-d7464a58ecbc> <http://www.w3.org/2004/02/skos/core#prefLabel> "tilpasse seg til fysiske krav"@nb .
+<http://data.europa.eu/esco/skill/13b4a3d2-abdf-4442-8e52-d7464a58ecbc> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/13b4a3d2-abdf-4442-8e52-d7464a58ecbc> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/13b7c6f6-69fe-4829-b39e-7401b9dee876> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/b4c6d1b0-929e-48be-9f67-47bd8c30658b> .
 <http://data.europa.eu/esco/skill/13b7c6f6-69fe-4829-b39e-7401b9dee876> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -8081,6 +8101,34 @@
 <http://data.europa.eu/esco/skill/19990cb0-e9d5-41c7-9638-88700b47271e> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/da94d48b-5036-48e1-ad96-d85cba6ed29c> .
 <http://data.europa.eu/esco/skill/19990cb0-e9d5-41c7-9638-88700b47271e> <http://www.w3.org/2004/02/skos/core#prefLabel> "betjene utstyr til å flytte jordmasser"@nb .
 <http://data.europa.eu/esco/skill/19990cb0-e9d5-41c7-9638-88700b47271e> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> <http://www.w3.org/2004/02/skos/core#altLabel> "bevise ansvarsfølelse"@nb .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> <http://www.w3.org/2004/02/skos/core#altLabel> "vise ansvar"@nb .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> <http://www.w3.org/2004/02/skos/core#altLabel> "vise ansvarlig oppførsel"@nb .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> <http://www.w3.org/2004/02/skos/core#altLabel> "vise en samvittighetsfull holdning"@nb .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> <http://www.w3.org/2004/02/skos/core#altLabel> "være klar til å ta ansvar"@nb .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/91860993-1a8b-4473-91f3-600aa1924bd0> .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> <http://www.w3.org/2004/02/skos/core#definition> "Akseptere ansvar for faglige beslutninger og handlinger man har tatt selv eller delegert til andre."@nb .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> <http://www.w3.org/2004/02/skos/core#prefLabel> "påta seg ansvar"@nb .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#altLabel> "gjør en innsats"@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#altLabel> "ha klare mål"@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#altLabel> "strebe etter resultater"@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#altLabel> "strebe etter suksess"@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#altLabel> "vise en fokusert tilnærming"@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#altLabel> "vise entusiasme"@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#altLabel> "vise positiv holdning"@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#altLabel> "vise positiv tenkning"@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#altLabel> "være utholdende"@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/91860993-1a8b-4473-91f3-600aa1924bd0> .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#definition> "Vise vilje til å gjøre noe som er vanskelig og som krever hardt arbeid. Vise innsatsvilje drevet av interesse eller glede over å arbeide, i fravær av press utenfra."@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> <http://www.w3.org/2004/02/skos/core#prefLabel> "vise besluttsomhet"@nb .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/19a64e91-bfe3-4c48-9225-3bb1229b12f0> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/19a8293b-8e95-4de3-983f-77484079c389> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/3e7bf729-4442-4b9f-ad5e-83111963795c> .
 <http://data.europa.eu/esco/skill/19a8293b-8e95-4de3-983f-77484079c389> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/a44a1dc5-be08-4840-8bd5-770c4ac1ca6d> .
 <http://data.europa.eu/esco/skill/19a8293b-8e95-4de3-983f-77484079c389> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/b37d15b3-402e-4792-8292-f18c0de7aca6> .
@@ -8101,6 +8149,7 @@
 <http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/edc72cfe-78a8-4531-b00f-92992a0bb8cb> .
 <http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> <http://www.w3.org/2004/02/skos/core#definition> "Løse matematiske problemer for å nå arbeidsrelaterte målsettinger."@nb .
 <http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> <http://www.w3.org/2004/02/skos/core#prefLabel> "utføre beregninger"@nb .
+<http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/19bf4dd0-db65-4484-aa9d-0dcbc2e5dd13> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/64e909ad-1bd0-493c-a8dc-1afbed0c9c2f> .
 <http://data.europa.eu/esco/skill/19bf4dd0-db65-4484-aa9d-0dcbc2e5dd13> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -9040,6 +9089,7 @@
 <http://data.europa.eu/esco/skill/1d1fedcb-4995-44ac-90f5-f31a157ce512> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/2b2c3254-7f6c-47e2-84f1-aece946fbfae> .
 <http://data.europa.eu/esco/skill/1d1fedcb-4995-44ac-90f5-f31a157ce512> <http://www.w3.org/2004/02/skos/core#definition> "Holde seg rolig og reagere på en konstruktiv måte på sitt eget eller andres sinne eller i møte med hindringer eller klager."@nb .
 <http://data.europa.eu/esco/skill/1d1fedcb-4995-44ac-90f5-f31a157ce512> <http://www.w3.org/2004/02/skos/core#prefLabel> "håndtere frustrasjon"@nb .
+<http://data.europa.eu/esco/skill/1d1fedcb-4995-44ac-90f5-f31a157ce512> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/1d1fedcb-4995-44ac-90f5-f31a157ce512> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/0b5dfc02-b825-4445-811d-d39ed442657e> .
 <http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/1bb2aa65-1524-4961-8dba-ad25f34f195f> .
@@ -9224,6 +9274,22 @@
 <http://data.europa.eu/esco/skill/1da6ee69-335b-48a7-b806-ee487807c0e4> <http://www.w3.org/2004/02/skos/core#prefLabel> "levere tilpasset polstring"@nb .
 <http://data.europa.eu/esco/skill/1da6ee69-335b-48a7-b806-ee487807c0e4> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/1da6ee69-335b-48a7-b806-ee487807c0e4> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/1da808a1-419f-4e7c-b714-8287f1842546> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/1da808a1-419f-4e7c-b714-8287f1842546> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/1da808a1-419f-4e7c-b714-8287f1842546> <http://www.w3.org/2004/02/skos/core#definition> "Opptre i henhold til rollen din for å fremme organisasjonens mål og visjon."@nb .
+<http://data.europa.eu/esco/skill/1da808a1-419f-4e7c-b714-8287f1842546> <http://www.w3.org/2004/02/skos/core#prefLabel> "støtte selskapsplan"@nb .
+<http://data.europa.eu/esco/skill/1da808a1-419f-4e7c-b714-8287f1842546> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/1da808a1-419f-4e7c-b714-8287f1842546> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/1dabb413-18e8-48ed-a963-44978e67ad32> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/1dabb413-18e8-48ed-a963-44978e67ad32> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/1dabb413-18e8-48ed-a963-44978e67ad32> <http://www.w3.org/2004/02/skos/core#altLabel> "estimere sannsynligheten for et utfall eller faktum"@nb .
+<http://data.europa.eu/esco/skill/1dabb413-18e8-48ed-a963-44978e67ad32> <http://www.w3.org/2004/02/skos/core#altLabel> "gjøre estimater"@nb .
+<http://data.europa.eu/esco/skill/1dabb413-18e8-48ed-a963-44978e67ad32> <http://www.w3.org/2004/02/skos/core#altLabel> "jobbe med sannsynligheter"@nb .
+<http://data.europa.eu/esco/skill/1dabb413-18e8-48ed-a963-44978e67ad32> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/edc72cfe-78a8-4531-b00f-92992a0bb8cb> .
+<http://data.europa.eu/esco/skill/1dabb413-18e8-48ed-a963-44978e67ad32> <http://www.w3.org/2004/02/skos/core#definition> "Forutsi sannsynligheten for et utfall basert på beregninger eller erfaring."@nb .
+<http://data.europa.eu/esco/skill/1dabb413-18e8-48ed-a963-44978e67ad32> <http://www.w3.org/2004/02/skos/core#prefLabel> "beregne sannsynligheter"@nb .
+<http://data.europa.eu/esco/skill/1dabb413-18e8-48ed-a963-44978e67ad32> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/1dabb413-18e8-48ed-a963-44978e67ad32> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/03b9d7c4-9590-4e0d-97a7-470254e165d4> .
 <http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/062d666b-8b5f-4ff2-9047-113831eb3e9f> .
 <http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/0d9eed6b-4908-4112-bf37-ae08e2f0f326> .
@@ -9342,6 +9408,7 @@
 <http://data.europa.eu/esco/skill/1ddc021d-d818-4731-904f-842d7491f419> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/6c6957bf-cf1f-4483-9c7e-1655f251b01a> .
 <http://data.europa.eu/esco/skill/1ddc021d-d818-4731-904f-842d7491f419> <http://www.w3.org/2004/02/skos/core#definition> "Ha evne til effektiv økonomisk planlegging, bruke lån, sparing, investering og pensjon til å oppnå kortsiktige og langsiktige mål, gjøre kritisk bruk av økonomisk rådgivning og veiledning, sammenligne avtaler og tilbud ved kjøp av produkter eller tjenester, og aktivt velge egnede forsikringsprodukter."@nb .
 <http://data.europa.eu/esco/skill/1ddc021d-d818-4731-904f-842d7491f419> <http://www.w3.org/2004/02/skos/core#prefLabel> "forvalte økonomiske og materielle ressurser"@nb .
+<http://data.europa.eu/esco/skill/1ddc021d-d818-4731-904f-842d7491f419> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/1ddc021d-d818-4731-904f-842d7491f419> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/1de6b87b-2c7d-49aa-bcc0-3b2ef75f064f> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/0b6e1a0d-63fe-42d4-8dff-2ff187a9fea9> .
 <http://data.europa.eu/esco/skill/1de6b87b-2c7d-49aa-bcc0-3b2ef75f064f> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/1a1ea837-0103-4230-8756-533a77c5f9f4> .
@@ -9891,6 +9958,20 @@
 <http://data.europa.eu/esco/skill/1fc92aff-e67f-4eff-8d1a-b3c22f852ad4> <http://www.w3.org/2004/02/skos/core#prefLabel> "bruke mellomlegg"@nb .
 <http://data.europa.eu/esco/skill/1fc92aff-e67f-4eff-8d1a-b3c22f852ad4> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/1fc92aff-e67f-4eff-8d1a-b3c22f852ad4> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://www.w3.org/2004/02/skos/core#altLabel> "ha engasjement"@nb .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://www.w3.org/2004/02/skos/core#altLabel> "trives med yrket sitt"@nb .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://www.w3.org/2004/02/skos/core#altLabel> "trives med å jobbe"@nb .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://www.w3.org/2004/02/skos/core#altLabel> "vise arbeidsvilje"@nb .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://www.w3.org/2004/02/skos/core#altLabel> "vise entusiasme"@nb .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://www.w3.org/2004/02/skos/core#altLabel> "vise motivasjon"@nb .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://www.w3.org/2004/02/skos/core#altLabel> "vise vilje til å prestere"@nb .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/91860993-1a8b-4473-91f3-600aa1924bd0> .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://www.w3.org/2004/02/skos/core#definition> "Vise vilje til å påta seg oppgaver umiddelbart, selv om de er vanskelige eller ubehagelige."@nb .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> <http://www.w3.org/2004/02/skos/core#prefLabel> "vise engasjement"@nb .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/1fce1197-3a5b-45b7-8797-575cd3b57a01> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/1fd88635-5742-4106-b598-ed65e467fecf> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/5318abf2-2e7b-4d09-ae57-6bd500689ebc> .
 <http://data.europa.eu/esco/skill/1fd88635-5742-4106-b598-ed65e467fecf> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/dc14bed4-87ca-4e6c-9f69-458e2689d2d6> .
 <http://data.europa.eu/esco/skill/1fd88635-5742-4106-b598-ed65e467fecf> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/fccecd5d-ad90-41a8-bb89-96d7595abca3> .
@@ -9969,6 +10050,7 @@
 <http://data.europa.eu/esco/skill/20012caa-b63c-4cb9-b2b8-01a1cfdfc1d1> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/fff1d675-c36a-4c12-9cd4-407f21ccd06a> .
 <http://data.europa.eu/esco/skill/20012caa-b63c-4cb9-b2b8-01a1cfdfc1d1> <http://www.w3.org/2004/02/skos/core#definition> "Kunne forstå og bearbeide de viktigste aspektene ved fakta og sammenhenger raskt og nøyaktig."@nb .
 <http://data.europa.eu/esco/skill/20012caa-b63c-4cb9-b2b8-01a1cfdfc1d1> <http://www.w3.org/2004/02/skos/core#prefLabel> "tenke raskt"@nb .
+<http://data.europa.eu/esco/skill/20012caa-b63c-4cb9-b2b8-01a1cfdfc1d1> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/20012caa-b63c-4cb9-b2b8-01a1cfdfc1d1> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/200a8387-d67c-43e4-9cdc-44ab592c299e> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/2ff73126-7aff-4233-9d9c-d8725e1c6822> .
 <http://data.europa.eu/esco/skill/200a8387-d67c-43e4-9cdc-44ab592c299e> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/461959ed-6a80-4c33-a75e-26aaeb52a5a7> .
@@ -10176,6 +10258,12 @@
 <http://data.europa.eu/esco/skill/20b9852f-a445-4097-8273-4a18fa6bfff0> <http://www.w3.org/2004/02/skos/core#prefLabel> "anvende restaureringsteknikker"@nb .
 <http://data.europa.eu/esco/skill/20b9852f-a445-4097-8273-4a18fa6bfff0> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/20b9852f-a445-4097-8273-4a18fa6bfff0> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/20ba084f-129c-4c5e-b39f-539913e0acc4> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/20ba084f-129c-4c5e-b39f-539913e0acc4> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/20ba084f-129c-4c5e-b39f-539913e0acc4> <http://www.w3.org/2004/02/skos/core#definition> "Bruke digitale enheter som kan holdes i hånden, og som ikke krever andre inndata enn berøring."@nb .
+<http://data.europa.eu/esco/skill/20ba084f-129c-4c5e-b39f-539913e0acc4> <http://www.w3.org/2004/02/skos/core#prefLabel> "betjene håndholdte enheter"@nb .
+<http://data.europa.eu/esco/skill/20ba084f-129c-4c5e-b39f-539913e0acc4> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/20ba084f-129c-4c5e-b39f-539913e0acc4> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/20c451f2-8e8a-4d47-95ec-830a086dbef1> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/b3b79192-f6e0-4aa0-92d1-f876508e05b3> .
 <http://data.europa.eu/esco/skill/20c451f2-8e8a-4d47-95ec-830a086dbef1> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/20c451f2-8e8a-4d47-95ec-830a086dbef1> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -10907,6 +10995,12 @@
 <http://data.europa.eu/esco/skill/22b11b01-ccf8-4745-9738-4fc8526ad073> <http://www.w3.org/2004/02/skos/core#prefLabel> "bruke varmepistol"@nb .
 <http://data.europa.eu/esco/skill/22b11b01-ccf8-4745-9738-4fc8526ad073> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/22b11b01-ccf8-4745-9738-4fc8526ad073> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/22b7d99d-252f-4572-8e3c-438ea87607eb> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/22b7d99d-252f-4572-8e3c-438ea87607eb> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/22b7d99d-252f-4572-8e3c-438ea87607eb> <http://www.w3.org/2004/02/skos/core#definition> "Utvise stor innsats drevet av interesse for eller glede ved selve arbeidet, uten noe ytre press."@nb .
+<http://data.europa.eu/esco/skill/22b7d99d-252f-4572-8e3c-438ea87607eb> <http://www.w3.org/2004/02/skos/core#prefLabel> "vise entusiasme"@nb .
+<http://data.europa.eu/esco/skill/22b7d99d-252f-4572-8e3c-438ea87607eb> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/22b7d99d-252f-4572-8e3c-438ea87607eb> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/22b8039c-c890-4610-9228-5527e3b98f12> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/f9cbdeb4-1559-4d45-b2d7-edf8aebe400b> .
 <http://data.europa.eu/esco/skill/22b8039c-c890-4610-9228-5527e3b98f12> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
 <http://data.europa.eu/esco/skill/22b8039c-c890-4610-9228-5527e3b98f12> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -13801,6 +13895,7 @@
 <http://data.europa.eu/esco/skill/2aaad52d-599e-4e77-a681-bbc236825821> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/80cf002a-6586-4db7-9c9a-88325a9a5e1b> .
 <http://data.europa.eu/esco/skill/2aaad52d-599e-4e77-a681-bbc236825821> <http://www.w3.org/2004/02/skos/core#definition> "Ha en bærekraftsorientert tankegang i dagliglivet og reflektere over egen holdning til miljøet og miljøvirkningen av egen atferd."@nb .
 <http://data.europa.eu/esco/skill/2aaad52d-599e-4e77-a681-bbc236825821> <http://www.w3.org/2004/02/skos/core#prefLabel> "vurdere miljøvirkningen av personlig atferd"@nb .
+<http://data.europa.eu/esco/skill/2aaad52d-599e-4e77-a681-bbc236825821> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/2aaad52d-599e-4e77-a681-bbc236825821> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/2abea522-a74c-41b5-ab06-2a6e73665782> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/dce6a68c-8a05-4c26-85d4-6fbc43e7d822> .
 <http://data.europa.eu/esco/skill/2abea522-a74c-41b5-ab06-2a6e73665782> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
@@ -14984,6 +15079,12 @@
 <http://data.europa.eu/esco/skill/2e1888d8-97f7-4c91-8874-e2ef0e47f94f> <http://www.w3.org/2004/02/skos/core#prefLabel> "lage digitale filer"@nb .
 <http://data.europa.eu/esco/skill/2e1888d8-97f7-4c91-8874-e2ef0e47f94f> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/2e1888d8-97f7-4c91-8874-e2ef0e47f94f> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> <http://www.w3.org/2004/02/skos/core#definition> "Arbeide for like vilkår for begge kjønn ved å vurdere konsekvensene for kvinner og menn ved alle planlagte tiltak, herunder lovgivning, policyer og programmer, på alle områder og på alle nivåer på arbeidsplassen."@nb .
+<http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> <http://www.w3.org/2004/02/skos/core#prefLabel> "støtte likestilling"@nb .
+<http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/2e3ae45d-04b5-4922-98a0-de914a8e018c> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/7443811e-6760-44a2-af95-1b9c791733a8> .
 <http://data.europa.eu/esco/skill/2e3ae45d-04b5-4922-98a0-de914a8e018c> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/8b2d562c-8407-49cd-9843-636c352b8c82> .
 <http://data.europa.eu/esco/skill/2e3ae45d-04b5-4922-98a0-de914a8e018c> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/97dadd59-d1cb-4fef-81a7-d92eb15572e2> .
@@ -17243,6 +17344,12 @@
 <http://data.europa.eu/esco/skill/347b6a67-59ad-4408-bb9c-cfa502867e24> <http://www.w3.org/2004/02/skos/core#prefLabel> "overvåke skogshelse"@nb .
 <http://data.europa.eu/esco/skill/347b6a67-59ad-4408-bb9c-cfa502867e24> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/347b6a67-59ad-4408-bb9c-cfa502867e24> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/3481d400-2eaa-4ab3-bb06-5f45b4380052> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/3481d400-2eaa-4ab3-bb06-5f45b4380052> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/3481d400-2eaa-4ab3-bb06-5f45b4380052> <http://www.w3.org/2004/02/skos/core#definition> "Bruke og forstå kroppsspråk, gester og andre paralingvistiske signaler."@nb .
+<http://data.europa.eu/esco/skill/3481d400-2eaa-4ab3-bb06-5f45b4380052> <http://www.w3.org/2004/02/skos/core#prefLabel> "bruke kroppsspråk"@nb .
+<http://data.europa.eu/esco/skill/3481d400-2eaa-4ab3-bb06-5f45b4380052> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/3481d400-2eaa-4ab3-bb06-5f45b4380052> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/1d196f32-05ca-4ea5-a347-4fccbb3da863> .
 <http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/4e4a1aa1-ca53-406e-9ca6-889d4621a0ed> .
 <http://data.europa.eu/esco/skill/348b74cd-49ce-4844-8bdf-ec188b497213> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/75b63949-1b93-4bf2-a777-ccf978dc3e8a> .
@@ -17774,6 +17881,7 @@
 <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/14c41899-0224-4cbc-bd8c-e946ada2da87> .
 <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> <http://www.w3.org/2004/02/skos/core#definition> "Strebe etter fremragende kvalitet på prosesser, produkter og aktiviteter på arbeidsplassen."@nb .
 <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> <http://www.w3.org/2004/02/skos/core#prefLabel> "administrere kvalitet"@nb .
+<http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/35f1dcdc-577f-46c6-96d9-6c7a64501de9> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/2c5ae1b4-c3ca-4882-b7ce-e346ae5b5b00> .
 <http://data.europa.eu/esco/skill/35f1dcdc-577f-46c6-96d9-6c7a64501de9> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/31cc4199-703c-4f8a-9b46-a2070a6d35df> .
@@ -20909,6 +21017,16 @@
 <http://data.europa.eu/esco/skill/408332c7-1892-420e-b835-357d3a18351a> <http://www.w3.org/2004/02/skos/core#prefLabel> "betjene tunge anleggsmaskiner uten tilsyn"@nb .
 <http://data.europa.eu/esco/skill/408332c7-1892-420e-b835-357d3a18351a> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/408332c7-1892-420e-b835-357d3a18351a> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> <http://www.w3.org/2004/02/skos/core#altLabel> "kunne utøve selvrefleksjon"@nb .
+<http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> <http://www.w3.org/2004/02/skos/core#altLabel> "reflektere over praksis"@nb .
+<http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> <http://www.w3.org/2004/02/skos/core#altLabel> "utføre egenvurdering"@nb .
+<http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/f5c9eef3-0495-4747-9519-d71a58d252bd> .
+<http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> <http://www.w3.org/2004/02/skos/core#definition> "Reflektere effektivt, regelmessig og systematisk over egne handlinger, prestasjoner og holdninger, og gjøre nødvendige justeringer, samt søke faglige utviklingsmuligheter for å tette kunnskaps- og praksishull på identifiserte områder. Evaluere effekten av din egen faglige utvikling."@nb .
+<http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> <http://www.w3.org/2004/02/skos/core#prefLabel> "øve på selvrefleksjon"@nb .
+<http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/061f56c6-36eb-4aa7-b5ef-98b7a569da1c> .
 <http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/0da2ee5c-b480-498f-97a8-a292a0f4c54c> .
 <http://data.europa.eu/esco/skill/409b165c-ddae-4366-aeac-fa95c79e57a9> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/6fed206a-ac4d-492b-a81a-5a3a0f2b67bc> .
@@ -21692,6 +21810,7 @@
 <http://data.europa.eu/esco/skill/429062f1-a958-43ea-83dd-4e1af078c156> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/f5c9eef3-0495-4747-9519-d71a58d252bd> .
 <http://data.europa.eu/esco/skill/429062f1-a958-43ea-83dd-4e1af078c156> <http://www.w3.org/2004/02/skos/core#definition> "Vise en livlig interesse for alt som er nytt, være åpen for nye opplevelser, være fascinert av diverse emner og aktivt utforske og oppdage nye områder."@nb .
 <http://data.europa.eu/esco/skill/429062f1-a958-43ea-83dd-4e1af078c156> <http://www.w3.org/2004/02/skos/core#prefLabel> "vise nysgjerrighet"@nb .
+<http://data.europa.eu/esco/skill/429062f1-a958-43ea-83dd-4e1af078c156> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/429062f1-a958-43ea-83dd-4e1af078c156> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/4295ade3-2c2a-455a-a71a-3cbcebd460ed> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/64c180d0-029b-4dc7-b582-77899d171186> .
 <http://data.europa.eu/esco/skill/4295ade3-2c2a-455a-a71a-3cbcebd460ed> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/b69d9b94-a40c-434d-af8f-e584257314f6> .
@@ -23209,6 +23328,7 @@
 <http://data.europa.eu/esco/skill/468135b7-5757-48c3-9509-fde0e13ec5be> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/91860993-1a8b-4473-91f3-600aa1924bd0> .
 <http://data.europa.eu/esco/skill/468135b7-5757-48c3-9509-fde0e13ec5be> <http://www.w3.org/2004/02/skos/core#definition> "Forvalte egne ferdigheter og kompetanse for å ha fremgang i jobb og privatliv."@nb .
 <http://data.europa.eu/esco/skill/468135b7-5757-48c3-9509-fde0e13ec5be> <http://www.w3.org/2004/02/skos/core#prefLabel> "håndtere personlig fremgang"@nb .
+<http://data.europa.eu/esco/skill/468135b7-5757-48c3-9509-fde0e13ec5be> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/468135b7-5757-48c3-9509-fde0e13ec5be> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/469748ce-051a-407e-9099-0c9415ac2705> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
 <http://data.europa.eu/esco/skill/469748ce-051a-407e-9099-0c9415ac2705> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -23218,6 +23338,7 @@
 <http://data.europa.eu/esco/skill/469748ce-051a-407e-9099-0c9415ac2705> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/2b2c3254-7f6c-47e2-84f1-aece946fbfae> .
 <http://data.europa.eu/esco/skill/469748ce-051a-407e-9099-0c9415ac2705> <http://www.w3.org/2004/02/skos/core#definition> "Innta en positiv holdning og være konstruktiv ved håndtering av utfordringer."@nb .
 <http://data.europa.eu/esco/skill/469748ce-051a-407e-9099-0c9415ac2705> <http://www.w3.org/2004/02/skos/core#prefLabel> "møte utfordringer på en positiv måte"@nb .
+<http://data.europa.eu/esco/skill/469748ce-051a-407e-9099-0c9415ac2705> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/469748ce-051a-407e-9099-0c9415ac2705> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/46994031-5490-4a02-9937-c61f6e2d4fc9> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/a9068f84-cecd-4cbb-9acb-e20c714435ec> .
 <http://data.europa.eu/esco/skill/46994031-5490-4a02-9937-c61f6e2d4fc9> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/05f321f8-055b-407d-bf19-e0ddabda56b7> .
@@ -23357,6 +23478,7 @@
 <http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/fff1d675-c36a-4c12-9cd4-407f21ccd06a> .
 <http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137> <http://www.w3.org/2004/02/skos/core#definition> "Produsere tanker ved å bruke logikk og resonnement til å identifisere styrker og svakheter ved alternative løsninger, konklusjoner eller tilnærminger til problemer."@nb .
 <http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137> <http://www.w3.org/2004/02/skos/core#prefLabel> "tenke analytisk"@nb .
+<http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/471541e3-76a0-4c10-8457-9f4db75d82c2> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/7aedaa07-3884-4c5b-88f9-80997b2aa54b> .
 <http://data.europa.eu/esco/skill/471541e3-76a0-4c10-8457-9f4db75d82c2> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/00c8d1cf-24f2-47d1-9f10-765e1c102811> .
@@ -24318,6 +24440,7 @@
 <http://data.europa.eu/esco/skill/49de9958-2aa4-4eef-a89d-fe5d5bcd28c4> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/f5c9eef3-0495-4747-9519-d71a58d252bd> .
 <http://data.europa.eu/esco/skill/49de9958-2aa4-4eef-a89d-fe5d5bcd28c4> <http://www.w3.org/2004/02/skos/core#definition> "Endre holdningen eller adferden sin for å tilrettelegge for endringer på arbeidsplassen."@nb .
 <http://data.europa.eu/esco/skill/49de9958-2aa4-4eef-a89d-fe5d5bcd28c4> <http://www.w3.org/2004/02/skos/core#prefLabel> "tilpasse seg endringer"@nb .
+<http://data.europa.eu/esco/skill/49de9958-2aa4-4eef-a89d-fe5d5bcd28c4> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/49de9958-2aa4-4eef-a89d-fe5d5bcd28c4> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/1bb2aa65-1524-4961-8dba-ad25f34f195f> .
 <http://data.europa.eu/esco/skill/49e1eb78-e6b1-4116-8e9f-f23316ee503e> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/7e17f4ea-9565-41e0-b408-b52b5c9492a3> .
@@ -24985,6 +25108,7 @@
 <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/80cf002a-6586-4db7-9c9a-88325a9a5e1b> .
 <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> <http://www.w3.org/2004/02/skos/core#definition> "Anvende prinsipper, retningslinjer og forskrifter for miljømessig bærekraft, herunder redusere avfall, energi- og vannforbruk, gjenbruke og gjenvinne produkter, og bidra til delingsøkonomien."@nb .
 <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> <http://www.w3.org/2004/02/skos/core#prefLabel> "bidra til å minske de negative følgene av forbruk"@nb .
+<http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/4c476f5c-6ece-41e4-a97c-62d4244057e8> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/34e1c889-0fd1-4d1f-aba9-3b6263ae667a> .
 <http://data.europa.eu/esco/skill/4c476f5c-6ece-41e4-a97c-62d4244057e8> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
@@ -25114,6 +25238,7 @@
 <http://data.europa.eu/esco/skill/4c772721-9280-49cb-9988-b6ea3d36b06d> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3d54fec5-d9cb-45a0-bf8d-ffaf3790a5bb> .
 <http://data.europa.eu/esco/skill/4c772721-9280-49cb-9988-b6ea3d36b06d> <http://www.w3.org/2004/02/skos/core#definition> "Kunne unngå trusler mot det psykiske velværet, for eksempel ved bruk av digital teknologi, herunder å opprettholde en sunn balanse mellom arbeid og fritid."@nb .
 <http://data.europa.eu/esco/skill/4c772721-9280-49cb-9988-b6ea3d36b06d> <http://www.w3.org/2004/02/skos/core#prefLabel> "holde seg i god psykisk form"@nb .
+<http://data.europa.eu/esco/skill/4c772721-9280-49cb-9988-b6ea3d36b06d> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/4c772721-9280-49cb-9988-b6ea3d36b06d> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/05ae3e87-36ad-428f-a086-8a2ed458db3b> .
 <http://data.europa.eu/esco/skill/4c831013-9027-4ec6-83de-c5c19e68d083> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/061f56c6-36eb-4aa7-b5ef-98b7a569da1c> .
@@ -25309,6 +25434,7 @@
 <http://data.europa.eu/esco/skill/4cde32b5-fc2f-4257-a8b9-5b15a67ee3e5> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3d54fec5-d9cb-45a0-bf8d-ffaf3790a5bb> .
 <http://data.europa.eu/esco/skill/4cde32b5-fc2f-4257-a8b9-5b15a67ee3e5> <http://www.w3.org/2004/02/skos/core#definition> "Forhindre at familiemedlemmer og andre utsettes for skade, herunder ved å gi førstehjelp ved ulykker, og yte støtte ved rekonvalesens."@nb .
 <http://data.europa.eu/esco/skill/4cde32b5-fc2f-4257-a8b9-5b15a67ee3e5> <http://www.w3.org/2004/02/skos/core#prefLabel> "beskytte andres helse"@nb .
+<http://data.europa.eu/esco/skill/4cde32b5-fc2f-4257-a8b9-5b15a67ee3e5> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/4cde32b5-fc2f-4257-a8b9-5b15a67ee3e5> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/4ce06d6b-f3df-40b6-b950-570be5008032> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/5589e8e0-48d9-4193-8c85-86ba9f17e0e9> .
 <http://data.europa.eu/esco/skill/4ce06d6b-f3df-40b6-b950-570be5008032> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/978ae3a2-0831-415a-8396-b84dde656fc5> .
@@ -25635,6 +25761,12 @@
 <http://data.europa.eu/esco/skill/4e09e2d2-e317-47d2-bf5e-1d6c66be3efc> <http://www.w3.org/2004/02/skos/core#prefLabel> "bygningers energiytelse"@nb .
 <http://data.europa.eu/esco/skill/4e09e2d2-e317-47d2-bf5e-1d6c66be3efc> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/4e09e2d2-e317-47d2-bf5e-1d6c66be3efc> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/4e2ce047-1912-468f-8c04-ab7374c4a761> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/4e2ce047-1912-468f-8c04-ab7374c4a761> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/4e2ce047-1912-468f-8c04-ab7374c4a761> <http://www.w3.org/2004/02/skos/core#definition> "Spille en aktiv rolle for å fremme sosial rettferdighet og konfrontere forskjellsbehandling på arbeidsplassen på grunnlag av kulturell identitet."@nb .
+<http://data.europa.eu/esco/skill/4e2ce047-1912-468f-8c04-ab7374c4a761> <http://www.w3.org/2004/02/skos/core#prefLabel> "støtte kulturelt mangfold"@nb .
+<http://data.europa.eu/esco/skill/4e2ce047-1912-468f-8c04-ab7374c4a761> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/4e2ce047-1912-468f-8c04-ab7374c4a761> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/4e373bb6-b9e1-4400-ba59-0313e88e8f94> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/6da80214-d360-49ec-b1e7-172ab0a0cb0c> .
 <http://data.europa.eu/esco/skill/4e373bb6-b9e1-4400-ba59-0313e88e8f94> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/b3cd0522-14a9-4e21-a7ee-c9a1f9c0de51> .
 <http://data.europa.eu/esco/skill/4e373bb6-b9e1-4400-ba59-0313e88e8f94> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/0152b59d-5005-470c-9273-ef321477d8dc> .
@@ -30057,6 +30189,14 @@
 <http://data.europa.eu/esco/skill/5a8d4d8c-ff64-4f82-945e-ec6f56e05cbe> <http://www.w3.org/2004/02/skos/core#prefLabel> "overvåke hygieneprosedyrer på gård"@nb .
 <http://data.europa.eu/esco/skill/5a8d4d8c-ff64-4f82-945e-ec6f56e05cbe> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/5a8d4d8c-ff64-4f82-945e-ec6f56e05cbe> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/5a927fa0-462e-4d54-ae12-97fd6ca45762> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/5a927fa0-462e-4d54-ae12-97fd6ca45762> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/5a927fa0-462e-4d54-ae12-97fd6ca45762> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/2b2c3254-7f6c-47e2-84f1-aece946fbfae> .
+<http://data.europa.eu/esco/skill/5a927fa0-462e-4d54-ae12-97fd6ca45762> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/7a147904-22b3-498a-b4d9-7bceeb86b45d> .
+<http://data.europa.eu/esco/skill/5a927fa0-462e-4d54-ae12-97fd6ca45762> <http://www.w3.org/2004/02/skos/core#definition> "Kontrollere egne følelser, behov og ønsker, slik at de er passende og til fordel for deltakere, kunder eller medarbeidere."@nb .
+<http://data.europa.eu/esco/skill/5a927fa0-462e-4d54-ae12-97fd6ca45762> <http://www.w3.org/2004/02/skos/core#prefLabel> "utøve selvkontroll"@nb .
+<http://data.europa.eu/esco/skill/5a927fa0-462e-4d54-ae12-97fd6ca45762> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/5a927fa0-462e-4d54-ae12-97fd6ca45762> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/5a9a6d45-f4e5-437a-8f2d-2671061917ea> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/07ba3429-cccd-435b-a7d0-c02ba962bbd9> .
 <http://data.europa.eu/esco/skill/5a9a6d45-f4e5-437a-8f2d-2671061917ea> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/15419750-d6e6-4ab8-a77b-b42794f2e168> .
 <http://data.europa.eu/esco/skill/5a9a6d45-f4e5-437a-8f2d-2671061917ea> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/3fa9a480-ceb3-4c2a-8a91-0508e1bb6ba5> .
@@ -30245,6 +30385,21 @@
 <http://data.europa.eu/esco/skill/5b0d14b1-0bf6-4f6b-b922-4becc213f0aa> <http://www.w3.org/2004/02/skos/core#prefLabel> "transportere farlig gods"@nb .
 <http://data.europa.eu/esco/skill/5b0d14b1-0bf6-4f6b-b922-4becc213f0aa> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/5b0d14b1-0bf6-4f6b-b922-4becc213f0aa> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#altLabel> "muliggjøre kundefokus"@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#altLabel> "sikre kundefokus"@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#altLabel> "tilby kundestøttetjenester"@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#altLabel> "trives med å håndtere kunder"@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#altLabel> "vise kundeorientering"@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#altLabel> "vise serviceorientert holdning"@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#altLabel> "være kundeorientert"@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#altLabel> "være vennlig mot kunder"@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#altLabel> "yte kundetjenester"@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#definition> "Forstå hva kundene ønsker, og innta en positiv holdning til dem ved rådgivning, salg av produkter eller tjenester eller behandling av klager."@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> <http://www.w3.org/2004/02/skos/core#prefLabel> "være kundeorientert"@nb .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/02e94cd6-8e6d-4e9b-b695-edb460c70528> .
 <http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/db3b1cb9-8460-4de0-8fc7-aff7a9a74b7e> .
 <http://data.europa.eu/esco/skill/5b1c2df7-93aa-4b7a-ae13-9f84cff79ba4> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -30346,6 +30501,20 @@
 <http://data.europa.eu/esco/skill/5b3a9b2e-3447-4874-accb-534c333eae4a> <http://www.w3.org/2004/02/skos/core#prefLabel> "vedlikeholde sprinkleranlegg"@nb .
 <http://data.europa.eu/esco/skill/5b3a9b2e-3447-4874-accb-534c333eae4a> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/5b3a9b2e-3447-4874-accb-534c333eae4a> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://www.w3.org/2004/02/skos/core#altLabel> "bruke moderasjonsteknikker"@nb .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://www.w3.org/2004/02/skos/core#altLabel> "gjennomføre moderering"@nb .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://www.w3.org/2004/02/skos/core#altLabel> "lede diskusjoner"@nb .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://www.w3.org/2004/02/skos/core#altLabel> "lede en diskusjon"@nb .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://www.w3.org/2004/02/skos/core#altLabel> "moderere workshops, konferanser eller arrangementer"@nb .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://www.w3.org/2004/02/skos/core#altLabel> "overvåke en diskusjon"@nb .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://www.w3.org/2004/02/skos/core#altLabel> "styre diskusjoner"@nb .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/6f142deb-03a9-4cd7-94ce-e0f023ae2169> .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://www.w3.org/2004/02/skos/core#definition> "Bruke modereringsteknikker og -metoder for å lede diskusjoner mellom to eller flere personer, herunder situasjoner som workshops, konferanser eller arrangementer på nett. Sørge for at debatten er korrekt og høflig."@nb .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> <http://www.w3.org/2004/02/skos/core#prefLabel> "moderere diskusjoner"@nb .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/5b46f572-7ced-4efd-b270-a81a164d521c> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/5b4e87d9-2da6-41ff-8aa0-47d4de94f83c> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/874a2080-a9b6-46a9-8662-c9b7d4208f73> .
 <http://data.europa.eu/esco/skill/5b4e87d9-2da6-41ff-8aa0-47d4de94f83c> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/49713da4-4e97-4f82-bd1c-16ce7f9179b7> .
 <http://data.europa.eu/esco/skill/5b4e87d9-2da6-41ff-8aa0-47d4de94f83c> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/5dd01019-3999-4d90-bc8a-7a04b0b208b0> .
@@ -30752,6 +30921,7 @@
 <http://data.europa.eu/esco/skill/5c3ab99d-a3f1-4620-9602-d12d2151a03d> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/44ff6716-7d71-4a16-821b-61d10e9e290d> .
 <http://data.europa.eu/esco/skill/5c3ab99d-a3f1-4620-9602-d12d2151a03d> <http://www.w3.org/2004/02/skos/core#definition> "Utvikle og anvende viten om den fysiske verden og dens rådende prinsipper, for eksempel ved å fremsette rimelige forutsigelser om årsak og virkning, utarbeide tester for å verifisere disse forutsigelsene og utføre målinger ved bruk av egnede enheter, verktøy og utstyr."@nb .
 <http://data.europa.eu/esco/skill/5c3ab99d-a3f1-4620-9602-d12d2151a03d> <http://www.w3.org/2004/02/skos/core#prefLabel> "anvende kunnskap innen vitenskap, teknologi og ingeniørfag"@nb .
+<http://data.europa.eu/esco/skill/5c3ab99d-a3f1-4620-9602-d12d2151a03d> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/5c3ab99d-a3f1-4620-9602-d12d2151a03d> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/5c48050b-c4ca-467e-a4d3-9547bf362a17> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/36095ccd-c62d-4f1f-8af7-1fd10618b044> .
 <http://data.europa.eu/esco/skill/5c48050b-c4ca-467e-a4d3-9547bf362a17> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -30775,7 +30945,14 @@
 <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/edc72cfe-78a8-4531-b00f-92992a0bb8cb> .
 <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> <http://www.w3.org/2004/02/skos/core#definition> "Ha evne til å forestille seg legemers posisjon og forholdet mellom dem i tredimensjonale rom, og utvikle en god sans for proporsjoner."@nb .
 <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> <http://www.w3.org/2004/02/skos/core#prefLabel> "prosessere spatial informasjon"@nb .
+<http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/5c59dac1-0547-4068-b43c-ac59f1344448> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/5c59dac1-0547-4068-b43c-ac59f1344448> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/5c59dac1-0547-4068-b43c-ac59f1344448> <http://www.w3.org/2004/02/skos/core#definition> "Engasjere seg med andre i henhold til de vanlige skikkene og forventet sosial atferd som er passende i sammenhengen."@nb .
+<http://data.europa.eu/esco/skill/5c59dac1-0547-4068-b43c-ac59f1344448> <http://www.w3.org/2004/02/skos/core#prefLabel> "vise gode manerer"@nb .
+<http://data.europa.eu/esco/skill/5c59dac1-0547-4068-b43c-ac59f1344448> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/5c59dac1-0547-4068-b43c-ac59f1344448> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/5c606d18-6404-4047-b235-350f18e11827> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/38395ab3-766c-4c6c-8d96-430eff19ec8d> .
 <http://data.europa.eu/esco/skill/5c606d18-6404-4047-b235-350f18e11827> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
 <http://data.europa.eu/esco/skill/5c606d18-6404-4047-b235-350f18e11827> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/knowledge> .
@@ -30887,6 +31064,7 @@
 <http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/d6e97b91-b75d-45f5-8566-667798957b0f> .
 <http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> <http://www.w3.org/2004/02/skos/core#definition> "Utvise interkulturell forståelse og respekt for kulturelle verdier og normer. Utvise toleranse og forståelse for andre menneskers og kulturers verdier og normer, uavhengig av under hvilke omstendigheter, når og hvor de oppsto."@nb .
 <http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> <http://www.w3.org/2004/02/skos/core#prefLabel> "respektere mangfoldet av kulturelle verdier og normer"@nb .
+<http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/5ca9f3d6-d7dd-4bb1-a4ca-75c6b14b7b6f> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/4ad4024e-d1d3-4dea-b6d1-2c7948111dce> .
 <http://data.europa.eu/esco/skill/5ca9f3d6-d7dd-4bb1-a4ca-75c6b14b7b6f> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/98c429ad-128e-467e-803a-9a6dc1ceed72> .
@@ -30915,6 +31093,7 @@
 <http://data.europa.eu/esco/skill/5cd1930c-278d-4929-b413-27352f5b3687> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/2b2c3254-7f6c-47e2-84f1-aece946fbfae> .
 <http://data.europa.eu/esco/skill/5cd1930c-278d-4929-b413-27352f5b3687> <http://www.w3.org/2004/02/skos/core#definition> "Tåle usikkerhet og arbeide konstruktivt i uventede og uforutsigbare situasjoner."@nb .
 <http://data.europa.eu/esco/skill/5cd1930c-278d-4929-b413-27352f5b3687> <http://www.w3.org/2004/02/skos/core#prefLabel> "takle usikkerhet"@nb .
+<http://data.europa.eu/esco/skill/5cd1930c-278d-4929-b413-27352f5b3687> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/5cd1930c-278d-4929-b413-27352f5b3687> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/5cd20131-046a-4273-a27c-a7eea0961ca5> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/0da75680-fbf9-44d8-802a-ac12eb425a34> .
 <http://data.europa.eu/esco/skill/5cd20131-046a-4273-a27c-a7eea0961ca5> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/31cc4199-703c-4f8a-9b46-a2070a6d35df> .
@@ -32137,6 +32316,7 @@
 <http://data.europa.eu/esco/skill/609a8ac1-9d29-4237-9886-596dbbe7ca8a> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/6f142deb-03a9-4cd7-94ce-e0f023ae2169> .
 <http://data.europa.eu/esco/skill/609a8ac1-9d29-4237-9886-596dbbe7ca8a> <http://www.w3.org/2004/02/skos/core#definition> "Snakke strukturert, bevisst og direkte til en gruppe lyttere for å informere, påvirke eller underholde dem."@nb .
 <http://data.europa.eu/esco/skill/609a8ac1-9d29-4237-9886-596dbbe7ca8a> <http://www.w3.org/2004/02/skos/core#prefLabel> "opptre foran et publikum"@nb .
+<http://data.europa.eu/esco/skill/609a8ac1-9d29-4237-9886-596dbbe7ca8a> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/609a8ac1-9d29-4237-9886-596dbbe7ca8a> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/609d6bb4-db16-4578-87fc-57b11a701cc2> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
 <http://data.europa.eu/esco/skill/609d6bb4-db16-4578-87fc-57b11a701cc2> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/knowledge> .
@@ -32204,6 +32384,7 @@
 <http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/036afa6e-cdde-4b38-a53a-8e7910a840e1> .
 <http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> <http://www.w3.org/2004/02/skos/core#definition> "Arbeide selvsikkert i en gruppe, der alle gjør sin del."@nb .
 <http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> <http://www.w3.org/2004/02/skos/core#prefLabel> "arbeide i team"@nb .
+<http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/60ccdd6a-c100-43cf-9797-543a5c42b922> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/59bbece0-d1dc-4f4a-845e-1523f68afb2d> .
 <http://data.europa.eu/esco/skill/60ccdd6a-c100-43cf-9797-543a5c42b922> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/8d765d88-c8d6-406e-8dfe-e37c5aa89be6> .
@@ -34042,6 +34223,13 @@
 <http://data.europa.eu/esco/skill/667cbbaf-f377-46d8-8f2d-1f6d8a55d74a> <http://www.w3.org/2004/02/skos/core#prefLabel> "pakke varer"@nb .
 <http://data.europa.eu/esco/skill/667cbbaf-f377-46d8-8f2d-1f6d8a55d74a> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/667cbbaf-f377-46d8-8f2d-1f6d8a55d74a> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/669b75d8-671c-4a1c-8e0b-6466c513c27d> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/669b75d8-671c-4a1c-8e0b-6466c513c27d> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/669b75d8-671c-4a1c-8e0b-6466c513c27d> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/2b2c3254-7f6c-47e2-84f1-aece946fbfae> .
+<http://data.europa.eu/esco/skill/669b75d8-671c-4a1c-8e0b-6466c513c27d> <http://www.w3.org/2004/02/skos/core#definition> "Vise grader av modenhet ved å forstå egne kvaliteter og evner som kan være kilder til sikker fremtreden i ulike situasjoner."@nb .
+<http://data.europa.eu/esco/skill/669b75d8-671c-4a1c-8e0b-6466c513c27d> <http://www.w3.org/2004/02/skos/core#prefLabel> "utvise sikker fremtreden"@nb .
+<http://data.europa.eu/esco/skill/669b75d8-671c-4a1c-8e0b-6466c513c27d> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/669b75d8-671c-4a1c-8e0b-6466c513c27d> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/669fd6f4-92a8-4ed7-8cf9-48cd3fca4f20> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/88760821-9df4-47a6-a1c2-ac08b9759396> .
 <http://data.europa.eu/esco/skill/669fd6f4-92a8-4ed7-8cf9-48cd3fca4f20> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
 <http://data.europa.eu/esco/skill/669fd6f4-92a8-4ed7-8cf9-48cd3fca4f20> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -34462,6 +34650,12 @@
 <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> <http://www.w3.org/2004/02/skos/core#prefLabel> "avdekke defekt i motorer"@nb .
 <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/6816e28f-a48d-41c7-8492-309f50c049fc> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/6816e28f-a48d-41c7-8492-309f50c049fc> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/6816e28f-a48d-41c7-8492-309f50c049fc> <http://www.w3.org/2004/02/skos/core#definition> "Overholde bransjens lover, regler og retningslinjer for hygiene på arbeidsplassen."@nb .
+<http://data.europa.eu/esco/skill/6816e28f-a48d-41c7-8492-309f50c049fc> <http://www.w3.org/2004/02/skos/core#prefLabel> "følge hygienisk arbeidspraksis"@nb .
+<http://data.europa.eu/esco/skill/6816e28f-a48d-41c7-8492-309f50c049fc> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/6816e28f-a48d-41c7-8492-309f50c049fc> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/68174d5f-1646-42e2-b765-6a66cd1e59ae> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/fe4a72af-6206-4d86-90c1-b5fb4b5ba2b2> .
 <http://data.europa.eu/esco/skill/68174d5f-1646-42e2-b765-6a66cd1e59ae> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
 <http://data.europa.eu/esco/skill/68174d5f-1646-42e2-b765-6a66cd1e59ae> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -34976,6 +35170,12 @@
 <http://data.europa.eu/esco/skill/6984c5db-52b1-456b-bb5a-781ff43ee23c> <http://www.w3.org/2004/02/skos/core#prefLabel> "risikovurdering for vindusvask"@nb .
 <http://data.europa.eu/esco/skill/6984c5db-52b1-456b-bb5a-781ff43ee23c> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/6984c5db-52b1-456b-bb5a-781ff43ee23c> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/698be2d3-8768-422d-a2d3-1cb701816089> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/698be2d3-8768-422d-a2d3-1cb701816089> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/698be2d3-8768-422d-a2d3-1cb701816089> <http://www.w3.org/2004/02/skos/core#definition> "Identifisere digital informasjon via søkemotorer, og vurdere relevans og formål."@nb .
+<http://data.europa.eu/esco/skill/698be2d3-8768-422d-a2d3-1cb701816089> <http://www.w3.org/2004/02/skos/core#prefLabel> "søke etter informasjon på nettet"@nb .
+<http://data.europa.eu/esco/skill/698be2d3-8768-422d-a2d3-1cb701816089> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/698be2d3-8768-422d-a2d3-1cb701816089> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/69925c23-6fed-4baa-8bf3-e5aaeb6b0b54> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/a784b063-89cf-441b-9624-deed9dbdeae6> .
 <http://data.europa.eu/esco/skill/69925c23-6fed-4baa-8bf3-e5aaeb6b0b54> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/69925c23-6fed-4baa-8bf3-e5aaeb6b0b54> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -34990,6 +35190,7 @@
 <http://data.europa.eu/esco/skill/699e7c26-6502-4e78-a823-3656ff5a5b8b> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/82463bb1-85d1-4e99-a4ce-08508fc3b2a3> .
 <http://data.europa.eu/esco/skill/699e7c26-6502-4e78-a823-3656ff5a5b8b> <http://www.w3.org/2004/02/skos/core#definition> "Veilede eller lære andre ved hjelp av relevant kunnskap og støtte."@nb .
 <http://data.europa.eu/esco/skill/699e7c26-6502-4e78-a823-3656ff5a5b8b> <http://www.w3.org/2004/02/skos/core#prefLabel> "instruere andre"@nb .
+<http://data.europa.eu/esco/skill/699e7c26-6502-4e78-a823-3656ff5a5b8b> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/699e7c26-6502-4e78-a823-3656ff5a5b8b> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/69ab1f34-a861-49ab-96bb-1f235002d3f1> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/bd22a34c-1dc2-48df-a254-66e5d03dec12> .
 <http://data.europa.eu/esco/skill/69ab1f34-a861-49ab-96bb-1f235002d3f1> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
@@ -35476,6 +35677,7 @@
 <http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3399045f-8078-4066-8b46-475b49b260ab> .
 <http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc> <http://www.w3.org/2004/02/skos/core#definition> "Bruke utstyr som skjerm, mus, tastatur, lagringsmedia, skrivere og skannere for å utføre operasjoner som å koble til, starte opp, avslutte, starte på nytt, lagre filer og andre operasjoner."@nb .
 <http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc> <http://www.w3.org/2004/02/skos/core#prefLabel> "bruke digital maskinvare"@nb .
+<http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
 <http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -35488,6 +35690,7 @@
 <http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/66fdc34c-2326-4baa-b8ff-7a1d1015fe3a> .
 <http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> <http://www.w3.org/2004/02/skos/core#definition> "Forstå oppgaver og tilhørende prosesser. Organisere informasjon, objekter og ressurser ved bruk av systematiske metoder og i henhold til gitte standarder, og sørge for at oppgaven mestres."@nb .
 <http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> <http://www.w3.org/2004/02/skos/core#prefLabel> "organisere informasjon, objekter og ressurser"@nb .
+<http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/6b3581c6-b768-4530-bbd3-ae8ba3c8a8c6> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/b5b8c259-7557-4f5f-9f56-155b038946c1> .
 <http://data.europa.eu/esco/skill/6b3581c6-b768-4530-bbd3-ae8ba3c8a8c6> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
@@ -36444,6 +36647,12 @@
 <http://data.europa.eu/esco/skill/6dce7757-c416-4cec-bd2e-9f2319438c48> <http://www.w3.org/2004/02/skos/core#prefLabel> "være trygg i usikre omgivelser"@nb .
 <http://data.europa.eu/esco/skill/6dce7757-c416-4cec-bd2e-9f2319438c48> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/6dce7757-c416-4cec-bd2e-9f2319438c48> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/6e04cc9f-d409-49f0-9224-d9cb32e83631> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/6e04cc9f-d409-49f0-9224-d9cb32e83631> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/6e04cc9f-d409-49f0-9224-d9cb32e83631> <http://www.w3.org/2004/02/skos/core#definition> "Forandre en persons tro, holdninger, intensjoner, motivasjoner eller atferd ved hjelp av begrunnede argumenter."@nb .
+<http://data.europa.eu/esco/skill/6e04cc9f-d409-49f0-9224-d9cb32e83631> <http://www.w3.org/2004/02/skos/core#prefLabel> "overtale andre"@nb .
+<http://data.europa.eu/esco/skill/6e04cc9f-d409-49f0-9224-d9cb32e83631> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/6e04cc9f-d409-49f0-9224-d9cb32e83631> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/6e16c525-3985-496f-a167-a877aa659e1a> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/7309ab2d-e2ba-4ccb-b658-6b0a8bd8c4eb> .
 <http://data.europa.eu/esco/skill/6e16c525-3985-496f-a167-a877aa659e1a> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/6e16c525-3985-496f-a167-a877aa659e1a> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -36965,6 +37174,7 @@
 <http://data.europa.eu/esco/skill/6fc6f757-6baa-49fe-9a82-6ba6a52f2e13> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/edc72cfe-78a8-4531-b00f-92992a0bb8cb> .
 <http://data.europa.eu/esco/skill/6fc6f757-6baa-49fe-9a82-6ba6a52f2e13> <http://www.w3.org/2004/02/skos/core#definition> "Utvise forståelse av matematiske begreper og konsepter, og anvende grunnleggende matematiske prinsipper og prosesser for å tolke data og fakta."@nb .
 <http://data.europa.eu/esco/skill/6fc6f757-6baa-49fe-9a82-6ba6a52f2e13> <http://www.w3.org/2004/02/skos/core#prefLabel> "tolke matematisk informasjon"@nb .
+<http://data.europa.eu/esco/skill/6fc6f757-6baa-49fe-9a82-6ba6a52f2e13> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/6fc6f757-6baa-49fe-9a82-6ba6a52f2e13> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/6fcf2fc7-7b74-42e5-845f-f5854fd44f37> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/2a2da883-8af5-4b98-832e-00e6681b22c3> .
 <http://data.europa.eu/esco/skill/6fcf2fc7-7b74-42e5-845f-f5854fd44f37> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/501a3798-08bf-4475-88d2-0e8c9befb101> .
@@ -37929,6 +38139,7 @@
 <http://data.europa.eu/esco/skill/72d1fa5d-1b7f-48e7-84e3-6e779841ddf1> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/925af2b5-2f4d-4cce-92cc-79e1ff887c7d> .
 <http://data.europa.eu/esco/skill/72d1fa5d-1b7f-48e7-84e3-6e779841ddf1> <http://www.w3.org/2004/02/skos/core#definition> "Vise tilknytning til en gruppe eller organisasjon blant annet ved å dele og representere dens verdier."@nb .
 <http://data.europa.eu/esco/skill/72d1fa5d-1b7f-48e7-84e3-6e779841ddf1> <http://www.w3.org/2004/02/skos/core#prefLabel> "utvise lojalitet"@nb .
+<http://data.europa.eu/esco/skill/72d1fa5d-1b7f-48e7-84e3-6e779841ddf1> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/72d1fa5d-1b7f-48e7-84e3-6e779841ddf1> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/72db08f1-94f7-4d43-84e7-04af4073e05e> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/57a09d3f-e3d6-49ad-8c88-d879fc4d0870> .
 <http://data.europa.eu/esco/skill/72db08f1-94f7-4d43-84e7-04af4073e05e> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
@@ -38984,6 +39195,7 @@
 <http://data.europa.eu/esco/skill/75d8e5d9-bef3-418b-9011-01bff9f27207> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/fe5eabaa-63f6-4c44-b405-fc3ded8d56cb> .
 <http://data.europa.eu/esco/skill/75d8e5d9-bef3-418b-9011-01bff9f27207> <http://www.w3.org/2004/02/skos/core#definition> "Veilede, coache og lede andre mot oppnåelse av felles mål, og omfavne en lederrolle ofte i en gruppe eller i et team. Utføre, handle og oppføre seg på en måte som inspirerer samarbeidspartnere til å følge eksemplet gitt av sine ledere."@nb .
 <http://data.europa.eu/esco/skill/75d8e5d9-bef3-418b-9011-01bff9f27207> <http://www.w3.org/2004/02/skos/core#prefLabel> "lede andre"@nb .
+<http://data.europa.eu/esco/skill/75d8e5d9-bef3-418b-9011-01bff9f27207> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/75d8e5d9-bef3-418b-9011-01bff9f27207> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/75dc6540-482e-424d-8bb1-e86621783cef> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/fb4819db-03fa-4dc1-a471-2cdc24dcbe6f> .
 <http://data.europa.eu/esco/skill/75dc6540-482e-424d-8bb1-e86621783cef> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -39561,6 +39773,7 @@
 <http://data.europa.eu/esco/skill/77b636e8-fab3-41a8-8022-1e0a354059dc> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/82463bb1-85d1-4e99-a4ce-08508fc3b2a3> .
 <http://data.europa.eu/esco/skill/77b636e8-fab3-41a8-8022-1e0a354059dc> <http://www.w3.org/2004/02/skos/core#definition> "Vise empati for å forebygge enhver form for symbolsk vold og isolasjon, og for å sikre at alle blir tatt hensyn til. Dette bør omfatte en evne til å forstå ulik muntlig og ikke-muntlig kommunikasjon om oppfatninger og følelser."@nb .
 <http://data.europa.eu/esco/skill/77b636e8-fab3-41a8-8022-1e0a354059dc> <http://www.w3.org/2004/02/skos/core#prefLabel> "vise empati"@nb .
+<http://data.europa.eu/esco/skill/77b636e8-fab3-41a8-8022-1e0a354059dc> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/77b636e8-fab3-41a8-8022-1e0a354059dc> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/77b8d33e-5948-4924-aefc-f4f4b7477576> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/02ff199e-38b3-45fd-b659-68846cfeeb92> .
 <http://data.europa.eu/esco/skill/77b8d33e-5948-4924-aefc-f4f4b7477576> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/3df28a39-9bfe-4e36-b394-a189ef967a74> .
@@ -39949,6 +40162,7 @@
 <http://data.europa.eu/esco/skill/7954861c-86d4-4529-afbb-2c23dab9ac74> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/6f142deb-03a9-4cd7-94ce-e0f023ae2169> .
 <http://data.europa.eu/esco/skill/7954861c-86d4-4529-afbb-2c23dab9ac74> <http://www.w3.org/2004/02/skos/core#definition> "Kommunisere med andre for å nå oppnå en felles forståelse eller løse en konflikt uten å miste oversikten over egne eller andres intensjoner eller mål."@nb .
 <http://data.europa.eu/esco/skill/7954861c-86d4-4529-afbb-2c23dab9ac74> <http://www.w3.org/2004/02/skos/core#prefLabel> "forhandle kompromiss"@nb .
+<http://data.europa.eu/esco/skill/7954861c-86d4-4529-afbb-2c23dab9ac74> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/7954861c-86d4-4529-afbb-2c23dab9ac74> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/7957b5f9-1f33-4ff8-84e9-e258b17882c2> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/da00cd76-22fe-450d-aefc-f4e4a3864171> .
 <http://data.europa.eu/esco/skill/7957b5f9-1f33-4ff8-84e9-e258b17882c2> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -40137,6 +40351,7 @@
 <http://data.europa.eu/esco/skill/7a147904-22b3-498a-b4d9-7bceeb86b45d> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/2b2c3254-7f6c-47e2-84f1-aece946fbfae> .
 <http://data.europa.eu/esco/skill/7a147904-22b3-498a-b4d9-7bceeb86b45d> <http://www.w3.org/2004/02/skos/core#definition> "Håndtere utfordringer, forstyrring og omveltning, og reise seg igjen etter motgang."@nb .
 <http://data.europa.eu/esco/skill/7a147904-22b3-498a-b4d9-7bceeb86b45d> <http://www.w3.org/2004/02/skos/core#prefLabel> "takle stress"@nb .
+<http://data.europa.eu/esco/skill/7a147904-22b3-498a-b4d9-7bceeb86b45d> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/7a147904-22b3-498a-b4d9-7bceeb86b45d> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/7a163630-7536-4748-a259-aa820d3be44b> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/c73521be-c039-4e22-b037-3b01b3f6f9d9> .
 <http://data.europa.eu/esco/skill/7a163630-7536-4748-a259-aa820d3be44b> <http://www.w3.org/2004/02/skos/core#prefLabel> "tilbud av helseomsorg eller medisinsk behandling"@nb .
@@ -40308,6 +40523,7 @@
 <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/14c41899-0224-4cbc-bd8c-e946ada2da87> .
 <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> <http://www.w3.org/2004/02/skos/core#definition> "Nå målene ved å bruke så lite tid, innsats eller kostnad som mulig."@nb .
 <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> <http://www.w3.org/2004/02/skos/core#prefLabel> "arbeide effektivt"@nb .
+<http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/7a950986-27fe-4b6c-adf3-88f211e77019> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/1d196f32-05ca-4ea5-a347-4fccbb3da863> .
 <http://data.europa.eu/esco/skill/7a950986-27fe-4b6c-adf3-88f211e77019> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/75b63949-1b93-4bf2-a777-ccf978dc3e8a> .
@@ -41283,6 +41499,7 @@
 <http://data.europa.eu/esco/skill/7d9bace0-63d0-4848-ac87-350a98082c12> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/d6e97b91-b75d-45f5-8566-667798957b0f> .
 <http://data.europa.eu/esco/skill/7d9bace0-63d0-4848-ac87-350a98082c12> <http://www.w3.org/2004/02/skos/core#definition> "Delta aktivt i aktiviteter av felles eller offentlig interesse, for eksempel samfunns-, eller nabolagsinitiativer, veldedige tiltak og frivillige organisasjoner."@nb .
 <http://data.europa.eu/esco/skill/7d9bace0-63d0-4848-ac87-350a98082c12> <http://www.w3.org/2004/02/skos/core#prefLabel> "delta aktivt i samfunnet"@nb .
+<http://data.europa.eu/esco/skill/7d9bace0-63d0-4848-ac87-350a98082c12> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/7d9bace0-63d0-4848-ac87-350a98082c12> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/7d9d73a8-08df-4624-a5df-95cb220c0736> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/489b9a38-89a2-425c-95b9-79cec66379e1> .
 <http://data.europa.eu/esco/skill/7d9d73a8-08df-4624-a5df-95cb220c0736> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/49713da4-4e97-4f82-bd1c-16ce7f9179b7> .
@@ -41369,6 +41586,7 @@
 <http://data.europa.eu/esco/skill/7dd94ad3-13d6-43fe-8b94-51fcbf67ced9> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/fff1d675-c36a-4c12-9cd4-407f21ccd06a> .
 <http://data.europa.eu/esco/skill/7dd94ad3-13d6-43fe-8b94-51fcbf67ced9> <http://www.w3.org/2004/02/skos/core#definition> "Bedømme og forsvare bedømmelser basert på interne bevis og eksterne kriterier. Vurdere troverdigheten og påliteligheten til informasjon kritisk før den tas i bruk eller formidles til andre. Utvikle uavhengig og kritisk tenkning."@nb .
 <http://data.europa.eu/esco/skill/7dd94ad3-13d6-43fe-8b94-51fcbf67ced9> <http://www.w3.org/2004/02/skos/core#prefLabel> "tenke kritisk"@nb .
+<http://data.europa.eu/esco/skill/7dd94ad3-13d6-43fe-8b94-51fcbf67ced9> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/7dd94ad3-13d6-43fe-8b94-51fcbf67ced9> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/7dda0798-1fb5-40ed-982a-ebd2825082b2> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/2de007c6-3223-4cd1-9561-e8a2e16e049d> .
 <http://data.europa.eu/esco/skill/7dda0798-1fb5-40ed-982a-ebd2825082b2> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/fc1da244-880f-407d-bfa7-789a2f468ea0> .
@@ -41830,6 +42048,18 @@
 <http://data.europa.eu/esco/skill/7f2c62b0-928a-4da2-a578-674940a14063> <http://www.w3.org/2004/02/skos/core#prefLabel> "kranlastdiagrammer"@nb .
 <http://data.europa.eu/esco/skill/7f2c62b0-928a-4da2-a578-674940a14063> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/7f2c62b0-928a-4da2-a578-674940a14063> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> <http://www.w3.org/2004/02/skos/core#altLabel> "fremme bærekraft"@nb .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> <http://www.w3.org/2004/02/skos/core#altLabel> "fremme miljøvennlig atferd"@nb .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> <http://www.w3.org/2004/02/skos/core#altLabel> "gå inn for bærekraft"@nb .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> <http://www.w3.org/2004/02/skos/core#altLabel> "informere om bærekraft"@nb .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> <http://www.w3.org/2004/02/skos/core#altLabel> "oppmuntre andre til å respektere miljøet"@nb .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/80cf002a-6586-4db7-9c9a-88325a9a5e1b> .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> <http://www.w3.org/2004/02/skos/core#definition> "Informere om og fremme miljøvennlig atferd i sosiale medier og på jobb."@nb .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> <http://www.w3.org/2004/02/skos/core#prefLabel> "engasjere andre i en miljøvennlig livsstil"@nb .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/7f321b88-3d16-4e30-8163-5494ca8ce978> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/7f42541b-d3ce-44e0-acd3-443947a13bed> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/bdf2dd9d-6c92-46f4-a8e7-76c12302d3e7> .
 <http://data.europa.eu/esco/skill/7f42541b-d3ce-44e0-acd3-443947a13bed> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/7f42541b-d3ce-44e0-acd3-443947a13bed> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -42153,6 +42383,12 @@
 <http://data.europa.eu/esco/skill/808d259b-acce-4ca5-8169-97bb1790f346> <http://www.w3.org/2004/02/skos/core#prefLabel> "utføre raskt hårstilbytte"@nb .
 <http://data.europa.eu/esco/skill/808d259b-acce-4ca5-8169-97bb1790f346> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/808d259b-acce-4ca5-8169-97bb1790f346> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/80967a8e-0477-4c5e-8550-4af6e5157626> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/80967a8e-0477-4c5e-8550-4af6e5157626> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/80967a8e-0477-4c5e-8550-4af6e5157626> <http://www.w3.org/2004/02/skos/core#definition> "Manipulere, organisere og tolke geografiske opplysninger."@nb .
+<http://data.europa.eu/esco/skill/80967a8e-0477-4c5e-8550-4af6e5157626> <http://www.w3.org/2004/02/skos/core#prefLabel> "arbeide med form og rom"@nb .
+<http://data.europa.eu/esco/skill/80967a8e-0477-4c5e-8550-4af6e5157626> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/80967a8e-0477-4c5e-8550-4af6e5157626> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/80c042de-bc1a-4d78-b266-35bc80ba3093> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/66542dd6-05a6-4d9e-97ff-3f4858c31ff9> .
 <http://data.europa.eu/esco/skill/80c042de-bc1a-4d78-b266-35bc80ba3093> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/80c042de-bc1a-4d78-b266-35bc80ba3093> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/knowledge> .
@@ -43328,6 +43564,7 @@
 <http://data.europa.eu/esco/skill/83e6510b-ffeb-4aec-959c-4265fd0ff7b7> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/14c41899-0224-4cbc-bd8c-e946ada2da87> .
 <http://data.europa.eu/esco/skill/83e6510b-ffeb-4aec-959c-4265fd0ff7b7> <http://www.w3.org/2004/02/skos/core#definition> "Gjennomføre en oppgave ved å ta hensyn til alle berørte parter, uavhengig av størrelse."@nb .
 <http://data.europa.eu/esco/skill/83e6510b-ffeb-4aec-959c-4265fd0ff7b7> <http://www.w3.org/2004/02/skos/core#prefLabel> "ha øye for detaljer"@nb .
+<http://data.europa.eu/esco/skill/83e6510b-ffeb-4aec-959c-4265fd0ff7b7> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/83e6510b-ffeb-4aec-959c-4265fd0ff7b7> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/83f713fb-2650-441f-8e5d-552e88b9f382> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/83f713fb-2650-441f-8e5d-552e88b9f382> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -44893,6 +45130,7 @@
 <http://data.europa.eu/esco/skill/88b0c49e-7c2e-4ccc-aca3-fbd4bbc2081c> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3d54fec5-d9cb-45a0-bf8d-ffaf3790a5bb> .
 <http://data.europa.eu/esco/skill/88b0c49e-7c2e-4ccc-aca3-fbd4bbc2081c> <http://www.w3.org/2004/02/skos/core#definition> "Identifisere og velge de riktige helsetjenesteyterne og -tjenestene (forebygging eller behandling), og håndtere medisinering på en trygg måte."@nb .
 <http://data.europa.eu/esco/skill/88b0c49e-7c2e-4ccc-aca3-fbd4bbc2081c> <http://www.w3.org/2004/02/skos/core#prefLabel> "gjøre ansvarlig bruk av helsevesenet"@nb .
+<http://data.europa.eu/esco/skill/88b0c49e-7c2e-4ccc-aca3-fbd4bbc2081c> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/88b0c49e-7c2e-4ccc-aca3-fbd4bbc2081c> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/88cb31a2-bd69-4511-b31a-3bc562f93375> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/500b7b14-507c-4c49-816d-c1d0b05b85e4> .
 <http://data.europa.eu/esco/skill/88cb31a2-bd69-4511-b31a-3bc562f93375> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/929b5c9d-2fbf-44f2-980d-2ac6c0dc212f> .
@@ -45111,6 +45349,7 @@
 <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/d6e97b91-b75d-45f5-8566-667798957b0f> .
 <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> <http://www.w3.org/2004/02/skos/core#definition> "Bidra aktivt til å fremme prinsippene knyttet til demokrati, sosial rettferdighet og rettssikkerhet. Bekjempe diskriminering basert på etnisk, kulturell eller seksuell identitet eller orientering, eller på sosial, utdanningsmessig eller økonomisk bakgrunn, ved å ta hensyn til og tydeliggjøre følgene for ulike grupper av planlagte handlinger, inkludert lovgivning, politikk eller programmer."@nb .
 <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> <http://www.w3.org/2004/02/skos/core#prefLabel> "fremme prinsippene for demokrati og rettssikkerhet"@nb .
+<http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/89732ae0-bf39-4fe3-928a-726c74ae8c63> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
 <http://data.europa.eu/esco/skill/89732ae0-bf39-4fe3-928a-726c74ae8c63> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -48263,6 +48502,7 @@
 <http://data.europa.eu/esco/skill/93350886-a21b-4e61-a1b1-319a325c0f90> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/6115ff80-3d84-4e87-8e2b-6ede7ee004b4> .
 <http://data.europa.eu/esco/skill/93350886-a21b-4e61-a1b1-319a325c0f90> <http://www.w3.org/2004/02/skos/core#definition> "Ha evnen til å uttrykke kreativt gjennom sang, dans, instrumentalmusikk, skuespill eller kunst."@nb .
 <http://data.europa.eu/esco/skill/93350886-a21b-4e61-a1b1-319a325c0f90> <http://www.w3.org/2004/02/skos/core#prefLabel> "uttrykke seg kreativt"@nb .
+<http://data.europa.eu/esco/skill/93350886-a21b-4e61-a1b1-319a325c0f90> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/93350886-a21b-4e61-a1b1-319a325c0f90> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/933e7ccf-5d56-46ba-aca4-857f826a6b3a> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/d3fd0898-51f7-42a3-8f44-09408fc796f6> .
 <http://data.europa.eu/esco/skill/933e7ccf-5d56-46ba-aca4-857f826a6b3a> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/099c6bb0-22d3-4c5d-8bf5-70910af381ef> .
@@ -48553,6 +48793,12 @@
 <http://data.europa.eu/esco/skill/9438b0dc-062a-4893-b176-959706e4ae1e> <http://www.w3.org/2004/02/skos/core#prefLabel> "bruke miljøvennlige materialer"@nb .
 <http://data.europa.eu/esco/skill/9438b0dc-062a-4893-b176-959706e4ae1e> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/9438b0dc-062a-4893-b176-959706e4ae1e> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/943d07ec-fb75-4bb5-bc07-20451a2b66e4> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/943d07ec-fb75-4bb5-bc07-20451a2b66e4> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/943d07ec-fb75-4bb5-bc07-20451a2b66e4> <http://www.w3.org/2004/02/skos/core#definition> "Se forbi nåtiden og visualisere hva fremtiden kan bringer for de som tar initiativ."@nb .
+<http://data.europa.eu/esco/skill/943d07ec-fb75-4bb5-bc07-20451a2b66e4> <http://www.w3.org/2004/02/skos/core#prefLabel> "identifisere muligheter"@nb .
+<http://data.europa.eu/esco/skill/943d07ec-fb75-4bb5-bc07-20451a2b66e4> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/943d07ec-fb75-4bb5-bc07-20451a2b66e4> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/943f91e8-bde8-46b9-9dd3-3e1306ef49c0> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/1b8c2a8e-204e-4035-bf88-921564e6df2e> .
 <http://data.europa.eu/esco/skill/943f91e8-bde8-46b9-9dd3-3e1306ef49c0> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/32fcdc6f-1c8a-44e9-99b8-5519e4db4414> .
 <http://data.europa.eu/esco/skill/943f91e8-bde8-46b9-9dd3-3e1306ef49c0> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -48947,6 +49193,12 @@
 <http://data.europa.eu/esco/skill/959637fa-7505-4497-8c71-f3b6f4bbe389> <http://www.w3.org/2004/02/skos/core#prefLabel> "settemaskiner"@nb .
 <http://data.europa.eu/esco/skill/959637fa-7505-4497-8c71-f3b6f4bbe389> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/959637fa-7505-4497-8c71-f3b6f4bbe389> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/95a41cf5-4037-4c96-91a8-c34b41637224> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/95a41cf5-4037-4c96-91a8-c34b41637224> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/95a41cf5-4037-4c96-91a8-c34b41637224> <http://www.w3.org/2004/02/skos/core#definition> "Veilede eller hjelpe mindre erfarne eller mindre velinformerte personer på arbeidsplassen."@nb .
+<http://data.europa.eu/esco/skill/95a41cf5-4037-4c96-91a8-c34b41637224> <http://www.w3.org/2004/02/skos/core#prefLabel> "støtte kolleger"@nb .
+<http://data.europa.eu/esco/skill/95a41cf5-4037-4c96-91a8-c34b41637224> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/95a41cf5-4037-4c96-91a8-c34b41637224> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/95b019ad-14be-47a2-aa48-e754e65f6e57> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/2a8d6b4c-661d-4620-8f68-2c99e78f512e> .
 <http://data.europa.eu/esco/skill/95b019ad-14be-47a2-aa48-e754e65f6e57> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
 <http://data.europa.eu/esco/skill/95b019ad-14be-47a2-aa48-e754e65f6e57> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -49361,6 +49613,7 @@
 <http://data.europa.eu/esco/skill/96de2e86-e287-41f2-88ab-15a2343afc6f> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/6f142deb-03a9-4cd7-94ce-e0f023ae2169> .
 <http://data.europa.eu/esco/skill/96de2e86-e287-41f2-88ab-15a2343afc6f> <http://www.w3.org/2004/02/skos/core#definition> "Mekle i konflikter og anspente situasjoner ved å gå mellom partene og forsøke å forsone, løse problemer og komme fram til en avtale. Løse en konflikt på en slik måte at ingen føler seg dårlig behandlet, og unngå krangling fra første stund."@nb .
 <http://data.europa.eu/esco/skill/96de2e86-e287-41f2-88ab-15a2343afc6f> <http://www.w3.org/2004/02/skos/core#prefLabel> "løse konflikter"@nb .
+<http://data.europa.eu/esco/skill/96de2e86-e287-41f2-88ab-15a2343afc6f> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/96de2e86-e287-41f2-88ab-15a2343afc6f> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/96df82ef-8a48-4021-9184-e2f873af3056> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/6e11692c-fc72-4ef4-8bcf-6bd19a6b0ea3> .
 <http://data.europa.eu/esco/skill/96df82ef-8a48-4021-9184-e2f873af3056> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/7dbb116c-a4e7-41e8-9f28-c8a738d93e28> .
@@ -49915,6 +50168,7 @@
 <http://data.europa.eu/esco/skill/98a999db-72d5-4657-a0b0-2f850afd4368> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/6115ff80-3d84-4e87-8e2b-6ede7ee004b4> .
 <http://data.europa.eu/esco/skill/98a999db-72d5-4657-a0b0-2f850afd4368> <http://www.w3.org/2004/02/skos/core#definition> "Utvise estetisk sans, interesse for og åpenhet for kunstneriske uttrykk fra ulike kulturelle bakgrunner."@nb .
 <http://data.europa.eu/esco/skill/98a999db-72d5-4657-a0b0-2f850afd4368> <http://www.w3.org/2004/02/skos/core#prefLabel> "sette pris på mangfoldige kulturelle og kunstneriske uttrykk"@nb .
+<http://data.europa.eu/esco/skill/98a999db-72d5-4657-a0b0-2f850afd4368> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/98a999db-72d5-4657-a0b0-2f850afd4368> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/98b28b00-81e6-41f0-8283-2335c9f5d3f3> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/4e0c14d6-b170-40f1-bcdc-703c0b92109b> .
 <http://data.europa.eu/esco/skill/98b28b00-81e6-41f0-8283-2335c9f5d3f3> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
@@ -50950,6 +51204,7 @@
 <http://data.europa.eu/esco/skill/9bf266a6-188b-4d17-a22f-2f266d76832b> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/f5c9eef3-0495-4747-9519-d71a58d252bd> .
 <http://data.europa.eu/esco/skill/9bf266a6-188b-4d17-a22f-2f266d76832b> <http://www.w3.org/2004/02/skos/core#definition> "Vise en positiv holdning til nye og utfordrende krav som bare kan oppfylles gjennom livslang læring."@nb .
 <http://data.europa.eu/esco/skill/9bf266a6-188b-4d17-a22f-2f266d76832b> <http://www.w3.org/2004/02/skos/core#prefLabel> "vise vilje til å lære"@nb .
+<http://data.europa.eu/esco/skill/9bf266a6-188b-4d17-a22f-2f266d76832b> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/9bf266a6-188b-4d17-a22f-2f266d76832b> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/9bfa8293-1f98-4b83-b3e0-a3e53b5766e3> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/18dafd4f-8c37-4276-b4b3-cfa31059b2b6> .
 <http://data.europa.eu/esco/skill/9bfa8293-1f98-4b83-b3e0-a3e53b5766e3> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/270528cf-2bf9-463d-aeaa-d169b1f767c1> .
@@ -51005,6 +51260,7 @@
 <http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/ccb6db6a-8538-431c-b740-5f241bdb71cf> .
 <http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> <http://www.w3.org/2004/02/skos/core#definition> "Bruke arbeidsemner, verktøy, presisjonsinstrumenter eller utstyr uavhengig for å utføre manuelle aktiviteter, med eller uten opplæring."@nb .
 <http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> <http://www.w3.org/2004/02/skos/core#prefLabel> "bruke utstyr, verktøy eller teknologi med presisjon"@nb .
+<http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/9c17f73f-345c-4c55-8b59-47b445941b7b> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/323b3684-86ec-40fa-81b4-bc52694ef168> .
 <http://data.europa.eu/esco/skill/9c17f73f-345c-4c55-8b59-47b445941b7b> <http://www.w3.org/2004/02/skos/core#prefLabel> "megle i og løse tvister"@nb .
@@ -51273,6 +51529,7 @@
 <http://data.europa.eu/esco/skill/9cfd2219-553c-4d67-81e5-951e87c65135> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/14c41899-0224-4cbc-bd8c-e946ada2da87> .
 <http://data.europa.eu/esco/skill/9cfd2219-553c-4d67-81e5-951e87c65135> <http://www.w3.org/2004/02/skos/core#definition> "Holde seg konsentrert i lange perioder for å kunne utføre korrekte vurderinger og ta riktige beslutninger."@nb .
 <http://data.europa.eu/esco/skill/9cfd2219-553c-4d67-81e5-951e87c65135> <http://www.w3.org/2004/02/skos/core#prefLabel> "holde seg konsentrert i lange perioder"@nb .
+<http://data.europa.eu/esco/skill/9cfd2219-553c-4d67-81e5-951e87c65135> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/9cfd2219-553c-4d67-81e5-951e87c65135> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/9d00803f-5dde-4803-8111-416ed174676f> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/0b5dfc02-b825-4445-811d-d39ed442657e> .
 <http://data.europa.eu/esco/skill/9d00803f-5dde-4803-8111-416ed174676f> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/a30734bb-2f10-4747-a94c-75f5ec3c63a4> .
@@ -51466,6 +51723,12 @@
 <http://data.europa.eu/esco/skill/9d74924b-bb58-4998-9112-19da9238687b> <http://www.w3.org/2004/02/skos/core#prefLabel> "utvikle markedsføringsplaner for fottøy og lærvarer"@nb .
 <http://data.europa.eu/esco/skill/9d74924b-bb58-4998-9112-19da9238687b> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/9d74924b-bb58-4998-9112-19da9238687b> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/9d75743b-317a-4bc4-b93f-c72e3ceba377> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/9d75743b-317a-4bc4-b93f-c72e3ceba377> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/9d75743b-317a-4bc4-b93f-c72e3ceba377> <http://www.w3.org/2004/02/skos/core#definition> "Opptre på en forståelsesfull og støttende måte som tar høyde for andres behov og følelser."@nb .
+<http://data.europa.eu/esco/skill/9d75743b-317a-4bc4-b93f-c72e3ceba377> <http://www.w3.org/2004/02/skos/core#prefLabel> "vise hensyn"@nb .
+<http://data.europa.eu/esco/skill/9d75743b-317a-4bc4-b93f-c72e3ceba377> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/9d75743b-317a-4bc4-b93f-c72e3ceba377> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/9d75efb9-0c77-4f86-b5e7-99100808564a> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/8e24c53a-9dc6-46d1-986b-48a93f20df2a> .
 <http://data.europa.eu/esco/skill/9d75efb9-0c77-4f86-b5e7-99100808564a> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/98af7387-3974-457a-aa57-5397d1ea3949> .
 <http://data.europa.eu/esco/skill/9d75efb9-0c77-4f86-b5e7-99100808564a> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/a48b9a5a-5ded-482d-8cda-7fd097a32c16> .
@@ -52994,6 +53257,12 @@
 <http://data.europa.eu/esco/skill/a30bc8c8-1d7a-4629-82fc-24a0c07a30a2> <http://www.w3.org/2004/02/skos/core#definition> "Utvikle et helse- og velferdsprogram for vannressursene som dyrkes, i samråd med spesialister på fiskehelse."@nb .
 <http://data.europa.eu/esco/skill/a30bc8c8-1d7a-4629-82fc-24a0c07a30a2> <http://www.w3.org/2004/02/skos/core#prefLabel> "utvikle helseprogrammer for bestanden"@nb .
 <http://data.europa.eu/esco/skill/a30bc8c8-1d7a-4629-82fc-24a0c07a30a2> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/a311ab20-75df-4aff-8016-3142c5659d30> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/a311ab20-75df-4aff-8016-3142c5659d30> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/a311ab20-75df-4aff-8016-3142c5659d30> <http://www.w3.org/2004/02/skos/core#definition> "Ta imot gyldige og velbegrunnede uttalelser om ens arbeid på en positiv måte."@nb .
+<http://data.europa.eu/esco/skill/a311ab20-75df-4aff-8016-3142c5659d30> <http://www.w3.org/2004/02/skos/core#prefLabel> "ta imot konstruktiv kritikk"@nb .
+<http://data.europa.eu/esco/skill/a311ab20-75df-4aff-8016-3142c5659d30> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/a311ab20-75df-4aff-8016-3142c5659d30> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/a311f8ae-8244-45ef-9c3a-40e767940942> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/6e18b923-7c5f-42d7-8ff0-de8d8ba30dbf> .
 <http://data.europa.eu/esco/skill/a311f8ae-8244-45ef-9c3a-40e767940942> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/772e57c5-fb25-4b0c-8cc8-f8944a9edfbc> .
 <http://data.europa.eu/esco/skill/a311f8ae-8244-45ef-9c3a-40e767940942> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/88b21b2f-350c-4f41-9680-a53f8ea708ed> .
@@ -54062,6 +54331,7 @@
 <http://data.europa.eu/esco/skill/a628d2d1-f40a-4c37-a357-2801726f2996> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/13d301d0-98cb-414f-a8f9-a3f059228133> .
 <http://data.europa.eu/esco/skill/a628d2d1-f40a-4c37-a357-2801726f2996> <http://www.w3.org/2004/02/skos/core#definition> "Identifisere og påvise problemer og utfordringer, og velge den beste fremgangsmåten. Melde fra om problemer etter behov."@nb .
 <http://data.europa.eu/esco/skill/a628d2d1-f40a-4c37-a357-2801726f2996> <http://www.w3.org/2004/02/skos/core#prefLabel> "identifisere problemer"@nb .
+<http://data.europa.eu/esco/skill/a628d2d1-f40a-4c37-a357-2801726f2996> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/a628d2d1-f40a-4c37-a357-2801726f2996> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/a6354281-5578-46ac-a9db-d179d9962b98> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/c4a81f47-6ed8-4a17-ab4a-21a2e67fa1d9> .
 <http://data.europa.eu/esco/skill/a6354281-5578-46ac-a9db-d179d9962b98> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/3413f234-6230-47a8-8cc7-2691fd54ce3a> .
@@ -54165,6 +54435,17 @@
 <http://data.europa.eu/esco/skill/a670abe2-c4a2-49a6-996c-760562aeb43d> <http://www.w3.org/2004/02/skos/core#prefLabel> "optiske komponenter"@nb .
 <http://data.europa.eu/esco/skill/a670abe2-c4a2-49a6-996c-760562aeb43d> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/a670abe2-c4a2-49a6-996c-760562aeb43d> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> <http://www.w3.org/2004/02/skos/core#altLabel> "bruke forebyggende sunn atferd"@nb .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> <http://www.w3.org/2004/02/skos/core#altLabel> "bry seg om formen sin"@nb .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> <http://www.w3.org/2004/02/skos/core#altLabel> "holde seg i god form"@nb .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> <http://www.w3.org/2004/02/skos/core#altLabel> "legge seg til en sunn livsstil"@nb .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3d54fec5-d9cb-45a0-bf8d-ffaf3790a5bb> .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> <http://www.w3.org/2004/02/skos/core#definition> "Legge seg til sunne og sykdomsforebyggende vaner, herunder regelmessig fysisk trening, en god søvnrutine og et sunt kosthold."@nb .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> <http://www.w3.org/2004/02/skos/core#prefLabel> "holde seg i god fysisk form"@nb .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/a68bdf1e-b325-4880-b456-192c2891931a> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/a68d4de0-99a3-4c26-b84a-040e706e4714> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/dd89e26f-bb5c-45cb-91c6-8b4d5d82a31f> .
 <http://data.europa.eu/esco/skill/a68d4de0-99a3-4c26-b84a-040e706e4714> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/a68d4de0-99a3-4c26-b84a-040e706e4714> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -55018,6 +55299,13 @@
 <http://data.europa.eu/esco/skill/a9085ca4-a832-4d2e-818a-d84257295053> <http://www.w3.org/2004/02/skos/core#prefLabel> "hjelpe kunder med hårproblemer"@nb .
 <http://data.europa.eu/esco/skill/a9085ca4-a832-4d2e-818a-d84257295053> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/a9085ca4-a832-4d2e-818a-d84257295053> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/a90fa5ff-5b4f-4152-8160-ad80a6d3d13e> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/a90fa5ff-5b4f-4152-8160-ad80a6d3d13e> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/a90fa5ff-5b4f-4152-8160-ad80a6d3d13e> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/82463bb1-85d1-4e99-a4ce-08508fc3b2a3> .
+<http://data.europa.eu/esco/skill/a90fa5ff-5b4f-4152-8160-ad80a6d3d13e> <http://www.w3.org/2004/02/skos/core#definition> "Vurdere, estimere og forstå andres følelser eller temperament; vise empati."@nb .
+<http://data.europa.eu/esco/skill/a90fa5ff-5b4f-4152-8160-ad80a6d3d13e> <http://www.w3.org/2004/02/skos/core#prefLabel> "vurdere andres følelser"@nb .
+<http://data.europa.eu/esco/skill/a90fa5ff-5b4f-4152-8160-ad80a6d3d13e> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/a90fa5ff-5b4f-4152-8160-ad80a6d3d13e> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/a9164d4f-2563-4a08-bc79-44e58bf3007c> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/1bb2aa65-1524-4961-8dba-ad25f34f195f> .
 <http://data.europa.eu/esco/skill/a9164d4f-2563-4a08-bc79-44e58bf3007c> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/f8e435dd-7aa9-4d7a-97c3-b3b5789b6b25> .
 <http://data.europa.eu/esco/skill/a9164d4f-2563-4a08-bc79-44e58bf3007c> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -55183,6 +55471,12 @@
 <http://data.europa.eu/esco/skill/a989a119-d6bf-4d72-a783-82449f3807a5> <http://www.w3.org/2004/02/skos/core#prefLabel> "oppdage feil i flasker"@nb .
 <http://data.europa.eu/esco/skill/a989a119-d6bf-4d72-a783-82449f3807a5> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/a989a119-d6bf-4d72-a783-82449f3807a5> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> <http://www.w3.org/2004/02/skos/core#definition> "Bruke prinsipper, retningslinjer og regler for miljøbærekraftighet på arbeidsplassen."@nb .
+<http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> <http://www.w3.org/2004/02/skos/core#prefLabel> "følge miljøbærekraftig arbeidspraksis"@nb .
+<http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/a99c6783-50c0-4f7a-99df-bf93429ef6dc> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/103aaf7a-48da-4e25-99fc-5cf1ee1388b1> .
 <http://data.europa.eu/esco/skill/a99c6783-50c0-4f7a-99df-bf93429ef6dc> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/15d5636f-7714-4697-850a-67b7f7cb3837> .
 <http://data.europa.eu/esco/skill/a99c6783-50c0-4f7a-99df-bf93429ef6dc> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/17c02096-05d6-4a5a-ba93-9f22d68df0d3> .
@@ -56000,6 +56294,12 @@
 <http://data.europa.eu/esco/skill/abe9565e-3afd-4ec0-bdc8-75b9df414d9a> <http://www.w3.org/2004/02/skos/core#prefLabel> "mineralpriser"@nb .
 <http://data.europa.eu/esco/skill/abe9565e-3afd-4ec0-bdc8-75b9df414d9a> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/abe9565e-3afd-4ec0-bdc8-75b9df414d9a> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/abf982c1-6b59-4572-a38c-97d3a6869af4> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/abf982c1-6b59-4572-a38c-97d3a6869af4> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/abf982c1-6b59-4572-a38c-97d3a6869af4> <http://www.w3.org/2004/02/skos/core#definition> "Bruke halvautonome eller autonome maskiner som automatisk utfører komplekse handlinger under kontroll av digital eller elektronisk programvare, for eksempel førerløse biler, droner og andre maskiner."@nb .
+<http://data.europa.eu/esco/skill/abf982c1-6b59-4572-a38c-97d3a6869af4> <http://www.w3.org/2004/02/skos/core#prefLabel> "benytte personlige roboter for praktisk støtte"@nb .
+<http://data.europa.eu/esco/skill/abf982c1-6b59-4572-a38c-97d3a6869af4> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/abf982c1-6b59-4572-a38c-97d3a6869af4> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/ac1b8a18-d6d0-4116-8191-93db991b3902> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/618a854a-4ecd-4535-84e6-350e1fe0aa0f> .
 <http://data.europa.eu/esco/skill/ac1b8a18-d6d0-4116-8191-93db991b3902> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/ac1b8a18-d6d0-4116-8191-93db991b3902> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -56480,6 +56780,7 @@
 <http://data.europa.eu/esco/skill/adc6dc11-3376-467b-96c5-9b0a21edc869> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/13d301d0-98cb-414f-a8f9-a3f059228133> .
 <http://data.europa.eu/esco/skill/adc6dc11-3376-467b-96c5-9b0a21edc869> <http://www.w3.org/2004/02/skos/core#definition> "Finne løsninger på praktiske, operasjonelle eller konseptuelle problemer i mange ulike sammenhenger."@nb .
 <http://data.europa.eu/esco/skill/adc6dc11-3376-467b-96c5-9b0a21edc869> <http://www.w3.org/2004/02/skos/core#prefLabel> "løse problemer"@nb .
+<http://data.europa.eu/esco/skill/adc6dc11-3376-467b-96c5-9b0a21edc869> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/adc6dc11-3376-467b-96c5-9b0a21edc869> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/adc76417-47f8-4f3d-8037-3c5c5ce9d9b2> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/3a3fac9d-323e-4ba6-989b-0e1d44e113cc> .
 <http://data.europa.eu/esco/skill/adc76417-47f8-4f3d-8037-3c5c5ce9d9b2> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/5684182e-7b4c-4eea-97d9-4c2b88b9f906> .
@@ -57110,6 +57411,7 @@
 <http://data.europa.eu/esco/skill/b00e948c-19be-4951-8cff-60f88f1046e9> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/fe5eabaa-63f6-4c44-b405-fc3ded8d56cb> .
 <http://data.europa.eu/esco/skill/b00e948c-19be-4951-8cff-60f88f1046e9> <http://www.w3.org/2004/02/skos/core#definition> "Delegere ansvar, aktiviteter og oppgaver til andre i henhold til evne, forberedelsesgrad og kompetanse. Forsikre seg om at personene man delegerer til, forstår hva de skal gjøre, og når de skal gjøre det."@nb .
 <http://data.europa.eu/esco/skill/b00e948c-19be-4951-8cff-60f88f1046e9> <http://www.w3.org/2004/02/skos/core#prefLabel> "delegere ansvar"@nb .
+<http://data.europa.eu/esco/skill/b00e948c-19be-4951-8cff-60f88f1046e9> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/b00e948c-19be-4951-8cff-60f88f1046e9> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/b013ae1f-5efc-42b5-8dab-8a8add39bbd8> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/aac62c63-b6bf-4387-8ba3-75a487f25824> .
 <http://data.europa.eu/esco/skill/b013ae1f-5efc-42b5-8dab-8a8add39bbd8> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -57280,6 +57582,7 @@
 <http://data.europa.eu/esco/skill/b080a008-a35d-4bd0-92e9-edf3773bb2b7> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3399045f-8078-4066-8b46-475b49b260ab> .
 <http://data.europa.eu/esco/skill/b080a008-a35d-4bd0-92e9-edf3773bb2b7> <http://www.w3.org/2004/02/skos/core#definition> "Bruke enkle digitale verktøy og teknologi for å kommunisere, samhandle og samarbeide med andre."@nb .
 <http://data.europa.eu/esco/skill/b080a008-a35d-4bd0-92e9-edf3773bb2b7> <http://www.w3.org/2004/02/skos/core#prefLabel> "bruke programvare for kommunikasjon og samarbeid"@nb .
+<http://data.europa.eu/esco/skill/b080a008-a35d-4bd0-92e9-edf3773bb2b7> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/b080a008-a35d-4bd0-92e9-edf3773bb2b7> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/b091d04a-bb5d-4998-afc9-d71e6c96fb80> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/71bac871-7594-4d86-a19f-592079bd8154> .
 <http://data.europa.eu/esco/skill/b091d04a-bb5d-4998-afc9-d71e6c96fb80> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/b0480558-269d-4903-9bc7-f390cd6a6964> .
@@ -57621,6 +57924,19 @@
 <http://data.europa.eu/esco/skill/b1918bfe-769d-4ceb-a52e-44212e446929> <http://www.w3.org/2004/02/skos/core#prefLabel> "deler av hydraulisk presse"@nb .
 <http://data.europa.eu/esco/skill/b1918bfe-769d-4ceb-a52e-44212e446929> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/b1918bfe-769d-4ceb-a52e-44212e446929> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://www.w3.org/2004/02/skos/core#altLabel> "arrangere teambuilding"@nb .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://www.w3.org/2004/02/skos/core#altLabel> "arrangere teambygging"@nb .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://www.w3.org/2004/02/skos/core#altLabel> "bygge lag"@nb .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://www.w3.org/2004/02/skos/core#altLabel> "designe teambuilding"@nb .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://www.w3.org/2004/02/skos/core#altLabel> "organisere et lag"@nb .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://www.w3.org/2004/02/skos/core#altLabel> "planlegge teambygging"@nb .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/fe5eabaa-63f6-4c44-b405-fc3ded8d56cb> .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://www.w3.org/2004/02/skos/core#definition> "Skape et forhold bygd på gjensidig tillit, respekt og samarbeid mellom lagmedlemmene."@nb .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> <http://www.w3.org/2004/02/skos/core#prefLabel> "skape lagånd"@nb .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/b19e0820-a96f-4c0a-a724-3c056180c1b3> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/b1a1947a-fdb3-4d09-babb-6f418930c8b8> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/b1a1947a-fdb3-4d09-babb-6f418930c8b8> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
 <http://data.europa.eu/esco/skill/b1a1947a-fdb3-4d09-babb-6f418930c8b8> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/5bcec244-3efe-45ac-8891-0ab4a91e9c48> .
@@ -57874,6 +58190,12 @@
 <http://data.europa.eu/esco/skill/b2c688b0-9106-466d-8b88-eafdfe608e7d> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/0a295163-3e17-47ad-99ac-2b507ce30adb> .
 <http://data.europa.eu/esco/skill/b2c688b0-9106-466d-8b88-eafdfe608e7d> <http://www.w3.org/2004/02/skos/core#prefLabel> "designe strukturer eller fasiliteter"@nb .
 <http://data.europa.eu/esco/skill/b2c688b0-9106-466d-8b88-eafdfe608e7d> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> <http://www.w3.org/2004/02/skos/core#definition> "Utføre aktiviteter på arbeidsplassen i henhold til anerkjente prinsipper for rett og galt, herunder rettferdighet, åpenhet og upartiskhet i arbeid med og oppførsel mot andre mennesker."@nb .
+<http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> <http://www.w3.org/2004/02/skos/core#prefLabel> "følge etiske retningslinjer"@nb .
+<http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/b2fb2282-ac76-4565-b156-86b13266865b> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/98c429ad-128e-467e-803a-9a6dc1ceed72> .
 <http://data.europa.eu/esco/skill/b2fb2282-ac76-4565-b156-86b13266865b> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/b2fb2282-ac76-4565-b156-86b13266865b> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -58125,6 +58447,15 @@
 <http://data.europa.eu/esco/skill/b40296ac-7c83-468a-b23d-6daccea78806> <http://www.w3.org/2004/02/skos/core#prefLabel> "musikkinstrumentenes historie"@nb .
 <http://data.europa.eu/esco/skill/b40296ac-7c83-468a-b23d-6daccea78806> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/b40296ac-7c83-468a-b23d-6daccea78806> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/b40584aa-7c63-4eed-9422-a9798fb95fdc> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/b40584aa-7c63-4eed-9422-a9798fb95fdc> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/b40584aa-7c63-4eed-9422-a9798fb95fdc> <http://www.w3.org/2004/02/skos/core#altLabel> "demonstrere evne til å improvisere"@nb .
+<http://data.europa.eu/esco/skill/b40584aa-7c63-4eed-9422-a9798fb95fdc> <http://www.w3.org/2004/02/skos/core#altLabel> "vise talent for improvisasjon"@nb .
+<http://data.europa.eu/esco/skill/b40584aa-7c63-4eed-9422-a9798fb95fdc> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/e84d080a-ff6d-41a7-b7b9-133e97c7bf00> .
+<http://data.europa.eu/esco/skill/b40584aa-7c63-4eed-9422-a9798fb95fdc> <http://www.w3.org/2004/02/skos/core#definition> "Ha evnen til å improvisere og reagere umiddelbart, og uten å planlegge på forhånd, i situasjoner du ikke har opplevd tidligere."@nb .
+<http://data.europa.eu/esco/skill/b40584aa-7c63-4eed-9422-a9798fb95fdc> <http://www.w3.org/2004/02/skos/core#prefLabel> "improvisere"@nb .
+<http://data.europa.eu/esco/skill/b40584aa-7c63-4eed-9422-a9798fb95fdc> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/b40584aa-7c63-4eed-9422-a9798fb95fdc> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/b409f833-976a-47a2-b401-ac40ac3c8ea2> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/d85e041f-8306-476e-a2cd-59baa1e61992> .
 <http://data.europa.eu/esco/skill/b409f833-976a-47a2-b401-ac40ac3c8ea2> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/3206f826-7d53-4180-9797-e94ad9eaf841> .
 <http://data.europa.eu/esco/skill/b409f833-976a-47a2-b401-ac40ac3c8ea2> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -58725,6 +59056,7 @@
 <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/925af2b5-2f4d-4cce-92cc-79e1ff887c7d> .
 <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> <http://www.w3.org/2004/02/skos/core#definition> "Overholde og respektere regler, forskrifter og retningslinjer for et bestemt område eller en bestemt sektor, og anvende dem i det daglige arbeidet."@nb .
 <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> <http://www.w3.org/2004/02/skos/core#prefLabel> "overholde forskrifter"@nb .
+<http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/b6239792-033c-41ba-b09b-21837655436a> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/05f321f8-055b-407d-bf19-e0ddabda56b7> .
 <http://data.europa.eu/esco/skill/b6239792-033c-41ba-b09b-21837655436a> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -58956,6 +59288,7 @@
 <http://data.europa.eu/esco/skill/b6bdf202-524f-475d-b813-2aa9af005c37> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/ccb6db6a-8538-431c-b740-5f241bdb71cf> .
 <http://data.europa.eu/esco/skill/b6bdf202-524f-475d-b813-2aa9af005c37> <http://www.w3.org/2004/02/skos/core#definition> "Utføre fysiske bevegelser for å flytte, laste, losse, eller lagre gjenstander, eller klatre i strukturer, for hånd eller ved hjelp av utstyr."@nb .
 <http://data.europa.eu/esco/skill/b6bdf202-524f-475d-b813-2aa9af005c37> <http://www.w3.org/2004/02/skos/core#prefLabel> "flytte gjenstander"@nb .
+<http://data.europa.eu/esco/skill/b6bdf202-524f-475d-b813-2aa9af005c37> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/b6bdf202-524f-475d-b813-2aa9af005c37> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/b6bf0f5e-0fb2-4bf1-82bd-019d643c3812> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/5b3ef95b-7d99-4af9-b2d0-41c6bc33f58c> .
 <http://data.europa.eu/esco/skill/b6bf0f5e-0fb2-4bf1-82bd-019d643c3812> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/39e06c20-d262-44f9-a6a8-a0f3ba9e887c> .
@@ -59945,6 +60278,7 @@
 <http://data.europa.eu/esco/skill/ba93b71b-c433-4a01-8246-ed2daa85a9a2> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3399045f-8078-4066-8b46-475b49b260ab> .
 <http://data.europa.eu/esco/skill/ba93b71b-c433-4a01-8246-ed2daa85a9a2> <http://www.w3.org/2004/02/skos/core#definition> "Søke etter data, informasjon og innhold gjennom enkle søk i digitale miljøer."@nb .
 <http://data.europa.eu/esco/skill/ba93b71b-c433-4a01-8246-ed2daa85a9a2> <http://www.w3.org/2004/02/skos/core#prefLabel> "foreta søk på nett"@nb .
+<http://data.europa.eu/esco/skill/ba93b71b-c433-4a01-8246-ed2daa85a9a2> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/ba93b71b-c433-4a01-8246-ed2daa85a9a2> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/ba96668e-afbb-46a6-aafc-f366e1b47d87> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/103aaf7a-48da-4e25-99fc-5cf1ee1388b1> .
 <http://data.europa.eu/esco/skill/ba96668e-afbb-46a6-aafc-f366e1b47d87> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/375137f7-5fc2-424e-9f63-d7ff4441c11e> .
@@ -60711,6 +61045,7 @@
 <http://data.europa.eu/esco/skill/bcf002ce-90f8-42e5-ac1b-5dba208639b0> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/925af2b5-2f4d-4cce-92cc-79e1ff887c7d> .
 <http://data.europa.eu/esco/skill/bcf002ce-90f8-42e5-ac1b-5dba208639b0> <http://www.w3.org/2004/02/skos/core#definition> "Utvise ærlighet, integritet og troverdighet på arbeidsplassen. Være lojal overfor sine medarbeidere og organisasjon, og vise at man er pålitelig."@nb .
 <http://data.europa.eu/esco/skill/bcf002ce-90f8-42e5-ac1b-5dba208639b0> <http://www.w3.org/2004/02/skos/core#prefLabel> "utvise troverdighet"@nb .
+<http://data.europa.eu/esco/skill/bcf002ce-90f8-42e5-ac1b-5dba208639b0> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/bcf002ce-90f8-42e5-ac1b-5dba208639b0> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/bd08f332-a295-4a59-a13a-05b08ca3761b> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/35efc04c-429a-407e-a00a-f07fd03c2743> .
 <http://data.europa.eu/esco/skill/bd08f332-a295-4a59-a13a-05b08ca3761b> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
@@ -60972,6 +61307,7 @@
 <http://data.europa.eu/esco/skill/bdcf429c-5ccf-4c3d-bb61-4c987573a35e> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/6c6957bf-cf1f-4483-9c7e-1655f251b01a> .
 <http://data.europa.eu/esco/skill/bdcf429c-5ccf-4c3d-bb61-4c987573a35e> <http://www.w3.org/2004/02/skos/core#definition> "Utvikle, organisere og administrere et eget foretak, identifisere og satse på muligheter og mobilisere ressurser, med sikte på å oppnå utbytte. Utvise en proaktiv holdning og vilje til å skape en god bedrift."@nb .
 <http://data.europa.eu/esco/skill/bdcf429c-5ccf-4c3d-bb61-4c987573a35e> <http://www.w3.org/2004/02/skos/core#prefLabel> "utvise gründerånd"@nb .
+<http://data.europa.eu/esco/skill/bdcf429c-5ccf-4c3d-bb61-4c987573a35e> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/bdcf429c-5ccf-4c3d-bb61-4c987573a35e> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/bdd5060c-4594-493b-93fa-5a23e17d0a8f> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/c76566f1-97a1-43e9-a7d8-155db0e56987> .
 <http://data.europa.eu/esco/skill/bdd5060c-4594-493b-93fa-5a23e17d0a8f> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
@@ -61111,6 +61447,7 @@
 <http://data.europa.eu/esco/skill/be6ab363-3de1-427f-a8ef-85d5b0250822> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/6f142deb-03a9-4cd7-94ce-e0f023ae2169> .
 <http://data.europa.eu/esco/skill/be6ab363-3de1-427f-a8ef-85d5b0250822> <http://www.w3.org/2004/02/skos/core#definition> "Gjengi informasjon eller gjenfortelle hendelser muntlig."@nb .
 <http://data.europa.eu/esco/skill/be6ab363-3de1-427f-a8ef-85d5b0250822> <http://www.w3.org/2004/02/skos/core#prefLabel> "rapportere fakta"@nb .
+<http://data.europa.eu/esco/skill/be6ab363-3de1-427f-a8ef-85d5b0250822> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/be6ab363-3de1-427f-a8ef-85d5b0250822> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/be7443ff-0747-43b8-8720-8e87fd34e692> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/dc06de9f-dd3a-4f28-b58f-b01b5ae72ab8> .
 <http://data.europa.eu/esco/skill/be7443ff-0747-43b8-8720-8e87fd34e692> <http://www.w3.org/2004/02/skos/core#prefLabel> "løse problemer"@nb .
@@ -61425,6 +61762,15 @@
 <http://data.europa.eu/esco/skill/bf4b6b71-3025-4129-babc-0e275804e058> <http://www.w3.org/2004/02/skos/core#prefLabel> "optoelektronisk utstyr"@nb .
 <http://data.europa.eu/esco/skill/bf4b6b71-3025-4129-babc-0e275804e058> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/bf4b6b71-3025-4129-babc-0e275804e058> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/bf4d884f-c848-402a-b130-69c266b04164> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/bf4d884f-c848-402a-b130-69c266b04164> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/bf4d884f-c848-402a-b130-69c266b04164> <http://www.w3.org/2004/02/skos/core#altLabel> "bruke grunnleggende kodeferdigheter"@nb .
+<http://data.europa.eu/esco/skill/bf4d884f-c848-402a-b130-69c266b04164> <http://www.w3.org/2004/02/skos/core#altLabel> "bruke spørringsspråk"@nb .
+<http://data.europa.eu/esco/skill/bf4d884f-c848-402a-b130-69c266b04164> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3399045f-8078-4066-8b46-475b49b260ab> .
+<http://data.europa.eu/esco/skill/bf4d884f-c848-402a-b130-69c266b04164> <http://www.w3.org/2004/02/skos/core#definition> "Utarbeide enkle instruksjoner for et datasystem for å løse problemer eller utføre oppgaver på et grunnleggende nivå, om nødvendig med egnet veiledning."@nb .
+<http://data.europa.eu/esco/skill/bf4d884f-c848-402a-b130-69c266b04164> <http://www.w3.org/2004/02/skos/core#prefLabel> "anvende grunnleggende programmeringskunnskaper"@nb .
+<http://data.europa.eu/esco/skill/bf4d884f-c848-402a-b130-69c266b04164> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/bf4d884f-c848-402a-b130-69c266b04164> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/bf59255e-782a-4e83-a93c-6055cfdd8e7f> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/c9f6c245-8c66-4b13-9253-9835194abb23> .
 <http://data.europa.eu/esco/skill/bf59255e-782a-4e83-a93c-6055cfdd8e7f> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
 <http://data.europa.eu/esco/skill/bf59255e-782a-4e83-a93c-6055cfdd8e7f> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -61660,6 +62006,7 @@
 <http://data.europa.eu/esco/skill/bf983f2a-e941-4646-811d-cc81060cb53f> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/036afa6e-cdde-4b38-a53a-8e7910a840e1> .
 <http://data.europa.eu/esco/skill/bf983f2a-e941-4646-811d-cc81060cb53f> <http://www.w3.org/2004/02/skos/core#definition> "Utvise evne til å opprette effektive relasjoner, utvikle og opprettholde allianser, kontakter eller partnerskap, og utveksle informasjon med andre."@nb .
 <http://data.europa.eu/esco/skill/bf983f2a-e941-4646-811d-cc81060cb53f> <http://www.w3.org/2004/02/skos/core#prefLabel> "bygge nettverk"@nb .
+<http://data.europa.eu/esco/skill/bf983f2a-e941-4646-811d-cc81060cb53f> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/bf983f2a-e941-4646-811d-cc81060cb53f> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/bf9879fa-f1fc-4f17-8dcb-ece29ea61682> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/3b4eb248-6b40-42fe-9d10-cba8ccfe6613> .
 <http://data.europa.eu/esco/skill/bf9879fa-f1fc-4f17-8dcb-ece29ea61682> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/7cb71c5f-c310-481c-b46b-d0044328758c> .
@@ -62096,6 +62443,7 @@
 <http://data.europa.eu/esco/skill/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/036afa6e-cdde-4b38-a53a-8e7910a840e1> .
 <http://data.europa.eu/esco/skill/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> <http://www.w3.org/2004/02/skos/core#definition> "Forstå og respektere mennesker som anses for å ha en annen kulturell tilhørighet, og respondere effektivt og respektfult til dem."@nb .
 <http://data.europa.eu/esco/skill/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> <http://www.w3.org/2004/02/skos/core#prefLabel> "demonstrere interkulturell kompetanse"@nb .
+<http://data.europa.eu/esco/skill/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/24d378d8-1e16-4667-bdb4-1f4a0f2c6379> .
 <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
@@ -62585,6 +62933,7 @@
 <http://data.europa.eu/esco/skill/c29aa9d2-4da8-4bdd-831c-8d4a2fb51730> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/14c41899-0224-4cbc-bd8c-e946ada2da87> .
 <http://data.europa.eu/esco/skill/c29aa9d2-4da8-4bdd-831c-8d4a2fb51730> <http://www.w3.org/2004/02/skos/core#definition> "Utvikle egne måter å gjøre ting på, motivere seg selv med lite eller ikke noe tilsyn, og være avhengig av seg selv for å få ting gjort."@nb .
 <http://data.europa.eu/esco/skill/c29aa9d2-4da8-4bdd-831c-8d4a2fb51730> <http://www.w3.org/2004/02/skos/core#prefLabel> "arbeide selvstendig"@nb .
+<http://data.europa.eu/esco/skill/c29aa9d2-4da8-4bdd-831c-8d4a2fb51730> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/c29aa9d2-4da8-4bdd-831c-8d4a2fb51730> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/c29fed5c-f03b-4389-b110-29b6db00cd01> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/709170ae-2b9a-4e7a-8201-260da7211898> .
 <http://data.europa.eu/esco/skill/c29fed5c-f03b-4389-b110-29b6db00cd01> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/defc8417-eeb6-4f13-8fcd-6518b99a40f4> .
@@ -62609,6 +62958,7 @@
 <http://data.europa.eu/esco/skill/c2a0c52c-0b4b-4180-a918-92650ea3b458> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/e84d080a-ff6d-41a7-b7b9-133e97c7bf00> .
 <http://data.europa.eu/esco/skill/c2a0c52c-0b4b-4180-a918-92650ea3b458> <http://www.w3.org/2004/02/skos/core#definition> "Utvikle ideer eller konklusjoner som fører til at innovasjoner eller endringer skapes og gjennomføres."@nb .
 <http://data.europa.eu/esco/skill/c2a0c52c-0b4b-4180-a918-92650ea3b458> <http://www.w3.org/2004/02/skos/core#prefLabel> "tenke innovativt"@nb .
+<http://data.europa.eu/esco/skill/c2a0c52c-0b4b-4180-a918-92650ea3b458> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/c2a0c52c-0b4b-4180-a918-92650ea3b458> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/c2a97099-53e9-4fba-b289-35bc025fb348> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/b00e9e89-fd8d-4655-b6a2-f58b17629473> .
 <http://data.europa.eu/esco/skill/c2a97099-53e9-4fba-b289-35bc025fb348> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/31808988-fc0a-4bc3-9e47-27216d6759f5> .
@@ -63093,6 +63443,7 @@
 <http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3d54fec5-d9cb-45a0-bf8d-ffaf3790a5bb> .
 <http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> <http://www.w3.org/2004/02/skos/core#definition> "Ha evnen til å bedømme og håndtere helserisikoer, for eksempel ved å følge sikkerhetstiltak i arbeidsrutiner, anvende brannsikringstiltak, respektere og anvende ergonomikrav og ta hensyn til virkningene av rusmidler og alkohol på enkeltpersoner, familier og lokalsamfunn."@nb .
 <http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> <http://www.w3.org/2004/02/skos/core#prefLabel> "være bevisst helserisikoer"@nb .
+<http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/c41f00a1-6071-4c83-bb4d-50c32e420e81> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/103aaf7a-48da-4e25-99fc-5cf1ee1388b1> .
 <http://data.europa.eu/esco/skill/c41f00a1-6071-4c83-bb4d-50c32e420e81> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/375137f7-5fc2-424e-9f63-d7ff4441c11e> .
@@ -63845,6 +64196,7 @@
 <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/e84d080a-ff6d-41a7-b7b9-133e97c7bf00> .
 <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> <http://www.w3.org/2004/02/skos/core#definition> "Skape nye ideer eller kombinere eksisterende løsninger for å utvikle nye løsninger."@nb .
 <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> <http://www.w3.org/2004/02/skos/core#prefLabel> "tenke kreativt"@nb .
+<http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/c643e59b-d74c-4f44-b76e-6e1d96c05ec4> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/05f321f8-055b-407d-bf19-e0ddabda56b7> .
 <http://data.europa.eu/esco/skill/c643e59b-d74c-4f44-b76e-6e1d96c05ec4> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/0b5e4142-90ad-48a6-8407-ed47b2664954> .
@@ -68887,6 +69239,21 @@
 <http://data.europa.eu/esco/skill/d560f55d-9718-48ba-90a6-5c759b39438c> <http://www.w3.org/2004/02/skos/core#prefLabel> "fermenteringsprosessene til drikkevarer"@nb .
 <http://data.europa.eu/esco/skill/d560f55d-9718-48ba-90a6-5c759b39438c> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/d560f55d-9718-48ba-90a6-5c759b39438c> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#altLabel> "bruke konseptuell tenkning"@nb .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#altLabel> "bruke systemisk tenkning"@nb .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#altLabel> "demonstrere helhetstenkning"@nb .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#altLabel> "forstå komplekse prosesser"@nb .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#altLabel> "forstå kompleksitet"@nb .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#altLabel> "gjenkjenne forbindelser"@nb .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#altLabel> "identifisere innbyrdes sammenhenger"@nb .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#altLabel> "identifisere sentrale problemstillinger i komplekse situasjoner"@nb .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/fff1d675-c36a-4c12-9cd4-407f21ccd06a> .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#definition> "Ta hensyn til indirekte og langsiktige konsekvenser ved planlegging og beslutningstaking. Vurdere innvirkningen på andre mennesker, prosesser og miljøet, og inkludere disse i planleggingsprosessen."@nb .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> <http://www.w3.org/2004/02/skos/core#prefLabel> "tenke helhetlig"@nb .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/d56fc2b5-4b0a-4e7e-9bde-a33736f6ff18> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/3e7bf729-4442-4b9f-ad5e-83111963795c> .
 <http://data.europa.eu/esco/skill/d56fc2b5-4b0a-4e7e-9bde-a33736f6ff18> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/a44a1dc5-be08-4840-8bd5-770c4ac1ca6d> .
 <http://data.europa.eu/esco/skill/d56fc2b5-4b0a-4e7e-9bde-a33736f6ff18> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/b37d15b3-402e-4792-8292-f18c0de7aca6> .
@@ -69159,6 +69526,7 @@
 <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/91860993-1a8b-4473-91f3-600aa1924bd0> .
 <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> <http://www.w3.org/2004/02/skos/core#definition> "Ta et valg blant flere alternative muligheter."@nb .
 <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> <http://www.w3.org/2004/02/skos/core#prefLabel> "ta avgjørelser"@nb .
+<http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/d63743d9-8012-48c1-90c3-9df4e3d8475b> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/976c739f-fec7-45c2-b12e-e1b496aa816b> .
 <http://data.europa.eu/esco/skill/d63743d9-8012-48c1-90c3-9df4e3d8475b> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/c0eb9240-4f70-4393-bdf0-723ce7fdbd36> .
@@ -69704,6 +70072,7 @@
 <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3399045f-8078-4066-8b46-475b49b260ab> .
 <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> <http://www.w3.org/2004/02/skos/core#definition> "Skape og redigere enkelt digitalt innhold, om nødvendig med veiledning."@nb .
 <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> <http://www.w3.org/2004/02/skos/core#prefLabel> "skape digitalt innhold"@nb .
+<http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/d82a4f2f-0ecb-495f-8e36-356443d1ad67> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/9422c30d-c5ef-4fcc-a493-d67ee42189c0> .
 <http://data.europa.eu/esco/skill/d82a4f2f-0ecb-495f-8e36-356443d1ad67> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
@@ -70013,6 +70382,7 @@
 <http://data.europa.eu/esco/skill/d9013e0e-e937-43d5-ab71-0e917ee882b8> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/14c41899-0224-4cbc-bd8c-e946ada2da87> .
 <http://data.europa.eu/esco/skill/d9013e0e-e937-43d5-ab71-0e917ee882b8> <http://www.w3.org/2004/02/skos/core#definition> "Planlegge tidssekvensen for arrangementer, programmer og aktiviteter samt arbeidet til andre."@nb .
 <http://data.europa.eu/esco/skill/d9013e0e-e937-43d5-ab71-0e917ee882b8> <http://www.w3.org/2004/02/skos/core#prefLabel> "administrere tid"@nb .
+<http://data.europa.eu/esco/skill/d9013e0e-e937-43d5-ab71-0e917ee882b8> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/d9013e0e-e937-43d5-ab71-0e917ee882b8> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/d90e2684-a5f0-45de-a06d-dd97ed6d18e1> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/05ae3e87-36ad-428f-a086-8a2ed458db3b> .
 <http://data.europa.eu/esco/skill/d90e2684-a5f0-45de-a06d-dd97ed6d18e1> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/48318e0f-b54b-4654-b296-47c8e544da23> .
@@ -70120,6 +70490,7 @@
 <http://data.europa.eu/esco/skill/d9449998-c1f5-478c-a103-2255398cf0b6> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3d54fec5-d9cb-45a0-bf8d-ffaf3790a5bb> .
 <http://data.europa.eu/esco/skill/d9449998-c1f5-478c-a103-2255398cf0b6> <http://www.w3.org/2004/02/skos/core#definition> "Ta personlig ansvar for å garantere et trygt arbeids- og bomiljø der man ikke utsettes for smitte, herunder gjennom bruk av masker og desinfeksjonsmidler og god personlig hygiene."@nb .
 <http://data.europa.eu/esco/skill/d9449998-c1f5-478c-a103-2255398cf0b6> <http://www.w3.org/2004/02/skos/core#prefLabel> "anvende hygienestandarder"@nb .
+<http://data.europa.eu/esco/skill/d9449998-c1f5-478c-a103-2255398cf0b6> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/d9449998-c1f5-478c-a103-2255398cf0b6> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/d94ae3a1-dbfc-459c-a71d-79594f4f1317> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/aac62c63-b6bf-4387-8ba3-75a487f25824> .
 <http://data.europa.eu/esco/skill/d94ae3a1-dbfc-459c-a71d-79594f4f1317> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
@@ -70595,6 +70966,20 @@
 <http://data.europa.eu/esco/skill/db0e560b-15a7-4758-acca-088674461dff> <http://www.w3.org/2004/02/skos/core#prefLabel> "planlegge stillas"@nb .
 <http://data.europa.eu/esco/skill/db0e560b-15a7-4758-acca-088674461dff> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/db0e560b-15a7-4758-acca-088674461dff> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://www.w3.org/2004/02/skos/core#altLabel> "forstå medias rolle i demokratiske samfunn"@nb .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://www.w3.org/2004/02/skos/core#altLabel> "kontrollere informasjon"@nb .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://www.w3.org/2004/02/skos/core#altLabel> "kontrollere informasjonskilden"@nb .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://www.w3.org/2004/02/skos/core#altLabel> "oppdage ensidighet"@nb .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://www.w3.org/2004/02/skos/core#altLabel> "sjekke fakta"@nb .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://www.w3.org/2004/02/skos/core#altLabel> "veie informasjon"@nb .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://www.w3.org/2004/02/skos/core#altLabel> "vurdere informasjon"@nb .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/d6e97b91-b75d-45f5-8566-667798957b0f> .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://www.w3.org/2004/02/skos/core#definition> "Ha evnen til å vurdere og analysere informasjon og kilder. Vise evne til å bruke både tradisjonelle og nye medier, samt til kritisk forståelse av deres rolle og funksjon i demokratiske samfunn."@nb .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> <http://www.w3.org/2004/02/skos/core#prefLabel> "vurdere informasjon og kilder kritisk"@nb .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/aaeec9a7-dc57-4485-890c-86b3eef735f9> .
 <http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -71219,6 +71604,7 @@
 <http://data.europa.eu/esco/skill/dcc99418-d896-4b3b-8596-658093a17a8f> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3d54fec5-d9cb-45a0-bf8d-ffaf3790a5bb> .
 <http://data.europa.eu/esco/skill/dcc99418-d896-4b3b-8596-658093a17a8f> <http://www.w3.org/2004/02/skos/core#definition> "Identifisere og bruke måter å minske virkningene av kroniske helsetilstander på, inkludert bruk av syns-, hørsels- og ganghjelpemidler, egnede medisiner og tilstrekkelig sosial og medisinsk støtte."@nb .
 <http://data.europa.eu/esco/skill/dcc99418-d896-4b3b-8596-658093a17a8f> <http://www.w3.org/2004/02/skos/core#prefLabel> "håndtere kroniske helsetilstander"@nb .
+<http://data.europa.eu/esco/skill/dcc99418-d896-4b3b-8596-658093a17a8f> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/dcc99418-d896-4b3b-8596-658093a17a8f> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/952aa13c-731f-4add-98d1-66b59f70e607> .
 <http://data.europa.eu/esco/skill/dccbdbb8-7266-4fb4-a4cf-29056f102f12> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/cross-sector> .
@@ -71831,6 +72217,7 @@
 <http://data.europa.eu/esco/skill/deb3c1bc-d48a-42e6-b0cc-cb238534ec28> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/44ff6716-7d71-4a16-821b-61d10e9e290d> .
 <http://data.europa.eu/esco/skill/deb3c1bc-d48a-42e6-b0cc-cb238534ec28> <http://www.w3.org/2004/02/skos/core#definition> "Vise forståelse av sosiale og politiske gruppers natur, pluralitet og funksjon og deres forhold til sosioøkonomiske sider av samfunnet. Forstå enkeltpersoners rolle og posisjon i samfunnet."@nb .
 <http://data.europa.eu/esco/skill/deb3c1bc-d48a-42e6-b0cc-cb238534ec28> <http://www.w3.org/2004/02/skos/core#prefLabel> "anvende kunnskap innen samfunnsvitenskap og humaniora"@nb .
+<http://data.europa.eu/esco/skill/deb3c1bc-d48a-42e6-b0cc-cb238534ec28> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/deb3c1bc-d48a-42e6-b0cc-cb238534ec28> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/deb9b821-316f-45bb-a57b-fbce518a8161> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/029a5b78-4d1c-4cf9-a2d2-bb8d8729b8a3> .
 <http://data.europa.eu/esco/skill/deb9b821-316f-45bb-a57b-fbce518a8161> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/040fcfa5-24be-43eb-afd5-828297175b16> .
@@ -72102,6 +72489,7 @@
 <http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/6f142deb-03a9-4cd7-94ce-e0f023ae2169> .
 <http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> <http://www.w3.org/2004/02/skos/core#definition> "Presentere og reklamere for produkter, programmer eller tjenester med det formål å overtale og påvirke andre."@nb .
 <http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> <http://www.w3.org/2004/02/skos/core#prefLabel> "markedsføre ideer, produkter eller tjenester"@nb .
+<http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/df7bcc54-304d-4356-a6b6-73b854355858> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/874a2080-a9b6-46a9-8662-c9b7d4208f73> .
 <http://data.europa.eu/esco/skill/df7bcc54-304d-4356-a6b6-73b854355858> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/88760821-9df4-47a6-a1c2-ac08b9759396> .
@@ -73033,6 +73421,7 @@
 <http://data.europa.eu/esco/skill/e2d44a9b-f28c-489e-9861-b654b5ded507> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/fe5eabaa-63f6-4c44-b405-fc3ded8d56cb> .
 <http://data.europa.eu/esco/skill/e2d44a9b-f28c-489e-9861-b654b5ded507> <http://www.w3.org/2004/02/skos/core#definition> "Styre andre personers atferd ved å gi dem en overbevisende grunn til handling."@nb .
 <http://data.europa.eu/esco/skill/e2d44a9b-f28c-489e-9861-b654b5ded507> <http://www.w3.org/2004/02/skos/core#prefLabel> "motivere andre"@nb .
+<http://data.europa.eu/esco/skill/e2d44a9b-f28c-489e-9861-b654b5ded507> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/e2d44a9b-f28c-489e-9861-b654b5ded507> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/e2e15494-65b9-4af5-8b86-53fb51e7e022> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/589efb6c-9080-40b2-ab6a-144955675967> .
 <http://data.europa.eu/esco/skill/e2e15494-65b9-4af5-8b86-53fb51e7e022> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/dfb93ddb-ce34-4d2e-a178-541d45a7d98b> .
@@ -73199,6 +73588,7 @@
 <http://data.europa.eu/esco/skill/e37d64dc-0f05-4ee8-b065-bf76f70d8f5c> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/925af2b5-2f4d-4cce-92cc-79e1ff887c7d> .
 <http://data.europa.eu/esco/skill/e37d64dc-0f05-4ee8-b065-bf76f70d8f5c> <http://www.w3.org/2004/02/skos/core#definition> "Utvise skjønn og tilbakeholdenhet ved arbeid med konfidensiell, hemmelig eller ubehagelig informasjon."@nb .
 <http://data.europa.eu/esco/skill/e37d64dc-0f05-4ee8-b065-bf76f70d8f5c> <http://www.w3.org/2004/02/skos/core#prefLabel> "overholde taushetsplikt"@nb .
+<http://data.europa.eu/esco/skill/e37d64dc-0f05-4ee8-b065-bf76f70d8f5c> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/e37d64dc-0f05-4ee8-b065-bf76f70d8f5c> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/e381f278-7218-4f30-a7b6-34dc3eb7e4a8> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/f489b1ec-3d6c-44b1-b1d7-c6c97db7df30> .
 <http://data.europa.eu/esco/skill/e381f278-7218-4f30-a7b6-34dc3eb7e4a8> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/2c5ae1b4-c3ca-4882-b7ce-e346ae5b5b00> .
@@ -73524,6 +73914,7 @@
 <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/66fdc34c-2326-4baa-b8ff-7a1d1015fe3a> .
 <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> <http://www.w3.org/2004/02/skos/core#definition> "Forvalte tid og ressurser for å fullføre oppgaver innen rimelig tid."@nb .
 <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> <http://www.w3.org/2004/02/skos/core#prefLabel> "planlegge"@nb .
+<http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/e4a46d74-71a8-469a-85ad-e40278a23ba1> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/709170ae-2b9a-4e7a-8201-260da7211898> .
 <http://data.europa.eu/esco/skill/e4a46d74-71a8-469a-85ad-e40278a23ba1> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/804f1ae2-429c-48a9-9858-d5d42df144eb> .
@@ -74436,6 +74827,12 @@
 <http://data.europa.eu/esco/skill/e7837b7e-420f-46e6-8191-94fa610b3f56> <http://www.w3.org/2004/02/skos/core#prefLabel> "gi informasjon om klassifisering av karat"@nb .
 <http://data.europa.eu/esco/skill/e7837b7e-420f-46e6-8191-94fa610b3f56> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/e7837b7e-420f-46e6-8191-94fa610b3f56> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/e7844840-0fc2-4e79-a0f7-384b4dbc88f6> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/e7844840-0fc2-4e79-a0f7-384b4dbc88f6> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/e7844840-0fc2-4e79-a0f7-384b4dbc88f6> <http://www.w3.org/2004/02/skos/core#definition> "Identifisere digital informasjon via Swoogle-søkemotorer, som er en søkemotor for semantiske nettontologier."@nb .
+<http://data.europa.eu/esco/skill/e7844840-0fc2-4e79-a0f7-384b4dbc88f6> <http://www.w3.org/2004/02/skos/core#prefLabel> "bruke Swoogle"@nb .
+<http://data.europa.eu/esco/skill/e7844840-0fc2-4e79-a0f7-384b4dbc88f6> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/e7844840-0fc2-4e79-a0f7-384b4dbc88f6> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/e78473ee-d208-4b9c-b241-339334ac9a7b> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/140613c4-8c3c-43c5-8525-2f63231c95b0> .
 <http://data.europa.eu/esco/skill/e78473ee-d208-4b9c-b241-339334ac9a7b> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/occupation-specific> .
 <http://data.europa.eu/esco/skill/e78473ee-d208-4b9c-b241-339334ac9a7b> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
@@ -75819,6 +76216,12 @@
 <http://data.europa.eu/esco/skill/ec410bec-db3c-4950-9f42-d4b3221868a7> <http://www.w3.org/2004/02/skos/core#prefLabel> "dekorere møbler"@nb .
 <http://data.europa.eu/esco/skill/ec410bec-db3c-4950-9f42-d4b3221868a7> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/ec410bec-db3c-4950-9f42-d4b3221868a7> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/ec4b8a2b-c20c-4c0f-bef0-fcc1f5f42c40> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/ec4b8a2b-c20c-4c0f-bef0-fcc1f5f42c40> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/ec4b8a2b-c20c-4c0f-bef0-fcc1f5f42c40> <http://www.w3.org/2004/02/skos/core#definition> "Bruke de fysiske delene eller komponentene av informasjonsteknologiutstyr, for eksempel skjerm, mus, tastatur, lagringsenheter, skrivere eller skannere."@nb .
+<http://data.europa.eu/esco/skill/ec4b8a2b-c20c-4c0f-bef0-fcc1f5f42c40> <http://www.w3.org/2004/02/skos/core#prefLabel> "bruke eksternt IKT-utstyr"@nb .
+<http://data.europa.eu/esco/skill/ec4b8a2b-c20c-4c0f-bef0-fcc1f5f42c40> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/ec4b8a2b-c20c-4c0f-bef0-fcc1f5f42c40> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/ec528c47-65f4-4187-9dc1-5a8889f84a06> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3753e796-121e-46a3-9c27-dee31ce92c80> .
 <http://data.europa.eu/esco/skill/ec528c47-65f4-4187-9dc1-5a8889f84a06> <http://www.w3.org/2004/02/skos/core#prefLabel> "analysere forretningsvirksomheter"@nb .
 <http://data.europa.eu/esco/skill/ec528c47-65f4-4187-9dc1-5a8889f84a06> a <http://www.w3.org/2004/02/skos/core#Concept> .
@@ -76723,6 +77126,7 @@
 <http://data.europa.eu/esco/skill/ef7562b2-f176-4d7c-a0b2-27ae8cce0b7d> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/e52389a2-1a05-45b0-8db3-4bda0f0c0b48> .
 <http://data.europa.eu/esco/skill/ef7562b2-f176-4d7c-a0b2-27ae8cce0b7d> <http://www.w3.org/2004/02/skos/core#definition> "Reagere raskt og hensiktsmessig på eksterne eller interne omstendigheter og stimuli."@nb .
 <http://data.europa.eu/esco/skill/ef7562b2-f176-4d7c-a0b2-27ae8cce0b7d> <http://www.w3.org/2004/02/skos/core#prefLabel> "reagere på fysiske endringer eller farer"@nb .
+<http://data.europa.eu/esco/skill/ef7562b2-f176-4d7c-a0b2-27ae8cce0b7d> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/ef7562b2-f176-4d7c-a0b2-27ae8cce0b7d> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/ef983998-fa85-4214-91ba-fb4b2f1e0cd5> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/1999bdfa-f9c4-4a0b-8565-0305108ca65e> .
 <http://data.europa.eu/esco/skill/ef983998-fa85-4214-91ba-fb4b2f1e0cd5> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/29a36f21-da45-4a01-b015-cac4445e5025> .
@@ -78640,6 +79044,7 @@
 <http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/3399045f-8078-4066-8b46-475b49b260ab> .
 <http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> <http://www.w3.org/2004/02/skos/core#definition> "Følge enkle måter å beskytte digitale enheter og innhold på."@nb .
 <http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> <http://www.w3.org/2004/02/skos/core#prefLabel> "anvende digitale sikkerhetstiltak"@nb .
+<http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/f4346da3-f6b2-4389-8a67-7c443b7e1609> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/ac88053e-c9b5-43cf-ace1-f506bcfdc8cb> .
 <http://data.europa.eu/esco/skill/f4346da3-f6b2-4389-8a67-7c443b7e1609> <http://www.w3.org/2004/02/skos/core#prefLabel> "utøve sport"@nb .
@@ -78822,6 +79227,7 @@
 <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/d6e97b91-b75d-45f5-8566-667798957b0f> .
 <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> <http://www.w3.org/2004/02/skos/core#definition> "Være oppmerksom på og benytte seg av konstitusjonelle og juridiske rettigheter, herunder plikten til å følge loven, betale skatt og yte bistand og retten til å stemme, stille til valg og til å ha en forsvarsadvokat til stede i en rettssak."@nb .
 <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> <http://www.w3.org/2004/02/skos/core#prefLabel> "utøve rettigheter og ansvar"@nb .
+<http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/f4cd5ece-c0e2-42d7-83ef-2008fe0d7cb6> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/07d4a2fa-e278-4f32-8cf9-9c01fc660369> .
 <http://data.europa.eu/esco/skill/f4cd5ece-c0e2-42d7-83ef-2008fe0d7cb6> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/73270b73-8c71-445f-a8d3-4647b1ae38d0> .
@@ -80487,6 +80893,22 @@
 <http://data.europa.eu/esco/skill/fa3e5cec-703e-4d46-b3bb-e8a89540ab54> <http://www.w3.org/2004/02/skos/core#prefLabel> "administrere digitale arkiver"@nb .
 <http://data.europa.eu/esco/skill/fa3e5cec-703e-4d46-b3bb-e8a89540ab54> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/fa3e5cec-703e-4d46-b3bb-e8a89540ab54> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#altLabel> "huske fakta"@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#altLabel> "huske informasjon"@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#altLabel> "huske prosedyrer"@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#altLabel> "legge seg noe på minnet"@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#altLabel> "lære informasjon utenat"@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#altLabel> "memorere fakta"@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#altLabel> "memorere informasjon"@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#altLabel> "memorere prosedyrer"@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#altLabel> "mnemoniske prinsipper"@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/fff1d675-c36a-4c12-9cd4-407f21ccd06a> .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#definition> "Lagre informasjon som ord, tall, bilder og prosedyrer for senere henting."@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> <http://www.w3.org/2004/02/skos/core#prefLabel> "lagre informasjon"@nb .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/fa46a48d-9cb9-422d-afab-1047654dbcdd> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/fa46ff13-5ad7-4a11-85d6-4b0614e411de> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/d36b66f8-c08a-4416-953b-62c271ca7509> .
 <http://data.europa.eu/esco/skill/fa46ff13-5ad7-4a11-85d6-4b0614e411de> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/sector-specific> .
 <http://data.europa.eu/esco/skill/fa46ff13-5ad7-4a11-85d6-4b0614e411de> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/knowledge> .
@@ -80872,6 +81294,12 @@
 <http://data.europa.eu/esco/skill/fb8464e3-949e-4cc0-b50b-be7cf9c3e250> <http://www.w3.org/2004/02/skos/core#prefLabel> "grunnkjemikalier"@nb .
 <http://data.europa.eu/esco/skill/fb8464e3-949e-4cc0-b50b-be7cf9c3e250> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/fb8464e3-949e-4cc0-b50b-be7cf9c3e250> a <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://data.europa.eu/esco/skill/fba28975-4544-4d37-8971-9bd72534018c> <http://data.europa.eu/esco/model#skillReuseLevel> <http://data.europa.eu/esco/skill-reuse-level/transversal> .
+<http://data.europa.eu/esco/skill/fba28975-4544-4d37-8971-9bd72534018c> <http://data.europa.eu/esco/model#skillType> <http://data.europa.eu/esco/skill-type/skill> .
+<http://data.europa.eu/esco/skill/fba28975-4544-4d37-8971-9bd72534018c> <http://www.w3.org/2004/02/skos/core#definition> "Ta personlig ansvar for å garantere et trygt arbeidsmiljø, inkludert personlig hygiene."@nb .
+<http://data.europa.eu/esco/skill/fba28975-4544-4d37-8971-9bd72534018c> <http://www.w3.org/2004/02/skos/core#prefLabel> "ivareta hygiene"@nb .
+<http://data.europa.eu/esco/skill/fba28975-4544-4d37-8971-9bd72534018c> a <http://data.europa.eu/esco/model#Skill> .
+<http://data.europa.eu/esco/skill/fba28975-4544-4d37-8971-9bd72534018c> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/fbb14862-aa9c-4f60-bf33-8b27a0785aba> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/061f56c6-36eb-4aa7-b5ef-98b7a569da1c> .
 <http://data.europa.eu/esco/skill/fbb14862-aa9c-4f60-bf33-8b27a0785aba> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/0da2ee5c-b480-498f-97a8-a292a0f4c54c> .
 <http://data.europa.eu/esco/skill/fbb14862-aa9c-4f60-bf33-8b27a0785aba> <http://data.europa.eu/esco/model#isOptionalSkillFor> <http://data.europa.eu/esco/occupation/2cbb23b0-0bf1-4871-9e6d-18f005987310> .
@@ -81470,6 +81898,7 @@
 <http://data.europa.eu/esco/skill/fd89f784-88dc-4d35-abd7-86aa073cab12> <http://www.w3.org/2004/02/skos/core#broader> <http://data.europa.eu/esco/skill/f5c9eef3-0495-4747-9519-d71a58d252bd> .
 <http://data.europa.eu/esco/skill/fd89f784-88dc-4d35-abd7-86aa073cab12> <http://www.w3.org/2004/02/skos/core#definition> "Være interessert i og åpen for andres problemer."@nb .
 <http://data.europa.eu/esco/skill/fd89f784-88dc-4d35-abd7-86aa073cab12> <http://www.w3.org/2004/02/skos/core#prefLabel> "ha et åpent sinn"@nb .
+<http://data.europa.eu/esco/skill/fd89f784-88dc-4d35-abd7-86aa073cab12> a <http://data.europa.eu/esco/model#Skill> .
 <http://data.europa.eu/esco/skill/fd89f784-88dc-4d35-abd7-86aa073cab12> a <http://www.w3.org/2004/02/skos/core#Concept> .
 <http://data.europa.eu/esco/skill/fd8a3c14-fe25-4490-a85d-0215d0a5aa6f> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/41a8e7c8-e1d8-4984-9b3c-dbbad1699f83> .
 <http://data.europa.eu/esco/skill/fd8a3c14-fe25-4490-a85d-0215d0a5aa6f> <http://data.europa.eu/esco/model#isEssentialSkillFor> <http://data.europa.eu/esco/occupation/f4a22809-c00c-4dd0-8b09-c7251f8dcd1c> .
