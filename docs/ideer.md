@@ -169,6 +169,10 @@ Gjenstår:
   Pilotene er eksempler. Forslagene havner på en egen gren som SSSOM uten kontrollør, med arbeidslister (CSV) som
   artefakt. Først en prøve på 8 læreplaner. Læreplaner der ISCO-gruppen ikke har ESCO-yrker, for eksempel BLD03-03
   (ISCO 7549), hoppes over.
+  Prøven 10.11: 963 forslag for 8 læreplaner (PR #2), 3,48 USD, om lag 0,45 USD per læreplan.
+  `scripts/godkjenn-km-esco.py` fører vurderingene fra utfylte arbeidslister inn: Ja gir kontrollør og SKOS-trippel,
+  Nei flytter raden til `<læreplan>.avvist.tsv`. Godkjente rader blir nye eksempler, og avviste blir moteksempler i
+  neste kjøring.
 - Eventuelt fritekstsøk (jena-text) i ferdighetsnavnene.
 - Gå gjennom de 21 usikre NUS-forslagene.
 - NKR- og EQF-nivå for sluttkompetanse.

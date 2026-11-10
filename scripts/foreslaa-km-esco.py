@@ -160,12 +160,28 @@ def eksempler(alle):
     return linjer
 
 
+def moteksempler():
+    """Forslag som en kontrollør har avvist (<læreplan>.avvist.tsv, skrevet av godkjenn-km-esco.py)."""
+    linjer = []
+    for fil in sorted(glob.glob(os.path.join(KM_ESCO, '*.avvist.tsv'))):
+        tabell = [l for l in open(fil, encoding='utf-8').read().split('\n') if l and not l.startswith('#')]
+        kol = tabell[0].split('\t')
+        for l in tabell[1:]:
+            r = dict(zip(kol, l.split('\t')))
+            linjer.append('%s | %s | %s | %s' % (r['subject_label'], r['predicate_id'].split(':')[1], r['object_label'],
+                                                 r.get('comment', '')))
+    return linjer
+
+
 def system_blokk(alle, tverr):
     """Lik for alle læreplanene i en kjøring, så den kan caches: instruks, eksempler og de tverrgående ferdighetene."""
     eks = eksempler(alle)
+    mot = moteksempler()
     tv = ['%s | %s (%s) | %s' % (t['id'], t['navn'], typ(t.get('type')), kort(t.get('def'))) for t in tverr]
     return (INSTRUKS + '\n\n## Godkjente koblinger fra pilotene (kompetansemål | relasjon | ferdighet | kommentar | '
             'læreplan), %d stykker\n' % len(eks) + '\n'.join(eks) +
+            ('\n\n## Avviste forslag (kompetansemål | foreslått relasjon | ferdighet | kommentar), %d stykker. Slike '
+             'forslag skal du ikke gjenta\n' % len(mot) + '\n'.join(mot) if mot else '') +
             '\n\n## Tverrgående ESCO-ferdigheter (kandidater for alle læreplaner), %d stykker\n' % len(tv) +
             '\n'.join(tv))
 
