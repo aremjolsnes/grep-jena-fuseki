@@ -491,7 +491,9 @@ programområdene er koblet til, også underyrkene: rundt 700 yrker, hvert med no
 ikke noe offentlig SPARQL-endepunkt, så yrkene hentes fra ESCO-API-et med `scripts/lag-esco-ttl.py`.
 
 **ESCO-ferdighetene.** Ferdighetene til ESCO-yrkene er også med: rundt 6 500 ferdigheter og 26 000 koblinger fra
-ESCO-versjonen som står i `ontologi/koblinger/esco-ferdigheter.ttl`.
+ESCO-versjonen som står i `ontologi/koblinger/esco-ferdigheter.ttl`. I tillegg er alle de 120 tverrgående
+ferdighetene med (gjenbruksnivå *transversal*, for eksempel *løse konflikter* og *utøve rettigheter og ansvar*),
+også de som ikke er knyttet til noe yrke. Språkferdighetene er ikke med.
 - Koblingene går fra ferdighet til yrke, slik ESCO har dem: `esco:isEssentialSkillFor` (essensiell) og
   `esco:isOptionalSkillFor` (valgfri).
 - Hver ferdighet har `skos:prefLabel`, `skos:altLabel` og `skos:definition` på norsk.
@@ -546,9 +548,9 @@ SELECT DISTINCT ?fagfelt ?ferdighet WHERE {
 
 **Kompetansemål og ESCO-ferdigheter (pilot).** For tre læreplaner er kompetansemålene koblet til
 ESCO-ferdighetene til yrkene programområdet utdanner til:
-- BMK03-03 (Vg3 bilfaget, lette kjøretøy): 107 koblinger;
-- HEA03-03 (Vg3 helsearbeiderfaget): 89 koblinger;
-- ELE03-04 (Vg3 elektrikerfaget): 91 koblinger. Det finnes ingen offisiell
+- BMK03-03 (Vg3 bilfaget, lette kjøretøy): 120 koblinger;
+- HEA03-03 (Vg3 helsearbeiderfaget): 115 koblinger;
+- ELE03-04 (Vg3 elektrikerfaget): 106 koblinger. Det finnes ingen offisiell
 kobling mellom læreplaner og ESCO. Disse koblingene er sandkassens egne og ikke en del av ESCO. Koblingene ble
 foreslått av en språkmodell og vurdert én for én av et menneske.
 
@@ -604,8 +606,10 @@ SELECT ?ferdighet (COUNT(DISTINCT ?y) AS ?antallYrker) WHERE {
 } GROUP BY ?ferdighet ORDER BY DESC(?antallYrker) ?ferdighet
 ```
 
-Et hull betyr «ikke funnet blant kandidatene». Kandidatene er bare ferdighetene til ESCO-yrkene under ISCO-gruppen
-til programområdet. Et kompetansemål kan derfor passe med en tverrgående ESCO-ferdighet utenfor den listen.
+Et hull betyr «ikke funnet blant kandidatene». Kandidatene er ferdighetene til ESCO-yrkene under ISCO-gruppen til
+programområdet, pluss ESCOs 120 tverrgående ferdigheter (utenom språk). En ferdighet som verken hører til yrkene eller
+er tverrgående, kan derfor mangle. Et eksempel er *arbeide ergonomisk* for helsearbeiderfaget, som ble lagt inn for
+hånd.
 
 **Utdanninger (NUS og ISCED).** Alle programområdene, også Vg1 og Vg2, er koblet til utdanningen sin i SSBs
 utdanningsgruppering NUS med `udir:utdanningsklassifisering`. Det finnes ingen offisiell tabell fra programområde til

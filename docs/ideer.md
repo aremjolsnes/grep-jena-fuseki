@@ -118,6 +118,8 @@ Dette er det som gjør Grep til en *lenket* graf. Det krever fagavklaring, slik 
 - ESCO v1.2.1 er lastet ned (classification, ttl; nedlastingen krever navn og e-post). Den ligger ikke i repoet.
 - `scripts/lag-esco-ferdigheter-ttl.py` leser N-Triples-filen linje for linje og henter ut ferdighetene til yrkene våre.
   Resultatet er 26 650 koblinger fra 6 486 ferdigheter, med 932 ferdighetsgrupper og fagfelt, til sammen 82 234 tripler.
+  10.11: Alle 120 tverrgående ferdigheter (utenom språk) er lagt til, også de uten yrke: 6 606 ferdigheter og
+  82 663 tripler.
   Alle har norsk navn og beskrivelse.
 - Filen har én trippel per linje og er sortert, så `git diff` viser endringene mellom ESCO-versjonene. Skriptet skriver
   også en oppsummering av endringene.
@@ -155,8 +157,13 @@ læreplanene. Et menneske vurderte alle og mente at 23 burde vært med (12 %):
   *oppgi informasjon om solcellepaneler*).
 - Til sammen er det nå 287 godkjente koblinger.
 
+✅ 2026-11-10, tverrgående ferdigheter: ESCOs 120 tverrgående ferdigheter (utenom språk) er lagt til i grafen og som
+kandidater for alle kompetansemål. En språkmodell foreslo 54 koblinger i de tre læreplanene (28 relatedMatch,
+22 narrowMatch, 2 closeMatch og 2 broadMatch), og et menneske godkjente alle. Nå har alle arbeidslivsmålene en
+kobling, for eksempel KM8657 og KM5451 ↔ *utøve rettigheter og ansvar* og KM5470 ↔ *løse konflikter* (closeMatch).
+Til sammen er det 341 koblinger.
+
 Gjenstår:
-- Legg ESCOs tverrgående ferdigheter (gjenbruksnivå *transversal*) til som kandidater for alle fag.
 - Automatiske forslag for resten av læreplanene: et skript som kaller en språkmodell (krever API-nøkkel), med
   pilotene som eksempler og fasit, og menneskelig kontroll før noe godkjennes.
 - Eventuelt fritekstsøk (jena-text) i ferdighetsnavnene.

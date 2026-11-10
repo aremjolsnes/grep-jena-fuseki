@@ -115,6 +115,42 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cace7a77-38b7-4cdf-8171-e17692bef5f6> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/5b0f2198-7246-4256-a902-4d9ce1260c80> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8637> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Kundebehandling er en del av målet" .
+<http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8637> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Fagetiske normer i bedriften» er en del av målet" .
+<http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/045f71e6-0699-4169-8a54-9c6b96f3174d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8637> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å veilede kunder er å gi råd" .
+<http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8638/4591e001-18f4-40df-9387-5ccc31a66691> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM8638> ;
@@ -429,6 +465,30 @@
     sssom:comment "Funnet i stikkprøve av bortvalgte kandidater (2026-11-10). Orden og renhold er en del av HMS i verkstedet. Målet sier det ikke rett ut, så koblingen er beslektet, ikke en del av målet" .
 <http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5598739b-6718-4cff-8402-91d7f65b1505> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/e49f4158-9d4c-425d-bf32-dfe89b19840a> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8642> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Planlegge … arbeidsoppdrag» er en del av målet; samme mønster som feilsøke på KM8644" .
+<http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8642> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «I tråd med lovverk» er en del av målet" .
+<http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8643/ba11879a-723d-4209-8ffa-008eaab9771f> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM8643> ;
@@ -617,6 +677,18 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM8646> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8646/0d75a128-bd88-4c1b-b70d-8e963aeb490c> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8646> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Gjenvinning og retur av gasser og væsker skal redusere forurensning; beslektet, ikke en del av målet" .
+<http://psi.udir.no/kl06/KM8646> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/3a5275f4-67e5-4371-a31e-68291aa86691> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM8647> ;
@@ -772,6 +844,30 @@
     sssom:mapping_tool "Claude (Anthropic)" ;
     sssom:comment "Funnet i stikkprøve av bortvalgte kandidater (2026-11-10). «Drøfte produkter, tjenester og kostnader» med kunden henger sammen med valg ut fra økonomi" .
 <http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ae4ea3e1-3c1a-45b0-96a7-106988c053c0> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8648> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å velge metode og komponent er å ta en avgjørelse" .
+<http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8648> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Valg ut fra miljøhensyn er beslektet" .
+<http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8649/2f58fc20-4528-410b-877f-3dec775f1b4e> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
@@ -1084,6 +1180,18 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM8654> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ab2bb44a-3956-4028-8715-8b70b1960b99> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8654/c4180af3-befd-4bd8-9a65-6a496f9d9f15> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8654> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å reflektere over hvordan arbeidsstillinger påvirker kroppen er beslektet med bevissthet om helserisiko" .
+<http://psi.udir.no/kl06/KM8654> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/1bc7c69b-4292-4592-b854-f48165a06082> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM8655> ;
@@ -1204,6 +1312,54 @@
     sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM8656> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8657/f4bcdb75-df28-441d-a52b-9730904f36a1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8657> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Arbeidsgivers og arbeidstakers plikter og rettigheter er en del av målet" .
+<http://psi.udir.no/kl06/KM8657> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8657/2e227d5d-649b-48dc-99ca-2389bbc1140f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8657> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Likeverdig og inkluderende arbeidsliv»; beslektet" .
+<http://psi.udir.no/kl06/KM8657> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8657/4e2ce047-1912-468f-8c04-ab7374c4a761> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8657> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/4e2ce047-1912-468f-8c04-ab7374c4a761> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Inkluderende arbeidsliv»; beslektet" .
+<http://psi.udir.no/kl06/KM8657> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4e2ce047-1912-468f-8c04-ab7374c4a761> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8657/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8657> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Partssamarbeid er en del av arbeidslivsdemokratiet; beslektet" .
+<http://psi.udir.no/kl06/KM8657> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> a sssom:MappingSet ;
     dcterms:title "Kompetansemål i ELE03-04 (Vg3 elektrikerfaget) koblet til ESCO-ferdigheter"@nb ;
@@ -1745,6 +1901,30 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM12883> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12883/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12883> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Konsekvenser av ressursbruk; beslektet" .
+<http://psi.udir.no/kl06/KM12883> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12883/0b709c64-a57a-4976-86bd-34d2cf34fa4f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12883> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/0b709c64-a57a-4976-86bd-34d2cf34fa4f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å drøfte etiske dilemmaer; beslektet" .
+<http://psi.udir.no/kl06/KM12883> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0b709c64-a57a-4976-86bd-34d2cf34fa4f> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12885/ccfbdaad-b91d-4bfe-bd0e-d30b33587f19> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM12885> ;
@@ -1766,6 +1946,30 @@
     sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM12885> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12885/409a0245-0e6c-4aac-ba16-0920ecb76a8d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12885> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Reflektere rundt mulige endringer» i eget arbeid; beslektet" .
+<http://psi.udir.no/kl06/KM12885> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12885/35ebe444-9ece-4fbc-a55d-e99ea37267ae> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12885> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å vurdere kvalitet og foreslå forbedringer; beslektet" .
+<http://psi.udir.no/kl06/KM12885> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12886/3d3ee5c3-4286-457f-9f76-1704011f7e11> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
@@ -1832,6 +2036,42 @@
     sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM12886> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2aff3316-15b8-4ca1-8ae2-270bd5fd22e1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12886/e49f4158-9d4c-425d-bf32-dfe89b19840a> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12886> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Planlegge … arbeidsoppdragene» er en del av målet" .
+<http://psi.udir.no/kl06/KM12886> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12886/60c78287-22eb-4103-9c8c-28deaa460da0> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12886> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «I samarbeid med andre» er en del av målet" .
+<http://psi.udir.no/kl06/KM12886> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12886/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12886> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «I henhold til gjeldende regelverk» er en del av målet" .
+<http://psi.udir.no/kl06/KM12886> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12887/6122d586-5978-431f-8e7a-96e61fc1f3fc> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
@@ -1909,6 +2149,18 @@
     sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM12888> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0e8d16c9-e2db-4862-ac06-1567f01ef806> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12888/f4346299-e22a-4686-8e61-2c9b0cd51c7d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12888> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Målet er å beskrive hvordan datasikkerhet er ivaretatt; beslektet" .
+<http://psi.udir.no/kl06/KM12888> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12889/2b76cbbf-eddc-4a12-a120-f4ea370820a5> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
@@ -2218,6 +2470,90 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM12892> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12881/2e227d5d-649b-48dc-99ca-2389bbc1140f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12881> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Trygghet i arbeidsmiljøet «uavhengig av kjønn»; beslektet" .
+<http://psi.udir.no/kl06/KM12881> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12881/4e2ce047-1912-468f-8c04-ab7374c4a761> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12881> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/4e2ce047-1912-468f-8c04-ab7374c4a761> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Tilhørighet «uavhengig av … kultur»; beslektet" .
+<http://psi.udir.no/kl06/KM12881> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4e2ce047-1912-468f-8c04-ab7374c4a761> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12882/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12882> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Bedriftsdemokrati og regulert arbeidsliv; beslektet" .
+<http://psi.udir.no/kl06/KM12882> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12882/f4bcdb75-df28-441d-a52b-9730904f36a1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12882> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Regler i det organiserte arbeidslivet; beslektet" .
+<http://psi.udir.no/kl06/KM12882> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12882/2e227d5d-649b-48dc-99ca-2389bbc1140f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12882> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å motvirke diskriminering og forskjellsbehandling; beslektet" .
+<http://psi.udir.no/kl06/KM12882> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12884/f4346299-e22a-4686-8e61-2c9b0cd51c7d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12884> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Slette sensitiv informasjon ved avhending» er et digitalt sikkerhetstiltak og en del av målet" .
+<http://psi.udir.no/kl06/KM12884> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12884/0d75a128-bd88-4c1b-b70d-8e963aeb490c> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12884> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Miljømessig riktig avfallshåndtering; beslektet" .
+<http://psi.udir.no/kl06/KM12884> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> a sssom:MappingSet ;
     dcterms:title "Kompetansemål i HEA03-03 (Vg3 helsearbeiderfaget) koblet til ESCO-ferdigheter"@nb ;
     dcterms:license <https://data.norge.no/nlod/no/2.0> ;
@@ -2256,6 +2592,18 @@
     sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5447> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/b34a15fe-dc14-43eb-9eb3-c227238a029c> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5447/045f71e6-0699-4169-8a54-9c6b96f3174d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5447> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Tiltak for helsekompetanse innebærer ofte råd; beslektet. KM5447 har allerede «sørge for helseopplysning»" .
+<http://psi.udir.no/kl06/KM5447> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5448/6acf652c-33b2-4e28-8f79-1e553f255229> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
@@ -2344,6 +2692,30 @@
     sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5450> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5450/a992f345-7c06-4982-8fc9-5fab55e316af> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5450> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å ta miljøbevisste valg i yrkesutøvelsen er omtrent det samme" .
+<http://psi.udir.no/kl06/KM5450> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5450/2aaad52d-599e-4e77-a681-bbc236825821> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5450> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/2aaad52d-599e-4e77-a681-bbc236825821> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å reflektere over miljøvalg er en del av målet" .
+<http://psi.udir.no/kl06/KM5450> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2aaad52d-599e-4e77-a681-bbc236825821> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5452/7a63f944-6948-4ae4-9c1f-d08e492535c9> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
@@ -2577,6 +2949,42 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5457> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5457/e37d64dc-0f05-4ee8-b065-bf76f70d8f5c> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5457> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/e37d64dc-0f05-4ee8-b065-bf76f70d8f5c> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Taushetsplikt er en del av målet (som også omfatter personvern og digital dømmekraft)" .
+<http://psi.udir.no/kl06/KM5457> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/e37d64dc-0f05-4ee8-b065-bf76f70d8f5c> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5457/f4346299-e22a-4686-8e61-2c9b0cd51c7d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5457> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Beskyttelse av personopplysninger digitalt er beslektet med personvern og digital dømmekraft" .
+<http://psi.udir.no/kl06/KM5457> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/f4346299-e22a-4686-8e61-2c9b0cd51c7d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5457/db33c0f3-43ee-4ba3-ba47-9269ac837697> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5457> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Digital dømmekraft omfatter kildekritikk; beslektet" .
+<http://psi.udir.no/kl06/KM5457> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5458/16636767-c215-4cf0-b126-e144fea20926> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM5458> ;
@@ -2598,6 +3006,30 @@
     sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5458> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5458/b080a008-a35d-4bd0-92e9-edf3773bb2b7> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5458> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b080a008-a35d-4bd0-92e9-edf3773bb2b7> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å bruke digitale kommunikasjonsverktøy er en del av målet" .
+<http://psi.udir.no/kl06/KM5458> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b080a008-a35d-4bd0-92e9-edf3773bb2b7> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5458/699e7c26-6502-4e78-a823-3656ff5a5b8b> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5458> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/699e7c26-6502-4e78-a823-3656ff5a5b8b> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å veilede i bruk av verktøy er beslektet med å instruere" .
+<http://psi.udir.no/kl06/KM5458> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/699e7c26-6502-4e78-a823-3656ff5a5b8b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5460/2e90ef65-646a-4b1d-8597-26ca88aa1c6b> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
@@ -2654,6 +3086,18 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5461> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/bccafecc-4d80-43d3-8c9f-aef382c3926f> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5461/60c78287-22eb-4103-9c8c-28deaa460da0> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5461> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Tverrfaglig samarbeid er en form for teamarbeid; ferdigheten er bredere" .
+<http://psi.udir.no/kl06/KM5461> <http://www.w3.org/2004/02/skos/core#broadMatch> <http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5462/9fcf9918-fdef-49c3-aedc-518eb1e7e1f5> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM5462> ;
@@ -2676,6 +3120,30 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5462> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5462/409a0245-0e6c-4aac-ba16-0920ecb76a8d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5462> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Reflektere over egen maktposisjon»; beslektet" .
+<http://psi.udir.no/kl06/KM5462> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5462/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5462> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Å følge regelverket for tvang er et særtilfelle av å overholde forskrifter" .
+<http://psi.udir.no/kl06/KM5462> <http://www.w3.org/2004/02/skos/core#broadMatch> <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5463/c5a80bb0-31e6-4de0-868c-00a0f9b88b47> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM5463> ;
@@ -2697,6 +3165,18 @@
     sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5463> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/1023ac61-250f-4eef-b7a9-238cf071685f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5463/77b636e8-fab3-41a8-8022-1e0a354059dc> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5463> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/77b636e8-fab3-41a8-8022-1e0a354059dc> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Omsorg for alvorlig syke, døende og pårørende krever empati; beslektet" .
+<http://psi.udir.no/kl06/KM5463> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/77b636e8-fab3-41a8-8022-1e0a354059dc> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5464/b4910ea9-578d-4767-bd68-00a315a64e09> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
@@ -2786,6 +3266,30 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5465> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1b3370df-c280-470c-ac35-951f42ca8b19> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5465/409a0245-0e6c-4aac-ba16-0920ecb76a8d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5465> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Reflektere over hva det vil si å være en profesjonell helsefagarbeider» er en del av målet" .
+<http://psi.udir.no/kl06/KM5465> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5465/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5465> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Profesjonalitet omfatter etikk; beslektet" .
+<http://psi.udir.no/kl06/KM5465> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5466/98eb1f3b-3480-416b-bd4b-811946f7e347> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM5466> ;
@@ -2829,6 +3333,30 @@
     sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5466> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5466/35ebe444-9ece-4fbc-a55d-e99ea37267ae> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5466> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Arbeide for kontinuerlig kvalitetsforbedring» er en del av målet" .
+<http://psi.udir.no/kl06/KM5466> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5466/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5466> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Etter gjeldende regelverk for helse, miljø og sikkerhet» er en del av målet" .
+<http://psi.udir.no/kl06/KM5466> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5467/f7464f30-662b-4177-85a0-3df9693e9e58> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
@@ -2986,6 +3514,30 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5471> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/82b6f3bc-5dc3-4c8b-a814-9b471df42e02> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5471/d9449998-c1f5-478c-a103-2255398cf0b6> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5471> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d9449998-c1f5-478c-a103-2255398cf0b6> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Hygiene er en del av målet (som også omfatter smittevern)" .
+<http://psi.udir.no/kl06/KM5471> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d9449998-c1f5-478c-a103-2255398cf0b6> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5471/6816e28f-a48d-41c7-8492-309f50c049fc> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5471> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/6816e28f-a48d-41c7-8492-309f50c049fc> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Hygienisk arbeidspraksis er en del av målet" .
+<http://psi.udir.no/kl06/KM5471> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/6816e28f-a48d-41c7-8492-309f50c049fc> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5472/8232979d-6aa4-40c9-a12b-5152a52a76b8> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM5472> ;
@@ -3109,6 +3661,42 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5473> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/e724205b-6b9a-45b4-b629-cd32a6c80b4f> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5473/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5473> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Kommunikasjon med folk «fra ulike kulturer» er en del av målet" .
+<http://psi.udir.no/kl06/KM5473> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5473/5ca953f7-541d-4f67-bc55-7721348366cf> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5473> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Beslektet med møtet med ulike kulturer" .
+<http://psi.udir.no/kl06/KM5473> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5473/3481d400-2eaa-4ab3-bb06-5f45b4380052> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5473> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/3481d400-2eaa-4ab3-bb06-5f45b4380052> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Ulik mulighet til å kommunisere» kan kreve kroppsspråk; beslektet" .
+<http://psi.udir.no/kl06/KM5473> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3481d400-2eaa-4ab3-bb06-5f45b4380052> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5474/16636767-c215-4cf0-b126-e144fea20926> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM5474> ;
@@ -3175,6 +3763,18 @@
     sssom:mapping_tool "Claude (Anthropic)" .
 <http://psi.udir.no/kl06/KM5475> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5475/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5475> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Etisk forsvarlig helsehjelp» er en del av målet" .
+<http://psi.udir.no/kl06/KM5475> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5476/d3b74d50-7fc9-4051-9335-58d129a4a064> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM5476> ;
@@ -3198,6 +3798,18 @@
     sssom:comment "Funnet i stikkprøve av bortvalgte kandidater (2026-11-10). Beskrivelsen nevner kommunikasjon med lokalsamfunnet; beslektet med samarbeid med frivillige" .
 <http://psi.udir.no/kl06/KM5459> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/7110bf9f-b245-4adc-9159-5081013fd64d> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5459/bf983f2a-e941-4646-811d-cc81060cb53f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5459> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/bf983f2a-e941-4646-811d-cc81060cb53f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Samarbeid med frivillige organisasjoner og andre aktører krever nettverk; beslektet" .
+<http://psi.udir.no/kl06/KM5459> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/bf983f2a-e941-4646-811d-cc81060cb53f> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5469/156f8c5b-894a-4ccc-a70e-37a2726f3f00> a sssom:Mapping ;
     sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
     sssom:subject_id <http://psi.udir.no/kl06/KM5469> ;
@@ -3209,4 +3821,40 @@
     sssom:mapping_tool "Claude (Anthropic)" ;
     sssom:comment "Hull-forslag, godkjent 2026-11-10. KM5469 hadde ingen kobling. Ferdigheten er ikke blant ferdighetene til helsearbeideryrkene i ESCO, så den ligger utenfor kandidatsettet; funnet via ELE03-04 (KM12889)." .
 <http://psi.udir.no/kl06/KM5469> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/156f8c5b-894a-4ccc-a70e-37a2726f3f00> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5451/f4bcdb75-df28-441d-a52b-9730904f36a1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5451> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). «Ivareta egne rettigheter og plikter i arbeidsforholdet» er en del av målet" .
+<http://psi.udir.no/kl06/KM5451> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5451/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5451> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Den norske modellen og partenes samfunnsrolle er beslektet med demokratiprinsipper" .
+<http://psi.udir.no/kl06/KM5451> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5470/96de2e86-e287-41f2-88ab-15a2343afc6f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM5470> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/96de2e86-e287-41f2-88ab-15a2343afc6f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Tverrgående ESCO-ferdighet (2026-11-10). Konflikthåndtering og forebygging av konflikter er omtrent det samme" .
+<http://psi.udir.no/kl06/KM5470> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/96de2e86-e287-41f2-88ab-15a2343afc6f> .
 
