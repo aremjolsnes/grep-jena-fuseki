@@ -546,9 +546,9 @@ SELECT DISTINCT ?fagfelt ?ferdighet WHERE {
 
 **Kompetansemål og ESCO-ferdigheter (pilot).** For tre læreplaner er kompetansemålene koblet til
 ESCO-ferdighetene til yrkene programområdet utdanner til:
-- BMK03-03 (Vg3 bilfaget, lette kjøretøy): 95 koblinger;
-- HEA03-03 (Vg3 helsearbeiderfaget): 82 koblinger;
-- ELE03-04 (Vg3 elektrikerfaget): 85 koblinger. Det finnes ingen offisiell
+- BMK03-03 (Vg3 bilfaget, lette kjøretøy): 107 koblinger;
+- HEA03-03 (Vg3 helsearbeiderfaget): 89 koblinger;
+- ELE03-04 (Vg3 elektrikerfaget): 91 koblinger. Det finnes ingen offisiell
 kobling mellom læreplaner og ESCO. Disse koblingene er sandkassens egne og ikke en del av ESCO. Koblingene ble
 foreslått av en språkmodell og vurdert én for én av et menneske.
 

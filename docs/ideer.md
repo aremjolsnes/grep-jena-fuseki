@@ -143,8 +143,19 @@ ELE03-04 (elektrikerfaget, 85 koblinger). Et menneske godkjente alle 262 forslag
 presisjonen er høy. Dekningen er ikke målt. Arbeidslivsmålene, som partssamarbeid og bedriftsdemokrati, står uten
 kandidat i alle tre læreplanene. De trenger tverrgående ESCO-ferdigheter, og de er ikke med blant kandidatene ennå.
 
+✅ 2026-11-10, dekning: en stikkprøve på 199 kandidater som ikke ble valgt, fra 25 kompetansemål i de tre
+læreplanene. Et menneske vurderte alle og mente at 23 burde vært med (12 %):
+- 14 relatedMatch, 5 broadMatch, 4 narrowMatch og ingen closeMatch. Det som manglet, var kanttilfeller, ikke
+  ferdigheter som er det samme som målet.
+- De 23 er lagt til i SSSOM-filene med en kommentar om at de kommer fra stikkprøven.
+- Arbeidslivsmålene fikk heller ikke noe treff i stikkprøven.
+- Metoden har et hull: kandidatene er bare ferdighetene til yrkene. KM5469 (ergonomi i helsearbeiderfaget) hadde
+  derfor ingen kobling, selv om ESCO har *arbeide ergonomisk*. Den ferdigheten står ikke på yrkene til
+  helsearbeideren. Den er nå lagt inn for hånd som closeMatch, sammen med én til for KM12873 (relatedMatch,
+  *oppgi informasjon om solcellepaneler*).
+- Til sammen er det nå 287 godkjente koblinger.
+
 Gjenstår:
-- Mål dekningen med en stikkprøve av kandidater som ikke ble valgt.
 - Legg ESCOs tverrgående ferdigheter (gjenbruksnivå *transversal*) til som kandidater for alle fag.
 - Automatiske forslag for resten av læreplanene: et skript som kaller en språkmodell (krever API-nøkkel), med
   pilotene som eksempler og fasit, og menneskelig kontroll før noe godkjennes.
