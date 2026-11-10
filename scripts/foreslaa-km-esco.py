@@ -312,6 +312,7 @@ def main():
 
     klient = None
     if not a.toerrkjoering:
+        global anthropic
         import anthropic
         klient = anthropic.Anthropic()
     dato = datetime.date.today().isoformat()
@@ -342,6 +343,8 @@ def main():
             continue
         try:
             forslag, usage, modell = kall_claude(klient, system, bruker, a.effort)
+        except (anthropic.AuthenticationError, anthropic.PermissionDeniedError, anthropic.NotFoundError) as e:
+            sys.exit('Stopper: %s: %s' % (type(e).__name__, e))  # nøkkel eller modell er feil; gjelder alle læreplanene
         except Exception as e:  # én læreplan som feiler, skal ikke stoppe resten
             print('  FEIL: %s: %s' % (type(e).__name__, e))
             oppsummering.append((kode, 'feil', 0, 0.0))
@@ -375,6 +378,8 @@ def main():
                 for kode, n, uten, k in oppsummering:
                     f.write('| %s | %s | %s | %.3f |\n' % (kode, n, uten, k))
                 f.write('\nTotalt: %.2f USD\n' % total)
+        if oppsummering and all(n == 'feil' for _, n, _, _ in oppsummering if n != 'ingen ESCO-yrker'):
+            sys.exit('Alle kallene feilet.')
 
 
 if __name__ == '__main__':
