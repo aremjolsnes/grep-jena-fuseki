@@ -46,6 +46,9 @@ PREFIX text: <http://jena.apache.org/text#>        # fritekstsøk, se «Fritekst
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX styrk: <http://psi.udir.no/ontologi/styrk08/>  # yrkesgrupper i STYRK-08, se «Koblinger»
 PREFIX isco: <http://data.europa.eu/esco/isco/>     # ISCO-08-grupper i ESCO
+PREFIX nus: <http://psi.udir.no/ontologi/nus/>      # utdanninger i NUS, se «Koblinger»
+PREFIX iscedf: <http://data.europa.eu/esco/isced-f/>  # fagfelt i ISCED-F 2013 (ESCO)
+PREFIX isced2011: <http://psi.udir.no/ontologi/isced2011/>  # nivå i ISCED 2011
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>          # beskrivelse av datasettet, se «Hvor ferske er dataene?»
 PREFIX void: <http://rdfs.org/ns/void#>
@@ -64,7 +67,7 @@ trenger ikke å bry seg om grafene.
 | `urn:graph:ontologi` | Ontologien: klasser, egenskaper og koblinger til typene i dataene |
 | `urn:graph:normalisert` | Gyldighet som egne ressurser, perioder som datoer og tittel per målform (omtrent 330 000 tripler) |
 | `urn:graph:utledet` | Typene fra ontologien, utledet fra typene i dataene (omtrent 50 000 tripler) |
-| `urn:graph:koblinger` | Koblinger til andre kunnskapsgrafer: yrker i STYRK-08, med kobling videre til ESCO (se «Koblinger til andre kunnskapsgrafer») |
+| `urn:graph:koblinger` | Koblinger til andre kunnskapsgrafer: yrker i STYRK-08 (videre til ESCO) og utdanninger i NUS (videre til ISCED) (se «Koblinger til andre kunnskapsgrafer») |
 | `urn:graph:meta` | Når dataene sist ble oppdatert |
 
 Vil du ha *bare* Grep-dataene, for eksempel for å sammenligne med Udirs offisielle endepunkt, pakker du
@@ -481,7 +484,48 @@ SELECT ?hovedgruppe ?navn (COUNT(DISTINCT ?p) AS ?antall) WHERE {
 
 ESCO-yrkene under en ISCO-gruppe ligger hos ESCO, ikke i sandkassen. Slå opp `?isco` i
 [ESCOs API](https://ec.europa.eu/esco/api/resource/concept?uri=http://data.europa.eu/esco/isco/C7231&language=no),
-eller bruk `SERVICE` mot et SPARQL-endepunkt for ESCO hvis du har et.
+eller last ned klassifikasjonen fra ESCO. ESCO har ikke noe offentlig SPARQL-endepunkt (sjekket 2026-11-10: verken
+ESCO eller EUs Cellar), så `SERVICE` mot ESCO er ikke mulig.
+
+**Utdanninger (NUS og ISCED).** Alle programområdene, også Vg1 og Vg2, er koblet til utdanningen sin i SSBs
+utdanningsgruppering NUS med `udir:utdanningsklassifisering`. Det finnes ingen offisiell tabell fra programområde til
+NUS, så koblingen er sandkassens forslag. NUS-koden har `skos:broadMatch` videre til fagfeltet i ISCED-F 2013 (som ESCO
+publiserer) og nivået i ISCED 2011, etter SSBs egne korrespondansetabeller. Det er klassifiseringene som brukes i
+europeisk utdanningsstatistikk og i Europass.
+
+- **491 av 497 programområder** har en kobling. 421 har samme navn og trinn som NUS-koden, for eksempel
+  «Bilfaget, lette kjøretøy» på Vg3 og NUS 455204 «Bilfaget, lette kjøretøy, Vg3».
+- Finnes koden både i ny og gammel ordning, får utgåtte programområder gammel ordning og publiserte ny.
+- Varianter for Steinerskolen, Montessori og Den tyske skole har samme kode som den vanlige utgaven av
+  programområdet.
+- Første siffer i NUS-koden er nivået: 3 er videregående grunnutdanning (Vg1 og Vg2), og 4 er videregående
+  avsluttende utdanning (Vg3).
+- Kilden er [ontologi/koblinger/nus.csv](https://github.com/aremjolsnes/grep-jena-fuseki/blob/main/ontologi/koblinger/nus.csv).
+  Der står metoden for hver kobling. NUS-versjonen står i `owl:versionInfo` på `udir:Nus`.
+- Hver natt sjekkes det om SSB har tatt ut en kode vi bruker, eller om Grep har fått programområder som ikke er
+  vurdert. Begge deler meldes som avvik.
+
+**Utdanning, fagfelt og nivå for programområdene i bilfaget:**
+
+```sparql
+SELECT ?kode ?tittel ?nus ?utdanning ?fagfelt ?nivaa WHERE {
+  ?p u:kode ?kode ; u:tittel ?tittel ; udir:utdanningsklassifisering ?n .
+  FILTER(lang(?tittel) = "default" && STRSTARTS(?tittel, "Bilfaget"))
+  ?n skos:notation ?nus ; skos:prefLabel ?utdanning .
+  OPTIONAL { ?n skos:broadMatch ?fagfelt FILTER(STRSTARTS(STR(?fagfelt), STR(iscedf:))) }
+  OPTIONAL { ?n skos:broadMatch/skos:prefLabel ?nivaa FILTER(lang(?nivaa) = "en") }
+} ORDER BY ?kode
+```
+
+**Både yrke og utdanning for ett programområde:**
+
+```sparql
+SELECT ?utdanning ?yrke ?isco WHERE {
+  d:TPBTK3---- udir:utdanningsklassifisering/skos:prefLabel ?utdanning ;
+               udir:yrkesklassifisering ?k .
+  ?k skos:prefLabel ?yrke ; skos:exactMatch ?isco .
+}
+```
 
 ## Fritekstsøk
 

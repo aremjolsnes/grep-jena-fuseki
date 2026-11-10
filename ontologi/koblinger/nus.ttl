@@ -1,0 +1,4961 @@
+# GENERERT av scripts/lag-nus-ttl.py fra ontologi/koblinger/nus.csv og SSBs KLASS. Ikke rediger for hånd.
+# NUS-versjon: Utdanningsgruppering (NUS) 2026-11
+#
+# Lastes inn i urn:graph:koblinger av scripts/nattlig-innlasting.sh.
+
+@prefix udir:  <http://psi.udir.no/ontologi/> .
+@prefix nus:   <http://psi.udir.no/ontologi/nus/> .
+@prefix isced2011: <http://psi.udir.no/ontologi/isced2011/> .
+@prefix iscedf: <http://data.europa.eu/esco/isced-f/> .
+@prefix d:     <http://psi.udir.no/kl06/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+udir:Nus a skos:ConceptScheme ;
+    skos:prefLabel "NUS Norsk standard for utdanningsgruppering"@nb, "NUS Norsk standard for utdanningsgruppering"@nn,
+                   "NUS Norwegian Standard Classification of Education"@en ;
+    rdfs:comment "SSBs utdanningsgruppering. Bare kodene programområdene bruker, og gruppene over dem, er med. SSB har ingen faste URI-er for kodene, så sandkassen lager dem selv."@nb ;
+    dcterms:publisher <https://www.ssb.no/> ;
+    owl:versionInfo "Utdanningsgruppering (NUS) 2026-11" ;
+    rdfs:seeAlso <https://data.ssb.no/api/klass/v1/classifications/36> .
+
+udir:Isced2011 a skos:ConceptScheme ;
+    skos:prefLabel "ISCED 2011 (nivå, fullført utdanning)"@nb, "ISCED 2011 Attainment"@en ;
+    rdfs:comment "Nivåene i ISCED 2011 som NUS-kodene er koblet til i SSBs korrespondansetabell. Egne begreper fordi EU ikke har adresser for dem som virker (sjekket 2026-11-10)."@nb .
+
+nus:3 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3" ;
+    skos:prefLabel "Videregående, grunnutdanning"@nb ;
+    skos:topConceptOf udir:Nus .
+
+nus:4 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4" ;
+    skos:prefLabel "Videregående, avsluttende utdanning"@nb ;
+    skos:topConceptOf udir:Nus .
+
+nus:30 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "30" ;
+    skos:prefLabel "Allmenne fag"@nb ;
+    skos:broader nus:3 .
+
+nus:31 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "31" ;
+    skos:prefLabel "Humanistiske og estetiske fag"@nb ;
+    skos:broader nus:3 .
+
+nus:33 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "33" ;
+    skos:prefLabel "Samfunnsfag og juridiske fag"@nb ;
+    skos:broader nus:3 .
+
+nus:34 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "34" ;
+    skos:prefLabel "Økonomiske og administrative fag"@nb ;
+    skos:broader nus:3 .
+
+nus:35 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "35" ;
+    skos:prefLabel "Naturvitenskapelige fag, håndverksfag og tekniske fag"@nb ;
+    skos:broader nus:3 .
+
+nus:36 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "36" ;
+    skos:prefLabel "Helse-, sosial- og idrettsfag"@nb ;
+    skos:broader nus:3 .
+
+nus:37 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "37" ;
+    skos:prefLabel "Primærnæringsfag"@nb ;
+    skos:broader nus:3 .
+
+nus:38 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "38" ;
+    skos:prefLabel "Samferdsels- og sikkerhetsfag og andre servicefag"@nb ;
+    skos:broader nus:3 .
+
+nus:40 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "40" ;
+    skos:prefLabel "Allmenne fag"@nb ;
+    skos:broader nus:4 .
+
+nus:41 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "41" ;
+    skos:prefLabel "Humanistiske og estetiske fag"@nb ;
+    skos:broader nus:4 .
+
+nus:43 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "43" ;
+    skos:prefLabel "Samfunnsfag og juridiske fag"@nb ;
+    skos:broader nus:4 .
+
+nus:44 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "44" ;
+    skos:prefLabel "Økonomiske og administrative fag"@nb ;
+    skos:broader nus:4 .
+
+nus:45 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "45" ;
+    skos:prefLabel "Naturvitenskapelige fag, håndverksfag og tekniske fag"@nb ;
+    skos:broader nus:4 .
+
+nus:46 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "46" ;
+    skos:prefLabel "Helse-, sosial- og idrettsfag"@nb ;
+    skos:broader nus:4 .
+
+nus:47 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "47" ;
+    skos:prefLabel "Primærnæringsfag"@nb ;
+    skos:broader nus:4 .
+
+nus:48 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "48" ;
+    skos:prefLabel "Samferdsels- og sikkerhetsfag og andre servicefag"@nb ;
+    skos:broader nus:4 .
+
+nus:301 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "301" ;
+    skos:prefLabel "Allmenne fag"@nb ;
+    skos:broader nus:30 .
+
+nus:315 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "315" ;
+    skos:prefLabel "Musikk, dans og drama"@nb ;
+    skos:broader nus:31 .
+
+nus:316 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316" ;
+    skos:prefLabel "Bildende kunst og kunsthåndverk"@nb ;
+    skos:broader nus:31 .
+
+nus:335 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "335" ;
+    skos:prefLabel "Medie- og informasjonsfag"@nb ;
+    skos:broader nus:33 .
+
+nus:342 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "342" ;
+    skos:prefLabel "Handel og markedsføring"@nb ;
+    skos:broader nus:34 .
+
+nus:344 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "344" ;
+    skos:prefLabel "Hotell- og reiselivsfag"@nb ;
+    skos:broader nus:34 .
+
+nus:349 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "349" ;
+    skos:prefLabel "Økonomiske og administrative fag, andre"@nb ;
+    skos:broader nus:34 .
+
+nus:352 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "352" ;
+    skos:prefLabel "Fysiske og kjemiske fag"@nb ;
+    skos:broader nus:35 .
+
+nus:354 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "354" ;
+    skos:prefLabel "Informasjons- og datateknologi"@nb ;
+    skos:broader nus:35 .
+
+nus:355 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355" ;
+    skos:prefLabel "Utdanninger i elektrofag, mekaniske fag og maskinfag"@nb ;
+    skos:broader nus:35 .
+
+nus:357 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357" ;
+    skos:prefLabel "Bygg- og anleggsfag"@nb ;
+    skos:broader nus:35 .
+
+nus:358 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358" ;
+    skos:prefLabel "Fabrikasjon og utvinning"@nb ;
+    skos:broader nus:35 .
+
+nus:361 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "361" ;
+    skos:prefLabel "Pleie- og omsorgsfag"@nb ;
+    skos:broader nus:36 .
+
+nus:362 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "362" ;
+    skos:prefLabel "Sosialfag"@nb ;
+    skos:broader nus:36 .
+
+nus:365 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "365" ;
+    skos:prefLabel "Terapeutiske fag"@nb ;
+    skos:broader nus:36 .
+
+nus:368 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "368" ;
+    skos:prefLabel "Idrettsfag"@nb ;
+    skos:broader nus:36 .
+
+nus:369 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "369" ;
+    skos:prefLabel "Helse-, sosial- og idrettsfag, andre"@nb ;
+    skos:broader nus:36 .
+
+nus:371 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "371" ;
+    skos:prefLabel "Fiske og havbruk"@nb ;
+    skos:broader nus:37 .
+
+nus:373 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "373" ;
+    skos:prefLabel "Gartneri og hagebruk"@nb ;
+    skos:broader nus:37 .
+
+nus:374 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "374" ;
+    skos:prefLabel "Skogbruk"@nb ;
+    skos:broader nus:37 .
+
+nus:379 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "379" ;
+    skos:prefLabel "Primærnæringsfag, andre"@nb ;
+    skos:broader nus:37 .
+
+nus:381 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "381" ;
+    skos:prefLabel "Samferdsel"@nb ;
+    skos:broader nus:38 .
+
+nus:383 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "383" ;
+    skos:prefLabel "Andre servicefag"@nb ;
+    skos:broader nus:38 .
+
+nus:401 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "401" ;
+    skos:prefLabel "Allmenne fag"@nb ;
+    skos:broader nus:40 .
+
+nus:415 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "415" ;
+    skos:prefLabel "Musikk, dans og drama"@nb ;
+    skos:broader nus:41 .
+
+nus:416 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416" ;
+    skos:prefLabel "Bildende kunst og kunsthåndverk"@nb ;
+    skos:broader nus:41 .
+
+nus:435 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "435" ;
+    skos:prefLabel "Medie- og informasjonsfag"@nb ;
+    skos:broader nus:43 .
+
+nus:442 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "442" ;
+    skos:prefLabel "Handel og markedsføring"@nb ;
+    skos:broader nus:44 .
+
+nus:443 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "443" ;
+    skos:prefLabel "Kontorfag"@nb ;
+    skos:broader nus:44 .
+
+nus:444 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "444" ;
+    skos:prefLabel "Hotell- og reiselivsfag"@nb ;
+    skos:broader nus:44 .
+
+nus:449 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "449" ;
+    skos:prefLabel "Økonomiske og administrative fag, andre"@nb ;
+    skos:broader nus:44 .
+
+nus:452 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "452" ;
+    skos:prefLabel "Fysiske og kjemiske fag"@nb ;
+    skos:broader nus:45 .
+
+nus:454 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "454" ;
+    skos:prefLabel "Informasjons- og datateknologi"@nb ;
+    skos:broader nus:45 .
+
+nus:455 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455" ;
+    skos:prefLabel "Utdanninger i elektrofag, mekaniske fag og maskinfag"@nb ;
+    skos:broader nus:45 .
+
+nus:457 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457" ;
+    skos:prefLabel "Bygg- og anleggsfag"@nb ;
+    skos:broader nus:45 .
+
+nus:458 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458" ;
+    skos:prefLabel "Fabrikasjon og utvinning"@nb ;
+    skos:broader nus:45 .
+
+nus:461 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "461" ;
+    skos:prefLabel "Pleie- og omsorgsfag"@nb ;
+    skos:broader nus:46 .
+
+nus:462 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "462" ;
+    skos:prefLabel "Sosialfag"@nb ;
+    skos:broader nus:46 .
+
+nus:464 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "464" ;
+    skos:prefLabel "Tannhelsefag"@nb ;
+    skos:broader nus:46 .
+
+nus:465 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "465" ;
+    skos:prefLabel "Terapeutiske fag"@nb ;
+    skos:broader nus:46 .
+
+nus:466 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "466" ;
+    skos:prefLabel "Apotekfag"@nb ;
+    skos:broader nus:46 .
+
+nus:468 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "468" ;
+    skos:prefLabel "Idrettsfag"@nb ;
+    skos:broader nus:46 .
+
+nus:469 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "469" ;
+    skos:prefLabel "Helse-, sosial- og idrettsfag, andre"@nb ;
+    skos:broader nus:46 .
+
+nus:471 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "471" ;
+    skos:prefLabel "Fiske og havbruk"@nb ;
+    skos:broader nus:47 .
+
+nus:473 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "473" ;
+    skos:prefLabel "Gartneri og hagebruk"@nb ;
+    skos:broader nus:47 .
+
+nus:474 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "474" ;
+    skos:prefLabel "Skogbruk"@nb ;
+    skos:broader nus:47 .
+
+nus:479 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "479" ;
+    skos:prefLabel "Primærnæringsfag, andre"@nb ;
+    skos:broader nus:47 .
+
+nus:481 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "481" ;
+    skos:prefLabel "Samferdsel"@nb ;
+    skos:broader nus:48 .
+
+nus:482 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "482" ;
+    skos:prefLabel "Sikkerhet"@nb ;
+    skos:broader nus:48 .
+
+nus:483 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483" ;
+    skos:prefLabel "Andre servicefag"@nb ;
+    skos:broader nus:48 .
+
+nus:3011 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3011" ;
+    skos:prefLabel "Generelle programmer"@nb ;
+    skos:broader nus:301 .
+
+nus:3151 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3151" ;
+    skos:prefLabel "Sang- og musikkutdanninger"@nb ;
+    skos:broader nus:315 .
+
+nus:3152 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3152" ;
+    skos:prefLabel "Teater- og filmutdanninger"@nb ;
+    skos:broader nus:315 .
+
+nus:3153 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3153" ;
+    skos:prefLabel "Danse- og ballettutdanninger"@nb ;
+    skos:broader nus:315 .
+
+nus:3159 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3159" ;
+    skos:prefLabel "Musikk, dans og drama, andre"@nb ;
+    skos:broader nus:315 .
+
+nus:3161 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3161" ;
+    skos:prefLabel "Husflid, brukskunst og industridesign"@nb ;
+    skos:broader nus:316 .
+
+nus:3162 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3162" ;
+    skos:prefLabel "Tre-, metall- og glasshåndverk"@nb ;
+    skos:broader nus:316 .
+
+nus:3165 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3165" ;
+    skos:prefLabel "Interiør- og dekoratørutdanninger"@nb ;
+    skos:broader nus:316 .
+
+nus:3166 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3166" ;
+    skos:prefLabel "Konfeksjons- og tekstilkunstutdanninger"@nb ;
+    skos:broader nus:316 .
+
+nus:3169 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3169" ;
+    skos:prefLabel "Bildende kunst og kunsthåndverk, andre"@nb ;
+    skos:broader nus:316 .
+
+nus:3351 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3351" ;
+    skos:prefLabel "Media og kommunikasjon"@nb ;
+    skos:broader nus:335 .
+
+nus:3359 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3359" ;
+    skos:prefLabel "Medie- og informasjonsfag, andre"@nb ;
+    skos:broader nus:335 .
+
+nus:3429 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3429" ;
+    skos:prefLabel "Handel og markedsføring, andre"@nb ;
+    skos:broader nus:342 .
+
+nus:3441 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3441" ;
+    skos:prefLabel "Reiselivsfag"@nb ;
+    skos:broader nus:344 .
+
+nus:3499 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3499" ;
+    skos:prefLabel "Økonomiske og administrative fag, andre"@nb ;
+    skos:broader nus:349 .
+
+nus:3522 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3522" ;
+    skos:prefLabel "Kjemiske fag"@nb ;
+    skos:broader nus:352 .
+
+nus:3541 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3541" ;
+    skos:prefLabel "Informasjons- og datateknologi"@nb ;
+    skos:broader nus:354 .
+
+nus:3551 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3551" ;
+    skos:prefLabel "Elektro"@nb ;
+    skos:broader nus:355 .
+
+nus:3552 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3552" ;
+    skos:prefLabel "Mekaniske fag"@nb ;
+    skos:broader nus:355 .
+
+nus:3553 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3553" ;
+    skos:prefLabel "Finmekaniske fag"@nb ;
+    skos:broader nus:355 .
+
+nus:3559 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3559" ;
+    skos:prefLabel "Utdanninger i elektrofag, mekaniske fag og maskinfag, andre"@nb ;
+    skos:broader nus:355 .
+
+nus:3571 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3571" ;
+    skos:prefLabel "Bygg og anlegg"@nb ;
+    skos:broader nus:357 .
+
+nus:3581 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3581" ;
+    skos:prefLabel "Næringsmiddelproduksjon"@nb ;
+    skos:broader nus:358 .
+
+nus:3582 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3582" ;
+    skos:prefLabel "Tekstil- og skinnproduksjon"@nb ;
+    skos:broader nus:358 .
+
+nus:3583 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3583" ;
+    skos:prefLabel "Produksjon av tre, papir, plast og glass"@nb ;
+    skos:broader nus:358 .
+
+nus:3584 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3584" ;
+    skos:prefLabel "Gruvedrift og utvinning"@nb ;
+    skos:broader nus:358 .
+
+nus:3619 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3619" ;
+    skos:prefLabel "Pleie- og omsorgsfag, andre"@nb ;
+    skos:broader nus:361 .
+
+nus:3621 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3621" ;
+    skos:prefLabel "Sosialfag"@nb ;
+    skos:broader nus:362 .
+
+nus:3659 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3659" ;
+    skos:prefLabel "Terapeutiske fag, andre"@nb ;
+    skos:broader nus:365 .
+
+nus:3681 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3681" ;
+    skos:prefLabel "Idrettsfag"@nb ;
+    skos:broader nus:368 .
+
+nus:3699 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3699" ;
+    skos:prefLabel "Helse-, sosial- og idrettsfag, andre"@nb ;
+    skos:broader nus:369 .
+
+nus:3711 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3711" ;
+    skos:prefLabel "Fiske og havbruk"@nb ;
+    skos:broader nus:371 .
+
+nus:3719 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3719" ;
+    skos:prefLabel "Fiske og havbruk, andre"@nb ;
+    skos:broader nus:371 .
+
+nus:3731 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3731" ;
+    skos:prefLabel "Gartneri og hagebruk"@nb ;
+    skos:broader nus:373 .
+
+nus:3741 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3741" ;
+    skos:prefLabel "Skogbruk"@nb ;
+    skos:broader nus:374 .
+
+nus:3799 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3799" ;
+    skos:prefLabel "Primærnæringsfag, andre"@nb ;
+    skos:broader nus:379 .
+
+nus:3813 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3813" ;
+    skos:prefLabel "Maritime navigasjonsfag"@nb ;
+    skos:broader nus:381 .
+
+nus:3819 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3819" ;
+    skos:prefLabel "Samferdsel, andre"@nb ;
+    skos:broader nus:381 .
+
+nus:3831 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "3831" ;
+    skos:prefLabel "Hår- og skjønnhetspleie"@nb ;
+    skos:broader nus:383 .
+
+nus:4011 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4011" ;
+    skos:prefLabel "Generelle programmer"@nb ;
+    skos:broader nus:401 .
+
+nus:4151 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4151" ;
+    skos:prefLabel "Sang- og musikkutdanninger"@nb ;
+    skos:broader nus:415 .
+
+nus:4152 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4152" ;
+    skos:prefLabel "Teater- og filmutdanninger"@nb ;
+    skos:broader nus:415 .
+
+nus:4153 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4153" ;
+    skos:prefLabel "Danse- og ballettutdanninger"@nb ;
+    skos:broader nus:415 .
+
+nus:4161 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4161" ;
+    skos:prefLabel "Husflid, brukskunst og industridesign"@nb ;
+    skos:broader nus:416 .
+
+nus:4162 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4162" ;
+    skos:prefLabel "Tre-, metall- og glasshåndverk"@nb ;
+    skos:broader nus:416 .
+
+nus:4163 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4163" ;
+    skos:prefLabel "Fotofag"@nb ;
+    skos:broader nus:416 .
+
+nus:4164 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4164" ;
+    skos:prefLabel "Tegne-, grafikk-, maler- og skulptørutdanninger"@nb ;
+    skos:broader nus:416 .
+
+nus:4165 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4165" ;
+    skos:prefLabel "Interiør- og dekoratørutdanninger"@nb ;
+    skos:broader nus:416 .
+
+nus:4166 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4166" ;
+    skos:prefLabel "Konfeksjons- og tekstilkunstutdanninger"@nb ;
+    skos:broader nus:416 .
+
+nus:4169 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4169" ;
+    skos:prefLabel "Bildende kunst og kunsthåndverk, andre"@nb ;
+    skos:broader nus:416 .
+
+nus:4351 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4351" ;
+    skos:prefLabel "Media og kommunikasjon"@nb ;
+    skos:broader nus:435 .
+
+nus:4359 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4359" ;
+    skos:prefLabel "Medie- og informasjonsfag, andre"@nb ;
+    skos:broader nus:435 .
+
+nus:4421 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4421" ;
+    skos:prefLabel "Handel"@nb ;
+    skos:broader nus:442 .
+
+nus:4432 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4432" ;
+    skos:prefLabel "Kontorfag"@nb ;
+    skos:broader nus:443 .
+
+nus:4441 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4441" ;
+    skos:prefLabel "Reiselivsfag"@nb ;
+    skos:broader nus:444 .
+
+nus:4449 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4449" ;
+    skos:prefLabel "Hotell- og reiselivsfag, andre"@nb ;
+    skos:broader nus:444 .
+
+nus:4499 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4499" ;
+    skos:prefLabel "Økonomiske og administrative fag, andre"@nb ;
+    skos:broader nus:449 .
+
+nus:4522 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4522" ;
+    skos:prefLabel "Kjemiske fag"@nb ;
+    skos:broader nus:452 .
+
+nus:4541 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4541" ;
+    skos:prefLabel "Informasjons- og datateknologi"@nb ;
+    skos:broader nus:454 .
+
+nus:4551 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4551" ;
+    skos:prefLabel "Elektro"@nb ;
+    skos:broader nus:455 .
+
+nus:4552 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4552" ;
+    skos:prefLabel "Mekaniske fag"@nb ;
+    skos:broader nus:455 .
+
+nus:4553 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4553" ;
+    skos:prefLabel "Finmekaniske fag"@nb ;
+    skos:broader nus:455 .
+
+nus:4571 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4571" ;
+    skos:prefLabel "Bygg og anlegg"@nb ;
+    skos:broader nus:457 .
+
+nus:4579 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4579" ;
+    skos:prefLabel "Bygg- og anleggsfag, andre"@nb ;
+    skos:broader nus:457 .
+
+nus:4581 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4581" ;
+    skos:prefLabel "Næringsmiddelproduksjon"@nb ;
+    skos:broader nus:458 .
+
+nus:4582 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4582" ;
+    skos:prefLabel "Tekstil- og skinnproduksjon"@nb ;
+    skos:broader nus:458 .
+
+nus:4583 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4583" ;
+    skos:prefLabel "Produksjon av tre, papir, plast og glass"@nb ;
+    skos:broader nus:458 .
+
+nus:4584 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4584" ;
+    skos:prefLabel "Gruvedrift og utvinning"@nb ;
+    skos:broader nus:458 .
+
+nus:4589 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4589" ;
+    skos:prefLabel "Fabrikasjon og utvinning, andre"@nb ;
+    skos:broader nus:458 .
+
+nus:4619 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4619" ;
+    skos:prefLabel "Pleie- og omsorgsfag, andre"@nb ;
+    skos:broader nus:461 .
+
+nus:4621 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4621" ;
+    skos:prefLabel "Sosialfag"@nb ;
+    skos:broader nus:462 .
+
+nus:4642 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4642" ;
+    skos:prefLabel "Tannpleiefag"@nb ;
+    skos:broader nus:464 .
+
+nus:4659 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4659" ;
+    skos:prefLabel "Terapeutiske fag, andre"@nb ;
+    skos:broader nus:465 .
+
+nus:4663 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4663" ;
+    skos:prefLabel "Apotekteknikk"@nb ;
+    skos:broader nus:466 .
+
+nus:4681 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4681" ;
+    skos:prefLabel "Idrettsfag"@nb ;
+    skos:broader nus:468 .
+
+nus:4699 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4699" ;
+    skos:prefLabel "Helse-, sosial- og idrettsfag, andre"@nb ;
+    skos:broader nus:469 .
+
+nus:4711 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4711" ;
+    skos:prefLabel "Fiske og havbruk"@nb ;
+    skos:broader nus:471 .
+
+nus:4719 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4719" ;
+    skos:prefLabel "Fiske og havbruk, andre"@nb ;
+    skos:broader nus:471 .
+
+nus:4731 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4731" ;
+    skos:prefLabel "Gartneri og hagebruk"@nb ;
+    skos:broader nus:473 .
+
+nus:4741 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4741" ;
+    skos:prefLabel "Skogbruk"@nb ;
+    skos:broader nus:474 .
+
+nus:4799 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4799" ;
+    skos:prefLabel "Primærnæringsfag, andre"@nb ;
+    skos:broader nus:479 .
+
+nus:4813 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4813" ;
+    skos:prefLabel "Maritime navigasjonsfag"@nb ;
+    skos:broader nus:481 .
+
+nus:4814 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4814" ;
+    skos:prefLabel "Vegtrafikkfag"@nb ;
+    skos:broader nus:481 .
+
+nus:4819 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4819" ;
+    skos:prefLabel "Samferdsel, andre"@nb ;
+    skos:broader nus:481 .
+
+nus:4825 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4825" ;
+    skos:prefLabel "Brannvernfag"@nb ;
+    skos:broader nus:482 .
+
+nus:4829 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4829" ;
+    skos:prefLabel "Sikkerhet, andre"@nb ;
+    skos:broader nus:482 .
+
+nus:4831 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4831" ;
+    skos:prefLabel "Hår- og skjønnhetspleie"@nb ;
+    skos:broader nus:483 .
+
+nus:4832 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4832" ;
+    skos:prefLabel "Servitør"@nb ;
+    skos:broader nus:483 .
+
+nus:4833 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "4833" ;
+    skos:prefLabel "Andre servicefag, andre"@nb ;
+    skos:broader nus:483 .
+
+nus:301111 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "301111" ;
+    skos:prefLabel "Studiespesialisering, Vg1"@nb ;
+    skos:broader nus:3011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:244 .
+
+nus:301112 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "301112" ;
+    skos:prefLabel "Formgivingsfag, Vg2"@nb ;
+    skos:broader nus:3011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:244 .
+
+nus:301113 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "301113" ;
+    skos:prefLabel "Realfag, Vg2"@nb ;
+    skos:broader nus:3011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:344 .
+
+nus:301114 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "301114" ;
+    skos:prefLabel "Samfunnsfag og økonomi, Vg2"@nb ;
+    skos:broader nus:3011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:244 .
+
+nus:301115 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "301115" ;
+    skos:prefLabel "Språkfag, Vg2"@nb ;
+    skos:broader nus:3011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:244 .
+
+nus:301117 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "301117" ;
+    skos:prefLabel "Språk, samfunnsfag og økonomi, Vg2"@nb ;
+    skos:broader nus:3011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:244 .
+
+nus:301118 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "301118" ;
+    skos:prefLabel "Studiespesialisering, Vg2"@nb ;
+    skos:broader nus:3011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:344 .
+
+nus:301119 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "301119" ;
+    skos:prefLabel "Studiespesialisering med formgivingsfag, Vg1"@nb ;
+    skos:broader nus:3011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:244 .
+
+nus:315103 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "315103" ;
+    skos:prefLabel "Musikk, Vg2"@nb ;
+    skos:broader nus:3151 ;
+    skos:broadMatch iscedf:0215 ;
+    skos:broadMatch isced2011:244 .
+
+nus:315201 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "315201" ;
+    skos:prefLabel "Musikkteaterutdanning, videregående, grunnutdanning"@nb ;
+    skos:broader nus:3152 ;
+    skos:broadMatch iscedf:0215 ;
+    skos:broadMatch isced2011:343 .
+
+nus:315202 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "315202" ;
+    skos:prefLabel "Drama, Vg2"@nb ;
+    skos:broader nus:3152 ;
+    skos:broadMatch iscedf:0215 ;
+    skos:broadMatch isced2011:244 .
+
+nus:315301 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "315301" ;
+    skos:prefLabel "Dans, Vg2"@nb ;
+    skos:broader nus:3153 ;
+    skos:broadMatch iscedf:0215 ;
+    skos:broadMatch isced2011:244 .
+
+nus:315903 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "315903" ;
+    skos:prefLabel "Musikk, dans og drama, Vg1"@nb ;
+    skos:broader nus:3159 ;
+    skos:broadMatch iscedf:0215 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316103 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316103" ;
+    skos:prefLabel "Design og duodji, Vg2"@nb ;
+    skos:broader nus:3161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:316105 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316105" ;
+    skos:prefLabel "Duodji, Vg2"@nb ;
+    skos:broader nus:3161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316202 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316202" ;
+    skos:prefLabel "Design og gullsmedhåndverk, Vg2"@nb ;
+    skos:broader nus:3162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316204 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316204" ;
+    skos:prefLabel "Gull- og sølvsmedhåndverk, Vg2"@nb ;
+    skos:broader nus:3162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316504 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316504" ;
+    skos:prefLabel "Interiør og utstillingsdesign, Vg2"@nb ;
+    skos:broader nus:3165 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316506 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316506" ;
+    skos:prefLabel "Frisør, blomster, interiør og eksponeringsdesign, Vg1"@nb ;
+    skos:broader nus:3165 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316508 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316508" ;
+    skos:prefLabel "Interiør og eksponeringsdesign, Vg2"@nb ;
+    skos:broader nus:3165 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316606 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316606" ;
+    skos:prefLabel "Design og tekstil, Vg2"@nb ;
+    skos:broader nus:3166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:316608 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316608" ;
+    skos:prefLabel "Søm og tekstilhåndverk, Vg2"@nb ;
+    skos:broader nus:3166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316901" ;
+    skos:prefLabel "Blomsterdekoratør, Vg2 (gammel ordning)"@nb ;
+    skos:broader nus:3169 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:316910 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316910" ;
+    skos:prefLabel "Design og håndverk, Vg1"@nb ;
+    skos:broader nus:3169 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316912 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316912" ;
+    skos:prefLabel "Kunst, design og arkitektur, Vg1"@nb ;
+    skos:broader nus:3169 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316913 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316913" ;
+    skos:prefLabel "Kunst, design og arkitektur, Vg2"@nb ;
+    skos:broader nus:3169 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316916 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316916" ;
+    skos:prefLabel "Håndverk, design og produktutvikling, Vg1"@nb ;
+    skos:broader nus:3169 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:244 .
+
+nus:316918 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "316918" ;
+    skos:prefLabel "Blomsterdekoratør, Vg2"@nb ;
+    skos:broader nus:3169 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:244 .
+
+nus:335103 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "335103" ;
+    skos:prefLabel "Medier og kommunikasjon, Vg2 (yrkesfaglig)"@nb ;
+    skos:broader nus:3351 ;
+    skos:broadMatch iscedf:0321 ;
+    skos:broadMatch isced2011:244 .
+
+nus:335104 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "335104" ;
+    skos:prefLabel "Medier og kommunikasjon, Vg1 (yrkesfaglig)"@nb ;
+    skos:broader nus:3351 ;
+    skos:broadMatch iscedf:0321 ;
+    skos:broadMatch isced2011:244 .
+
+nus:335106 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "335106" ;
+    skos:prefLabel "Medier og kommunikasjon, Vg1 (studieforberedende)"@nb ;
+    skos:broader nus:3351 ;
+    skos:broadMatch iscedf:0321 ;
+    skos:broadMatch isced2011:244 .
+
+nus:335107 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "335107" ;
+    skos:prefLabel "Medier og kommunikasjon, Vg2 (studieforberedende)"@nb ;
+    skos:broader nus:3351 ;
+    skos:broadMatch iscedf:0321 ;
+    skos:broadMatch isced2011:244 .
+
+nus:335904 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "335904" ;
+    skos:prefLabel "Medieproduksjon, Vg1"@nb ;
+    skos:broader nus:3359 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:244 .
+
+nus:335905 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "335905" ;
+    skos:prefLabel "Medieproduksjon, Vg2 (gammel ordning)"@nb ;
+    skos:broader nus:3359 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:244 .
+
+nus:335908 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "335908" ;
+    skos:prefLabel "Medieproduksjon, Vg2"@nb ;
+    skos:broader nus:3359 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:244 .
+
+nus:342901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "342901" ;
+    skos:prefLabel "Salg, service og reiseliv, Vg1"@nb ;
+    skos:broader nus:3429 ;
+    skos:broadMatch iscedf:0414 ;
+    skos:broadMatch isced2011:244 .
+
+nus:342903 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "342903" ;
+    skos:prefLabel "Salg og reiseliv, Vg2"@nb ;
+    skos:broader nus:3429 ;
+    skos:broadMatch iscedf:0414 ;
+    skos:broadMatch isced2011:244 .
+
+nus:342905 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "342905" ;
+    skos:prefLabel "Salg, service og reiseliv, Vg2"@nb ;
+    skos:broader nus:3429 .
+
+nus:344101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "344101" ;
+    skos:prefLabel "Reiseliv, Vg2"@nb ;
+    skos:broader nus:3441 ;
+    skos:broadMatch iscedf:1015 ;
+    skos:broadMatch isced2011:244 .
+
+nus:349904 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "349904" ;
+    skos:prefLabel "Service og samferdsel, Vg1"@nb ;
+    skos:broader nus:3499 ;
+    skos:broadMatch iscedf:0419 ;
+    skos:broadMatch isced2011:244 .
+
+nus:349905 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "349905" ;
+    skos:prefLabel "Salg, service og sikkerhet, Vg2"@nb ;
+    skos:broader nus:3499 ;
+    skos:broadMatch iscedf:0414 ;
+    skos:broadMatch isced2011:244 .
+
+nus:349908 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "349908" ;
+    skos:prefLabel "Service, sikkerhet og administrasjon, Vg2"@nb ;
+    skos:broader nus:3499 ;
+    skos:broadMatch iscedf:0414 ;
+    skos:broadMatch isced2011:244 .
+
+nus:352204 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "352204" ;
+    skos:prefLabel "Kjemiprosess, Vg2"@nb ;
+    skos:broader nus:3522 ;
+    skos:broadMatch iscedf:0531 ;
+    skos:broadMatch isced2011:354 .
+
+nus:352205 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "352205" ;
+    skos:prefLabel "Laboratoriefag, Vg2"@nb ;
+    skos:broader nus:3522 ;
+    skos:broadMatch iscedf:0531 ;
+    skos:broadMatch isced2011:354 .
+
+nus:352206 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "352206" ;
+    skos:prefLabel "Kjemiprosess- og laboratoriefag, Vg2"@nb ;
+    skos:broader nus:3522 ;
+    skos:broadMatch iscedf:0531 ;
+    skos:broadMatch isced2011:244 .
+
+nus:354101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "354101" ;
+    skos:prefLabel "IKT-servicefag, Vg2"@nb ;
+    skos:broader nus:3541 ;
+    skos:broadMatch iscedf:0619 ;
+    skos:broadMatch isced2011:354 .
+
+nus:354105 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "354105" ;
+    skos:prefLabel "Informasjonsteknologi og medieproduksjon, Vg1"@nb ;
+    skos:broader nus:3541 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:244 .
+
+nus:354107 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "354107" ;
+    skos:prefLabel "Informasjonsteknologi, Vg2"@nb ;
+    skos:broader nus:3541 ;
+    skos:broadMatch iscedf:0619 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355101" ;
+    skos:prefLabel "Automatisering, Vg2"@nb ;
+    skos:broader nus:3551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:355104 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355104" ;
+    skos:prefLabel "Elenergi, Vg2"@nb ;
+    skos:broader nus:3551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:355105 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355105" ;
+    skos:prefLabel "Data og elektronikk, Vg2"@nb ;
+    skos:broader nus:3551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:355107 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355107" ;
+    skos:prefLabel "Flyfag, Vg2"@nb ;
+    skos:broader nus:3551 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:355109 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355109" ;
+    skos:prefLabel "Kulde- og varmepumpeteknikk, Vg2"@nb ;
+    skos:broader nus:3551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:355112 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355112" ;
+    skos:prefLabel "Elektro og datateknologi, Vg1"@nb ;
+    skos:broader nus:3551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355117 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355117" ;
+    skos:prefLabel "Kulde-, varmepumpe- og ventilasjonsteknikk, Vg2"@nb ;
+    skos:broader nus:3551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355119 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355119" ;
+    skos:prefLabel "Dronefag, Vg2"@nb ;
+    skos:broader nus:3551 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:355207 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355207" ;
+    skos:prefLabel "Kjøretøy, Vg2"@nb ;
+    skos:broader nus:3552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:355219 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355219" ;
+    skos:prefLabel "Arbeidsmaskiner, Vg2"@nb ;
+    skos:broader nus:3552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:355221 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355221" ;
+    skos:prefLabel "Smed, Vg2 (gammel ordning)"@nb ;
+    skos:broader nus:3552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355222 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355222" ;
+    skos:prefLabel "Bilskade, lakk og karosseri, Vg2"@nb ;
+    skos:broader nus:3552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355223 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355223" ;
+    skos:prefLabel "Industriteknologi, Vg2"@nb ;
+    skos:broader nus:3552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355224 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355224" ;
+    skos:prefLabel "Maritim produksjonsteknikk, Vg2"@nb ;
+    skos:broader nus:3552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355229 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355229" ;
+    skos:prefLabel "Smed, Vg2"@nb ;
+    skos:broader nus:3552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355301 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355301" ;
+    skos:prefLabel "Børsemaker, Vg2 (gammel ordning)"@nb ;
+    skos:broader nus:3553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:355303 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355303" ;
+    skos:prefLabel "Ur- og instrumentmaker, Vg2"@nb ;
+    skos:broader nus:3553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355304 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355304" ;
+    skos:prefLabel "Urmaker, Vg2"@nb ;
+    skos:broader nus:3553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355306 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355306" ;
+    skos:prefLabel "Børsemaker, Vg2"@nb ;
+    skos:broader nus:3553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:244 .
+
+nus:355901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "355901" ;
+    skos:prefLabel "Teknologi- og industrifag, Vg1"@nb ;
+    skos:broader nus:3559 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:244 .
+
+nus:357101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357101" ;
+    skos:prefLabel "Anleggsteknikk, Vg2"@nb ;
+    skos:broader nus:3571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:357111 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357111" ;
+    skos:prefLabel "Overflateteknikk, Vg2"@nb ;
+    skos:broader nus:3571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:357125 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357125" ;
+    skos:prefLabel "Bygg- og anleggsteknikk, Vg1"@nb ;
+    skos:broader nus:3571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:244 .
+
+nus:357126 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357126" ;
+    skos:prefLabel "Byggteknikk, Vg2"@nb ;
+    skos:broader nus:3571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:244 .
+
+nus:357127 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357127" ;
+    skos:prefLabel "Klima-, energi- og miljøteknikk, Vg2"@nb ;
+    skos:broader nus:3571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:244 .
+
+nus:357128 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357128" ;
+    skos:prefLabel "Treteknikk, Vg2"@nb ;
+    skos:broader nus:3571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:244 .
+
+nus:357130 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357130" ;
+    skos:prefLabel "Bygg- og anleggsteknikk, uspesifisert, Vg2"@nb ;
+    skos:broader nus:3571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:244 .
+
+nus:357137 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357137" ;
+    skos:prefLabel "Betong og mur, Vg2"@nb ;
+    skos:broader nus:3571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:244 .
+
+nus:357141 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357141" ;
+    skos:prefLabel "Rørlegger, Vg2"@nb ;
+    skos:broader nus:3571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:244 .
+
+nus:357143 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "357143" ;
+    skos:prefLabel "Tømrer, Vg2"@nb ;
+    skos:broader nus:3571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358113 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358113" ;
+    skos:prefLabel "Restaurant- og matfag, Vg1"@nb ;
+    skos:broader nus:3581 ;
+    skos:broadMatch iscedf:1013 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358114 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358114" ;
+    skos:prefLabel "Kokk- og servitørfag, Vg2"@nb ;
+    skos:broader nus:3581 ;
+    skos:broadMatch iscedf:1013 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358115 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358115" ;
+    skos:prefLabel "Matfag, Vg2"@nb ;
+    skos:broader nus:3581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358120 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358120" ;
+    skos:prefLabel "Baker og konditor, Vg2"@nb ;
+    skos:broader nus:3581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358122 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358122" ;
+    skos:prefLabel "Matproduksjon, Vg2"@nb ;
+    skos:broader nus:3581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358202 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358202" ;
+    skos:prefLabel "Industritekstil og design, Vg2"@nb ;
+    skos:broader nus:3582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358304 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358304" ;
+    skos:prefLabel "Pianostemming og pianoteknikk, Vg2"@nb ;
+    skos:broader nus:3583 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:358313 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358313" ;
+    skos:prefLabel "Båtbyggerfag, Vg2"@nb ;
+    skos:broader nus:3583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358314 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358314" ;
+    skos:prefLabel "Industriell møbelproduksjon, Vg2"@nb ;
+    skos:broader nus:3583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358315 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358315" ;
+    skos:prefLabel "Design og trearbeid, Vg2"@nb ;
+    skos:broader nus:3583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358317 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358317" ;
+    skos:prefLabel "Plast og kompositt, Vg2"@nb ;
+    skos:broader nus:3583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358318 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358318" ;
+    skos:prefLabel "Båtbygger, Vg2"@nb ;
+    skos:broader nus:3583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358320 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358320" ;
+    skos:prefLabel "Trearbeid, Vg2"@nb ;
+    skos:broader nus:3583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:244 .
+
+nus:358401 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "358401" ;
+    skos:prefLabel "Brønnteknikk, Vg2"@nb ;
+    skos:broader nus:3584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:361903 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "361903" ;
+    skos:prefLabel "Helsearbeiderfag, Vg2"@nb ;
+    skos:broader nus:3619 ;
+    skos:broadMatch iscedf:0913 ;
+    skos:broadMatch isced2011:244 .
+
+nus:362101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "362101" ;
+    skos:prefLabel "Barne- og ungdomsarbeiderfag, Vg2"@nb ;
+    skos:broader nus:3621 ;
+    skos:broadMatch iscedf:0922 ;
+    skos:broadMatch isced2011:354 .
+
+nus:365901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "365901" ;
+    skos:prefLabel "Aktivitør, Vg2 (gammel ordning)"@nb ;
+    skos:broader nus:3659 ;
+    skos:broadMatch iscedf:0915 ;
+    skos:broadMatch isced2011:354 .
+
+nus:365904 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "365904" ;
+    skos:prefLabel "Fotterapi og ortopediteknikk, Vg2"@nb ;
+    skos:broader nus:3659 ;
+    skos:broadMatch iscedf:0915 ;
+    skos:broadMatch isced2011:244 .
+
+nus:365906 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "365906" ;
+    skos:prefLabel "Aktivitør, Vg2"@nb ;
+    skos:broader nus:3659 ;
+    skos:broadMatch iscedf:0915 ;
+    skos:broadMatch isced2011:244 .
+
+nus:368103 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "368103" ;
+    skos:prefLabel "Idrettsfag, Vg2"@nb ;
+    skos:broader nus:3681 ;
+    skos:broadMatch iscedf:1014 ;
+    skos:broadMatch isced2011:344 .
+
+nus:368104 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "368104" ;
+    skos:prefLabel "Idrettsfag, Vg1"@nb ;
+    skos:broader nus:3681 ;
+    skos:broadMatch iscedf:1014 ;
+    skos:broadMatch isced2011:244 .
+
+nus:369901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "369901" ;
+    skos:prefLabel "Ambulansefag, Vg2"@nb ;
+    skos:broader nus:3699 ;
+    skos:broadMatch iscedf:0914 ;
+    skos:broadMatch isced2011:354 .
+
+nus:369905 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "369905" ;
+    skos:prefLabel "Helseservicefag, Vg2"@nb ;
+    skos:broader nus:3699 ;
+    skos:broadMatch iscedf:0919 ;
+    skos:broadMatch isced2011:354 .
+
+nus:369913 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "369913" ;
+    skos:prefLabel "Helse- og oppvekstfag, Vg1"@nb ;
+    skos:broader nus:3699 ;
+    skos:broadMatch iscedf:0988 ;
+    skos:broadMatch isced2011:244 .
+
+nus:371101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "371101" ;
+    skos:prefLabel "Fiske og fangst, Vg2"@nb ;
+    skos:broader nus:3711 ;
+    skos:broadMatch iscedf:0831 ;
+    skos:broadMatch isced2011:354 .
+
+nus:371901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "371901" ;
+    skos:prefLabel "Akvakultur, Vg2"@nb ;
+    skos:broader nus:3719 ;
+    skos:broadMatch iscedf:0831 ;
+    skos:broadMatch isced2011:354 .
+
+nus:373101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "373101" ;
+    skos:prefLabel "Anleggsgartner- og idrettsanleggsfag, Vg2"@nb ;
+    skos:broader nus:3731 ;
+    skos:broadMatch iscedf:0812 ;
+    skos:broadMatch isced2011:354 .
+
+nus:373107 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "373107" ;
+    skos:prefLabel "Anleggsgartner, Vg2"@nb ;
+    skos:broader nus:3731 ;
+    skos:broadMatch iscedf:0812 ;
+    skos:broadMatch isced2011:244 .
+
+nus:374102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "374102" ;
+    skos:prefLabel "Skogbruk, Vg2"@nb ;
+    skos:broader nus:3741 ;
+    skos:broadMatch iscedf:0821 ;
+    skos:broadMatch isced2011:354 .
+
+nus:379906 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "379906" ;
+    skos:prefLabel "Reindrift, Vg2"@nb ;
+    skos:broader nus:3799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:354 .
+
+nus:379909 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "379909" ;
+    skos:prefLabel "Naturbruk, Vg1"@nb ;
+    skos:broader nus:3799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:244 .
+
+nus:379910 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "379910" ;
+    skos:prefLabel "Heste- og hovslagerfag, Vg2"@nb ;
+    skos:broader nus:3799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:244 .
+
+nus:379911 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "379911" ;
+    skos:prefLabel "Landbruk og gartnernæring, Vg2"@nb ;
+    skos:broader nus:3799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:244 .
+
+nus:379912 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "379912" ;
+    skos:prefLabel "Naturbruk, uspesifisert, Vg2"@nb ;
+    skos:broader nus:3799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:244 .
+
+nus:379916 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "379916" ;
+    skos:prefLabel "Heste- og dyrefag, Vg2"@nb ;
+    skos:broader nus:3799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:244 .
+
+nus:381306 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "381306" ;
+    skos:prefLabel "Maritime fag, Vg2"@nb ;
+    skos:broader nus:3813 ;
+    skos:broadMatch iscedf:1041 ;
+    skos:broadMatch isced2011:244 .
+
+nus:381904 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "381904" ;
+    skos:prefLabel "Transport og logistikk, Vg2 (gammel ordning)"@nb ;
+    skos:broader nus:3819 ;
+    skos:broadMatch iscedf:1041 ;
+    skos:broadMatch isced2011:244 .
+
+nus:381906 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "381906" ;
+    skos:prefLabel "Transport og logistikk, Vg2"@nb ;
+    skos:broader nus:3819 ;
+    skos:broadMatch iscedf:1041 ;
+    skos:broadMatch isced2011:244 .
+
+nus:383102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "383102" ;
+    skos:prefLabel "Frisør, Vg2 (gammel ordning)"@nb ;
+    skos:broader nus:3831 ;
+    skos:broadMatch iscedf:1012 ;
+    skos:broadMatch isced2011:354 .
+
+nus:383104 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "383104" ;
+    skos:prefLabel "Hudpleie, Vg2"@nb ;
+    skos:broader nus:3831 ;
+    skos:broadMatch iscedf:1012 ;
+    skos:broadMatch isced2011:354 .
+
+nus:383109 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "383109" ;
+    skos:prefLabel "Frisør, Vg2"@nb ;
+    skos:broader nus:3831 ;
+    skos:broadMatch iscedf:1012 ;
+    skos:broadMatch isced2011:244 .
+
+nus:401105 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "401105" ;
+    skos:prefLabel "Studiespesialisering, studiekompetansegivende enkeltfag/delkurs, Vg3"@nb ;
+    skos:broader nus:4011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:344 .
+
+nus:401110 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "401110" ;
+    skos:prefLabel "Påbygging til generell studiekompetanse (alle yrkesfaglige utdanningsprogram), Vg3"@nb ;
+    skos:broader nus:4011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:344 .
+
+nus:401111 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "401111" ;
+    skos:prefLabel "Realfag, Vg3"@nb ;
+    skos:broader nus:4011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:344 .
+
+nus:401112 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "401112" ;
+    skos:prefLabel "Språk, samfunnsfag og økonomi, Vg3"@nb ;
+    skos:broader nus:4011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:344 .
+
+nus:401113 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "401113" ;
+    skos:prefLabel "Formgivingsfag, Vg3"@nb ;
+    skos:broader nus:4011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:344 .
+
+nus:401114 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "401114" ;
+    skos:prefLabel "Studiespesialisering, Vg3"@nb ;
+    skos:broader nus:4011 ;
+    skos:broadMatch iscedf:0011 ;
+    skos:broadMatch isced2011:344 .
+
+nus:415104 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "415104" ;
+    skos:prefLabel "Musikk, Vg3"@nb ;
+    skos:broader nus:4151 ;
+    skos:broadMatch iscedf:0215 ;
+    skos:broadMatch isced2011:344 .
+
+nus:415201 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "415201" ;
+    skos:prefLabel "Drama, Vg3"@nb ;
+    skos:broader nus:4152 ;
+    skos:broadMatch iscedf:0215 ;
+    skos:broadMatch isced2011:344 .
+
+nus:415301 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "415301" ;
+    skos:prefLabel "Dans, Vg3"@nb ;
+    skos:broader nus:4153 ;
+    skos:broadMatch iscedf:0215 ;
+    skos:broadMatch isced2011:344 .
+
+nus:416101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416101" ;
+    skos:prefLabel "Duodjifaget, Vg3"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416104 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416104" ;
+    skos:prefLabel "Keramikerfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416106 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416106" ;
+    skos:prefLabel "Horn-, bein- og metallduodjifaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416107 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416107" ;
+    skos:prefLabel "Skinn- og pelsduodjifaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416108 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416108" ;
+    skos:prefLabel "Tekstilduodjifaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416109 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416109" ;
+    skos:prefLabel "Treduodjifaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416110 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416110" ;
+    skos:prefLabel "Veve- og håndstrikkeduodjifaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416111 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416111" ;
+    skos:prefLabel "Horn-, bein- og metallduodjifaget, Vg3"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416112 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416112" ;
+    skos:prefLabel "Keramikerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416113 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416113" ;
+    skos:prefLabel "Skinn- og pelsduodjifaget, Vg3"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416114 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416114" ;
+    skos:prefLabel "Tekstilduodjifaget, Vg3"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416115 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416115" ;
+    skos:prefLabel "Treduodjifaget, Vg3"@nb ;
+    skos:broader nus:4161 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416201 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416201" ;
+    skos:prefLabel "Filigranssølvsmedfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416202 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416202" ;
+    skos:prefLabel "Glasshåndverkerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416203 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416203" ;
+    skos:prefLabel "Gravørfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416204 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416204" ;
+    skos:prefLabel "Gullsmedfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416205 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416205" ;
+    skos:prefLabel "Sølvsmedfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416207 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416207" ;
+    skos:prefLabel "Forgyllerfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416208 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416208" ;
+    skos:prefLabel "Forgyllerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416209 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416209" ;
+    skos:prefLabel "Filigranssølvsmedfaget Vg3"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416210 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416210" ;
+    skos:prefLabel "Gravørfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416211 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416211" ;
+    skos:prefLabel "Gullsmedfaget, Vg3"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416212 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416212" ;
+    skos:prefLabel "Sølvsmedfaget, Vg3"@nb ;
+    skos:broader nus:4162 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416301 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416301" ;
+    skos:prefLabel "Fotograffaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4163 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416402 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416402" ;
+    skos:prefLabel "Mediedesign, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4164 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416408 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416408" ;
+    skos:prefLabel "Mediegrafikerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4164 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416409 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416409" ;
+    skos:prefLabel "Profileringsdesignfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4164 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416412 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416412" ;
+    skos:prefLabel "Gipsmakerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4164 ;
+    skos:broadMatch iscedf:0213 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416413 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416413" ;
+    skos:prefLabel "Profileringsdesignfaget, Vg3"@nb ;
+    skos:broader nus:4164 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416501 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416501" ;
+    skos:prefLabel "Utstillingsdesign, Vg3"@nb ;
+    skos:broader nus:4165 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416502 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416502" ;
+    skos:prefLabel "Interiør, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4165 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416504 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416504" ;
+    skos:prefLabel "Eksponeringsdesign, Vg3"@nb ;
+    skos:broader nus:4165 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416506 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416506" ;
+    skos:prefLabel "Interiør, Vg3"@nb ;
+    skos:broader nus:4165 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416601 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416601" ;
+    skos:prefLabel "Bunadtilvirkerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416603 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416603" ;
+    skos:prefLabel "Herreskredderfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416604 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416604" ;
+    skos:prefLabel "Håndveverfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416607 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416607" ;
+    skos:prefLabel "Kjole- og draktsyerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416608 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416608" ;
+    skos:prefLabel "Kostymesyerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416609 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416609" ;
+    skos:prefLabel "Modistfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416610 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416610" ;
+    skos:prefLabel "Strikkefaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416613 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416613" ;
+    skos:prefLabel "Bunadtilvirkerfaget, Vg3"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416614 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416614" ;
+    skos:prefLabel "Herreskredderfaget, Vg3"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416615 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416615" ;
+    skos:prefLabel "Håndveverfaget, Vg3"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416616 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416616" ;
+    skos:prefLabel "Kjole- og draktsyerfaget, Vg3"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416617 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416617" ;
+    skos:prefLabel "Kostymesyerfaget, Vg3"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416618 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416618" ;
+    skos:prefLabel "Modistfaget, Vg3"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416619 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416619" ;
+    skos:prefLabel "Strikkefaget, Vg3"@nb ;
+    skos:broader nus:4166 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416901" ;
+    skos:prefLabel "Blomsterdekoratørfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4169 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416902 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416902" ;
+    skos:prefLabel "Buntmakerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4169 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416903 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416903" ;
+    skos:prefLabel "Taksidermistfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4169 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416905 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416905" ;
+    skos:prefLabel "Kunst, design og arkitektur, Vg3"@nb ;
+    skos:broader nus:4169 ;
+    skos:broadMatch iscedf:0212 ;
+    skos:broadMatch isced2011:344 .
+
+nus:416906 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416906" ;
+    skos:prefLabel "Buntmakerfaget, Vg3"@nb ;
+    skos:broader nus:4169 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416907 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416907" ;
+    skos:prefLabel "Taksidermistfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4169 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:416908 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "416908" ;
+    skos:prefLabel "Blomsterdekoratørfaget, Vg3"@nb ;
+    skos:broader nus:4169 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:435101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "435101" ;
+    skos:prefLabel "Medier og kommunikasjon, Vg3 (studieforberedende, gammel ordning)"@nb ;
+    skos:broader nus:4351 ;
+    skos:broadMatch iscedf:0321 ;
+    skos:broadMatch isced2011:344 .
+
+nus:435102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "435102" ;
+    skos:prefLabel "Medier og kommunikasjon, Vg3 (studieforberedende)"@nb ;
+    skos:broader nus:4351 ;
+    skos:broadMatch iscedf:0321 ;
+    skos:broadMatch isced2011:344 .
+
+nus:435901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "435901" ;
+    skos:prefLabel "Innholdsproduksjonsfaget, Vg3"@nb ;
+    skos:broader nus:4359 ;
+    skos:broadMatch iscedf:0321 ;
+    skos:broadMatch isced2011:354 .
+
+nus:435902 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "435902" ;
+    skos:prefLabel "Mediedesignfaget, Vg3"@nb ;
+    skos:broader nus:4359 ;
+    skos:broadMatch iscedf:0321 ;
+    skos:broadMatch isced2011:354 .
+
+nus:435903 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "435903" ;
+    skos:prefLabel "Medieteknikkfaget, Vg3"@nb ;
+    skos:broader nus:4359 ;
+    skos:broadMatch iscedf:0321 ;
+    skos:broadMatch isced2011:354 .
+
+nus:442102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "442102" ;
+    skos:prefLabel "Salgsfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4421 ;
+    skos:broadMatch iscedf:0416 ;
+    skos:broadMatch isced2011:354 .
+
+nus:442103 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "442103" ;
+    skos:prefLabel "Salgsfaget, Vg3"@nb ;
+    skos:broader nus:4421 ;
+    skos:broadMatch iscedf:0416 ;
+    skos:broadMatch isced2011:354 .
+
+nus:443201 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "443201" ;
+    skos:prefLabel "Kontor- og administrasjonsfaget, Vg3"@nb ;
+    skos:broader nus:4432 ;
+    skos:broadMatch iscedf:0415 ;
+    skos:broadMatch isced2011:354 .
+
+nus:444101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "444101" ;
+    skos:prefLabel "Reiselivsfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4441 ;
+    skos:broadMatch iscedf:1015 ;
+    skos:broadMatch isced2011:354 .
+
+nus:444102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "444102" ;
+    skos:prefLabel "Reiselivsfaget, Vg3"@nb ;
+    skos:broader nus:4441 ;
+    skos:broadMatch iscedf:1015 ;
+    skos:broadMatch isced2011:354 .
+
+nus:444901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "444901" ;
+    skos:prefLabel "Resepsjonsfaget, Vg3"@nb ;
+    skos:broader nus:4449 ;
+    skos:broadMatch iscedf:0415 ;
+    skos:broadMatch isced2011:354 .
+
+nus:449902 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "449902" ;
+    skos:prefLabel "Service- og administrasjonsfaget, Vg3"@nb ;
+    skos:broader nus:4499 ;
+    skos:broadMatch iscedf:0414 ;
+    skos:broadMatch isced2011:354 .
+
+nus:452201 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "452201" ;
+    skos:prefLabel "Kjemiprosessfaget, Vg3"@nb ;
+    skos:broader nus:4522 ;
+    skos:broadMatch iscedf:0711 ;
+    skos:broadMatch isced2011:354 .
+
+nus:452202 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "452202" ;
+    skos:prefLabel "Laboratoriefaget, Vg3"@nb ;
+    skos:broader nus:4522 ;
+    skos:broadMatch iscedf:0711 ;
+    skos:broadMatch isced2011:354 .
+
+nus:454101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "454101" ;
+    skos:prefLabel "IKT-servicefaget, Vg3"@nb ;
+    skos:broader nus:4541 ;
+    skos:broadMatch iscedf:0619 ;
+    skos:broadMatch isced2011:354 .
+
+nus:454103 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "454103" ;
+    skos:prefLabel "IKT-tjenesteutviklerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4541 ;
+    skos:broadMatch iscedf:0613 ;
+    skos:broadMatch isced2011:354 .
+
+nus:454104 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "454104" ;
+    skos:prefLabel "IKT-driftsteknikerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4541 ;
+    skos:broadMatch iscedf:0612 ;
+    skos:broadMatch isced2011:354 .
+
+nus:454105 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "454105" ;
+    skos:prefLabel "IT-driftsfaget, Vg3"@nb ;
+    skos:broader nus:4541 ;
+    skos:broadMatch iscedf:0612 ;
+    skos:broadMatch isced2011:354 .
+
+nus:454106 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "454106" ;
+    skos:prefLabel "IT-utviklerfaget, Vg3"@nb ;
+    skos:broader nus:4541 ;
+    skos:broadMatch iscedf:0612 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455101" ;
+    skos:prefLabel "Avionikerfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455102" ;
+    skos:prefLabel "Automatiseringsfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455103 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455103" ;
+    skos:prefLabel "Elektrikerfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455105 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455105" ;
+    skos:prefLabel "Elektroreparatørfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455106 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455106" ;
+    skos:prefLabel "Energimontørfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455107 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455107" ;
+    skos:prefLabel "Energioperatørfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455109 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455109" ;
+    skos:prefLabel "Flytekniske fag, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455113 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455113" ;
+    skos:prefLabel "Flymotormekanikerfaget, Vg4"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455114 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455114" ;
+    skos:prefLabel "Flystrukturmekanikerfaget, Vg4"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455116 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455116" ;
+    skos:prefLabel "Flysystemmekanikerfaget, Vg4"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455117 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455117" ;
+    skos:prefLabel "Heismontørfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455118 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455118" ;
+    skos:prefLabel "Kulde- og varmepumpeteknikkfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455123 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455123" ;
+    skos:prefLabel "Produksjonselektronikerfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455127 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455127" ;
+    skos:prefLabel "Romteknologi, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455128 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455128" ;
+    skos:prefLabel "Dataelektronikerfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455129 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455129" ;
+    skos:prefLabel "Signalmontørfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455130 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455130" ;
+    skos:prefLabel "Tavlemontørfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455132 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455132" ;
+    skos:prefLabel "Telekommunikasjonsmontørfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455134 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455134" ;
+    skos:prefLabel "Togelektrikerfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455135 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455135" ;
+    skos:prefLabel "Viklerfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455140 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455140" ;
+    skos:prefLabel "Fjernstyrte undervannsoperasjoner, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455141 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455141" ;
+    skos:prefLabel "Avionikerfaget, Vg4"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455143 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455143" ;
+    skos:prefLabel "Maritim elektrikerfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455144 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455144" ;
+    skos:prefLabel "Maritim elektrikerfaget, Vg4"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0713 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455145 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455145" ;
+    skos:prefLabel "Ventilasjonsteknikkfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0714 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455146 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455146" ;
+    skos:prefLabel "Droneoperatørfaget, Vg3"@nb ;
+    skos:broader nus:4551 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455201 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455201" ;
+    skos:prefLabel "Aluminiumskonstruksjonsfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455202 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455202" ;
+    skos:prefLabel "Anleggsmaskinmekanikerfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455204 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455204" ;
+    skos:prefLabel "Bilfaget, lette kjøretøy, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455205 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455205" ;
+    skos:prefLabel "Bilfaget, tunge kjøretøy, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455206 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455206" ;
+    skos:prefLabel "Billakkererfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455208 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455208" ;
+    skos:prefLabel "Bilskadefaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455209 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455209" ;
+    skos:prefLabel "Bokbinderfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455210 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455210" ;
+    skos:prefLabel "Dimensjonskontrollfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455212 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455212" ;
+    skos:prefLabel "Garverifaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455213 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455213" ;
+    skos:prefLabel "Trykkerfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455214 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455214" ;
+    skos:prefLabel "Hjulutrustningsfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455215 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455215" ;
+    skos:prefLabel "Hovslagerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455216 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455216" ;
+    skos:prefLabel "Industrimekanikerfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455217 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455217" ;
+    skos:prefLabel "Chassispåbyggerfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455222 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455222" ;
+    skos:prefLabel "Landbruksmaskinmekanikerfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455223 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455223" ;
+    skos:prefLabel "Låsesmedfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455229 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455229" ;
+    skos:prefLabel "Motormekanikerfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455230 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455230" ;
+    skos:prefLabel "Motorsykkelfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455231 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455231" ;
+    skos:prefLabel "Skipsmotormekanikerfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455232 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455232" ;
+    skos:prefLabel "NDT-kontrollørfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455233 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455233" ;
+    skos:prefLabel "Platearbeiderfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455236 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455236" ;
+    skos:prefLabel "Reservedelsfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455237 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455237" ;
+    skos:prefLabel "Serigrafifaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0211 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455238 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455238" ;
+    skos:prefLabel "Smedfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455239 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455239" ;
+    skos:prefLabel "Sveisefaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455240 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455240" ;
+    skos:prefLabel "Sykkelreparatør, VK II"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:353 .
+
+nus:455241 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455241" ;
+    skos:prefLabel "Verktøymakerfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455242 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455242" ;
+    skos:prefLabel "Støperifaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455245 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455245" ;
+    skos:prefLabel "Grafisk emballasjefaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455246 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455246" ;
+    skos:prefLabel "Kran- og løfteoperasjonsfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455247 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455247" ;
+    skos:prefLabel "CNC-maskineringsfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455248 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455248" ;
+    skos:prefLabel "Produksjonsteknikkfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455249 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455249" ;
+    skos:prefLabel "Industrimontørfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455251 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455251" ;
+    skos:prefLabel "Grafisk produksjonsteknikk, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455252 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455252" ;
+    skos:prefLabel "Smedfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455253 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455253" ;
+    skos:prefLabel "Hovslagerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455254 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455254" ;
+    skos:prefLabel "Bilpleiefaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0716 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455255 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455255" ;
+    skos:prefLabel "Truck- og liftmekanikerfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455256 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455256" ;
+    skos:prefLabel "Låsesmedfaget, Vg3"@nb ;
+    skos:broader nus:4552 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455257 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455257" ;
+    skos:prefLabel "Garverfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4552 .
+
+nus:455258 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455258" ;
+    skos:prefLabel "Grafisk produksjonsteknikkfaget, Vg3"@nb ;
+    skos:broader nus:4552 .
+
+nus:455259 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455259" ;
+    skos:prefLabel "Bilfaget, demontering av kjøretøy, Vg3"@nb ;
+    skos:broader nus:4552 .
+
+nus:455302 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455302" ;
+    skos:prefLabel "Finmekanikerfaget, Vg3"@nb ;
+    skos:broader nus:4553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455303 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455303" ;
+    skos:prefLabel "Nautisk instrumentmakerfaget, Vg3"@nb ;
+    skos:broader nus:4553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455304 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455304" ;
+    skos:prefLabel "Optronikerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455305 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455305" ;
+    skos:prefLabel "Storurmakerfaget, Vg3"@nb ;
+    skos:broader nus:4553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455306 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455306" ;
+    skos:prefLabel "Urmakerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455309 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455309" ;
+    skos:prefLabel "Børsemakerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455310 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455310" ;
+    skos:prefLabel "Industrioppmålingsfaget, Vg3"@nb ;
+    skos:broader nus:4553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455311 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455311" ;
+    skos:prefLabel "Urmakerfaget, Vg3"@nb ;
+    skos:broader nus:4553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455312 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455312" ;
+    skos:prefLabel "Optronikerfaget, Vg3"@nb ;
+    skos:broader nus:4553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:455313 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "455313" ;
+    skos:prefLabel "Børsemakerfaget, Vg3"@nb ;
+    skos:broader nus:4553 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457102" ;
+    skos:prefLabel "Asfaltfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457103 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457103" ;
+    skos:prefLabel "Banemontørfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457107 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457107" ;
+    skos:prefLabel "Feierfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:1011 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457110 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457110" ;
+    skos:prefLabel "Gipsmakerfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457112 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457112" ;
+    skos:prefLabel "Industrimalerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457113 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457113" ;
+    skos:prefLabel "Industrirørleggerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457114 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457114" ;
+    skos:prefLabel "Industritapetsererfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457115 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457115" ;
+    skos:prefLabel "Isolatørfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457117 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457117" ;
+    skos:prefLabel "Ventilasjons- og blikkenslagerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457118 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457118" ;
+    skos:prefLabel "Malerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457119 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457119" ;
+    skos:prefLabel "Murerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457121 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457121" ;
+    skos:prefLabel "Rørleggerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457123 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457123" ;
+    skos:prefLabel "Stillasbyggerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457124 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457124" ;
+    skos:prefLabel "Tak- og membrantekkerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457129 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457129" ;
+    skos:prefLabel "Tømrerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457131 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457131" ;
+    skos:prefLabel "Vei- og anleggsfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457133 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457133" ;
+    skos:prefLabel "Betongfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457134 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457134" ;
+    skos:prefLabel "Industriell overflatebehandling, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457136 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457136" ;
+    skos:prefLabel "Byggdrifterfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457137 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457137" ;
+    skos:prefLabel "Isolatørfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457138 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457138" ;
+    skos:prefLabel "Murer- og flisleggerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457139 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457139" ;
+    skos:prefLabel "Maler- og overflateteknikkfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457140 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457140" ;
+    skos:prefLabel "Veidrift- og veivedlikeholdsfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457141 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457141" ;
+    skos:prefLabel "Anleggsrørleggerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457142 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457142" ;
+    skos:prefLabel "Snekkerfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457143 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457143" ;
+    skos:prefLabel "Byggmontasjefaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457144 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457144" ;
+    skos:prefLabel "Stillasbyggerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457145 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457145" ;
+    skos:prefLabel "Fundamenteringsfaget, Vg3"@nb ;
+    skos:broader nus:4571 ;
+    skos:broadMatch iscedf:0732 ;
+    skos:broadMatch isced2011:354 .
+
+nus:457901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "457901" ;
+    skos:prefLabel "Anleggsmaskinførerfaget, Vg3"@nb ;
+    skos:broader nus:4579 ;
+    skos:broadMatch iscedf:1041 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458101" ;
+    skos:prefLabel "Bakerfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458102" ;
+    skos:prefLabel "Butikkslakterfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458103 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458103" ;
+    skos:prefLabel "Sjømathandlerfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458104 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458104" ;
+    skos:prefLabel "Sjømatproduksjon, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458105 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458105" ;
+    skos:prefLabel "Industriell matproduksjon, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458106 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458106" ;
+    skos:prefLabel "Institusjonskokkfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:1013 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458107 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458107" ;
+    skos:prefLabel "Kjøttskjærerfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458108 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458108" ;
+    skos:prefLabel "Kokkfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:1013 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458110 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458110" ;
+    skos:prefLabel "Konditorfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458113 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458113" ;
+    skos:prefLabel "Pølsemakerfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458114 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458114" ;
+    skos:prefLabel "Slakterfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458116 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458116" ;
+    skos:prefLabel "Ernæringskokkfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458117 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458117" ;
+    skos:prefLabel "Ferskvarehandlerfaget, Vg3"@nb ;
+    skos:broader nus:4581 ;
+    skos:broadMatch iscedf:0721 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458201 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458201" ;
+    skos:prefLabel "Salmakerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458202 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458202" ;
+    skos:prefLabel "Industrisømfaget, Vg3"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458203 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458203" ;
+    skos:prefLabel "Industriell skotøyproduksjon, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458207 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458207" ;
+    skos:prefLabel "Industritekstilfaget, farging, trykking og etterbehandling, Vg3"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458208 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458208" ;
+    skos:prefLabel "Industritekstilfaget, fiskeredskap, Vg3"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458209 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458209" ;
+    skos:prefLabel "Seilmakerfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458210 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458210" ;
+    skos:prefLabel "Skomakerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458211 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458211" ;
+    skos:prefLabel "Industritekstilfaget, garnframstilling, Vg3"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458212 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458212" ;
+    skos:prefLabel "Industritekstilfaget, veving, Vg3"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458213 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458213" ;
+    skos:prefLabel "Industritekstilfaget, trikotasje, Vg3"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458214 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458214" ;
+    skos:prefLabel "Repslagerfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458215 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458215" ;
+    skos:prefLabel "Bilsalmakerfaget, Vg3"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458216 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458216" ;
+    skos:prefLabel "Repslagerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458217 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458217" ;
+    skos:prefLabel "Salmakerfaget, Vg3"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458218 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458218" ;
+    skos:prefLabel "Seilmakerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458219 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458219" ;
+    skos:prefLabel "Skomakerfaget, Vg3"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458220 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458220" ;
+    skos:prefLabel "Industritekstilfaget, Vg3"@nb ;
+    skos:broader nus:4582 ;
+    skos:broadMatch iscedf:0723 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458221 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458221" ;
+    skos:prefLabel "Fiskeri- og akvakulturredskapsfaget, Vg3"@nb ;
+    skos:broader nus:4582 .
+
+nus:458301 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458301" ;
+    skos:prefLabel "Bøkkerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458302 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458302" ;
+    skos:prefLabel "Blyglasshåndverkerfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458303 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458303" ;
+    skos:prefLabel "Glassfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458305 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458305" ;
+    skos:prefLabel "Kurvmakerfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458306 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458306" ;
+    skos:prefLabel "Limtreproduksjonsfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458307 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458307" ;
+    skos:prefLabel "Modellbyggerfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458311 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458311" ;
+    skos:prefLabel "Møbeltapetsererfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458312 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458312" ;
+    skos:prefLabel "Orgelbyggerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458314 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458314" ;
+    skos:prefLabel "Pianostemming og pianoteknikk, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458315 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458315" ;
+    skos:prefLabel "Plastmekanikerfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458317 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458317" ;
+    skos:prefLabel "Trebåtbyggerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458318 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458318" ;
+    skos:prefLabel "Trelastfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458319 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458319" ;
+    skos:prefLabel "Treskjærerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458320 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458320" ;
+    skos:prefLabel "Tredreierfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458323 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458323" ;
+    skos:prefLabel "Håndbokbinderfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458324 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458324" ;
+    skos:prefLabel "Trevare- og bygginnredningsfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458325 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458325" ;
+    skos:prefLabel "Møbelsnekkerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458326 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458326" ;
+    skos:prefLabel "Komposittbåtbyggerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458327 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458327" ;
+    skos:prefLabel "Industrisnekkerfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458328 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458328" ;
+    skos:prefLabel "Polymerkomposittfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458329 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458329" ;
+    skos:prefLabel "Termoplastfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458330 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458330" ;
+    skos:prefLabel "Maritim innredning, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458331 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458331" ;
+    skos:prefLabel "Bøkkerfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458332 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458332" ;
+    skos:prefLabel "Blyglasshåndverkerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458333 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458333" ;
+    skos:prefLabel "Glassblåserfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458334 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458334" ;
+    skos:prefLabel "Håndbokbinderfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458335 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458335" ;
+    skos:prefLabel "Komposittbåtbyggerfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458336 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458336" ;
+    skos:prefLabel "Kurvmakerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458337 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458337" ;
+    skos:prefLabel "Møbeltapetsererfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458338 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458338" ;
+    skos:prefLabel "Møbelsnekkerfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458339 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458339" ;
+    skos:prefLabel "Orgelbyggerfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458340 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458340" ;
+    skos:prefLabel "Tredreierfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458341 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458341" ;
+    skos:prefLabel "Trebåtbyggerfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458342 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458342" ;
+    skos:prefLabel "Treskjærerfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0214 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458343 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458343" ;
+    skos:prefLabel "Plastfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458344 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458344" ;
+    skos:prefLabel "Trelast- og limtreproduksjonsfaget, Vg3"@nb ;
+    skos:broader nus:4583 ;
+    skos:broadMatch iscedf:0722 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458345 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458345" ;
+    skos:prefLabel "Glassliperfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4583 .
+
+nus:458402 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458402" ;
+    skos:prefLabel "Boreoperatørfaget, Vg3"@nb ;
+    skos:broader nus:4584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458403 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458403" ;
+    skos:prefLabel "Brønnfaget, kveilerøroperasjoner, Vg3"@nb ;
+    skos:broader nus:4584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458405 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458405" ;
+    skos:prefLabel "Brønnfaget, komplettering, Vg3"@nb ;
+    skos:broader nus:4584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458406 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458406" ;
+    skos:prefLabel "Brønnfaget, sementering, Vg3"@nb ;
+    skos:broader nus:4584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458408 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458408" ;
+    skos:prefLabel "Steinfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458409 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458409" ;
+    skos:prefLabel "Fjell- og bergverksfaget, Vg3"@nb ;
+    skos:broader nus:4584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458410 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458410" ;
+    skos:prefLabel "Brønnfaget, havbunnsinstallasjoner, Vg3"@nb ;
+    skos:broader nus:4584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458411 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458411" ;
+    skos:prefLabel "Brønnfaget, elektriske kabeloperasjoner, Vg3"@nb ;
+    skos:broader nus:4584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458412 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458412" ;
+    skos:prefLabel "Brønnfaget, mekaniske kabeloperasjoner, Vg3"@nb ;
+    skos:broader nus:4584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458413 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458413" ;
+    skos:prefLabel "Brønn- og borefaget, Vg3"@nb ;
+    skos:broader nus:4584 ;
+    skos:broadMatch iscedf:0724 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458901" ;
+    skos:prefLabel "Gjørtlerfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4589 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:458902 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "458902" ;
+    skos:prefLabel "Gjørtlerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4589 ;
+    skos:broadMatch iscedf:0715 ;
+    skos:broadMatch isced2011:354 .
+
+nus:461903 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "461903" ;
+    skos:prefLabel "Helsearbeiderfaget, Vg3"@nb ;
+    skos:broader nus:4619 ;
+    skos:broadMatch iscedf:0913 ;
+    skos:broadMatch isced2011:354 .
+
+nus:462101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "462101" ;
+    skos:prefLabel "Barne- og ungdomsarbeiderfaget, Vg3"@nb ;
+    skos:broader nus:4621 ;
+    skos:broadMatch iscedf:0922 ;
+    skos:broadMatch isced2011:354 .
+
+nus:464201 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "464201" ;
+    skos:prefLabel "Tannhelsesekretær, Vg3"@nb ;
+    skos:broader nus:4642 ;
+    skos:broadMatch iscedf:0911 ;
+    skos:broadMatch isced2011:354 .
+
+nus:465901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "465901" ;
+    skos:prefLabel "Aktivitørfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4659 ;
+    skos:broadMatch iscedf:0915 ;
+    skos:broadMatch isced2011:354 .
+
+nus:465902 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "465902" ;
+    skos:prefLabel "Fotterapi, Vg3"@nb ;
+    skos:broader nus:4659 ;
+    skos:broadMatch iscedf:0915 ;
+    skos:broadMatch isced2011:354 .
+
+nus:465903 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "465903" ;
+    skos:prefLabel "Aktivitørfaget, Vg3"@nb ;
+    skos:broader nus:4659 ;
+    skos:broadMatch iscedf:0915 ;
+    skos:broadMatch isced2011:354 .
+
+nus:466301 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "466301" ;
+    skos:prefLabel "Apotekteknikk, Vg3"@nb ;
+    skos:broader nus:4663 ;
+    skos:broadMatch iscedf:0916 ;
+    skos:broadMatch isced2011:354 .
+
+nus:468101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "468101" ;
+    skos:prefLabel "Idrettsfag, Vg3"@nb ;
+    skos:broader nus:4681 ;
+    skos:broadMatch iscedf:1014 ;
+    skos:broadMatch isced2011:344 .
+
+nus:469901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "469901" ;
+    skos:prefLabel "Ambulansefaget, Vg3"@nb ;
+    skos:broader nus:4699 ;
+    skos:broadMatch iscedf:0914 ;
+    skos:broadMatch isced2011:354 .
+
+nus:469905 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "469905" ;
+    skos:prefLabel "Ortopediteknikkfaget, Vg3"@nb ;
+    skos:broader nus:4699 ;
+    skos:broadMatch iscedf:0914 ;
+    skos:broadMatch isced2011:354 .
+
+nus:469907 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "469907" ;
+    skos:prefLabel "Renholdsoperatørfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4699 ;
+    skos:broadMatch iscedf:1011 ;
+    skos:broadMatch isced2011:354 .
+
+nus:469908 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "469908" ;
+    skos:prefLabel "Helsesekretær, Vg3"@nb ;
+    skos:broader nus:4699 ;
+    skos:broadMatch iscedf:0415 ;
+    skos:broadMatch isced2011:354 .
+
+nus:469911 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "469911" ;
+    skos:prefLabel "Portørfaget, Vg3"@nb ;
+    skos:broader nus:4699 ;
+    skos:broadMatch iscedf:0919 ;
+    skos:broadMatch isced2011:354 .
+
+nus:469913 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "469913" ;
+    skos:prefLabel "Renholdsoperatørfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4699 ;
+    skos:broadMatch iscedf:1011 ;
+    skos:broadMatch isced2011:354 .
+
+nus:471101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "471101" ;
+    skos:prefLabel "Fiske og fangst, Vg3"@nb ;
+    skos:broader nus:4711 ;
+    skos:broadMatch iscedf:0831 ;
+    skos:broadMatch isced2011:354 .
+
+nus:471102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "471102" ;
+    skos:prefLabel "Havbruksteknikkfaget, Vg3"@nb ;
+    skos:broader nus:4711 ;
+    skos:broadMatch iscedf:0831 ;
+    skos:broadMatch isced2011:354 .
+
+nus:471901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "471901" ;
+    skos:prefLabel "Akvakulturfaget, Vg3"@nb ;
+    skos:broader nus:4719 ;
+    skos:broadMatch iscedf:0831 ;
+    skos:broadMatch isced2011:354 .
+
+nus:473101 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "473101" ;
+    skos:prefLabel "Anleggsgartnerfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4731 ;
+    skos:broadMatch iscedf:0812 ;
+    skos:broadMatch isced2011:354 .
+
+nus:473102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "473102" ;
+    skos:prefLabel "Gartnernæring, Vg3"@nb ;
+    skos:broader nus:4731 ;
+    skos:broadMatch iscedf:0812 ;
+    skos:broadMatch isced2011:354 .
+
+nus:473104 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "473104" ;
+    skos:prefLabel "Idrettsanleggsfaget, Vg3"@nb ;
+    skos:broader nus:4731 ;
+    skos:broadMatch iscedf:0812 ;
+    skos:broadMatch isced2011:354 .
+
+nus:473106 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "473106" ;
+    skos:prefLabel "Anleggsgartnerfaget, Vg3"@nb ;
+    skos:broader nus:4731 ;
+    skos:broadMatch iscedf:0812 ;
+    skos:broadMatch isced2011:354 .
+
+nus:474102 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "474102" ;
+    skos:prefLabel "Skogfaget, Vg3"@nb ;
+    skos:broader nus:4741 ;
+    skos:broadMatch iscedf:0821 ;
+    skos:broadMatch isced2011:354 .
+
+nus:479901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "479901" ;
+    skos:prefLabel "Landbruk, Vg3"@nb ;
+    skos:broader nus:4799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:354 .
+
+nus:479903 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "479903" ;
+    skos:prefLabel "Naturbruk (studieforberedende), Vg3"@nb ;
+    skos:broader nus:4799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:344 .
+
+nus:479906 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "479906" ;
+    skos:prefLabel "Hestefaget, Vg3"@nb ;
+    skos:broader nus:4799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:354 .
+
+nus:479908 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "479908" ;
+    skos:prefLabel "Reindriftsfaget, Vg3"@nb ;
+    skos:broader nus:4799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:354 .
+
+nus:479912 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "479912" ;
+    skos:prefLabel "Dyrefaget, Vg3"@nb ;
+    skos:broader nus:4799 ;
+    skos:broadMatch iscedf:0811 ;
+    skos:broadMatch isced2011:354 .
+
+nus:479913 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "479913" ;
+    skos:prefLabel "Landbruksfaget, Vg3"@nb ;
+    skos:broader nus:4799 .
+
+nus:481302 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "481302" ;
+    skos:prefLabel "Matrosfaget, Vg3"@nb ;
+    skos:broader nus:4813 ;
+    skos:broadMatch iscedf:1041 ;
+    skos:broadMatch isced2011:354 .
+
+nus:481401 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "481401" ;
+    skos:prefLabel "Yrkessjåførfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4814 ;
+    skos:broadMatch iscedf:1041 ;
+    skos:broadMatch isced2011:354 .
+
+nus:481402 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "481402" ;
+    skos:prefLabel "Yrkessjåførfaget, Vg3"@nb ;
+    skos:broader nus:4814 ;
+    skos:broadMatch iscedf:1041 ;
+    skos:broadMatch isced2011:354 .
+
+nus:481905 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "481905" ;
+    skos:prefLabel "Logistikkfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4819 ;
+    skos:broadMatch iscedf:1041 ;
+    skos:broadMatch isced2011:354 .
+
+nus:481906 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "481906" ;
+    skos:prefLabel "Logistikkfaget, Vg3"@nb ;
+    skos:broader nus:4819 ;
+    skos:broadMatch iscedf:1041 ;
+    skos:broadMatch isced2011:354 .
+
+nus:482501 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "482501" ;
+    skos:prefLabel "Brannforebygger, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4825 ;
+    skos:broadMatch iscedf:1032 ;
+    skos:broadMatch isced2011:354 .
+
+nus:482901 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "482901" ;
+    skos:prefLabel "Sikkerhetsfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4829 ;
+    skos:broadMatch iscedf:1032 ;
+    skos:broadMatch isced2011:354 .
+
+nus:482902 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "482902" ;
+    skos:prefLabel "Sikkerhetsfaget, Vg3"@nb ;
+    skos:broader nus:4829 ;
+    skos:broadMatch iscedf:1032 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483104 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483104" ;
+    skos:prefLabel "Hudpleier, Vg3"@nb ;
+    skos:broader nus:4831 ;
+    skos:broadMatch iscedf:1012 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483105 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483105" ;
+    skos:prefLabel "Maskør- og parykkmakerfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4831 ;
+    skos:broadMatch iscedf:1012 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483106 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483106" ;
+    skos:prefLabel "Frisørfaget, Vg3 (gammel ordning)"@nb ;
+    skos:broader nus:4831 ;
+    skos:broadMatch iscedf:1012 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483107 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483107" ;
+    skos:prefLabel "Frisørfaget, Vg3"@nb ;
+    skos:broader nus:4831 ;
+    skos:broadMatch iscedf:1012 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483108 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483108" ;
+    skos:prefLabel "Maskør- og parykkmakerfaget, Vg2 og Vg3, særløp"@nb ;
+    skos:broader nus:4831 ;
+    skos:broadMatch iscedf:1012 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483201 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483201" ;
+    skos:prefLabel "Servitørfaget, Vg3"@nb ;
+    skos:broader nus:4832 ;
+    skos:broadMatch iscedf:1013 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483301 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483301" ;
+    skos:prefLabel "Tekstilrensfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4833 ;
+    skos:broadMatch iscedf:1011 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483302 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483302" ;
+    skos:prefLabel "Gjenvinningsfaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4833 ;
+    skos:broadMatch iscedf:1011 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483303 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483303" ;
+    skos:prefLabel "Vaskerifaget, Vg2 og Vg3, særløp (gammel ordning)"@nb ;
+    skos:broader nus:4833 ;
+    skos:broadMatch iscedf:1011 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483304 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483304" ;
+    skos:prefLabel "Vaskerifaget, Vg3"@nb ;
+    skos:broader nus:4833 ;
+    skos:broadMatch iscedf:1011 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483305 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483305" ;
+    skos:prefLabel "Tekstilrensfaget, Vg3"@nb ;
+    skos:broader nus:4833 ;
+    skos:broadMatch iscedf:1011 ;
+    skos:broadMatch isced2011:354 .
+
+nus:483306 a skos:Concept ;
+    skos:inScheme udir:Nus ;
+    skos:notation "483306" ;
+    skos:prefLabel "Gjenvinningsfaget, Vg3"@nb ;
+    skos:broader nus:4833 ;
+    skos:broadMatch iscedf:1011 ;
+    skos:broadMatch isced2011:354 .
+
+isced2011:244 a skos:Concept ;
+    skos:inScheme udir:Isced2011 ;
+    skos:notation "244" ;
+    skos:prefLabel "Level completion, with direct access to upper secondary education"@en .
+
+isced2011:343 a skos:Concept ;
+    skos:inScheme udir:Isced2011 ;
+    skos:notation "343" ;
+    skos:prefLabel "Level completion, without direct access to tertiary education"@en .
+
+isced2011:344 a skos:Concept ;
+    skos:inScheme udir:Isced2011 ;
+    skos:notation "344" ;
+    skos:prefLabel "Level completion, with direct access to tertiary education"@en .
+
+isced2011:353 a skos:Concept ;
+    skos:inScheme udir:Isced2011 ;
+    skos:notation "353" ;
+    skos:prefLabel "Level completion, without direct access to tertiary education"@en .
+
+isced2011:354 a skos:Concept ;
+    skos:inScheme udir:Isced2011 ;
+    skos:notation "354" ;
+    skos:prefLabel "Level completion, with direct access to tertiary education"@en .
+
+# Programområder koblet til utdanning i NUS
+
+d:BAAMF3---- udir:utdanningsklassifisering nus:457901 .
+d:BAANG2---- udir:utdanningsklassifisering nus:373107 .
+d:BAANG3---- udir:utdanningsklassifisering nus:473106 .
+d:BAANL2---- udir:utdanningsklassifisering nus:357101 .
+d:BAARL3---- udir:utdanningsklassifisering nus:457141 .
+d:BAASF3---- udir:utdanningsklassifisering nus:457102 .
+d:BABAN3---- udir:utdanningsklassifisering nus:457103 .
+d:BABAT1---- udir:utdanningsklassifisering nus:357125 .
+d:BABAT1RS-- udir:utdanningsklassifisering nus:357125 .
+d:BABAT2RS-- udir:utdanningsklassifisering nus:357130 .
+d:BABDR3---- udir:utdanningsklassifisering nus:457136 .
+d:BABET3---- udir:utdanningsklassifisering nus:457133 .
+d:BABFB3---- udir:utdanningsklassifisering nus:482501 .
+d:BABMO2---- udir:utdanningsklassifisering nus:357137 .
+d:BABRO3---- udir:utdanningsklassifisering nus:458413 .
+d:BABYG2---- udir:utdanningsklassifisering nus:357126 .
+d:BABYM3---- udir:utdanningsklassifisering nus:457143 .
+d:BAFEI3---- udir:utdanningsklassifisering nus:457107 .
+d:BAFJE3---- udir:utdanningsklassifisering nus:458409 .
+d:BAFMF3---- udir:utdanningsklassifisering nus:457145 .
+d:BAGLA3---- udir:utdanningsklassifisering nus:458303 .
+d:BAIMF3---- udir:utdanningsklassifisering nus:457112 .
+d:BAISL3---- udir:utdanningsklassifisering nus:457137 .
+d:BAISO3---- udir:utdanningsklassifisering nus:457115 .
+d:BAKEM2---- udir:utdanningsklassifisering nus:357127 .
+d:BALIM3---- udir:utdanningsklassifisering nus:458306 .
+d:BAMAL3---- udir:utdanningsklassifisering nus:457118 .
+d:BAMFF3---- udir:utdanningsklassifisering nus:457138 .
+d:BAMOT3---- udir:utdanningsklassifisering nus:457139 .
+d:BAMUR3---- udir:utdanningsklassifisering nus:457119 .
+d:BAOFT2---- udir:utdanningsklassifisering nus:357111 .
+d:BARHO3---- udir:utdanningsklassifisering nus:469907 .
+d:BARLF2---- udir:utdanningsklassifisering nus:357141 .
+d:BARLF3---- udir:utdanningsklassifisering nus:457121 .
+d:BAROF3---- udir:utdanningsklassifisering nus:469913 .
+d:BASBF3---- udir:utdanningsklassifisering nus:457144 .
+d:BASNE3---- udir:utdanningsklassifisering nus:457142 .
+d:BASTE3---- udir:utdanningsklassifisering nus:458408 .
+d:BASTI3---- udir:utdanningsklassifisering nus:457123 .
+d:BATAK3---- udir:utdanningsklassifisering nus:457124 .
+d:BATBY3---- udir:utdanningsklassifisering nus:458324 .
+d:BATLF3---- udir:utdanningsklassifisering nus:458318 .
+d:BATLT3---- udir:utdanningsklassifisering nus:458344 .
+d:BATMF2---- udir:utdanningsklassifisering nus:357143 .
+d:BATMF3---- udir:utdanningsklassifisering nus:457129 .
+d:BATRT2---- udir:utdanningsklassifisering nus:357128 .
+d:BAVBL3---- udir:utdanningsklassifisering nus:457117 .
+d:BAVOA3---- udir:utdanningsklassifisering nus:457131 .
+d:BAVOV3---- udir:utdanningsklassifisering nus:457140 .
+d:DHAKT2---- udir:utdanningsklassifisering nus:365901 .
+d:DHAKT3---- udir:utdanningsklassifisering nus:465901 .
+d:DHBBF2---- udir:utdanningsklassifisering nus:358313 .
+d:DHBKF3---- udir:utdanningsklassifisering nus:458301 .
+d:DHBLD2---- udir:utdanningsklassifisering nus:316901 .
+d:DHBLD3---- udir:utdanningsklassifisering nus:416901 .
+d:DHBLY3---- udir:utdanningsklassifisering nus:458302 .
+d:DHBMF2---- udir:utdanningsklassifisering nus:355301 .
+d:DHBMF3---- udir:utdanningsklassifisering nus:455309 .
+d:DHBNT3---- udir:utdanningsklassifisering nus:416902 .
+d:DHBUN3---- udir:utdanningsklassifisering nus:416601 .
+d:DHDDU2---- udir:utdanningsklassifisering nus:316103 .
+d:DHDGH2---- udir:utdanningsklassifisering nus:316202 .
+d:DHDHV1---- udir:utdanningsklassifisering nus:316910 .
+d:DHDTE2---- udir:utdanningsklassifisering nus:316606 .
+d:DHDTR2---- udir:utdanningsklassifisering nus:358315 .
+d:DHDUO3---- udir:utdanningsklassifisering nus:416101 .
+d:DHFGY3---- udir:utdanningsklassifisering nus:416207 .
+d:DHFIL3---- udir:utdanningsklassifisering nus:416201 .
+d:DHFRI2---- udir:utdanningsklassifisering nus:383102 .
+d:DHFRI3---- udir:utdanningsklassifisering nus:483106 .
+d:DHFTG3---- udir:utdanningsklassifisering nus:416301 .
+d:DHGIP3---- udir:utdanningsklassifisering nus:457110 .
+d:DHGLH3---- udir:utdanningsklassifisering nus:416202 .
+d:DHGRA3---- udir:utdanningsklassifisering nus:416203 .
+d:DHGRF3---- udir:utdanningsklassifisering nus:416203 .
+d:DHGTL3---- udir:utdanningsklassifisering nus:458901 .
+d:DHGUL3---- udir:utdanningsklassifisering nus:416204 .
+d:DHHBB3---- udir:utdanningsklassifisering nus:458323 .
+d:DHHMD3---- udir:utdanningsklassifisering nus:416106 .
+d:DHHSK3---- udir:utdanningsklassifisering nus:416603 .
+d:DHHVF3---- udir:utdanningsklassifisering nus:416604 .
+d:DHINT3---- udir:utdanningsklassifisering nus:416502 .
+d:DHIUD2---- udir:utdanningsklassifisering nus:316504 .
+d:DHKBB3---- udir:utdanningsklassifisering nus:458326 .
+d:DHKER3---- udir:utdanningsklassifisering nus:416104 .
+d:DHKJD3---- udir:utdanningsklassifisering nus:416607 .
+d:DHKRV3---- udir:utdanningsklassifisering nus:458305 .
+d:DHKST3---- udir:utdanningsklassifisering nus:416608 .
+d:DHMDE3---- udir:utdanningsklassifisering nus:416402 .
+d:DHMED1---- udir:utdanningsklassifisering nus:335904 .
+d:DHMED2---- udir:utdanningsklassifisering nus:335905 .
+d:DHMGR3---- udir:utdanningsklassifisering nus:416408 .
+d:DHMOD3---- udir:utdanningsklassifisering nus:416609 .
+d:DHMPM3---- udir:utdanningsklassifisering nus:483105 .
+d:DHMSF3---- udir:utdanningsklassifisering nus:458325 .
+d:DHMTF3---- udir:utdanningsklassifisering nus:458311 .
+d:DHNAU3---- udir:utdanningsklassifisering nus:455303 .
+d:DHOPT3---- udir:utdanningsklassifisering nus:455304 .
+d:DHORG3---- udir:utdanningsklassifisering nus:458312 .
+d:DHPFD3---- udir:utdanningsklassifisering nus:416409 .
+d:DHPST2---- udir:utdanningsklassifisering nus:358304 .
+d:DHPST3---- udir:utdanningsklassifisering nus:458314 .
+d:DHREP3---- udir:utdanningsklassifisering nus:458214 .
+d:DHSAL3---- udir:utdanningsklassifisering nus:458201 .
+d:DHSEI3---- udir:utdanningsklassifisering nus:458209 .
+d:DHSKO3---- udir:utdanningsklassifisering nus:458210 .
+d:DHSLV3---- udir:utdanningsklassifisering nus:416205 .
+d:DHSME2---- udir:utdanningsklassifisering nus:355221 .
+d:DHSME3---- udir:utdanningsklassifisering nus:455238 .
+d:DHSPD3---- udir:utdanningsklassifisering nus:416107 .
+d:DHSTR3---- udir:utdanningsklassifisering nus:416610 .
+d:DHSTU3---- udir:utdanningsklassifisering nus:455305 .
+d:DHTDR3---- udir:utdanningsklassifisering nus:458320 .
+d:DHTED3---- udir:utdanningsklassifisering nus:416108 .
+d:DHTKS3---- udir:utdanningsklassifisering nus:416903 .
+d:DHTRB3---- udir:utdanningsklassifisering nus:458317 .
+d:DHTRD3---- udir:utdanningsklassifisering nus:416109 .
+d:DHTSK3---- udir:utdanningsklassifisering nus:458319 .
+d:DHUIM2---- udir:utdanningsklassifisering nus:355303 .
+d:DHURM3---- udir:utdanningsklassifisering nus:455306 .
+d:DHUTS3---- udir:utdanningsklassifisering nus:416501 .
+d:DHVHD3---- udir:utdanningsklassifisering nus:416110 .
+d:DTBBF2---- udir:utdanningsklassifisering nus:358318 .
+d:DTBKF3---- udir:utdanningsklassifisering nus:458331 .
+d:DTBLY3---- udir:utdanningsklassifisering nus:458332 .
+d:DTBNT3---- udir:utdanningsklassifisering nus:416906 .
+d:DTBSM3---- udir:utdanningsklassifisering nus:458215 .
+d:DTBUN3---- udir:utdanningsklassifisering nus:416613 .
+d:DTDDU2---- udir:utdanningsklassifisering nus:316105 .
+d:DTDGH2---- udir:utdanningsklassifisering nus:316204 .
+d:DTDTH1---- udir:utdanningsklassifisering nus:316916 .
+d:DTDTR2---- udir:utdanningsklassifisering nus:358320 .
+d:DTFGY3---- udir:utdanningsklassifisering nus:416208 .
+d:DTFIL3---- udir:utdanningsklassifisering nus:416209 .
+d:DTGAF3---- udir:utdanningsklassifisering nus:455257 .
+d:DTGBF3---- udir:utdanningsklassifisering nus:458333 .
+d:DTGIP3---- udir:utdanningsklassifisering nus:416412 .
+d:DTGRF3---- udir:utdanningsklassifisering nus:416210 .
+d:DTGSF3---- udir:utdanningsklassifisering nus:458345 .
+d:DTGTL3---- udir:utdanningsklassifisering nus:458902 .
+d:DTGUL3---- udir:utdanningsklassifisering nus:416211 .
+d:DTHBB3---- udir:utdanningsklassifisering nus:458334 .
+d:DTHMD3---- udir:utdanningsklassifisering nus:416111 .
+d:DTHSK3---- udir:utdanningsklassifisering nus:416614 .
+d:DTHVF3---- udir:utdanningsklassifisering nus:416615 .
+d:DTKBB3---- udir:utdanningsklassifisering nus:458335 .
+d:DTKER3---- udir:utdanningsklassifisering nus:416112 .
+d:DTKJD3---- udir:utdanningsklassifisering nus:416616 .
+d:DTKRV3---- udir:utdanningsklassifisering nus:458336 .
+d:DTKST3---- udir:utdanningsklassifisering nus:416617 .
+d:DTMBT3---- udir:utdanningsklassifisering nus:458337 .
+d:DTMOD3---- udir:utdanningsklassifisering nus:416618 .
+d:DTMSF3---- udir:utdanningsklassifisering nus:458338 .
+d:DTORG3---- udir:utdanningsklassifisering nus:458339 .
+d:DTREP3---- udir:utdanningsklassifisering nus:458216 .
+d:DTSAL3---- udir:utdanningsklassifisering nus:458217 .
+d:DTSEI3---- udir:utdanningsklassifisering nus:458218 .
+d:DTSKO3---- udir:utdanningsklassifisering nus:458219 .
+d:DTSLV3---- udir:utdanningsklassifisering nus:416212 .
+d:DTSME2---- udir:utdanningsklassifisering nus:355229 .
+d:DTSME3---- udir:utdanningsklassifisering nus:455252 .
+d:DTSPD3---- udir:utdanningsklassifisering nus:416113 .
+d:DTSTH2---- udir:utdanningsklassifisering nus:316608 .
+d:DTSTR3---- udir:utdanningsklassifisering nus:416619 .
+d:DTTDR3---- udir:utdanningsklassifisering nus:458340 .
+d:DTTED3---- udir:utdanningsklassifisering nus:416114 .
+d:DTTKS3---- udir:utdanningsklassifisering nus:416907 .
+d:DTTRB3---- udir:utdanningsklassifisering nus:458341 .
+d:DTTRD3---- udir:utdanningsklassifisering nus:416115 .
+d:DTTSK3---- udir:utdanningsklassifisering nus:458342 .
+d:DTUIM2---- udir:utdanningsklassifisering nus:355304 .
+d:DTURM3---- udir:utdanningsklassifisering nus:455311 .
+d:DTVHD3---- udir:utdanningsklassifisering nus:416101 .
+d:ELAUT2---- udir:utdanningsklassifisering nus:355101 .
+d:ELAUT3---- udir:utdanningsklassifisering nus:455102 .
+d:ELAVI3---- udir:utdanningsklassifisering nus:455101 .
+d:ELAVI4---- udir:utdanningsklassifisering nus:455141 .
+d:ELDAT3---- udir:utdanningsklassifisering nus:455128 .
+d:ELDEL2---- udir:utdanningsklassifisering nus:355105 .
+d:ELDRF2---- udir:utdanningsklassifisering nus:355119 .
+d:ELDRF3---- udir:utdanningsklassifisering nus:455146 .
+d:ELELE1---- udir:utdanningsklassifisering nus:355112 .
+d:ELELE2---- udir:utdanningsklassifisering nus:355104 .
+d:ELELE3---- udir:utdanningsklassifisering nus:455103 .
+d:ELEMO3---- udir:utdanningsklassifisering nus:455106 .
+d:ELEOP3---- udir:utdanningsklassifisering nus:455107 .
+d:ELERF3---- udir:utdanningsklassifisering nus:455105 .
+d:ELFLY2---- udir:utdanningsklassifisering nus:355107 .
+d:ELFLY3---- udir:utdanningsklassifisering nus:455109 .
+d:ELFMO4---- udir:utdanningsklassifisering nus:455113 .
+d:ELFST4---- udir:utdanningsklassifisering nus:455114 .
+d:ELFSY4---- udir:utdanningsklassifisering nus:455116 .
+d:ELFUO3---- udir:utdanningsklassifisering nus:455140 .
+d:ELHEI3---- udir:utdanningsklassifisering nus:455117 .
+d:ELKUL3---- udir:utdanningsklassifisering nus:455118 .
+d:ELKVP3---- udir:utdanningsklassifisering nus:455118 .
+d:ELKVT2---- udir:utdanningsklassifisering nus:355109 .
+d:ELKVV2---- udir:utdanningsklassifisering nus:355117 .
+d:ELLSM3---- udir:utdanningsklassifisering nus:455256 .
+d:ELMEL3---- udir:utdanningsklassifisering nus:455143 .
+d:ELMEL4---- udir:utdanningsklassifisering nus:455144 .
+d:ELOPT3---- udir:utdanningsklassifisering nus:455312 .
+d:ELPRO3---- udir:utdanningsklassifisering nus:455123 .
+d:ELROM3---- udir:utdanningsklassifisering nus:455127 .
+d:ELSIG3---- udir:utdanningsklassifisering nus:455129 .
+d:ELTAV3---- udir:utdanningsklassifisering nus:455130 .
+d:ELTEL3---- udir:utdanningsklassifisering nus:455132 .
+d:ELTOG3---- udir:utdanningsklassifisering nus:455134 .
+d:ELVEN3---- udir:utdanningsklassifisering nus:455145 .
+d:ELVIK3---- udir:utdanningsklassifisering nus:455135 .
+d:ELVTR3---- udir:utdanningsklassifisering nus:455135 .
+d:FDBLD2---- udir:utdanningsklassifisering nus:316918 .
+d:FDBLD3---- udir:utdanningsklassifisering nus:416908 .
+d:FDEKD3---- udir:utdanningsklassifisering nus:416504 .
+d:FDFBI1---- udir:utdanningsklassifisering nus:316506 .
+d:FDFRI2---- udir:utdanningsklassifisering nus:383109 .
+d:FDFRI3---- udir:utdanningsklassifisering nus:483107 .
+d:FDIED2---- udir:utdanningsklassifisering nus:316508 .
+d:FDINT3---- udir:utdanningsklassifisering nus:416506 .
+d:FDMPM3---- udir:utdanningsklassifisering nus:483108 .
+d:FDPFD3---- udir:utdanningsklassifisering nus:416413 .
+d:HSAKT2---- udir:utdanningsklassifisering nus:365906 .
+d:HSAKT3---- udir:utdanningsklassifisering nus:465903 .
+d:HSAMB2---- udir:utdanningsklassifisering nus:369901 .
+d:HSAMB3---- udir:utdanningsklassifisering nus:469901 .
+d:HSAPO3---- udir:utdanningsklassifisering nus:466301 .
+d:HSBUA2---- udir:utdanningsklassifisering nus:362101 .
+d:HSBUA3---- udir:utdanningsklassifisering nus:462101 .
+d:HSFOT2---- udir:utdanningsklassifisering nus:365904 .
+d:HSFOT3---- udir:utdanningsklassifisering nus:465902 .
+d:HSHEA2---- udir:utdanningsklassifisering nus:361903 .
+d:HSHEA3---- udir:utdanningsklassifisering nus:461903 .
+d:HSHES2---- udir:utdanningsklassifisering nus:369905 .
+d:HSHSE3---- udir:utdanningsklassifisering nus:469908 .
+d:HSHSF1---- udir:utdanningsklassifisering nus:369913 .
+d:HSHUD2---- udir:utdanningsklassifisering nus:383104 .
+d:HSHUD3---- udir:utdanningsklassifisering nus:483104 .
+d:HSORT3---- udir:utdanningsklassifisering nus:469905 .
+d:HSPOR3---- udir:utdanningsklassifisering nus:469911 .
+d:HSTAN3---- udir:utdanningsklassifisering nus:464201 .
+d:IDIDR2---- udir:utdanningsklassifisering nus:368103 .
+d:IDIDR3---- udir:utdanningsklassifisering nus:468101 .
+d:IDRET1---- udir:utdanningsklassifisering nus:368104 .
+d:IMGPT3---- udir:utdanningsklassifisering nus:455258 .
+d:IMIHP3---- udir:utdanningsklassifisering nus:435901 .
+d:IMIKM1---- udir:utdanningsklassifisering nus:354105 .
+d:IMITD3---- udir:utdanningsklassifisering nus:454105 .
+d:IMITK2---- udir:utdanningsklassifisering nus:354107 .
+d:IMIUV3---- udir:utdanningsklassifisering nus:454106 .
+d:IMMDF3---- udir:utdanningsklassifisering nus:435902 .
+d:IMMED2---- udir:utdanningsklassifisering nus:335908 .
+d:IMMET3---- udir:utdanningsklassifisering nus:435903 .
+d:KDKDA1---- udir:utdanningsklassifisering nus:316912 .
+d:KDKDA1RS-- udir:utdanningsklassifisering nus:316912 .
+d:KDKDA2---- udir:utdanningsklassifisering nus:316913 .
+d:KDKDA2RS-- udir:utdanningsklassifisering nus:316913 .
+d:KDKDA3---- udir:utdanningsklassifisering nus:416905 .
+d:KDKDA3RS-- udir:utdanningsklassifisering nus:416905 .
+d:MDDAN2---- udir:utdanningsklassifisering nus:315301 .
+d:MDDAN3---- udir:utdanningsklassifisering nus:415301 .
+d:MDDRA1RS-- udir:utdanningsklassifisering nus:315903 .
+d:MDDRA2---- udir:utdanningsklassifisering nus:315202 .
+d:MDDRA2RS-- udir:utdanningsklassifisering nus:315202 .
+d:MDDRA3---- udir:utdanningsklassifisering nus:415201 .
+d:MDDRA3RS-- udir:utdanningsklassifisering nus:415201 .
+d:MDMDD1---- udir:utdanningsklassifisering nus:315903 .
+d:MDMDR1RS-- udir:utdanningsklassifisering nus:315903 .
+d:MDMDR2RS-- udir:utdanningsklassifisering nus:315201 .
+d:MDMUS1RS-- udir:utdanningsklassifisering nus:315903 .
+d:MDMUS2---- udir:utdanningsklassifisering nus:315103 .
+d:MDMUS2RS-- udir:utdanningsklassifisering nus:315103 .
+d:MDMUS3---- udir:utdanningsklassifisering nus:415104 .
+d:MDMUS3RS-- udir:utdanningsklassifisering nus:415104 .
+d:MEMOK1---- udir:utdanningsklassifisering nus:335106 .
+d:MEMOK1RS-- udir:utdanningsklassifisering nus:335106 .
+d:MEMOK2---- udir:utdanningsklassifisering nus:335107 .
+d:MEMOK2RS-- udir:utdanningsklassifisering nus:335107 .
+d:MEMOK3---- udir:utdanningsklassifisering nus:435102 .
+d:MEMOK3RS-- udir:utdanningsklassifisering nus:435102 .
+d:MKFTG3---- udir:utdanningsklassifisering nus:416301 .
+d:MKMDE3---- udir:utdanningsklassifisering nus:416402 .
+d:MKMED1---- udir:utdanningsklassifisering nus:335104 .
+d:MKMED1RS-- udir:utdanningsklassifisering nus:335104 .
+d:MKMED2---- udir:utdanningsklassifisering nus:335103 .
+d:MKMED2RS-- udir:utdanningsklassifisering nus:335103 .
+d:MKMED3---- udir:utdanningsklassifisering nus:435101 .
+d:MKMED3RS-- udir:utdanningsklassifisering nus:401110 .
+d:MKMGR3---- udir:utdanningsklassifisering nus:416408 .
+d:MKMIT1RS-- udir:utdanningsklassifisering nus:335104 .
+d:MKMIT2RS-- udir:utdanningsklassifisering nus:335103 .
+d:NAAGR3---- udir:utdanningsklassifisering nus:479901 .
+d:NAAID2---- udir:utdanningsklassifisering nus:373101 .
+d:NAAKV2---- udir:utdanningsklassifisering nus:371901 .
+d:NAAKV3---- udir:utdanningsklassifisering nus:471901 .
+d:NAANG3---- udir:utdanningsklassifisering nus:473101 .
+d:NADYR3---- udir:utdanningsklassifisering nus:479912 .
+d:NAFFA2---- udir:utdanningsklassifisering nus:371101 .
+d:NAFFA3---- udir:utdanningsklassifisering nus:471101 .
+d:NAFIR3---- udir:utdanningsklassifisering nus:458221 .
+d:NAGAN3---- udir:utdanningsklassifisering nus:473102 .
+d:NAHAV3---- udir:utdanningsklassifisering nus:471102 .
+d:NAHDF2---- udir:utdanningsklassifisering nus:379916 .
+d:NAHHO2---- udir:utdanningsklassifisering nus:379910 .
+d:NAHOV3---- udir:utdanningsklassifisering nus:455215 .
+d:NAHST3---- udir:utdanningsklassifisering nus:479906 .
+d:NAHVS3---- udir:utdanningsklassifisering nus:455253 .
+d:NAIAN3---- udir:utdanningsklassifisering nus:473104 .
+d:NALBF3---- udir:utdanningsklassifisering nus:479913 .
+d:NALBR3---- udir:utdanningsklassifisering nus:479901 .
+d:NALBR3RS-- udir:utdanningsklassifisering nus:479901 .
+d:NALGA2---- udir:utdanningsklassifisering nus:379911 .
+d:NANAB1---- udir:utdanningsklassifisering nus:379909 .
+d:NANAB1RS-- udir:utdanningsklassifisering nus:379909 .
+d:NANAB2RS-- udir:utdanningsklassifisering nus:379912 .
+d:NANAB3---- udir:utdanningsklassifisering nus:479903 .
+d:NANAB3RSS- udir:utdanningsklassifisering nus:479903 .
+d:NAREI2---- udir:utdanningsklassifisering nus:379906 .
+d:NAREI3---- udir:utdanningsklassifisering nus:479908 .
+d:NASBR2---- udir:utdanningsklassifisering nus:374102 .
+d:NASKF3---- udir:utdanningsklassifisering nus:474102 .
+d:PBPBY3---- udir:utdanningsklassifisering nus:401110 .
+d:PBPBY3RS-- udir:utdanningsklassifisering nus:401110 .
+d:PBPBY4---- udir:utdanningsklassifisering nus:401105 .
+d:RMBAK2---- udir:utdanningsklassifisering nus:358120 .
+d:RMBAK3---- udir:utdanningsklassifisering nus:458101 .
+d:RMBUT3---- udir:utdanningsklassifisering nus:458102 .
+d:RMEKF3---- udir:utdanningsklassifisering nus:458116 .
+d:RMFVF3---- udir:utdanningsklassifisering nus:458117 .
+d:RMIKO3---- udir:utdanningsklassifisering nus:458106 .
+d:RMIMP3---- udir:utdanningsklassifisering nus:458105 .
+d:RMKOK3---- udir:utdanningsklassifisering nus:458108 .
+d:RMKON3---- udir:utdanningsklassifisering nus:458110 .
+d:RMKOS2---- udir:utdanningsklassifisering nus:358114 .
+d:RMKSK3---- udir:utdanningsklassifisering nus:458107 .
+d:RMMFG2---- udir:utdanningsklassifisering nus:358115 .
+d:RMMPR2---- udir:utdanningsklassifisering nus:358122 .
+d:RMPMF3---- udir:utdanningsklassifisering nus:458113 .
+d:RMRMF1---- udir:utdanningsklassifisering nus:358113 .
+d:RMRMF1RS-- udir:utdanningsklassifisering nus:358113 .
+d:RMSER3---- udir:utdanningsklassifisering nus:483201 .
+d:RMSLF3---- udir:utdanningsklassifisering nus:458114 .
+d:RMSMH3---- udir:utdanningsklassifisering nus:458103 .
+d:RMSMP3---- udir:utdanningsklassifisering nus:458104 .
+d:SRRLV3---- udir:utdanningsklassifisering nus:444102 .
+d:SRSIK3---- udir:utdanningsklassifisering nus:482902 .
+d:SRSLG3---- udir:utdanningsklassifisering nus:442103 .
+d:SRSOA3---- udir:utdanningsklassifisering nus:449902 .
+d:SRSRL2---- udir:utdanningsklassifisering nus:342903 .
+d:SRSSH2---- udir:utdanningsklassifisering nus:349908 .
+d:SRSSR1---- udir:utdanningsklassifisering nus:342901 .
+d:SRSSR2---- udir:utdanningsklassifisering nus:342905 .
+d:SSIDT3---- udir:utdanningsklassifisering nus:454104 .
+d:SSISF2---- udir:utdanningsklassifisering nus:354101 .
+d:SSISF3---- udir:utdanningsklassifisering nus:454101 .
+d:SSITU3---- udir:utdanningsklassifisering nus:454103 .
+d:SSKAD3---- udir:utdanningsklassifisering nus:443201 .
+d:SSLOG3---- udir:utdanningsklassifisering nus:481905 .
+d:SSRES3---- udir:utdanningsklassifisering nus:444901 .
+d:SSRLV2---- udir:utdanningsklassifisering nus:344101 .
+d:SSRLV3---- udir:utdanningsklassifisering nus:444101 .
+d:SSSIK3---- udir:utdanningsklassifisering nus:482901 .
+d:SSSLG3---- udir:utdanningsklassifisering nus:442102 .
+d:SSSSA1---- udir:utdanningsklassifisering nus:349904 .
+d:SSSSS2---- udir:utdanningsklassifisering nus:349905 .
+d:SSTRL2---- udir:utdanningsklassifisering nus:381904 .
+d:SSYRK3---- udir:utdanningsklassifisering nus:481401 .
+d:SSYSL3---- udir:utdanningsklassifisering nus:481401 .
+d:STFOR1---- udir:utdanningsklassifisering nus:301119 .
+d:STFOR1RS-- udir:utdanningsklassifisering nus:301119 .
+d:STFOR2---- udir:utdanningsklassifisering nus:301112 .
+d:STFOR2RS-- udir:utdanningsklassifisering nus:301112 .
+d:STFOR3---- udir:utdanningsklassifisering nus:401113 .
+d:STFOR3RS-- udir:utdanningsklassifisering nus:401113 .
+d:STREA1RS-- udir:utdanningsklassifisering nus:301111 .
+d:STREA2---- udir:utdanningsklassifisering nus:301113 .
+d:STREA2MO-- udir:utdanningsklassifisering nus:301113 .
+d:STREA2RS-- udir:utdanningsklassifisering nus:301113 .
+d:STREA2TY-- udir:utdanningsklassifisering nus:301113 .
+d:STREA3---- udir:utdanningsklassifisering nus:401111 .
+d:STREA3MO-- udir:utdanningsklassifisering nus:401111 .
+d:STREA3RS-- udir:utdanningsklassifisering nus:401111 .
+d:STREA3TY-- udir:utdanningsklassifisering nus:401111 .
+d:STSAM2---- udir:utdanningsklassifisering nus:301114 .
+d:STSAM3---- udir:utdanningsklassifisering nus:401112 .
+d:STSPR2---- udir:utdanningsklassifisering nus:301115 .
+d:STSPR3---- udir:utdanningsklassifisering nus:401112 .
+d:STSSA1RS-- udir:utdanningsklassifisering nus:301111 .
+d:STSSA2---- udir:utdanningsklassifisering nus:301117 .
+d:STSSA2MO-- udir:utdanningsklassifisering nus:301117 .
+d:STSSA2RS-- udir:utdanningsklassifisering nus:301117 .
+d:STSSA3---- udir:utdanningsklassifisering nus:401112 .
+d:STSSA3MO-- udir:utdanningsklassifisering nus:401112 .
+d:STSSA3RS-- udir:utdanningsklassifisering nus:401112 .
+d:STUSP1---- udir:utdanningsklassifisering nus:301111 .
+d:STUSP1MO-- udir:utdanningsklassifisering nus:301111 .
+d:STUSP1RS-- udir:utdanningsklassifisering nus:301111 .
+d:STUSP1TY-- udir:utdanningsklassifisering nus:301111 .
+d:STUSP2RS-- udir:utdanningsklassifisering nus:301118 .
+d:STUSP3RS-- udir:utdanningsklassifisering nus:401114 .
+d:TPALU3---- udir:utdanningsklassifisering nus:455201 .
+d:TPAMK2---- udir:utdanningsklassifisering nus:355219 .
+d:TPAMM3---- udir:utdanningsklassifisering nus:455202 .
+d:TPBDK3---- udir:utdanningsklassifisering nus:455259 .
+d:TPBIP3---- udir:utdanningsklassifisering nus:455254 .
+d:TPBKO3---- udir:utdanningsklassifisering nus:458405 .
+d:TPBKV3---- udir:utdanningsklassifisering nus:458403 .
+d:TPBLA3---- udir:utdanningsklassifisering nus:455206 .
+d:TPBLK2---- udir:utdanningsklassifisering nus:355222 .
+d:TPBMF2---- udir:utdanningsklassifisering nus:355306 .
+d:TPBMF3---- udir:utdanningsklassifisering nus:455313 .
+d:TPBMK3---- udir:utdanningsklassifisering nus:455204 .
+d:TPBOK3---- udir:utdanningsklassifisering nus:455209 .
+d:TPBOR3---- udir:utdanningsklassifisering nus:458402 .
+d:TPBRE3---- udir:utdanningsklassifisering nus:458411 .
+d:TPBRH3---- udir:utdanningsklassifisering nus:458410 .
+d:TPBRM3---- udir:utdanningsklassifisering nus:458412 .
+d:TPBRS3---- udir:utdanningsklassifisering nus:458406 .
+d:TPBRT2---- udir:utdanningsklassifisering nus:358401 .
+d:TPBSK3---- udir:utdanningsklassifisering nus:455208 .
+d:TPBTK3---- udir:utdanningsklassifisering nus:455205 .
+d:TPCHA3---- udir:utdanningsklassifisering nus:455217 .
+d:TPCNC3---- udir:utdanningsklassifisering nus:455247 .
+d:TPDKO3---- udir:utdanningsklassifisering nus:455210 .
+d:TPFIR3---- udir:utdanningsklassifisering nus:458208 .
+d:TPFMK3---- udir:utdanningsklassifisering nus:455302 .
+d:TPGEM3---- udir:utdanningsklassifisering nus:455245 .
+d:TPGJE3---- udir:utdanningsklassifisering nus:483302 .
+d:TPGPT3---- udir:utdanningsklassifisering nus:455251 .
+d:TPGRV3---- udir:utdanningsklassifisering nus:455212 .
+d:TPGVF3---- udir:utdanningsklassifisering nus:483306 .
+d:TPHJU3---- udir:utdanningsklassifisering nus:455214 .
+d:TPIFT3---- udir:utdanningsklassifisering nus:458207 .
+d:TPIGS3---- udir:utdanningsklassifisering nus:458211 .
+d:TPIME3---- udir:utdanningsklassifisering nus:455216 .
+d:TPIMO3---- udir:utdanningsklassifisering nus:455249 .
+d:TPIMS2---- udir:utdanningsklassifisering nus:358314 .
+d:TPIND2---- udir:utdanningsklassifisering nus:358202 .
+d:TPIOM3---- udir:utdanningsklassifisering nus:455310 .
+d:TPIOV3---- udir:utdanningsklassifisering nus:457134 .
+d:TPIRL3---- udir:utdanningsklassifisering nus:457113 .
+d:TPISK3---- udir:utdanningsklassifisering nus:458203 .
+d:TPISM3---- udir:utdanningsklassifisering nus:458202 .
+d:TPISN3---- udir:utdanningsklassifisering nus:458327 .
+d:TPITA3---- udir:utdanningsklassifisering nus:457114 .
+d:TPITF3---- udir:utdanningsklassifisering nus:458220 .
+d:TPITR3---- udir:utdanningsklassifisering nus:458213 .
+d:TPIVE3---- udir:utdanningsklassifisering nus:458212 .
+d:TPKAR3---- udir:utdanningsklassifisering nus:455217 .
+d:TPKJP2---- udir:utdanningsklassifisering nus:352204 .
+d:TPKJP3---- udir:utdanningsklassifisering nus:452201 .
+d:TPKJT2---- udir:utdanningsklassifisering nus:355207 .
+d:TPKLO3---- udir:utdanningsklassifisering nus:455246 .
+d:TPKPL2---- udir:utdanningsklassifisering nus:352206 .
+d:TPLAB2---- udir:utdanningsklassifisering nus:352205 .
+d:TPLAB3---- udir:utdanningsklassifisering nus:452202 .
+d:TPLMM3---- udir:utdanningsklassifisering nus:455222 .
+d:TPLOG3---- udir:utdanningsklassifisering nus:481906 .
+d:TPLSF3---- udir:utdanningsklassifisering nus:455223 .
+d:TPMAR2---- udir:utdanningsklassifisering nus:381306 .
+d:TPMIR3---- udir:utdanningsklassifisering nus:458330 .
+d:TPMME3---- udir:utdanningsklassifisering nus:455229 .
+d:TPMOB3---- udir:utdanningsklassifisering nus:458307 .
+d:TPMPT2---- udir:utdanningsklassifisering nus:355224 .
+d:TPMSY3---- udir:utdanningsklassifisering nus:455230 .
+d:TPMTS3---- udir:utdanningsklassifisering nus:481302 .
+d:TPNDT3---- udir:utdanningsklassifisering nus:455232 .
+d:TPPIN2---- udir:utdanningsklassifisering nus:355223 .
+d:TPPLA3---- udir:utdanningsklassifisering nus:455233 .
+d:TPPLF3---- udir:utdanningsklassifisering nus:458343 .
+d:TPPLM3---- udir:utdanningsklassifisering nus:458315 .
+d:TPPOK2---- udir:utdanningsklassifisering nus:358317 .
+d:TPPOM3---- udir:utdanningsklassifisering nus:458328 .
+d:TPPRT3---- udir:utdanningsklassifisering nus:455248 .
+d:TPRSD3---- udir:utdanningsklassifisering nus:455236 .
+d:TPSGR3---- udir:utdanningsklassifisering nus:455237 .
+d:TPSMK3---- udir:utdanningsklassifisering nus:455231 .
+d:TPSTF3---- udir:utdanningsklassifisering nus:455242 .
+d:TPSVE3---- udir:utdanningsklassifisering nus:455239 .
+d:TPSYM3---- udir:utdanningsklassifisering nus:455240 .
+d:TPTEP3---- udir:utdanningsklassifisering nus:458329 .
+d:TPTIP1---- udir:utdanningsklassifisering nus:355901 .
+d:TPTLM3---- udir:utdanningsklassifisering nus:455255 .
+d:TPTOL2---- udir:utdanningsklassifisering nus:381906 .
+d:TPTRF3---- udir:utdanningsklassifisering nus:483301 .
+d:TPTRY3---- udir:utdanningsklassifisering nus:455213 .
+d:TPTSR3---- udir:utdanningsklassifisering nus:483305 .
+d:TPVAF3---- udir:utdanningsklassifisering nus:483304 .
+d:TPVAS3---- udir:utdanningsklassifisering nus:483303 .
+d:TPVER3---- udir:utdanningsklassifisering nus:455241 .
+d:TPYRK3---- udir:utdanningsklassifisering nus:481402 .
+d:TPYSL3---- udir:utdanningsklassifisering nus:481402 .

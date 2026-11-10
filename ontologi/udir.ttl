@@ -205,6 +205,12 @@ udir:yrkesklassifisering a owl:ObjectProperty ;
     rdfs:domain u:Programomraade ;
     rdfs:range skos:Concept .
 
+udir:utdanningsklassifisering a owl:ObjectProperty ;
+    rdfs:label "utdanningsklassifisering"@nb, "utdanningsklassifisering"@nn, "education classification"@en ;
+    rdfs:comment "Utdanningen programområdet svarer til i NUS, SSBs utdanningsgruppering (udir:Nus). Kilden er ontologi/koblinger/nus.csv. Ligger i urn:graph:koblinger. NUS-kodene har skos:broadMatch til fagfelt i ISCED-F 2013 (ESCO) og nivå i ISCED 2011."@nb ;
+    rdfs:domain u:Programomraade ;
+    rdfs:range skos:Concept .
+
 udir:Spraak a skos:ConceptScheme ;
     rdfs:label "Språk"@nb, "Språk"@nn, "Languages"@en ;
     skos:prefLabel "Språk"@nb, "Språk"@nn, "Languages"@en ;

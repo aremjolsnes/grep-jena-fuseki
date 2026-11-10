@@ -9,12 +9,16 @@ Status: 🔜 påbegynt · 💡 idé · ✅ gjort
 |---|---|---|
 | 1 | [Læreplanutsnitt for KI](#1-læreplanutsnitt-for-ki) | ✅ |
 | 2 | [Fritekstsøk med jena-text](#2-fritekstsøk-med-jena-text) | ✅ |
-| 3 | [Historikk: hva endret seg?](#3-historikk-hva-endret-seg) | 💡 |
-| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker via ISCO ✅ |
+| 3 | [Historikk: hva endret seg?](#3-historikk-hva-endret-seg) | 💡 satt på vent |
+| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker via ISCO ✅, NUS og ISCED ✅, NKR/ELM venter |
 | 5 | [SHACL-former](#5-shacl-former) | 💡 |
 | 6 | [Beskrivelse av datasettet med DCAT og VoID](#6-beskrivelse-av-datasettet-med-dcat-og-void) | ✅ |
 | 7 | [Test eksemplene i bruk.md](#7-test-eksemplene-i-brukmd) | ✅ |
 | 8 | [Inverse egenskaper (R6)](#8-inverse-egenskaper-r6) | 💡 |
+| 9 | [Demo for KI: fra fagkode til prompt](#9-demo-for-ki-fra-fagkode-til-prompt) | 💡 |
+| 10 | [Grunnlag for en veiledning om koblinger](#10-grunnlag-for-en-veiledning-om-koblinger) | 💡 |
+
+Prioritert 2026-11-10: NUS (under 4, ✅ samme dag), så 9, så 10, så SHACL (5). Småting: R6 (8) og de 9 programområdene uten STYRK-kobling.
 
 ## 1. Læreplanutsnitt for KI
 
@@ -88,9 +92,23 @@ Dette er det som gjør Grep til en *lenket* graf. Det krever fagavklaring, slik 
   bruker, har 519 ESCO-yrker under seg.
 - `scripts/lag-styrk-ttl.py` lager `styrk.ttl`.
 
+✅ 2026-11-10, NUS og ISCED:
+- `udir:utdanningsklassifisering` går fra 491 av 497 programområder (alle trinn) til NUS, i `urn:graph:koblinger`.
+- Kilden er `ontologi/koblinger/nus.csv`:
+  - 421 har samme navn og trinn som i NUS;
+  - 29 er privatskolevarianter med samme kode som den vanlige utgaven;
+  - 41 er forslag, og 21 av dem er usikre;
+  - 6 er uten kobling, for eksempel Reform 94-plassholdere.
+- Finnes både ny og gammel ordning i NUS, får utgåtte programområder gammel ordning.
+- NUS-kodene har `skos:broadMatch` til ISCED-F 2013 i ESCO (44 fagfelt, alle sjekket) og ISCED 2011 (5 nivåer,
+  egne begreper fordi EUs adresser ga tomme svar).
+- `scripts/lag-nus-ttl.py` bruker NUS-versjonen som gjelder når skriptet kjøres.
+- `scripts/sjekk-koblinger.py` melder hver natt avvik for koder SSB har tatt ut, og for programområder som ikke er
+  vurdert. Neste steg kan være at skriptet foreslår koder for nye programområder automatisk.
+
 Gjenstår:
 - ESCO-ferdigheter for kompetansemål. Det er et større arbeid.
-- NUS for programområder. Det finnes ingen offisiell tabell.
+- Gå gjennom de 21 usikre NUS-forslagene.
 - NKR- og EQF-nivå for sluttkompetanse.
 - ELM.
 
@@ -129,3 +147,23 @@ merker det.
 
 Lag inverse egenskaper som en ny regel via `owl:inverseOf`, slik at man kan gå begge veier i grafen,
 for eksempel fra læreplan ned til fagkode, uten å skrive `^u:…`.
+
+## 9. Demo for KI: fra fagkode til prompt
+
+Et lite, konkret eksempel på hele kjeden for én elev: fagkode → læreplanutsnitt (LK20, idé 1) →
+kompetansemål med kjerneelementer, og eventuelt programområde → STYRK-08 → ESCO-yrker (idé 4). Spørringen finnes
+allerede. Det som mangler, er å vise hvordan svaret blir til en prompt. Nyttig til samtaler med folk som jobber med
+KI på vurderingsdata.
+
+## 10. Grunnlag for en veiledning om koblinger
+
+Et utkast til en dypere veiledning om koblingene til andre kunnskapsgrafer:
+
+- hva STYRK-08, ISCO-08, ESCO og NUS er;
+- hvordan koblingene ble laget: SSBs Yrkeskatalog, manuell vurdering og ESCO som støtte;
+- beslutningene: aldri hovedgruppe 1–2, gruppe 3 er greit, utgåtte programområder er med;
+- eksempelspørringer.
+
+Med i veiledningen: at «Høyskoleyrker» (hovedgruppe 3 i STYRK-08) beskriver arbeidsoppgavene i yrket, ikke at
+yrket krever høyskole.
+

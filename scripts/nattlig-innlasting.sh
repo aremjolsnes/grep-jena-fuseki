@@ -6,7 +6,7 @@
 #   urn:graph:ontologi     ontologi_kl06_rettet.ttl + grep_type_mapping.ttl + udir.ttl fra repoet
 #   urn:graph:normalisert  resultatet av sparql/normalisering/*.ru (bygges på nytt hver gang)
 #   urn:graph:utledet      resultatet av sparql/utledning/*.ru (bygges på nytt hver gang)
-#   urn:graph:koblinger    koblinger til andre kunnskapsgrafer fra ontologi/koblinger/*.ttl (STYRK-08)
+#   urn:graph:koblinger    koblinger til andre kunnskapsgrafer fra ontologi/koblinger/*.ttl (STYRK-08, NUS)
 #   urn:graph:meta         siste endrings-id og tidspunkt, og DCAT/VoID fra ontologi/datasett.ttl (skrives sist)
 #   urn:graph:grep-ny      mellomgraf under innlasting; flyttes til urn:graph:grep med MOVE
 #
@@ -16,6 +16,7 @@
 #   TVING          1 = last inn selv om endrings-id er uendret (standard: 0)
 #   NT_FIL         ferdig N-Triples-fil; hopper over nedlasting og konvertering (for testing)
 #   RIOT           kommando for Jena RIOT (standard: riot)
+#   PYTHON         Python 3 for scripts/sjekk-koblinger.py (standard: python3)
 #   MIN_TRIPLER    røyktest: minste antall tripler i urn:graph:grep (standard: 1000000)
 #   MIN_GYLDIGHET  røyktest: minste antall udir:Gyldighet i urn:graph:normalisert (standard: 36000)
 #   AVVIK_FIL      skriv avvik i dataene som Markdown hit (tom fil = ingen avvik). Brukes av
@@ -179,6 +180,7 @@ last_graf POST "$G_ONTOLOGI" text/turtle "$REPO/ontologi/udir.ttl"
 # 5b. Koblinger til andre kunnskapsgrafer (idé 4 i docs/ideer.md). styrk.ttl lages av scripts/lag-styrk-ttl.py.
 logg "Laster koblinger til <$G_KOBLINGER> ..."
 last_graf PUT "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/styrk.ttl"
+last_graf POST "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/nus.ttl"   # lages av scripts/lag-nus-ttl.py
 
 # 6. Rydd bort data i den lagrede default graph (før B2 lå rådata der).
 #    Med unionDefaultGraph er den usynlig for spørringer; DROP DEFAULT rører ikke named graphs.
@@ -205,6 +207,9 @@ N_KOBLINGER=$(tell_graf "$G_KOBLINGER")
 # STYRK-08: programområder med yrkesklassifisering
 N_STYRK=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_KOBLINGER> { ?p udir:yrkesklassifisering ?k } }")
+# NUS: programområder med utdanningsklassifisering
+N_NUS=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
+  SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_KOBLINGER> { ?p udir:utdanningsklassifisering ?k } }")
 # R1: kompetansemål i LK20 skal ha typen fra Udirs ontologi
 N_KM_TYPE=$(sporr "PREFIX u: <http://psi.udir.no/ontologi/kl06/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s a u:Kompetansemaal_lk20 } }")
@@ -258,7 +263,7 @@ N_PERIODER=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
     VALUES ?p { udir:gyldigFra udir:undervisningFra udir:eksamenFra udir:startdato } } } GROUP BY ?p ORDER BY ?p" \
   | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
 logg "Tripler: $G_GREP=$N_GREP, $G_ONTOLOGI=$N_ONT, $G_NORM=$N_NORM, $G_UTLEDET=$N_UTLEDET, $G_KOBLINGER=$N_KOBLINGER"
-logg "Programområder med STYRK-08 (koblinger): $N_STYRK"
+logg "Programområder med STYRK-08 (koblinger): $N_STYRK, med NUS: $N_NUS"
 logg "u:Kompetansemaal_lk20 (utledet): $N_KM_TYPE"
 logg "Overbegreper (utledet): $N_OVERBEGREP"
 logg "Revisjon (utledet): $N_REVISJON, i begge revisjonene: $N_TO_REVISJONER"
@@ -326,17 +331,25 @@ EOF
 )")"
 
 # STYRK-08-koblinger (ontologi/koblinger/styrk.csv) til programområder som ikke lenger finnes i Grep
-avvik "STYRK-kobling til ukjent programområde" \
-  "Programområdet står i ontologi/koblinger/styrk.csv, men finnes ikke i Grep-dataene. Fjern raden eller rett koden." \
-  "Programområde,STYRK-08" "$(sporr_alle "$(cat <<EOF
+avvik "Kobling til ukjent programområde" \
+  "Programområdet står i ontologi/koblinger/styrk.csv eller nus.csv, men finnes ikke i Grep-dataene. Fjern raden eller rett koden." \
+  "Programområde,Egenskap,Kode" "$(sporr_alle "$(cat <<EOF
 PREFIX udir: <http://psi.udir.no/ontologi/>
 PREFIX u: <http://psi.udir.no/ontologi/kl06/>
-SELECT ?p ?k WHERE {
-  GRAPH <$G_KOBLINGER> { ?p udir:yrkesklassifisering ?k }
+SELECT ?p ?e ?k WHERE {
+  GRAPH <$G_KOBLINGER> { ?p ?e ?k VALUES ?e { udir:yrkesklassifisering udir:utdanningsklassifisering } }
   FILTER NOT EXISTS { GRAPH <$G_GREP> { ?p a u:programomraade } }
 } ORDER BY ?p
 EOF
 )")"
+
+# Koblingene holdes oppdatert (scripts/sjekk-koblinger.py): koder SSB har tatt ut, og nye programområder i Grep
+avvik "Kode tatt ut av klassifikasjonen hos SSB" \
+  "Koden står i ontologi/koblinger/styrk.csv eller nus.csv, men finnes ikke i versjonen av STYRK-08 eller NUS som gjelder i dag. Velg en ny kode, og kjør scripts/lag-styrk-ttl.py eller lag-nus-ttl.py på nytt." \
+  "Kode,Klassifikasjon,Programområde" "$("${PYTHON:-python3}" "$REPO/scripts/sjekk-koblinger.py" utgaatte-koder)"
+avvik "Nye programområder som ikke er vurdert" \
+  "Programområdet finnes i Grep, men står ikke i ontologi/koblinger/nus.csv (alle programområder) eller styrk.csv (programområder med yrkestittel). Legg til en rad, eventuelt med metoden «ingen»." \
+  "Programområde,Tittel,Mangler i" "$(FUSEKI_URL="$BASE" DATASET="$DATASET" "${PYTHON:-python3}" "$REPO/scripts/sjekk-koblinger.py" nye-programomraader)"
 
 # Verdier som N3 ikke kunne gjøre om (rekkevidden er typet, men verdien passer ikke formatet)
 avvik "Verdier med feil format" \
@@ -359,14 +372,14 @@ if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
    || [ "$(printf '%s' "$N_REVISJON" | grep -o 'udir:LK' | wc -l)" -ne 2 ] || [ "${N_TO_REVISJONER:-1}" -ne 0 ] \
    || [ "$(printf '%s' "$N_SKOS" | grep -o 'udir:' | wc -l)" -ne 5 ] || [ "${N_FAGOMR_UTEN_KATEGORI:-1}" -ne 0 ] \
    || [ "${N_SPRAAK_UTEN_EU:-1}" -ne 0 ] || [ "$(printf '%s' "$N_DCTERMS" | grep -o 'dcterms:' | wc -l)" -ne 5 ] \
-   || [ "${N_UTEN_BOKMAALTITTEL:-1}" -ne 0 ] || [ "$(printf '%s' "$N_SCHEMA" | grep -o 'schema:' | wc -l)" -ne 2 ] \n   || [ "${N_STYRK:-0}" -lt 1 ]; then
+   || [ "${N_UTEN_BOKMAALTITTEL:-1}" -ne 0 ] || [ "$(printf '%s' "$N_SCHEMA" | grep -o 'schema:' | wc -l)" -ne 2 ] \n   || [ "${N_STYRK:-0}" -lt 1 ] || [ "${N_NUS:-0}" -lt 1 ]; then
   echo "Røyktest feilet (forventet minst $MIN_TRIPLER tripler i $G_GREP, >0 i $G_ONTOLOGI," \
        "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM," \
        ">0 u:Kompetansemaal_lk20, overbegreper fra udir.ttl og udir:revisjon for LK06 og LK20" \
        "(ingen ressurs i begge), begreper i alle fem SKOS-begrepssystemene, fagkategori på alle" \
        "fagområder, EU-kobling på alle språk og alle fem Dublin Core-egenskapene i $G_UTLEDET," \
        "udir:bokmaalTittel og udir:nynorskTittel på alle læreplaner og det som hører til dem i $G_NORM," \
-       "schema:validFrom og schema:validThrough i $G_UTLEDET, og STYRK-08-koblinger i $G_KOBLINGER)"
+       "schema:validFrom og schema:validThrough i $G_UTLEDET, og STYRK-08- og NUS-koblinger i $G_KOBLINGER)"
   exit 1
 fi
 

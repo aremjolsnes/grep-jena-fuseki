@@ -1,0 +1,498 @@
+programomraade,status,trinn,tittel,nus,nus_navn,metode,sikkerhet,merknad
+BAAMF3----,publisert,vg3,Anleggsmaskinførerfaget,457901,"Anleggsmaskinførerfaget, Vg3",ssb-navn,sikker,
+BAANG2----,publisert,vg2,Anleggsgartner,373107,"Anleggsgartner, Vg2",ssb-navn,sikker,
+BAANG3----,publisert,vg3,Anleggsgartnerfaget,473106,"Anleggsgartnerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+BAANL2----,publisert,vg2,Anleggsteknikk,357101,"Anleggsteknikk, Vg2",ssb-navn,sikker,
+BAARL3----,publisert,vg3,Anleggsrørleggerfaget,457141,"Anleggsrørleggerfaget, Vg3",ssb-navn,sikker,
+BAASF3----,publisert,vg3,Asfaltfaget,457102,"Asfaltfaget, Vg3",ssb-navn,sikker,
+BABAN3----,publisert,vg3,Banemontørfaget,457103,"Banemontørfaget, Vg3",ssb-navn,sikker,
+BABAT1----,publisert,vg1,Bygg- og anleggsteknikk,357125,"Bygg- og anleggsteknikk, Vg1",ssb-navn,sikker,
+BABAT1RS--,utgaatt,vg1,"Bygg og anleggsfag, 1. år",357125,"Bygg- og anleggsteknikk, Vg1",som-vanlig-utgave,sikker,Samme kode som BABAT1----
+BABAT2RS--,utgaatt,vg2,"Bygg og anleggsfag, 2. år",357130,"Bygg- og anleggsteknikk, uspesifisert, Vg2",forslag,usikker,
+BABDR3----,publisert,vg3,Byggdrifterfaget,457136,"Byggdrifterfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
+BABET3----,publisert,vg3,Betongfaget,457133,"Betongfaget, Vg3",ssb-navn,sikker,
+BABFB3----,publisert,vg3,Brannforebygger,482501,"Brannforebygger, Vg2 og Vg3, særløp",ssb-navn,sikker,
+BABMO2----,publisert,vg2,Betong og mur,357137,"Betong og mur, Vg2",ssb-navn,sikker,
+BABRO3----,publisert,vg3,Brønn- og borefaget,458413,"Brønn- og borefaget, Vg3",ssb-navn,sikker,
+BABYG2----,utgaatt,vg2,Byggteknikk,357126,"Byggteknikk, Vg2",ssb-navn,sikker,
+BABYM3----,publisert,vg3,Byggmontasjefaget,457143,"Byggmontasjefaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
+BAFEI3----,utgaatt,vg3,Feierfaget,457107,"Feierfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
+BAFJE3----,publisert,vg3,Fjell- og bergverksfaget,458409,"Fjell- og bergverksfaget, Vg3",ssb-navn,sikker,
+BAFMF3----,publisert,vg3,Fundamenteringsfaget,457145,"Fundamenteringsfaget, Vg3",ssb-navn,sikker,
+BAGLA3----,publisert,vg3,Glassfaget,458303,"Glassfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
+BAIMF3----,publisert,vg3,Industrimalerfaget,457112,"Industrimalerfaget, Vg3",ssb-navn,sikker,
+BAISL3----,publisert,vg3,Isolatørfaget,457137,"Isolatørfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+BAISO3----,utgaatt,vg3,Isolatørfaget,457115,"Isolatørfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+BAKEM2----,publisert,vg2,"Klima, energi og miljøteknikk",357127,"Klima-, energi- og miljøteknikk, Vg2",forslag,sikker,
+BALIM3----,utgaatt,vg3,Limtreproduksjonsfaget,458306,"Limtreproduksjonsfaget, Vg3",ssb-navn,sikker,
+BAMAL3----,utgaatt,vg3,Malerfaget,457118,"Malerfaget, Vg3",ssb-navn,sikker,
+BAMFF3----,publisert,vg3,Murer- og flisleggerfaget,457138,"Murer- og flisleggerfaget, Vg3",ssb-navn,sikker,
+BAMOT3----,publisert,vg3,Maler- og overflateteknikkfaget,457139,"Maler- og overflateteknikkfaget, Vg3",ssb-navn,sikker,
+BAMUR3----,utgaatt,vg3,Murerfaget,457119,"Murerfaget, Vg3",ssb-navn,sikker,
+BAOFT2----,publisert,vg2,Overflateteknikk,357111,"Overflateteknikk, Vg2",ssb-navn,sikker,
+BARHO3----,utgaatt,vg3,Renholdsoperatørfaget,469907,"Renholdsoperatørfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+BARLF2----,publisert,vg2,Rørlegger,357141,"Rørlegger, Vg2",ssb-navn,sikker,
+BARLF3----,publisert,vg3,Rørleggerfaget,457121,"Rørleggerfaget, Vg3",ssb-navn,sikker,
+BAROF3----,publisert,vg3,Renholdsoperatørfaget,469913,"Renholdsoperatørfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+BASBF3----,publisert,vg3,Stillasbyggerfaget,457144,"Stillasbyggerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+BASNE3----,publisert,vg3,Snekkerfaget,457142,"Snekkerfaget, Vg3",ssb-navn,sikker,
+BASTE3----,publisert,vg3,Steinfaget,458408,"Steinfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
+BASTI3----,utgaatt,vg3,Stillasbyggerfaget,457123,"Stillasbyggerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+BATAK3----,publisert,vg3,Tak- og membrantekkerfaget,457124,"Tak- og membrantekkerfaget, Vg3",ssb-navn,sikker,
+BATBY3----,utgaatt,vg3,Trevare- og bygginnredningsfaget,458324,"Trevare- og bygginnredningsfaget, Vg3",ssb-navn,sikker,
+BATLF3----,utgaatt,vg3,Trelastfaget,458318,"Trelastfaget, Vg3",ssb-navn,sikker,
+BATLT3----,publisert,vg3,Trelast- og limtreproduksjonsfaget,458344,"Trelast- og limtreproduksjonsfaget, Vg3",ssb-navn,sikker,
+BATMF2----,publisert,vg2,Tømrer,357143,"Tømrer, Vg2",ssb-navn,sikker,
+BATMF3----,publisert,vg3,Tømrerfaget,457129,"Tømrerfaget, Vg3",ssb-navn,sikker,
+BATRT2----,publisert,vg2,Treteknikk,357128,"Treteknikk, Vg2",ssb-navn,sikker,
+BAVBL3----,publisert,vg3,Ventilasjons- og blikkenslagerfaget,457117,"Ventilasjons- og blikkenslagerfaget, Vg3",ssb-navn,sikker,
+BAVOA3----,publisert,vg3,Vei- og anleggsfaget,457131,"Vei- og anleggsfaget, Vg3",ssb-navn,sikker,
+BAVOV3----,publisert,vg3,Veidrift- og veivedlikeholdsfaget,457140,"Veidrift- og veivedlikeholdsfaget, Vg3",ssb-navn,sikker,
+DHAKT2----,utgaatt,vg2,Aktivitør,365901,"Aktivitør, Vg2 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHAKT3----,utgaatt,vg3,Aktivitørfaget,465901,"Aktivitørfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHBBF2----,utgaatt,vg2,Båtbyggerfag,358313,"Båtbyggerfag, Vg2",ssb-navn,sikker,
+DHBKF3----,utgaatt,vg3,Bøkkerfaget,458301,"Bøkkerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHBLD2----,utgaatt,vg2,Blomsterdekoratør,316901,"Blomsterdekoratør, Vg2 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHBLD3----,utgaatt,vg3,Blomsterdekoratørfaget,416901,"Blomsterdekoratørfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHBLY3----,utgaatt,vg3,Blyglasshåndverkerfaget,458302,"Blyglasshåndverkerfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHBMF2----,utgaatt,vg2,Børsemaker,355301,"Børsemaker, Vg2 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHBMF3----,utgaatt,vg3,Børsemakerfaget,455309,"Børsemakerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHBNT3----,utgaatt,vg3,Buntmakerfaget,416902,"Buntmakerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHBUN3----,utgaatt,vg3,Bunadtilvirkerfaget,416601,"Bunadtilvirkerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHDDU2----,utgaatt,vg2,Design og duodji,316103,"Design og duodji, Vg2",ssb-navn,sikker,
+DHDGH2----,utgaatt,vg2,Design og gullsmedhåndverk,316202,"Design og gullsmedhåndverk, Vg2",ssb-navn,sikker,
+DHDHV1----,utgaatt,vg1,Design og håndverk,316910,"Design og håndverk, Vg1",ssb-navn,sikker,
+DHDTE2----,utgaatt,vg2,Design og tekstil,316606,"Design og tekstil, Vg2",ssb-navn,sikker,
+DHDTR2----,utgaatt,vg2,Design og trearbeid,358315,"Design og trearbeid, Vg2",ssb-navn,sikker,
+DHDUO3----,utgaatt,vg3,Duodjifaget overgangsordning,416101,"Duodjifaget, Vg3",forslag,sikker,
+DHFGY3----,utgaatt,vg3,Forgyllerfaget,416207,"Forgyllerfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHFIL3----,utgaatt,vg3,Filigranssølvsmedfaget,416201,"Filigranssølvsmedfaget, Vg3 (gammel ordning)",ssb-navn,sikker,
+DHFRI2----,utgaatt,vg2,Frisør,383102,"Frisør, Vg2 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHFRI3----,utgaatt,vg3,Frisørfaget,483106,"Frisørfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHFTG3----,utgaatt,vg3,Fotograffaget,416301,"Fotograffaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHGIP3----,utgaatt,vg3,Gipsmakerfaget,457110,"Gipsmakerfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHGLH3----,utgaatt,vg3,Glasshåndverkerfaget,416202,"Glasshåndverkerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
+DHGRA3----,utgaatt,vg3,Gravørfaget,416203,"Gravørfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHGRF3----,utgaatt,vg3,Gravørfaget,416203,"Gravørfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHGTL3----,utgaatt,vg3,Gjørtlerfaget,458901,"Gjørtlerfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHGUL3----,utgaatt,vg3,Gullsmedfaget,416204,"Gullsmedfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHHBB3----,utgaatt,vg3,Håndbokbinderfaget,458323,"Håndbokbinderfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHHMD3----,utgaatt,vg3,"Horn-, bein- og metallduodjifaget",416106,"Horn-, bein- og metallduodjifaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHHSK3----,utgaatt,vg3,Herreskredderfaget,416603,"Herreskredderfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHHVF3----,utgaatt,vg3,Håndveverfaget,416604,"Håndveverfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHINT3----,utgaatt,vg3,Interiør,416502,"Interiør, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHIUD2----,utgaatt,vg2,Interiør og utstillingsdesign,316504,"Interiør og utstillingsdesign, Vg2",ssb-navn,sikker,
+DHKBB3----,utgaatt,vg3,Komposittbåtbyggerfaget,458326,"Komposittbåtbyggerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHKER3----,utgaatt,vg3,Keramikerfaget,416104,"Keramikerfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHKJD3----,utgaatt,vg3,Kjole- og draktsyerfaget,416607,"Kjole- og draktsyerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHKRV3----,utgaatt,vg3,Kurvmakerfaget,458305,"Kurvmakerfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHKST3----,utgaatt,vg3,Kostymesyerfaget,416608,"Kostymesyerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHMDE3----,utgaatt,vg3,Mediedesign,416402,"Mediedesign, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHMED1----,utgaatt,vg1,Medieproduksjon vg1,335904,"Medieproduksjon, Vg1",ssb-navn,sikker,
+DHMED2----,utgaatt,vg2,Medieproduksjon vg2,335905,"Medieproduksjon, Vg2 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHMGR3----,utgaatt,vg3,Mediegrafikerfaget,416408,"Mediegrafikerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHMOD3----,utgaatt,vg3,Modistfaget,416609,"Modistfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHMPM3----,utgaatt,vg3,Maskør- og parykkmakerfaget,483105,"Maskør- og parykkmakerfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHMSF3----,utgaatt,vg3,Møbelsnekkerfaget,458325,"Møbelsnekkerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHMTF3----,utgaatt,vg3,Møbeltapetsererfaget,458311,"Møbeltapetsererfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHNAU3----,utgaatt,vg3,Nautisk instrumentmakerfaget,455303,"Nautisk instrumentmakerfaget, Vg3",ssb-navn,sikker,
+DHOPT3----,utgaatt,vg3,Optronikerfaget,455304,"Optronikerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHORG3----,utgaatt,vg3,Orgelbyggerfaget,458312,"Orgelbyggerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHPFD3----,utgaatt,vg3,Profileringsdesignfaget,416409,"Profileringsdesignfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHPST2----,utgaatt,vg2,Pianostemming og pianoteknikk,358304,"Pianostemming og pianoteknikk, Vg2",ssb-navn,sikker,
+DHPST3----,utgaatt,vg3,Pianostemming og pianoteknikk,458314,"Pianostemming og pianoteknikk, Vg3",ssb-navn,sikker,
+DHREP3----,utgaatt,vg3,Repslagerfaget,458214,"Repslagerfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHSAL3----,utgaatt,vg3,Salmakerfaget,458201,"Salmakerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHSEI3----,utgaatt,vg3,Seilmakerfaget,458209,"Seilmakerfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHSKO3----,utgaatt,vg3,Skomakerfaget,458210,"Skomakerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHSLV3----,utgaatt,vg3,Sølvsmedfaget,416205,"Sølvsmedfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHSME2----,utgaatt,vg2,Smed,355221,"Smed, Vg2 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHSME3----,utgaatt,vg3,Smedfaget,455238,"Smedfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHSPD3----,utgaatt,vg3,Skinn- og pelsduodjifaget,416107,"Skinn- og pelsduodjifaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHSTR3----,utgaatt,vg3,Strikkefaget,416610,"Strikkefaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHSTU3----,utgaatt,vg3,Storurmakerfaget,455305,"Storurmakerfaget, Vg3",ssb-navn,sikker,
+DHTDR3----,utgaatt,vg3,Tredreierfaget,458320,"Tredreierfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHTED3----,utgaatt,vg3,Tekstilduodjifaget,416108,"Tekstilduodjifaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHTKS3----,utgaatt,vg3,Taksidermistfaget,416903,"Taksidermistfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHTRB3----,utgaatt,vg3,Trebåtbyggerfaget,458317,"Trebåtbyggerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHTRD3----,utgaatt,vg3,Treduodjifaget,416109,"Treduodjifaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHTSK3----,utgaatt,vg3,Treskjærerfaget,458319,"Treskjærerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHUIM2----,utgaatt,vg2,Ur- og instrumentmaker,355303,"Ur- og instrumentmaker, Vg2",ssb-navn,sikker,
+DHURM3----,utgaatt,vg3,Urmakerfaget,455306,"Urmakerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DHUTS3----,utgaatt,vg3,Utstillingsdesign,416501,"Utstillingsdesign, Vg3",ssb-navn,sikker,
+DHVHD3----,utgaatt,vg3,Veve- og håndstrikkeduodjifaget,416110,"Veve- og håndstrikkeduodjifaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTBBF2----,publisert,vg2,Båtbygger,358318,"Båtbygger, Vg2",ssb-navn,sikker,
+DTBKF3----,publisert,vg3,Bøkkerfaget,458331,"Bøkkerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTBLY3----,publisert,vg3,Blyglasshåndverkerfaget,458332,"Blyglasshåndverkerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTBNT3----,publisert,vg3,Buntmakerfaget,416906,"Buntmakerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTBSM3----,publisert,vg3,Bilsalmakerfaget,458215,"Bilsalmakerfaget, Vg3",ssb-navn,sikker,
+DTBUN3----,publisert,vg3,Bunadtilvirkerfaget,416613,"Bunadtilvirkerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTDDU2----,publisert,vg2,Duodji,316105,"Duodji, Vg2",ssb-navn,sikker,
+DTDGH2----,publisert,vg2,Gull- og sølvsmedhåndverk,316204,"Gull- og sølvsmedhåndverk, Vg2",ssb-navn,sikker,
+DTDTH1----,publisert,vg1,"Håndverk, design og produktutvikling",316916,"Håndverk, design og produktutvikling, Vg1",ssb-navn,sikker,
+DTDTR2----,publisert,vg2,Trearbeid,358320,"Trearbeid, Vg2",ssb-navn,sikker,
+DTFGY3----,publisert,vg3,Forgyllerfaget,416208,"Forgyllerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTFIL3----,publisert,vg3,Filigransølvsmedfaget,416209,Filigranssølvsmedfaget Vg3,forslag,sikker,
+DTGAF3----,publisert,vg3,Garverfaget,455257,"Garverfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
+DTGBF3----,publisert,vg3,Glassblåserfaget,458333,"Glassblåserfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
+DTGIP3----,publisert,vg3,Gipsmakerfaget,416412,"Gipsmakerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTGRF3----,publisert,vg3,Gravørfaget,416210,"Gravørfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTGSF3----,publisert,vg3,Glassliperfaget,458345,"Glassliperfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
+DTGTL3----,publisert,vg3,Gjørtlerfaget,458902,"Gjørtlerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTGUL3----,publisert,vg3,Gullsmedfaget,416211,"Gullsmedfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTHBB3----,publisert,vg3,Håndbokbinderfaget,458334,"Håndbokbinderfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTHMD3----,publisert,vg3,"Horn-, bein- og metallduodjifaget",416111,"Horn-, bein- og metallduodjifaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTHSK3----,publisert,vg3,Herreskredderfaget,416614,"Herreskredderfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTHVF3----,publisert,vg3,Håndveverfaget,416615,"Håndveverfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTKBB3----,publisert,vg3,Komposittbåtbyggerfaget,458335,"Komposittbåtbyggerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTKER3----,publisert,vg3,Keramikerfaget,416112,"Keramikerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTKJD3----,publisert,vg3,Kjole- og draktsyerfaget,416616,"Kjole- og draktsyerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTKRV3----,publisert,vg3,Kurvmakerfaget,458336,"Kurvmakerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTKST3----,publisert,vg3,Kostymesyerfaget,416617,"Kostymesyerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTMBT3----,publisert,vg3,Møbeltapetsererfaget,458337,"Møbeltapetsererfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTMOD3----,publisert,vg3,Modistfaget,416618,"Modistfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTMSF3----,publisert,vg3,Møbelsnekkerfaget,458338,"Møbelsnekkerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTORG3----,publisert,vg3,Orgelbyggerfaget,458339,"Orgelbyggerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTREP3----,publisert,vg3,Repslagerfaget,458216,"Repslagerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTSAL3----,publisert,vg3,Salmakerfaget,458217,"Salmakerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTSEI3----,publisert,vg3,Seilmakerfaget,458218,"Seilmakerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTSKO3----,publisert,vg3,Skomakerfaget,458219,"Skomakerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTSLV3----,publisert,vg3,Sølvsmedfaget,416212,"Sølvsmedfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTSME2----,publisert,vg2,Smed,355229,"Smed, Vg2",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTSME3----,publisert,vg3,Smedfaget,455252,"Smedfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTSPD3----,publisert,vg3,Skinn- og pelsduodjifaget,416113,"Skinn- og pelsduodjifaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTSTH2----,publisert,vg2,Søm og tekstilhåndverk,316608,"Søm og tekstilhåndverk, Vg2",ssb-navn,sikker,
+DTSTR3----,publisert,vg3,Strikkefaget,416619,"Strikkefaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTTDR3----,publisert,vg3,Tredreierfaget,458340,"Tredreierfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTTED3----,publisert,vg3,Tekstilduodjifaget,416114,"Tekstilduodjifaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTTKS3----,publisert,vg3,Taksidermistfaget,416907,"Taksidermistfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTTRB3----,publisert,vg3,Trebåtbyggerfaget,458341,"Trebåtbyggerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTTRD3----,publisert,vg3,Treduodjifaget,416115,"Treduodjifaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTTSK3----,publisert,vg3,Treskjærerfaget,458342,"Treskjærerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTUIM2----,publisert,vg2,Urmaker,355304,"Urmaker, Vg2",ssb-navn,sikker,
+DTURM3----,publisert,vg3,Urmakerfaget,455311,"Urmakerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+DTVHD3----,publisert,vg3,Ull- og garnduodjifaget,416101,"Duodjifaget, Vg3",forslag,usikker,
+ELAUT2----,publisert,vg2,Automatisering,355101,"Automatisering, Vg2",ssb-navn,sikker,
+ELAUT3----,publisert,vg3,Automatiseringsfaget,455102,"Automatiseringsfaget, Vg3",ssb-navn,sikker,
+ELAVI3----,publisert,vg3,Avionikerfaget,455101,"Avionikerfaget, Vg3",ssb-navn,sikker,
+ELAVI4----,publisert,opplaering_bedrift,Avionikerfaget,455141,"Avionikerfaget, Vg4",ssb-navn,sikker,
+ELDAT3----,publisert,vg3,Dataelektronikerfaget,455128,"Dataelektronikerfaget, Vg3",ssb-navn,sikker,
+ELDEL2----,publisert,vg2,Datateknologi og elektronikk,355105,"Data og elektronikk, Vg2",forslag,usikker,
+ELDRF2----,publisert,vg2,Dronefag,355119,"Dronefag, Vg2",ssb-navn,sikker,
+ELDRF3----,publisert,vg3,Droneoperatørfaget,455146,"Droneoperatørfaget, Vg3",ssb-navn,sikker,
+ELELE1----,publisert,vg1,Elektro og datateknologi,355112,"Elektro og datateknologi, Vg1",ssb-navn,sikker,
+ELELE2----,publisert,vg2,Elenergi og ekom,355104,"Elenergi, Vg2",forslag,usikker,
+ELELE3----,publisert,vg3,Elektrikerfaget,455103,"Elektrikerfaget, Vg3",ssb-navn,sikker,
+ELEMO3----,publisert,vg3,Energimontørfaget,455106,"Energimontørfaget, Vg3",ssb-navn,sikker,
+ELEOP3----,publisert,vg3,Energioperatørfaget,455107,"Energioperatørfaget, Vg3",ssb-navn,sikker,
+ELERF3----,publisert,vg3,Elektroreparatørfaget,455105,"Elektroreparatørfaget, Vg3",ssb-navn,sikker,
+ELFLY2----,publisert,vg2,Flyfag,355107,"Flyfag, Vg2",ssb-navn,sikker,
+ELFLY3----,publisert,vg3,Flytekniske fag,455109,"Flytekniske fag, Vg3",ssb-navn,sikker,
+ELFMO4----,publisert,opplaering_bedrift,Flymotormekanikerfaget,455113,"Flymotormekanikerfaget, Vg4",ssb-navn,sikker,
+ELFST4----,publisert,opplaering_bedrift,Flystrukturmekanikerfaget,455114,"Flystrukturmekanikerfaget, Vg4",ssb-navn,sikker,
+ELFSY4----,publisert,opplaering_bedrift,Flysystemmekanikerfaget,455116,"Flysystemmekanikerfaget, Vg4",ssb-navn,sikker,
+ELFUO3----,publisert,vg3,Fjernstyrte undervannsoperasjoner,455140,"Fjernstyrte undervannsoperasjoner, Vg3",ssb-navn,sikker,
+ELHEI3----,publisert,vg3,Heismontørfaget,455117,"Heismontørfaget, Vg3",ssb-navn,sikker,
+ELKUL3----,utgaatt,vg3,Kulde- og varmepumpemontørfaget,455118,"Kulde- og varmepumpeteknikkfaget, Vg3",forslag,usikker,
+ELKVP3----,publisert,vg3,Kulde- og varmepumpeteknikkfaget,455118,"Kulde- og varmepumpeteknikkfaget, Vg3",ssb-navn,sikker,
+ELKVT2----,utgaatt,vg2,Kulde- og varmepumpeteknikk,355109,"Kulde- og varmepumpeteknikk, Vg2",ssb-navn,sikker,
+ELKVV2----,publisert,vg2,"Kulde-, varmepumpe- og ventilasjonsteknikk",355117,"Kulde-, varmepumpe- og ventilasjonsteknikk, Vg2",ssb-navn,sikker,
+ELLSM3----,publisert,vg3,Låsesmedfaget,455256,"Låsesmedfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+ELMEL3----,publisert,vg3,Maritim elektrikerfaget vg3 i skole,455143,"Maritim elektrikerfaget, Vg3",ssb-navn,sikker,
+ELMEL4----,publisert,opplaering_bedrift,Maritim elektrikerfaget vg3 i bedrift,455144,"Maritim elektrikerfaget, Vg4",ssb-navn,sikker,
+ELOPT3----,publisert,vg3,Optronikerfaget,455312,"Optronikerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+ELPRO3----,publisert,vg3,Produksjonselektronikerfaget,455123,"Produksjonselektronikerfaget, Vg3",ssb-navn,sikker,
+ELROM3----,publisert,vg3,Romteknologi,455127,"Romteknologi, Vg3",ssb-navn,sikker,
+ELSIG3----,publisert,vg3,Signalmontørfaget,455129,"Signalmontørfaget, Vg3",ssb-navn,sikker,
+ELTAV3----,publisert,vg3,Tavlemontørfaget,455130,"Tavlemontørfaget, Vg3",ssb-navn,sikker,
+ELTEL3----,publisert,vg3,Telekommunikasjonsmontørfaget,455132,"Telekommunikasjonsmontørfaget, Vg3",ssb-navn,sikker,
+ELTOG3----,publisert,vg3,Togelektrikerfaget,455134,"Togelektrikerfaget, Vg3",ssb-navn,sikker,
+ELVEN3----,publisert,vg3,Ventilasjonsteknikkfaget,455145,"Ventilasjonsteknikkfaget, Vg3",ssb-navn,sikker,
+ELVIK3----,publisert,vg3,Viklerfaget,455135,"Viklerfaget, Vg3",ssb-navn,sikker,
+ELVTR3----,utgaatt,vg3,Vikler- og transformatormontørfaget,455135,"Viklerfaget, Vg3",forslag,usikker,
+FDBLD2----,publisert,vg2,Blomsterdekoratør,316918,"Blomsterdekoratør, Vg2",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+FDBLD3----,publisert,vg3,Blomsterdekoratørfaget,416908,"Blomsterdekoratørfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+FDEKD3----,publisert,vg3,Eksponeringsdesign,416504,"Eksponeringsdesign, Vg3",ssb-navn,sikker,
+FDFBI1----,publisert,vg1,"Frisør, blomster, interiør og eksponeringsdesign",316506,"Frisør, blomster, interiør og eksponeringsdesign, Vg1",ssb-navn,sikker,
+FDFRI2----,publisert,vg2,Frisør,383109,"Frisør, Vg2",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+FDFRI3----,publisert,vg3,Frisørfaget,483107,"Frisørfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+FDIED2----,publisert,vg2,Interiør og eksponeringsdesign,316508,"Interiør og eksponeringsdesign, Vg2",ssb-navn,sikker,
+FDINT3----,publisert,vg3,Interiør,416506,"Interiør, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+FDMPM3----,publisert,vg3,Maskør- og parykkmakerfaget,483108,"Maskør- og parykkmakerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+FDPFD3----,publisert,vg3,Profileringsdesignfaget,416413,"Profileringsdesignfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+HSAKT2----,publisert,vg2,Aktivitør,365906,"Aktivitør, Vg2",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+HSAKT3----,publisert,vg3,Aktivitørfaget,465903,"Aktivitørfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+HSAMB2----,publisert,vg2,Ambulansefag,369901,"Ambulansefag, Vg2",ssb-navn,sikker,
+HSAMB3----,publisert,vg3,Ambulansefaget,469901,"Ambulansefaget, Vg3",ssb-navn,sikker,
+HSAPO3----,publisert,vg3,Apotekteknikk,466301,"Apotekteknikk, Vg3",ssb-navn,sikker,
+HSBUA2----,publisert,vg2,Barne- og ungdomsarbeiderfag,362101,"Barne- og ungdomsarbeiderfag, Vg2",ssb-navn,sikker,
+HSBUA3----,publisert,vg3,Barne- og ungdomsarbeiderfaget,462101,"Barne- og ungdomsarbeiderfaget, Vg3",ssb-navn,sikker,
+HSFOT2----,publisert,vg2,Fotterapi og ortopediteknikk,365904,"Fotterapi og ortopediteknikk, Vg2",ssb-navn,sikker,
+HSFOT3----,publisert,vg3,Fotterapi,465902,"Fotterapi, Vg3",ssb-navn,sikker,
+HSHEA2----,publisert,vg2,Helsearbeiderfag,361903,"Helsearbeiderfag, Vg2",ssb-navn,sikker,
+HSHEA3----,publisert,vg3,Helsearbeiderfaget,461903,"Helsearbeiderfaget, Vg3",ssb-navn,sikker,
+HSHES2----,publisert,vg2,Helseservicefag,369905,"Helseservicefag, Vg2",ssb-navn,sikker,
+HSHSE3----,publisert,vg3,Helsesekretær,469908,"Helsesekretær, Vg3",ssb-navn,sikker,
+HSHSF1----,publisert,vg1,Helse- og oppvekstfag,369913,"Helse- og oppvekstfag, Vg1",ssb-navn,sikker,
+HSHUD2----,publisert,vg2,Hudpleie,383104,"Hudpleie, Vg2",ssb-navn,sikker,
+HSHUD3----,publisert,vg3,Hudterapi,483104,"Hudpleier, Vg3",forslag,usikker,
+HSORT3----,publisert,vg3,Ortopediteknikkfaget,469905,"Ortopediteknikkfaget, Vg3",ssb-navn,sikker,
+HSPOR3----,publisert,vg3,Portørfaget,469911,"Portørfaget, Vg3",ssb-navn,sikker,
+HSTAN3----,publisert,vg3,Tannhelsesekretær,464201,"Tannhelsesekretær, Vg3",ssb-navn,sikker,
+IDIDR2----,publisert,vg2,Idrettsfag vg2,368103,"Idrettsfag, Vg2",ssb-navn,sikker,
+IDIDR3----,publisert,vg3,Idrettsfag vg3,468101,"Idrettsfag, Vg3",ssb-navn,sikker,
+IDRET1----,publisert,vg1,Idrettsfag vg1,368104,"Idrettsfag, Vg1",ssb-navn,sikker,
+IMGPT3----,publisert,vg3,Grafisk produksjonsteknikkfaget,455258,"Grafisk produksjonsteknikkfaget, Vg3",ssb-navn,sikker,
+IMIHP3----,publisert,vg3,Innholdsproduksjonsfaget,435901,"Innholdsproduksjonsfaget, Vg3",ssb-navn,sikker,
+IMIKM1----,publisert,vg1,Informasjonsteknologi og medieproduksjon,354105,"Informasjonsteknologi og medieproduksjon, Vg1",ssb-navn,sikker,
+IMITD3----,publisert,vg3,IT-driftsfaget,454105,"IT-driftsfaget, Vg3",ssb-navn,sikker,
+IMITK2----,publisert,vg2,Informasjonsteknologi,354107,"Informasjonsteknologi, Vg2",ssb-navn,sikker,
+IMIUV3----,publisert,vg3,IT-utviklerfaget,454106,"IT-utviklerfaget, Vg3",ssb-navn,sikker,
+IMMDF3----,publisert,vg3,Mediedesignfaget,435902,"Mediedesignfaget, Vg3",ssb-navn,sikker,
+IMMED2----,publisert,vg2,Medieproduksjon,335908,"Medieproduksjon, Vg2",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+IMMET3----,publisert,vg3,Medieteknikkfaget,435903,"Medieteknikkfaget, Vg3",ssb-navn,sikker,
+KDKDA1----,publisert,vg1,"Kunst, design og arkitektur vg1",316912,"Kunst, design og arkitektur, Vg1",ssb-navn,sikker,
+KDKDA1RS--,publisert,vg1,"Studieforberedende, Steinerskolen, kunstfag, 1. år",316912,"Kunst, design og arkitektur, Vg1",som-vanlig-utgave,sikker,Samme kode som KDKDA1----
+KDKDA2----,publisert,vg2,"Kunst, design og arkitektur vg2",316913,"Kunst, design og arkitektur, Vg2",ssb-navn,sikker,
+KDKDA2RS--,publisert,vg2,"Studieforberedende, Steinerskolen, kunstfag, 2. år",316913,"Kunst, design og arkitektur, Vg2",som-vanlig-utgave,sikker,Samme kode som KDKDA2----
+KDKDA3----,publisert,vg3,"Kunst, design og arkitektur vg3",416905,"Kunst, design og arkitektur, Vg3",ssb-navn,sikker,
+KDKDA3RS--,publisert,vg3,"Studieforberedende, Steinerskolen, kunstfag, 3. år",416905,"Kunst, design og arkitektur, Vg3",som-vanlig-utgave,sikker,Samme kode som KDKDA3----
+MDDAN2----,publisert,vg2,Dans vg2,315301,"Dans, Vg2",ssb-navn,sikker,
+MDDAN3----,publisert,vg3,Dans vg3,415301,"Dans, Vg3",ssb-navn,sikker,
+MDDRA1RS--,publisert,vg1,"Teater, Steinerskolen, 1. år",315903,"Musikk, dans og drama, Vg1",forslag,sikker,
+MDDRA2----,publisert,vg2,Drama vg2,315202,"Drama, Vg2",ssb-navn,sikker,
+MDDRA2RS--,publisert,vg2,"Teater, Steinerskolen, 2. år",315202,"Drama, Vg2",som-vanlig-utgave,sikker,Samme kode som MDDRA2----
+MDDRA3----,publisert,vg3,Drama vg3,415201,"Drama, Vg3",ssb-navn,sikker,
+MDDRA3RS--,publisert,vg3,"Teater, Steinerskolen, 3. år",415201,"Drama, Vg3",som-vanlig-utgave,sikker,Samme kode som MDDRA3----
+MDMDD1----,publisert,vg1,"Musikk, dans og drama vg1",315903,"Musikk, dans og drama, Vg1",ssb-navn,sikker,
+MDMDR1RS--,publisert,vg1,"Musikkteater, Steinerskolen, 1. år",315903,"Musikk, dans og drama, Vg1",forslag,sikker,
+MDMDR2RS--,publisert,vg2,"Musikkteater, Steinerskolen, 2. år",315201,"Musikkteaterutdanning, videregående, grunnutdanning",forslag,usikker,
+MDMDR3RS--,publisert,vg3,"Musikkteater, Steinerskolen, 3. år",,,ingen,,
+MDMUS1RS--,publisert,vg1,"Musikk, Steinerskolen, 1. år",315903,"Musikk, dans og drama, Vg1",forslag,sikker,
+MDMUS2----,publisert,vg2,Musikk vg2,315103,"Musikk, Vg2",ssb-navn,sikker,
+MDMUS2RS--,publisert,vg2,"Musikk, Steinerskolen, 2. år",315103,"Musikk, Vg2",som-vanlig-utgave,sikker,Samme kode som MDMUS2----
+MDMUS3----,publisert,vg3,Musikk vg3,415104,"Musikk, Vg3",ssb-navn,sikker,
+MDMUS3RS--,publisert,vg3,"Musikk, Steinerskolen, 3. år",415104,"Musikk, Vg3",som-vanlig-utgave,sikker,Samme kode som MDMUS3----
+MEMOK1----,publisert,vg1,Medier og kommunikasjon vg1,335106,"Medier og kommunikasjon, Vg1 (studieforberedende)",forslag,sikker,
+MEMOK1RS--,publisert,vg1,"Medier og kommunikasjon, Steinerskolen, 1. år",335106,"Medier og kommunikasjon, Vg1 (studieforberedende)",forslag,sikker,
+MEMOK2----,publisert,vg2,Medier og kommunikasjon vg2,335107,"Medier og kommunikasjon, Vg2 (studieforberedende)",forslag,sikker,
+MEMOK2RS--,publisert,vg2,"Medier og kommunikasjon, Steinerskolen, 2. år",335107,"Medier og kommunikasjon, Vg2 (studieforberedende)",forslag,sikker,
+MEMOK3----,publisert,vg3,Medier og kommunikasjon vg3,435102,"Medier og kommunikasjon, Vg3 (studieforberedende)",forslag,sikker,
+MEMOK3RS--,publisert,vg3,"Medier og kommunikasjon, Steinerskolen, 3. år",435102,"Medier og kommunikasjon, Vg3 (studieforberedende)",forslag,sikker,
+MKFTG3----,utgaatt,vg3,Fotograffaget,416301,"Fotograffaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+MKMDE3----,utgaatt,vg3,Mediedesign,416402,"Mediedesign, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+MKMED1----,utgaatt,vg1,Medier og kommunikasjon vg1,335104,"Medier og kommunikasjon, Vg1 (yrkesfaglig)",forslag,usikker,
+MKMED1RS--,utgaatt,vg1,"Medier og kommunikasjon, 1. år",335104,"Medier og kommunikasjon, Vg1 (yrkesfaglig)",forslag,usikker,
+MKMED2----,utgaatt,vg2,Medier og kommunikasjon vg2,335103,"Medier og kommunikasjon, Vg2 (yrkesfaglig)",forslag,usikker,
+MKMED2RS--,utgaatt,vg2,"Medier og kommunikasjon, Steinerskolen, 2. år",335103,"Medier og kommunikasjon, Vg2 (yrkesfaglig)",forslag,usikker,
+MKMED3----,utgaatt,vg3,Studieforberedende vg3 innen medier og kommunikasjon,435101,"Medier og kommunikasjon, Vg3 (studieforberedende, gammel ordning)",forslag,sikker,
+MKMED3RS--,utgaatt,vg3,"Påbygging til generell studiekompetanse for medier og kommunikasjon, Steinerskolen",401110,"Påbygging til generell studiekompetanse (alle yrkesfaglige utdanningsprogram), Vg3",forslag,usikker,
+MKMGR3----,utgaatt,vg3,Mediegrafikerfaget,416408,"Mediegrafikerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+MKMIT1RS--,utgaatt,vg1,"Medier og kommunikasjon med IKT,  1. år",335104,"Medier og kommunikasjon, Vg1 (yrkesfaglig)",forslag,usikker,
+MKMIT2RS--,utgaatt,vg2,"Medier og kommunikasjon med IKT, 2. år",335103,"Medier og kommunikasjon, Vg2 (yrkesfaglig)",forslag,usikker,
+NAAGR3----,utgaatt,vg3,Landbruk,479901,"Landbruk, Vg3",ssb-navn,sikker,
+NAAID2----,utgaatt,vg2,Anleggsgartner- og idrettsanleggsfag,373101,"Anleggsgartner- og idrettsanleggsfag, Vg2",ssb-navn,sikker,
+NAAKV2----,publisert,vg2,Akvakultur,371901,"Akvakultur, Vg2",ssb-navn,sikker,
+NAAKV3----,publisert,vg3,Akvakulturfaget,471901,"Akvakulturfaget, Vg3",ssb-navn,sikker,
+NAANG3----,utgaatt,vg3,Anleggsgartnerfaget,473101,"Anleggsgartnerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+NADYR3----,publisert,vg3,Dyrefaget,479912,"Dyrefaget, Vg3",ssb-navn,sikker,
+NAFFA2----,publisert,vg2,Fiske og fangst,371101,"Fiske og fangst, Vg2",ssb-navn,sikker,
+NAFFA3----,publisert,vg3,Fiske og fangst,471101,"Fiske og fangst, Vg3",ssb-navn,sikker,
+NAFIR3----,publisert,vg3,Fiskeri- og akvakulturredskapsfaget,458221,"Fiskeri- og akvakulturredskapsfaget, Vg3",ssb-navn,sikker,
+NAGAN3----,utgaatt,vg3,Gartnernæring,473102,"Gartnernæring, Vg3",ssb-navn,sikker,
+NAGAR3----,publisert,vg3,Gartnerfaget,,,ingen,,
+NAHAV3----,publisert,vg3,Havbruksteknikkfaget,471102,"Havbruksteknikkfaget, Vg3",ssb-navn,sikker,
+NAHDF2----,publisert,vg2,Heste- og dyrefag,379916,"Heste- og dyrefag, Vg2",ssb-navn,sikker,
+NAHHO2----,utgaatt,vg2,Heste- og hovslagerfag,379910,"Heste- og hovslagerfag, Vg2",ssb-navn,sikker,
+NAHOV3----,utgaatt,vg3,Hovslagerfaget,455215,"Hovslagerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+NAHST3----,publisert,vg3,Hestefaget,479906,"Hestefaget, Vg3",ssb-navn,sikker,
+NAHVS3----,publisert,vg3,Hovslagerfaget,455253,"Hovslagerfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+NAIAN3----,utgaatt,vg3,Idrettsanleggsfaget,473104,"Idrettsanleggsfaget, Vg3",ssb-navn,sikker,
+NALBF3----,publisert,vg3,Landbruksfaget,479913,"Landbruksfaget, Vg3",ssb-navn,sikker,
+NALBR3----,publisert,vg3,Landbruk,479901,"Landbruk, Vg3",ssb-navn,sikker,
+NALBR3RS--,utgaatt,vg3,"Naturbruk, 3. år yrkeskompetanse",479901,"Landbruk, Vg3",som-vanlig-utgave,sikker,Samme kode som NALBR3----
+NALGA2----,publisert,vg2,Landbruk og gartnernæring,379911,"Landbruk og gartnernæring, Vg2",ssb-navn,sikker,
+NANAB1----,publisert,vg1,Naturbruk,379909,"Naturbruk, Vg1",ssb-navn,sikker,
+NANAB1RS--,utgaatt,vg1,"Naturbruk, 1. år",379909,"Naturbruk, Vg1",som-vanlig-utgave,sikker,Samme kode som NANAB1----
+NANAB2RS--,utgaatt,vg2,"Naturbruk, 2. år",379912,"Naturbruk, uspesifisert, Vg2",forslag,sikker,
+NANAB3----,publisert,vg3,Studieforberedende vg3 innen naturbruk,479903,"Naturbruk (studieforberedende), Vg3",forslag,sikker,
+NANAB3RSS-,utgaatt,vg3,"Naturbruk, 3. år studieforberedende",479903,"Naturbruk (studieforberedende), Vg3",forslag,sikker,
+NAREI2----,publisert,vg2,Reindrift,379906,"Reindrift, Vg2",ssb-navn,sikker,
+NAREI3----,publisert,vg3,Reindriftsfaget,479908,"Reindriftsfaget, Vg3",ssb-navn,sikker,
+NASBR2----,publisert,vg2,Skogbruk,374102,"Skogbruk, Vg2",ssb-navn,sikker,
+NASKF3----,publisert,vg3,Skogfaget,474102,"Skogfaget, Vg3",ssb-navn,sikker,
+PBPBY3----,publisert,vg3,Vg3 påbygging til generell studiekompetanse for yrkesfaglige utdanningsprogram,401110,"Påbygging til generell studiekompetanse (alle yrkesfaglige utdanningsprogram), Vg3",forslag,sikker,
+PBPBY3RS--,utgaatt,vg3,Påbygging til generell studiekompetanse for medier og kommunikasjon,401110,"Påbygging til generell studiekompetanse (alle yrkesfaglige utdanningsprogram), Vg3",forslag,usikker,
+PBPBY4----,publisert,paabygning_generell_studiekompetanse,Fag for studiekompetanse,401105,"Studiespesialisering, studiekompetansegivende enkeltfag/delkurs, Vg3",forslag,usikker,
+R94GK1----,publisert,vg1,Reform 94 - grunnkurs for vg1,,,ingen,,
+R94VKI----,publisert,vg2,Reform 94  - VKI for vg2,,,ingen,,
+RMBAK2----,publisert,vg2,Baker og konditor,358120,"Baker og konditor, Vg2",ssb-navn,sikker,
+RMBAK3----,publisert,vg3,Bakerfaget,458101,"Bakerfaget, Vg3",ssb-navn,sikker,
+RMBUT3----,utgaatt,vg3,Butikkslakterfaget,458102,"Butikkslakterfaget, Vg3",ssb-navn,sikker,
+RMEKF3----,publisert,vg3,Ernæringskokkfaget,458116,"Ernæringskokkfaget, Vg3",ssb-navn,sikker,
+RMFVF3----,publisert,vg3,Ferskvarehandlerfaget,458117,"Ferskvarehandlerfaget, Vg3",ssb-navn,sikker,
+RMIKO3----,utgaatt,vg3,Institusjonskokkfaget,458106,"Institusjonskokkfaget, Vg3",ssb-navn,sikker,
+RMIMP3----,publisert,vg3,Industriell matproduksjon,458105,"Industriell matproduksjon, Vg3",ssb-navn,sikker,
+RMKOK3----,publisert,vg3,Kokkfaget,458108,"Kokkfaget, Vg3",ssb-navn,sikker,
+RMKON3----,publisert,vg3,Konditorfaget,458110,"Konditorfaget, Vg3",ssb-navn,sikker,
+RMKOS2----,publisert,vg2,Kokk- og servitørfag,358114,"Kokk- og servitørfag, Vg2",ssb-navn,sikker,
+RMKSK3----,publisert,vg3,Kjøttskjærerfaget,458107,"Kjøttskjærerfaget, Vg3",ssb-navn,sikker,
+RMMFG2----,utgaatt,vg2,Matfag,358115,"Matfag, Vg2",ssb-navn,sikker,
+RMMPR2----,publisert,vg2,Matproduksjon,358122,"Matproduksjon, Vg2",ssb-navn,sikker,
+RMPMF3----,publisert,vg3,Pølsemakerfaget,458113,"Pølsemakerfaget, Vg3",ssb-navn,sikker,
+RMRMF1----,publisert,vg1,Restaurant- og matfag,358113,"Restaurant- og matfag, Vg1",ssb-navn,sikker,
+RMRMF1RS--,utgaatt,vg1,"Restaurant og matfag, 1. år",358113,"Restaurant- og matfag, Vg1",som-vanlig-utgave,sikker,Samme kode som RMRMF1----
+RMRMF2RS--,utgaatt,vg2,"Restaurant og matfag, 2. år",,,ingen,,
+RMSER3----,publisert,vg3,Servitørfaget,483201,"Servitørfaget, Vg3",ssb-navn,sikker,
+RMSLF3----,publisert,vg3,Slakterfaget,458114,"Slakterfaget, Vg3",ssb-navn,sikker,
+RMSMH3----,utgaatt,vg3,Sjømathandlerfaget,458103,"Sjømathandlerfaget, Vg3",ssb-navn,sikker,
+RMSMP3----,publisert,vg3,Sjømatproduksjon,458104,"Sjømatproduksjon, Vg3",ssb-navn,sikker,
+SRRLV3----,publisert,vg3,Reiselivsfaget,444102,"Reiselivsfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+SRSIK3----,publisert,vg3,Sikkerhetsfaget,482902,"Sikkerhetsfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+SRSLG3----,publisert,vg3,Salgsfaget,442103,"Salgsfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+SRSOA3----,publisert,vg3,Service- og administrasjonsfaget,449902,"Service- og administrasjonsfaget, Vg3",ssb-navn,sikker,
+SRSRL2----,utgaatt,vg2,Salg og reiseliv,342903,"Salg og reiseliv, Vg2",ssb-navn,sikker,
+SRSSH2----,utgaatt,vg2,"Service, sikkerhet og administrasjon",349908,"Service, sikkerhet og administrasjon, Vg2",ssb-navn,sikker,
+SRSSR1----,publisert,vg1,"Salg, service og reiseliv",342901,"Salg, service og reiseliv, Vg1",ssb-navn,sikker,
+SRSSR2----,publisert,vg2,"Salg, service og reiseliv",342905,"Salg, service og reiseliv, Vg2",ssb-navn,sikker,
+SSIDT3----,utgaatt,vg3,IKT-driftsteknikerfaget,454104,"IKT-driftsteknikerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,
+SSISF2----,utgaatt,vg2,IKT-servicefag,354101,"IKT-servicefag, Vg2",ssb-navn,sikker,
+SSISF3----,utgaatt,vg3,IKT-servicefaget,454101,"IKT-servicefaget, Vg3",ssb-navn,sikker,
+SSITU3----,utgaatt,vg3,IKT-tjenesteutviklerfaget,454103,"IKT-tjenesteutviklerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,
+SSKAD3----,utgaatt,vg3,Kontor- og administrasjonsfaget,443201,"Kontor- og administrasjonsfaget, Vg3",ssb-navn,sikker,
+SSLOG3----,utgaatt,vg3,Logistikkfaget,481905,"Logistikkfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+SSRES3----,utgaatt,vg3,Resepsjonsfaget,444901,"Resepsjonsfaget, Vg3",ssb-navn,sikker,
+SSRLV2----,utgaatt,vg2,Reiseliv,344101,"Reiseliv, Vg2",ssb-navn,sikker,
+SSRLV3----,utgaatt,vg3,Reiselivsfaget,444101,"Reiselivsfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+SSSIK3----,utgaatt,vg3,Sikkerhetsfaget,482901,"Sikkerhetsfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+SSSLG3----,utgaatt,vg3,Salgsfaget,442102,"Salgsfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+SSSSA1----,utgaatt,vg1,Service og samferdsel,349904,"Service og samferdsel, Vg1",ssb-navn,sikker,
+SSSSS2----,utgaatt,vg2,"Salg, service og sikkerhet",349905,"Salg, service og sikkerhet, Vg2",ssb-navn,sikker,
+SSTRL2----,utgaatt,vg2,Transport og logistikk,381904,"Transport og logistikk, Vg2 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+SSYRK3----,utgaatt,vg3,Yrkessjåførfaget,481401,"Yrkessjåførfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+SSYSL3----,utgaatt,vg3,Yrkessjåførkurs for voksne,481401,"Yrkessjåførfaget, Vg3 (gammel ordning)",forslag,usikker,
+STFOR1----,utgaatt,vg1,Studiespesialisering med formgivingsfag vg1,301119,"Studiespesialisering med formgivingsfag, Vg1",ssb-navn,sikker,
+STFOR1RS--,utgaatt,vg1,"Studiespesialiserende, kunstfag , 1. år",301119,"Studiespesialisering med formgivingsfag, Vg1",som-vanlig-utgave,sikker,Samme kode som STFOR1----
+STFOR2----,utgaatt,vg2,Formgivingsfag vg2,301112,"Formgivingsfag, Vg2",ssb-navn,sikker,
+STFOR2RS--,utgaatt,vg2,"Studiespesialiserende, Steinerskolen, kunstfag, 2. år",301112,"Formgivingsfag, Vg2",som-vanlig-utgave,sikker,Samme kode som STFOR2----
+STFOR3----,utgaatt,vg3,Formgivingsfag vg3,401113,"Formgivingsfag, Vg3",ssb-navn,sikker,
+STFOR3RS--,utgaatt,vg3,"Studiespesialiserende, Steinerskolen, kunstfag, 3. år",401113,"Formgivingsfag, Vg3",som-vanlig-utgave,sikker,Samme kode som STFOR3----
+STREA1RS--,publisert,vg1,"Studiespesialiserende, Steinerskolen, realfag 1. år",301111,"Studiespesialisering, Vg1",som-vanlig-utgave,sikker,Samme kode som STUSP1----
+STREA2----,publisert,vg2,Realfag vg2,301113,"Realfag, Vg2",ssb-navn,sikker,
+STREA2MO--,publisert,vg2,Realfag vg2 Montessori,301113,"Realfag, Vg2",som-vanlig-utgave,sikker,Samme kode som STREA2----
+STREA2RS--,publisert,vg2,"Studiespesialiserende, Steinerskolen, realfag 2. år",301113,"Realfag, Vg2",som-vanlig-utgave,sikker,Samme kode som STREA2----
+STREA2TY--,publisert,vg2,Realfag vg2 tyske skole,301113,"Realfag, Vg2",som-vanlig-utgave,sikker,Samme kode som STREA2----
+STREA3----,publisert,vg3,Realfag vg3,401111,"Realfag, Vg3",ssb-navn,sikker,
+STREA3MO--,publisert,vg3,Realfag vg3 Montessori,401111,"Realfag, Vg3",som-vanlig-utgave,sikker,Samme kode som STREA3----
+STREA3RS--,publisert,vg3,"Studiespesialiserende, Steinerskolen, realfag 3. år",401111,"Realfag, Vg3",som-vanlig-utgave,sikker,Samme kode som STREA3----
+STREA3TY--,publisert,vg3,Realfag vg3 tyske skole,401111,"Realfag, Vg3",som-vanlig-utgave,sikker,Samme kode som STREA3----
+STSAM2----,utgaatt,vg2,Samfunnsfag og økonomi vg2,301114,"Samfunnsfag og økonomi, Vg2",ssb-navn,sikker,
+STSAM3----,utgaatt,vg3,Samfunnsfag og økonomi vg3,401112,"Språk, samfunnsfag og økonomi, Vg3",forslag,usikker,
+STSPR2----,utgaatt,vg2,Språkfag vg2,301115,"Språkfag, Vg2",ssb-navn,sikker,
+STSPR3----,utgaatt,vg3,Språkfag vg3,401112,"Språk, samfunnsfag og økonomi, Vg3",forslag,usikker,
+STSSA1RS--,publisert,vg1,"Studiespesialiserende, Steinerskolen, humanistfag 1. år",301111,"Studiespesialisering, Vg1",som-vanlig-utgave,sikker,Samme kode som STUSP1----
+STSSA2----,publisert,vg2,"Språk, samfunnsfag og økonomi vg2",301117,"Språk, samfunnsfag og økonomi, Vg2",ssb-navn,sikker,
+STSSA2MO--,publisert,vg2,"Språk, samfunnsfag og økonomi vg2 Montessori",301117,"Språk, samfunnsfag og økonomi, Vg2",som-vanlig-utgave,sikker,Samme kode som STSSA2----
+STSSA2RS--,publisert,vg2,"Studiespesialiserende, Steinerskolen, humanistfag 2. år",301117,"Språk, samfunnsfag og økonomi, Vg2",som-vanlig-utgave,sikker,Samme kode som STSSA2----
+STSSA3----,publisert,vg3,"Språk, samfunnsfag og økonomi vg3",401112,"Språk, samfunnsfag og økonomi, Vg3",ssb-navn,sikker,
+STSSA3MO--,publisert,vg3,"Språk, samfunnsfag og økonomi vg3 Montessori",401112,"Språk, samfunnsfag og økonomi, Vg3",som-vanlig-utgave,sikker,Samme kode som STSSA3----
+STSSA3RS--,publisert,vg3,"Studiespesialiserende, Steinerskolen, humanistfag 3. år",401112,"Språk, samfunnsfag og økonomi, Vg3",som-vanlig-utgave,sikker,Samme kode som STSSA3----
+STUSP1----,publisert,vg1,Studiespesialisering,301111,"Studiespesialisering, Vg1",ssb-navn,sikker,
+STUSP1MO--,publisert,vg1,Studiespesialisering montessori 1. år,301111,"Studiespesialisering, Vg1",som-vanlig-utgave,sikker,Samme kode som STUSP1----
+STUSP1RS--,publisert,vg1,"Studiespesialiserende, Steinerskolen, allment løp, 1. år",301111,"Studiespesialisering, Vg1",som-vanlig-utgave,sikker,Samme kode som STUSP1----
+STUSP1TY--,publisert,vg1,Studiespesialisering vg1 tyske skole,301111,"Studiespesialisering, Vg1",som-vanlig-utgave,sikker,Samme kode som STUSP1----
+STUSP2RS--,publisert,vg2,"Studiespesialiserende, Steinerskolen, allment løp, 2. år",301118,"Studiespesialisering, Vg2",forslag,sikker,
+STUSP3RS--,publisert,vg3,"Studiespesialiserende, Steinerskolen, allment løp, 3. år",401114,"Studiespesialisering, Vg3",forslag,sikker,
+TPALU3----,publisert,vg3,Aluminiumskonstruksjonsfaget,455201,"Aluminiumskonstruksjonsfaget, Vg3",ssb-navn,sikker,
+TPAMK2----,publisert,vg2,Arbeidsmaskiner,355219,"Arbeidsmaskiner, Vg2",ssb-navn,sikker,
+TPAMM3----,publisert,vg3,Anleggsmaskinmekanikerfaget,455202,"Anleggsmaskinmekanikerfaget, Vg3",ssb-navn,sikker,
+TPBDK3----,publisert,vg3,"Bilfaget, demontering av kjøretøy",455259,"Bilfaget, demontering av kjøretøy, Vg3",ssb-navn,sikker,
+TPBIP3----,publisert,vg3,Bilpleiefaget,455254,"Bilpleiefaget, Vg3",ssb-navn,sikker,
+TPBKO3----,publisert,vg3,"Brønnfaget, komplettering",458405,"Brønnfaget, komplettering, Vg3",ssb-navn,sikker,
+TPBKV3----,publisert,vg3,"Brønnfaget, kveilerøroperasjoner",458403,"Brønnfaget, kveilerøroperasjoner, Vg3",ssb-navn,sikker,
+TPBLA3----,publisert,vg3,Billakkererfaget,455206,"Billakkererfaget, Vg3",ssb-navn,sikker,
+TPBLK2----,publisert,vg2,"Bilskade, lakk og karosseri",355222,"Bilskade, lakk og karosseri, Vg2",ssb-navn,sikker,
+TPBMF2----,publisert,vg2,Børsemaker,355306,"Børsemaker, Vg2",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPBMF3----,publisert,vg3,Børsemakerfaget,455313,"Børsemakerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPBMK3----,publisert,vg3,"Bilfaget, lette kjøretøy",455204,"Bilfaget, lette kjøretøy, Vg3",ssb-navn,sikker,
+TPBOK3----,utgaatt,vg3,Bokbinderfaget,455209,"Bokbinderfaget, Vg3",ssb-navn,sikker,
+TPBOR3----,publisert,vg3,Boreoperatørfaget,458402,"Boreoperatørfaget, Vg3",ssb-navn,sikker,
+TPBRE3----,publisert,vg3,"Brønnfaget, elektriske kabeloperasjoner",458411,"Brønnfaget, elektriske kabeloperasjoner, Vg3",ssb-navn,sikker,
+TPBRH3----,publisert,vg3,"Brønnfaget, havbunnsinstallasjoner",458410,"Brønnfaget, havbunnsinstallasjoner, Vg3",ssb-navn,sikker,
+TPBRM3----,publisert,vg3,"Brønnfaget, mekaniske kabeloperasjoner",458412,"Brønnfaget, mekaniske kabeloperasjoner, Vg3",ssb-navn,sikker,
+TPBRS3----,publisert,vg3,"Brønnfaget, sementering",458406,"Brønnfaget, sementering, Vg3",ssb-navn,sikker,
+TPBRT2----,publisert,vg2,Brønnteknikk,358401,"Brønnteknikk, Vg2",ssb-navn,sikker,
+TPBSK3----,publisert,vg3,Bilskadefaget,455208,"Bilskadefaget, Vg3",ssb-navn,sikker,
+TPBTK3----,publisert,vg3,"Bilfaget, tunge kjøretøy",455205,"Bilfaget, tunge kjøretøy, Vg3",ssb-navn,sikker,
+TPCHA3----,utgaatt,vg3,Chassispåbyggerfaget,455217,"Chassispåbyggerfaget, Vg3",ssb-navn,sikker,
+TPCNC3----,publisert,vg3,CNC-maskineringsfaget,455247,"CNC-maskineringsfaget, Vg3",ssb-navn,sikker,
+TPDKO3----,publisert,vg3,Dimensjonskontrollfaget,455210,"Dimensjonskontrollfaget, Vg3",ssb-navn,sikker,
+TPFIR3----,utgaatt,vg3,"Industritekstilfaget, fiskeredskap",458208,"Industritekstilfaget, fiskeredskap, Vg3",ssb-navn,sikker,
+TPFMK3----,publisert,vg3,Finmekanikerfaget,455302,"Finmekanikerfaget, Vg3",ssb-navn,sikker,
+TPGEM3----,utgaatt,vg3,Grafisk emballasjefaget,455245,"Grafisk emballasjefaget, Vg3",ssb-navn,sikker,
+TPGJE3----,utgaatt,vg3,Gjenvinningsfaget,483302,"Gjenvinningsfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPGPT3----,publisert,vg3,Grafisk produksjonsteknikk,455251,"Grafisk produksjonsteknikk, Vg3",ssb-navn,sikker,
+TPGRV3----,utgaatt,vg3,Garverifaget,455212,"Garverifaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
+TPGVF3----,publisert,vg3,Gjenvinningsfaget,483306,"Gjenvinningsfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPHJU3----,publisert,vg3,Hjulutrustningsfaget,455214,"Hjulutrustningsfaget, Vg3",ssb-navn,sikker,
+TPIFT3----,utgaatt,vg3,"Industritekstilfaget, farging, trykking og etterbehandling",458207,"Industritekstilfaget, farging, trykking og etterbehandling, Vg3",ssb-navn,sikker,
+TPIGS3----,utgaatt,vg3,"Industritekstilfaget, garnframstilling",458211,"Industritekstilfaget, garnframstilling, Vg3",ssb-navn,sikker,
+TPIME3----,publisert,vg3,Industrimekanikerfaget,455216,"Industrimekanikerfaget, Vg3",ssb-navn,sikker,
+TPIMO3----,publisert,vg3,Industrimontørfaget,455249,"Industrimontørfaget, Vg3",ssb-navn,sikker,
+TPIMS2----,utgaatt,vg2,Industriell møbelproduksjon,358314,"Industriell møbelproduksjon, Vg2",ssb-navn,sikker,
+TPIND2----,utgaatt,vg2,Industritekstil og design,358202,"Industritekstil og design, Vg2",ssb-navn,sikker,
+TPIOM3----,publisert,vg3,Industrioppmålingsfaget,455310,"Industrioppmålingsfaget, Vg3",ssb-navn,sikker,
+TPIOV3----,publisert,vg3,Industriell overflatebehandling,457134,"Industriell overflatebehandling, Vg3",ssb-navn,sikker,
+TPIRL3----,publisert,vg3,Industrirørleggerfaget,457113,"Industrirørleggerfaget, Vg3",ssb-navn,sikker,
+TPISK3----,utgaatt,vg3,Industriell skotøyproduksjon,458203,"Industriell skotøyproduksjon, Vg2 og Vg3, særløp",ssb-navn,sikker,
+TPISM3----,utgaatt,vg3,Industrisømfaget,458202,"Industrisømfaget, Vg3",ssb-navn,sikker,
+TPISN3----,publisert,vg3,Industrisnekkerfaget,458327,"Industrisnekkerfaget, Vg3",ssb-navn,sikker,
+TPITA3----,publisert,vg3,Industritapetsererfaget,457114,"Industritapetsererfaget, Vg3",ssb-navn,sikker,
+TPITF3----,publisert,vg3,Industritekstilfaget,458220,"Industritekstilfaget, Vg3",ssb-navn,sikker,
+TPITR3----,utgaatt,vg3,"Industritekstilfaget, trikotasje",458213,"Industritekstilfaget, trikotasje, Vg3",ssb-navn,sikker,
+TPIVE3----,utgaatt,vg3,"Industritekstilfaget, veving",458212,"Industritekstilfaget, veving, Vg3",ssb-navn,sikker,
+TPKAR3----,publisert,vg3,Chassispåbyggerfaget,455217,"Chassispåbyggerfaget, Vg3",ssb-navn,sikker,
+TPKJP2----,utgaatt,vg2,Kjemiprosess,352204,"Kjemiprosess, Vg2",ssb-navn,sikker,
+TPKJP3----,publisert,vg3,Kjemiprosessfaget,452201,"Kjemiprosessfaget, Vg3",ssb-navn,sikker,
+TPKJT2----,publisert,vg2,Kjøretøy,355207,"Kjøretøy, Vg2",ssb-navn,sikker,
+TPKLO3----,publisert,vg3,Kran- og løfteoperasjonsfaget,455246,"Kran- og løfteoperasjonsfaget, Vg3",ssb-navn,sikker,
+TPKPL2----,publisert,vg2,Kjemiprosess- og laboratoriefag,352206,"Kjemiprosess- og laboratoriefag, Vg2",ssb-navn,sikker,
+TPLAB2----,utgaatt,vg2,Laboratoriefag,352205,"Laboratoriefag, Vg2",ssb-navn,sikker,
+TPLAB3----,publisert,vg3,Laboratoriefaget,452202,"Laboratoriefaget, Vg3",ssb-navn,sikker,
+TPLMM3----,publisert,vg3,Landbruksmaskinmekanikerfaget,455222,"Landbruksmaskinmekanikerfaget, Vg3",ssb-navn,sikker,
+TPLOG3----,publisert,vg3,Logistikkfaget,481906,"Logistikkfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPLSF3----,utgaatt,vg3,Låsesmedfaget,455223,"Låsesmedfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPMAR2----,publisert,vg2,Maritime fag,381306,"Maritime fag, Vg2",ssb-navn,sikker,
+TPMIR3----,utgaatt,vg3,Maritim innredning,458330,"Maritim innredning, Vg3",ssb-navn,sikker,
+TPMME3----,publisert,vg3,Motormekanikerfaget,455229,"Motormekanikerfaget, Vg3",ssb-navn,sikker,
+TPMOB3----,publisert,vg3,Modellbyggerfaget,458307,"Modellbyggerfaget, Vg3",ssb-navn,sikker,
+TPMOM3----,utgaatt,vg3,Motormannfaget,,,ingen,,
+TPMPT2----,utgaatt,vg2,Maritim produksjonsteknikk,355224,"Maritim produksjonsteknikk, Vg2",ssb-navn,sikker,
+TPMSY3----,publisert,vg3,Motorsykkelfaget,455230,"Motorsykkelfaget, Vg3",ssb-navn,sikker,
+TPMTS3----,publisert,vg3,Matrosfaget,481302,"Matrosfaget, Vg3",ssb-navn,sikker,
+TPNDT3----,publisert,vg3,NDT-kontrollørfaget,455232,"NDT-kontrollørfaget, Vg3",ssb-navn,sikker,
+TPPIN2----,publisert,vg2,Industriteknologi,355223,"Industriteknologi, Vg2",ssb-navn,sikker,
+TPPLA3----,publisert,vg3,Platearbeiderfaget,455233,"Platearbeiderfaget, Vg3",ssb-navn,sikker,
+TPPLF3----,publisert,vg3,Plastfaget,458343,"Plastfaget, Vg3",ssb-navn,sikker,
+TPPLM3----,utgaatt,vg3,Plastmekanikerfaget,458315,"Plastmekanikerfaget, Vg3",ssb-navn,sikker,
+TPPOK2----,utgaatt,vg2,Plast og kompositt,358317,"Plast og kompositt, Vg2",ssb-navn,sikker,
+TPPOM3----,publisert,vg3,Polymerkomposittfaget,458328,"Polymerkomposittfaget, Vg3",ssb-navn,sikker,
+TPPRT3----,publisert,vg3,Produksjonsteknikkfaget,455248,"Produksjonsteknikkfaget, Vg3",ssb-navn,sikker,
+TPRSD3----,publisert,vg3,Reservedelsfaget,455236,"Reservedelsfaget, Vg3",ssb-navn,sikker,
+TPSGR3----,publisert,vg3,Serigrafifaget,455237,"Serigrafifaget, Vg3",ssb-navn,sikker,
+TPSMK3----,publisert,vg3,Skipsmotormekanikerfaget,455231,"Skipsmotormekanikerfaget, Vg3",ssb-navn,sikker,
+TPSTF3----,utgaatt,vg3,Støperifaget,455242,"Støperifaget, Vg3",ssb-navn,sikker,
+TPSVE3----,publisert,vg3,Sveisefaget,455239,"Sveisefaget, Vg3",ssb-navn,sikker,
+TPSYM3----,publisert,vg3,Sykkelmekanikerfaget,455240,"Sykkelreparatør, VK II",forslag,usikker,
+TPTEP3----,utgaatt,vg3,Termoplastfaget,458329,"Termoplastfaget, Vg3",ssb-navn,sikker,
+TPTIP1----,publisert,vg1,Teknologi- og industrifag,355901,"Teknologi- og industrifag, Vg1",ssb-navn,sikker,
+TPTLM3----,publisert,vg3,Truck- og liftmekanikerfaget,455255,"Truck- og liftmekanikerfaget, Vg3",ssb-navn,sikker,
+TPTOL2----,publisert,vg2,Transport og logistikk,381906,"Transport og logistikk, Vg2",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPTRF3----,utgaatt,vg3,Tekstilrensfaget,483301,"Tekstilrensfaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPTRY3----,utgaatt,vg3,Trykkerfaget,455213,"Trykkerfaget, Vg3",ssb-navn,sikker,
+TPTSR3----,publisert,vg3,Tekstilrensfaget,483305,"Tekstilrensfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPVAF3----,publisert,vg3,Vaskerifaget,483304,"Vaskerifaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPVAS3----,utgaatt,vg3,Vaskerifaget,483303,"Vaskerifaget, Vg2 og Vg3, særløp (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPVER3----,publisert,vg3,Verktøymakerfaget,455241,"Verktøymakerfaget, Vg3",ssb-navn,sikker,
+TPYRK3----,publisert,vg3,Yrkessjåførfaget,481402,"Yrkessjåførfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
+TPYSL3----,publisert,vg3,Yrkessjåførkurs for voksne,481402,"Yrkessjåførfaget, Vg3",forslag,sikker,
