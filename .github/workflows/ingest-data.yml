@@ -63,6 +63,23 @@ jobs:
             echo "Ingenting ble lastet inn. Hopper over komprimering."
           fi
 
+  # Eksempelspørringene i docs/bruk.md og docs/eksempler/*.rq skal virke mot dataene som nettopp ble lastet
+  # (idé 7 i docs/ideer.md). Kjører også de nettene innlastingen hopper over, så endringer hos Udir som
+  # gjør et eksempel tomt (for eksempel en utgått fagkode), blir oppdaget.
+  test-eksempler:
+    runs-on: ubuntu-latest
+    needs: ingest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Test eksempelspørringene
+        env:
+          FUSEKI_URL: ${{ secrets.FUSEKI_PROD_URL }}
+        run: python3 scripts/test-eksempler.py
+
   # GitHub deaktiverer planlagte workflows når repoet har vært uten aktivitet i 60 dager
   # (det skjedde i mai 2026). Denne jobben lager en tom commit når siste commit er eldre
   # enn 50 dager. "[skip ci]" hindrer at commiten trigger deploy.yml (ny Fly-deploy).

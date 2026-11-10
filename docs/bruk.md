@@ -46,6 +46,9 @@ PREFIX text: <http://jena.apache.org/text#>        # fritekstsøk, se «Fritekst
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX styrk: <http://psi.udir.no/ontologi/styrk08/>  # yrkesgrupper i STYRK-08, se «Koblinger»
 PREFIX isco: <http://data.europa.eu/esco/isco/>     # ISCO-08-grupper i ESCO
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>          # beskrivelse av datasettet, se «Hvor ferske er dataene?»
+PREFIX void: <http://rdfs.org/ns/void#>
 ```
 
 Eksemplene under forutsetter disse prefiksene.
@@ -90,6 +93,22 @@ SELECT ?endretHosUdir ?lastet ?endringsId WHERE {
   endringsloggen og sammenlign med `endrings-id` i det øverste innslaget, som er den nyeste endringen
   *nå*. Er de like, har sandkassen alle Udirs endringer. Begynner `endringsId` med `sha256:`, var
   endringsloggen tom ved innlastingen, og da kan du ikke sammenligne på denne måten.
+
+**Beskrivelse av datasettet (DCAT og VoID).** Metagrafen beskriver også sandkassen som datasett etter DCAT-AP-NO
+(som på data.norge.no) og VoID: tittel, beskrivelse, utgiver, lisens (NLOD 2.0), kilde (Udirs Grep-API),
+SPARQL-endepunkt, vokabularer, når den sist ble oppdatert (`dcterms:modified`) og antall tripler per graf:
+
+```sparql
+SELECT ?graf ?tripler WHERE {
+  GRAPH <urn:graph:meta> {
+    ?ds a dcat:Dataset ; void:subset ?del .
+    ?del dcterms:title ?graf ; void:triples ?tripler .
+  }
+} ORDER BY DESC(?tripler)
+```
+
+Hele beskrivelsen får du med `DESCRIBE ?ds WHERE { GRAPH <urn:graph:meta> { ?ds a dcat:Dataset } }`. Sandkassen
+er et privat eksperiment, så utgiveren er Are Mjølsnes, ikke Udir. Udir er oppgitt som kilde.
 
 ## Eksempler
 
@@ -432,7 +451,7 @@ yrkesgruppen sin i SSBs yrkesklassifisering STYRK-08 med `udir:yrkesklassifiseri
 ISCO-08, og hver gruppe har `skos:exactMatch` til samme ISCO-gruppe i ESCO, EUs klassifikasjon av yrker og
 ferdigheter. Derfra finner man ESCO-yrkene og ferdighetene deres.
 
-- **286 av 309 programområder** har en kobling, også utgåtte, slik at de som tok utdanningen tidligere er med.
+- **300 av 309 programområder** har en kobling, også utgåtte, slik at de som tok utdanningen tidligere er med.
   194 koblinger kommer direkte fra SSBs Yrkeskatalog. De andre er vurdert manuelt.
 - Koblinger går aldri til STYRK-hovedgruppe 1 (ledere) eller 2 (akademiske yrker), som krever høyere utdanning.
 - STYRK-08 ligger som begrepssystem (`udir:Styrk08`) med alle 582 gruppene på fire nivåer og `skos:broader`

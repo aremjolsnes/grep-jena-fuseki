@@ -64,7 +64,7 @@ DHKJD3----,utgaatt,Kjole- og draktsyer,7531,ssb-yrkeskatalog,
 DHKRV3----,utgaatt,Kurvmaker,7317,ssb-yrkeskatalog,
 DHKST3----,utgaatt,Kostymesyer,7531,ssb-yrkeskatalog,
 DHMDE3----,utgaatt,Mediedesigner,,ingen,Forslag 7321 avvist 2026-11-09
-DHMGR3----,utgaatt,Mediegrafiker,,ingen,Forslag 7321 avvist 2026-11-09
+DHMGR3----,utgaatt,Mediegrafiker,7321,manuell,Vurdert 2026-11-10 med ESCO som støtte
 DHMOD3----,utgaatt,Modist,7531,ssb-yrkeskatalog,
 DHMPM3----,utgaatt,Maskør- og parykkmaker,,ingen,Forslag 5142 avvist 2026-11-09
 DHMSF3----,utgaatt,Møbelsnekker,7522,forslag,
@@ -74,7 +74,7 @@ DHOPT3----,utgaatt,Optroniker,7311,ssb-yrkeskatalog,
 DHORG3----,utgaatt,Orgelbygger,7312,ssb-yrkeskatalog,
 DHPFD3----,utgaatt,Profileringsdesigner,7316,forslag,
 DHPST3----,utgaatt,Pianostemmer,7312,ssb-yrkeskatalog,
-DHREP3----,utgaatt,Repslager,,ingen,Forslag 7318 avvist 2026-11-09
+DHREP3----,utgaatt,Repslager,7319,manuell,Vurdert 2026-11-10 med ESCO som støtte
 DHSAL3----,utgaatt,Salmaker,7534,ssb-yrkeskatalog,
 DHSEI3----,utgaatt,Seilmaker,7531,ssb-yrkeskatalog,
 DHSKO3----,utgaatt,Skomaker,7536,ssb-yrkeskatalog,
@@ -119,7 +119,7 @@ DTMBT3----,publisert,Møbeltapetserer,7534,ssb-yrkeskatalog,
 DTMOD3----,publisert,Modist,7531,ssb-yrkeskatalog,
 DTMSF3----,publisert,Møbelsnekker,7522,forslag,
 DTORG3----,publisert,Orgelbygger,7312,ssb-yrkeskatalog,
-DTREP3----,publisert,Repslager,,ingen,Forslag 7318 avvist 2026-11-09
+DTREP3----,publisert,Repslager,7319,manuell,Vurdert 2026-11-10 med ESCO som støtte
 DTSAL3----,publisert,Salmaker,7534,ssb-yrkeskatalog,
 DTSEI3----,publisert,Seilmaker,7531,ssb-yrkeskatalog,
 DTSKO3----,publisert,Skomaker,7536,ssb-yrkeskatalog,
@@ -146,7 +146,7 @@ ELERF3----,publisert,Elektroreparatør,7411,ssb-yrkeskatalog,
 ELFMO4----,publisert,Flymotormekaniker,7232,ssb-yrkeskatalog,
 ELFST4----,publisert,Flystrukturmekaniker,7232,ssb-yrkeskatalog,
 ELFSY4----,publisert,Flysystemmekaniker,7232,ssb-yrkeskatalog,
-ELFUO3----,publisert,FU-operatør,,ingen,Forslag 3117 avvist 2026-11-09
+ELFUO3----,publisert,FU-operatør,7422,manuell,Vurdert 2026-11-10 med ESCO som støtte
 ELHEI3----,publisert,Heismontør,7412,ssb-yrkeskatalog,
 ELKUL3----,utgaatt,Kulde- og varmepumpemontør,7127,forslag,
 ELKVP3----,publisert,Kulde- og varmepumpetekniker,7127,forslag,
@@ -154,7 +154,7 @@ ELLSM3----,publisert,Låsesmed,7222,ssb-yrkeskatalog,
 ELMEL4----,publisert,Maritim elektriker,7412,forslag,
 ELOPT3----,publisert,Optroniker,7311,ssb-yrkeskatalog,
 ELPRO3----,publisert,Produksjonselektroniker,8212,ssb-yrkeskatalog,
-ELROM3----,publisert,Romteknolog,,ingen,Forslag 3119 avvist 2026-11-09
+ELROM3----,publisert,Romteknolog,7422,manuell,Vurdert 2026-11-10 med ESCO som støtte
 ELSIG3----,publisert,Signalmontør,7412,ssb-yrkeskatalog,
 ELTAV3----,publisert,Tavlemontør,7412,ssb-yrkeskatalog,
 ELTEL3----,publisert,Telekommunikasjonsmontør,7422,ssb-yrkeskatalog,
@@ -180,25 +180,25 @@ HSORT3----,publisert,Ortopeditekniker,3214,ssb-yrkeskatalog,
 HSPOR3----,publisert,Portør,5329,ssb-yrkeskatalog,
 HSTAN3----,publisert,Tannhelsesekretær,5329,ssb-yrkeskatalog,
 IMGPT3----,publisert,Fagoperatør i grafisk produksjonsteknikk.,7322,forslag,
-IMIHP3----,publisert,Innholdsprodusent,3521,manuell,
+IMIHP3----,publisert,Innholdsprodusent,,ingen,Forslag 3521 avvist 2026-11-10
 IMITD3----,publisert,IT-driftstekniker,3511,ssb-yrkeskatalog,
 IMIUV3----,publisert,IT-utvikler,3514,manuell,
 IMMDF3----,publisert,Mediedesigner,,ingen,Forslag 7321 avvist 2026-11-09
 IMMET3----,publisert,Medietekniker,3521,forslag,
 MKFTG3----,utgaatt,Fotograf,3431,ssb-yrkeskatalog,
 MKMDE3----,utgaatt,Mediedesigner,,ingen,Forslag 7321 avvist 2026-11-09
-MKMGR3----,utgaatt,Mediegrafiker,,ingen,Forslag 7321 avvist 2026-11-09
+MKMGR3----,utgaatt,Mediegrafiker,7321,manuell,Vurdert 2026-11-10 med ESCO som støtte
 NAAGR3----,utgaatt,Agronom,3142,ssb-yrkeskatalog,
 NAAKV3----,publisert,Fagoperatør i akvakultur,6221,forslag,
 NAANG3----,utgaatt,Anleggsgartner,6113,ssb-yrkeskatalog,
 NADYR3----,publisert,Dyrefagarbeider,5164,ssb-yrkeskatalog,
 NAFFA3----,publisert,Fisker,6222,ssb-yrkeskatalog,
-NAFIR3----,publisert,Fagoperatør i fiskeri- og akvakulturredskapsfaget,,ingen,Forslag 7318 avvist 2026-11-09
+NAFIR3----,publisert,Fagoperatør i fiskeri- og akvakulturredskapsfaget,8152,manuell,Vurdert 2026-11-10 med ESCO som støtte
 NAGAN3----,utgaatt,Gartner,6113,ssb-yrkeskatalog,
 NAGAR3----,publisert,Gartner,6113,ssb-yrkeskatalog,
 NAHAV3----,publisert,Driftsoperatør havbruksteknikk,6221,ssb-yrkeskatalog,
 NAHOV3----,utgaatt,Hovslager,7221,ssb-yrkeskatalog,
-NAHST3----,publisert,Hestefaglært,,ingen,Forslag 6121 avvist 2026-11-09
+NAHST3----,publisert,Hestefaglært,5164,manuell,Vurdert 2026-11-10 med ESCO som støtte
 NAHVS3----,publisert,Hovslager,7221,ssb-yrkeskatalog,
 NAIAN3----,utgaatt,Driftsoperatør idrettsanlegg,5153,forslag,
 NALBF3----,publisert,Agronom,3142,ssb-yrkeskatalog,
@@ -235,7 +235,7 @@ SSSLG3----,utgaatt,Salgsmedarbeider,3322,ssb-yrkeskatalog,
 SSYRK3----,utgaatt,Yrkessjåfør,8332,forslag,
 TPALU3----,publisert,Aluminiumskonstruktør,7214,forslag,
 TPAMM3----,publisert,Anleggsmaskinmekaniker,7233,ssb-yrkeskatalog,
-TPBDK3----,publisert,Kjøretøydemontør,,venter,Forslag 7231 venter på vurdering
+TPBDK3----,publisert,Kjøretøydemontør,9612,manuell,Vurdert 2026-11-10 med ESCO som støtte
 TPBIP3----,publisert,Bilpleier,9122,ssb-yrkeskatalog,
 TPBKO3----,publisert,"Brønnoperatør, komplettering",8113,ssb-yrkeskatalog,
 TPBKV3----,publisert,"Brønnoperatør, kveilerør",8113,ssb-yrkeskatalog,
@@ -252,13 +252,13 @@ TPBSK3----,publisert,Bilskadereparatør,7213,ssb-yrkeskatalog,
 TPBTK3----,publisert,"Bilmekaniker, tunge kjøretøy",7231,ssb-yrkeskatalog,
 TPCNC3----,publisert,CNC-operatør,7222,ssb-yrkeskatalog,
 TPDKO3----,publisert,Dimensjonskontrollør,7222,ssb-yrkeskatalog,
-TPFIR3----,utgaatt,Fagoperatør i fiskeredskapsfaget,,ingen,Forslag 8152 avvist 2026-11-09
+TPFIR3----,utgaatt,Fagoperatør i fiskeredskapsfaget,8152,manuell,Vurdert 2026-11-10: samme gruppe som forløperne/etterfølgeren
 TPFMK3----,publisert,Finmekaniker,7311,ssb-yrkeskatalog,
 TPGEM3----,utgaatt,Fagoperatør i grafisk emballasje,8143,forslag,
-TPGJE3----,utgaatt,Gjenvinningsoperatør,,ingen,Forslag 8189 avvist 2026-11-09
+TPGJE3----,utgaatt,Gjenvinningsoperatør,9612,manuell,Vurdert 2026-11-10 med ESCO som støtte
 TPGPT3----,publisert,Fagoperatør i grafisk produksjonsteknikk.,7322,forslag,
 TPGRV3----,utgaatt,Garverioperatør,7535,forslag,
-TPGVF3----,publisert,Gjenvinningsoperatør,,ingen,Forslag 8189 avvist 2026-11-09
+TPGVF3----,publisert,Gjenvinningsoperatør,9612,manuell,Vurdert 2026-11-10 med ESCO som støtte
 TPHJU3----,publisert,Hjulutrustningsreparatør,7231,ssb-yrkeskatalog,
 TPIFT3----,utgaatt,"Fagoperatør i farging, trykking og etterbehandling",8154,forslag,
 TPIGS3----,utgaatt,Fagoperatør i garnframstilling,8151,forslag,
@@ -271,17 +271,17 @@ TPISK3----,utgaatt,Skofagoperatør,8156,ssb-yrkeskatalog,
 TPISM3----,utgaatt,Fagoperatør i industrisøm,8153,forslag,
 TPISN3----,publisert,Industrisnekker,7115,ssb-yrkeskatalog,
 TPITA3----,publisert,Industritapetserer,7534,ssb-yrkeskatalog,
-TPITF3----,publisert,Fagoperatør i industritekstil,,ingen,Forslag 8152 avvist 2026-11-09
+TPITF3----,publisert,Fagoperatør i industritekstil,8152,manuell,Vurdert 2026-11-10: samme gruppe som forløperne/etterfølgeren
 TPITR3----,utgaatt,Fagoperatør i trikotasje,8152,forslag,
 TPIVE3----,utgaatt,Fagoperatør i veving,8152,forslag,
-TPKAR3----,publisert,Chassispåbygger,,ingen,Forslag 7213 avvist 2026-11-09
+TPKAR3----,publisert,Chassispåbygger,7231,manuell,Vurdert 2026-11-10 med ESCO som støtte
 TPKJP3----,publisert,Fagoperatør i kjemisk prosessindustri,8131,forslag,
 TPKLO3----,publisert,Fagoperatør i kran- og løfteoperasjoner,8343,forslag,
 TPLAB3----,publisert,Faglaborant,3141,manuell,
 TPLMM3----,publisert,Landbruksmaskinmekaniker,7233,ssb-yrkeskatalog,
 TPLOG3----,publisert,Logistikkoperatør,4321,forslag,
 TPLSF3----,utgaatt,Låsesmed,7222,ssb-yrkeskatalog,
-TPMIR3----,utgaatt,Maritim innredningsmontør,,ingen,Forslag 7115 avvist 2026-11-09
+TPMIR3----,utgaatt,Maritim innredningsmontør,7522,manuell,Vurdert 2026-11-10 med ESCO som støtte
 TPMME3----,publisert,Motormekaniker,7233,ssb-yrkeskatalog,
 TPMOB3----,publisert,Modellbygger,7115,ssb-yrkeskatalog,
 TPMOM3----,utgaatt,Motormann,7233,ssb-yrkeskatalog,

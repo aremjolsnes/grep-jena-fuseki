@@ -51,8 +51,8 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 | `urn:graph:ontologi` | `ontologi/ontologi_kl06_rettet.ttl`, `ontologi/grep_type_mapping.ttl` og `ontologi/udir.ttl` | Lastes fra repoet ved hver innlasting |
 | `urn:graph:normalisert` | `udir:Gyldighet`-ressurser (N1), perioder som datoer (N4) og tittel per målform (N5), omtrent 328 000 tripler | Tømmes og bygges på nytt av `sparql/normalisering/*.ru` |
 | `urn:graph:utledet` | Typer fra ontologien via `rdfs:subClassOf+` (R1), også overbegrepene i `udir.ttl`, revisjon (R3), SKOS-begreper (R4), språk koblet til EUs språktabell (R5) og Dublin Core- og schema.org-egenskaper (R2), omtrent 270 000 tripler | Tømmes og bygges på nytt av `sparql/utledning/*.ru` |
-| `urn:graph:koblinger` | `ontologi/koblinger/styrk.ttl`: STYRK-08 som SKOS-begrepssystem (582 grupper, `skos:exactMatch` til ISCO-08 i ESCO) og `udir:yrkesklassifisering` fra 286 programområder. Lages av `scripts/lag-styrk-ttl.py` fra `ontologi/koblinger/styrk.csv` | Lastes fra repoet ved hver innlasting |
-| `urn:graph:meta` | `last-id` (endrings-id), `lastet` (vårt tidspunkt, UTC), `endret-hos-udir` (Udirs tidspunkt for siste endring, når det finnes), `antall-tripler`, `antall-tripler-normalisert`, `antall-tripler-utledet` | Skrives sist i hver innlasting |
+| `urn:graph:koblinger` | `ontologi/koblinger/styrk.ttl`: STYRK-08 som SKOS-begrepssystem (582 grupper, `skos:exactMatch` til ISCO-08 i ESCO) og `udir:yrkesklassifisering` fra 300 programområder. Lages av `scripts/lag-styrk-ttl.py` fra `ontologi/koblinger/styrk.csv` | Lastes fra repoet ved hver innlasting |
+| `urn:graph:meta` | `last-id` (endrings-id), `lastet` (vårt tidspunkt, UTC), `endret-hos-udir` (Udirs tidspunkt for siste endring, når det finnes), `antall-tripler`, `antall-tripler-normalisert`, `antall-tripler-utledet`, og beskrivelsen av datasettet etter DCAT-AP-NO og VoID (`ontologi/datasett.ttl`, med `dcterms:modified` og `void:triples` per graf) | Skrives sist i hver innlasting |
 
 ## Filer
 

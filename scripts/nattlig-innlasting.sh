@@ -7,7 +7,7 @@
 #   urn:graph:normalisert  resultatet av sparql/normalisering/*.ru (bygges på nytt hver gang)
 #   urn:graph:utledet      resultatet av sparql/utledning/*.ru (bygges på nytt hver gang)
 #   urn:graph:koblinger    koblinger til andre kunnskapsgrafer fra ontologi/koblinger/*.ttl (STYRK-08)
-#   urn:graph:meta         siste endrings-id og tidspunkt (skrives sist)
+#   urn:graph:meta         siste endrings-id og tidspunkt, og DCAT/VoID fra ontologi/datasett.ttl (skrives sist)
 #   urn:graph:grep-ny      mellomgraf under innlasting; flyttes til urn:graph:grep med MOVE
 #
 # Miljøvariabler:
@@ -382,7 +382,21 @@ EOF
 if [ -n "$UDIR_TIDSPUNKT" ]; then
   echo "<$META> <$SCHEMA/endret-hos-udir> \"$UDIR_TIDSPUNKT\"^^<http://www.w3.org/2001/XMLSchema#dateTime> ." >> "$ARBEID/meta.nt"
 fi
+# DCAT og VoID (idé 6): ontologi/datasett.ttl beskriver datasettet; her kommer det som endrer seg ved hver innlasting
+DS="https://grep-fuseki-v3.fly.dev/ds#"
+XI="http://www.w3.org/2001/XMLSchema#integer"
+VT="http://rdfs.org/ns/void#triples"
+{
+  echo "<${DS}datasett> <http://purl.org/dc/terms/modified> \"$NAA\"^^<http://www.w3.org/2001/XMLSchema#dateTime> ."
+  echo "<${DS}datasett> <$VT> \"$(( N_GREP + N_ONT + N_NORM + N_UTLEDET + N_KOBLINGER ))\"^^<$XI> ."
+  echo "<${DS}grep> <$VT> \"$N_GREP\"^^<$XI> ."
+  echo "<${DS}ontologi> <$VT> \"$N_ONT\"^^<$XI> ."
+  echo "<${DS}normalisert> <$VT> \"$N_NORM\"^^<$XI> ."
+  echo "<${DS}utledet> <$VT> \"$N_UTLEDET\"^^<$XI> ."
+  echo "<${DS}koblinger> <$VT> \"$N_KOBLINGER\"^^<$XI> ."
+} >> "$ARBEID/meta.nt"
 last_graf PUT "$G_META" application/n-triples "$ARBEID/meta.nt"
+last_graf POST "$G_META" text/turtle "$REPO/ontologi/datasett.ttl"
 logg "Avvik i dataene: $N_AVVIK"
 if [ -n "$AVVIK_FIL" ]; then cp "$ARBEID/avvik.md" "$AVVIK_FIL"; fi
 logg "Ferdig. Oppdatert til endrings-id $SISTE_ID."

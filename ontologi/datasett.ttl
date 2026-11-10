@@ -1,0 +1,79 @@
+# Beskrivelse av Grep-sandkassen som datasett (idé 6 i docs/ideer.md): DCAT (DCAT-AP-NO) og VoID.
+#
+# Lastes inn i urn:graph:meta av scripts/nattlig-innlasting.sh, etter metadataene fra innlastingen. Skriptet legger
+# hver gang til dcterms:modified og void:triples for datasettet og for hver graf (void:subset).
+#
+# Sandkassen er et privat eksperiment og ikke en tjeneste fra Udir. Udir er kilden til dataene (dcterms:source).
+
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix vcard:   <http://www.w3.org/2006/vcard/ns#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix sd:      <http://www.w3.org/ns/sparql-service-description#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix eu-tema: <http://publications.europa.eu/resource/authority/data-theme/> .
+@prefix eu-spr:  <http://publications.europa.eu/resource/authority/language/> .
+@prefix eu-frek: <http://publications.europa.eu/resource/authority/frequency/> .
+@prefix ds:      <https://grep-fuseki-v3.fly.dev/ds#> .
+
+ds:datasett a dcat:Dataset, void:Dataset ;
+    dcterms:title "Grep-sandkassen"@nb, "Grep-sandkassen"@nn, "Grep sandbox"@en ;
+    dcterms:description """Grep, Udirs database for læreplaner, fagkoder og programområder (Kunnskapsløftet), som kunnskapsgraf.
+Dataene lastes fra Udir hver natt. Sandkassen legger til en ontologi, normaliserte data (gyldighet og perioder som
+datoer, tittel per målform), utledninger (typer, revisjon, SKOS-begreper, Dublin Core og schema.org) og koblinger
+til andre kunnskapsgrafer (EUs språktabell, STYRK-08 og ISCO-08 i ESCO). Et privat eksperiment, ikke en tjeneste
+fra Udir."""@nb ;
+    dcterms:description """Grep, the Norwegian Directorate for Education and Training's database of curricula, subject codes
+and education programmes, as a knowledge graph. Reloaded nightly from Udir and enriched with an ontology, normalised
+data, inferences and links to other knowledge graphs. A private experiment, not a service of the Directorate."""@en ;
+    dcterms:publisher <https://github.com/aremjolsnes> ;
+    dcat:contactPoint [ a vcard:Kind ; vcard:fn "Grep-sandkassen på GitHub" ;
+                        vcard:hasURL <https://github.com/aremjolsnes/grep-jena-fuseki/issues> ] ;
+    dcterms:source <https://data.udir.no/kl06/v201906> ;
+    dcterms:license <https://data.norge.no/nlod/no/2.0> ;
+    dcterms:language eu-spr:NOB, eu-spr:NNO, eu-spr:SME, eu-spr:SMA, eu-spr:SMJ, eu-spr:ENG ;
+    dcat:theme eu-tema:EDUC ;
+    dcterms:accrualPeriodicity eu-frek:DAILY ;
+    dcat:keyword "læreplan"@nb, "kompetansemål"@nb, "fagkode"@nb, "Kunnskapsløftet"@nb, "LK20"@nb,
+                 "kunnskapsgraf"@nb, "curriculum"@en, "knowledge graph"@en ;
+    dcat:landingPage <https://sparql.mjolne.com/dokumentasjon?endepunkt=Sandkassen> ;
+    foaf:page <https://github.com/aremjolsnes/grep-jena-fuseki/blob/main/docs/bruk.md> ;
+    dcat:distribution ds:sparql-distribusjon ;
+    void:sparqlEndpoint <https://grep-fuseki-v3.fly.dev/ds/query> ;
+    void:uriSpace "http://psi.udir.no/kl06/" ;
+    void:vocabulary <http://psi.udir.no/ontologi/kl06/>, <http://psi.udir.no/ontologi/>,
+                    <http://www.w3.org/2004/02/skos/core#>, <http://purl.org/dc/terms/>, <https://schema.org/> ;
+    void:subset ds:grep, ds:ontologi, ds:normalisert, ds:utledet, ds:koblinger .
+
+<https://github.com/aremjolsnes> a foaf:Agent ;
+    foaf:name "Are Mjølsnes" ;
+    foaf:homepage <https://github.com/aremjolsnes> .
+
+ds:sparql-distribusjon a dcat:Distribution ;
+    dcterms:title "SPARQL-endepunkt"@nb, "SPARQL endpoint"@en ;
+    dcat:accessURL <https://grep-fuseki-v3.fly.dev/ds/query> ;
+    dcat:accessService ds:sparql-tjeneste ;
+    dcterms:license <https://data.norge.no/nlod/no/2.0> .
+
+ds:sparql-tjeneste a dcat:DataService ;
+    dcterms:title "SPARQL-endepunkt for Grep-sandkassen"@nb ;
+    dcat:endpointURL <https://grep-fuseki-v3.fly.dev/ds/query> ;
+    dcterms:conformsTo <https://www.w3.org/TR/sparql11-protocol/> ;
+    dcat:servesDataset ds:datasett .
+
+ds:grep a void:Dataset ; sd:name <urn:graph:grep> ;
+    dcterms:title "Grep-dataene fra Udir"@nb ;
+    dcterms:description "Rådata fra Udirs JSON-LD-dump. Datoer og tall har riktige datatyper, ellers uendret."@nb .
+ds:ontologi a void:Dataset ; sd:name <urn:graph:ontologi> ;
+    dcterms:title "Ontologien"@nb ;
+    dcterms:description "Den rettede Grep-ontologien, koblinger til typene i dataene og udir:-laget."@nb .
+ds:normalisert a void:Dataset ; sd:name <urn:graph:normalisert> ;
+    dcterms:title "Normaliserte data"@nb ;
+    dcterms:description "Gyldighet som egne ressurser, perioder som datoer og tittel per målform."@nb .
+ds:utledet a void:Dataset ; sd:name <urn:graph:utledet> ;
+    dcterms:title "Utledninger"@nb ;
+    dcterms:description "Typer, revisjon, SKOS-begreper, språk koblet til EUs språktabell, Dublin Core og schema.org."@nb .
+ds:koblinger a void:Dataset ; sd:name <urn:graph:koblinger> ;
+    dcterms:title "Koblinger til andre kunnskapsgrafer"@nb ;
+    dcterms:description "STYRK-08 som begrepssystem, med kobling til ISCO-08 i ESCO, og yrkesklassifisering av programområder."@nb .

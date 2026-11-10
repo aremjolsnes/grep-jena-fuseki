@@ -12,8 +12,8 @@ Status: 🔜 påbegynt · 💡 idé · ✅ gjort
 | 3 | [Historikk: hva endret seg?](#3-historikk-hva-endret-seg) | 💡 |
 | 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker via ISCO ✅ |
 | 5 | [SHACL-former](#5-shacl-former) | 💡 |
-| 6 | [Beskrivelse av datasettet med DCAT og VoID](#6-beskrivelse-av-datasettet-med-dcat-og-void) | 💡 |
-| 7 | [Test eksemplene i bruk.md](#7-test-eksemplene-i-brukmd) | 💡 |
+| 6 | [Beskrivelse av datasettet med DCAT og VoID](#6-beskrivelse-av-datasettet-med-dcat-og-void) | ✅ |
+| 7 | [Test eksemplene i bruk.md](#7-test-eksemplene-i-brukmd) | ✅ |
 | 8 | [Inverse egenskaper (R6)](#8-inverse-egenskaper-r6) | 💡 |
 
 ## 1. Læreplanutsnitt for KI
@@ -78,11 +78,11 @@ Vi har gjort det for språk med EUs språktabell (R5). De neste kandidatene er:
 Dette er det som gjør Grep til en *lenket* graf. Det krever fagavklaring, slik vi gjorde for språk.
 
 ✅ 2026-11-09, STYRK-08:
-- `udir:yrkesklassifisering` går fra 286 av 309 programområder (Vg3 med `u:yrkestittel`) til STYRK-08, i
+- `udir:yrkesklassifisering` går fra 300 av 309 programområder (Vg3 med `u:yrkestittel`) til STYRK-08, i
   `urn:graph:koblinger`.
 - Kilden er `ontologi/koblinger/styrk.csv`. 194 koblinger kommer fra SSBs Yrkeskatalog (KLASS-tabell 426), og
-  92 er vurdert manuelt.
-- 22 programområder er bevisst uten kobling, og 1 venter på vurdering.
+  106 er vurdert manuelt, med ESCO som støtte for 15 av dem.
+- 9 programområder er bevisst uten kobling, blant annet fordi riktig gruppe er i hovedgruppe 2.
 - Hovedgruppe 1 og 2 brukes aldri, fordi de krever høyere utdanning. Utgåtte programområder er med.
 - STYRK-08 har `skos:exactMatch` til ISCO-08 i ESCO for alle koder unntatt de seks norske særkodene. Gruppene vi
   bruker, har 519 ESCO-yrker under seg.
@@ -108,10 +108,22 @@ data.norge.no) og VoID kunne den også vise lisens, utgiver, hvilke grafer som f
 det er og hvilke vokabularer som brukes. Det er lite arbeid, og det gjør datasettet lettere å finne.
 Hvis Udir senere vil publisere grafen offisielt, er det dette formatet de trenger.
 
+✅ 2026-11-10:
+- Den faste beskrivelsen ligger i `ontologi/datasett.ttl` og lastes inn i `urn:graph:meta`.
+- `dcterms:modified` og `void:triples` per graf skrives av innlastingen.
+- Utgiveren er Are Mjølsnes, med GitHub-repoet som kontaktpunkt, fordi sandkassen er privat. Udir er oppgitt som kilde.
+- Lisensen er NLOD 2.0.
+
 ## 7. Test eksemplene i bruk.md
 
 Kjør spørringene i bruk.md mot endepunktet i CI, så eksemplene ikke slutter å virke uten at noen
 merker det.
+
+✅ 2026-11-10:
+- `scripts/test-eksempler.py` kjører hver ```` ```sparql ````-blokk i bruk.md og hver fil i `docs/eksempler/*.rq`.
+- Den feiler ved feil fra endepunktet eller tomt svar.
+- Merkene `# forventer tomt` og `# ikke test` endrer hva som testes.
+- Kjører som jobben `test-eksempler` i `ingest-data.yml` etter hver innlasting, også de nettene som hoppes over.
 
 ## 8. Inverse egenskaper (R6)
 
