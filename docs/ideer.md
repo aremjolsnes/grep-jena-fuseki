@@ -164,8 +164,11 @@ kobling, for eksempel KM8657 og KM5451 ↔ *utøve rettigheter og ansvar* og KM5
 Til sammen er det 341 koblinger.
 
 Gjenstår:
-- Automatiske forslag for resten av læreplanene: et skript som kaller en språkmodell (krever API-nøkkel), med
-  pilotene som eksempler og fasit, og menneskelig kontroll før noe godkjennes.
+- Automatiske forslag for resten av læreplanene (223 gjeldende Vg3-læreplaner med STYRK-kobling, 5 583 mål).
+  `scripts/foreslaa-km-esco.py` og workflowen «Foreslå koblinger kompetansemål ↔ ESCO» (startes manuelt) finnes nå.
+  Pilotene er eksempler. Forslagene havner på en egen gren som SSSOM uten kontrollør, med arbeidslister (CSV) som
+  artefakt. Først en prøve på 8 læreplaner. Læreplaner der ISCO-gruppen ikke har ESCO-yrker, for eksempel BLD03-03
+  (ISCO 7549), hoppes over.
 - Eventuelt fritekstsøk (jena-text) i ferdighetsnavnene.
 - Gå gjennom de 21 usikre NUS-forslagene.
 - NKR- og EQF-nivå for sluttkompetanse.

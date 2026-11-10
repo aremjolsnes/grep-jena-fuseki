@@ -1,0 +1,81 @@
+name: Foreslå koblinger kompetansemål ↔ ESCO
+
+# Startes bare manuelt, fordi hver kjøring koster penger (Claude API). Forslagene havner på en egen gren
+# (forslag/km-esco-<kjøring>) som SSSOM uten kontrollør, og arbeidslistene (CSV) som et artefakt. Et menneske vurderer
+# dem før noe slås sammen med main. Grenen utløser ikke innlastingen; det gjør først sammenslåingen med main.
+on:
+  workflow_dispatch:
+    inputs:
+      laereplaner:
+        description: 'Læreplankoder, kommaseparert (tomt = velg automatisk)'
+        required: false
+        default: ''
+      antall:
+        description: 'Antall læreplaner når de velges automatisk'
+        required: false
+        default: '8'
+      effort:
+        description: 'Effort for modellen'
+        type: choice
+        options: [medium, high, xhigh]
+        default: high
+      maks_dollar:
+        description: 'Kostnadsgrense i USD for kjøringen'
+        required: false
+        default: '10'
+
+concurrency:
+  group: foreslaa-km-esco
+  cancel-in-progress: false
+
+jobs:
+  foreslaa:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # pusher forslagsgrenen
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Installer Anthropic-SDK
+        run: pip install --quiet anthropic
+
+      - name: Lag forslag
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LAEREPLANER: ${{ inputs.laereplaner }}
+          ANTALL: ${{ inputs.antall }}
+          EFFORT: ${{ inputs.effort }}
+          MAKS_DOLLAR: ${{ inputs.maks_dollar }}
+        run: |
+          if [ -n "$LAEREPLANER" ]; then UTVALG=(--laereplaner "$LAEREPLANER"); else UTVALG=(--antall "$ANTALL"); fi
+          python -I -X utf8 scripts/foreslaa-km-esco.py "${UTVALG[@]}" --effort "$EFFORT" --maks-dollar "$MAKS_DOLLAR" \
+            --arbeidsliste "$RUNNER_TEMP/forslag"
+
+      - name: Lag km-esco.ttl på nytt
+        run: python -I -X utf8 scripts/lag-km-esco-ttl.py
+
+      - name: Arbeidslister (CSV)
+        uses: actions/upload-artifact@v4
+        with:
+          name: arbeidslister-km-esco-${{ github.run_id }}
+          path: ${{ runner.temp }}/forslag/*.csv
+          if-no-files-found: warn
+
+      - name: Push forslagsgrenen
+        run: |
+          if git diff --quiet -- ontologi/koblinger && [ -z "$(git ls-files --others --exclude-standard ontologi/koblinger)" ]; then
+            echo "Ingen nye forslag." ; exit 0
+          fi
+          GREN="forslag/km-esco-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$GREN"
+          git add ontologi/koblinger
+          git commit -q -m "Forslag: kompetansemål ↔ ESCO (kjøring ${{ github.run_id }}, ikke vurdert)"
+          git push -q origin "$GREN"
+          echo "Grenen $GREN er pushet: https://github.com/${{ github.repository }}/compare/main...$GREN" >> "$GITHUB_STEP_SUMMARY"
