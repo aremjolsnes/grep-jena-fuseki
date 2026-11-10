@@ -1,0 +1,1063 @@
+# GENERERT av scripts/lag-km-esco-ttl.py fra ontologi/koblinger/km-esco/*.sssom.tsv. Ikke rediger for hånd.
+# Grep-sandkassens koblinger fra kompetansemål til ESCO-ferdigheter. Koblingene er ikke en del av ESCO.
+# This service uses the ESCO classification of the European Commission. https://esco.ec.europa.eu
+#
+# Lastes inn i urn:graph:koblinger av scripts/nattlig-innlasting.sh.
+
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom: <https://w3id.org/sssom/> .
+@prefix semapv: <https://w3id.org/semapv/vocab/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> a sssom:MappingSet ;
+    dcterms:title "Kompetansemål i BMK03-03 (Vg3 bilfaget, lette kjøretøy) koblet til ESCO-ferdigheter"@nb ;
+    dcterms:license <https://data.norge.no/nlod/no/2.0> ;
+    sssom:object_source_version "v1.2.1" ;
+    sssom:mapping_date "2026-11-10"^^xsd:date .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM10083/534e2ade-f9dd-470c-a56f-97d2cc896468> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM10083> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/534e2ade-f9dd-470c-a56f-97d2cc896468> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM10083> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/534e2ade-f9dd-470c-a56f-97d2cc896468> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM10083/65155435-1c5b-41ee-8812-e0b9b03ae480> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM10083> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/65155435-1c5b-41ee-8812-e0b9b03ae480> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM10083> <http://www.w3.org/2004/02/skos/core#broadMatch> <http://data.europa.eu/esco/skill/65155435-1c5b-41ee-8812-e0b9b03ae480> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM10083/c12436d4-104c-4f4c-9d6c-ab484ec56612> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM10083> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM10083> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/0da516ee-e70e-4384-be13-f5ff80be8127> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8637> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/0da516ee-e70e-4384-be13-f5ff80be8127> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/0da516ee-e70e-4384-be13-f5ff80be8127> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/ae4ea3e1-3c1a-45b0-96a7-106988c053c0> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8637> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/ae4ea3e1-3c1a-45b0-96a7-106988c053c0> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ae4ea3e1-3c1a-45b0-96a7-106988c053c0> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8637> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/00e53a0a-c0ba-4c9f-a2ed-4706d5832a00> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8637> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/00e53a0a-c0ba-4c9f-a2ed-4706d5832a00> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/00e53a0a-c0ba-4c9f-a2ed-4706d5832a00> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/d8624d9f-6acb-49cc-9401-2f1abf96f5de> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8637> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d8624d9f-6acb-49cc-9401-2f1abf96f5de> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d8624d9f-6acb-49cc-9401-2f1abf96f5de> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/cace7a77-38b7-4cdf-8171-e17692bef5f6> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8637> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/cace7a77-38b7-4cdf-8171-e17692bef5f6> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cace7a77-38b7-4cdf-8171-e17692bef5f6> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8638/4591e001-18f4-40df-9387-5ccc31a66691> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8638> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/4591e001-18f4-40df-9387-5ccc31a66691> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8638> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/4591e001-18f4-40df-9387-5ccc31a66691> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8638/7bb2bd48-0da4-427a-a94f-1eddf5565eba> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8638> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/7bb2bd48-0da4-427a-a94f-1eddf5565eba> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8638> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/7bb2bd48-0da4-427a-a94f-1eddf5565eba> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8638/9054e4ed-ec81-417e-9597-53a05e67fcc9> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8638> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/9054e4ed-ec81-417e-9597-53a05e67fcc9> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8638> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/9054e4ed-ec81-417e-9597-53a05e67fcc9> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8638/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8638> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8638> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8639/534e2ade-f9dd-470c-a56f-97d2cc896468> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8639> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/534e2ade-f9dd-470c-a56f-97d2cc896468> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8639> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/534e2ade-f9dd-470c-a56f-97d2cc896468> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8639/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8639> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8639> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8639/68e66ed6-a171-4350-8ec1-2cfc4cae50e4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8639> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8639> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8639/575f79e8-8500-4ddf-91ec-5e6de73d35a3> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8639> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8639> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8640/36576c3d-2c7b-4755-bc67-ec1452470c98> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8640> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/36576c3d-2c7b-4755-bc67-ec1452470c98> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8640> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/36576c3d-2c7b-4755-bc67-ec1452470c98> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8640/202d0d2b-f6b9-48fe-b70e-cff49fa1d087> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8640> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/202d0d2b-f6b9-48fe-b70e-cff49fa1d087> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8640> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/202d0d2b-f6b9-48fe-b70e-cff49fa1d087> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8640/dbf4392b-820c-447a-93a1-29d38dcdd441> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8640> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/dbf4392b-820c-447a-93a1-29d38dcdd441> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8640> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/dbf4392b-820c-447a-93a1-29d38dcdd441> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8640/4b09e030-03c4-42e1-b023-632089002335> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8640> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/4b09e030-03c4-42e1-b023-632089002335> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8640> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/4b09e030-03c4-42e1-b023-632089002335> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8641/ba11879a-723d-4209-8ffa-008eaab9771f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8641> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/ba11879a-723d-4209-8ffa-008eaab9771f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8641> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ba11879a-723d-4209-8ffa-008eaab9771f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8641/90b98d58-96ca-4d75-9045-18eb97886b5b> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8641> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/90b98d58-96ca-4d75-9045-18eb97886b5b> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8641> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/90b98d58-96ca-4d75-9045-18eb97886b5b> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8642> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/f8cfab53-c7f7-465d-9eca-d2a28e4dc708> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8642> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/c12436d4-104c-4f4c-9d6c-ab484ec56612> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8642> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8642> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/e3211ab2-18b5-49b4-90de-d395f3be2378> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8642> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/e3211ab2-18b5-49b4-90de-d395f3be2378> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/e3211ab2-18b5-49b4-90de-d395f3be2378> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/ccfbdaad-b91d-4bfe-bd0e-d30b33587f19> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8642> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/ccfbdaad-b91d-4bfe-bd0e-d30b33587f19> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ccfbdaad-b91d-4bfe-bd0e-d30b33587f19> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/183eb46f-24f6-4e15-8017-93f10039c0a6> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8642> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/3d3ee5c3-4286-457f-9f76-1704011f7e11> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8642> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8643/ba11879a-723d-4209-8ffa-008eaab9771f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8643> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/ba11879a-723d-4209-8ffa-008eaab9771f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8643> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ba11879a-723d-4209-8ffa-008eaab9771f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8643/90b98d58-96ca-4d75-9045-18eb97886b5b> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8643> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/90b98d58-96ca-4d75-9045-18eb97886b5b> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8643> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/90b98d58-96ca-4d75-9045-18eb97886b5b> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8643/575f79e8-8500-4ddf-91ec-5e6de73d35a3> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8643> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8643> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/52743af8-ab5d-4ce3-b877-13d349394456> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8644> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/52743af8-ab5d-4ce3-b877-13d349394456> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/52743af8-ab5d-4ce3-b877-13d349394456> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/5b264a14-d4db-4352-9278-fbb63c5ebed4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8644> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/187f82c7-b165-4e6b-b327-704e38e85cdd> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8644> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/187f82c7-b165-4e6b-b327-704e38e85cdd> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/187f82c7-b165-4e6b-b327-704e38e85cdd> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8644> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/334e3e49-fb02-4051-809a-f06adfdc1c40> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8644> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/334e3e49-fb02-4051-809a-f06adfdc1c40> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/334e3e49-fb02-4051-809a-f06adfdc1c40> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/7566f0b4-7f6e-455c-abb5-ec58e57f7e17> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8644> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/7566f0b4-7f6e-455c-abb5-ec58e57f7e17> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/7566f0b4-7f6e-455c-abb5-ec58e57f7e17> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/2876970d-90af-45bd-9cfd-c0af757947ea> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8644> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/2876970d-90af-45bd-9cfd-c0af757947ea> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2876970d-90af-45bd-9cfd-c0af757947ea> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/8a5d67b6-4abf-4fae-bedf-78c8882d7d47> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8644> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/8a5d67b6-4abf-4fae-bedf-78c8882d7d47> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/8a5d67b6-4abf-4fae-bedf-78c8882d7d47> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8645/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8645> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8645> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8645/5b264a14-d4db-4352-9278-fbb63c5ebed4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8645> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8645> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8645/3a5275f4-67e5-4371-a31e-68291aa86691> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8645> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/3a5275f4-67e5-4371-a31e-68291aa86691> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8645> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3a5275f4-67e5-4371-a31e-68291aa86691> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8646/02e235f4-a30a-412a-a06e-1c471ad28678> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8646> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8646> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8646/51a26193-9abe-4bce-9108-f50835be1c35> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8646> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8646> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/3a5275f4-67e5-4371-a31e-68291aa86691> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8647> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/3a5275f4-67e5-4371-a31e-68291aa86691> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3a5275f4-67e5-4371-a31e-68291aa86691> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8647> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/d15e92c4-c8dc-48cd-a1f6-94fe13347f87> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8647> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/7bb2bd48-0da4-427a-a94f-1eddf5565eba> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8647> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/7bb2bd48-0da4-427a-a94f-1eddf5565eba> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/7bb2bd48-0da4-427a-a94f-1eddf5565eba> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/3e40c7d0-0e36-4b33-bc33-0aa87eda0561> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8647> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/3e40c7d0-0e36-4b33-bc33-0aa87eda0561> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3e40c7d0-0e36-4b33-bc33-0aa87eda0561> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/95c35c3a-035f-47c2-90cf-7e934d20fc08> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8647> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/5b264a14-d4db-4352-9278-fbb63c5ebed4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8647> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/c12436d4-104c-4f4c-9d6c-ab484ec56612> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8648> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/b75632ce-6175-42d6-b4c9-acb16473a2a4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8648> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b75632ce-6175-42d6-b4c9-acb16473a2a4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b75632ce-6175-42d6-b4c9-acb16473a2a4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/827ebc71-b406-483e-9617-33c63dd487a0> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8648> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/827ebc71-b406-483e-9617-33c63dd487a0> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/827ebc71-b406-483e-9617-33c63dd487a0> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/da40ce72-a158-4116-84d2-01d4924e0667> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8648> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/da40ce72-a158-4116-84d2-01d4924e0667> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/da40ce72-a158-4116-84d2-01d4924e0667> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/03b9b491-fc9b-4868-914a-bf7cd47b5041> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8648> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/03b9b491-fc9b-4868-914a-bf7cd47b5041> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/03b9b491-fc9b-4868-914a-bf7cd47b5041> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8649/2f58fc20-4528-410b-877f-3dec775f1b4e> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8649> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/2f58fc20-4528-410b-877f-3dec775f1b4e> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8649> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2f58fc20-4528-410b-877f-3dec775f1b4e> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8649/0ea0b260-617b-4d04-bf00-988dd0b122e5> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8649> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/0ea0b260-617b-4d04-bf00-988dd0b122e5> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8649> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0ea0b260-617b-4d04-bf00-988dd0b122e5> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8649/1b43a162-4527-4e1a-a189-8c7311d94d66> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8649> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/1b43a162-4527-4e1a-a189-8c7311d94d66> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8649> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1b43a162-4527-4e1a-a189-8c7311d94d66> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8650/39f55791-434d-4169-9a46-c000a2859a66> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8650> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/39f55791-434d-4169-9a46-c000a2859a66> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8650> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/39f55791-434d-4169-9a46-c000a2859a66> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8650/74ad37e3-325b-4ccd-ab2a-04f7696750e8> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8650> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8650> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8650/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8650> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8650> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8650/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8650> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8650> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8650/02e235f4-a30a-412a-a06e-1c471ad28678> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8650> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8650> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8651/2bdc2f65-b42f-4963-abff-d7214ca4caae> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8651> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8651> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8651/68162174-68c3-4601-840b-5e63c2dd7481> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8651> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8651> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8651/5b264a14-d4db-4352-9278-fbb63c5ebed4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8651> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8651> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8651/3d3ee5c3-4286-457f-9f76-1704011f7e11> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8651> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8651> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/5b264a14-d4db-4352-9278-fbb63c5ebed4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8652> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/187f82c7-b165-4e6b-b327-704e38e85cdd> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8652> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/187f82c7-b165-4e6b-b327-704e38e85cdd> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/187f82c7-b165-4e6b-b327-704e38e85cdd> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/68162174-68c3-4601-840b-5e63c2dd7481> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8652> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/7d4d1dae-bcba-47e8-9409-ea52b02ce246> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8652> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/7d4d1dae-bcba-47e8-9409-ea52b02ce246> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/7d4d1dae-bcba-47e8-9409-ea52b02ce246> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/ed938748-60ae-4964-a657-ff2685ecc0d0> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8652> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/334e3e49-fb02-4051-809a-f06adfdc1c40> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8652> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/334e3e49-fb02-4051-809a-f06adfdc1c40> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/334e3e49-fb02-4051-809a-f06adfdc1c40> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8653/0ea0b260-617b-4d04-bf00-988dd0b122e5> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8653> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/0ea0b260-617b-4d04-bf00-988dd0b122e5> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8653> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/0ea0b260-617b-4d04-bf00-988dd0b122e5> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8653/1b43a162-4527-4e1a-a189-8c7311d94d66> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8653> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/1b43a162-4527-4e1a-a189-8c7311d94d66> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8653> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/1b43a162-4527-4e1a-a189-8c7311d94d66> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8653/c12436d4-104c-4f4c-9d6c-ab484ec56612> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8653> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8653> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8653/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8653> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8653> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8654/6122d586-5978-431f-8e7a-96e61fc1f3fc> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8654> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/6122d586-5978-431f-8e7a-96e61fc1f3fc> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8654> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/6122d586-5978-431f-8e7a-96e61fc1f3fc> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8654/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8654> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8654> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8654/ab2bb44a-3956-4028-8715-8b70b1960b99> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8654> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/ab2bb44a-3956-4028-8715-8b70b1960b99> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8654> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ab2bb44a-3956-4028-8715-8b70b1960b99> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/1bc7c69b-4292-4592-b854-f48165a06082> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8655> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/1bc7c69b-4292-4592-b854-f48165a06082> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/1bc7c69b-4292-4592-b854-f48165a06082> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/68162174-68c3-4601-840b-5e63c2dd7481> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8655> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/be99117b-49a1-4ec2-a670-e9baac66c1bd> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8655> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/be99117b-49a1-4ec2-a670-e9baac66c1bd> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/be99117b-49a1-4ec2-a670-e9baac66c1bd> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/f5fa2654-52cc-45d2-ac92-ac979dee5d12> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8655> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/ca64b48c-51ea-4c19-8074-b9cf819cfdd0> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8655> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/ca64b48c-51ea-4c19-8074-b9cf819cfdd0> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ca64b48c-51ea-4c19-8074-b9cf819cfdd0> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/db3c8181-31b4-4950-bf0b-de01f93c372b> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8655> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/db3c8181-31b4-4950-bf0b-de01f93c372b> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/db3c8181-31b4-4950-bf0b-de01f93c372b> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/92f54ff7-f6d8-4702-8e0f-2d7d3254a7fd> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8655> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/92f54ff7-f6d8-4702-8e0f-2d7d3254a7fd> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/92f54ff7-f6d8-4702-8e0f-2d7d3254a7fd> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/8a5d67b6-4abf-4fae-bedf-78c8882d7d47> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8655> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/8a5d67b6-4abf-4fae-bedf-78c8882d7d47> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/8a5d67b6-4abf-4fae-bedf-78c8882d7d47> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8656/b112ead8-6245-49bb-879f-07b1388a1c9b> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8656> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8656> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8656/3a5275f4-67e5-4371-a31e-68291aa86691> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8656> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/3a5275f4-67e5-4371-a31e-68291aa86691> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8656> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3a5275f4-67e5-4371-a31e-68291aa86691> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8656/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM8656> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
+    sssom:mapping_tool "Claude (Anthropic)" .
+<http://psi.udir.no/kl06/KM8656> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> .
+

@@ -10,7 +10,7 @@ Status: 🔜 påbegynt · 💡 idé · ✅ gjort
 | 1 | [Læreplanutsnitt for KI](#1-læreplanutsnitt-for-ki) | ✅ |
 | 2 | [Fritekstsøk med jena-text](#2-fritekstsøk-med-jena-text) | ✅ |
 | 3 | [Historikk: hva endret seg?](#3-historikk-hva-endret-seg) | 💡 satt på vent |
-| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker ✅, NUS og ISCED ✅, ESCO-ferdigheter ✅, kompetansemål ↔ ferdigheter 💡, NKR/ELM venter |
+| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker ✅, NUS og ISCED ✅, ESCO-ferdigheter ✅, kompetansemål ↔ ferdigheter 🔜 pilot ✅, NKR/ELM venter |
 | 5 | [SHACL-former](#5-shacl-former) | 💡 |
 | 6 | [Beskrivelse av datasettet med DCAT og VoID](#6-beskrivelse-av-datasettet-med-dcat-og-void) | ✅ |
 | 7 | [Test eksemplene i bruk.md](#7-test-eksemplene-i-brukmd) | ✅ |
@@ -124,9 +124,22 @@ Dette er det som gjør Grep til en *lenket* graf. Det krever fagavklaring, slik 
 - `sjekk-koblinger.py esco-versjon` melder hver natt et avvik når ESCO har en nyere versjon.
 - Vilkårene for gjenbruk er oppfylt: kildesetningen står der den skal, og den endrede utgaven er merket.
 
+✅ 2026-11-10, pilot: kompetansemål ↔ ESCO-ferdigheter for BMK03-03 (Vg3 bilfaget, lette kjøretøy):
+- 22 kompetansemål og 185 kandidater (ferdighetene til de 10 ESCO-yrkene under ISCO 7231).
+- En språkmodell (Claude) foreslo 95 koblinger, og et menneske godkjente alle.
+- Relasjonene er 5 closeMatch, 53 narrowMatch, 1 broadMatch og 36 relatedMatch. Ett mål, KM8657 om partssamarbeid,
+  har ingen kandidat.
+- Kilden er SSSOM (`ontologi/koblinger/km-esco/BMK03-03.sssom.tsv`). `scripts/lag-km-esco-ttl.py` lager
+  `sssom:Mapping`-noder og direkte SKOS-tripler.
+- bruk.md har spørringer for hull i begge retninger:
+  - kompetansemål uten ESCO-ferdighet;
+  - essensielle ESCO-ferdigheter uten kompetansemål.
+- Plan for automatiske forslag i andre fag: kandidatene er ferdighetene til ESCO-yrkene til programområdet, pluss
+  tverrgående ferdigheter. Vurderingene fra piloten brukes som fasit og som eksempler. Først 2–3 piloter fra andre
+  utdanningsprogram (for eksempel helsefag og elektro), og så skalering med menneskelig kontroll.
+
 Gjenstår:
-- Kobling mellom kompetansemål og ESCO-ferdigheter. Den finnes ikke offisielt og må lages med tekstlikhet eller KI,
-  merkes som forslag og vurderes av fagfolk. Start med en pilot på én læreplan, for eksempel Vg3 i bilfaget.
+- Flere piloter, og så automatiske forslag for resten av læreplanene.
 - Eventuelt fritekstsøk (jena-text) i ferdighetsnavnene.
 - Gå gjennom de 21 usikre NUS-forslagene.
 - NKR- og EQF-nivå for sluttkompetanse.

@@ -183,6 +183,7 @@ last_graf PUT "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/styrk.ttl"
 last_graf POST "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/nus.ttl"   # lages av scripts/lag-nus-ttl.py
 last_graf POST "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/esco-yrker.ttl"   # lages av scripts/lag-esco-ttl.py
 last_graf POST "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/esco-ferdigheter.ttl"   # scripts/lag-esco-ferdigheter-ttl.py
+last_graf POST "$G_KOBLINGER" text/turtle "$REPO/ontologi/koblinger/km-esco.ttl"   # scripts/lag-km-esco-ttl.py (SSSOM)
 
 # 6. Rydd bort data i den lagrede default graph (før B2 lå rådata der).
 #    Med unionDefaultGraph er den usynlig for spørringer; DROP DEFAULT rører ikke named graphs.
@@ -215,6 +216,7 @@ N_NUS=$(sporr "PREFIX udir: <http://psi.udir.no/ontologi/>
 # ESCO: yrker under ISCO-gruppene programområdene er koblet til
 N_ESCO=$(sporr "SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_KOBLINGER> { ?y a <http://data.europa.eu/esco/model#Occupation> } }")
 N_ESCO_FERD=$(sporr "SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_KOBLINGER> { ?f a <http://data.europa.eu/esco/model#Skill> } }")
+N_KM_ESCO=$(sporr "SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_KOBLINGER> { ?m a <https://w3id.org/sssom/Mapping> } }")
 # R1: kompetansemål i LK20 skal ha typen fra Udirs ontologi
 N_KM_TYPE=$(sporr "PREFIX u: <http://psi.udir.no/ontologi/kl06/>
   SELECT (COUNT(*) AS ?n) WHERE { GRAPH <$G_UTLEDET> { ?s a u:Kompetansemaal_lk20 } }")
@@ -268,7 +270,7 @@ N_PERIODER=$(sporr_alle "PREFIX udir: <http://psi.udir.no/ontologi/>
     VALUES ?p { udir:gyldigFra udir:undervisningFra udir:eksamenFra udir:startdato } } } GROUP BY ?p ORDER BY ?p" \
   | sed 's#http://psi.udir.no/ontologi/#udir:#' | tr '\n' ' ')
 logg "Tripler: $G_GREP=$N_GREP, $G_ONTOLOGI=$N_ONT, $G_NORM=$N_NORM, $G_UTLEDET=$N_UTLEDET, $G_KOBLINGER=$N_KOBLINGER"
-logg "Programområder med STYRK-08 (koblinger): $N_STYRK, med NUS: $N_NUS. ESCO-yrker: $N_ESCO, ESCO-ferdigheter: $N_ESCO_FERD"
+logg "Programområder med STYRK-08 (koblinger): $N_STYRK, med NUS: $N_NUS. ESCO-yrker: $N_ESCO, ESCO-ferdigheter: $N_ESCO_FERD, kompetansemål ↔ ESCO: $N_KM_ESCO"
 logg "u:Kompetansemaal_lk20 (utledet): $N_KM_TYPE"
 logg "Overbegreper (utledet): $N_OVERBEGREP"
 logg "Revisjon (utledet): $N_REVISJON, i begge revisjonene: $N_TO_REVISJONER"

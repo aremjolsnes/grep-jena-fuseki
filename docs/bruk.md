@@ -50,6 +50,8 @@ PREFIX nus: <http://psi.udir.no/ontologi/nus/>      # utdanninger i NUS, se «Ko
 PREFIX iscedf: <http://data.europa.eu/esco/isced-f/>  # fagfelt i ISCED-F 2013 (ESCO)
 PREFIX isced2011: <http://psi.udir.no/ontologi/isced2011/>  # nivå i ISCED 2011
 PREFIX esco: <http://data.europa.eu/esco/model#>   # ESCO-modellen (yrker og ferdigheter)
+PREFIX sssom: <https://w3id.org/sssom/>             # koblinger mellom vokabularer (SSSOM)
+PREFIX semapv: <https://w3id.org/semapv/vocab/>     # begrunnelser for koblinger (SSSOM)
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>          # beskrivelse av datasettet, se «Hvor ferske er dataene?»
 PREFIX void: <http://rdfs.org/ns/void#>
@@ -500,7 +502,8 @@ ESCO-versjonen som står i `ontologi/koblinger/esco-ferdigheter.ttl`.
 - Ferdighetene lastes ned fra ESCO (en fil per versjon) og hentes ut med `scripts/lag-esco-ferdigheter-ttl.py`. Den
   nattlige jobben melder et avvik når ESCO har en nyere versjon.
 
-Det finnes ennå ingen kobling mellom kompetansemål og ESCO-ferdigheter.
+Koblinger mellom kompetansemål og ESCO-ferdigheter finnes foreløpig for én læreplan (se «Kompetansemål og
+ESCO-ferdigheter» under).
 
 > **This service uses the ESCO classification of the European Commission.** (Denne tjenesten bruker
 > EU-kommisjonens ESCO-klassifikasjon.) Sandkassen har en *endret* utgave av ESCO: bare et utdrag (yrkene under
@@ -540,6 +543,66 @@ SELECT DISTINCT ?fagfelt ?ferdighet WHERE {
   ?f a esco:Skill ; skos:broader ?iscedf ; skos:prefLabel ?ferdighet .
 } ORDER BY ?ferdighet LIMIT 50
 ```
+
+**Kompetansemål og ESCO-ferdigheter (pilot).** For læreplanen BMK03-03 (Vg3 bilfaget, lette kjøretøy) er
+kompetansemålene koblet til ESCO-ferdighetene til yrkene programområdet utdanner til. Det finnes ingen offisiell
+kobling mellom læreplaner og ESCO. Disse koblingene er sandkassens egne og ikke en del av ESCO. Koblingene ble
+foreslått av en språkmodell og vurdert én for én av et menneske.
+
+Relasjonen leses fra kompetansemålet:
+
+| Relasjon | Betyr | Eksempel |
+|---|---|---|
+| `skos:closeMatch` | omtrent det samme | KM8647 (lavspenningssystemer) ↔ *reparere elektriske kjøretøysystemer* |
+| `skos:narrowMatch` | ferdigheten er en del av målet | KM8640 (hjulutrustning) ↔ *balansere dekk* |
+| `skos:broadMatch` | ferdigheten er bredere enn målet | KM10083 (bremser) ↔ *utføre reparasjoner av kjøretøy* |
+| `skos:relatedMatch` | beslektet, men ikke en del av målet | KM8644 (drivlinjer) ↔ *hybridbilarkitektur* |
+
+Koblingene er beskrevet med [SSSOM](https://mapping-commons.github.io/sssom/), en standard for koblinger mellom
+vokabularer. Hver kobling har en egen node (`sssom:Mapping`) med begrunnelse, forfatter, kontrollør og hvilket
+koblingssett den hører til. Godkjente koblinger finnes i tillegg som direkte SKOS-tripler. Kilden er
+`ontologi/koblinger/km-esco/*.sssom.tsv`.
+
+**Ferdighetene til et kompetansemål:**
+
+```sparql
+SELECT ?relasjon ?ferdighet ?type WHERE {
+  d:KM8644 ?r ?f .
+  ?f a esco:Skill ; skos:prefLabel ?ferdighet ; esco:skillType/skos:prefLabel ?type .
+  VALUES ?r { skos:closeMatch skos:narrowMatch skos:broadMatch skos:relatedMatch }
+  BIND(STRAFTER(STR(?r), "#") AS ?relasjon)
+} ORDER BY ?relasjon ?ferdighet
+```
+
+**Hull 1: kompetansemål uten ESCO-ferdighet.** Hvilke mål i læreplanen fant vi ingen ESCO-ferdighet for?
+
+```sparql
+SELECT ?kode ?tekst WHERE {
+  d:BMK03-03 u:kompetansemaalsett/u:kompetansemaal ?km .
+  ?km u:kode ?kode ; udir:bokmaalTittel ?tekst .
+  FILTER NOT EXISTS {
+    ?km skos:closeMatch|skos:narrowMatch|skos:broadMatch|skos:relatedMatch ?f . ?f a esco:Skill
+  }
+}
+```
+
+**Hull 2: essensielle ESCO-ferdigheter uten kompetansemål.** Hvilke ferdigheter er essensielle for yrkene
+programområdet utdanner til, men ikke koblet til noe kompetansemål i læreplanen?
+
+```sparql
+SELECT ?ferdighet (COUNT(DISTINCT ?y) AS ?antallYrker) WHERE {
+  d:TPBMK3---- udir:yrkesklassifisering/skos:exactMatch ?isco .
+  ?y skos:broader+ ?isco .
+  ?f esco:isEssentialSkillFor ?y ; skos:prefLabel ?ferdighet .
+  FILTER NOT EXISTS {
+    d:BMK03-03 u:kompetansemaalsett/u:kompetansemaal ?km .
+    ?km skos:closeMatch|skos:narrowMatch|skos:broadMatch|skos:relatedMatch ?f
+  }
+} GROUP BY ?ferdighet ORDER BY DESC(?antallYrker) ?ferdighet
+```
+
+Et hull betyr «ikke funnet blant kandidatene». Kandidatene er bare ferdighetene til ESCO-yrkene under ISCO-gruppen
+til programområdet. Et kompetansemål kan derfor passe med en tverrgående ESCO-ferdighet utenfor den listen.
 
 **Utdanninger (NUS og ISCED).** Alle programområdene, også Vg1 og Vg2, er koblet til utdanningen sin i SSBs
 utdanningsgruppering NUS med `udir:utdanningsklassifisering`. Det finnes ingen offisiell tabell fra programområde til
