@@ -546,13 +546,16 @@ SELECT DISTINCT ?fagfelt ?ferdighet WHERE {
 } ORDER BY ?ferdighet LIMIT 50
 ```
 
-**Kompetansemål og ESCO-ferdigheter (pilot).** For tre læreplaner er kompetansemålene koblet til
-ESCO-ferdighetene til yrkene programområdet utdanner til:
-- BMK03-03 (Vg3 bilfaget, lette kjøretøy): 120 koblinger;
-- HEA03-03 (Vg3 helsearbeiderfaget): 115 koblinger;
-- ELE03-04 (Vg3 elektrikerfaget): 106 koblinger. Det finnes ingen offisiell
-kobling mellom læreplaner og ESCO. Disse koblingene er sandkassens egne og ikke en del av ESCO. Koblingene ble
-foreslått av en språkmodell og vurdert én for én av et menneske.
+**Kompetansemål og ESCO-ferdigheter.** Kompetansemålene i Vg3-læreplaner er koblet til ESCO-ferdighetene til yrkene
+programområdet utdanner til, og til ESCOs tverrgående ferdigheter. Det finnes ingen offisiell kobling mellom læreplaner
+og ESCO. Disse koblingene er sandkassens egne og ikke en del av ESCO. En språkmodell foreslår koblingene
+(`scripts/foreslaa-km-esco.py`), og de er av to slag:
+- **Vurdert av et menneske:** pilotene BMK03-03 (120 koblinger), HEA03-03 (115) og ELE03-04 (106), og BKF03-02 (63).
+- **Automatiske og ikke vurdert:** resten. I en prøve ble alle de 403 forslagene som et menneske vurderte,
+  godtatt. Sandkassen tar derfor med de automatiske koblingene og retter heller i etterkant.
+
+Begge slagene har direkte SKOS-tripler. Om et menneske har vurdert koblingen, står i SSSOM-noden
+(`sssom:reviewer_label`; se spørringen under).
 
 Relasjonen leses fra kompetansemålet:
 
@@ -565,8 +568,20 @@ Relasjonen leses fra kompetansemålet:
 
 Koblingene er beskrevet med [SSSOM](https://mapping-commons.github.io/sssom/), en standard for koblinger mellom
 vokabularer. Hver kobling har en egen node (`sssom:Mapping`) med begrunnelse, forfatter, kontrollør og hvilket
-koblingssett den hører til. Godkjente koblinger finnes i tillegg som direkte SKOS-tripler. Kilden er
-`ontologi/koblinger/km-esco/*.sssom.tsv`.
+koblingssett den hører til. Alle koblingene finnes i tillegg som direkte SKOS-tripler. Kilden er
+`ontologi/koblinger/km-esco/*.sssom.tsv`. Forslag som et menneske har avvist, ligger i `*.avvist.tsv` og lastes ikke
+inn.
+
+**Bare koblinger som et menneske har vurdert:**
+
+```sparql
+SELECT ?km ?relasjon ?ferdighet ?kontrollor WHERE {
+  ?m a sssom:Mapping ; sssom:subject_id ?km ; sssom:predicate_id ?r ; sssom:object_id ?f ;
+     sssom:reviewer_label ?kontrollor .
+  ?f skos:prefLabel ?ferdighet .
+  BIND(STRAFTER(STR(?r), "#") AS ?relasjon)
+} ORDER BY ?km LIMIT 100
+```
 
 **Ferdighetene til et kompetansemål:**
 

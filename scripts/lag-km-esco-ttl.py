@@ -6,8 +6,9 @@ Hver kobling fra kompetansemål til ESCO-ferdighet blir:
 - en direkte SKOS-trippel (for eksempel d:KM8640 skos:narrowMatch <ESCO-ferdighet>), slik at det er lett å spørre;
 - en egen node (sssom:Mapping) med det SSSOM sier om koblingen: relasjon, begrunnelse, forfatter, kontrollør, verktøy,
   dato, kommentar og hvilket koblingssett (læreplan) den hører til.
-Bare koblinger med kontrollør (reviewer_label) får den direkte SKOS-trippelen. Forslag som ikke er vurdert, blir
-bare noder.
+Alle koblingene får den direkte SKOS-trippelen, også automatiske forslag som ingen har vurdert (besluttet 10.11.2026:
+sandkassen tar med alt og retter heller i etterkant). Om et menneske har kontrollert koblingen, står i noden
+(sssom:reviewer_label). Avviste forslag ligger i *.avvist.tsv og lastes ikke inn.
 """
 import glob, os, re
 
@@ -67,8 +68,7 @@ def main():
                 if r.get(k):
                     felt.append('sssom:%s %s' % (k, lit(r[k])))
             ut.append(' ;\n    '.join(felt) + ' .')
-            if r.get('reviewer_label'):
-                ut.append('%s %s %s .\n' % (s_, p_, o_))
+            ut.append('%s %s %s .\n' % (s_, p_, o_))
             totalt += 1
     with open(os.path.join(REPO, 'ontologi/koblinger/km-esco.ttl'), 'w', encoding='utf-8', newline='\n') as f:
         f.write('\n'.join(ut) + '\n')
