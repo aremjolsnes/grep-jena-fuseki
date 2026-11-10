@@ -482,14 +482,24 @@ SELECT ?hovedgruppe ?navn (COUNT(DISTINCT ?p) AS ?antall) WHERE {
 } GROUP BY ?hovedgruppe ?navn ORDER BY ?hovedgruppe
 ```
 
-ESCO-yrkene under en ISCO-gruppe ligger hos ESCO, ikke i sandkassen. Slå opp `?isco` i
-[ESCOs API](https://ec.europa.eu/esco/api/resource/concept?uri=http://data.europa.eu/esco/isco/C7231&language=no),
-eller last ned klassifikasjonen fra ESCO. ESCO har ikke noe offentlig SPARQL-endepunkt (sjekket 2026-11-10: verken
-ESCO eller EUs Cellar), så `SERVICE` mot ESCO er ikke mulig.
+**ESCO-yrkene.** Under ISCO-gruppene ligger ESCOs yrker. Sandkassen har med alle ESCO-yrkene under gruppene
+programområdene er koblet til, også underyrkene: rundt 700 yrker, hvert med norsk navn, norsk beskrivelse
+(`skos:definition`), ESCO-kode og `skos:broader` til ISCO-gruppen eller yrket over. URI-ene er ESCOs egne. ESCO har
+ikke noe offentlig SPARQL-endepunkt, så yrkene hentes fra ESCO-API-et med `scripts/lag-esco-ttl.py`. Ferdighetene
+til hvert yrke er ikke med ennå. Kilde: ESCO, © Den europeiske union.
+
+**Hvilke ESCO-yrker utdanner Bilfaget, tunge kjøretøy til?**
+
+```sparql
+SELECT ?kode ?yrke ?beskrivelse WHERE {
+  d:TPBTK3---- udir:yrkesklassifisering/skos:exactMatch ?isco .
+  ?y skos:broader+ ?isco ; skos:notation ?kode ; skos:prefLabel ?yrke ; skos:definition ?beskrivelse .
+} ORDER BY ?kode
+```
 
 **Utdanninger (NUS og ISCED).** Alle programområdene, også Vg1 og Vg2, er koblet til utdanningen sin i SSBs
 utdanningsgruppering NUS med `udir:utdanningsklassifisering`. Det finnes ingen offisiell tabell fra programområde til
-NUS, så koblingen er sandkassens forslag. NUS-koden har `skos:broadMatch` videre til fagfeltet i ISCED-F 2013 (som ESCO
+NUS, så koblingen er sandkassens eksperimentelle forslag. NUS-koden har `skos:broadMatch` videre til fagfeltet i ISCED-F 2013 (som ESCO
 publiserer) og nivået i ISCED 2011, etter SSBs egne korrespondansetabeller. Det er klassifiseringene som brukes i
 europeisk utdanningsstatistikk og i Europass.
 

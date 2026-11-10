@@ -76,4 +76,6 @@ ds:utledet a void:Dataset ; sd:name <urn:graph:utledet> ;
     dcterms:description "Typer, revisjon, SKOS-begreper, språk koblet til EUs språktabell, Dublin Core og schema.org."@nb .
 ds:koblinger a void:Dataset ; sd:name <urn:graph:koblinger> ;
     dcterms:title "Koblinger til andre kunnskapsgrafer"@nb ;
-    dcterms:description "STYRK-08 som begrepssystem, med kobling til ISCO-08 i ESCO, og yrkesklassifisering av programområder."@nb .
+    dcterms:description "STYRK-08 og NUS som begrepssystemer, med kobling til ISCO-08, ISCED-F 2013 og ISCED 2011, yrkes- og utdanningsklassifisering av programområder, og ESCO-yrkene under ISCO-gruppene."@nb ;
+    dcterms:source <https://www.ssb.no/klass/>, <https://esco.ec.europa.eu> ;
+    dcterms:rights "ESCO: © Den europeiske union, fri gjenbruk med kildehenvisning. STYRK-08 og NUS: SSB."@nb .

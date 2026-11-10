@@ -10,7 +10,7 @@ Status: 🔜 påbegynt · 💡 idé · ✅ gjort
 | 1 | [Læreplanutsnitt for KI](#1-læreplanutsnitt-for-ki) | ✅ |
 | 2 | [Fritekstsøk med jena-text](#2-fritekstsøk-med-jena-text) | ✅ |
 | 3 | [Historikk: hva endret seg?](#3-historikk-hva-endret-seg) | 💡 satt på vent |
-| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker via ISCO ✅, NUS og ISCED ✅, NKR/ELM venter |
+| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker ✅, NUS og ISCED ✅, ESCO-ferdigheter 💡, NKR/ELM venter |
 | 5 | [SHACL-former](#5-shacl-former) | 💡 |
 | 6 | [Beskrivelse av datasettet med DCAT og VoID](#6-beskrivelse-av-datasettet-med-dcat-og-void) | ✅ |
 | 7 | [Test eksemplene i bruk.md](#7-test-eksemplene-i-brukmd) | ✅ |
@@ -106,8 +106,17 @@ Dette er det som gjør Grep til en *lenket* graf. Det krever fagavklaring, slik 
 - `scripts/sjekk-koblinger.py` melder hver natt avvik for koder SSB har tatt ut, og for programområder som ikke er
   vurdert. Neste steg kan være at skriptet foreslår koder for nye programområder automatisk.
 
+✅ 2026-11-10, ESCO-yrker:
+- ESCO-yrkene under de ISCO-gruppene programområdene er koblet til, også underyrkene, ligger i
+  `ontologi/koblinger/esco-yrker.ttl` og i `urn:graph:koblinger`.
+- Hvert yrke har norsk navn (`@nb`; ESCO kaller det `no`), norsk beskrivelse, ESCO-kode og `skos:broader`.
+- ESCO har ikke noe SPARQL-endepunkt, så yrkene hentes fra API-et med `scripts/lag-esco-ttl.py`. Skriptet kjøres for hånd
+  og tar flere minutter.
+- `SERVICE` står på i Fuseki, fordi det kan bli nyttig for ELM.
+
 Gjenstår:
-- ESCO-ferdigheter for kompetansemål. Det er et større arbeid.
+- ESCO-ferdigheter. I snitt har hvert yrke 18,5 essensielle og 17 valgfrie, til sammen rundt 26 000 koblinger.
+  Først ferdighetene til yrkene, så eventuelt kobling til kompetansemål. Det er et større arbeid.
 - Gå gjennom de 21 usikre NUS-forslagene.
 - NKR- og EQF-nivå for sluttkompetanse.
 - ELM.
