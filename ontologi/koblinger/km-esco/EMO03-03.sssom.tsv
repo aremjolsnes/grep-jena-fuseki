@@ -1,0 +1,22 @@
+# curie_map:
+#   grep: http://psi.udir.no/kl06/
+#   escoskill: http://data.europa.eu/esco/skill/
+#   skos: http://www.w3.org/2004/02/skos/core#
+#   semapv: https://w3id.org/semapv/vocab/
+# mapping_set_id: http://psi.udir.no/kl06/kobling/km-esco/EMO03-03
+# mapping_set_title: Kompetansemål i EMO03-03 (Læreplan i vg3 energimontørfaget) koblet til ESCO-ferdigheter
+# mapping_set_description: >-
+#   Grep-sandkassens koblinger fra kompetansemålene i læreplanen EMO03-03 til ESCO-ferdighetene (v1.2.1) til
+#   yrkene under ISCO 7413, og til ESCOs tverrgående ferdigheter (utenom språk). Forslagene er laget automatisk
+#   av en språkmodell (claude-opus-5-5) med pilotene BMK03-03, HEA03-03 og ELE03-04 som eksempler, med
+#   scripts/foreslaa-km-esco.py. Rader uten reviewer_label er ikke vurdert av et menneske ennå. Relasjonen leses fra
+#   kompetansemålet: narrowMatch betyr at ferdigheten er en del av målet, broadMatch at den er bredere,
+#   relatedMatch at den er beslektet. Koblingene er ikke en del av ESCO. This service uses the ESCO classification
+#   of the European Commission.
+# license: https://data.norge.no/nlod/no/2.0
+# subject_source: http://psi.udir.no/kl06/EMO03-03
+# object_source: http://data.europa.eu/esco/
+# object_source_version: v1.2.1
+# mapping_date: 2026-11-11
+subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	author_label	reviewer_label	mapping_tool	comment
+
