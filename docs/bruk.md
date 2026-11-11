@@ -640,6 +640,8 @@ europeisk utdanningsstatistikk og i Europass.
 - Finnes koden både i ny og gammel ordning, får utgåtte programområder gammel ordning og publiserte ny.
 - Varianter for Steinerskolen, Montessori og Den tyske skole har samme kode som den vanlige utgaven av
   programområdet.
+- 21 koblinger der navnet ikke stemte, er vurdert av et menneske (metoden «manuell»). Har NUS ikke fått det nye
+  navnet, er koden for en eldre utgave, for eksempel «Sykkelmekanikerfaget» og NUS 455240 «Sykkelreparatør, VK II».
 - Første siffer i NUS-koden er nivået: 3 er videregående grunnutdanning (Vg1 og Vg2), og 4 er videregående
   avsluttende utdanning (Vg3).
 - Kilden er [ontologi/koblinger/nus.csv](https://github.com/aremjolsnes/grep-jena-fuseki/blob/main/ontologi/koblinger/nus.csv).

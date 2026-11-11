@@ -4640,7 +4640,7 @@ d:DTTRD3---- udir:utdanningsklassifisering nus:416115 .
 d:DTTSK3---- udir:utdanningsklassifisering nus:458342 .
 d:DTUIM2---- udir:utdanningsklassifisering nus:355304 .
 d:DTURM3---- udir:utdanningsklassifisering nus:455311 .
-d:DTVHD3---- udir:utdanningsklassifisering nus:416101 .
+d:DTVHD3---- udir:utdanningsklassifisering nus:416114 .
 d:ELAUT2---- udir:utdanningsklassifisering nus:355101 .
 d:ELAUT3---- udir:utdanningsklassifisering nus:455102 .
 d:ELAVI3---- udir:utdanningsklassifisering nus:455101 .

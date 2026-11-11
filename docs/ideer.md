@@ -97,7 +97,7 @@ Dette er det som gjør Grep til en *lenket* graf. Det krever fagavklaring, slik 
 - Kilden er `ontologi/koblinger/nus.csv`:
   - 421 har samme navn og trinn som i NUS;
   - 29 er privatskolevarianter med samme kode som den vanlige utgaven;
-  - 41 er forslag, og 21 av dem er usikre;
+  - 41 er forslag; de 21 usikre er vurdert av et menneske 2026-11-11 (metoden «manuell»);
   - 6 er uten kobling, for eksempel Reform 94-plassholdere.
 - Finnes både ny og gammel ordning i NUS, får utgåtte programområder gammel ordning.
 - NUS-kodene har `skos:broadMatch` til ISCED-F 2013 i ESCO (44 fagfelt, alle sjekket) og ISCED 2011 (5 nivåer,
@@ -174,7 +174,6 @@ Gjenstår:
   Nei flytter raden til `<læreplan>.avvist.tsv`. Godkjente rader blir nye eksempler, og avviste blir moteksempler i
   neste kjøring.
 - Eventuelt fritekstsøk (jena-text) i ferdighetsnavnene.
-- Gå gjennom de 21 usikre NUS-forslagene.
 - NKR- og EQF-nivå for sluttkompetanse.
 - ELM.
 

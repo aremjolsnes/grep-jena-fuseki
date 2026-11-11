@@ -8,7 +8,7 @@ BAASF3----,publisert,vg3,Asfaltfaget,457102,"Asfaltfaget, Vg3",ssb-navn,sikker,
 BABAN3----,publisert,vg3,Banemontørfaget,457103,"Banemontørfaget, Vg3",ssb-navn,sikker,
 BABAT1----,publisert,vg1,Bygg- og anleggsteknikk,357125,"Bygg- og anleggsteknikk, Vg1",ssb-navn,sikker,
 BABAT1RS--,utgaatt,vg1,"Bygg og anleggsfag, 1. år",357125,"Bygg- og anleggsteknikk, Vg1",som-vanlig-utgave,sikker,Samme kode som BABAT1----
-BABAT2RS--,utgaatt,vg2,"Bygg og anleggsfag, 2. år",357130,"Bygg- og anleggsteknikk, uspesifisert, Vg2",forslag,usikker,
+BABAT2RS--,utgaatt,vg2,"Bygg og anleggsfag, 2. år",357130,"Bygg- og anleggsteknikk, uspesifisert, Vg2",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 BABDR3----,publisert,vg3,Byggdrifterfaget,457136,"Byggdrifterfaget, Vg2 og Vg3, særløp",ssb-navn,sikker,
 BABET3----,publisert,vg3,Betongfaget,457133,"Betongfaget, Vg3",ssb-navn,sikker,
 BABFB3----,publisert,vg3,Brannforebygger,482501,"Brannforebygger, Vg2 og Vg3, særløp",ssb-navn,sikker,
@@ -171,17 +171,17 @@ DTTRD3----,publisert,vg3,Treduodjifaget,416115,"Treduodjifaget, Vg3",ssb-navn,si
 DTTSK3----,publisert,vg3,Treskjærerfaget,458342,"Treskjærerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
 DTUIM2----,publisert,vg2,Urmaker,355304,"Urmaker, Vg2",ssb-navn,sikker,
 DTURM3----,publisert,vg3,Urmakerfaget,455311,"Urmakerfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
-DTVHD3----,publisert,vg3,Ull- og garnduodjifaget,416101,"Duodjifaget, Vg3",forslag,usikker,
+DTVHD3----,publisert,vg3,Ull- og garnduodjifaget,416114,"Tekstilduodjifaget, Vg3",manuell,sikker,"Ull og garn er tekstil; byttet fra 416101 Duodjifaget, Vg3. Vurdert av Are Mjølsnes 2026-11-11"
 ELAUT2----,publisert,vg2,Automatisering,355101,"Automatisering, Vg2",ssb-navn,sikker,
 ELAUT3----,publisert,vg3,Automatiseringsfaget,455102,"Automatiseringsfaget, Vg3",ssb-navn,sikker,
 ELAVI3----,publisert,vg3,Avionikerfaget,455101,"Avionikerfaget, Vg3",ssb-navn,sikker,
 ELAVI4----,publisert,opplaering_bedrift,Avionikerfaget,455141,"Avionikerfaget, Vg4",ssb-navn,sikker,
 ELDAT3----,publisert,vg3,Dataelektronikerfaget,455128,"Dataelektronikerfaget, Vg3",ssb-navn,sikker,
-ELDEL2----,publisert,vg2,Datateknologi og elektronikk,355105,"Data og elektronikk, Vg2",forslag,usikker,
+ELDEL2----,publisert,vg2,Datateknologi og elektronikk,355105,"Data og elektronikk, Vg2",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 ELDRF2----,publisert,vg2,Dronefag,355119,"Dronefag, Vg2",ssb-navn,sikker,
 ELDRF3----,publisert,vg3,Droneoperatørfaget,455146,"Droneoperatørfaget, Vg3",ssb-navn,sikker,
 ELELE1----,publisert,vg1,Elektro og datateknologi,355112,"Elektro og datateknologi, Vg1",ssb-navn,sikker,
-ELELE2----,publisert,vg2,Elenergi og ekom,355104,"Elenergi, Vg2",forslag,usikker,
+ELELE2----,publisert,vg2,Elenergi og ekom,355104,"Elenergi, Vg2",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 ELELE3----,publisert,vg3,Elektrikerfaget,455103,"Elektrikerfaget, Vg3",ssb-navn,sikker,
 ELEMO3----,publisert,vg3,Energimontørfaget,455106,"Energimontørfaget, Vg3",ssb-navn,sikker,
 ELEOP3----,publisert,vg3,Energioperatørfaget,455107,"Energioperatørfaget, Vg3",ssb-navn,sikker,
@@ -193,7 +193,7 @@ ELFST4----,publisert,opplaering_bedrift,Flystrukturmekanikerfaget,455114,"Flystr
 ELFSY4----,publisert,opplaering_bedrift,Flysystemmekanikerfaget,455116,"Flysystemmekanikerfaget, Vg4",ssb-navn,sikker,
 ELFUO3----,publisert,vg3,Fjernstyrte undervannsoperasjoner,455140,"Fjernstyrte undervannsoperasjoner, Vg3",ssb-navn,sikker,
 ELHEI3----,publisert,vg3,Heismontørfaget,455117,"Heismontørfaget, Vg3",ssb-navn,sikker,
-ELKUL3----,utgaatt,vg3,Kulde- og varmepumpemontørfaget,455118,"Kulde- og varmepumpeteknikkfaget, Vg3",forslag,usikker,
+ELKUL3----,utgaatt,vg3,Kulde- og varmepumpemontørfaget,455118,"Kulde- og varmepumpeteknikkfaget, Vg3",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 ELKVP3----,publisert,vg3,Kulde- og varmepumpeteknikkfaget,455118,"Kulde- og varmepumpeteknikkfaget, Vg3",ssb-navn,sikker,
 ELKVT2----,utgaatt,vg2,Kulde- og varmepumpeteknikk,355109,"Kulde- og varmepumpeteknikk, Vg2",ssb-navn,sikker,
 ELKVV2----,publisert,vg2,"Kulde-, varmepumpe- og ventilasjonsteknikk",355117,"Kulde-, varmepumpe- og ventilasjonsteknikk, Vg2",ssb-navn,sikker,
@@ -209,7 +209,7 @@ ELTEL3----,publisert,vg3,Telekommunikasjonsmontørfaget,455132,"Telekommunikasjo
 ELTOG3----,publisert,vg3,Togelektrikerfaget,455134,"Togelektrikerfaget, Vg3",ssb-navn,sikker,
 ELVEN3----,publisert,vg3,Ventilasjonsteknikkfaget,455145,"Ventilasjonsteknikkfaget, Vg3",ssb-navn,sikker,
 ELVIK3----,publisert,vg3,Viklerfaget,455135,"Viklerfaget, Vg3",ssb-navn,sikker,
-ELVTR3----,utgaatt,vg3,Vikler- og transformatormontørfaget,455135,"Viklerfaget, Vg3",forslag,usikker,
+ELVTR3----,utgaatt,vg3,Vikler- og transformatormontørfaget,455135,"Viklerfaget, Vg3",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 FDBLD2----,publisert,vg2,Blomsterdekoratør,316918,"Blomsterdekoratør, Vg2",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
 FDBLD3----,publisert,vg3,Blomsterdekoratørfaget,416908,"Blomsterdekoratørfaget, Vg3",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
 FDEKD3----,publisert,vg3,Eksponeringsdesign,416504,"Eksponeringsdesign, Vg3",ssb-navn,sikker,
@@ -235,7 +235,7 @@ HSHES2----,publisert,vg2,Helseservicefag,369905,"Helseservicefag, Vg2",ssb-navn,
 HSHSE3----,publisert,vg3,Helsesekretær,469908,"Helsesekretær, Vg3",ssb-navn,sikker,
 HSHSF1----,publisert,vg1,Helse- og oppvekstfag,369913,"Helse- og oppvekstfag, Vg1",ssb-navn,sikker,
 HSHUD2----,publisert,vg2,Hudpleie,383104,"Hudpleie, Vg2",ssb-navn,sikker,
-HSHUD3----,publisert,vg3,Hudterapi,483104,"Hudpleier, Vg3",forslag,usikker,
+HSHUD3----,publisert,vg3,Hudterapi,483104,"Hudpleier, Vg3",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 HSORT3----,publisert,vg3,Ortopediteknikkfaget,469905,"Ortopediteknikkfaget, Vg3",ssb-navn,sikker,
 HSPOR3----,publisert,vg3,Portørfaget,469911,"Portørfaget, Vg3",ssb-navn,sikker,
 HSTAN3----,publisert,vg3,Tannhelsesekretær,464201,"Tannhelsesekretær, Vg3",ssb-navn,sikker,
@@ -266,7 +266,7 @@ MDDRA3----,publisert,vg3,Drama vg3,415201,"Drama, Vg3",ssb-navn,sikker,
 MDDRA3RS--,publisert,vg3,"Teater, Steinerskolen, 3. år",415201,"Drama, Vg3",som-vanlig-utgave,sikker,Samme kode som MDDRA3----
 MDMDD1----,publisert,vg1,"Musikk, dans og drama vg1",315903,"Musikk, dans og drama, Vg1",ssb-navn,sikker,
 MDMDR1RS--,publisert,vg1,"Musikkteater, Steinerskolen, 1. år",315903,"Musikk, dans og drama, Vg1",forslag,sikker,
-MDMDR2RS--,publisert,vg2,"Musikkteater, Steinerskolen, 2. år",315201,"Musikkteaterutdanning, videregående, grunnutdanning",forslag,usikker,
+MDMDR2RS--,publisert,vg2,"Musikkteater, Steinerskolen, 2. år",315201,"Musikkteaterutdanning, videregående, grunnutdanning",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 MDMDR3RS--,publisert,vg3,"Musikkteater, Steinerskolen, 3. år",,,ingen,,
 MDMUS1RS--,publisert,vg1,"Musikk, Steinerskolen, 1. år",315903,"Musikk, dans og drama, Vg1",forslag,sikker,
 MDMUS2----,publisert,vg2,Musikk vg2,315103,"Musikk, Vg2",ssb-navn,sikker,
@@ -281,15 +281,15 @@ MEMOK3----,publisert,vg3,Medier og kommunikasjon vg3,435102,"Medier og kommunika
 MEMOK3RS--,publisert,vg3,"Medier og kommunikasjon, Steinerskolen, 3. år",435102,"Medier og kommunikasjon, Vg3 (studieforberedende)",forslag,sikker,
 MKFTG3----,utgaatt,vg3,Fotograffaget,416301,"Fotograffaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
 MKMDE3----,utgaatt,vg3,Mediedesign,416402,"Mediedesign, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
-MKMED1----,utgaatt,vg1,Medier og kommunikasjon vg1,335104,"Medier og kommunikasjon, Vg1 (yrkesfaglig)",forslag,usikker,
-MKMED1RS--,utgaatt,vg1,"Medier og kommunikasjon, 1. år",335104,"Medier og kommunikasjon, Vg1 (yrkesfaglig)",forslag,usikker,
-MKMED2----,utgaatt,vg2,Medier og kommunikasjon vg2,335103,"Medier og kommunikasjon, Vg2 (yrkesfaglig)",forslag,usikker,
-MKMED2RS--,utgaatt,vg2,"Medier og kommunikasjon, Steinerskolen, 2. år",335103,"Medier og kommunikasjon, Vg2 (yrkesfaglig)",forslag,usikker,
+MKMED1----,utgaatt,vg1,Medier og kommunikasjon vg1,335104,"Medier og kommunikasjon, Vg1 (yrkesfaglig)",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
+MKMED1RS--,utgaatt,vg1,"Medier og kommunikasjon, 1. år",335104,"Medier og kommunikasjon, Vg1 (yrkesfaglig)",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
+MKMED2----,utgaatt,vg2,Medier og kommunikasjon vg2,335103,"Medier og kommunikasjon, Vg2 (yrkesfaglig)",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
+MKMED2RS--,utgaatt,vg2,"Medier og kommunikasjon, Steinerskolen, 2. år",335103,"Medier og kommunikasjon, Vg2 (yrkesfaglig)",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 MKMED3----,utgaatt,vg3,Studieforberedende vg3 innen medier og kommunikasjon,435101,"Medier og kommunikasjon, Vg3 (studieforberedende, gammel ordning)",forslag,sikker,
-MKMED3RS--,utgaatt,vg3,"Påbygging til generell studiekompetanse for medier og kommunikasjon, Steinerskolen",401110,"Påbygging til generell studiekompetanse (alle yrkesfaglige utdanningsprogram), Vg3",forslag,usikker,
+MKMED3RS--,utgaatt,vg3,"Påbygging til generell studiekompetanse for medier og kommunikasjon, Steinerskolen",401110,"Påbygging til generell studiekompetanse (alle yrkesfaglige utdanningsprogram), Vg3",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 MKMGR3----,utgaatt,vg3,Mediegrafikerfaget,416408,"Mediegrafikerfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
-MKMIT1RS--,utgaatt,vg1,"Medier og kommunikasjon med IKT,  1. år",335104,"Medier og kommunikasjon, Vg1 (yrkesfaglig)",forslag,usikker,
-MKMIT2RS--,utgaatt,vg2,"Medier og kommunikasjon med IKT, 2. år",335103,"Medier og kommunikasjon, Vg2 (yrkesfaglig)",forslag,usikker,
+MKMIT1RS--,utgaatt,vg1,"Medier og kommunikasjon med IKT,  1. år",335104,"Medier og kommunikasjon, Vg1 (yrkesfaglig)",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
+MKMIT2RS--,utgaatt,vg2,"Medier og kommunikasjon med IKT, 2. år",335103,"Medier og kommunikasjon, Vg2 (yrkesfaglig)",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 NAAGR3----,utgaatt,vg3,Landbruk,479901,"Landbruk, Vg3",ssb-navn,sikker,
 NAAID2----,utgaatt,vg2,Anleggsgartner- og idrettsanleggsfag,373101,"Anleggsgartner- og idrettsanleggsfag, Vg2",ssb-navn,sikker,
 NAAKV2----,publisert,vg2,Akvakultur,371901,"Akvakultur, Vg2",ssb-navn,sikker,
@@ -322,8 +322,8 @@ NAREI3----,publisert,vg3,Reindriftsfaget,479908,"Reindriftsfaget, Vg3",ssb-navn,
 NASBR2----,publisert,vg2,Skogbruk,374102,"Skogbruk, Vg2",ssb-navn,sikker,
 NASKF3----,publisert,vg3,Skogfaget,474102,"Skogfaget, Vg3",ssb-navn,sikker,
 PBPBY3----,publisert,vg3,Vg3 påbygging til generell studiekompetanse for yrkesfaglige utdanningsprogram,401110,"Påbygging til generell studiekompetanse (alle yrkesfaglige utdanningsprogram), Vg3",forslag,sikker,
-PBPBY3RS--,utgaatt,vg3,Påbygging til generell studiekompetanse for medier og kommunikasjon,401110,"Påbygging til generell studiekompetanse (alle yrkesfaglige utdanningsprogram), Vg3",forslag,usikker,
-PBPBY4----,publisert,paabygning_generell_studiekompetanse,Fag for studiekompetanse,401105,"Studiespesialisering, studiekompetansegivende enkeltfag/delkurs, Vg3",forslag,usikker,
+PBPBY3RS--,utgaatt,vg3,Påbygging til generell studiekompetanse for medier og kommunikasjon,401110,"Påbygging til generell studiekompetanse (alle yrkesfaglige utdanningsprogram), Vg3",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
+PBPBY4----,publisert,paabygning_generell_studiekompetanse,Fag for studiekompetanse,401105,"Studiespesialisering, studiekompetansegivende enkeltfag/delkurs, Vg3",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 R94GK1----,publisert,vg1,Reform 94 - grunnkurs for vg1,,,ingen,,
 R94VKI----,publisert,vg2,Reform 94  - VKI for vg2,,,ingen,,
 RMBAK2----,publisert,vg2,Baker og konditor,358120,"Baker og konditor, Vg2",ssb-navn,sikker,
@@ -370,7 +370,7 @@ SSSSA1----,utgaatt,vg1,Service og samferdsel,349904,"Service og samferdsel, Vg1"
 SSSSS2----,utgaatt,vg2,"Salg, service og sikkerhet",349905,"Salg, service og sikkerhet, Vg2",ssb-navn,sikker,
 SSTRL2----,utgaatt,vg2,Transport og logistikk,381904,"Transport og logistikk, Vg2 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
 SSYRK3----,utgaatt,vg3,Yrkessjåførfaget,481401,"Yrkessjåførfaget, Vg3 (gammel ordning)",ssb-navn,sikker,Ny og gammel ordning finnes i NUS; valgt etter status
-SSYSL3----,utgaatt,vg3,Yrkessjåførkurs for voksne,481401,"Yrkessjåførfaget, Vg3 (gammel ordning)",forslag,usikker,
+SSYSL3----,utgaatt,vg3,Yrkessjåførkurs for voksne,481401,"Yrkessjåførfaget, Vg3 (gammel ordning)",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 STFOR1----,utgaatt,vg1,Studiespesialisering med formgivingsfag vg1,301119,"Studiespesialisering med formgivingsfag, Vg1",ssb-navn,sikker,
 STFOR1RS--,utgaatt,vg1,"Studiespesialiserende, kunstfag , 1. år",301119,"Studiespesialisering med formgivingsfag, Vg1",som-vanlig-utgave,sikker,Samme kode som STFOR1----
 STFOR2----,utgaatt,vg2,Formgivingsfag vg2,301112,"Formgivingsfag, Vg2",ssb-navn,sikker,
@@ -387,9 +387,9 @@ STREA3MO--,publisert,vg3,Realfag vg3 Montessori,401111,"Realfag, Vg3",som-vanlig
 STREA3RS--,publisert,vg3,"Studiespesialiserende, Steinerskolen, realfag 3. år",401111,"Realfag, Vg3",som-vanlig-utgave,sikker,Samme kode som STREA3----
 STREA3TY--,publisert,vg3,Realfag vg3 tyske skole,401111,"Realfag, Vg3",som-vanlig-utgave,sikker,Samme kode som STREA3----
 STSAM2----,utgaatt,vg2,Samfunnsfag og økonomi vg2,301114,"Samfunnsfag og økonomi, Vg2",ssb-navn,sikker,
-STSAM3----,utgaatt,vg3,Samfunnsfag og økonomi vg3,401112,"Språk, samfunnsfag og økonomi, Vg3",forslag,usikker,
+STSAM3----,utgaatt,vg3,Samfunnsfag og økonomi vg3,401112,"Språk, samfunnsfag og økonomi, Vg3",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 STSPR2----,utgaatt,vg2,Språkfag vg2,301115,"Språkfag, Vg2",ssb-navn,sikker,
-STSPR3----,utgaatt,vg3,Språkfag vg3,401112,"Språk, samfunnsfag og økonomi, Vg3",forslag,usikker,
+STSPR3----,utgaatt,vg3,Språkfag vg3,401112,"Språk, samfunnsfag og økonomi, Vg3",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 STSSA1RS--,publisert,vg1,"Studiespesialiserende, Steinerskolen, humanistfag 1. år",301111,"Studiespesialisering, Vg1",som-vanlig-utgave,sikker,Samme kode som STUSP1----
 STSSA2----,publisert,vg2,"Språk, samfunnsfag og økonomi vg2",301117,"Språk, samfunnsfag og økonomi, Vg2",ssb-navn,sikker,
 STSSA2MO--,publisert,vg2,"Språk, samfunnsfag og økonomi vg2 Montessori",301117,"Språk, samfunnsfag og økonomi, Vg2",som-vanlig-utgave,sikker,Samme kode som STSSA2----
@@ -483,7 +483,7 @@ TPSGR3----,publisert,vg3,Serigrafifaget,455237,"Serigrafifaget, Vg3",ssb-navn,si
 TPSMK3----,publisert,vg3,Skipsmotormekanikerfaget,455231,"Skipsmotormekanikerfaget, Vg3",ssb-navn,sikker,
 TPSTF3----,utgaatt,vg3,Støperifaget,455242,"Støperifaget, Vg3",ssb-navn,sikker,
 TPSVE3----,publisert,vg3,Sveisefaget,455239,"Sveisefaget, Vg3",ssb-navn,sikker,
-TPSYM3----,publisert,vg3,Sykkelmekanikerfaget,455240,"Sykkelreparatør, VK II",forslag,usikker,
+TPSYM3----,publisert,vg3,Sykkelmekanikerfaget,455240,"Sykkelreparatør, VK II",manuell,sikker,Vurdert av Are Mjølsnes 2026-11-11
 TPTEP3----,utgaatt,vg3,Termoplastfaget,458329,"Termoplastfaget, Vg3",ssb-navn,sikker,
 TPTIP1----,publisert,vg1,Teknologi- og industrifag,355901,"Teknologi- og industrifag, Vg1",ssb-navn,sikker,
 TPTLM3----,publisert,vg3,Truck- og liftmekanikerfaget,455255,"Truck- og liftmekanikerfaget, Vg3",ssb-navn,sikker,
