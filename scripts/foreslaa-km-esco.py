@@ -335,6 +335,7 @@ def main():
     total = 0.0
     oppsummering = []
     behandlet = 0
+    tomme_paa_rad = 0  # læreplaner på rad uten kompetansemål; flere tyder på at Grep-dataene mangler (innlasting pågår?)
     for kode in valgt:
         if kun_antall and behandlet >= a.antall:
             break
@@ -343,6 +344,16 @@ def main():
             break
         lp = lp_alle[kode]
         km = kompetansemaal(kode)
+        if not km:  # ingen fil skrives, så læreplanen blir med i køen neste gang
+            tomme_paa_rad += 1
+            print('\n%s: hoppet over, fant ingen kompetansemål' % kode)
+            oppsummering.append((kode, 'ingen kompetansemål', '-', 0.0))
+            if tomme_paa_rad >= 3:
+                print('::error::Stopper: %d læreplaner på rad uten kompetansemål. Grep-dataene ser ut til å mangle '
+                      'i endepunktet (pågår innlastingen?). Kjør på nytt når den er ferdig.' % tomme_paa_rad)
+                break
+            continue
+        tomme_paa_rad = 0
         kand = ferdigheter_til_yrker(lp['isco'])
         for i, f in enumerate(kand, 1):
             f['id'] = 'F%d' % i

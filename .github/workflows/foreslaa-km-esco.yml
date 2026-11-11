@@ -24,8 +24,11 @@ on:
         required: false
         default: '10'
 
+# Samme gruppe som innlastingen og komprimeringen: forslagene leser kompetansemålene fra endepunktet, og under en
+# innlasting kan grafen være tom. (GitHub holder bare én ventende kjøring per gruppe; en ventende pulje kan derfor bli
+# avbrutt av en ny innlasting. Da er det bare å starte den på nytt; den har ikke kostet noe.)
 concurrency:
-  group: foreslaa-km-esco
+  group: ingest
   cancel-in-progress: false
 
 jobs:
