@@ -12,8 +12,14 @@ PREFIX tdb2:   <http://jena.apache.org/2016/tdb#>
 PREFIX text:   <http://jena.apache.org/text#>
 PREFIX u:      <http://psi.udir.no/ontologi/kl06/>
 PREFIX udir:   <http://psi.udir.no/ontologi/>
+PREFIX ja:     <http://jena.hpl.hp.com/2005/11/Assembler#>
 
-[] rdf:type fuseki:Server .
+# Tidsgrense for spørringer: 2 minutter. Uten den fortsetter Fuseki å kjøre en tung spørring etter at
+# klienten har gitt opp, og maskinen blir utilgjengelig til den startes på nytt (skjedde 2026-11-11).
+# Den lengste spørringen i den nattlige innlastingen (kontrollen «Datoer med urimelig årstall») tar
+# ca. 90 s, så grensen bør ikke være lavere. Gjelder bare spørringer, ikke SPARQL Update (MOVE, reglene).
+[] rdf:type fuseki:Server ;
+    ja:context [ ja:cxtName "arq:queryTimeout" ; ja:cxtValue "120000" ] .
 
 <#service> rdf:type fuseki:Service ;
     fuseki:name "ds" ;
