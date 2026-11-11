@@ -23,6 +23,10 @@ on:
         description: 'Kostnadsgrense i USD for kjøringen'
         required: false
         default: '10'
+      bare_tverrgaaende:
+        description: 'Kjør læreplaner uten ESCO-yrker med bare de tverrgående ferdighetene'
+        type: boolean
+        default: false
 
 # Samme gruppe som innlastingen og komprimeringen: forslagene leser kompetansemålene fra endepunktet, og under en
 # innlasting kan grafen være tom. (GitHub holder bare én ventende kjøring per gruppe; en ventende pulje kan derfor bli
@@ -54,8 +58,10 @@ jobs:
           ANTALL: ${{ inputs.antall }}
           EFFORT: ${{ inputs.effort }}
           MAKS_DOLLAR: ${{ inputs.maks_dollar }}
+          BARE_TVERR: ${{ inputs.bare_tverrgaaende }}
         run: |
           if [ -n "$LAEREPLANER" ]; then UTVALG=(--laereplaner "$LAEREPLANER"); else UTVALG=(--antall "$ANTALL"); fi
+          if [ "$BARE_TVERR" = "true" ]; then UTVALG+=(--bare-tverrgaaende); fi
           python -I -X utf8 scripts/foreslaa-km-esco.py "${UTVALG[@]}" --effort "$EFFORT" --maks-dollar "$MAKS_DOLLAR" \
             --arbeidsliste "$RUNNER_TEMP/forslag"
 

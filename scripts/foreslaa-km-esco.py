@@ -188,6 +188,13 @@ def system_blokk(alle, tverr):
 
 def bruker_blokk(lp, km, kand):
     po = '; '.join('%s %s' % (k, t) for k, t in sorted(lp['programomraader'].items()))
+    if not kand:  # --bare-tverrgaaende: ESCO har ingen yrker under ISCO-gruppen
+        return ('## Læreplan %s %s\nProgramområde: %s. ISCO-grupper: %s.\n\n## Kompetansemål (%d)\n%s\n\n'
+                'ESCO har ingen yrker under ISCO-gruppen, så det finnes ingen F-ferdigheter for denne læreplanen.\n\n'
+                'Foreslå koblinger fra kompetansemålene til de tverrgående T-ferdighetene. Mål som ingen '
+                'T-ferdighet passer for, skal stå uten kobling.'
+                % (lp['kode'], lp['tittel'], po, ', '.join(sorted(i.rsplit('/', 1)[1] for i in lp['isco'])), len(km),
+                   '\n'.join('%s | %s' % (k['kode'], k['tekst']) for k in km)))
     return ('## Læreplan %s %s\nProgramområde: %s. ISCO-grupper: %s.\n\n## Kompetansemål (%d)\n%s\n\n'
             '## ESCO-ferdighetene til yrkene (%d), med antall yrker i gruppen som har ferdigheten\n%s\n\n'
             'Foreslå koblinger fra kompetansemålene til kandidatene (både F- og T-ferdigheter).'
@@ -244,8 +251,7 @@ def skriv_sssom(lp, km, forslag, kand_id, modell, dato):
 # mapping_set_id: http://psi.udir.no/kl06/kobling/km-esco/{kode}
 # mapping_set_title: Kompetansemål i {kode} ({tittel}) koblet til ESCO-ferdigheter
 # mapping_set_description: >-
-#   Grep-sandkassens koblinger fra kompetansemålene i læreplanen {kode} til ESCO-ferdighetene (v1.2.1) til
-#   yrkene under ISCO {isco}, og til ESCOs tverrgående ferdigheter (utenom språk). Forslagene er laget automatisk
+#   Grep-sandkassens koblinger fra kompetansemålene i læreplanen {kode} til {kandidater}. Forslagene er laget automatisk
 #   av en språkmodell ({modell}) med pilotene BMK03-03, HEA03-03 og ELE03-04 som eksempler, med
 #   scripts/foreslaa-km-esco.py. Rader uten reviewer_label er ikke vurdert av et menneske ennå. Relasjonen leses fra
 #   kompetansemålet: narrowMatch betyr at ferdigheten er en del av målet, broadMatch at den er bredere,
@@ -257,7 +263,11 @@ def skriv_sssom(lp, km, forslag, kand_id, modell, dato):
 # object_source_version: v1.2.1
 # mapping_date: {dato}
 subject_id	subject_label	predicate_id	object_id	object_label	mapping_justification	author_label	reviewer_label	mapping_tool	comment
-'''.format(kode=lp['kode'], tittel=lp['tittel'] or lp['kode'], isco=isco, modell=modell, dato=dato)
+'''.format(kode=lp['kode'], tittel=lp['tittel'] or lp['kode'], modell=modell, dato=dato,
+           kandidater=('ESCOs tverrgående ferdigheter (v1.2.1,\n#   utenom språk). ESCO har ingen yrker under '
+                       'ISCO %s, så yrkesferdigheter finnes ikke for læreplanen' % isco) if lp.get('bare_tverr') else
+                      ('ESCO-ferdighetene (v1.2.1) til\n#   yrkene under ISCO %s, og til ESCOs tverrgående ferdigheter '
+                       '(utenom språk)' % isco))
     rader = []
     for f in forslag:
         k = kand_id[f['ferdighet']]
@@ -290,6 +300,8 @@ def main():
     ap.add_argument('--effort', default='high', choices=['low', 'medium', 'high', 'xhigh', 'max'])
     ap.add_argument('--maks-dollar', type=float, default=10.0, help='stopp før neste læreplan når kostnaden er nådd')
     ap.add_argument('--arbeidsliste', default=os.path.join(REPO, 'forslag'), help='mappe for CSV-arbeidslister')
+    ap.add_argument('--bare-tverrgaaende', action='store_true',
+                    help='kjør læreplaner uten ESCO-yrker med bare de tverrgående ferdighetene (ellers hoppes de over)')
     ap.add_argument('--toerrkjoering', action='store_true', help='bygg ledetekstene og skriv størrelsen, uten API-kall')
     a = ap.parse_args()
 
@@ -358,7 +370,11 @@ def main():
         for i, f in enumerate(kand, 1):
             f['id'] = 'F%d' % i
         kand_id = {f['id']: f for f in kand + tverr}
-        if not kand:  # ingen ESCO-yrker under ISCO-gruppen: bare tverrgående kandidater, det gir for lite
+        if not kand and a.bare_tverrgaaende:
+            lp['bare_tverr'] = True
+            print('\n%s: ingen ESCO-yrker under %s, bruker bare de tverrgående ferdighetene'
+                  % (kode, ', '.join(sorted(i.rsplit('/', 1)[1] for i in lp['isco']))))
+        elif not kand:  # ingen ESCO-yrker under ISCO-gruppen: bare tverrgående kandidater, det gir for lite
             print('\n%s: hoppet over, ingen ESCO-yrker under %s'
                   % (kode, ', '.join(sorted(i.rsplit('/', 1)[1] for i in lp['isco']))))
             oppsummering.append((kode, 'ingen ESCO-yrker', '-', 0.0))
