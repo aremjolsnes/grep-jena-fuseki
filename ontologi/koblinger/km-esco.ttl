@@ -31706,6 +31706,1107 @@
     sssom:comment "Automatisk forslag (2026-11-11). «Likeverdig og inkluderende arbeidsliv» er beslektet med å støtte likestilling." .
 <http://psi.udir.no/kl06/KM8387> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2e227d5d-649b-48dc-99ca-2389bbc1140f> .
 
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> a sssom:MappingSet ;
+    dcterms:title "Kompetansemål i BLD03-03 (Læreplan i vg3 blomsterdekoratørfaget) koblet til ESCO-ferdigheter"@nb ;
+    dcterms:license <https://data.norge.no/nlod/no/2.0> ;
+    sssom:object_source_version "v1.2.1" ;
+    sssom:mapping_date "2026-11-11"^^xsd:date .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6884/e49f4158-9d4c-425d-bf32-dfe89b19840a> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6884> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Planlegge … eget blomsterarbeid» er en del av målet." .
+<http://psi.udir.no/kl06/KM6884> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6884/35ebe444-9ece-4fbc-a55d-e99ea37267ae> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6884> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Vurdering av eget arbeid henger sammen med å strebe etter god kvalitet." .
+<http://psi.udir.no/kl06/KM6884> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6884/409a0245-0e6c-4aac-ba16-0920ecb76a8d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6884> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «vurdere eget blomsterarbeid» er beslektet med systematisk selvrefleksjon." .
+<http://psi.udir.no/kl06/KM6884> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6885/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6885> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Arbeid «i samsvar med gjeldende regelverk for helse, miljø og sikkerhet» er en del av målet." .
+<http://psi.udir.no/kl06/KM6885> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6885/a992f345-7c06-4982-8fc9-5fab55e316af> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6885> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Miljødelen av HMS er beslektet med miljøbærekraftig arbeidspraksis." .
+<http://psi.udir.no/kl06/KM6885> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6885/c4180af3-befd-4bd8-9a65-6a496f9d9f15> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6885> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Bevissthet om helserisikoer er beslektet med å følge HMS-regelverket." .
+<http://psi.udir.no/kl06/KM6885> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6886/045f71e6-0699-4169-8a54-9c6b96f3174d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6886> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «veilede» kunder om blomsterfaglige produkter er å gi råd." .
+<http://psi.udir.no/kl06/KM6886> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6886/5b0f2198-7246-4256-a902-4d9ce1260c80> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6886> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å veilede og informere «kunder» om produkter og tjenester er en del av kundeorientering." .
+<http://psi.udir.no/kl06/KM6886> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6887/09e28145-e205-4b7a-8b3b-5c4876396069> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6887> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/09e28145-e205-4b7a-8b3b-5c4876396069> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å bruke «hensiktsmessige kommunikasjonsformer og strategier» i møte med andre er en del av målet." .
+<http://psi.udir.no/kl06/KM6887> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/09e28145-e205-4b7a-8b3b-5c4876396069> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6887/bf983f2a-e941-4646-811d-cc81060cb53f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6887> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/bf983f2a-e941-4646-811d-cc81060cb53f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Relasjoner til «leverandører og andre samarbeidspartnere» er beslektet med å bygge nettverk." .
+<http://psi.udir.no/kl06/KM6887> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/bf983f2a-e941-4646-811d-cc81060cb53f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6887/5b0f2198-7246-4256-a902-4d9ce1260c80> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6887> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Kundeorientering er beslektet med kommunikasjon «i møte med kunder»." .
+<http://psi.udir.no/kl06/KM6887> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6888/df5e3d02-9f0f-44ee-91c2-85c62f161868> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6888> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «presentere blomsterfaglige produkter» gjennom vareeksponering er et særtilfelle av å markedsføre produkter." .
+<http://psi.udir.no/kl06/KM6888> <http://www.w3.org/2004/02/skos/core#broadMatch> <http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6888/5c526c52-4f0a-4647-8c51-c91568acebb1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6888> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å bygge «utstillinger» krever sans for plassering og proporsjoner i rommet." .
+<http://psi.udir.no/kl06/KM6888> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6889/d822b4b2-26c7-4bd9-970d-229c6504f615> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6889> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å bruke digitale ressurser til «dokumentasjonen og presentasjonen av eget arbeid» innebærer å skape digitalt innhold." .
+<http://psi.udir.no/kl06/KM6889> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6889/698be2d3-8768-422d-a2d3-1cb701816089> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6889> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/698be2d3-8768-422d-a2d3-1cb701816089> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Informasjonssøk på nettet er beslektet med å bruke digitale ressurser i «idéprosessen»." .
+<http://psi.udir.no/kl06/KM6889> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/698be2d3-8768-422d-a2d3-1cb701816089> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6892/045f71e6-0699-4169-8a54-9c6b96f3174d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6892> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Kunnskap om «stell» brukes «i kommunikasjon med kunder» til å gi råd; beslektet." .
+<http://psi.udir.no/kl06/KM6892> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6893/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6893> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Gjenbruk, avfallshåndtering og «bærekraftig ressursutnyttelse» er en del av målet." .
+<http://psi.udir.no/kl06/KM6893> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6893/a992f345-7c06-4982-8fc9-5fab55e316af> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6893> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «bruke teknikker som bidrar til bærekraftig ressursutnyttelse» er miljøbærekraftig arbeidspraksis." .
+<http://psi.udir.no/kl06/KM6893> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6893/0d75a128-bd88-4c1b-b70d-8e963aeb490c> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6893> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Riktig «avfallshåndtering» bidrar til redusert forurensning; beslektet." .
+<http://psi.udir.no/kl06/KM6893> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6893/2aaad52d-599e-4e77-a681-bbc236825821> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6893> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/2aaad52d-599e-4e77-a681-bbc236825821> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «vurdere … miljøpåvirkning av materialer» er beslektet med å vurdere miljøvirkningen av egen atferd." .
+<http://psi.udir.no/kl06/KM6893> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2aaad52d-599e-4e77-a681-bbc236825821> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6894/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6894> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Arbeide etter regelverk og avtaler» er en del av målet." .
+<http://psi.udir.no/kl06/KM6894> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6894/f4bcdb75-df28-441d-a52b-9730904f36a1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6894> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Pliktene og rettighetene til arbeidsgiveren og arbeidstakeren» er en del av målet." .
+<http://psi.udir.no/kl06/KM6894> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6895/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6895> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Valg av materialer med miljøhensyn er beslektet med å minske negative følger av forbruk." .
+<http://psi.udir.no/kl06/KM6895> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6895/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6895> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Etisk … produksjon» ved valg av materialer er beslektet med å følge etiske retningslinjer." .
+<http://psi.udir.no/kl06/KM6895> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6895/a992f345-7c06-4982-8fc9-5fab55e316af> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6895> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Miljøvennlig produksjon» er beslektet med miljøbærekraftig arbeidspraksis." .
+<http://psi.udir.no/kl06/KM6895> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6895/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6895> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å gjøre rede for «konsekvensene av ulike valg … i et lokalt, nasjonalt og globalt perspektiv» er beslektet med helhetlig tenkning." .
+<http://psi.udir.no/kl06/KM6895> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6896/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6896> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å vurdere materialet og «begrunne egne valg» er å ta avgjørelser." .
+<http://psi.udir.no/kl06/KM6896> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6896/35ebe444-9ece-4fbc-a55d-e99ea37267ae> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6896> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å vurdere «kvaliteten på materialet» er beslektet med å strebe etter god kvalitet." .
+<http://psi.udir.no/kl06/KM6896> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6897/c624c6a3-b0ba-4a31-a296-0d433fe47e41> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6897> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å bruke eksperimentering «som inspirasjon i eget arbeid» krever kreativ tenkning." .
+<http://psi.udir.no/kl06/KM6897> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6897/429062f1-a958-43ea-83dd-4e1af078c156> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6897> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/429062f1-a958-43ea-83dd-4e1af078c156> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «utforske og eksperimentere» med teknikker og materialer er beslektet med nysgjerrighet." .
+<http://psi.udir.no/kl06/KM6897> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/429062f1-a958-43ea-83dd-4e1af078c156> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6898/9c0f93f7-2592-4d4d-9673-fd640502345f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6898> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å bruke «håndverksteknikker og verktøy» er beslektet med å bruke verktøy med presisjon." .
+<http://psi.udir.no/kl06/KM6898> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6899/5b0f2198-7246-4256-a902-4d9ce1260c80> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6899> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Valg «i tråd med kundens ønsker og behov» er en del av kundeorientering." .
+<http://psi.udir.no/kl06/KM6899> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6899/a992f345-7c06-4982-8fc9-5fab55e316af> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6899> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Miljøvennlige og bærekraftige faglige valg» er beslektet med miljøbærekraftig arbeidspraksis." .
+<http://psi.udir.no/kl06/KM6899> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6900/0b709c64-a57a-4976-86bd-34d2cf34fa4f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6900> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/0b709c64-a57a-4976-86bd-34d2cf34fa4f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Kunnskap om «religioner» og deres ritualer er beslektet med kunnskap innen religion." .
+<http://psi.udir.no/kl06/KM6900> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0b709c64-a57a-4976-86bd-34d2cf34fa4f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6900/5ca953f7-541d-4f67-bc55-7721348366cf> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6900> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å tilpasse dekor til «ulike kulturer og religioner» krever respekt for kulturelle verdier og normer." .
+<http://psi.udir.no/kl06/KM6900> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6900/98a999db-72d5-4657-a0b0-2f850afd4368> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6900> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/98a999db-72d5-4657-a0b0-2f850afd4368> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å gjøre rede for «kulturuttrykk i ulike kulturer» er beslektet med å sette pris på mangfoldige kulturelle uttrykk." .
+<http://psi.udir.no/kl06/KM6900> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/98a999db-72d5-4657-a0b0-2f850afd4368> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6901/5c526c52-4f0a-4647-8c51-c91568acebb1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6901> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Analyser av rom» henger sammen med romforståelse og sans for proporsjoner." .
+<http://psi.udir.no/kl06/KM6901> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6901/c624c6a3-b0ba-4a31-a296-0d433fe47e41> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6901> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «utforske, utvikle og designe faglige produkter» krever kreativ tenkning." .
+<http://psi.udir.no/kl06/KM6901> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6902/5b0f2198-7246-4256-a902-4d9ce1260c80> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6902> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å tilpasse dekor «etter hvilke behov kunden har» er en del av kundeorientering." .
+<http://psi.udir.no/kl06/KM6902> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6903/5c526c52-4f0a-4647-8c51-c91568acebb1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6903> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Komposisjonsprinsipper» bygger på sans for proporsjoner og form i rommet." .
+<http://psi.udir.no/kl06/KM6903> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6903/93350886-a21b-4e61-a1b1-319a325c0f90> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6903> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/93350886-a21b-4e61-a1b1-319a325c0f90> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «skape et helhetlig uttrykk» i blomsterdekor er beslektet med kreativt kunstnerisk uttrykk." .
+<http://psi.udir.no/kl06/KM6903> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/93350886-a21b-4e61-a1b1-319a325c0f90> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6904/d822b4b2-26c7-4bd9-970d-229c6504f615> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6904> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Skisser «med digitale ressurser» er beslektet med å skape digitalt innhold." .
+<http://psi.udir.no/kl06/KM6904> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6905/19ba11f3-9c99-41fd-a7c9-f77e6a026186> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6905> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Overslag og budsjett for å beregne materialer» krever arbeidsrelaterte beregninger." .
+<http://psi.udir.no/kl06/KM6905> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6905/7a93e22f-54d8-4bf0-9213-d711f6601b49> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6905> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Effektivt arbeid er beslektet med «tidsbruk … og lønnsomhet»." .
+<http://psi.udir.no/kl06/KM6905> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6906/7a93e22f-54d8-4bf0-9213-d711f6601b49> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6906> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Hvordan «tidsbruk påvirker økonomien» er beslektet med å arbeide effektivt." .
+<http://psi.udir.no/kl06/KM6906> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6906/6b305973-8993-475f-bd8a-daf037c61401> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6906> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Varelager, vareflyt, orden» er beslektet med å organisere objekter og ressurser systematisk." .
+<http://psi.udir.no/kl06/KM6906> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD03-03/KM6906/e49f4158-9d4c-425d-bf32-dfe89b19840a> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD03-03> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM6906> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å forvalte tid og ressurser er beslektet med å bruke kunnskap om «tidsbruk» i eget arbeid." .
+<http://psi.udir.no/kl06/KM6906> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> a sssom:MappingSet ;
+    dcterms:title "Kompetansemål i BLD05-01 (Læreplan i vg3 blomsterdekoratørfaget - modulstrukturert opplæring for voksne) koblet til ESCO-ferdigheter"@nb ;
+    dcterms:license <https://data.norge.no/nlod/no/2.0> ;
+    sssom:object_source_version "v1.2.1" ;
+    sssom:mapping_date "2026-11-11"^^xsd:date .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12769/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12769> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å vurdere materialet og «begrunne egne valg» knyttet til ordre og stil innebærer å ta avgjørelser." .
+<http://psi.udir.no/kl06/KM12769> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12770/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12770> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). En «etisk … produksjon» er beslektet med å følge etiske retningslinjer i arbeidet." .
+<http://psi.udir.no/kl06/KM12770> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12770/a992f345-7c06-4982-8fc9-5fab55e316af> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12770> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). En «miljøvennlig produksjon» er beslektet med å følge miljøbærekraftig arbeidspraksis." .
+<http://psi.udir.no/kl06/KM12770> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12770/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12770> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å gjøre rede for «konsekvensene av ulike valg» i et lokalt, nasjonalt og globalt perspektiv er beslektet med å tenke helhetlig." .
+<http://psi.udir.no/kl06/KM12770> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12771/045f71e6-0699-4169-8a54-9c6b96f3174d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12771> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å bruke kunnskap om stell «i kommunikasjon med kunder» er beslektet med å gi råd." .
+<http://psi.udir.no/kl06/KM12771> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12775/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12775> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å vurdere produkters livsløp «i et bærekraftsperspektiv» er beslektet med å minske de negative følgene av forbruk." .
+<http://psi.udir.no/kl06/KM12775> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12775/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12775> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Livsløpsvurdering krever at man ser indirekte og langsiktige konsekvenser; beslektet med å tenke helhetlig." .
+<http://psi.udir.no/kl06/KM12775> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12776/df5e3d02-9f0f-44ee-91c2-85c62f161868> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12776> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#broadMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «presentere blomsterfaglige produkter» med vareeksponering og utstillinger er et særtilfelle av å presentere og reklamere for produkter." .
+<http://psi.udir.no/kl06/KM12776> <http://www.w3.org/2004/02/skos/core#broadMatch> <http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12777/09e28145-e205-4b7a-8b3b-5c4876396069> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12777> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#closeMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/09e28145-e205-4b7a-8b3b-5c4876396069> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å bruke «hensiktsmessige kommunikasjonsformer og strategier» i møte med andre er omtrent det samme som å samhandle med strategier tilpasset sammenhengen." .
+<http://psi.udir.no/kl06/KM12777> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/09e28145-e205-4b7a-8b3b-5c4876396069> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12777/5c59dac1-0547-4068-b43c-ac59f1344448> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12777> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5c59dac1-0547-4068-b43c-ac59f1344448> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Passende sosial atferd er beslektet med god kommunikasjon med kunder, kollegaer og leverandører." .
+<http://psi.udir.no/kl06/KM12777> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5c59dac1-0547-4068-b43c-ac59f1344448> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12777/5b0f2198-7246-4256-a902-4d9ce1260c80> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12777> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Kommunikasjon «i møte med kunder» er beslektet med å være kundeorientert." .
+<http://psi.udir.no/kl06/KM12777> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12778/045f71e6-0699-4169-8a54-9c6b96f3174d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12778> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «veilede … kunder» om produkter og tjenester er å gi råd." .
+<http://psi.udir.no/kl06/KM12778> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12778/5b0f2198-7246-4256-a902-4d9ce1260c80> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12778> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Veiledning av kunder er beslektet med å forstå hva kundene ønsker og møte dem positivt." .
+<http://psi.udir.no/kl06/KM12778> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12779/d822b4b2-26c7-4bd9-970d-229c6504f615> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12779> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å bruke digitale ressurser til «dokumentasjonen og presentasjonen av eget arbeid» innebærer å skape digitalt innhold." .
+<http://psi.udir.no/kl06/KM12779> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12779/698be2d3-8768-422d-a2d3-1cb701816089> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12779> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/698be2d3-8768-422d-a2d3-1cb701816089> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Søk etter inspirasjon på nettet er beslektet med å bruke digitale ressurser i «idéprosessen»." .
+<http://psi.udir.no/kl06/KM12779> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/698be2d3-8768-422d-a2d3-1cb701816089> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12779/c624c6a3-b0ba-4a31-a296-0d433fe47e41> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12779> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Idéprosessen» krever kreativ idéutvikling; beslektet." .
+<http://psi.udir.no/kl06/KM12779> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12782/9c0f93f7-2592-4d4d-9673-fd640502345f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12782> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Presis bruk av verktøy er beslektet med å «bruke hensiktsmessige håndverksteknikker og verktøy»." .
+<http://psi.udir.no/kl06/KM12782> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12783/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12783> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Gjenbruk, avfallshåndtering» og bærekraftig ressursutnyttelse er en del av å minske de negative følgene av forbruk." .
+<http://psi.udir.no/kl06/KM12783> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12783/a992f345-7c06-4982-8fc9-5fab55e316af> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12783> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «bruke teknikker som bidrar til bærekraftig ressursutnyttelse» er å følge miljøbærekraftig arbeidspraksis." .
+<http://psi.udir.no/kl06/KM12783> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12783/0d75a128-bd88-4c1b-b70d-8e963aeb490c> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12783> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å vurdere «miljøpåvirkning av materialer» er beslektet med å bidra til redusert forurensning." .
+<http://psi.udir.no/kl06/KM12783> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0d75a128-bd88-4c1b-b70d-8e963aeb490c> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12784/5c526c52-4f0a-4647-8c51-c91568acebb1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12784> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Komposisjonsprinsipper» og et helhetlig uttrykk krever sans for proporsjoner og rom; beslektet." .
+<http://psi.udir.no/kl06/KM12784> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12784/c624c6a3-b0ba-4a31-a296-0d433fe47e41> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12784> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å kombinere stilform, teknikker og materialer til et nytt uttrykk er beslektet med kreativ tenkning." .
+<http://psi.udir.no/kl06/KM12784> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12784/93350886-a21b-4e61-a1b1-319a325c0f90> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12784> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/93350886-a21b-4e61-a1b1-319a325c0f90> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «skape et helhetlig uttrykk» i blomsterdekor er beslektet med å uttrykke seg kreativt gjennom kunst." .
+<http://psi.udir.no/kl06/KM12784> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/93350886-a21b-4e61-a1b1-319a325c0f90> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12785/c624c6a3-b0ba-4a31-a296-0d433fe47e41> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12785> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å bruke eksperimentering «som inspirasjon i eget arbeid» er beslektet med å tenke kreativt." .
+<http://psi.udir.no/kl06/KM12785> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12785/429062f1-a958-43ea-83dd-4e1af078c156> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12785> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/429062f1-a958-43ea-83dd-4e1af078c156> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «utforske og eksperimentere» med teknikker og materialer er beslektet med å vise nysgjerrighet." .
+<http://psi.udir.no/kl06/KM12785> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/429062f1-a958-43ea-83dd-4e1af078c156> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12786/9c0f93f7-2592-4d4d-9673-fd640502345f> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12786> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «bruke … verktøy i praktisk arbeid» er beslektet med å bruke verktøy med presisjon." .
+<http://psi.udir.no/kl06/KM12786> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12787/e49f4158-9d4c-425d-bf32-dfe89b19840a> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12787> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Planlegge … eget blomsterarbeid» er en del av målet." .
+<http://psi.udir.no/kl06/KM12787> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/e49f4158-9d4c-425d-bf32-dfe89b19840a> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12787/35ebe444-9ece-4fbc-a55d-e99ea37267ae> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12787> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Vurdering av eget arbeid henger sammen med å strebe etter god kvalitet." .
+<http://psi.udir.no/kl06/KM12787> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12787/409a0245-0e6c-4aac-ba16-0920ecb76a8d> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12787> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «vurdere eget blomsterarbeid» er beslektet med systematisk selvrefleksjon." .
+<http://psi.udir.no/kl06/KM12787> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12788/5c526c52-4f0a-4647-8c51-c91568acebb1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12788> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å utarbeide skisser krever evne til å forestille seg former og proporsjoner; beslektet." .
+<http://psi.udir.no/kl06/KM12788> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12788/d822b4b2-26c7-4bd9-970d-229c6504f615> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12788> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Skisser «med digitale ressurser» er beslektet med å skape digitalt innhold." .
+<http://psi.udir.no/kl06/KM12788> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12789/5b0f2198-7246-4256-a902-4d9ce1260c80> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12789> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «tilpasse blomsterdekor etter hvilke behov kunden har» er å forstå hva kundene ønsker." .
+<http://psi.udir.no/kl06/KM12789> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12790/5c526c52-4f0a-4647-8c51-c91568acebb1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12790> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Analyser av rom» krever romforståelse og sans for proporsjoner; beslektet." .
+<http://psi.udir.no/kl06/KM12790> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12790/c624c6a3-b0ba-4a31-a296-0d433fe47e41> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12790> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «utforske, utvikle og designe faglige produkter» krever kreativ idéutvikling; beslektet." .
+<http://psi.udir.no/kl06/KM12790> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12791/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12791> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å tilpasse blomsterdekor til ulike kulturer er beslektet med interkulturell kompetanse." .
+<http://psi.udir.no/kl06/KM12791> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12791/5ca953f7-541d-4f67-bc55-7721348366cf> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12791> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å gjøre rede for «kulturuttrykk i ulike kulturer og religioner» er beslektet med respekt for kulturelle verdier og normer." .
+<http://psi.udir.no/kl06/KM12791> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5ca953f7-541d-4f67-bc55-7721348366cf> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12791/98a999db-72d5-4657-a0b0-2f850afd4368> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12791> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/98a999db-72d5-4657-a0b0-2f850afd4368> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Kunnskap om «kulturuttrykk i ulike kulturer» er beslektet med å sette pris på mangfoldige kulturelle og kunstneriske uttrykk." .
+<http://psi.udir.no/kl06/KM12791> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/98a999db-72d5-4657-a0b0-2f850afd4368> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12792/a992f345-7c06-4982-8fc9-5fab55e316af> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12792> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å gjøre «miljøvennlige og bærekraftige faglige valg» er en del av miljøbærekraftig arbeidspraksis." .
+<http://psi.udir.no/kl06/KM12792> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12792/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12792> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «gjøre … faglige valg» etter analyse av oppdraget er å ta avgjørelser." .
+<http://psi.udir.no/kl06/KM12792> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12792/5b0f2198-7246-4256-a902-4d9ce1260c80> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12792> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Faglige valg «i tråd med kundens ønsker og behov» er en del av å være kundeorientert." .
+<http://psi.udir.no/kl06/KM12792> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b0f2198-7246-4256-a902-4d9ce1260c80> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12793/19ba11f3-9c99-41fd-a7c9-f77e6a026186> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12793> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å «regne ut lengder, vinkler, arealer, volumer» er arbeidsrelaterte beregninger." .
+<http://psi.udir.no/kl06/KM12793> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12793/5c526c52-4f0a-4647-8c51-c91568acebb1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12793> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Egenskaper ved «geometriske figurer» og målestokk henger sammen med romforståelse og proporsjoner." .
+<http://psi.udir.no/kl06/KM12793> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5c526c52-4f0a-4647-8c51-c91568acebb1> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12793/6fc6f757-6baa-49fe-9a82-6ba6a52f2e13> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12793> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/6fc6f757-6baa-49fe-9a82-6ba6a52f2e13> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Forståelse av geometriske begreper, forhold og målestokk er beslektet med å tolke matematisk informasjon." .
+<http://psi.udir.no/kl06/KM12793> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/6fc6f757-6baa-49fe-9a82-6ba6a52f2e13> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12795/19ba11f3-9c99-41fd-a7c9-f77e6a026186> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12795> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Å bruke «overslag og budsjett for å beregne materialer» krever arbeidsrelaterte beregninger." .
+<http://psi.udir.no/kl06/KM12795> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/19ba11f3-9c99-41fd-a7c9-f77e6a026186> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12795/7a93e22f-54d8-4bf0-9213-d711f6601b49> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12795> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Effektivt arbeid er beslektet med beregning ut fra «tidsbruk, innkjøp og lønnsomhet»." .
+<http://psi.udir.no/kl06/KM12795> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12796/7a93e22f-54d8-4bf0-9213-d711f6601b49> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12796> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Hvordan «orden og tidsbruk påvirker økonomien» er beslektet med å arbeide effektivt." .
+<http://psi.udir.no/kl06/KM12796> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/7a93e22f-54d8-4bf0-9213-d711f6601b49> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12796/6b305973-8993-475f-bd8a-daf037c61401> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12796> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Systematisk organisering av varer og ressurser er beslektet med «varelager, vareflyt, orden»." .
+<http://psi.udir.no/kl06/KM12796> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/6b305973-8993-475f-bd8a-daf037c61401> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12797/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12797> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Arbeid «i samsvar med gjeldende regelverk for helse, miljø og sikkerhet» er en del av målet." .
+<http://psi.udir.no/kl06/KM12797> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12797/a992f345-7c06-4982-8fc9-5fab55e316af> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12797> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Miljødelen av HMS er beslektet med miljøbærekraftig arbeidspraksis." .
+<http://psi.udir.no/kl06/KM12797> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12797/c4180af3-befd-4bd8-9a65-6a496f9d9f15> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12797> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#relatedMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). Bevissthet om helserisikoer er beslektet med å følge HMS-regelverket." .
+<http://psi.udir.no/kl06/KM12797> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c4180af3-befd-4bd8-9a65-6a496f9d9f15> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12798/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12798> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Arbeide etter regelverk og avtaler» er en del av målet." .
+<http://psi.udir.no/kl06/KM12798> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b618584f-6bdf-4d8f-89a7-f28c2c95afc2> .
+
+<http://psi.udir.no/kl06/kobling/km-esco/BLD05-01/KM12798/f4bcdb75-df28-441d-a52b-9730904f36a1> a sssom:Mapping ;
+    sssom:mapping_set <http://psi.udir.no/kl06/kobling/km-esco/BLD05-01> ;
+    sssom:subject_id <http://psi.udir.no/kl06/KM12798> ;
+    sssom:predicate_id <http://www.w3.org/2004/02/skos/core#narrowMatch> ;
+    sssom:object_id <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> ;
+    sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
+    sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
+    sssom:comment "Automatisk forslag (2026-11-11). «Pliktene og rettighetene til arbeidsgiveren og arbeidstakeren» er en del av målet." .
+<http://psi.udir.no/kl06/KM12798> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f4bcdb75-df28-441d-a52b-9730904f36a1> .
+
 <http://psi.udir.no/kl06/kobling/km-esco/BLY03-02> a sssom:MappingSet ;
     dcterms:title "Kompetansemål i BLY03-02 (Læreplan i blyglasshåndverkerfaget) koblet til ESCO-ferdigheter"@nb ;
     dcterms:license <https://data.norge.no/nlod/no/2.0> ;
