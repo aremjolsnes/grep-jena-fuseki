@@ -549,10 +549,17 @@ SELECT DISTINCT ?fagfelt ?ferdighet WHERE {
 **Kompetansemål og ESCO-ferdigheter.** Kompetansemålene i Vg3-læreplaner er koblet til ESCO-ferdighetene til yrkene
 programområdet utdanner til, og til ESCOs tverrgående ferdigheter. Det finnes ingen offisiell kobling mellom læreplaner
 og ESCO. Disse koblingene er sandkassens egne og ikke en del av ESCO. En språkmodell foreslår koblingene
-(`scripts/foreslaa-km-esco.py`), og de er av to slag:
-- **Vurdert av et menneske:** pilotene BMK03-03 (120 koblinger), HEA03-03 (115) og ELE03-04 (106), og BKF03-02 (63).
-- **Automatiske og ikke vurdert:** resten. I en prøve ble alle de 403 forslagene som et menneske vurderte,
-  godtatt. Sandkassen tar derfor med de automatiske koblingene og retter heller i etterkant.
+(`scripts/foreslaa-km-esco.py`). Alle de 223 gjeldende Vg3-læreplanene med STYRK-kobling har koblinger, til sammen
+23 940, og de er av to slag:
+- **Vurdert av et menneske (454):** pilotene BMK03-03 (120 koblinger), HEA03-03 (115) og ELE03-04 (106), BKF03-02
+  (63) og en stikkprøve på 50.
+- **Automatiske og ikke vurdert (23 486):** resten. I en prøve ble alle de 403 forslagene som et menneske vurderte,
+  godtatt. Etterpå ble en tilfeldig stikkprøve på 50 automatiske koblinger, fra 50 ulike læreplaner, vurdert, og
+  alle 50 var riktige. Det betyr at minst 93 % av de automatiske koblingene er riktige (95 % konfidensintervall).
+  Sandkassen tar derfor med de automatiske koblingene og retter heller i etterkant.
+
+ESCO har ingen yrker for blomsterdekoratør (ISCO 7549). BLD03-03 og BLD05-01 er derfor bare koblet til de
+tverrgående ferdighetene, og de fleste av disse koblingene er `skos:relatedMatch`.
 
 Begge slagene har direkte SKOS-tripler. Om et menneske har vurdert koblingen, står i SSSOM-noden
 (`sssom:reviewer_label`; se spørringen under).

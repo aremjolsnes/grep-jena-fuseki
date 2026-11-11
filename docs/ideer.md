@@ -163,16 +163,22 @@ kandidater for alle kompetansemål. En språkmodell foreslo 54 koblinger i de tr
 kobling, for eksempel KM8657 og KM5451 ↔ *utøve rettigheter og ansvar* og KM5470 ↔ *løse konflikter* (closeMatch).
 Til sammen er det 341 koblinger.
 
+✅ 2026-11-11, alle Vg3-læreplanene: de 223 gjeldende Vg3-læreplanene med STYRK-kobling har koblinger, til sammen
+23 940 (454 vurdert av et menneske, 23 486 automatiske).
+- `scripts/foreslaa-km-esco.py` og workflowen «Foreslå koblinger kompetansemål ↔ ESCO» (startes manuelt) laget
+  forslagene, med de vurderte koblingene som eksempler. Workflowen committer rett på main som SSSOM uten kontrollør.
+  Den deler kø (concurrency-gruppe) med innlastingen, fordi kompetansemålene leses fra endepunktet.
+- Prøven 10.11: 963 forslag for 8 læreplaner (PR #2), 3,48 USD. Deretter seks puljer 11.11. Til sammen kostet det
+  om lag 82 USD, eller 0,37–0,46 USD per læreplan.
+- Stikkprøve: 50 tilfeldige automatiske koblinger fra 50 ulike læreplaner. Alle var riktige, så minst 93 % av de
+  automatiske koblingene er riktige (95 % konfidensintervall).
+- ESCO har ingen yrker under ISCO 7549 (blomsterdekoratør). Det nærmeste, 5223.7.18 *spesialisert selger, blomster og
+  hage*, er et salgsyrke og ble valgt bort. BLD03-03 og BLD05-01 er derfor koblet bare til de tverrgående
+  ferdighetene (`--bare-tverrgaaende`).
+- `scripts/godkjenn-km-esco.py` fører vurderingene fra utfylte arbeidslister inn: Ja gir kontrollør, Nei flytter
+  raden til `<læreplan>.avvist.tsv`. Godkjente rader blir nye eksempler, og avviste blir moteksempler i neste kjøring.
+
 Gjenstår:
-- Automatiske forslag for resten av læreplanene (223 gjeldende Vg3-læreplaner med STYRK-kobling, 5 583 mål).
-  `scripts/foreslaa-km-esco.py` og workflowen «Foreslå koblinger kompetansemål ↔ ESCO» (startes manuelt) finnes nå.
-  Pilotene er eksempler. Forslagene havner på en egen gren som SSSOM uten kontrollør, med arbeidslister (CSV) som
-  artefakt. Først en prøve på 8 læreplaner. Læreplaner der ISCO-gruppen ikke har ESCO-yrker, for eksempel BLD03-03
-  (ISCO 7549), hoppes over.
-  Prøven 10.11: 963 forslag for 8 læreplaner (PR #2), 3,48 USD, om lag 0,45 USD per læreplan.
-  `scripts/godkjenn-km-esco.py` fører vurderingene fra utfylte arbeidslister inn: Ja gir kontrollør og SKOS-trippel,
-  Nei flytter raden til `<læreplan>.avvist.tsv`. Godkjente rader blir nye eksempler, og avviste blir moteksempler i
-  neste kjøring.
 - Eventuelt fritekstsøk (jena-text) i ferdighetsnavnene.
 - NKR- og EQF-nivå for sluttkompetanse.
 - ELM.
