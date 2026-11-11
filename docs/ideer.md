@@ -7,22 +7,22 @@ Status: 🔜 påbegynt · 💡 idé · ✅ gjort
 
 | # | Idé | Status |
 |---|---|---|
-| 1 | [Læreplanutsnitt for KI](#1-læreplanutsnitt-for-ki) | ✅ |
+| 1 | [Læreplanutsnitt for AI](#1-læreplanutsnitt-for-ai) | ✅ |
 | 2 | [Fritekstsøk med jena-text](#2-fritekstsøk-med-jena-text) | ✅ |
 | 3 | [Historikk: hva endret seg?](#3-historikk-hva-endret-seg) | 💡 satt på vent |
-| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker ✅, NUS og ISCED ✅, ESCO-ferdigheter ✅, kompetansemål ↔ ferdigheter 🔜 pilot ✅, NKR/ELM venter |
+| 4 | [Koblinger til andre kunnskapsgrafer](#4-koblinger-til-andre-kunnskapsgrafer) | 🔜 STYRK ✅, ESCO-yrker ✅, NUS og ISCED ✅, ESCO-ferdigheter ✅, kompetansemål ↔ ferdigheter ✅ Vg3-yrkesfag, fellesfag/SF 💡, NKR/ELM venter |
 | 5 | [SHACL-former](#5-shacl-former) | 💡 |
 | 6 | [Beskrivelse av datasettet med DCAT og VoID](#6-beskrivelse-av-datasettet-med-dcat-og-void) | ✅ |
 | 7 | [Test eksemplene i bruk.md](#7-test-eksemplene-i-brukmd) | ✅ |
 | 8 | [Inverse egenskaper (R6)](#8-inverse-egenskaper-r6) | 💡 |
-| 9 | [Demo for KI: fra fagkode til prompt](#9-demo-for-ki-fra-fagkode-til-prompt) | 💡 |
+| 9 | [Demo for AI: fra fagkode til prompt](#9-demo-for-ai-fra-fagkode-til-prompt) | 💡 |
 | 10 | [Grunnlag for en veiledning om koblinger](#10-grunnlag-for-en-veiledning-om-koblinger) | 💡 |
 
 Prioritert 2026-11-10: NUS (under 4, ✅ samme dag), så 9, så 10, så SHACL (5). Småting: R6 (8) og de 9 programområdene uten STYRK-kobling.
 
-## 1. Læreplanutsnitt for KI
+## 1. Læreplanutsnitt for AI
 
-En løsning som bruker KI på vurderingsdata, trenger «relevant del av læreplanen» i prompten.
+En løsning som bruker AI på vurderingsdata, trenger «relevant del av læreplanen» i prompten.
 Spørringen skal gi et lite og komplett utsnitt for én fagkode og ett trinn:
 
 - læreplanen og versjonen som gjelder (LK06/LK20), med gyldighet;
@@ -35,9 +35,15 @@ Det er GraphRAG i praksis. Grafen sørger for at utsnittet er riktig, og språkm
 trengs.
 
 ✅ 2026-11-09: [eksempler/laereplanutsnitt.rq](eksempler/laereplanutsnitt.rq), dokumentert i bruk.md under
-«Læreplanutsnitt for KI». Bare LK20. Kjeden velges ut fra gyldigheten på datoen. Svaret er en graf
+«Læreplanutsnitt for AI». Bare LK20. Kjeden velges ut fra gyldigheten på datoen. Svaret er en graf
 (Turtle/JSON-LD) på ca. 16 kB per fagkode, og spørringen tar under ett sekund. Spørringene ligger under
 `docs/`, ikke `sparql/`, fordi en push til `sparql/**` starter en innlasting.
+
+✅ 2026-11-11, utvidet: vurderingsordningen, grunnleggende ferdigheter og tverrfaglige temaer (med læreplanens
+tekst om hva de betyr i faget), verbene (lokale verb overstyrer globale med samme navn) og forklaringen av målet
+(«didaktisk støtte»). Testet for grunnskolen (hvert årstrinn), fellesfag og SF-programfag: 42–70 kB som
+N-Triples, ca. 29 kB som Turtle for MAT0015. Lærdom om ytelse i Jena: ingen OPTIONAL rundt hele kompetansemålet,
+og ingen oppslag i egne OPTIONAL-blokker på variabler som kan være ubundet (se kommentaren øverst i spørringen).
 
 Husk: Ikke alle fagkoder har en læreplan. Privatskolekoder, UPF og forsøk mangler det, så utsnittet må
 tåle at læreplanen mangler.
@@ -51,7 +57,7 @@ og andre tekster, i stedet for å bruke `CONTAINS`, som er tregt og ikke tar hen
 ?km text:query (u:tittel "kildekritikk") .
 ```
 
-Det er nyttig for alle som utforsker dataene. For KI er det et første steg mot å finne relevante mål
+Det er nyttig for alle som utforsker dataene. For AI er det et første steg mot å finne relevante mål
 ut fra fri tekst. Krever endringer i `fuseki/config.ttl`, og indeksen må holdes oppdatert når
 rådatagrafen byttes ut hver natt.
 
@@ -179,6 +185,18 @@ Til sammen er det 341 koblinger.
   raden til `<læreplan>.avvist.tsv`. Godkjente rader blir nye eksempler, og avviste blir moteksempler i neste kjøring.
 
 Gjenstår:
+- Fellesfag og studieforberedende fag ↔ ESCO. Så langt er bare Vg3-yrkesfag koblet, fordi kandidatene kommer fra
+  yrkene (programområde → STYRK → ESCO-yrke). Studieforberedende programområder har ingen yrker (aldri hovedgruppe
+  1–2), så kandidatene må komme fra andre steder i ESCO:
+  - kunnskapsbegreper (`skill-type/knowledge`), som *matematikk*, *fysikk*, *historie* og *samfunnsfag*, gjerne
+    valgt via fagfeltet (programområde → NUS → ISCED-F, eller fagets eget fagfelt);
+  - de tverrgående ferdighetene, som vi allerede har;
+  - språkferdighetene, som er holdt utenfor så langt, for norsk, engelsk og fremmedspråk.
+
+  ESCO har ingen nivåer, så «matematikk» er det samme på 1. trinn og på master. Vent derfor mest `relatedMatch` og
+  `broadMatch`. Utdraget vårt må utvides med kunnskapsbegrepene som ikke henger på noe yrke. Start med en pilot på
+  noen få fellesfag (for eksempel matematikk, norsk og naturfag), vurdert av et menneske, slik vi gjorde for
+  yrkesfagene.
 - Eventuelt fritekstsøk (jena-text) i ferdighetsnavnene.
 - NKR- og EQF-nivå for sluttkompetanse.
 - ELM.
@@ -219,12 +237,12 @@ merker det.
 Lag inverse egenskaper som en ny regel via `owl:inverseOf`, slik at man kan gå begge veier i grafen,
 for eksempel fra læreplan ned til fagkode, uten å skrive `^u:…`.
 
-## 9. Demo for KI: fra fagkode til prompt
+## 9. Demo for AI: fra fagkode til prompt
 
 Et lite, konkret eksempel på hele kjeden for én elev: fagkode → læreplanutsnitt (LK20, idé 1) →
 kompetansemål med kjerneelementer, og eventuelt programområde → STYRK-08 → ESCO-yrker (idé 4). Spørringen finnes
 allerede. Det som mangler, er å vise hvordan svaret blir til en prompt. Nyttig til samtaler med folk som jobber med
-KI på vurderingsdata.
+AI på vurderingsdata.
 
 ## 10. Grunnlag for en veiledning om koblinger
 

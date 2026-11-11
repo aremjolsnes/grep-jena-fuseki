@@ -44,13 +44,13 @@ PREFIX owl:  <http://www.w3.org/2002/07/owl#>
 PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 PREFIX text: <http://jena.apache.org/text#>        # fritekstsøk, se «Fritekstsøk»
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX styrk: <http://psi.udir.no/ontologi/styrk08/>  # yrkesgrupper i STYRK-08, se «Koblinger»
+PREFIX styrk: <http://psi.udir.no/ontologi/styrk08/>  # yrkesgrupper i STYRK-08 fra SSB, se «Koblinger»
 PREFIX isco: <http://data.europa.eu/esco/isco/>     # ISCO-08-grupper i ESCO
-PREFIX nus: <http://psi.udir.no/ontologi/nus/>      # utdanninger i NUS, se «Koblinger»
+PREFIX nus: <http://psi.udir.no/ontologi/nus/>      # utdanninger i NUS (SSB), se «Koblinger»
 PREFIX iscedf: <http://data.europa.eu/esco/isced-f/>  # fagfelt i ISCED-F 2013 (ESCO)
 PREFIX isced2011: <http://psi.udir.no/ontologi/isced2011/>  # nivå i ISCED 2011
 PREFIX esco: <http://data.europa.eu/esco/model#>   # ESCO-modellen (yrker og ferdigheter)
-PREFIX sssom: <https://w3id.org/sssom/>             # koblinger mellom vokabularer (SSSOM)
+PREFIX sssom: <https://w3id.org/sssom/>             # koblinger mellom vokabularer (SSSOM (uttales "sessom"))
 PREFIX semapv: <https://w3id.org/semapv/vocab/>     # begrunnelser for koblinger (SSSOM)
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>          # beskrivelse av datasettet, se «Hvor ferske er dataene?»
@@ -709,29 +709,53 @@ og `kildekritikk OR kildebruk` etter ett av ordene. Et tall etter søket begrens
 
 Indeksen oppdateres når dataene lastes inn hver natt. Den fins bare i sandkassen, ikke hos Udir.
 
-## Læreplanutsnitt for KI
+## Læreplanutsnitt for AI
 
-En løsning som bruker KI på vurderingsdata, trenger «relevant del av læreplanen» i prompten, og helst ikke mer.
+En løsning som bruker AI på vurderingsdata, trenger «relevant del av læreplanen» i prompten, og helst ikke mer.
 Spørringen under gir et lite og komplett utsnitt for **én fagkode på én dato** (LK20):
 
-- læreplanen som gjaldt på datoen, med fagets relevans;
+- læreplanen som gjaldt på datoen, med fagets relevans og vurderingsordningen (standpunkt, eksamen for elever og
+  sluttvurdering);
+- læreplanens tekst om hva de grunnleggende ferdighetene og de tverrfaglige temaene betyr i faget, men bare de som
+  kompetansemålene på trinnet peker på;
 - kompetansemålsettet for trinnet, med underveisvurdering og standpunktvurdering;
-- kompetansemålene, med kjerneelementene de hører til;
-- kjerneelementene, med beskrivelse;
-- målene fra trinnet før som kompetansemålene bygger på (`u:bygger-paa`).
+- kompetansemålene, hver med
+  - kjerneelementene, de grunnleggende ferdighetene og de tverrfaglige temaene målet hører til;
+  - verbene i målet, med Udirs forklaring av verbet;
+  - forklaringen av målet («didaktisk støtte»), der Grep har den;
+  - målene fra tidligere trinn som målet bygger på (`u:bygger-paa`);
+- kjerneelementene, med beskrivelse.
 
 Hvert ledd i kjeden fagkode → opplæringsfag → læreplan og kompetansemålsett velges ut fra gyldigheten på datoen
 (`udir:gyldighet`, se «Normaliserte data»). Da får man den versjonen som gjaldt da vurderingen ble gitt. For
 eksempel gir MAT0015 læreplanen MAT01-05 for 2025-01-01 og MAT01-06 for i dag. Tekstene er på bokmål, med
 `default` som reserve.
 
+Utsnittet fungerer like godt for grunnskolen (hvert årstrinn har egen fagkode, for eksempel MAT0004 for
+4. trinn), fellesfag i videregående og programfag som Matematikk R1/R2, Fysikk 1 og Kjemi 1. Standpunktvurdering
+finnes bare der faget har standpunkt (10. trinn og videregående).
+
 Svaret er en graf. Be om `text/turtle` eller `application/ld+json`, så kan svaret legges rett inn i en prompt.
-For MAT0015 er det omtrent 16 kB, og spørringen tar under ett sekund. Spørringen ligger også i
+For MAT0015 er det omtrent 29 kB som Turtle, og spørringen tar som regel under fire sekunder. Spørringen ligger
+også i
 [docs/eksempler/laereplanutsnitt.rq](https://github.com/aremjolsnes/grep-jena-fuseki/blob/main/docs/eksempler/laereplanutsnitt.rq).
 
 Bytt fagkode og dato i `VALUES`. Med `UNDEF` brukes dagens dato. Fagkoder uten LK20-læreplan på datoen gir et
 tomt svar. Det gjelder blant annet privatskolekoder, uspesifiserte programfag (UPF) og utgåtte fagkoder som
 MAT0010.
+
+Verdt å vite:
+
+- **Verb.** Globale verb (`u:globalt-verb true`) gjelder for alle læreplaner. En læreplan kan ha egne, lokale
+  verb (`u:globalt-verb false`, `u:tilhoerer-laereplan`). Har læreplanen et lokalt verb med samme navn som et
+  globalt, overstyrer det lokale, også når kompetansemålet peker på det globale. Utsnittet gir da det lokale
+  verbet med dets forklaring. I naturfag (NAT01-05) gjelder det for eksempel *beskrive*, *presentere* og
+  *utforske*.
+- **`u:bygger-paa`** er registrert for noen fag og ikke for andre. Matematikk 10. trinn, 1T, samfunnsfag,
+  engelsk og historie har det. Matematikk R1 og S1, Fysikk 1 og Kjemi 1 har det ikke, selv om senere mål bygger på
+  dem (R2 bygger på R1).
+- **Forklaringen** («didaktisk støtte», `u:forklaring`) finnes for ca. 400 kompetansemål i 77 læreplaner,
+  flest i matematikk 1.–10. trinn (MAT01-06) og naturfag.
 
 ```sparql
 PREFIX u:    <http://psi.udir.no/ontologi/kl06/>
@@ -744,14 +768,28 @@ CONSTRUCT {
   ?of   a u:opplaeringsfag ; u:kode ?ofKode ; u:tittel ?ofTittel ;
         u:laereplan-referanse ?lp ; u:tilhoerende-kompetansemaalsett ?kms .
   ?lp   a u:laereplan ; u:kode ?lpKode ; u:tittel ?lpTittel ; u:gyldig-fra ?lpFra ;
-        u:fagets-relevans ?relevans ; u:kjerneelementer ?ke .
+        u:fagets-relevans ?relevans ; u:kjerneelementer ?ke ;
+        u:vurderingsordning-standpunkt ?vStandpunkt ; u:vurderingsordning-eksamen-elev ?vEksamen ;
+        u:vurderingsordning-sluttvurdering ?vSlutt ;
+        u:grunnleggende-ferdigheter-muntlig ?gf1 ; u:grunnleggende-ferdigheter-skrive ?gf2 ;
+        u:grunnleggende-ferdigheter-lese ?gf3 ; u:grunnleggende-ferdigheter-regne ?gf4 ;
+        u:grunnleggende-ferdigheter-digitale ?gf5 ;
+        u:tverrfaglige-temaer-folkehelse-og-livsmestring ?tt1 ;
+        u:tverrfaglige-temaer-demokrati-og-medborgerskap ?tt2 ;
+        u:tverrfaglige-temaer-baerekraftig-utvikling ?tt3 .
   ?ke   a u:kjerneelement ; u:kode ?keKode ; u:tittel ?keTittel ; u:beskrivelse ?keBeskrivelse .
   ?kms  a u:kompetansemaalsett ; u:kode ?kmsKode ; u:tittel ?kmsTittel ;
         u:underveisvurdering ?underveis ; u:standpunktvurdering ?standpunkt ;
         u:kompetansemaal ?km .
   ?km   a u:kompetansemaal ; u:kode ?kmKode ; u:tittel ?kmTittel ; u:rekkefoelge ?kmNr ;
-        u:tilknyttede-kjerneelementer ?kmKe ; u:bygger-paa ?forrige .
+        u:forklaring ?kmForklaring ;
+        u:tilknyttede-kjerneelementer ?kmKe ; u:bygger-paa ?forrige ;
+        u:tilknyttede-grunnleggende-ferdigheter ?gf ; u:tilknyttede-tverrfaglige-temaer ?tt ;
+        u:tilknyttede-verb ?verb .
   ?forrige a u:kompetansemaal ; u:kode ?forrigeKode ; u:tittel ?forrigeTittel .
+  ?gf   a u:grunnleggende_ferdighet ; u:kode ?gfKode ; u:tittel ?gfTittel .
+  ?tt   a u:tverrfaglig_tema ; u:kode ?ttKode ; u:tittel ?ttTittel .
+  ?verb a u:verb ; u:kode ?verbKode ; u:tittel ?verbTittel ; u:beskrivelse ?verbBeskrivelse .
 }
 WHERE {
   VALUES (?fk ?datoInn) { (d:MAT0015 UNDEF) }
@@ -796,6 +834,44 @@ WHERE {
   BIND(STR(COALESCE(?uN, ?uD)) AS ?underveis)
   BIND(STR(COALESCE(?sN, ?sD)) AS ?standpunkt)
 
+  # Vurderingsordningen for faget (standpunkt, eksamen for elever, sluttvurdering)
+  OPTIONAL { ?lp u:vurderingsordning-standpunkt ?vsN . FILTER(lang(?vsN) = "nob") }
+  OPTIONAL { ?lp u:vurderingsordning-standpunkt ?vsD . FILTER(lang(?vsD) = "default") }
+  OPTIONAL { ?lp u:vurderingsordning-eksamen-elev ?veN . FILTER(lang(?veN) = "nob") }
+  OPTIONAL { ?lp u:vurderingsordning-eksamen-elev ?veD . FILTER(lang(?veD) = "default") }
+  OPTIONAL { ?lp u:vurderingsordning-sluttvurdering ?vlN . FILTER(lang(?vlN) = "nob") }
+  OPTIONAL { ?lp u:vurderingsordning-sluttvurdering ?vlD . FILTER(lang(?vlD) = "default") }
+  BIND(STR(COALESCE(?vsN, ?vsD)) AS ?vStandpunkt)
+  BIND(STR(COALESCE(?veN, ?veD)) AS ?vEksamen)
+  BIND(STR(COALESCE(?vlN, ?vlD)) AS ?vSlutt)
+
+  # Læreplanens tekst om hva de grunnleggende ferdighetene (GF1–GF5) og de tverrfaglige temaene (TT1–TT3)
+  # betyr i faget. Bare de som minst ett kompetansemål på trinnet peker på, tas med.
+  OPTIONAL { ?lp u:grunnleggende-ferdigheter-muntlig ?g1N . FILTER(lang(?g1N) = "nob") }
+  OPTIONAL { ?lp u:grunnleggende-ferdigheter-muntlig ?g1D . FILTER(lang(?g1D) = "default") }
+  OPTIONAL { ?lp u:grunnleggende-ferdigheter-skrive ?g2N . FILTER(lang(?g2N) = "nob") }
+  OPTIONAL { ?lp u:grunnleggende-ferdigheter-skrive ?g2D . FILTER(lang(?g2D) = "default") }
+  OPTIONAL { ?lp u:grunnleggende-ferdigheter-lese ?g3N . FILTER(lang(?g3N) = "nob") }
+  OPTIONAL { ?lp u:grunnleggende-ferdigheter-lese ?g3D . FILTER(lang(?g3D) = "default") }
+  OPTIONAL { ?lp u:grunnleggende-ferdigheter-regne ?g4N . FILTER(lang(?g4N) = "nob") }
+  OPTIONAL { ?lp u:grunnleggende-ferdigheter-regne ?g4D . FILTER(lang(?g4D) = "default") }
+  OPTIONAL { ?lp u:grunnleggende-ferdigheter-digitale ?g5N . FILTER(lang(?g5N) = "nob") }
+  OPTIONAL { ?lp u:grunnleggende-ferdigheter-digitale ?g5D . FILTER(lang(?g5D) = "default") }
+  OPTIONAL { ?lp u:tverrfaglige-temaer-folkehelse-og-livsmestring ?t1N . FILTER(lang(?t1N) = "nob") }
+  OPTIONAL { ?lp u:tverrfaglige-temaer-folkehelse-og-livsmestring ?t1D . FILTER(lang(?t1D) = "default") }
+  OPTIONAL { ?lp u:tverrfaglige-temaer-demokrati-og-medborgerskap ?t2N . FILTER(lang(?t2N) = "nob") }
+  OPTIONAL { ?lp u:tverrfaglige-temaer-demokrati-og-medborgerskap ?t2D . FILTER(lang(?t2D) = "default") }
+  OPTIONAL { ?lp u:tverrfaglige-temaer-baerekraftig-utvikling ?t3N . FILTER(lang(?t3N) = "nob") }
+  OPTIONAL { ?lp u:tverrfaglige-temaer-baerekraftig-utvikling ?t3D . FILTER(lang(?t3D) = "default") }
+  BIND(IF(EXISTS { ?kms u:kompetansemaal/u:tilknyttede-grunnleggende-ferdigheter d:GF1 }, STR(COALESCE(?g1N, ?g1D)), ?ingen) AS ?gf1)
+  BIND(IF(EXISTS { ?kms u:kompetansemaal/u:tilknyttede-grunnleggende-ferdigheter d:GF2 }, STR(COALESCE(?g2N, ?g2D)), ?ingen) AS ?gf2)
+  BIND(IF(EXISTS { ?kms u:kompetansemaal/u:tilknyttede-grunnleggende-ferdigheter d:GF3 }, STR(COALESCE(?g3N, ?g3D)), ?ingen) AS ?gf3)
+  BIND(IF(EXISTS { ?kms u:kompetansemaal/u:tilknyttede-grunnleggende-ferdigheter d:GF4 }, STR(COALESCE(?g4N, ?g4D)), ?ingen) AS ?gf4)
+  BIND(IF(EXISTS { ?kms u:kompetansemaal/u:tilknyttede-grunnleggende-ferdigheter d:GF5 }, STR(COALESCE(?g5N, ?g5D)), ?ingen) AS ?gf5)
+  BIND(IF(EXISTS { ?kms u:kompetansemaal/u:tilknyttede-tverrfaglige-temaer d:TT1 }, STR(COALESCE(?t1N, ?t1D)), ?ingen) AS ?tt1)
+  BIND(IF(EXISTS { ?kms u:kompetansemaal/u:tilknyttede-tverrfaglige-temaer d:TT2 }, STR(COALESCE(?t2N, ?t2D)), ?ingen) AS ?tt2)
+  BIND(IF(EXISTS { ?kms u:kompetansemaal/u:tilknyttede-tverrfaglige-temaer d:TT3 }, STR(COALESCE(?t3N, ?t3D)), ?ingen) AS ?tt3)
+
   # Kjerneelementene i læreplanen.
   # OPTIONAL og ikke UNION: Jena evaluerer OPTIONAL med ?lp og ?kms allerede bundet, mens en UNION-gren
   # evalueres for seg (nedenfra og opp) og kan gi et kryssprodukt over hele databasen.
@@ -808,19 +884,49 @@ WHERE {
     BIND(STR(COALESCE(?bN, ?bD)) AS ?keBeskrivelse)
   }
 
-  # Kompetansemålene i settet, med kjerneelementer og det de bygger på (trinnet før)
-  OPTIONAL {
-    ?kms u:kompetansemaal ?km .
-    ?km u:kode ?kmKode .
-    OPTIONAL { ?km udir:bokmaalTittel ?kmTittel }
-    OPTIONAL { ?km u:rekkefoelge ?kmNr }
-    OPTIONAL { ?km u:tilknyttede-kjerneelementer ?kmKe }
-    OPTIONAL {
-      ?km u:bygger-paa ?forrige .
-      ?forrige u:kode ?forrigeKode .
-      OPTIONAL { ?forrige udir:bokmaalTittel ?forrigeTittel }
-    }
-  }
+  # Kompetansemålene i settet. Et kompetansemålsett har alltid mål, så ?km bindes uten OPTIONAL, og alt
+  # som hører til målet, er enkle OPTIONAL-blokker på toppnivå med ?km bundet. (En OPTIONAL rundt hele
+  # målet, med BIND eller FILTER inni, fikk Jena til å evaluere blokken for alle mål i databasen.)
+  ?kms u:kompetansemaal ?km .
+  ?km u:kode ?kmKode .
+  OPTIONAL { ?km udir:bokmaalTittel ?kmTittel }
+  OPTIONAL { ?km u:rekkefoelge ?kmNr }
+  OPTIONAL { ?km u:tilknyttede-kjerneelementer ?kmKe }
+
+  # Forklaring av målet («didaktisk støtte»)
+  OPTIONAL { ?km u:forklaring ?fN . FILTER(lang(?fN) = "nob") }
+  OPTIONAL { ?km u:forklaring ?fD . FILTER(lang(?fD) = "default") }
+  BIND(STR(COALESCE(?fN, ?fD)) AS ?kmForklaring)
+
+  # Målene fra tidligere trinn som dette målet bygger på
+  OPTIONAL { ?km u:bygger-paa ?forrige . ?forrige u:kode ?forrigeKode ; udir:bokmaalTittel ?forrigeTittel }
+
+  # Grunnleggende ferdigheter og tverrfaglige temaer (tekstene står på læreplanen, se over)
+  OPTIONAL { ?km u:tilknyttede-grunnleggende-ferdigheter ?gf .
+             ?gf u:kode ?gfKode ; u:tittel ?gfTittel . FILTER(lang(?gfTittel) = "nob") }
+  OPTIONAL { ?km u:tilknyttede-tverrfaglige-temaer ?tt .
+             ?tt u:kode ?ttKode ; u:tittel ?ttTittel . FILTER(lang(?ttTittel) = "nob") }
+
+  # Verbene i målet, med Udirs forklaring av verbet.
+  # Globale verb (u:globalt-verb true) gjelder for alle læreplaner. Har læreplanen et eget, lokalt verb
+  # med samme navn, overstyrer det det globale, også når kompetansemålet peker på det globale.
+  # Egenskapene hentes på hvert av de to verbene før vi velger, i samme blokk som binder verbet. Et
+  # oppslag i en egen OPTIONAL på en variabel som kan være ubundet, matcher ellers alle verb (eller alt i
+  # databasen som har kode, tittel og beskrivelse).
+  # Det lokale verbet slås opp i samme blokk, med læreplanen fra målets egen u:tilhoerer-laereplan, slik at
+  # alt blokken bruker, er bundet i blokken.
+  OPTIONAL { ?km u:tilknyttede-verb ?verbPekt ; u:tilhoerer-laereplan ?kmLp .
+             ?verbPekt a u:verb_lk20 ; u:kode ?vpKode ; u:tittel ?vpT . FILTER(lang(?vpT) = "nob")
+             OPTIONAL { ?verbPekt u:beskrivelse ?vpB . FILTER(lang(?vpB) = "nob") }
+             # Samme navn = samme bokmålstittel (join på ?vpT, ikke FILTER, så Jena kan bruke indeksene).
+             OPTIONAL { ?verbLokalt u:tittel ?vpT ; u:tilhoerer-laereplan ?kmLp ; u:globalt-verb false ;
+                                    u:status <https://data.udir.no/kl06/v201906/status/status_publisert> ;
+                                    u:kode ?vlKode .
+                        OPTIONAL { ?verbLokalt u:beskrivelse ?vlB . FILTER(lang(?vlB) = "nob") } } }
+  BIND(COALESCE(?verbLokalt, ?verbPekt) AS ?verb)
+  BIND(IF(BOUND(?verbLokalt), ?vlKode, ?vpKode) AS ?verbKode)
+  BIND(STR(?vpT) AS ?verbTittel)
+  BIND(STR(IF(BOUND(?verbLokalt), ?vlB, ?vpB)) AS ?verbBeskrivelse)
 }
 ```
 
