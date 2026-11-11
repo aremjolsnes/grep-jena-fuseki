@@ -14449,6 +14449,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/86df7af2-f9f3-4c06-a500-7f1fba9e78fe> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). En «sikker jobbanalyse» er en HMS-prosedyre i bygg og anlegg for å forebygge ulykker." .
 <http://psi.udir.no/kl06/KM5664> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/86df7af2-f9f3-4c06-a500-7f1fba9e78fe> .
@@ -19362,6 +19363,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/db4a5d3a-47f5-4ff2-bc79-e458ee58c3fe> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Montering av mekatroniske enheter med sveising, lodding og lim er beslektet." .
 <http://psi.udir.no/kl06/KM12943> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/db4a5d3a-47f5-4ff2-bc79-e458ee58c3fe> .
@@ -24771,6 +24773,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/be7c80ee-0b7a-455c-8928-055cfa65076c> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å handle raskt ved uventede hendelser er beslektet med førstehjelp." .
 <http://psi.udir.no/kl06/KM5743> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/be7c80ee-0b7a-455c-8928-055cfa65076c> .
@@ -25602,6 +25605,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/110d7aa3-e44e-4cce-a927-8d4de615f3d9> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «kildesortere» avfall er en del av målet." .
 <http://psi.udir.no/kl06/KM10589> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/110d7aa3-e44e-4cce-a927-8d4de615f3d9> .
@@ -27379,6 +27383,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/88806f52-96a1-4a40-a172-6dcdcee066d8> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å melde fra om skorsteinsdefekter følger av tilsynet; beslektet." .
 <http://psi.udir.no/kl06/KM3502> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/88806f52-96a1-4a40-a172-6dcdcee066d8> .
@@ -29704,6 +29709,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Miljøbærekraftig arbeidspraksis er beslektet med å reflektere over «nullutslipp» på sokkelen." .
 <http://psi.udir.no/kl06/KM8516> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
@@ -36569,6 +36575,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/39d7fe0c-205a-44d0-a17d-81ebcb5fc032> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Kunnskap om egenskapene til ulike skinntyper er beslektet med å «vurdere og artsbestemme pelsdyr»." .
 <http://psi.udir.no/kl06/KM7721> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/39d7fe0c-205a-44d0-a17d-81ebcb5fc032> .
@@ -37884,6 +37891,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/2416dc09-6384-409e-8b1d-80bb7a2e7369> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Sikker håndtering av kjemikalier er beslektet med bruk av slamsystemer." .
 <http://psi.udir.no/kl06/KM10705> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2416dc09-6384-409e-8b1d-80bb7a2e7369> .
@@ -41472,6 +41480,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Miljøbærekraftig arbeidspraksis er beslektet med å redusere miljøavtrykket." .
 <http://psi.udir.no/kl06/KM5777> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
@@ -43591,6 +43600,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/c4dcfe3a-a8b0-4352-ba82-a5e345d88c08> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Fjærtyper brukt i seter er beslektet med materialkunnskap i faget." .
 <http://psi.udir.no/kl06/KM7876> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c4dcfe3a-a8b0-4352-ba82-a5e345d88c08> .
@@ -48180,6 +48190,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «vurdere … eget arbeid» er beslektet med systematisk selvrefleksjon." .
 <http://psi.udir.no/kl06/KM12799> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/409a0245-0e6c-4aac-ba16-0920ecb76a8d> .
@@ -50238,6 +50249,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å fjerne arbeidsstykker som ikke holder standarden er en del av «avviksbehandling»." .
 <http://psi.udir.no/kl06/KM8852> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/31f01be9-7bbf-4afb-a647-bcd4931cfc8b> .
@@ -56587,6 +56599,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/a7445303-2d79-4dd6-b3a3-f46bd3e2de0d> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Dyrepass hos eiere er en tjeneste «retta mot målgrupper»." .
 <http://psi.udir.no/kl06/KM7047> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/a7445303-2d79-4dd6-b3a3-f46bd3e2de0d> .
@@ -61803,6 +61816,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/a9b68e58-766a-403d-b5fe-955b57bdad1b> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Fibereffektmålere brukes for å «kontrollere at forbindelsen tilfredsstiller gjeldende krav»." .
 <http://psi.udir.no/kl06/KM5042> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/a9b68e58-766a-403d-b5fe-955b57bdad1b> .
@@ -65455,6 +65469,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/b080a008-a35d-4bd0-92e9-edf3773bb2b7> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «ta i bruk bedriftens elektroniske kommunikasjonssystemer» er en del av målet." .
 <http://psi.udir.no/kl06/KM12509> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b080a008-a35d-4bd0-92e9-edf3773bb2b7> .
@@ -76190,6 +76205,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/b9747ec1-f3a7-4526-b226-59d903cbfa76> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å drive metallplatepåler er å bruke «spuntutstyr»." .
 <http://psi.udir.no/kl06/KM10507> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b9747ec1-f3a7-4526-b226-59d903cbfa76> .
@@ -80471,6 +80487,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/57cf23b0-b644-41b9-985c-9af4d06dd34e> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Hårstilens historie er beslektet med å forstå moter og trender i et bredere perspektiv." .
 <http://psi.udir.no/kl06/KM13032> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/57cf23b0-b644-41b9-985c-9af4d06dd34e> .
@@ -84994,6 +85011,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/e65117b6-97e0-4f45-bd61-e581dcd6ec2a> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Valg av emballasje for sikker forsendelse er beslektet, men ferdigheten gjelder matvarer." .
 <http://psi.udir.no/kl06/KM7053> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/e65117b6-97e0-4f45-bd61-e581dcd6ec2a> .
@@ -86716,6 +86734,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/56d51dce-23bc-4135-a0a3-07d77cc1c0fd> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å velge materialer ut fra egenskaper er beslektet med å bruke kunnskap om «ulike glasstyper» i design." .
 <http://psi.udir.no/kl06/KM7939> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/56d51dce-23bc-4135-a0a3-07d77cc1c0fd> .
@@ -89831,6 +89850,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/7ae62140-fe02-4ee3-a0c5-fb5668a2870d> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Forbrukervern henger sammen med «kommersiell påvirkning og forbruk»." .
 <http://psi.udir.no/kl06/KM11234> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/7ae62140-fe02-4ee3-a0c5-fb5668a2870d> .
@@ -93870,6 +93890,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Arbeid «fra idé til ferdig produkt» krever kreativ idéutvikling." .
 <http://psi.udir.no/kl06/KM4780> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41> .
@@ -97078,6 +97099,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/27273605-2400-4392-a6d6-cc8161a2d445> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Etterlevelse av avfallsforskrifter er beslektet med deklarering «etter gjeldende regelverk»." .
 <http://psi.udir.no/kl06/KM10804> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/27273605-2400-4392-a6d6-cc8161a2d445> .
@@ -108935,6 +108957,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Miljøbærekraftig arbeidspraksis er beslektet med bærekraftig materialbruk i produksjonen." .
 <http://psi.udir.no/kl06/KM7759> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/a992f345-7c06-4982-8fc9-5fab55e316af> .
@@ -113150,6 +113173,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Vurdering av eget arbeid henger sammen med å strebe etter god kvalitet." .
 <http://psi.udir.no/kl06/KM12828> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae> .
@@ -132496,6 +132520,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/5c3ab99d-a3f1-4620-9602-d12d2151a03d> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Korrosjon ved «galvaniske spenninger» bygger på naturvitenskapelige prinsipper; beslektet." .
 <http://psi.udir.no/kl06/KM7425> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5c3ab99d-a3f1-4620-9602-d12d2151a03d> .
@@ -138037,6 +138062,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Mekanikk, med krefter og bevegelser, er grunnlaget for å forstå løfteutstyrets virkemåte." .
 <http://psi.udir.no/kl06/KM9309> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/efa141df-f382-418f-9121-bd88fd735669> .
@@ -143319,6 +143345,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/f7464f30-662b-4177-85a0-3df9693e9e58> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «forstå … livreddende førstehjelp» omfatter kunnskap om akutt behandling ved sirkulasjons- og respirasjonssvikt." .
 <http://psi.udir.no/kl06/KM13599> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f7464f30-662b-4177-85a0-3df9693e9e58> .
@@ -145223,6 +145250,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/d350bfa6-ae99-433a-a138-1a16f8f93d33> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å betjene kjøttbehandlingsutstyr er en del av å bruke maskiner og utstyr." .
 <http://psi.udir.no/kl06/KM8048> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d350bfa6-ae99-433a-a138-1a16f8f93d33> .
@@ -146934,6 +146962,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/4ce06d6b-f3df-40b6-b950-570be5008032> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Analyse av skannedata er beslektet med å «analysere fasong, balanse og volum i en kropp»." .
 <http://psi.udir.no/kl06/KM7820> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4ce06d6b-f3df-40b6-b950-570be5008032> .
@@ -147688,6 +147717,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å forklare «hvorfor samarbeid er viktig» er beslektet med å arbeide i team." .
 <http://psi.udir.no/kl06/KM9515> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0> .
@@ -149003,6 +149033,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Utforming av testprosedyrer er beslektet med å forbedre laboratoriets prosedyrer." .
 <http://psi.udir.no/kl06/KM8630> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/abcfd4de-3b3d-48ed-a002-36071bad8d46> .
@@ -150995,6 +151026,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/5f95f9c9-30ee-4735-ab63-8045ec8f78f8> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Kunnskap om landbruksmaskiner og -utstyr er beslektet med redskaper for skjøtsel og høsting i skog og utmark." .
 <http://psi.udir.no/kl06/KM7086> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/5f95f9c9-30ee-4735-ab63-8045ec8f78f8> .
@@ -172003,6 +172035,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/db3c8181-31b4-4950-bf0b-de01f93c372b> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Demontering av girkasser og komponenter er beslektet med å kontrollere «girkasser»." .
 <http://psi.udir.no/kl06/KM8758> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/db3c8181-31b4-4950-bf0b-de01f93c372b> .
@@ -178755,6 +178788,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/73a023d0-888c-4d89-87e4-a03e84395da8> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Terapeutiske relasjoner er beslektet med samhandling med brukere «i ulike livssituasjoner»." .
 <http://psi.udir.no/kl06/KM5411> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/73a023d0-888c-4d89-87e4-a03e84395da8> .
@@ -189258,6 +189292,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/4cde32b5-fc2f-4257-a8b9-5b15a67ee3e5> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å gi førstehjelp ved ulykker er en del av å «utføre livreddende førstehjelp»." .
 <http://psi.udir.no/kl06/KM9537> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/4cde32b5-fc2f-4257-a8b9-5b15a67ee3e5> .
@@ -193198,6 +193233,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/c5efe5ad-c5e3-4bd1-9c8b-4a514940f4d6> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å registrere produksjonsdata er en måte å «dokumentere en produksjonsprosess» på." .
 <http://psi.udir.no/kl06/KM4878> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c5efe5ad-c5e3-4bd1-9c8b-4a514940f4d6> .
@@ -195366,6 +195402,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/564e86a6-0916-44e6-b3d6-d99bc0c1f194> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å redusere miljøpåvirkningen av rørledningsprosjekter er beslektet med å minimere miljøavtrykket." .
 <http://psi.udir.no/kl06/KM10628> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/564e86a6-0916-44e6-b3d6-d99bc0c1f194> .
@@ -201836,6 +201873,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å bruke innhentet informasjon krever kritisk vurdering av kilder." .
 <http://psi.udir.no/kl06/KM10106> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/db33c0f3-43ee-4ba3-ba47-9269ac837697> .
@@ -208301,6 +208339,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/1da808a1-419f-4e7c-b714-8287f1842546> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å fremme organisasjonens mål er beslektet med å reflektere over hvordan «virksomhetens mål» påvirker driften." .
 <http://psi.udir.no/kl06/KM8161> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1da808a1-419f-4e7c-b714-8287f1842546> .
@@ -210623,6 +210662,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/386774ac-fe5b-431a-b485-9aec0bf5c09e> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «drifte og vedlikeholde» spennings- og fordelingssystemet er vedlikehold av elektrisk utstyr." .
 <http://psi.udir.no/kl06/KM12904> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/386774ac-fe5b-431a-b485-9aec0bf5c09e> .
@@ -212884,6 +212924,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «utøve yrkesrollen i tråd med demokratiske prinsipper» er en del av målet." .
 <http://psi.udir.no/kl06/KM6817> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/896a5e0c-7ac9-4e59-a9bf-17fdca6b1c37> .
@@ -230089,6 +230130,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/477856e7-92e6-43e8-ad67-e2d7129a5188> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Manuelle syteknikker brukes ved reparasjon og lapping; beslektet." .
 <http://psi.udir.no/kl06/KM7372> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/477856e7-92e6-43e8-ad67-e2d7129a5188> .
@@ -231487,6 +231529,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å skape digitalt innhold er beslektet med å marknadsføre «digitalt»." .
 <http://psi.udir.no/kl06/KM7618> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615> .
@@ -233325,6 +233368,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/1f9cd253-7d74-45a2-acf6-0bd2354aed2f> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «teste kjøreegenskapene og funksjonene» avdekker behov for justering; beslektet, men justering er ikke en del av målet." .
 <http://psi.udir.no/kl06/KM10527> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1f9cd253-7d74-45a2-acf6-0bd2354aed2f> .
@@ -235058,6 +235102,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «kontrollere kvalitet og mengde» av leveransen er å inspisere byggevarer." .
 <http://psi.udir.no/kl06/KM6009> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/50f2d23c-b3fb-48a5-967b-14fd0a6dd205> .
@@ -239191,6 +239236,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/6e4f75b4-c60f-4623-a9ba-760c8245753b> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «gjøre rede for … kommunikasjonsprotokoller» er en del av målet." .
 <http://psi.udir.no/kl06/KM12482> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/6e4f75b4-c60f-4623-a9ba-760c8245753b> .
@@ -246062,6 +246108,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/2336b108-a59b-4ff0-84c4-d838b4d297bd> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Kunnskap om treprodukters egenskaper er beslektet med å gjere greie for produkta." .
 <http://psi.udir.no/kl06/KM9990> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2336b108-a59b-4ff0-84c4-d838b4d297bd> .
@@ -250910,6 +250957,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «presentere og marknadsføre eigne produkt» er en del av målet." .
 <http://psi.udir.no/kl06/KM7554> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868> .
@@ -253782,6 +253830,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/0da516ee-e70e-4384-be13-f5ff80be8127> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Kundekommunikasjon krever at fagspråk brukes riktig; beslektet." .
 <http://psi.udir.no/kl06/KM7711> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0da516ee-e70e-4384-be13-f5ff80be8127> .
@@ -258338,6 +258387,7 @@
     sssom:object_id <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> ;
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
+    sssom:reviewer_label "Are Mjølsnes" ;
     sssom:mapping_tool "Claude (Anthropic) claude-opus-5-5" ;
     sssom:comment "Automatisk forslag (2026-11-11). Å «velge» materialer og framstillingsmetoder er å ta en avgjørelse." .
 <http://psi.udir.no/kl06/KM9290> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d62d2b4c-a6f8-439e-8a1b-4f29ab5f2c47> .
