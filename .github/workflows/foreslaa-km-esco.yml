@@ -1,8 +1,8 @@
 name: Foreslå koblinger kompetansemål ↔ ESCO
 
-# Startes bare manuelt, fordi hver kjøring koster penger (Claude API). Forslagene havner på en egen gren
-# (forslag/km-esco-<kjøring>) som SSSOM uten kontrollør, og arbeidslistene (CSV) som et artefakt. Et menneske vurderer
-# dem før noe slås sammen med main. Grenen utløser ikke innlastingen; det gjør først sammenslåingen med main.
+# Startes bare manuelt, fordi hver kjøring koster penger (Claude API). Forslagene committes rett på main som SSSOM uten
+# kontrollør (sandkassen tar automatiske koblinger med og retter i etterkant), og arbeidslistene (CSV) lastes opp som
+# et artefakt. Pushen gjøres med GITHUB_TOKEN og utløser derfor ikke innlastingen; den nattlige kjøringen tar dem med.
 on:
   workflow_dispatch:
     inputs:
@@ -32,7 +32,7 @@ jobs:
   foreslaa:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # pusher forslagsgrenen
+      contents: write # committer forslagene på main
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -66,16 +66,18 @@ jobs:
           path: ${{ runner.temp }}/forslag/*.csv
           if-no-files-found: warn
 
-      - name: Push forslagsgrenen
+      - name: Commit på main
         run: |
           if git diff --quiet -- ontologi/koblinger && [ -z "$(git ls-files --others --exclude-standard ontologi/koblinger)" ]; then
             echo "Ingen nye forslag." ; exit 0
           fi
-          GREN="forslag/km-esco-${{ github.run_id }}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c "$GREN"
           git add ontologi/koblinger
-          git commit -q -m "Forslag: kompetansemål ↔ ESCO (kjøring ${{ github.run_id }}, ikke vurdert)"
-          git push -q origin "$GREN"
-          echo "Grenen $GREN er pushet: https://github.com/${{ github.repository }}/compare/main...$GREN" >> "$GITHUB_STEP_SUMMARY"
+          git commit -q -m "km-esco: automatiske koblinger (kjøring ${{ github.run_id }}, ikke vurdert)"
+          for forsok in 1 2 3; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && break
+            [ "$forsok" = 3 ] && { echo "::error::Fikk ikke pushet til main"; exit 1; }
+            sleep 5
+          done
+          echo "Committet på main: $(git rev-parse --short HEAD)" >> "$GITHUB_STEP_SUMMARY"

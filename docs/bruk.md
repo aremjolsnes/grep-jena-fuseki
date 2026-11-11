@@ -595,8 +595,11 @@ SELECT ?relasjon ?ferdighet ?type WHERE {
 ```
 
 **Hull 1: kompetansemål uten ESCO-ferdighet.** Hvilke mål i læreplanen fant vi ingen ESCO-ferdighet for?
+For BMK03-03 er svaret tomt: etter at de tverrgående ESCO-ferdighetene kom med som kandidater, har alle
+22 kompetansemålene minst én ferdighet. Bytt læreplankode for å se hullene i andre læreplaner.
 
 ```sparql
+# forventer tomt
 SELECT ?kode ?tekst WHERE {
   d:BMK03-03 u:kompetansemaalsett/u:kompetansemaal ?km .
   ?km u:kode ?kode ; udir:bokmaalTittel ?tekst .
