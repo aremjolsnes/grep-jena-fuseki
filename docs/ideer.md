@@ -15,7 +15,7 @@ Status: 🔜 påbegynt · 💡 idé · ✅ gjort
 | 6 | [Beskrivelse av datasettet med DCAT og VoID](#6-beskrivelse-av-datasettet-med-dcat-og-void) | ✅ |
 | 7 | [Test eksemplene i bruk.md](#7-test-eksemplene-i-brukmd) | ✅ |
 | 8 | [Inverse egenskaper (R6)](#8-inverse-egenskaper-r6) | 💡 |
-| 9 | [Demo for AI: fra fagkode til prompt](#9-demo-for-ai-fra-fagkode-til-prompt) | 💡 |
+| 9 | [Demo for AI: fra fagkode til prompt](#9-demo-for-ai-fra-fagkode-til-prompt) | ✅ |
 | 10 | [Grunnlag for en veiledning om koblinger](#10-grunnlag-for-en-veiledning-om-koblinger) | 💡 |
 
 Prioritert 2026-11-10: NUS (under 4, ✅ samme dag), så 9, så 10, så SHACL (5). Småting: R6 (8) og de 9 programområdene uten STYRK-kobling.
@@ -243,6 +243,22 @@ Et lite, konkret eksempel på hele kjeden for én elev: fagkode → læreplanuts
 kompetansemål med kjerneelementer, og eventuelt programområde → STYRK-08 → ESCO-yrker (idé 4). Spørringen finnes
 allerede. Det som mangler, er å vise hvordan svaret blir til en prompt. Nyttig til samtaler med folk som jobber med
 AI på vurderingsdata.
+
+✅ 2026-11-12: skriptet `lag_prompt.py` i et eget, privat søskenprosjekt (`laereplan-prompt`). Skriptet gjør dette:
+- henter [eksempler/laereplanutsnitt.rq](eksempler/laereplanutsnitt.rq) herfra og setter inn fagkode og
+  vurderingsdato;
+- gjør Turtle om til Markdown;
+- setter sammen en prompt av systemprompt, utsnitt og oppdiktede vurderingsdata for én elev;
+- viser prompten, eller sender den til Claude med `--kall`.
+
+Testet med elever i matematikk 10. trinn og 1T: ca. 10 000 tokens inn og rundt 0,15 USD per kall. Svarene viser
+til kompetansemål med kode, leser verbene slik Udir forklarer dem, skiller mellom det dataene viser og det modellen
+tolker, peker på hull i vurderingsgrunnlaget og foreslår mål fra tidligere trinn via `u:bygger-paa`.
+
+Datoen avgjør hvilken læreplanversjon som brukes. Da kommer også avviket der `bygger-paa` peker på læreplaner som
+ikke gjelder, til syne: forslagene for 1T peker på mål i MAT01-05, se [avvik-bygger-paa.md](avvik-bygger-paa.md).
+
+ESCO-delen er ikke med, fordi demoen gjelder fellesfag og studieforberedende.
 
 ## 10. Grunnlag for en veiledning om koblinger
 
