@@ -361,6 +361,33 @@ avvik "Ny ESCO-versjon" \
   "ESCO har publisert en nyere versjon enn den sandkassen bygger på. Last ned (classification, ttl), og kjør scripts/lag-esco-ferdigheter-ttl.py og lag-esco-ttl.py på nytt. Skriptet viser hva som er endret." \
   "Ny versjon,Sandkassen bruker,Nedlasting" "$("${PYTHON:-python3}" "$REPO/scripts/sjekk-koblinger.py" esco-versjon)"
 
+# u:bygger-paa fra en læreplan som gjelder i dag, til mål i en læreplan som ikke gjelder lenger.
+# «Gjelder» = et opplæringsfag har læreplanen som laereplan-referanse med gyldighet (N1) som omfatter dagens dato.
+# Én rad per par av læreplaner, med antall mål og ett eksempel. Tok 43 s i prod 12.11.2026.
+avvik "Bygger på læreplan som ikke gjelder" \
+  "Kompetansemål i en læreplan som gjelder i dag, bygger på (u:bygger-paa) mål i en læreplan som ikke gjelder lenger. Stemmer for elever som hadde den gamle læreplanen, men blir feil for senere kull. Bør vurderes av de fagansvarlige. Oversikt: docs/avvik-bygger-paa.md." \
+  "Læreplan,Bygger på,Mål,Eksempel" "$(sporr_alle "$(cat <<EOF
+PREFIX u: <http://psi.udir.no/ontologi/kl06/>
+PREFIX udir: <http://psi.udir.no/ontologi/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?lp ?flp (COUNT(*) AS ?antall) (CONCAT(SAMPLE(?kmKode), " -> ", SAMPLE(?fKode)) AS ?eksempel) WHERE {
+  { SELECT DISTINCT ?lp WHERE {
+      GRAPH <$G_NORM> { ?of udir:gyldighet ?g . ?g udir:relasjon u:laereplan-referanse ;
+                          udir:objekt ?lp ; udir:gyldigFra ?a ; udir:gyldigTil ?b }
+      FILTER(?a <= xsd:date(SUBSTR(STR(NOW()), 1, 10)) && xsd:date(SUBSTR(STR(NOW()), 1, 10)) <= ?b) } }
+  GRAPH <$G_GREP> {
+    ?lp a u:laereplan_lk20 .
+    ?km u:tilhoerer-laereplan ?lp ; u:bygger-paa ?f ; u:kode ?kmKode .
+    ?f u:tilhoerer-laereplan ?flp ; u:kode ?fKode .
+  }
+  FILTER NOT EXISTS {
+    GRAPH <$G_NORM> { ?of2 udir:gyldighet ?g2 . ?g2 udir:relasjon u:laereplan-referanse ;
+                        udir:objekt ?flp ; udir:gyldigFra ?a2 ; udir:gyldigTil ?b2 }
+    FILTER(?a2 <= xsd:date(SUBSTR(STR(NOW()), 1, 10)) && xsd:date(SUBSTR(STR(NOW()), 1, 10)) <= ?b2) }
+} GROUP BY ?lp ?flp ORDER BY ?lp ?flp
+EOF
+)")"
+
 # Verdier som N3 ikke kunne gjøre om (rekkevidden er typet, men verdien passer ikke formatet)
 avvik "Verdier med feil format" \
   "Egenskapen skal være dato eller tall, men verdien passer ikke formatet. Står som tekst." \
@@ -382,7 +409,8 @@ if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
    || [ "$(printf '%s' "$N_REVISJON" | grep -o 'udir:LK' | wc -l)" -ne 2 ] || [ "${N_TO_REVISJONER:-1}" -ne 0 ] \
    || [ "$(printf '%s' "$N_SKOS" | grep -o 'udir:' | wc -l)" -ne 5 ] || [ "${N_FAGOMR_UTEN_KATEGORI:-1}" -ne 0 ] \
    || [ "${N_SPRAAK_UTEN_EU:-1}" -ne 0 ] || [ "$(printf '%s' "$N_DCTERMS" | grep -o 'dcterms:' | wc -l)" -ne 5 ] \
-   || [ "${N_UTEN_BOKMAALTITTEL:-1}" -ne 0 ] || [ "$(printf '%s' "$N_SCHEMA" | grep -o 'schema:' | wc -l)" -ne 2 ] \n   || [ "${N_STYRK:-0}" -lt 1 ] || [ "${N_NUS:-0}" -lt 1 ] || [ "${N_ESCO:-0}" -lt 1 ] || [ "${N_ESCO_FERD:-0}" -lt 1 ]; then
+   || [ "${N_UTEN_BOKMAALTITTEL:-1}" -ne 0 ] || [ "$(printf '%s' "$N_SCHEMA" | grep -o 'schema:' | wc -l)" -ne 2 ] \
+   || [ "${N_STYRK:-0}" -lt 1 ] || [ "${N_NUS:-0}" -lt 1 ] || [ "${N_ESCO:-0}" -lt 1 ] || [ "${N_ESCO_FERD:-0}" -lt 1 ]; then
   echo "Røyktest feilet (forventet minst $MIN_TRIPLER tripler i $G_GREP, >0 i $G_ONTOLOGI," \
        "minst $MIN_GYLDIGHET udir:Gyldighet og gyldighetsperiode på alle fagkoder i $G_NORM," \
        ">0 u:Kompetansemaal_lk20, overbegreper fra udir.ttl og udir:revisjon for LK06 og LK20" \
