@@ -104,4 +104,4 @@ SELECT ?mal ?tekst ?byggerPaa ?gammelTekst WHERE {
 } ORDER BY ?mal
 ```
 
-Grep-sandkassen er et eksperiment og ikke en tjeneste fra Utdanningsdirektoratet. Grunnlaget for alle tallene er de åpne Grep-dataene.
+Grep-sandkassen er et eksperiment og ikke en tjeneste fra Udir. Grunnlaget for alle tallene er de åpne Grep-dataene.
