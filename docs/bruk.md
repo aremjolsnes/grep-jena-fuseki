@@ -100,14 +100,12 @@ Slik blir grafene til hver natt:
 
 ```mermaid
 flowchart LR
-  dump["Udirs dump<br/>(JSON-LD)"] --> grep["urn:graph:grep<br/>Grep-dataene"]
+  dump["Udirs dump"] --> grep["urn:graph:grep<br/>Grep-dataene"]
+  grep -- "regler" --> norm["urn:graph:normalisert<br/>gyldighet, perioder, titler"]
+  grep -- "regler" --> utl["urn:graph:utledet<br/>typer fra ontologien"]
   repo["Filer i repoet"] --> onto["urn:graph:ontologi<br/>klasser og egenskaper"]
+  onto --> utl
   repo --> kobl["urn:graph:koblinger<br/>STYRK, NUS, ESCO, ISCED"]
-  grep -- "normalisering" --> norm["urn:graph:normalisert<br/>gyldighet, perioder, titler"]
-  grep -- "utledning" --> utl["urn:graph:utledet<br/>typer fra ontologien"]
-  onto -- "utledning" --> utl
-  norm -- "utledning" --> utl
-  grep & onto & norm & utl & kobl --> union(["Spørring uten GRAPH:<br/>alle grafene samlet"])
 ```
 
 Vil du ha *bare* Grep-dataene, for eksempel for å sammenligne med Udirs offisielle endepunkt, pakker du
