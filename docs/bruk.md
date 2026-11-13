@@ -8,6 +8,29 @@ Udir-tjeneste.
 > eller REST-API-et på `https://data.udir.no/kl06/v201906/`. Sandkassen kan endres, være nede eller forsvinne 
 > uten varsel.
 
+```mermaid
+flowchart LR
+  udir["Udir: Grep<br/>(nattlig dump)"] --> sk
+  andre["SSB og EU:<br/>STYRK-08, NUS,<br/>ESCO, ISCED"] --> sk
+  sk[("Grep-sandkassen<br/>data + ontologi<br/>+ koblinger")]
+  sk --> wb["SPARQL-workbench<br/>skriv og kjør spørringer"]
+  sk --> lp["laereplan-prompt<br/>fra fagkode til AI-prompt"]
+  sk --> egne["Egne klienter<br/>curl, rdflib, YASGUI …"]
+```
+
+## Denne dokumentasjonen
+
+Dokumentasjonen ligger i repoene den hører til, og sidene lenker til hverandre:
+
+| Side | Innhold |
+|---|---|
+| **Brukerveiledning** (denne siden) | Hvordan du spør mot sandkassen: dataene, ontologien, de normaliserte dataene, koblingene og eksempler |
+| [Drift og oppsett](../README.md) | Hvordan sandkassen er satt opp: Fuseki på Fly.io, nattlig innlasting, grafer, feilsøking |
+| [laereplan-prompt](https://github.com/aremjolsnes/laereplan-prompt) | **Anvendelse:** fra fagkode til AI-prompt. Henter læreplanutsnittet fra sandkassen og setter det sammen med vurderingsdata. Med [demomanus](https://github.com/aremjolsnes/laereplan-prompt/blob/main/docs/demomanus.md), [øving](https://github.com/aremjolsnes/laereplan-prompt/blob/main/docs/oeving.md) og [kostnadsoverslag](https://github.com/aremjolsnes/laereplan-prompt/blob/main/docs/kostnad.md) |
+
+Samlet, med meny, kan sidene leses i
+[SPARQL-workbenchen](https://sparql.mjolne.com/dokumentasjon?endepunkt=Sandkassen).
+
 ## Kom i gang
 
 | | |
@@ -72,6 +95,20 @@ trenger ikke å bry seg om grafene.
 | `urn:graph:utledet` | Typene fra ontologien, utledet fra typene i dataene (omtrent 50 000 tripler) |
 | `urn:graph:koblinger` | Koblinger til andre kunnskapsgrafer: yrker i STYRK-08 (videre til ESCO) og utdanninger i NUS (videre til ISCED) (se «Koblinger til andre kunnskapsgrafer») |
 | `urn:graph:meta` | Når dataene sist ble oppdatert |
+
+Slik blir grafene til hver natt:
+
+```mermaid
+flowchart LR
+  dump["Udirs dump<br/>(JSON-LD)"] --> grep["urn:graph:grep<br/>Grep-dataene"]
+  repo["Filer i repoet"] --> onto["urn:graph:ontologi<br/>klasser og egenskaper"]
+  repo --> kobl["urn:graph:koblinger<br/>STYRK, NUS, ESCO, ISCED"]
+  grep -- "normalisering" --> norm["urn:graph:normalisert<br/>gyldighet, perioder, titler"]
+  grep -- "utledning" --> utl["urn:graph:utledet<br/>typer fra ontologien"]
+  onto -- "utledning" --> utl
+  norm -- "utledning" --> utl
+  grep & onto & norm & utl & kobl --> union(["Spørring uten GRAPH:<br/>alle grafene samlet"])
+```
 
 Vil du ha *bare* Grep-dataene, for eksempel for å sammenligne med Udirs offisielle endepunkt, pakker du
 spørringen inn i `GRAPH <urn:graph:grep> { … }`. Det gjelder særlig spørringer som teller eller lister *alt*
@@ -725,6 +762,23 @@ Spørringen under gir et lite og komplett utsnitt for **én fagkode på én dato
   - forklaringen av målet («didaktisk støtte»), der Grep har den;
   - målene fra tidligere trinn som målet bygger på (`u:bygger-paa`);
 - kjerneelementene, med beskrivelse.
+
+```mermaid
+flowchart LR
+  inn(["Fagkode<br/>+ dato"]) --> of["Opplæringsfag"]
+  of --> lp["Læreplan<br/>som gjaldt på datoen"]
+  of --> kms["Kompetansemålsett<br/>for trinnet"]
+  kms --> km["Kompetansemål"]
+  lp --> lpt["Fagets relevans,<br/>vurderingsordning"]
+  km --> ke["Kjerneelementer"]
+  km --> gf["Grunnleggende ferdigheter<br/>og tverrfaglige temaer"]
+  km --> verb["Verb, med forklaring"]
+  km --> fork["Forklaring av målet"]
+  km --> bp["Mål det bygger på<br/>fra tidligere trinn"]
+```
+
+> **Anvendelse:** [laereplan-prompt](https://github.com/aremjolsnes/laereplan-prompt) bruker denne spørringen til
+> å bygge en ferdig prompt av læreplanutsnittet og vurderingsdata, og kan sende den til en språkmodell.
 
 Hvert ledd i kjeden fagkode → opplæringsfag → læreplan og kompetansemålsett velges ut fra gyldigheten på datoen
 (`udir:gyldighet`, se «Normaliserte data»). Da får man den versjonen som gjaldt da vurderingen ble gitt. For
