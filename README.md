@@ -1,6 +1,8 @@
 # Grep SPARQL-sandkasse (Apache Jena Fuseki på Fly.io)
 
-Driftsdokumentasjon. Brukerveiledning for endepunktet ligger i [docs/bruk.md](docs/bruk.md).
+Driftsdokumentasjon. Brukerveiledning for endepunktet ligger i [docs/bruk.md](docs/bruk.md). Ontologien er
+dokumentert i [docs/ontologi/](docs/ontologi/oversikt.md), og koblingene til STYRK-08, ESCO, NUS og ISCED i
+[docs/koblinger/](docs/koblinger/oversikt.md).
 
 En uoffisiell kopi av Grep-dataene (læreplandata fra Udir) i Apache Jena Fuseki, med en Grep-ontologi
 lagt ved. Formålet er å eksperimentere med ontologi og kunnskapsgraf uten å røre Udirs produksjonsendepunkt
@@ -74,7 +76,7 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 | `.github/workflows/ingest-data.yml` | Nattlig innlasting, komprimering og keepalive |
 | `.github/workflows/komprimer.yml` | Komprimering for hånd |
 | `.github/workflows/deploy.yml` | Deploy til Fly |
-| `docs/` | Plan og brukerveiledning |
+| `docs/` | Plan og brukerveiledning. `docs/ontologi/` og `docs/koblinger/` går i dybden på ontologien og de koblede kunnskapsgrafene. |
 
 ## Nattlig innlasting
 

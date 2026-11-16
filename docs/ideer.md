@@ -227,7 +227,7 @@ Kjør spørringene i bruk.md mot endepunktet i CI, så eksemplene ikke slutter �
 merker det.
 
 ✅ 2026-11-10:
-- `scripts/test-eksempler.py` kjører hver ```` ```sparql ````-blokk i bruk.md og hver fil i `docs/eksempler/*.rq`.
+- `scripts/test-eksempler.py` kjører hver ```` ```sparql ````-blokk i bruk.md, `docs/ontologi/*.md` og `docs/koblinger/*.md`, og hver fil i `docs/eksempler/*.rq`.
 - Den feiler ved feil fra endepunktet eller tomt svar.
 - Merkene `# forventer tomt` og `# ikke test` endrer hva som testes.
 - Kjører som jobben `test-eksempler` i `ingest-data.yml` etter hver innlasting, også de nettene som hoppes over.

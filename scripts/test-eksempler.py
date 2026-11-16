@@ -1,7 +1,8 @@
 """Tester eksempelspørringene i dokumentasjonen mot sandkassen (idé 7 i docs/ideer.md).
 
-Kjører hver ```sparql-blokk i docs/bruk.md og hver fil i docs/eksempler/*.rq. Prefiksene fra den første
-blokken i bruk.md (avsnittet «Prefikser») legges til der spørringen ikke selv har dem, slik sparql-appen gjør.
+Kjører hver ```sparql-blokk i docs/bruk.md, docs/ontologi/*.md og docs/koblinger/*.md, og hver fil i
+docs/eksempler/*.rq. Prefiksene fra den første blokken i bruk.md (avsnittet «Prefikser») legges til der
+spørringen ikke selv har dem, slik sparql-appen gjør.
 En spørring feiler hvis endepunktet gir feil, eller hvis den ikke gir noen rader eller tripler.
 
 Merk en blokk med en kommentarlinje for å endre hva som testes:
@@ -11,6 +12,8 @@ Merk en blokk med en kommentarlinje for å endre hva som testes:
 Blokker som bare er utdrag (uten SELECT, CONSTRUCT, ASK eller DESCRIBE), hoppes over.
 
     FUSEKI_URL=https://grep-fuseki-v3.fly.dev python3 scripts/test-eksempler.py
+
+Med et argument testes bare stedene som inneholder teksten, for eksempel «docs/ontologi».
 """
 import glob, json, os, re, sys, textwrap, time, urllib.error, urllib.parse, urllib.request
 
@@ -62,8 +65,13 @@ def main():
     md = open(os.path.join(REPO, 'docs/bruk.md'), encoding='utf-8').read()
     alle = [('docs/bruk.md:%d' % n, b) for n, b in blokker(md)]
     prefikser = dict(PREFIKS.findall(alle[0][1])) if alle and not SKJEMA.search(alle[0][1]) else {}
+    for f in sorted(glob.glob(os.path.join(REPO, 'docs/ontologi/*.md')) + glob.glob(os.path.join(REPO, 'docs/koblinger/*.md'))):
+        navn = os.path.relpath(f, REPO).replace('\\', '/')
+        alle += [('%s:%d' % (navn, n), b) for n, b in blokker(open(f, encoding='utf-8').read())]
     for f in sorted(glob.glob(os.path.join(REPO, 'docs/eksempler/*.rq'))):
         alle.append((os.path.relpath(f, REPO).replace('\\', '/'), open(f, encoding='utf-8').read()))
+    if len(sys.argv) > 1:
+        alle = [(sted, b) for sted, b in alle if sys.argv[1] in sted]
     vekk()
     feil, testet, hoppet = [], 0, 0
     for sted, b in alle:
@@ -79,12 +87,12 @@ def main():
             n = kjor(sporring, form)
         except urllib.error.HTTPError as e:
             feil.append((sted, 'HTTP %d: %s' % (e.code, e.read().decode('utf-8', 'replace')[:300].strip())))
-            print('FEIL  %-32s HTTP %d' % (sted, e.code)); continue
+            print('FEIL  %-44s HTTP %d' % (sted, e.code)); continue
         except Exception as e:
-            feil.append((sted, str(e))); print('FEIL  %-32s %s' % (sted, e)); continue
+            feil.append((sted, str(e))); print('FEIL  %-44s %s' % (sted, e)); continue
         testet += 1
         ok = (n == 0) if tomt_ok else (n > 0)
-        print('%-5s %-32s %s %6d  %.1f s' % ('OK' if ok else 'FEIL', sted, form.ljust(9), n, time.time() - t0))
+        print('%-5s %-44s %s %6d  %.1f s' % ('OK' if ok else 'FEIL', sted, form.ljust(9), n, time.time() - t0))
         if not ok:
             feil.append((sted, 'forventet tomt svar, fikk %d' % n if tomt_ok else 'tomt svar'))
     print('\n%d testet, %d hoppet over (utdrag eller merket), %d feil.' % (testet, hoppet, len(feil)))

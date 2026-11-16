@@ -25,6 +25,8 @@ Dokumentasjonen ligger i repoene den hører til, og sidene lenker til hverandre:
 | Side | Innhold |
 |---|---|
 | **Brukerveiledning** (denne siden) | Hvordan du spør mot sandkassen: dataene, ontologien, de normaliserte dataene, koblingene og eksempler |
+| [Ontologien](ontologi/oversikt.md) | **I dybden:** hva ontologien er, [klasser og egenskaper](ontologi/klasser-og-egenskaper.md), [hvordan den brukes i spørringer](ontologi/sporringer.md), [utledningsreglene](ontologi/utledning.md) og [begrepssystemene](ontologi/begrepssystemer.md) |
+| [Koblede kunnskapsgrafer](koblinger/oversikt.md) | **I dybden:** [STYRK-08 og ISCO-08](koblinger/styrk.md), [ESCO](koblinger/esco.md), [kompetansemål og ESCO-ferdigheter](koblinger/km-esco.md) og [NUS og ISCED](koblinger/nus.md) |
 | [Drift og oppsett](../README.md) | Hvordan sandkassen er satt opp: Fuseki på Fly.io, nattlig innlasting, grafer, feilsøking |
 | [laereplan-prompt](https://github.com/aremjolsnes/laereplan-prompt) | **Anvendelse:** fra fagkode til AI-prompt. Henter læreplanutsnittet fra sandkassen og setter det sammen med vurderingsdata. Med [demomanus](https://github.com/aremjolsnes/laereplan-prompt/blob/main/docs/demomanus.md), [øving](https://github.com/aremjolsnes/laereplan-prompt/blob/main/docs/oeving.md) og [kostnadsoverslag](https://github.com/aremjolsnes/laereplan-prompt/blob/main/docs/kostnad.md) |
 
@@ -92,7 +94,7 @@ trenger ikke å bry seg om grafene.
 | `urn:graph:grep` | Grep-dataene fra Udir (omtrent 1,2 millioner tripler). Datoer og tall har riktige datatyper, ellers uendret. |
 | `urn:graph:ontologi` | Ontologien: klasser, egenskaper og koblinger til typene i dataene |
 | `urn:graph:normalisert` | Gyldighet som egne ressurser, perioder som datoer og tittel per målform (omtrent 330 000 tripler) |
-| `urn:graph:utledet` | Typene fra ontologien, utledet fra typene i dataene (omtrent 50 000 tripler) |
+| `urn:graph:utledet` | Det som er utledet fra ontologien: typer, revisjon, SKOS-begreper og kjente vokabularer (omtrent 270 000 tripler) |
 | `urn:graph:koblinger` | Koblinger til andre kunnskapsgrafer: yrker i STYRK-08 (videre til ESCO) og utdanninger i NUS (videre til ISCED) (se «Koblinger til andre kunnskapsgrafer») |
 | `urn:graph:meta` | Når dataene sist ble oppdatert |
 
@@ -194,6 +196,11 @@ faglig vurdering. Når en plan splittes i flere, eller bare en liten del av innh
 ikke nødvendigvis en erstatter-kobling.
 
 ## Ontologien
+
+> Dette avsnittet er en kort innføring. Ontologien er dokumentert i dybden på egne sider:
+> [hva den er](ontologi/oversikt.md), [klasser og egenskaper](ontologi/klasser-og-egenskaper.md),
+> [bruk i spørringer](ontologi/sporringer.md), [utledning](ontologi/utledning.md) og
+> [begrepssystemer](ontologi/begrepssystemer.md).
 
 Grep-dataene i seg selv har typer og egenskaper, men ingen ontologi som beskriver dem. Sandkassen har en
 Grep-ontologi (OWL) med 44 klasser, for eksempel `u:Laereplan`, `u:Laereplan_lk20`, `u:Kompetansemaal` og
@@ -486,6 +493,10 @@ SELECT ?s ?endret WHERE {
 `FILTER(?d >= "2026-01-01")`, gir det ingen treff her. Bruk en typet verdi som over, eller `STR(?d)`.
 
 ## Koblinger til andre kunnskapsgrafer
+
+> Dette avsnittet er en kort innføring. Koblingene er dokumentert i dybden på egne sider:
+> [oversikt](koblinger/oversikt.md), [STYRK-08 og ISCO-08](koblinger/styrk.md), [ESCO](koblinger/esco.md),
+> [kompetansemål og ESCO-ferdigheter](koblinger/km-esco.md) og [NUS og ISCED](koblinger/nus.md).
 
 **Yrker (STYRK-08 og ESCO).** Programområdene på Vg3 som har en yrkestittel (`u:yrkestittel`), er koblet til
 yrkesgruppen sin i SSBs yrkesklassifisering STYRK-08 med `udir:yrkesklassifisering`. STYRK-08 bygger på
