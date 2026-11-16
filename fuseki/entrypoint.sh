@@ -15,7 +15,9 @@ cp /opt/fuseki/shiro.ini /fuseki/shiro.ini
 umask 077
 printf 'admin: %s\n' "$FUSEKI_PASSWORD" > /opt/fuseki/passwd
 
+# -v: logger også hodene i hver forespørsel (bl.a. Fly-Client-IP), slik at vi ser hvem som spør.
 exec java $JAVA_OPTIONS -jar /opt/fuseki/fuseki-server.jar \
+    -v \
     --port=3030 \
     --config=/opt/fuseki/config.ttl \
     --passwd=/opt/fuseki/passwd \
