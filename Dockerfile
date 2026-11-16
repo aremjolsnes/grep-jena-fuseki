@@ -18,8 +18,15 @@ WORKDIR $FUSEKI_HOME
 
 # Slå på forespørselsloggen (NCSA-format, én linje per forespørsel). Den står på OFF i pakken.
 # grep sørger for at bygget feiler hvis linjen ikke ble endret.
-RUN sed -i 's/^\(logger\.fuseki-request\.level *= *\)OFF/\1INFO/' log4j2.properties && \
-    grep -q '^logger\.fuseki-request\.level *= *INFO' log4j2.properties
+# Trådnavnet [%t] skrives først i begge formatene, slik at IP-linjen kan kobles til spørringen i Grafana.
+RUN sed -i \
+      -e 's/^\(logger\.fuseki-request\.level *= *\)OFF/\1INFO/' \
+      -e 's/^\(appender\.console\.layout\.pattern *= *\)%d{HH:mm:ss} /\1%d{HH:mm:ss} [%t] /' \
+      -e 's/^\(appender\.plain\.layout\.pattern *= *\)%m%n/\1[%t] %m%n/' \
+      log4j2.properties && \
+    grep -q '^logger\.fuseki-request\.level *= *INFO' log4j2.properties && \
+    grep -q '^appender\.console\.layout\.pattern *= *%d{HH:mm:ss} \[%t\] ' log4j2.properties && \
+    grep -q '^appender\.plain\.layout\.pattern *= *\[%t\] %m%n' log4j2.properties
 
 # Konfigurasjon: åpen lesing, skriving krever innlogging (se fuseki/config.ttl og fuseki/entrypoint.sh)
 COPY fuseki/config.ttl fuseki/shiro.ini fuseki/entrypoint.sh $FUSEKI_HOME/
