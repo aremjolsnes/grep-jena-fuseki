@@ -16,6 +16,11 @@ RUN wget -q https://repo1.maven.org/maven2/org/apache/jena/apache-jena-fuseki/5.
 
 WORKDIR $FUSEKI_HOME
 
+# Slå på forespørselsloggen (NCSA-format, én linje per forespørsel). Den står på OFF i pakken.
+# grep sørger for at bygget feiler hvis linjen ikke ble endret.
+RUN sed -i 's/^\(logger\.fuseki-request\.level *= *\)OFF/\1INFO/' log4j2.properties && \
+    grep -q '^logger\.fuseki-request\.level *= *INFO' log4j2.properties
+
 # Konfigurasjon: åpen lesing, skriving krever innlogging (se fuseki/config.ttl og fuseki/entrypoint.sh)
 COPY fuseki/config.ttl fuseki/shiro.ini fuseki/entrypoint.sh $FUSEKI_HOME/
 RUN sed -i 's/\r$//' $FUSEKI_HOME/entrypoint.sh && chmod 755 $FUSEKI_HOME/entrypoint.sh
