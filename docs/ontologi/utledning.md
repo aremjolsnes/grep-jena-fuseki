@@ -163,7 +163,7 @@ Reglene er få med vilje. Dette er valgt bort:
 | Typer fra domene og rekkevidde | En ressurs får ikke en type fordi den har en bestemt egenskap. Domene og rekkevidde er rettet etter dataene og brukes til kontroll. |
 | Transitiv `erstatter` | Bare de direkte koblingene er lagret. Erstatter A B, og B C, står det ikke at A erstatter C. Vil du ha hele kjeden, skriver du `u:erstatter+` i spørringen. |
 | `owl:sameAs` | Brukes ikke. Koblinger ut av Grep er SKOS-relasjoner som `skos:exactMatch`, og de slår ikke ressursene sammen. |
-| `owl:disjointWith` og `owl:IrreflexiveProperty` | De er dokumentasjon. Du kan [spørre etter brudd](sporringer.md#kontrollere-dataene-mot-ontologien). |
+| `owl:disjointWith`, `owl:IrreflexiveProperty` og `owl:inverseOf` | De er dokumentasjon. Grep har allerede begge retningene for de motsatte egenskapene, så det er ingenting å utlede. Du kan [spørre etter brudd](sporringer.md#kontrollere-dataene-mot-ontologien). |
 
 Sandkassen er derfor ikke en OWL-resonnerer, og du kan ikke regne med slutninger som ikke står i tabellen
 øverst.

@@ -328,6 +328,19 @@ SELECT ?egenskap ?s WHERE {
 }
 ```
 
+**Koblinger uten motpart** for egenskaper som er merket motsatte (`owl:inverseOf`):
+
+```sparql
+# forventer tomt
+SELECT ?egenskap (COUNT(*) AS ?antall) WHERE {
+  GRAPH <urn:graph:ontologi> { ?egenskap owl:inverseOf ?motsatt }
+  GRAPH <urn:graph:grep> { ?s ?egenskap ?o }
+  FILTER NOT EXISTS { GRAPH <urn:graph:grep> { ?o ?motsatt ?s } }
+} GROUP BY ?egenskap
+```
+
+Kommer det rader, har Grep en kobling i bare én retning. Spørringen tar under ett sekund.
+
 **Ressurser med to revisjoner.** Ingen ressurs skal høre til både LK06 og LK20:
 
 ```sparql

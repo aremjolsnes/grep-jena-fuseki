@@ -146,8 +146,8 @@ Det betyr tre ting:
 - **Spørringene er vanlige spørringer.** `?s a udir:Laereplan` slår opp tripler som finnes, og går like raskt
   som andre oppslag.
 - **Bare det reglene dekker, er utledet.** Reglene følger `rdfs:subClassOf` og `rdfs:subPropertyOf`, og noen
-  egne merker i `udir:`-laget. Domene, rekkevidde, `owl:disjointWith` og `owl:IrreflexiveProperty` står i
-  ontologien som dokumentasjon, og ingenting utledes av dem.
+  egne merker i `udir:`-laget. Domene, rekkevidde, `owl:disjointWith`, `owl:IrreflexiveProperty` og `owl:inverseOf`
+  står i ontologien som dokumentasjon, og ingenting utledes av dem.
 - **Det gjelder bare her.** Udirs endepunkt har ikke ontologien, og `?s a u:Kompetansemaal` gir ingen treff
   der.
 

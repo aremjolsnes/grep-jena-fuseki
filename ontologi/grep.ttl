@@ -514,7 +514,8 @@ u:erstatter a owl:IrreflexiveProperty,
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( u:Fagkode u:Laereplan u:Laereplan_lk20 u:Opplaeringsfag u:Programomraade u:Utdanningsprogram ) ] ;
     rdfs:range [ a owl:Class ;
-            owl:unionOf ( u:Fagkode u:Laereplan u:Laereplan_lk20 u:Opplaeringsfag u:Programomraade u:Utdanningsprogram ) ] .
+            owl:unionOf ( u:Fagkode u:Laereplan u:Laereplan_lk20 u:Opplaeringsfag u:Programomraade u:Utdanningsprogram ) ] ;
+    owl:inverseOf u:erstattes-av .
 
 u:erstattes-av a owl:IrreflexiveProperty,
         owl:ObjectProperty ;
@@ -525,7 +526,8 @@ u:erstattes-av a owl:IrreflexiveProperty,
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( u:Fagkode u:Laereplan u:Laereplan_lk20 u:Opplaeringsfag u:Programomraade u:Utdanningsprogram ) ] ;
     rdfs:range [ a owl:Class ;
-            owl:unionOf ( u:Fagkode u:Laereplan u:Laereplan_lk20 u:Opplaeringsfag u:Programomraade u:Utdanningsprogram ) ] .
+            owl:unionOf ( u:Fagkode u:Laereplan u:Laereplan_lk20 u:Opplaeringsfag u:Programomraade u:Utdanningsprogram ) ] ;
+    owl:inverseOf u:erstatter .
 
 u:etter-aarstrinn a owl:ObjectProperty ;
     rdfs:label "achieved after year level"@en,
@@ -543,7 +545,8 @@ u:etter-fag a owl:ObjectProperty ;
         "Egenskap for kompetansemaalsett for å angi opplæringsfag som et samleuttrykk for den totale kompetansen som skal være oppnåd, knyttet til det refererte opplæringsfagets fagkode-referanser"@nb ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( u:Kompetansemaalsett u:Kompetansemaalsett_lk20 ) ] ;
-    rdfs:range u:Opplaeringsfag .
+    rdfs:range u:Opplaeringsfag ;
+    owl:inverseOf u:tilhoerende-kompetansemaalsett .
 
 u:fagkategori a owl:ObjectProperty ;
     rdfs:label "subject category"@en,
@@ -559,7 +562,8 @@ u:fagkode-referanser a owl:ObjectProperty ;
     rdfs:comment "Connection between \"opplaeringsfag\" (teaching subject) and \"fagkode\" (subject code)"@en,
         "Kobling mellom fagkode og opplæringsfag"@nb ;
     rdfs:domain u:Opplaeringsfag ;
-    rdfs:range u:Fagkode .
+    rdfs:range u:Fagkode ;
+    owl:inverseOf u:opplaeringsfag .
 
 u:fagomraade-referanser a owl:ObjectProperty ;
     rdfs:label "subject area reference(s)"@en,
@@ -783,7 +787,8 @@ u:opplaeringsfag a owl:ObjectProperty ;
     rdfs:comment "Attribute for 'fagkode' (subject code) to define what a group of learners at a given grade should be taught"@en,
         "Egenskap for fagkode for å angi hva en gruppe elever/lærlinger/praksiskandidater/deltakere på et gitt årstrinn skal undervises i"@nb ;
     rdfs:domain u:Fagkode ;
-    rdfs:range u:Opplaeringsfag .
+    rdfs:range u:Opplaeringsfag ;
+    owl:inverseOf u:fagkode-referanser .
 
 u:opplaeringsnivaa a owl:ObjectProperty ;
     rdfs:label "teaching level"@en,
@@ -932,7 +937,8 @@ u:tilhoerende-kompetansemaalsett a owl:ObjectProperty ;
         "Egenskap for opplæringsfag for å angi hvilke kompetansemålsett som hører til dette opplæringsfaget"@nb ;
     rdfs:domain u:Opplaeringsfag ;
     rdfs:range [ a owl:Class ;
-            owl:unionOf ( u:Kompetansemaalsett u:Kompetansemaalsett_lk20 ) ] .
+            owl:unionOf ( u:Kompetansemaalsett u:Kompetansemaalsett_lk20 ) ] ;
+    owl:inverseOf u:etter-fag .
 
 u:tilhoerer-kompetansemaalsett a owl:ObjectProperty ;
     rdfs:label "belongs to competence aim set"@en,
@@ -942,7 +948,8 @@ u:tilhoerer-kompetansemaalsett a owl:ObjectProperty ;
     rdfs:domain [ a owl:Class ;
             owl:unionOf ( u:Kompetansemaal u:Kompetansemaal_lk20 ) ] ;
     rdfs:range [ a owl:Class ;
-            owl:unionOf ( u:Kompetansemaalsett u:Kompetansemaalsett_lk20 ) ] .
+            owl:unionOf ( u:Kompetansemaalsett u:Kompetansemaalsett_lk20 ) ] ;
+    owl:inverseOf u:kompetansemaal .
 
 u:tilhoerer-laereplan a owl:ObjectProperty ;
     rdfs:label "belongs to curriculum"@en,
@@ -1023,8 +1030,8 @@ u:tillatte-uttrykk a owl:ObjectProperty ;
 u:tilleggseksamen-ikke-normalt-loep a owl:ObjectProperty ;
     rdfs:label "additional examination, non-standard pathway"@en,
         "tilleggseksamen, ikke normalt løp"@nb ;
-    rdfs:comment "Property for subject code to specify the subject code of the additional examination for candidates who have not followed the standard pathway"@en,
-        "Egenskap for fagkode for å angi fagkoden for tilleggseksamen for kandidater som ikke har fulgt normalt løp"@nb ;
+    rdfs:comment "Property for subject code of a trade or journeyman's examination to specify the subject code of the additional examination for candidates who have not followed the standard pathway"@en,
+        "Egenskap for fagkode for fag- eller svenneprøve for å angi fagkoden for tilleggseksamen for kandidater som ikke har fulgt normalt løp"@nb ;
     rdfs:domain u:Fagkode ;
     rdfs:range u:Fagkode .
 

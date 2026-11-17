@@ -273,8 +273,23 @@ Tre ting å vite når du leser domene og rekkevidde:
   `udir:reform`, `udir:rekkefoelge`, `udir:relasjon`, `udir:objekt`, `udir:startdato` og `udir:sluttdato`.
 - **Underegenskaper** (`rdfs:subPropertyOf`, 8 egenskaper): egenskapen er en spesialisering av en egenskap i et
   kjent vokabular. Se [R2 under Utledning](utledning.md#r2-egenskaper-via-underegenskaper).
+- **Motsatte egenskaper** (`owl:inverseOf`, 4 par): samme kobling sett fra hver sin ende. Grep har begge
+  retningene i dataene, så du kan velge den som passer spørringen. Merket står på begge egenskapene i paret.
 
-Ingen av merkene håndheves. En spørring som finner brudd på irrefleksivitet, står under
+  | Egenskap | Motsatt egenskap |
+  |---|---|
+  | `u:erstatter` | `u:erstattes-av` |
+  | `u:kompetansemaal` (fra sett til mål) | `u:tilhoerer-kompetansemaalsett` |
+  | `u:fagkode-referanser` (fra opplæringsfag til fagkode) | `u:opplaeringsfag` (fra fagkode til opplæringsfag) |
+  | `u:etter-fag` (fra kompetansemålsett til opplæringsfag) | `u:tilhoerende-kompetansemaalsett` |
+
+  Andre par ligner, men er ikke motsatte. `u:kjerneelementer`, `u:kompetansemaalsett` og `u:ordforklaringer`
+  peker fra læreplanen, og alt de peker på, har `u:tilhoerer-laereplan` tilbake. Men `u:tilhoerer-laereplan` brukes
+  også på kompetansemål, som læreplanen ikke peker direkte på. På samme måte er `u:merkelapper` motsatt av
+  `u:tilknyttede-fag`, `u:tilknyttede-laereplaner` og `u:tilknyttede-programomraader` til sammen, men ikke av hver
+  enkelt.
+
+Ingen av merkene håndheves. Spørringer som finner brudd på irrefleksivitet og på motsatte egenskaper, står under
 [Bruke ontologien i spørringer](sporringer.md#kontrollere-dataene-mot-ontologien).
 
 ### Navn som er både type og egenskap
