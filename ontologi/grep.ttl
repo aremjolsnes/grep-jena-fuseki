@@ -331,7 +331,7 @@ u:semester rdfs:subClassOf u:Semester .
 u:Sensur a owl:Class ;
     rdfs:label "Grading arrangement"@en,
         "Sensur"@nb ;
-    rdfs:comment "Element, used as property for \"fagkode\" (subject code) to specify whether the grading is managed centrally or locally"@en,
+    rdfs:comment "Element, used as property for \"fagkode\" (subject code) to specify whether the exam is graded centrally or locally"@en,
         "Element som brukes som egenskap for fagkode for å angi om sensuren er administrert sentralt eller lokalt"@nb ;
     rdfs:subClassOf u:sensur ;
     owl:equivalentClass u:sensur .
@@ -862,7 +862,7 @@ u:relaterte-fag a owl:ObjectProperty ;
 u:sensur a owl:ObjectProperty ;
     rdfs:label "grading arrangement"@en,
         "sensur"@nb ;
-    rdfs:comment "Property for \"fagkode\" (subject code) to specify whether the grading is managed centrally or locally"@en,
+    rdfs:comment "Property for \"fagkode\" (subject code) to specify whether the exam is graded centrally or locally"@en,
         "Egenskap for fagkode for å angi om sensuren er administrert sentralt eller lokalt"@nb ;
     rdfs:domain u:Fagkode ;
     rdfs:range u:Sensur .
@@ -1023,8 +1023,8 @@ u:tillatte-uttrykk a owl:ObjectProperty ;
 u:tilleggseksamen-ikke-normalt-loep a owl:ObjectProperty ;
     rdfs:label "additional examination, non-standard pathway"@en,
         "tilleggseksamen, ikke normalt løp"@nb ;
-    rdfs:comment "Property for subject code of a trade or journeyman's examination to specify the subject code of the additional examination for candidates who have not followed the standard pathway"@en,
-        "Egenskap for fagkode for fag- eller svenneprøve for å angi fagkoden for tilleggseksamen for kandidater som ikke har fulgt normalt løp"@nb ;
+    rdfs:comment "Property for subject code to specify the subject code of the additional examination for candidates who have not followed the standard pathway"@en,
+        "Egenskap for fagkode for å angi fagkoden for tilleggseksamen for kandidater som ikke har fulgt normalt løp"@nb ;
     rdfs:domain u:Fagkode ;
     rdfs:range u:Fagkode .
 
