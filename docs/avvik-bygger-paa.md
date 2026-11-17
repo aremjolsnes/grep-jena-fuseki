@@ -104,4 +104,45 @@ SELECT ?mal ?tekst ?byggerPaa ?gammelTekst WHERE {
 } ORDER BY ?mal
 ```
 
+### Alternativ: i Udirs eget endepunkt
+
+Funnene er kontrollert mot Udirs SPARQL-endepunkt (https://sparql-data.udir.no/repositories/201906) 17. november
+2026. Det ga de samme 15 parene og de samme 333 koblingene som sandkassen.
+
+Udirs endepunkt har bare rådataene. Spørringen under henter derfor gyldigheten fra de blanke nodene bak
+`u:gyldighet-…-laereplan-referanse-<kode>` og sammenligner datoene som tekst. Mangler en ende, regnes perioden som
+åpen der. Den gir én rad per par av læreplaner og tar omtrent 25 sekunder. Eksempelmålene i siste kolonne kan
+variere fra gang til gang, men antallene er de samme.
+
+```sparql
+PREFIX u: <http://psi.udir.no/ontologi/kl06/>
+
+SELECT ?laereplan ?byggerPaa (COUNT(*) AS ?koblinger) (CONCAT(SAMPLE(?kk), " → ", SAMPLE(?fk)) AS ?eksempel)
+WHERE {
+  BIND(SUBSTR(STR(NOW()), 1, 10) AS ?idag)
+  ?lp a u:laereplan_lk20 ; u:kode ?laereplan .
+  ?km u:tilhoerer-laereplan ?lp ; u:bygger-paa ?f ; u:kode ?kk .
+  ?f u:tilhoerer-laereplan ?flp ; u:kode ?fk .
+  ?flp u:kode ?byggerPaa .
+  FILTER EXISTS {        # læreplanen gjelder i dag
+    ?of u:laereplan-referanse ?lp ; ?gp ?b .
+    FILTER(STRSTARTS(STR(?gp), "http://psi.udir.no/ontologi/kl06/gyldighet-")
+           && STRENDS(STR(?gp), CONCAT("laereplan-referanse-", ?laereplan)))
+    OPTIONAL { ?b u:gyldig-fra ?fra } OPTIONAL { ?b u:gyldig-til ?til }
+    FILTER(COALESCE(SUBSTR(STR(?fra), 1, 10), "1970-01-01") <= ?idag
+           && ?idag <= COALESCE(SUBSTR(STR(?til), 1, 10), "2100-12-31"))
+  }
+  FILTER NOT EXISTS {    # læreplanen det bygges på, gjelder ikke
+    ?of2 u:laereplan-referanse ?flp ; ?gp2 ?b2 .
+    FILTER(STRSTARTS(STR(?gp2), "http://psi.udir.no/ontologi/kl06/gyldighet-")
+           && STRENDS(STR(?gp2), CONCAT("laereplan-referanse-", ?byggerPaa)))
+    OPTIONAL { ?b2 u:gyldig-fra ?fra2 } OPTIONAL { ?b2 u:gyldig-til ?til2 }
+    FILTER(COALESCE(SUBSTR(STR(?fra2), 1, 10), "1970-01-01") <= ?idag
+           && ?idag <= COALESCE(SUBSTR(STR(?til2), 1, 10), "2100-12-31"))
+  }
+}
+GROUP BY ?laereplan ?byggerPaa
+ORDER BY ?laereplan ?byggerPaa
+```
+
 Grep-sandkassen er et eksperiment og ikke en tjeneste fra Udir. Grunnlaget for alle tallene er de åpne Grep-dataene.
