@@ -50,7 +50,7 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 | Graf | Innhold | Kilde |
 |---|---|---|
 | `urn:graph:grep` | Rådata fra dumpen (omtrent 1,2 millioner tripler). Datoer og tall gjøres om til riktige datatyper (N3, B4), ellers uendret. | Erstattes i sin helhet hver natt (`PUT` til `urn:graph:grep-ny`, så `MOVE`) |
-| `urn:graph:ontologi` | `ontologi/ontologi_kl06_rettet.ttl`, `ontologi/grep_type_mapping.ttl` og `ontologi/udir.ttl` | Lastes fra repoet ved hver innlasting |
+| `urn:graph:ontologi` | `ontologi/grep.ttl` og `ontologi/udir.ttl` | Lastes fra repoet ved hver innlasting |
 | `urn:graph:normalisert` | `udir:Gyldighet`-ressurser (N1), perioder som datoer (N4) og tittel per målform (N5), omtrent 328 000 tripler | Tømmes og bygges på nytt av `sparql/normalisering/*.ru` |
 | `urn:graph:utledet` | Typer fra ontologien via `rdfs:subClassOf+` (R1), også overbegrepene i `udir.ttl`, revisjon (R3), SKOS-begreper (R4), språk koblet til EUs språktabell (R5) og Dublin Core- og schema.org-egenskaper (R2), omtrent 270 000 tripler | Tømmes og bygges på nytt av `sparql/utledning/*.ru` |
 | `urn:graph:koblinger` | `ontologi/koblinger/styrk.ttl`: STYRK-08 som SKOS-begrepssystem (582 grupper, `skos:exactMatch` til ISCO-08 i ESCO) og `udir:yrkesklassifisering` fra 300 programområder. Lages av `scripts/lag-styrk-ttl.py` fra `ontologi/koblinger/styrk.csv`. `ontologi/koblinger/nus.ttl`: NUS-kodene i bruk med grupper (`skos:broadMatch` til ISCED-F 2013 i ESCO og ISCED 2011) og `udir:utdanningsklassifisering` fra 491 programområder. Lages av `scripts/lag-nus-ttl.py` fra `ontologi/koblinger/nus.csv`. `ontologi/koblinger/esco-yrker.ttl`: ESCO-yrkene under ISCO-gruppene, med norsk navn og beskrivelse og ESCOs egne URI-er. Lages av `scripts/lag-esco-ttl.py` fra ESCO-API-et. `ontologi/koblinger/esco-ferdigheter.ttl`: ferdighetene til yrkene (ESCO v1.2.1, rundt 6 500 ferdigheter og 26 000 koblinger, med gruppene over dem). Lages av `scripts/lag-esco-ferdigheter-ttl.py` fra den nedlastede ESCO-klassifikasjonen. `ontologi/koblinger/km-esco.ttl`: koblinger fra kompetansemål til ESCO-ferdigheter (SSSOM-noder og SKOS), foreløpig for BMK03-03. Lages av `scripts/lag-km-esco-ttl.py` fra `ontologi/koblinger/km-esco/*.sssom.tsv`. `scripts/sjekk-koblinger.py` melder avvik for utgåtte koder og nye programområder | Lastes fra repoet ved hver innlasting |
@@ -66,13 +66,10 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 | `scripts/nattlig-innlasting.sh` | Innlastingen, som kan testes lokalt (se under) |
 | `scripts/komprimer.sh` | Komprimerer TDB2-databasen i prod via `flyctl ssh` (admin-API-et er bare åpent fra localhost) |
 | `scripts/rapporter-avvik.sh` | Gjør avvik i dataene om til en GitHub-issue og et sammendrag for kjøringen |
-| `scripts/rett_ontologi.py` | Lager `ontologi_kl06_rettet.ttl` og endringsloggen fra originalen og bruksstatistikk. `TYPEDE` bestemmer hvilke egenskaper N3 gjør om. |
 | `sparql/normalisering/*.ru` | Normaliseringsreglene (fase 2), kjøres i alfabetisk rekkefølge: `01-gyldighet` (N1), `02-datatyper` (N3), `03-perioder` (N4), `04-titler` (N5) |
 | `sparql/utledning/*.ru` | Utledningsreglene (fase 3), kjøres etter normaliseringen: `01-typer` (R1), `02-egenskaper` (R2), `03-revisjon` (R3), `04-skos` (R4), `05-spraak` (R5) |
-| `ontologi/ontologi_kl06_20240523.ttl` | Original Grep-ontologi (klasser med stor forbokstav). Rør ikke. |
-| `ontologi/ontologi_kl06_rettet.ttl` (+ `_endringslogg.md`) | Ontologi med rettet domene og rekkevidde. Den som lastes inn. |
+| `ontologi/grep.ttl` | Grep-ontologien (`u:`) slik den gjelder i dag: klassene (stor forbokstav) med koblingen til typen i dataene (liten forbokstav), og alle egenskapene som brukes i dataene. Skrives for hånd. |
 | `ontologi/udir.ttl` | `udir:`-laget (fase 4): overbegreper på tvers av revisjonene, reform og revisjon, SKOS-begrepssystemer, språk og språknivå, Dublin Core, gyldighetsvokabularet og titler per målform. Skrives for hånd, stegvis. |
-| `ontologi/grep_type_mapping.ttl` | 44 koblinger, f.eks. `u:Kompetansemaal ≡ u:kompetansemaal`, med `owl:equivalentClass` og `rdfs:subClassOf` begge veier |
 | `.github/workflows/ingest-data.yml` | Nattlig innlasting, komprimering og keepalive |
 | `.github/workflows/komprimer.yml` | Komprimering for hånd |
 | `.github/workflows/deploy.yml` | Deploy til Fly |
@@ -178,24 +175,26 @@ har ikke dette problemet.
 
 ## Ontologien
 
-- Tre lag (avtalt 06.11.2026): `udir:` (`http://psi.udir.no/ontologi/`) for begreper som ikke er knyttet til
+- Tre slags navn (avtalt 06.11.2026): `udir:` (`http://psi.udir.no/ontologi/`) for begreper som ikke er knyttet til
   én revisjon, `u:` med stor forbokstav for Grep-klasser, og `u:` med liten forbokstav for typene i dataene.
   `udir:`-laget ligger i `ontologi/udir.ttl` og bygges stegvis (fase 4). Nye begreper legges direkte i `udir:`,
   som et forslag til Udir (B6). `udir:` brukes bare der det tilfører noe, for eksempel et overbegrep på tvers av
   revisjonene. Klasser som allerede gjelder begge revisjonene, som `u:Fagkode`, får ingen `udir:`-utgave.
-- **Domene og rekkevidde** i originalen var skrevet som lister over hvor egenskapen brukes. I RDFS/OWL betyr flere
-  domener *snitt*, så resonnering ville gitt feil typer. `scripts/rett_ontologi.py` retter dette. Kjør det på
-  nytt hvis dataene endrer seg: `python scripts/rett_ontologi.py`.
-- **Datatyper (B4):** `TYPEDE` i `scripts/rett_ontologi.py` setter `rdfs:range` til `xsd:dateTime`, `xsd:integer`
-  eller `xsd:decimal`. Regelen `02-datatyper.ru` leser rekkevidden fra `urn:graph:ontologi` og gjør om verdiene.
-  Skal en ny egenskap få datatype, legger du den i `TYPEDE` og kjører skriptet. Skriptet henter statistikk bare
-  fra `urn:graph:grep`.
+- **`ontologi/grep.ttl` er dagens Grep-ontologi** og vedlikeholdes for hånd (fra 2026-11-17). Den erstatter Udirs
+  eksperimentelle utkast fra 2024 og den rettede utgaven av det. Prinsippene står øverst i filen: hver
+  `u:`-egenskap i dataene står i ontologien og omvendt, flere mulige klasser står som `owl:unionOf` (flere
+  `rdfs:domain` betyr *snitt* i RDFS/OWL), og egenskaper brukt på mer enn ti klasser har ikke domene. Kontroller
+  mot dataene etter en endring med spørringene i `docs/ontologi/sporringer.md`.
+- **Datatyper (B4):** `rdfs:range` i `ontologi/grep.ttl` bestemmer datatypen. Regelen `02-datatyper.ru` gjør om
+  strengverdiene til egenskaper med rekkevidde `xsd:dateTime`, `xsd:integer` eller `xsd:decimal`. Skal en ny
+  egenskap få datatype, setter du rekkevidden i ontologien.
 - Domene og rekkevidde brukes **ikke** til utledning. Utledningene beregnes hver natt med egne SPARQL-regler
   (fase 3, `sparql/utledning/`): R1 følger `rdfs:subClassOf`, R2 følger `rdfs:subPropertyOf`. Begge følger det
   som står i `urn:graph:ontologi`, så nye klasser og egenskaper i ontologien slår gjennom uten regelendringer.
-- **Subegenskaper (regel 6):** `FJERN_SUBEGENSKAP` i `scripts/rett_ontologi.py` fjerner `rdfs:subPropertyOf` som
-  gir feil resultat når R2 følger dem. Foreløpig de to ja/nei-egenskapene for høyeste nivå (elev og privatist)
-  under `u:hoeyeste-nivaa` (2026-11-08). R2 gir derfor ingen tripler i dag.
+- **Underegenskaper:** R2 følger alle `rdfs:subPropertyOf`, så de må gi mening. De to ja/nei-egenskapene for
+  høyeste nivå (elev og privatist) er derfor ikke underegenskaper av en felles egenskap (avklart 2026-11-08):
+  verdien kan være ulik for elev og privatist. Underegenskapene i dag står i `udir.ttl` (Dublin Core, SKOS,
+  schema.org).
 - Klassene med stor forbokstav ble valgt fordi mange URI-er med liten forbokstav også brukes som egenskaper,
   f.eks. `u:kompetansemaalsett` og `u:opplaeringsfag`.
 

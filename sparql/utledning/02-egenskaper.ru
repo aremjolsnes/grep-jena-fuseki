@@ -2,9 +2,8 @@
 #
 # ?s ?p ?o . ?p rdfs:subPropertyOf+ ?q  gir  ?s ?q ?o
 #
-# I dag gjelder det u:vurderingsordning-hoeyeste-nivaa-elev og -privatist, som begge gir
-# u:hoeyeste-nivaa. En ressurs kan da få to verdier for u:hoeyeste-nivaa, én fra hver.
-# Nye rdfs:subPropertyOf i ontologien (for eksempel u:erstatter → dcterms:replaces i fase 4) følger med.
+# Underegenskapene står i ontologi/udir.ttl: Grep-egenskaper koblet til Dublin Core, SKOS og schema.org
+# (for eksempel u:erstatter → dcterms:replaces). Nye rdfs:subPropertyOf i ontologien følger med.
 #
 # Utledning fra domene og rekkevidde er bevisst ikke med (se docs/plan-nattlig-normalisering.md).
 

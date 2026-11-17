@@ -3,7 +3,7 @@
 # ?s a ?c . ?c rdfs:subClassOf+ ?d  gir  ?s a ?d
 #
 # I dag gir dette typene med stor forbokstav fra Udirs ontologi (u:kompetansemaal_lk20 i dataene gir
-# u:Kompetansemaal_lk20), fordi grep_type_mapping.ttl kobler hvert par begge veier. Når overbegrepene
+# u:Kompetansemaal_lk20), fordi ontologi/grep.ttl kobler hvert par begge veier. Når overbegrepene
 # i fase 4 (for eksempel udir:Kompetansemaal) kommer inn i urn:graph:ontologi, følger de med uten
 # endringer her. Property paths gir hele den transitive lukningen i én spørring, også med sykler.
 #

@@ -70,7 +70,7 @@ SELECT ?term ?navn ?forklaring WHERE {
 
 ## Finne riktig egenskap
 
-Grep har 162 egenskaper, og navnene er ikke alltid til å gjette. Tre måter å finne den du trenger:
+Grep har 172 egenskaper, og navnene er ikke alltid til å gjette. Tre måter å finne den du trenger:
 
 **Søk i navn og forklaringer.** Alt som handler om privatister:
 
@@ -270,6 +270,7 @@ ontologien.
 **Egenskaper som brukes i dataene, men mangler i ontologien:**
 
 ```sparql
+# forventer tomt
 SELECT ?egenskap (COUNT(*) AS ?antall) WHERE {
   GRAPH <urn:graph:grep> { ?s ?egenskap ?o }
   FILTER(?egenskap != rdf:type && !CONTAINS(STR(?egenskap), "gyldighet-"))
@@ -277,14 +278,14 @@ SELECT ?egenskap (COUNT(*) AS ?antall) WHERE {
 } GROUP BY ?egenskap ORDER BY DESC(?antall)
 ```
 
-I november 2026 gir den 19 egenskaper. De største er `u:kompetansemaal` (fra sett til mål), `u:beskrivelse` og
-vurderingsordningen for moduler. Flere er skrevet litt annerledes i ontologien enn i dataene, for eksempel
-`u:laereplanstruktur` i dataene og `u:laaereplanstruktur` i ontologien. Filteret tar bort de genererte
-gyldighetsegenskapene, se «Egenheter i dataene» i [brukerveiledningen](../bruk.md#egenheter-i-dataene).
+Svaret skal være tomt. Kommer det rader, har Grep tatt i bruk en ny egenskap, og den bør legges til i
+`ontologi/grep.ttl`. Filteret tar bort de genererte gyldighetsegenskapene, se «Egenheter i dataene» i
+[brukerveiledningen](../bruk.md#egenheter-i-dataene).
 
 **Egenskaper som står i ontologien, men ikke brukes:**
 
 ```sparql
+# forventer tomt
 SELECT ?egenskap WHERE {
   GRAPH <urn:graph:ontologi> {
     ?egenskap a ?slag .
@@ -294,7 +295,7 @@ SELECT ?egenskap WHERE {
 } ORDER BY ?egenskap
 ```
 
-Den gir ni egenskaper. De fleste er motstykket til listen over, med en annen skrivemåte.
+Også her skal svaret være tomt. En egenskap som ikke lenger brukes, tas ut av ontologien.
 
 **Verdier som bryter med rekkevidden.** For hver objektegenskap med rekkevidde: finnes det verdier av en annen
 type?
@@ -313,7 +314,7 @@ SELECT ?egenskap ?typen (COUNT(*) AS ?antall) WHERE {
 } GROUP BY ?egenskap ?typen ORDER BY DESC(?antall)
 ```
 
-Svaret er tomt, og slik skal det være: rekkevidden er rettet etter dataene. Kommer det rader en dag, har Grep
+Svaret er tomt, og slik skal det være: rekkevidden følger dataene. Kommer det rader en dag, har Grep
 begynt å bruke en egenskap på en ny måte. Bytt `rdfs:range` med `rdfs:domain`, og `?o a ?typen` med
 `?s a ?typen`, for å kontrollere domenet på samme måte. Spørringen bruker 10–15 sekunder.
 

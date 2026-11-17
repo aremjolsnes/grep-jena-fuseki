@@ -8,8 +8,8 @@ Denne siden forklarer hva ontologien består av og hvor den kommer fra. De andre
 
 | Side | Innhold |
 |---|---|
-| **Hva den er** (denne siden) | Lagene i ontologien, navnene, hvor den kommer fra og hva som er endret |
-| [Klasser og egenskaper](klasser-og-egenskaper.md) | De 50 klassene og 162 egenskapene, og hvordan du leser domene og rekkevidde |
+| **Hva den er** (denne siden) | De to delene av ontologien, navnene, hvor den kommer fra og hvordan den er bygd |
+| [Klasser og egenskaper](klasser-og-egenskaper.md) | De 50 klassene og 172 egenskapene, og hvordan du leser domene og rekkevidde |
 | [Bruke ontologien i spørringer](sporringer.md) | Oppskrifter: slå opp, få lesbare navn, spørre på tvers av revisjoner, kontrollere dataene |
 | [Utledning (R1–R5)](utledning.md) | Reglene som hver natt gjør ontologien om til tripler du kan spørre på |
 | [Begrepssystemer (SKOS)](begrepssystemer.md) | Fagtyper, opplæringsnivåer, fagkategorier, språk og språknivåer som SKOS-begreper |
@@ -17,36 +17,33 @@ Denne siden forklarer hva ontologien består av og hvor den kommer fra. De andre
 Koblingene ut av Grep, til STYRK-08, ESCO, NUS og ISCED, står under
 [Koblede kunnskapsgrafer](../koblinger/oversikt.md).
 
-## Tre lag
+## To deler
 
-Ontologien ligger i grafen `urn:graph:ontologi` og er satt sammen av tre filer:
+Ontologien ligger i grafen `urn:graph:ontologi` og er satt sammen av to filer:
 
 ```mermaid
 flowchart TB
   data["Typene i dataene<br/>u:kompetansemaal_lk20, u:fagkode …<br/>(liten forbokstav)"]
-  map["Typekoblingen<br/>grep_type_mapping.ttl<br/>44 par"]
-  grep["Grep-ontologien<br/>ontologi_kl06_rettet.ttl<br/>44 klasser, 144 egenskaper"]
+  grep["Grep-ontologien<br/>grep.ttl<br/>44 klasser, 154 egenskaper"]
   udir["udir:-laget<br/>udir.ttl<br/>6 klasser, 18 egenskaper<br/>overbegreper, revisjon, SKOS,<br/>Dublin Core, gyldighet"]
-  data -- "er det samme som" --> map --> grep
+  data -- "er det samme som" --> grep
   grep -- "underklasse av" --> udir
 ```
 
-| Lag | Fil | Navnerom | Innhold |
+| Del | Fil | Navnerom | Innhold |
 |---|---|---|---|
-| Grep-ontologien | `ontologi/ontologi_kl06_rettet.ttl` | `u:` | Udirs utkast til OWL-ontologi for Grep, med domene og rekkevidde rettet etter dataene |
-| Typekoblingen | `ontologi/grep_type_mapping.ttl` | `u:` | Kobler hver klasse (stor forbokstav) til typen i dataene (liten forbokstav) |
+| Grep-ontologien | `ontologi/grep.ttl` | `u:` | Klassene og egenskapene i Grep slik de brukes i dataene, og koblingen mellom klassen og typen i dataene |
 | `udir:`-laget | `ontologi/udir.ttl` | `udir:` | Sandkassens forslag til begreper som ikke hører til én revisjon |
 
-Til sammen er det 1 978 tripler: 50 klasser, 83 objektegenskaper, 79 dataegenskaper og 5 begrepssystemer.
+Til sammen er det 2 063 tripler: 50 klasser, 89 objektegenskaper, 83 dataegenskaper og 5 begrepssystemer.
 
 Navnerommene er `u:` = `http://psi.udir.no/ontologi/kl06/` og `udir:` = `http://psi.udir.no/ontologi/`.
 Grep-ressursene selv ligger i `d:` = `http://psi.udir.no/kl06/`.
 
 ## Grep-ontologien
 
-Utgangspunktet er Udirs utkast «OWL for Grep (utkast)», datert 23. mai 2024. Det beskriver typene og
-egenskapene i Grep som OWL: hver klasse og egenskap har navn (`rdfs:label`) og forklaring (`rdfs:comment`) på
-bokmål og engelsk, og egenskapene har domene og rekkevidde.
+Grep-ontologien beskriver typene og egenskapene i Grep som OWL. Hver klasse og egenskap har navn
+(`rdfs:label`) og forklaring (`rdfs:comment`) på bokmål og engelsk, og egenskapene har domene og rekkevidde.
 
 Et eksempel, slik det står i filen:
 
@@ -62,34 +59,31 @@ u:benyttes-paa-aarstrinn a owl:ObjectProperty ;
 Det leses slik: `u:benyttes-paa-aarstrinn` er en relasjon fra et kompetansemålsett (LK06 eller LK20) til et
 årstrinn.
 
-**Originalen ligger urørt** i `ontologi/ontologi_kl06_20240523.ttl`. Den som lastes inn, er en rettet utgave.
+### Hvordan den er bygd
 
-### Hva som er rettet
+Ontologien beskriver Grep-dataene slik de er. Utgangspunktet var et eksperimentelt utkast fra Udir, «OWL for
+Grep (utkast)» fra mai 2024. `ontologi/grep.ttl` er ontologien slik den gjelder i dag, og den vedlikeholdes for
+hånd. Prinsippene:
 
-Originalen stemte ikke helt med dataene. `scripts/rett_ontologi.py` sammenligner den med hvordan egenskapene
-faktisk brukes i sandkassen, og lager `ontologi_kl06_rettet.ttl`. 52 egenskaper er endret. Alle endringene står i
-[endringsloggen](../../ontologi/ontologi_kl06_rettet_endringslogg.md). De viktigste:
+- **Ontologien og dataene har de samme egenskapene.** Hver `u:`-egenskap i dataene står i ontologien, og hver
+  egenskap i ontologien brukes i dataene. Adressene er de samme, for eksempel `u:laereplanstruktur`. Det eneste
+  unntaket er de genererte `u:gyldighet-…`-egenskapene, som sandkassen gjør om til `udir:Gyldighet` (se «Egenheter
+  i dataene» i [brukerveiledningen](../bruk.md#egenheter-i-dataene)).
+- **Flere mulige klasser står som en union.** Står det to `rdfs:domain` på en egenskap, betyr det i RDFS og OWL at
+  ressursen er *begge* deler. Ontologien bruker derfor `owl:unionOf` («en av disse») når en egenskap kan stå på
+  flere klasser.
+- **Generelle egenskaper har ikke domene.** `u:tittel`, `u:kode`, `u:beskrivelse`, `u:status` og noen få andre
+  brukes på mer enn ti typer. Da sier et domene ingenting.
+- **Egenskapstypen og rekkevidden følger dataene.** `u:uri` er en objektegenskap fordi verdiene er ressurser.
+  `u:bygger-paa` har rekkevidden «kompetansemål eller kompetansemålsett» fordi den peker på begge deler.
+- **Datatypene er de riktige, ikke de i dumpen.** Datoer er `xsd:dateTime`, timetall er `xsd:integer` og
+  opplæringstid er `xsd:decimal`. I dumpen er de tekst, og sandkassen gjør dem om hver natt etter rekkevidden i
+  ontologien (se «Normaliserte data» i [brukerveiledningen](../bruk.md#normaliserte-data)).
+- **Navnene og forklaringene skal være riktige.** Skrivefeil og feiloversettelser rettes i filen når de blir
+  oppdaget.
 
-- **Flere domener betydde «alle på en gang».** Står det to `rdfs:domain` på en egenskap, betyr det i RDFS og
-  OWL at ressursen er *begge* deler. `u:tittel` hadde 29 domener, og en ressurs med tittel ville da vært både
-  læreplan, fagkode og årstrinn. Slike domener er gjort om til `owl:unionOf` («en av disse»).
-- **Generelle egenskaper har ikke domene.** `u:tittel`, `u:kode`, `u:status`, `u:id`, `u:uri`, `u:url-data`,
-  `u:grep-type`, `u:sist-endret`, `u:rekkefoelge` og `u:kortform` brukes på nesten alle typer. Da sier et domene
-  ingenting, og det er fjernet.
-- **Egenskapstypen følger dataene.** `u:uri`, `u:url-data`, `u:grep-type` og trekkordningene var
-  dataegenskaper med rekkevidden `xsd:anyURI`. I dataene er verdiene ressurser, så de er objektegenskaper.
-- **Rekkevidden følger dataene.** `u:bygger-paa` pekte bare på kompetansemålsett. I dataene peker den også på
-  kompetansemål, så rekkevidden er en union av de to.
-- **Datatyper.** Datoer er `xsd:dateTime`, timetall er `xsd:integer` og opplæringstid er `xsd:decimal`, slik
-  sandkassen gjør dem om hver natt (se «Normaliserte data» i [brukerveiledningen](../bruk.md#normaliserte-data)).
-- **En egenskap manglet.** `u:omfang-vitnemaal` brukes i dataene, men het `u:omfang-vitnemål` i originalen.
-  Den er lagt til.
-- **To underegenskaper er fjernet.** `u:vurderingsordning-hoeyeste-nivaa-elev` og `-privatist` var
-  underegenskaper av `u:hoeyeste-nivaa`. Verdien kan være ulik for elev og privatist, og slått sammen ville en
-  fagkode fått både ja og nei.
-
-Ni egenskaper står i ontologien uten å være i bruk, og 20 egenskaper brukes i dataene uten å stå i ontologien.
-Spørringene som finner dem, står under [Bruke ontologien i spørringer](sporringer.md#kontrollere-dataene-mot-ontologien).
+En endring i dataene, for eksempel en ny egenskap i Grep, gjør at ontologien må oppdateres. Spørringene som finner
+avvik mellom dem, står under [Bruke ontologien i spørringer](sporringer.md#kontrollere-dataene-mot-ontologien).
 
 ## Typekoblingen: stor og liten forbokstav
 
@@ -100,7 +94,7 @@ Grunnen er at mange av navnene med liten forbokstav også er egenskaper. `u:komp
 til et kompetansemålsett og egenskapen som peker fra en læreplan til settene. I OWL kan ikke samme adresse være
 både klasse og egenskap uten at verktøy snubler, og ontologien har derfor egne adresser for klassene.
 
-`grep_type_mapping.ttl` kobler de 44 parene:
+`grep.ttl` kobler de 44 parene, rett etter hver klasse:
 
 ```turtle
 u:Kompetansemaal_lk20 owl:equivalentClass u:kompetansemaal_lk20 ;

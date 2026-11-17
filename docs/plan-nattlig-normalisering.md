@@ -4,6 +4,10 @@ Status 2026-11-08: fase 0, 1 og 2 er gjennomført og i drift. I fase 2 er N2 (st
 til 2026-11-08. I fase 3 er R1 og R2 bygget 2026-11-08. Fase 4 er påbegynt 2026-11-08 (steg 1: overbegreper, steg 2: reform og revisjon med R3, steg 3: SKOS med R4, steg 4: språk med R5, steg 5: Dublin Core, steg 6: gyldighetsvokabularet). Fase 4 er
 ferdig 2026-11-08, sammen med N5 (tittel per målform).
 
+Endret 2026-11-17: Grep-ontologien er nå én fil, `ontologi/grep.ttl`, som vedlikeholdes for hånd og gjelder i dag.
+Den erstatter originalen, den rettede utgaven, `grep_type_mapping.ttl` og `scripts/rett_ontologi.py`. Der planen
+under nevner disse, beskriver den hvordan ontologien ble til.
+
 ## Mål
 
 Etter hver nattlige innlasting av Grep-dumpen skal Fuseki-sandkassen inneholde:
@@ -45,7 +49,7 @@ Workflowen sender allerede `-u $FUSEKI_USER:$FUSEKI_PASSWORD`, så den trenger i
 |---|---|---|
 | `urn:graph:grep` | Rådata fra dumpen | `PUT` (erstattes hver natt) |
 | `urn:graph:meta` | Siste `endrings-id` og tidspunkt | Skrives **sist** i jobben |
-| `urn:graph:ontologi` | `ontologi_kl06_rettet.ttl`, `grep_type_mapping.ttl` og senere `udir.ttl` | `PUT` fra filene i repoet hver natt |
+| `urn:graph:ontologi` | `grep.ttl` og `udir.ttl` | `PUT` fra filene i repoet hver natt |
 | `urn:graph:normalisert` | Resultatet av fase 2 | Tømmes og bygges på nytt |
 | `urn:graph:utledet` | Resultatet av fase 3 | Tømmes og bygges på nytt |
 
@@ -106,7 +110,7 @@ Datoer og tall ligger i dumpen som `xsd:string`. Gjelder blant annet `sist-endre
 
 Gjennomføring:
 
-- Ontologien styrer hvilke egenskaper som gjøres om. `TYPEDE` i `scripts/rett_ontologi.py` setter `rdfs:range`, og `02-datatyper.ru` gjør om strengverdiene til egenskaper med rekkevidde `xsd:dateTime`, `xsd:integer` eller `xsd:decimal` i `urn:graph:ontologi`. Listen finnes bare ett sted.
+- Ontologien styrer hvilke egenskaper som gjøres om. `rdfs:range` i `ontologi/grep.ttl` (før 2026-11-17: `TYPEDE` i `scripts/rett_ontologi.py`), og `02-datatyper.ru` gjør om strengverdiene til egenskaper med rekkevidde `xsd:dateTime`, `xsd:integer` eller `xsd:decimal` i `urn:graph:ontologi`. Listen finnes bare ett sted.
 - 14 egenskaper: fem datoer, sju heltall og to desimaltall (`opplaeringstid` og `verdiskapingstid`, som har desimalkomma i dumpen, «1,00»).
 - `u:omfang-vitnemaal` manglet i originalontologien, der den heter `u:omfang-vitnemål`. Skriptet legger den til.
 - Kartlagt 2026-11-06: ingen andre strengegenskaper har verdier som ligner datoer eller tall. Sannhetsverdier er allerede `xsd:boolean` i dumpen.
@@ -197,7 +201,8 @@ og skriver bare tripler som ikke står der fra før.
   har forskjellig verdi for elev og privatist. Sammenslått ville de fått `u:hoeyeste-nivaa` både `true` og
   `false`. Fjernet i den rettede ontologien etter avtale med fagansvarlig 2026-11-08 (regel 6,
   `FJERN_SUBEGENSKAP` i `scripts/rett_ontologi.py`). R2 blir stående som generell regel for fase 4
-  (`u:erstatter` → `dcterms:replaces`).
+  (`u:erstatter` → `dcterms:replaces`). `u:hoeyeste-nivaa` er tatt ut av
+  ontologien 2026-11-17, fordi den ikke brukes i dataene.
 - **Røyktest:** minst én utledet `u:Kompetansemaal_lk20`.
 - **Lokal test** (rådata fra 2026-11-06): R1 7–9 s, R2 1–2 s. Prod-kjøringen 2026-11-08 brukte omtrent like lang
   tid som lokalt på normaliseringen, så utledningen bør legge til under et halvt minutt.

@@ -2,7 +2,7 @@
 #
 # Dumpen har datoer og tall som xsd:string. Hvilke egenskaper som gjøres om, styres av ontologien:
 # en egenskap med rdfs:range xsd:dateTime, xsd:integer eller xsd:decimal i urn:graph:ontologi får
-# strengverdiene sine gjort om. Listen vedlikeholdes i TYPEDE i scripts/rett_ontologi.py.
+# strengverdiene sine gjort om. Rekkevidden står i ontologi/grep.ttl, og bare der.
 #
 # Verdiene valideres med regex og en cast. Verdier som ikke passer, beholdes som streng og telles
 # av nattlig-innlasting.sh. Regelen rører bare xsd:string-verdier, så den kan kjøres flere ganger.

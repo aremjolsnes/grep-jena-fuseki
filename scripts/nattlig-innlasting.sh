@@ -3,7 +3,7 @@
 #
 # Grafstruktur (Fuseki kjører med tdb2:unionDefaultGraph, så spørringer uten GRAPH ser alt):
 #   urn:graph:grep         rådata fra dumpen (erstattes i sin helhet hver gang)
-#   urn:graph:ontologi     ontologi_kl06_rettet.ttl + grep_type_mapping.ttl + udir.ttl fra repoet
+#   urn:graph:ontologi     ontologi/grep.ttl + ontologi/udir.ttl fra repoet
 #   urn:graph:normalisert  resultatet av sparql/normalisering/*.ru (bygges på nytt hver gang)
 #   urn:graph:utledet      resultatet av sparql/utledning/*.ru (bygges på nytt hver gang)
 #   urn:graph:koblinger    koblinger til andre kunnskapsgrafer fra ontologi/koblinger/*.ttl (STYRK-08, NUS, ESCO-yrker)
@@ -173,8 +173,7 @@ logg "  MOVE: $(( $(date +%s) - t0 )) s"
 
 # 5. Ontologi fra repoet
 logg "Laster ontologi til <$G_ONTOLOGI> ..."
-last_graf PUT  "$G_ONTOLOGI" text/turtle "$REPO/ontologi/ontologi_kl06_rettet.ttl"
-last_graf POST "$G_ONTOLOGI" text/turtle "$REPO/ontologi/grep_type_mapping.ttl"
+last_graf PUT  "$G_ONTOLOGI" text/turtle "$REPO/ontologi/grep.ttl"
 last_graf POST "$G_ONTOLOGI" text/turtle "$REPO/ontologi/udir.ttl"
 
 # 5b. Koblinger til andre kunnskapsgrafer (idé 4 i docs/ideer.md). styrk.ttl lages av scripts/lag-styrk-ttl.py.

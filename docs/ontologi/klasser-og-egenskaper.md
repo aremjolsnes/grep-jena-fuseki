@@ -1,6 +1,6 @@
 # Ontologien: klasser og egenskaper
 
-Ontologien har 50 klasser og 162 egenskaper. Denne siden gir oversikten og forklarer hvordan du leser dem.
+Ontologien har 50 klasser og 172 egenskaper. Denne siden gir oversikten og forklarer hvordan du leser dem.
 Tallene er fra november 2026. Spørringene gir tallene slik de er i dag.
 
 Se [Hva ontologien er](oversikt.md) for bakgrunnen, og
@@ -183,8 +183,8 @@ ressurser som gjelder begge revisjonene, har ingen revisjon.
 
 | Slag | Antall | Verdien er |
 |---|---|---|
-| Objektegenskap (`owl:ObjectProperty`) | 83 | en annen ressurs |
-| Dataegenskap (`owl:DatatypeProperty`) | 79 | tekst, tall, dato eller ja/nei |
+| Objektegenskap (`owl:ObjectProperty`) | 89 | en annen ressurs |
+| Dataegenskap (`owl:DatatypeProperty`) | 83 | tekst, tall, dato eller ja/nei |
 
 **Alle egenskapene, med navn, forklaring og hvor mye de brukes:**
 
@@ -209,6 +209,7 @@ Disse brukes på nesten alle typer og har ikke noe domene:
 | `u:kode` | Koden, for eksempel `NOR01-07` eller `KM8644` |
 | `u:tittel` | Tittelen på flere språk. For et kompetansemål er tittelen selve målteksten. |
 | `u:kortform` | Kort navn |
+| `u:beskrivelse` | Beskrivelse, ofte som HTML: teksten i et kjerneelement eller hovedområde, forklaringen av et verb |
 | `u:status` | Publisert eller utgått |
 | `u:sist-endret` | Når posten sist ble endret i Grep |
 | `u:gyldig-fra`, `u:gyldig-til` | Redaksjonelle gyldighetsdatoer |
@@ -220,7 +221,7 @@ Disse brukes på nesten alle typer og har ikke noe domene:
 
 ### Domene og rekkevidde
 
-De andre egenskapene har **domene** (`rdfs:domain`): hva slags ressurs egenskapen står på. 156 av 162 har
+De andre egenskapene har **domene** (`rdfs:domain`): hva slags ressurs egenskapen står på. 166 av 172 har
 **rekkevidde** (`rdfs:range`): hva slags verdi den har.
 
 ```turtle
@@ -252,8 +253,8 @@ Dette er egenskapene et LK20-kompetansemål kan ha, i tillegg til de generelle.
 
 Tre ting å vite når du leser domene og rekkevidde:
 
-- **De er rettet etter dataene.** Der originalen og dataene var uenige, følger ontologien dataene. Se
-  [Hva som er rettet](oversikt.md#hva-som-er-rettet).
+- **De følger dataene.** Domenet og rekkevidden sier hvilke klasser egenskapen faktisk brukes på og peker på. Se
+  [Hvordan den er bygd](oversikt.md#hvordan-den-er-bygd).
 - **Unionene hører ikke sammen parvis.** `u:erstatter` har både domene og rekkevidde «fagkode, opplæringsfag,
   læreplan, programområde eller utdanningsprogram». Det betyr ikke at en fagkode kan erstatte et programområde.
   I dataene erstatter en fagkode en fagkode, og et opplæringsfag et opplæringsfag. Det eneste krysset er
@@ -300,5 +301,5 @@ Alle klasser og egenskaper har navn (`rdfs:label`) og forklaring (`rdfs:comment`
 | Grep-ontologien (`u:`) | Bokmål (`nb`) og engelsk (`en`) |
 | `udir:`-laget | Bokmål (`nb`), nynorsk (`nn`) og engelsk (`en`) |
 
-Navnene i Grep-ontologien er Udirs egne, og noen har skrivefeil (for eksempel «Fagketegori»). De er ikke
-rettet i sandkassen.
+Navnene på klassene og egenskapene i Grep-ontologien er skrevet ut fra dataene og Udirs eget språk i Grep.
+Finner du en skrivefeil eller en feiloversettelse, rettes den direkte i `ontologi/grep.ttl`.
