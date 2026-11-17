@@ -96,7 +96,10 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
   språktabell på alle språk, alle fem Dublin Core-egenskapene, `udir:bokmaalTittel` og `udir:nynorskTittel` på
   alle læreplaner og det som hører til dem, og `schema:validFrom`/`schema:validThrough`.
 - **Avvik i dataene** stopper ikke jobben, men skal ses av et menneske. Kontrollene er datoer med årstall før 1990
-  eller etter 2100, gyldighet uten kobling og verdier N3 ikke kunne gjøre om. `nattlig-innlasting.sh` skriver dem
+  eller etter 2100, gyldighet uten kobling, verdier N3 ikke kunne gjøre om, koblinger til STYRK-08, NUS og ESCO
+  som må oppdateres, kompetansemål som bygger på læreplaner som ikke gjelder, og tre kontroller av ontologien mot
+  dataene: egenskaper som mangler i `ontologi/grep.ttl`, nye typer uten klasse, og koblinger uten motpart for
+  egenskaper merket `owl:inverseOf`. De tre siste forteller når Grep har endret seg og ontologien må følge etter. `nattlig-innlasting.sh` skriver dem
   til `AVVIK_FIL`, og `scripts/rapporter-avvik.sh` lager issuen **«Avvik i Grep-dataene»**. Den tildeles
   repo-eieren, som får varsel. Issuen kommenteres bare når avvikene endrer seg og lukkes når de er borte.
   Avvikene står også i sammendraget for kjøringen i Actions, med en gul advarsel. Avvik rettes i Grep (prod)

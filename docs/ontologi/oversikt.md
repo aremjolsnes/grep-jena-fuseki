@@ -82,8 +82,11 @@ hånd. Prinsippene:
 - **Navnene og forklaringene skal være riktige.** Skrivefeil og feiloversettelser rettes i filen når de blir
   oppdaget.
 
-En endring i dataene, for eksempel en ny egenskap i Grep, gjør at ontologien må oppdateres. Spørringene som finner
-avvik mellom dem, står under [Bruke ontologien i spørringer](sporringer.md#kontrollere-dataene-mot-ontologien).
+En endring i dataene, for eksempel en ny egenskap eller en ny type i Grep, gjør at ontologien må oppdateres. Den
+nattlige innlastingen sjekker dette og melder det i issuen «Avvik i Grep-dataene» i repoet. Den melder egenskaper
+som mangler i ontologien, typer som ikke er koblet til en klasse, og koblinger uten motpart for egenskaper merket
+som motsatte. Spørringene står under
+[Bruke ontologien i spørringer](sporringer.md#kontrollere-dataene-mot-ontologien).
 
 ## Typekoblingen: stor og liten forbokstav
 

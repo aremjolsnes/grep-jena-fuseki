@@ -402,6 +402,44 @@ SELECT ?r ?p ?v WHERE {
 EOF
 )")"
 
+# Ontologien (ontologi/grep.ttl) skal beskrive dataene slik de er. De tre kontrollene under fanger opp når Grep
+# endrer seg, slik at ontologien kan oppdateres. Alle ga tomt svar 17.11.2026, på til sammen omtrent 7 s.
+avvik "Egenskap mangler i ontologien" \
+  "Grep bruker en egenskap som ikke står i ontologi/grep.ttl. Legg den inn med navn, forklaring, domene og rekkevidde (se docs/ontologi/oversikt.md#hvordan-den-er-bygd). Er den en datatype som dato eller tall, gjør N3 om verdiene når rekkevidden er satt." \
+  "Egenskap,Brukt,Eksempel" "$(sporr_alle "$(cat <<EOF
+SELECT ?p (COUNT(*) AS ?antall) (SAMPLE(?s) AS ?eksempel) WHERE {
+  GRAPH <$G_GREP> { ?s ?p ?o }
+  FILTER(?p != <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+         && !STRSTARTS(STR(?p), "http://psi.udir.no/ontologi/kl06/gyldighet-"))
+  FILTER NOT EXISTS { GRAPH <$G_ONTOLOGI> { ?p a ?slag } }
+} GROUP BY ?p ORDER BY ?p
+EOF
+)")"
+
+avvik "Ny type i dataene" \
+  "Grep bruker en type som ikke er koblet til noen klasse i ontologi/grep.ttl. Ressursene får da ingen typer fra ontologien (R1), ingen revisjon (R3) og ingen plass i begrepssystemene (R4). Legg inn klassen og typekoblingen i grep.ttl, og vurder overbegrep og revisjon i udir.ttl." \
+  "Type,Ressurser,Eksempel" "$(sporr_alle "$(cat <<EOF
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?t (COUNT(?s) AS ?antall) (SAMPLE(?s) AS ?eksempel) WHERE {
+  { SELECT DISTINCT ?t WHERE { GRAPH <$G_GREP> { ?x a ?t } } }
+  FILTER NOT EXISTS { GRAPH <$G_ONTOLOGI> { ?t rdfs:subClassOf ?klasse } }
+  GRAPH <$G_GREP> { ?s a ?t }
+} GROUP BY ?t ORDER BY ?t
+EOF
+)")"
+
+avvik "Kobling uten motpart" \
+  "Egenskapen er merket som motsatt av en annen (owl:inverseOf i ontologi/grep.ttl), men koblingen finnes bare i én retning i Grep. Sannsynligvis en feil i Grep. Er det tilsiktet, må owl:inverseOf tas ut av ontologien." \
+  "Egenskap,Motsatt egenskap,Uten motpart,Eksempel" "$(sporr_alle "$(cat <<EOF
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?p ?motsatt (COUNT(*) AS ?antall) (CONCAT(STR(SAMPLE(?s)), " -> ", STR(SAMPLE(?o))) AS ?eksempel) WHERE {
+  GRAPH <$G_ONTOLOGI> { ?p owl:inverseOf ?motsatt }
+  GRAPH <$G_GREP> { ?s ?p ?o }
+  FILTER NOT EXISTS { GRAPH <$G_GREP> { ?o ?motsatt ?s } }
+} GROUP BY ?p ?motsatt ORDER BY ?p
+EOF
+)")"
+
 if [ "${N_GREP:-0}" -lt "$MIN_TRIPLER" ] || [ "${N_ONT:-0}" -lt 1 ] \
    || [ "${N_GYLDIGHET:-0}" -lt "$MIN_GYLDIGHET" ] || [ "${N_FAGKODER_UTEN_PERIODE:-1}" -ne 0 ] \
    || [ "${N_KM_TYPE:-0}" -lt 1 ] || [ -z "${N_OVERBEGREP// /}" ] \

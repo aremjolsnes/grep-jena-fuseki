@@ -351,8 +351,23 @@ SELECT ?s WHERE {
 ```
 
 Mønsteret er det samme i alle kontrollene: hent regelen fra ontologien, og let etter data som bryter den. Den
-nattlige innlastingen kjører noen slike kontroller selv og melder avvik. Se
+nattlige innlastingen kjører noen slike kontroller selv og melder avvik, blant dem egenskaper som mangler i
+ontologien, typer uten klasse og koblinger uten motpart. Se
 [Drift og oppsett](../../README.md#nattlig-innlasting).
+
+**Typer i dataene uten klasse i ontologien:**
+
+```sparql
+# forventer tomt
+SELECT ?type (COUNT(?s) AS ?antall) WHERE {
+  { SELECT DISTINCT ?type WHERE { GRAPH <urn:graph:grep> { ?x a ?type } } }
+  FILTER NOT EXISTS { GRAPH <urn:graph:ontologi> { ?type rdfs:subClassOf ?klasse } }
+  GRAPH <urn:graph:grep> { ?s a ?type }
+} GROUP BY ?type
+```
+
+Kommer det rader, har Grep fått en ny type, for eksempel en ny læreplantype. Den trenger en klasse og en
+typekobling i `ontologi/grep.ttl`, og kanskje et overbegrep og en revisjon i `udir.ttl`.
 
 ## Skrive spørringer som også virker hos Udir
 
