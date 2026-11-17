@@ -5,7 +5,7 @@
 ## Kort fortalt
 
 - 15 læreplaner som gjelder i dag, har kompetansemål som **bygger på** mål i en læreplan som **ikke gjelder lenger**. Det gjelder til sammen 333 koblinger.
-- Den sannsynlige årsaken er at flere grunnskoleplaner fikk nye versjoner 1. august 2026 (matematikk, samfunnsfag, KRLE og engelsk), uten at koblingene fra videregående ble oppdatert.
+- Grunnen er nok at flere grunnskoleplaner fikk nye versjoner 1. august 2026 (matematikk, samfunnsfag, KRLE og engelsk), uten at koblingene fra videregående ble oppdatert.
 - For samfunnsfag, KRLE og engelsk finnes nesten alle de gamle målene med **samme tekst** i den nye versjonen, så koblingene kan trolig flyttes uten faglig vurdering. For matematikk er målene endret, og der trengs en faglig vurdering.
 
 ## Hva «bygger på» er
@@ -14,7 +14,7 @@ I Grep kan et kompetansemål ha koblingen *bygger på* (`bygger-paa`) til mål p
 
 Koblingen peker på et bestemt mål i en bestemt versjon av en læreplan. Når en læreplan får en ny versjon, får målene nye koder. Koblinger fra andre læreplaner peker da fortsatt på de gamle målene, til noen oppdaterer dem.
 
-## Hva vi fant
+## Hva jeg fant
 
 | Læreplan som gjelder i dag | Bygger på (gjelder ikke lenger) | Koblinger | Gjeldende versjon | Delvis oppdatert? |
 |---|---|---:|---|---|
@@ -43,13 +43,13 @@ Koblingene kan leses på to måter:
 1. **Riktig for overgangskullene.** Elever som går vg1 høsten 2026, hadde MAT01-05 og SAF01-04 på 10. trinn. For dem bygger målene faktisk på de gamle målene.
 2. **Feil for alle senere kull.** Fra høsten 2027 kommer elevene fra MAT01-06 og SAF01-05. Da peker koblingene på mål de aldri har hatt.
 
-Grep har én kobling per mål, ikke én per kull. Derfor må det velges hvilken versjon koblingen skal peke på. Vi tror den gjeldende versjonen er det naturlige valget, men det er de fagansvarlige som må avgjøre det.
+Grep har én kobling per mål, ikke én per kull. Derfor må det velges hvilken versjon koblingen skal peke på. Jeg tror den gjeldende versjonen er det naturlige valget, men det er de fagansvarlige som må avgjøre det.
 
 ## Forslag til oppfølging
 
 **A. Samme tekst i ny versjon: kan trolig flyttes uten faglig vurdering**
 
-Vi sammenlignet teksten i de gamle målene med målene i den gjeldende versjonen av samme læreplan:
+Jeg sammenlignet teksten i de gamle målene med målene i den gjeldende versjonen av samme læreplan:
 
 | Gammel versjon | Ny versjon | Mål det pekes på | Med identisk tekst i ny versjon |
 |---|---|---:|---:|
@@ -65,16 +65,30 @@ Her har målene i praktisk talt alle tilfeller bare fått ny kode. Koblingene ka
 
 Bare 17 av 83 mål i MAT01-05 som det pekes på, finnes med samme tekst i MAT01-06. Koblingene fra matematikk P, matematikk T, 2P og blomsterdekoratørfaget må derfor vurderes faglig. Matematikk P (MAT08-01) er allerede delvis oppdatert, og 21 av koblingene peker på MAT01-06.
 
-**C. Enkeltkoblinger som bør sjekkes**
+**C. Engelsk til matematikk: tilsiktet, og i så fall til hvilket mål?**
 
-Engelsk (ENG01-06 og ENG02-06) har én kobling hver til matematikk, fra et mål om å lytte til, lese og samtale om enkle tekster og billedbøker (KM13336, KM13431) til et mål om å utforske tall, mengder og telling i lek (KM266, MAT01-05). Det kan være en tilsiktet tverrfaglig kobling, men det kan også være feil kode. Alle de andre koblingene i engelsk peker innenfor engelskfaget.
+Engelsk (ENG01-06 og ENG02-06) har én kobling hver til matematikk. Her er det to ting: koblingen peker på et mål som ikke gjelder lenger, og det er uklart om den er tilsiktet.
+
+| Mål i engelsk | Bygger på (MAT01-05, gjelder ikke) |
+|---|---|
+| **KM13336** (ENG01-06): lytte til, lese og samtale om innhold i enkle tekster, inkludert billedbøker | **KM266**: utforske tall, mengder og telling i lek, natur, billedkunst, musikk og barnelitteratur, representere tallene på ulike måter og oversette mellom de ulike representasjonene |
+| **KM13431** (ENG02-06): oppfatte, lese og samtale om innhold i enkle tekster, inkludert billedbøker | **KM266**, som over |
+
+Det som binder målene sammen, er nok «billedbøker» og «barnelitteratur». Det tyder på at koblingen er tilsiktet og ikke en feil kode. Begge engelskmålene bygger i tillegg på to andre mål i engelsk, så koblingen til matematikk kommer i tillegg til progresjonen innenfor faget.
+
+I MAT01-06 er KM266 delt i to:
+
+- **KM13229**: utforske tall, mengder og telling i lek, natur, billedkunst, musikk og barnelitteratur
+- **KM13241**: bruke tallsymboler, tallord, tegning og konkreter til å representere tall og mengder på ulike måter og oversette mellom de ulike representasjonene
+
+Er koblingen tilsiktet, er KM13229 den delen som passer, og koblingen bør flyttes dit. Hvis ikke, bør den fjernes.
 
 ## Spørsmål til de fagansvarlige
 
 1. Skal «bygger på» peke på den versjonen som gjelder i dag?
 2. Kan koblingene i gruppe A flyttes automatisk til målet med samme tekst, eller må hver kobling ses på?
 3. Hvem tar den faglige vurderingen i matematikk (gruppe B)?
-4. Er koblingen fra engelsk til matematikk (gruppe C) tilsiktet?
+4. Er koblingen fra engelsk til matematikk (gruppe C) tilsiktet? I så fall: skal den flyttes til KM13229 i MAT01-06?
 5. Bør dette bli en fast rutine når en læreplan får ny versjon? Andre læreplaner kan ha koblinger som peker på den.
 
 ## Eksempler
