@@ -61,9 +61,10 @@ Det leses slik: `u:benyttes-paa-aarstrinn` er en relasjon fra et kompetansemåls
 
 ### Hvordan den er bygd
 
-Ontologien beskriver Grep-dataene slik de er. Utgangspunktet var et eksperimentelt utkast fra Udir, «OWL for
-Grep (utkast)» fra mai 2024. `ontologi/grep.ttl` er ontologien slik den gjelder i dag, og den vedlikeholdes for
-hånd. Prinsippene:
+Ontologien beskriver Grep-dataene slik de er. Utgangspunktet var et eksperimentelt utkast fra Grep-teamet i
+Udir, «OWL for Grep (utkast)» fra mai 2024. `ontologi/grep.ttl` er ontologien slik den gjelder i dag, og den
+vedlikeholdes for hånd. Den er sandkassens **forslag**, laget stegvis i dialog med fagansvarlig for Grep, og
+ikke noe Udir har vedtatt. Prinsippene:
 
 - **Ontologien og dataene har de samme egenskapene.** Hver `u:`-egenskap i dataene står i ontologien, og hver
   egenskap i ontologien brukes i dataene. Adressene er de samme, for eksempel `u:laereplanstruktur`. Det eneste

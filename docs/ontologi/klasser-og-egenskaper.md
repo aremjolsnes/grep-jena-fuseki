@@ -138,8 +138,8 @@ gyldighetsperioder. Skal du ha det som gjaldt på en bestemt dato, går du via `
 
 ## Overbegreper
 
-Læreplan, kompetansemål og kompetansemålsett finnes i én utgave for LK06 og én for LK20. Fagansvarlig har
-avklart at det er samme begrep i hver sin utgave, og `udir:`-laget har derfor et overbegrep for hver:
+Læreplan, kompetansemål og kompetansemålsett finnes i én utgave for LK06 og én for LK20. Det er samme begrep
+i hver sin utgave, og `udir:`-laget har derfor et overbegrep for hver:
 
 ```mermaid
 flowchart BT
@@ -258,7 +258,7 @@ Tre ting å vite når du leser domene og rekkevidde:
 - **Unionene hører ikke sammen parvis.** `u:erstatter` har både domene og rekkevidde «fagkode, opplæringsfag,
   læreplan, programområde eller utdanningsprogram». Det betyr ikke at en fagkode kan erstatte et programområde.
   I dataene erstatter en fagkode en fagkode, og et opplæringsfag et opplæringsfag. Det eneste krysset er
-  LK20-læreplaner som erstatter LK06-læreplaner.
+  LK20-læreplaner som kan erstatte LK06-læreplaner.
 - **Ingenting utledes av dem.** At `u:benyttes-sammen-med` har domenet `u:Fagkode`, gjør ikke en ressurs med
   den egenskapen til en fagkode i sandkassen. Typene kommer fra dataene og fra underklassene. Domene og
   rekkevidde er dokumentasjon og noe du kan kontrollere dataene mot.
