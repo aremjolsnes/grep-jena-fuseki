@@ -83,6 +83,17 @@ I MAT01-06 er KM266 delt i to:
 
 Er koblingen tilsiktet, er KM13229 den delen som passer, og koblingen bør flyttes dit. Hvis ikke, bør den fjernes.
 
+**D. Konkrete forslag, fil for fil**
+
+Mappen `docs/avvik-bygger-paa/` har én fil per par av læreplaner (`<gjeldende>_<utgått>.csv`) med alle koblingene og et forslag til hvor hver av dem bør flyttes. Kolonnene `lpKode`, `km` og `nyTekst` er den gjeldende versjonen og målet der, og `grunnlag` sier hvordan forslaget er funnet:
+
+| Grunnlag | Koblinger | Hva det betyr |
+|---|---:|---|
+| `gjenbruk-av` | 237 | Grep selv merker det nye målet som gjenbruk av det gamle (`u:gjenbruk-av`). Det gjelder alle målene i samfunnsfag, KRLE og engelsk (også gjennom ENG01-04 → ENG01-05 → ENG01-06) og 17 mål i matematikk. Her trengs trolig ingen faglig vurdering. |
+| `Claude: …` | 96 | Forslag fra en språkmodell for de 13 matematikkmålene som ikke er gjenbrukt, med en kort begrunnelse. Må vurderes faglig. Er et gammelt mål delt i to, står koblingen på to rader. |
+
+Forslagene lages av `scripts/foreslaa-bygger-paa.py`. Alle de 333 koblingene har fått et forslag; delte mål gir 349 rader til sammen.
+
 ## Spørsmål til de fagansvarlige
 
 1. Skal «bygger på» peke på den versjonen som gjelder i dag?
