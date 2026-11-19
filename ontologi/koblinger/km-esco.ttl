@@ -36062,7 +36062,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kontroll, reparasjon og komponentskifte på bremser er omtrent det samme som å vedlikeholde bremsesystemet." .
 <http://psi.udir.no/kl06/KM10083> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/534e2ade-f9dd-470c-a56f-97d2cc896468> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM10083/65155435-1c5b-41ee-8812-e0b9b03ae480> a sssom:Mapping ;
@@ -36073,7 +36074,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Reparasjon av kjøretøy generelt er bredere enn reparasjon av bremsesystemer." .
 <http://psi.udir.no/kl06/KM10083> <http://www.w3.org/2004/02/skos/core#broadMatch> <http://data.europa.eu/esco/skill/65155435-1c5b-41ee-8812-e0b9b03ae480> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM10083/c12436d4-104c-4f4c-9d6c-ab484ec56612> a sssom:Mapping ;
@@ -36084,7 +36086,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «I tråd med produsentenes spesifikasjoner» er en del av målet." .
 <http://psi.udir.no/kl06/KM10083> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/0da516ee-e70e-4384-be13-f5ff80be8127> a sssom:Mapping ;
@@ -36095,7 +36098,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å veilede kunder forutsetter kundekommunikasjon; en del av målet." .
 <http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/0da516ee-e70e-4384-be13-f5ff80be8127> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/ae4ea3e1-3c1a-45b0-96a7-106988c053c0> a sssom:Mapping ;
@@ -36106,7 +36110,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Informasjon om reparasjoner er en del av kundeveiledningen i verkstedet." .
 <http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ae4ea3e1-3c1a-45b0-96a7-106988c053c0> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4> a sssom:Mapping ;
@@ -36117,7 +36122,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Klientorientering er en del av rutinene for kundebehandling." .
 <http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b7c8f418-08d5-45d6-b697-ab26c6ecbfb4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/00e53a0a-c0ba-4c9f-a2ed-4706d5832a00> a sssom:Mapping ;
@@ -36128,7 +36134,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kundetilfredshet er et resultat av god kundebehandling; beslektet, ikke en del av målet." .
 <http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/00e53a0a-c0ba-4c9f-a2ed-4706d5832a00> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/d8624d9f-6acb-49cc-9401-2f1abf96f5de> a sssom:Mapping ;
@@ -36139,7 +36146,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Informasjon om bruk av kjøretøyet er en del av kundeveiledningen." .
 <http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d8624d9f-6acb-49cc-9401-2f1abf96f5de> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/cace7a77-38b7-4cdf-8171-e17692bef5f6> a sssom:Mapping ;
@@ -36150,7 +36158,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å svare på forespørsler er en del av kundebehandlingen." .
 <http://psi.udir.no/kl06/KM8637> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cace7a77-38b7-4cdf-8171-e17692bef5f6> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8637/5b0f2198-7246-4256-a902-4d9ce1260c80> a sssom:Mapping ;
@@ -36197,7 +36206,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å installere tilbehør er omtrent det samme som å montere deler og utstyr." .
 <http://psi.udir.no/kl06/KM8638> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/4591e001-18f4-40df-9387-5ccc31a66691> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8638/7bb2bd48-0da4-427a-a94f-1eddf5565eba> a sssom:Mapping ;
@@ -36208,7 +36218,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Elektroutstyr er én type utstyr som monteres; en del av målet." .
 <http://psi.udir.no/kl06/KM8638> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/7bb2bd48-0da4-427a-a94f-1eddf5565eba> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8638/9054e4ed-ec81-417e-9597-53a05e67fcc9> a sssom:Mapping ;
@@ -36219,7 +36230,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Bilelektronikk er én type utstyr som monteres; en del av målet." .
 <http://psi.udir.no/kl06/KM8638> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/9054e4ed-ec81-417e-9597-53a05e67fcc9> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8638/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> a sssom:Mapping ;
@@ -36230,7 +36242,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Anvisninger fra produsenter og leverandører» er teknisk dokumentasjon; en del av målet." .
 <http://psi.udir.no/kl06/KM8638> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8639/534e2ade-f9dd-470c-a56f-97d2cc896468> a sssom:Mapping ;
@@ -36241,7 +36254,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Målet er å gjøre rede for bremsesystemer, ikke å vedlikeholde dem; beslektet." .
 <http://psi.udir.no/kl06/KM8639> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/534e2ade-f9dd-470c-a56f-97d2cc896468> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8639/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> a sssom:Mapping ;
@@ -36252,7 +36266,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Energigjenvinning ved bremsing hører til hybridarkitekturen; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM8639> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8639/68e66ed6-a171-4350-8ec1-2cfc4cae50e4> a sssom:Mapping ;
@@ -36263,7 +36278,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Bremsekraftforsterking og -regulering bygger på hydraulikk; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM8639> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/68e66ed6-a171-4350-8ec1-2cfc4cae50e4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8639/575f79e8-8500-4ddf-91ec-5e6de73d35a3> a sssom:Mapping ;
@@ -36274,7 +36290,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Bremsesystemene er mekaniske kjøretøydeler; bredt kunnskapsområde, beslektet." .
 <http://psi.udir.no/kl06/KM8639> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8639/3a5275f4-67e5-4371-a31e-68291aa86691> a sssom:Mapping ;
@@ -36309,7 +36326,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Avbalansere hjul» er en del av målet." .
 <http://psi.udir.no/kl06/KM8640> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/36576c3d-2c7b-4755-bc67-ec1452470c98> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8640/202d0d2b-f6b9-48fe-b70e-cff49fa1d087> a sssom:Mapping ;
@@ -36320,7 +36338,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Legge om dekk» er en del av målet." .
 <http://psi.udir.no/kl06/KM8640> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/202d0d2b-f6b9-48fe-b70e-cff49fa1d087> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8640/dbf4392b-820c-447a-93a1-29d38dcdd441> a sssom:Mapping ;
@@ -36331,7 +36350,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om dekktyper trengs for å gjøre rede for hjulutrustningen; en del av målet." .
 <http://psi.udir.no/kl06/KM8640> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/dbf4392b-820c-447a-93a1-29d38dcdd441> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8640/4b09e030-03c4-42e1-b023-632089002335> a sssom:Mapping ;
@@ -36342,7 +36362,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å gjøre rede for montert hjulutrustning omfatter å vurdere slitasje; en del av målet." .
 <http://psi.udir.no/kl06/KM8640> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/4b09e030-03c4-42e1-b023-632089002335> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8641/ba11879a-723d-4209-8ffa-008eaab9771f> a sssom:Mapping ;
@@ -36353,7 +36374,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Hjulstillingskontroll berører hjulopphenget, men målet er vinkler og geometri; beslektet." .
 <http://psi.udir.no/kl06/KM8641> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ba11879a-723d-4209-8ffa-008eaab9771f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8641/90b98d58-96ca-4d75-9045-18eb97886b5b> a sssom:Mapping ;
@@ -36364,7 +36386,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Hjulstilling henger sammen med styresystemet, men målet er ikke å vedlikeholde det; beslektet." .
 <http://psi.udir.no/kl06/KM8641> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/90b98d58-96ca-4d75-9045-18eb97886b5b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> a sssom:Mapping ;
@@ -36375,7 +36398,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Helse-, miljø- og sikkerhetstiltak» er en del av målet." .
 <http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/f8cfab53-c7f7-465d-9eca-d2a28e4dc708> a sssom:Mapping ;
@@ -36386,7 +36410,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å dokumentere arbeidsoppdrag omfatter å føre registre over reparasjoner; en del av målet." .
 <http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/c12436d4-104c-4f4c-9d6c-ab484ec56612> a sssom:Mapping ;
@@ -36397,7 +36422,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Fabrikantens anvisninger» er en del av målet." .
 <http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> a sssom:Mapping ;
@@ -36408,7 +36434,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Planlegging etter fabrikantens anvisninger krever teknisk dokumentasjon; en del av målet." .
 <http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/e3211ab2-18b5-49b4-90de-d395f3be2378> a sssom:Mapping ;
@@ -36419,7 +36446,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å utføre arbeidsoppdrag etter anvisninger er en del av målet." .
 <http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/e3211ab2-18b5-49b4-90de-d395f3be2378> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/ccfbdaad-b91d-4bfe-bd0e-d30b33587f19> a sssom:Mapping ;
@@ -36430,7 +36458,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å dokumentere arbeidsoppdrag omfatter å føre register over fremdriften; en del av målet." .
 <http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ccfbdaad-b91d-4bfe-bd0e-d30b33587f19> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/183eb46f-24f6-4e15-8017-93f10039c0a6> a sssom:Mapping ;
@@ -36441,7 +36470,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kjøretøyregistre er én form for dokumentasjon, men ikke det målet sikter til; beslektet." .
 <http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/3d3ee5c3-4286-457f-9f76-1704011f7e11> a sssom:Mapping ;
@@ -36452,7 +36482,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «I tråd med lovverk» er en del av målet." .
 <http://psi.udir.no/kl06/KM8642> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8642/74ad37e3-325b-4ccd-ab2a-04f7696750e8> a sssom:Mapping ;
@@ -36535,7 +36566,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kontroll og komponentskifte på hjuloppheng er en del av målet." .
 <http://psi.udir.no/kl06/KM8643> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ba11879a-723d-4209-8ffa-008eaab9771f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8643/90b98d58-96ca-4d75-9045-18eb97886b5b> a sssom:Mapping ;
@@ -36546,7 +36578,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kontroll og komponentskifte på styreinnretninger er en del av målet." .
 <http://psi.udir.no/kl06/KM8643> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/90b98d58-96ca-4d75-9045-18eb97886b5b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8643/575f79e8-8500-4ddf-91ec-5e6de73d35a3> a sssom:Mapping ;
@@ -36557,7 +36590,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Fjæring, demping og styring er mekaniske kjøretøydeler; bredt kunnskapsområde, beslektet." .
 <http://psi.udir.no/kl06/KM8643> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/575f79e8-8500-4ddf-91ec-5e6de73d35a3> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/52743af8-ab5d-4ce3-b877-13d349394456> a sssom:Mapping ;
@@ -36568,7 +36602,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Feilsøking og diagnose i drivlinjen er å avdekke problemer med kjøretøyet; en del av målet." .
 <http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/52743af8-ab5d-4ce3-b877-13d349394456> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/5b264a14-d4db-4352-9278-fbb63c5ebed4> a sssom:Mapping ;
@@ -36579,7 +36614,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Diagnose av drivlinjer gjøres med diagnoseutstyr; en del av målet." .
 <http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/187f82c7-b165-4e6b-b327-704e38e85cdd> a sssom:Mapping ;
@@ -36590,7 +36626,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om diagnoseutstyret er beslektet med å bruke det i diagnosen." .
 <http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/187f82c7-b165-4e6b-b327-704e38e85cdd> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> a sssom:Mapping ;
@@ -36601,7 +36638,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Hybrid er én av framdriftsteknologiene; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/334e3e49-fb02-4051-809a-f06adfdc1c40> a sssom:Mapping ;
@@ -36612,7 +36650,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Feilsøke» er en del av målet." .
 <http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/334e3e49-fb02-4051-809a-f06adfdc1c40> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/7566f0b4-7f6e-455c-abb5-ec58e57f7e17> a sssom:Mapping ;
@@ -36623,7 +36662,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Motorkjøretøymekanikk er bredt kunnskapsområde bak arbeidet på drivlinjer; beslektet." .
 <http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/7566f0b4-7f6e-455c-abb5-ec58e57f7e17> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/2876970d-90af-45bd-9cfd-c0af757947ea> a sssom:Mapping ;
@@ -36634,7 +36674,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Elektriske motorer hører til drivlinjer med elektrisk framdrift; en del av målet." .
 <http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2876970d-90af-45bd-9cfd-c0af757947ea> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8644/8a5d67b6-4abf-4fae-bedf-78c8882d7d47> a sssom:Mapping ;
@@ -36645,7 +36686,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om motortyper er bakgrunn for ulike framdriftsteknologier; beslektet." .
 <http://psi.udir.no/kl06/KM8644> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/8a5d67b6-4abf-4fae-bedf-78c8882d7d47> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8645/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> a sssom:Mapping ;
@@ -36656,7 +36698,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sikkerhetssystemene er elektriske, men målet gjelder bare dem; beslektet." .
 <http://psi.udir.no/kl06/KM8645> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8645/5b264a14-d4db-4352-9278-fbb63c5ebed4> a sssom:Mapping ;
@@ -36667,7 +36710,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Diagnose på sikkerhetssystemer gjøres med diagnoseutstyr; en del av målet." .
 <http://psi.udir.no/kl06/KM8645> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8645/3a5275f4-67e5-4371-a31e-68291aa86691> a sssom:Mapping ;
@@ -36678,7 +36722,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sikkerhetssystemene er en del av kjøretøyets elektriske systemer; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM8645> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3a5275f4-67e5-4371-a31e-68291aa86691> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8645/65155435-1c5b-41ee-8812-e0b9b03ae480> a sssom:Mapping ;
@@ -36701,7 +36746,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Retur av gasser og væsker følger prosedyrer for helsefarlige stoffer; en del av målet." .
 <http://psi.udir.no/kl06/KM8646> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8646/51a26193-9abe-4bce-9108-f50835be1c35> a sssom:Mapping ;
@@ -36712,7 +36758,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Rengjøringsmidler er ett eksempel på væsker som håndteres; beslektet." .
 <http://psi.udir.no/kl06/KM8646> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/51a26193-9abe-4bce-9108-f50835be1c35> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8646/0d75a128-bd88-4c1b-b70d-8e963aeb490c> a sssom:Mapping ;
@@ -36735,7 +36782,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Lavspenningssystemene er kjøretøyets elektriske systemer; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3a5275f4-67e5-4371-a31e-68291aa86691> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> a sssom:Mapping ;
@@ -36746,7 +36794,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Diagnose og reparasjon av lavspenningssystemer er omtrent det samme som å reparere elektriske kjøretøysystemer." .
 <http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/d15e92c4-c8dc-48cd-a1f6-94fe13347f87> a sssom:Mapping ;
@@ -36757,7 +36806,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Utmåling av ledningsnett bruker koblingsskjemaer; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/7bb2bd48-0da4-427a-a94f-1eddf5565eba> a sssom:Mapping ;
@@ -36768,7 +36818,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Komponentskifte i elektriske systemer omfatter å installere elektroutstyr; en del av målet." .
 <http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/7bb2bd48-0da4-427a-a94f-1eddf5565eba> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/3e40c7d0-0e36-4b33-bc33-0aa87eda0561> a sssom:Mapping ;
@@ -36779,7 +36830,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Elektroteknikk er bredt kunnskapsområde bak utmålingen; beslektet." .
 <http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3e40c7d0-0e36-4b33-bc33-0aa87eda0561> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/95c35c3a-035f-47c2-90cf-7e934d20fc08> a sssom:Mapping ;
@@ -36790,7 +36842,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Elektronikk er bredt kunnskapsområde bak arbeidet; beslektet." .
 <http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/95c35c3a-035f-47c2-90cf-7e934d20fc08> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8647/5b264a14-d4db-4352-9278-fbb63c5ebed4> a sssom:Mapping ;
@@ -36801,7 +36854,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Diagnose på lavspenningssystemer gjøres med diagnoseutstyr; en del av målet." .
 <http://psi.udir.no/kl06/KM8647> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/c12436d4-104c-4f4c-9d6c-ab484ec56612> a sssom:Mapping ;
@@ -36812,7 +36866,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Etter fabrikantens anvisninger» er en del av målet." .
 <http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/b75632ce-6175-42d6-b4c9-acb16473a2a4> a sssom:Mapping ;
@@ -36823,7 +36878,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Valg av komponent krever informasjon om erstatningsdeler; en del av målet." .
 <http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b75632ce-6175-42d6-b4c9-acb16473a2a4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/827ebc71-b406-483e-9617-33c63dd487a0> a sssom:Mapping ;
@@ -36834,7 +36890,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Hensyn til økonomi ved valg av metode krever kostnadsvurdering; en del av målet." .
 <http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/827ebc71-b406-483e-9617-33c63dd487a0> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/da40ce72-a158-4116-84d2-01d4924e0667> a sssom:Mapping ;
@@ -36845,7 +36902,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Delepriser er grunnlag for den økonomiske vurderingen; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/da40ce72-a158-4116-84d2-01d4924e0667> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/03b9b491-fc9b-4868-914a-bf7cd47b5041> a sssom:Mapping ;
@@ -36856,7 +36914,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Valg av reparasjonsmetode er problemløsning; generell ferdighet, beslektet." .
 <http://psi.udir.no/kl06/KM8648> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/03b9b491-fc9b-4868-914a-bf7cd47b5041> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8648/65155435-1c5b-41ee-8812-e0b9b03ae480> a sssom:Mapping ;
@@ -36915,7 +36974,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Målet er å gjøre rede for oljene, ikke å smøre; beslektet." .
 <http://psi.udir.no/kl06/KM8649> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2f58fc20-4528-410b-877f-3dec775f1b4e> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8649/0ea0b260-617b-4d04-bf00-988dd0b122e5> a sssom:Mapping ;
@@ -36926,7 +36986,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskapen om væsker begrunner skift i vedlikeholdet; beslektet." .
 <http://psi.udir.no/kl06/KM8649> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0ea0b260-617b-4d04-bf00-988dd0b122e5> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8649/1b43a162-4527-4e1a-a189-8c7311d94d66> a sssom:Mapping ;
@@ -36937,7 +36998,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å vite hvorfor væsker må skiftes er bakgrunn for å finne servicebehov; beslektet." .
 <http://psi.udir.no/kl06/KM8649> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1b43a162-4527-4e1a-a189-8c7311d94d66> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8650/39f55791-434d-4169-9a46-c000a2859a66> a sssom:Mapping ;
@@ -36948,7 +37010,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sikkerhet ved arbeid på høyspenningsanlegg i kjøretøy er en del av målet." .
 <http://psi.udir.no/kl06/KM8650> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/39f55791-434d-4169-9a46-c000a2859a66> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8650/74ad37e3-325b-4ccd-ab2a-04f7696750e8> a sssom:Mapping ;
@@ -36959,7 +37022,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sikkerhetstiltak for kjøretøy med gass- og hydrogendrift er en del av målet." .
 <http://psi.udir.no/kl06/KM8650> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/74ad37e3-325b-4ccd-ab2a-04f7696750e8> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8650/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> a sssom:Mapping ;
@@ -36970,7 +37034,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Hybridarkitekturen er der høyspenningen finnes; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM8650> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/90d04cf8-dcc1-45cf-93e1-a2eba80aed6f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8650/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> a sssom:Mapping ;
@@ -36981,7 +37046,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Generelle HMS-standarder er bredere enn de spesifikke tiltakene i målet; beslektet." .
 <http://psi.udir.no/kl06/KM8650> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8650/02e235f4-a30a-412a-a06e-1c471ad28678> a sssom:Mapping ;
@@ -36992,7 +37058,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Gass og hydrogen er farlige stoffer, men målet gjelder sikkerhet ved arbeidet; beslektet." .
 <http://psi.udir.no/kl06/KM8650> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/02e235f4-a30a-412a-a06e-1c471ad28678> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8651/2bdc2f65-b42f-4963-abff-d7214ca4caae> a sssom:Mapping ;
@@ -37003,7 +37070,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om utslippskrav trengs for kontroll etter regelverket; en del av målet." .
 <http://psi.udir.no/kl06/KM8651> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2bdc2f65-b42f-4963-abff-d7214ca4caae> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8651/68162174-68c3-4601-840b-5e63c2dd7481> a sssom:Mapping ;
@@ -37014,7 +37082,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Avgassfeil kan skyldes motorfeil, men målet gjelder rensesystemene; beslektet." .
 <http://psi.udir.no/kl06/KM8651> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8651/5b264a14-d4db-4352-9278-fbb63c5ebed4> a sssom:Mapping ;
@@ -37025,7 +37094,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Diagnose på avgassrensesystemer gjøres med diagnoseutstyr; en del av målet." .
 <http://psi.udir.no/kl06/KM8651> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8651/3d3ee5c3-4286-457f-9f76-1704011f7e11> a sssom:Mapping ;
@@ -37036,7 +37106,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «I henhold til krav i gjeldende regelverk» er en del av målet." .
 <http://psi.udir.no/kl06/KM8651> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8651/7d4d1dae-bcba-47e8-9409-ea52b02ce246> a sssom:Mapping ;
@@ -37083,7 +37154,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Feilsøking på motorstyring gjøres med diagnoseutstyr; en del av målet." .
 <http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5b264a14-d4db-4352-9278-fbb63c5ebed4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/187f82c7-b165-4e6b-b327-704e38e85cdd> a sssom:Mapping ;
@@ -37094,7 +37166,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om diagnoseutstyret er beslektet med å bruke det i feilsøkingen." .
 <http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/187f82c7-b165-4e6b-b327-704e38e85cdd> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/68162174-68c3-4601-840b-5e63c2dd7481> a sssom:Mapping ;
@@ -37105,7 +37178,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å stille diagnose på motorstyringen er å avdekke defekter i motoren; en del av målet." .
 <http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/7d4d1dae-bcba-47e8-9409-ea52b02ce246> a sssom:Mapping ;
@@ -37116,7 +37190,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å oppdage funksjonssvikt er en del av feilsøkingen." .
 <http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/7d4d1dae-bcba-47e8-9409-ea52b02ce246> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/ed938748-60ae-4964-a657-ff2685ecc0d0> a sssom:Mapping ;
@@ -37127,7 +37202,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Fysiske tester av motorstyringen omfatter å evaluere motorytelsen; en del av målet." .
 <http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ed938748-60ae-4964-a657-ff2685ecc0d0> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8652/334e3e49-fb02-4051-809a-f06adfdc1c40> a sssom:Mapping ;
@@ -37138,7 +37214,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Utføre feilsøking» er en del av målet." .
 <http://psi.udir.no/kl06/KM8652> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/334e3e49-fb02-4051-809a-f06adfdc1c40> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8653/0ea0b260-617b-4d04-bf00-988dd0b122e5> a sssom:Mapping ;
@@ -37149,7 +37226,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Periodisk vedlikeholdsservice er omtrent det samme som å utføre kjøretøyvedlikehold." .
 <http://psi.udir.no/kl06/KM8653> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/0ea0b260-617b-4d04-bf00-988dd0b122e5> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8653/1b43a162-4527-4e1a-a189-8c7311d94d66> a sssom:Mapping ;
@@ -37160,7 +37238,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å finne servicekravene er en del av å utføre service etter anvisningene." .
 <http://psi.udir.no/kl06/KM8653> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/1b43a162-4527-4e1a-a189-8c7311d94d66> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8653/c12436d4-104c-4f4c-9d6c-ab484ec56612> a sssom:Mapping ;
@@ -37171,7 +37250,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Etter fabrikantens anvisninger» er en del av målet." .
 <http://psi.udir.no/kl06/KM8653> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c12436d4-104c-4f4c-9d6c-ab484ec56612> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8653/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> a sssom:Mapping ;
@@ -37182,7 +37262,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Fabrikantens anvisninger er teknisk dokumentasjon; en del av målet." .
 <http://psi.udir.no/kl06/KM8653> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8654/6122d586-5978-431f-8e7a-96e61fc1f3fc> a sssom:Mapping ;
@@ -37193,7 +37274,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Velge og bruke verne- og sikkerhetsutstyr» er en del av målet." .
 <http://psi.udir.no/kl06/KM8654> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/6122d586-5978-431f-8e7a-96e61fc1f3fc> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8654/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> a sssom:Mapping ;
@@ -37204,7 +37286,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). HMS-standarder er bredere enn valg av verneutstyr; beslektet." .
 <http://psi.udir.no/kl06/KM8654> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8654/ab2bb44a-3956-4028-8715-8b70b1960b99> a sssom:Mapping ;
@@ -37215,7 +37298,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Tunge løft er ett eksempel på arbeidsstillinger som påvirker kroppen; beslektet." .
 <http://psi.udir.no/kl06/KM8654> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ab2bb44a-3956-4028-8715-8b70b1960b99> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8654/c4180af3-befd-4bd8-9a65-6a496f9d9f15> a sssom:Mapping ;
@@ -37238,7 +37322,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kontroll og reparasjon av forbrenningsmotorer er omtrent det samme som å reparere motorer." .
 <http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/1bc7c69b-4292-4592-b854-f48165a06082> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/68162174-68c3-4601-840b-5e63c2dd7481> a sssom:Mapping ;
@@ -37249,7 +37334,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Tilstandskontroll omfatter å avdekke defekter; en del av målet." .
 <http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/68162174-68c3-4601-840b-5e63c2dd7481> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/be99117b-49a1-4ec2-a670-e9baac66c1bd> a sssom:Mapping ;
@@ -37260,7 +37346,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Prinsippene for forbrenningsmotorer er kunnskapsgrunnlaget; beslektet." .
 <http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/be99117b-49a1-4ec2-a670-e9baac66c1bd> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/f5fa2654-52cc-45d2-ac92-ac979dee5d12> a sssom:Mapping ;
@@ -37271,7 +37358,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om motorkomponenter er grunnlag for reparasjonen; beslektet." .
 <http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/f5fa2654-52cc-45d2-ac92-ac979dee5d12> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/ca64b48c-51ea-4c19-8074-b9cf819cfdd0> a sssom:Mapping ;
@@ -37282,7 +37370,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Justering av komponenter omfatter tiltrekking; en del av målet." .
 <http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ca64b48c-51ea-4c19-8074-b9cf819cfdd0> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/db3c8181-31b4-4950-bf0b-de01f93c372b> a sssom:Mapping ;
@@ -37293,7 +37382,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Reparasjon av motoren krever demontering; en del av målet." .
 <http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/db3c8181-31b4-4950-bf0b-de01f93c372b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/92f54ff7-f6d8-4702-8e0f-2d7d3254a7fd> a sssom:Mapping ;
@@ -37304,7 +37394,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Reparasjon av motoren krever sammensetting; en del av målet." .
 <http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/92f54ff7-f6d8-4702-8e0f-2d7d3254a7fd> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8655/8a5d67b6-4abf-4fae-bedf-78c8882d7d47> a sssom:Mapping ;
@@ -37315,7 +37406,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om motortyper er bakgrunn for arbeidet; beslektet." .
 <http://psi.udir.no/kl06/KM8655> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/8a5d67b6-4abf-4fae-bedf-78c8882d7d47> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8656/b112ead8-6245-49bb-879f-07b1388a1c9b> a sssom:Mapping ;
@@ -37326,7 +37418,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om komponentene i klimaanlegg trengs for å gjøre rede for og reparere dem; en del av målet." .
 <http://psi.udir.no/kl06/KM8656> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b112ead8-6245-49bb-879f-07b1388a1c9b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8656/3a5275f4-67e5-4371-a31e-68291aa86691> a sssom:Mapping ;
@@ -37337,7 +37430,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Komfortsystemene er elektrisk styrt; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM8656> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/3a5275f4-67e5-4371-a31e-68291aa86691> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8656/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> a sssom:Mapping ;
@@ -37348,7 +37442,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Reparasjon av komfort- og klimasystemer er reparasjon av elektriske kjøretøysystemer; en del av målet." .
 <http://psi.udir.no/kl06/KM8656> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/3c4cfade-58c1-4f6d-9a0e-dabf78b0e9e0> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/BMK03-03/KM8657/f4bcdb75-df28-441d-a52b-9730904f36a1> a sssom:Mapping ;
@@ -64751,7 +64846,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Solcelleanlegg er den vanlige formen for lokal energiproduksjon; en del av målet." .
 <http://psi.udir.no/kl06/KM12873> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/18d3f89a-6ac5-4ca6-bf93-0baec4e13bcd> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12873/13879c29-3c14-4a53-945c-5a8c0f8984db> a sssom:Mapping ;
@@ -64762,7 +64858,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Inverteren er en del av anlegg for lokal energiproduksjon; en del av målet." .
 <http://psi.udir.no/kl06/KM12873> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/13879c29-3c14-4a53-945c-5a8c0f8984db> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12873/79a5bc25-5b59-47bc-a4c2-fb8e8cb1ddf6> a sssom:Mapping ;
@@ -64773,7 +64870,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Laststyring og leveranse til nett henger sammen med smartnett; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM12873> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/79a5bc25-5b59-47bc-a4c2-fb8e8cb1ddf6> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12873/e45507ff-c1e2-4e0c-92fb-b6c0e6cb6245> a sssom:Mapping ;
@@ -64784,7 +64882,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om solcelleanlegg er bakgrunn for monteringen; beslektet." .
 <http://psi.udir.no/kl06/KM12873> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/e45507ff-c1e2-4e0c-92fb-b6c0e6cb6245> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12873/8f585def-6ade-41b3-b897-3d71fba4151d> a sssom:Mapping ;
@@ -64795,7 +64894,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Alternativ energi er bredt kunnskapsområde bak lokal energiproduksjon; beslektet." .
 <http://psi.udir.no/kl06/KM12873> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/8f585def-6ade-41b3-b897-3d71fba4151d> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12873/56c59e98-f133-48ad-9d01-f357a8e2c218> a sssom:Mapping ;
@@ -64806,7 +64906,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å gjøre rede for anleggets energiøkonomi er å vurdere lønnsomhet; en del av målet." .
 <http://psi.udir.no/kl06/KM12873> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/56c59e98-f133-48ad-9d01-f357a8e2c218> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12873/942edf03-a450-4261-b65c-9b447fdddc51> a sssom:Mapping ;
@@ -64817,7 +64918,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Generatorer er én mulig kilde til lokal energiproduksjon; beslektet." .
 <http://psi.udir.no/kl06/KM12873> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/942edf03-a450-4261-b65c-9b447fdddc51> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12873/4e09e2d2-e317-47d2-bf5e-1d6c66be3efc> a sssom:Mapping ;
@@ -64864,7 +64966,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Styringssystemer for motor er automatiseringskomponenter; en del av målet." .
 <http://psi.udir.no/kl06/KM12874> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/818c2b89-1335-4443-ada7-e1046862e273> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12874/368e5db0-ecca-4694-b116-3bb0f238d10c> a sssom:Mapping ;
@@ -64875,7 +64978,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Sensordata» forutsetter montering av sensorer; en del av målet." .
 <http://psi.udir.no/kl06/KM12874> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/368e5db0-ecca-4694-b116-3bb0f238d10c> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12874/cf200547-25b5-47c8-9eda-bca4aedc13fb> a sssom:Mapping ;
@@ -64886,7 +64990,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Programmering av regulatoren ligner fastvareprogrammering, men er ikke det samme; beslektet." .
 <http://psi.udir.no/kl06/KM12874> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/cf200547-25b5-47c8-9eda-bca4aedc13fb> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12874/bf1f763e-c505-46e7-8af3-e48f13ec5f44> a sssom:Mapping ;
@@ -64897,7 +65002,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Reguleringsteknikk er kunnskapsgrunnlaget for regulatoren; beslektet." .
 <http://psi.udir.no/kl06/KM12874> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/bf1f763e-c505-46e7-8af3-e48f13ec5f44> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12874/4ff549c3-daa5-4def-9916-301c7bdf13b8> a sssom:Mapping ;
@@ -64908,7 +65014,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om kontrollsystemer er bakgrunn for styringssystemene; beslektet." .
 <http://psi.udir.no/kl06/KM12874> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4ff549c3-daa5-4def-9916-301c7bdf13b8> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12874/70a7b3b3-31ef-4b29-a30f-bb7299dff39b> a sssom:Mapping ;
@@ -64919,7 +65026,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om sensorer er bakgrunn for sensordataene; beslektet." .
 <http://psi.udir.no/kl06/KM12874> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/70a7b3b3-31ef-4b29-a30f-bb7299dff39b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12875/942edf03-a450-4261-b65c-9b447fdddc51> a sssom:Mapping ;
@@ -64930,7 +65038,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Reservestrømforsyning omfatter å sette opp aggregat; en del av målet." .
 <http://psi.udir.no/kl06/KM12875> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/942edf03-a450-4261-b65c-9b447fdddc51> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12875/39f55791-434d-4169-9a46-c000a2859a66> a sssom:Mapping ;
@@ -64941,7 +65050,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sikkerhet på mobile anlegg er beslektet med farene ved batterianlegg." .
 <http://psi.udir.no/kl06/KM12875> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/39f55791-434d-4169-9a46-c000a2859a66> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12875/f8b05146-5ffc-44a9-846b-63e3ad1fe187> a sssom:Mapping ;
@@ -64952,7 +65062,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Koblingsutstyr for prioriterte laster fordeler effekt; beslektet." .
 <http://psi.udir.no/kl06/KM12875> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/f8b05146-5ffc-44a9-846b-63e3ad1fe187> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12876/4a30802f-827c-4706-9099-de85beee6cb5> a sssom:Mapping ;
@@ -64963,7 +65074,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Skjøte kabler» er omtrent det samme som målet." .
 <http://psi.udir.no/kl06/KM12876> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/4a30802f-827c-4706-9099-de85beee6cb5> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12876/7f67f82e-73c5-4dc0-b506-8e0b1a84f614> a sssom:Mapping ;
@@ -64974,7 +65086,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å feste sammen ledninger er en del av skjøting og terminering." .
 <http://psi.udir.no/kl06/KM12876> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/7f67f82e-73c5-4dc0-b506-8e0b1a84f614> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12876/9bb73673-1fe6-4d7c-a471-c03fad407bad> a sssom:Mapping ;
@@ -64985,7 +65098,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Avisolering av ledningsender er en del av termineringen." .
 <http://psi.udir.no/kl06/KM12876> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/9bb73673-1fe6-4d7c-a471-c03fad407bad> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12876/78a45d6e-8785-4016-984f-b54cba6c3ae8> a sssom:Mapping ;
@@ -64996,7 +65110,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Egnet verktøy» for ledninger er en del av målet." .
 <http://psi.udir.no/kl06/KM12876> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/78a45d6e-8785-4016-984f-b54cba6c3ae8> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12876/552a4aea-6ff9-4a5c-b475-0d35bd508088> a sssom:Mapping ;
@@ -65007,7 +65122,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Verktøy for elektriske ledninger, som pressutstyr, er en del av målet." .
 <http://psi.udir.no/kl06/KM12876> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/552a4aea-6ff9-4a5c-b475-0d35bd508088> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12876/4940d889-a185-4176-a920-46b88cbe0d8c> a sssom:Mapping ;
@@ -65018,7 +65134,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om ledningstilbehør er bakgrunn for skjøting og terminering; beslektet." .
 <http://psi.udir.no/kl06/KM12876> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4940d889-a185-4176-a920-46b88cbe0d8c> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12876/3892f2ff-714e-4201-823d-5d6fc5bab621> a sssom:Mapping ;
@@ -65029,7 +65146,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å gjøre rede for materialenes egenskaper omfatter å vurdere om de passer sammen; en del av målet." .
 <http://psi.udir.no/kl06/KM12876> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/3892f2ff-714e-4201-823d-5d6fc5bab621> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12877/334e3e49-fb02-4051-809a-f06adfdc1c40> a sssom:Mapping ;
@@ -65040,7 +65158,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Systematisk feilsøking» er en del av målet." .
 <http://psi.udir.no/kl06/KM12877> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/334e3e49-fb02-4051-809a-f06adfdc1c40> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12877/1de6b87b-2c7d-49aa-bcc0-3b2ef75f064f> a sssom:Mapping ;
@@ -65051,7 +65170,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å utbedre utstyrsfeil er en del av reparasjonene i målet." .
 <http://psi.udir.no/kl06/KM12877> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/1de6b87b-2c7d-49aa-bcc0-3b2ef75f064f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12877/386774ac-fe5b-431a-b485-9aec0bf5c09e> a sssom:Mapping ;
@@ -65062,7 +65182,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Vedlikehold på elektriske anlegg og utstyr» er en del av målet." .
 <http://psi.udir.no/kl06/KM12877> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/386774ac-fe5b-431a-b485-9aec0bf5c09e> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12877/87af00b5-30fa-41c8-bfa5-357f22c8d589> a sssom:Mapping ;
@@ -65073,7 +65194,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å skifte defekte komponenter er en del av reparasjonene." .
 <http://psi.udir.no/kl06/KM12877> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/87af00b5-30fa-41c8-bfa5-357f22c8d589> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12877/af1c7b89-679b-4fae-b67c-ed05c669719c> a sssom:Mapping ;
@@ -65084,7 +65206,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Reparasjon av ledningsnett er en del av reparasjonene på elektriske anlegg." .
 <http://psi.udir.no/kl06/KM12877> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/af1c7b89-679b-4fae-b67c-ed05c669719c> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12877/56c59e98-f133-48ad-9d01-f357a8e2c218> a sssom:Mapping ;
@@ -65095,7 +65218,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Vurdere lønnsomheten til reparasjoner» er en del av målet." .
 <http://psi.udir.no/kl06/KM12877> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/56c59e98-f133-48ad-9d01-f357a8e2c218> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12877/429f440f-9dc4-48d3-80ae-e58fce165cca> a sssom:Mapping ;
@@ -65106,7 +65230,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Diagnoseverktøy for elektronikk er beslektet med feilsøking på elektriske anlegg." .
 <http://psi.udir.no/kl06/KM12877> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/429f440f-9dc4-48d3-80ae-e58fce165cca> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12878/52797dce-911c-4e6d-b0cb-491f6469014f> a sssom:Mapping ;
@@ -65117,7 +65242,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Installasjon av elektrisk og elektronisk utstyr er bredere enn brannalarm og sikkerhetssystemer." .
 <http://psi.udir.no/kl06/KM12878> <http://www.w3.org/2004/02/skos/core#broadMatch> <http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12878/0e8d16c9-e2db-4862-ac06-1567f01ef806> a sssom:Mapping ;
@@ -65128,7 +65254,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Overvåkingsteknologi for bygg er beslektet med adgangs- og sikkerhetssystemer." .
 <http://psi.udir.no/kl06/KM12878> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0e8d16c9-e2db-4862-ac06-1567f01ef806> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12879/79edf815-70bf-48fc-a2f4-86ae5d372918> a sssom:Mapping ;
@@ -65139,7 +65266,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Montere føringsvei» er en del av målet." .
 <http://psi.udir.no/kl06/KM12879> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/79edf815-70bf-48fc-a2f4-86ae5d372918> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12879/ca1e4742-42cc-463a-9b12-a1733f06d7a3> a sssom:Mapping ;
@@ -65150,7 +65278,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kanaler i vegg er én måte å lage føringsvei på; en del av målet." .
 <http://psi.udir.no/kl06/KM12879> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ca1e4742-42cc-463a-9b12-a1733f06d7a3> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12879/d15e92c4-c8dc-48cd-a1f6-94fe13347f87> a sssom:Mapping ;
@@ -65161,7 +65290,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Koblingsskjemaer viser hvor ledninger skal forlegges; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM12879> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d15e92c4-c8dc-48cd-a1f6-94fe13347f87> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12879/8ed53702-3e4e-4637-a4c3-9dc8f4281019> a sssom:Mapping ;
@@ -65172,7 +65302,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Byggeprofiler kan være føringsvei, men er ikke det målet sikter til; beslektet." .
 <http://psi.udir.no/kl06/KM12879> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/8ed53702-3e4e-4637-a4c3-9dc8f4281019> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12879/78a45d6e-8785-4016-984f-b54cba6c3ae8> a sssom:Mapping ;
@@ -65219,7 +65350,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å vurdere tilstanden på installasjonen er å inspisere den; en del av målet." .
 <http://psi.udir.no/kl06/KM12880> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2179e0fd-7431-41a3-bbf4-76451c615ce2> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12880/cdd2b6cc-b4a9-42a0-824b-766f52176fd3> a sssom:Mapping ;
@@ -65230,7 +65362,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å anbefale utbedringer forutsetter en rapport fra inspeksjonen; en del av målet." .
 <http://psi.udir.no/kl06/KM12880> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cdd2b6cc-b4a9-42a0-824b-766f52176fd3> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12880/f98159cb-935a-4a20-97d0-68e2e3e60765> a sssom:Mapping ;
@@ -65241,7 +65374,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å anbefale utbedringer er å forutse vedlikeholdsbehov; en del av målet." .
 <http://psi.udir.no/kl06/KM12880> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f98159cb-935a-4a20-97d0-68e2e3e60765> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12880/4e09e2d2-e317-47d2-bf5e-1d6c66be3efc> a sssom:Mapping ;
@@ -65252,7 +65386,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Energieffektivitet i installasjonen henger sammen med bygningers energiytelse; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM12880> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4e09e2d2-e317-47d2-bf5e-1d6c66be3efc> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12880/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44> a sssom:Mapping ;
@@ -65263,7 +65398,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Forbedringer i energieffektivitet er beslektet med energisparing." .
 <http://psi.udir.no/kl06/KM12880> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12883/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44> a sssom:Mapping ;
@@ -65274,7 +65410,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Bærekraft og ressursbruk er beslektet med energisparing; målet er å drøfte, ikke å spare." .
 <http://psi.udir.no/kl06/KM12883> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12883/4c3ab565-747c-4db3-8c47-79e8d6f98cf4> a sssom:Mapping ;
@@ -65309,7 +65446,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Dokumentere eget arbeid» omfatter å føre register over fremdriften; en del av målet." .
 <http://psi.udir.no/kl06/KM12885> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ccfbdaad-b91d-4bfe-bd0e-d30b33587f19> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12885/f8cfab53-c7f7-465d-9eca-d2a28e4dc708> a sssom:Mapping ;
@@ -65320,7 +65458,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Dokumentasjon av eget arbeid omfatter registre over utført arbeid; en del av målet." .
 <http://psi.udir.no/kl06/KM12885> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f8cfab53-c7f7-465d-9eca-d2a28e4dc708> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12885/409a0245-0e6c-4aac-ba16-0920ecb76a8d> a sssom:Mapping ;
@@ -65355,7 +65494,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «I henhold til gjeldende regelverk» er en del av målet." .
 <http://psi.udir.no/kl06/KM12886> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/3d3ee5c3-4286-457f-9f76-1704011f7e11> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12886/ccfbdaad-b91d-4bfe-bd0e-d30b33587f19> a sssom:Mapping ;
@@ -65366,7 +65506,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Dokumentere arbeidsoppdragene» er en del av målet." .
 <http://psi.udir.no/kl06/KM12886> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ccfbdaad-b91d-4bfe-bd0e-d30b33587f19> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12886/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> a sssom:Mapping ;
@@ -65377,7 +65518,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Planlegging av arbeidsoppdrag krever teknisk dokumentasjon; en del av målet." .
 <http://psi.udir.no/kl06/KM12886> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12886/4fa2d6ba-4fff-4f21-bddd-4a54ae840955> a sssom:Mapping ;
@@ -65388,7 +65530,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «I samarbeid med andre» på byggeplass er en del av målet." .
 <http://psi.udir.no/kl06/KM12886> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/4fa2d6ba-4fff-4f21-bddd-4a54ae840955> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12886/dfce2aba-783e-4e17-9c17-e74aca505ec2> a sssom:Mapping ;
@@ -65399,7 +65542,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Planlegging etter tegninger er en del av målet." .
 <http://psi.udir.no/kl06/KM12886> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/dfce2aba-783e-4e17-9c17-e74aca505ec2> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12886/2aff3316-15b8-4ca1-8ae2-270bd5fd22e1> a sssom:Mapping ;
@@ -65410,7 +65554,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Forskriftene om elektrisk utstyr er en del av regelverket; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM12886> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2aff3316-15b8-4ca1-8ae2-270bd5fd22e1> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12886/e49f4158-9d4c-425d-bf32-dfe89b19840a> a sssom:Mapping ;
@@ -65457,7 +65602,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Velge egnet verneutstyr» er en del av målet." .
 <http://psi.udir.no/kl06/KM12887> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/6122d586-5978-431f-8e7a-96e61fc1f3fc> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12887/51754b8a-3e2c-4cc1-86e6-cf510d9c6fe4> a sssom:Mapping ;
@@ -65468,7 +65614,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Bruk av personlig verneutstyr er en del av målet." .
 <http://psi.udir.no/kl06/KM12887> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/51754b8a-3e2c-4cc1-86e6-cf510d9c6fe4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12887/a99c6783-50c0-4f7a-99df-bf93429ef6dc> a sssom:Mapping ;
@@ -65479,7 +65626,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Presisjonsverktøy er ett eksempel på verktøy som velges; beslektet." .
 <http://psi.udir.no/kl06/KM12887> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/a99c6783-50c0-4f7a-99df-bf93429ef6dc> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12887/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c> a sssom:Mapping ;
@@ -65490,7 +65638,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Vedlikeholdsrutinene for verktøy» er en del av målet." .
 <http://psi.udir.no/kl06/KM12887> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/5033c2fb-ec55-4b8e-b0a4-9379593f1e1c> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12888/2f7b5fa1-5fa5-4bfc-b9c8-c0cef15b8b60> a sssom:Mapping ;
@@ -65501,7 +65650,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Nettverkstilknyttet utstyr for brukertilpassede installasjoner er smartenheter; en del av målet." .
 <http://psi.udir.no/kl06/KM12888> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2f7b5fa1-5fa5-4bfc-b9c8-c0cef15b8b60> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12888/52797dce-911c-4e6d-b0cb-491f6469014f> a sssom:Mapping ;
@@ -65512,7 +65662,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Installasjon av elektrisk og elektronisk utstyr er bredere enn nettverkstilknyttet utstyr." .
 <http://psi.udir.no/kl06/KM12888> <http://www.w3.org/2004/02/skos/core#broadMatch> <http://data.europa.eu/esco/skill/52797dce-911c-4e6d-b0cb-491f6469014f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12888/0e8d16c9-e2db-4862-ac06-1567f01ef806> a sssom:Mapping ;
@@ -65523,7 +65674,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Overvåkingsteknologi for bygg er beslektet med nettverkstilknyttede installasjoner." .
 <http://psi.udir.no/kl06/KM12888> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0e8d16c9-e2db-4862-ac06-1567f01ef806> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12888/f4346299-e22a-4686-8e61-2c9b0cd51c7d> a sssom:Mapping ;
@@ -65546,7 +65698,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sikkerhet ved arbeid i elektriske anlegg er en del av målet." .
 <http://psi.udir.no/kl06/KM12889> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2b76cbbf-eddc-4a12-a120-f4ea370820a5> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12889/39f55791-434d-4169-9a46-c000a2859a66> a sssom:Mapping ;
@@ -65557,7 +65710,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sikkerhet ved drift av elektriske anlegg er en del av målet." .
 <http://psi.udir.no/kl06/KM12889> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/39f55791-434d-4169-9a46-c000a2859a66> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12889/156f8c5b-894a-4ccc-a70e-37a2726f3f00> a sssom:Mapping ;
@@ -65568,7 +65722,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Arbeide i tråd med ergonomiske prinsipper» er en del av målet." .
 <http://psi.udir.no/kl06/KM12889> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/156f8c5b-894a-4ccc-a70e-37a2726f3f00> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12889/6122d586-5978-431f-8e7a-96e61fc1f3fc> a sssom:Mapping ;
@@ -65579,7 +65734,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Bruke verneutstyr» er en del av målet." .
 <http://psi.udir.no/kl06/KM12889> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/6122d586-5978-431f-8e7a-96e61fc1f3fc> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12889/b73035a9-bf06-412c-9796-db579f85995c> a sssom:Mapping ;
@@ -65590,7 +65746,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Hensyn til egen sikkerhet er en del av målet." .
 <http://psi.udir.no/kl06/KM12889> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b73035a9-bf06-412c-9796-db579f85995c> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12889/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> a sssom:Mapping ;
@@ -65601,7 +65758,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sikkerhetsarbeidet følger HMS-standarder; en del av målet." .
 <http://psi.udir.no/kl06/KM12889> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/dcc96a49-0bac-4a9c-8f8e-a32b4e47e6eb> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12889/86df7af2-f9f3-4c06-a500-7f1fba9e78fe> a sssom:Mapping ;
@@ -65612,7 +65770,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). HMS-prosedyrer i bygg og anlegg er en del av sikkerhetsarbeidet; en del av målet." .
 <http://psi.udir.no/kl06/KM12889> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/86df7af2-f9f3-4c06-a500-7f1fba9e78fe> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12889/fafbb75f-ec35-4cc2-996a-20c85ef6c266> a sssom:Mapping ;
@@ -65623,7 +65782,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Arbeid i høyden er ett eksempel på sikkerhetsarbeid; beslektet." .
 <http://psi.udir.no/kl06/KM12889> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/fafbb75f-ec35-4cc2-996a-20c85ef6c266> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12890/cbcce641-a001-47eb-b15b-476da8dfc9ce> a sssom:Mapping ;
@@ -65634,7 +65794,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Lynvern er ett tiltak mot overspenning, men målet er å risikovurdere; beslektet." .
 <http://psi.udir.no/kl06/KM12890> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/cbcce641-a001-47eb-b15b-476da8dfc9ce> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12890/2aff3316-15b8-4ca1-8ae2-270bd5fd22e1> a sssom:Mapping ;
@@ -65645,7 +65806,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Forskriftene om elektrisk utstyr er grunnlag for risikovurderingen; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM12890> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2aff3316-15b8-4ca1-8ae2-270bd5fd22e1> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12890/2b76cbbf-eddc-4a12-a120-f4ea370820a5> a sssom:Mapping ;
@@ -65656,7 +65818,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sikkerhet ved elektriske anlegg er beslektet med risikovurderingen av dem." .
 <http://psi.udir.no/kl06/KM12890> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2b76cbbf-eddc-4a12-a120-f4ea370820a5> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12891/76b9e515-715d-4a53-a702-019adad1059b> a sssom:Mapping ;
@@ -65667,7 +65830,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Montering av vern omfatter effektbrytere; en del av målet." .
 <http://psi.udir.no/kl06/KM12891> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/76b9e515-715d-4a53-a702-019adad1059b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12891/9807025d-6966-42d3-a844-5a5cf9ec4819> a sssom:Mapping ;
@@ -65678,7 +65842,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Tilhørende målearrangement» omfatter installasjon av måler; en del av målet." .
 <http://psi.udir.no/kl06/KM12891> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/9807025d-6966-42d3-a844-5a5cf9ec4819> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12891/f8b05146-5ffc-44a9-846b-63e3ad1fe187> a sssom:Mapping ;
@@ -65689,7 +65854,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Fordelingssystemer fra inntak til belastning er effektfordeling; en del av målet." .
 <http://psi.udir.no/kl06/KM12891> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f8b05146-5ffc-44a9-846b-63e3ad1fe187> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12891/8ca18245-8842-4e6e-bc80-3ace0ee7fe5b> a sssom:Mapping ;
@@ -65700,7 +65866,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Tilkobling fra strømskinne er en del av fordelingssystemet; en del av målet." .
 <http://psi.udir.no/kl06/KM12891> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/8ca18245-8842-4e6e-bc80-3ace0ee7fe5b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12891/61368732-eb1c-47e0-8e33-20c8c8f5e70a> a sssom:Mapping ;
@@ -65711,7 +65878,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Dimensjonering av ledning, kabel og vern krever elektriske beregninger; en del av målet." .
 <http://psi.udir.no/kl06/KM12891> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/61368732-eb1c-47e0-8e33-20c8c8f5e70a> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12891/36fccad9-1d20-4104-bcc2-a8ea9d1ce5ea> a sssom:Mapping ;
@@ -65722,7 +65890,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Dimensjonering forutsetter vurdering av strømbehovet; en del av målet." .
 <http://psi.udir.no/kl06/KM12891> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/36fccad9-1d20-4104-bcc2-a8ea9d1ce5ea> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12891/0dc8813a-cebd-4a42-acc8-9a7c4e6e3663> a sssom:Mapping ;
@@ -65733,7 +65902,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Testprosedyrer for kraftoverføring er beslektet med idriftsetting av fordelingssystemer." .
 <http://psi.udir.no/kl06/KM12891> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/0dc8813a-cebd-4a42-acc8-9a7c4e6e3663> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12891/270de514-3206-4cf9-b122-0f148ab06fa1> a sssom:Mapping ;
@@ -65744,7 +65914,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Idriftsetting og vurdering av effektfaktor krever måling; en del av målet." .
 <http://psi.udir.no/kl06/KM12891> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/270de514-3206-4cf9-b122-0f148ab06fa1> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12891/3f6dc31c-ceef-4e93-9d8a-b4b862cf9b51> a sssom:Mapping ;
@@ -65755,7 +65926,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Idriftsetting omfatter testing av utstyret; en del av målet." .
 <http://psi.udir.no/kl06/KM12891> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/3f6dc31c-ceef-4e93-9d8a-b4b862cf9b51> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12892/c3d1ada5-1d97-4a23-be2a-9ff39296775b> a sssom:Mapping ;
@@ -65766,7 +65938,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Installasjoner for lys og varme omfatter brytere; en del av målet." .
 <http://psi.udir.no/kl06/KM12892> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c3d1ada5-1d97-4a23-be2a-9ff39296775b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12892/52d6eb67-56c0-4ad7-b5c2-71e7c2362ece> a sssom:Mapping ;
@@ -65777,7 +65950,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Installasjoner for variabel last omfatter stikkontakter; en del av målet." .
 <http://psi.udir.no/kl06/KM12892> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/52d6eb67-56c0-4ad7-b5c2-71e7c2362ece> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12892/2f7b5fa1-5fa5-4bfc-b9c8-c0cef15b8b60> a sssom:Mapping ;
@@ -65788,7 +65962,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Brukertilpassede installasjoner med styringsutstyr omfatter smartenheter; en del av målet." .
 <http://psi.udir.no/kl06/KM12892> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2f7b5fa1-5fa5-4bfc-b9c8-c0cef15b8b60> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12892/368e5db0-ecca-4694-b116-3bb0f238d10c> a sssom:Mapping ;
@@ -65799,7 +65974,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Styringsutstyr og sensorer» omfatter montering av sensorer; en del av målet." .
 <http://psi.udir.no/kl06/KM12892> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/368e5db0-ecca-4694-b116-3bb0f238d10c> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12892/829d1376-41bf-4c41-9bc3-62dce647677c> a sssom:Mapping ;
@@ -65810,7 +65986,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om lyssystemer er bakgrunn for lysinstallasjonene; beslektet." .
 <http://psi.udir.no/kl06/KM12892> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/829d1376-41bf-4c41-9bc3-62dce647677c> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12892/2bc626f8-32ce-4131-9f65-c52929d55a95> a sssom:Mapping ;
@@ -65821,7 +65998,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om elektriske varmesystemer er bakgrunn for varmeinstallasjonene; beslektet." .
 <http://psi.udir.no/kl06/KM12892> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2bc626f8-32ce-4131-9f65-c52929d55a95> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12892/4e09e2d2-e317-47d2-bf5e-1d6c66be3efc> a sssom:Mapping ;
@@ -65832,7 +66010,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Bygningers energikarakter» er beslektet med bygningers energiytelse som kunnskapsområde." .
 <http://psi.udir.no/kl06/KM12892> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/4e09e2d2-e317-47d2-bf5e-1d6c66be3efc> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12892/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44> a sssom:Mapping ;
@@ -65843,7 +66022,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Energieffektive installasjoner er beslektet med energisparing." .
 <http://psi.udir.no/kl06/KM12892> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ddce2912-bc0f-4a47-aa2b-c1de48bc4b44> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/ELE03-04/KM12881/2e227d5d-649b-48dc-99ca-2389bbc1140f> a sssom:Mapping ;
@@ -101344,7 +101524,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Helseopplysning er ett tiltak som øker helsekompetansen; en del av målet." .
 <http://psi.udir.no/kl06/KM5447> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/60b2dd49-c677-4f47-816e-aff3b577e113> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5447/097098fc-6d89-44e9-9305-98ac5c0a78ac> a sssom:Mapping ;
@@ -101355,7 +101536,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Opplæring om forebygging er ett tiltak som øker helsekompetansen; en del av målet." .
 <http://psi.udir.no/kl06/KM5447> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5447/b34a15fe-dc14-43eb-9eb3-c227238a029c> a sssom:Mapping ;
@@ -101366,7 +101548,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å formidle rutinemessig informasjon er beslektet med å øke helsekompetanse, men ikke det samme." .
 <http://psi.udir.no/kl06/KM5447> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/b34a15fe-dc14-43eb-9eb3-c227238a029c> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5447/045f71e6-0699-4169-8a54-9c6b96f3174d> a sssom:Mapping ;
@@ -101389,7 +101572,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Planlegge pleie» er en del av målet." .
 <http://psi.udir.no/kl06/KM5448> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/6acf652c-33b2-4e28-8f79-1e553f255229> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5448/516e324b-03fc-4d3b-9986-e46e9834cd43> a sssom:Mapping ;
@@ -101400,7 +101584,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Grunnleggende omsorgsprinsipper ligger i omsorgstiltakene; en del av målet." .
 <http://psi.udir.no/kl06/KM5448> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/516e324b-03fc-4d3b-9986-e46e9834cd43> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5448/eacac7e2-4e88-4bd3-9797-1dd1922cd10a> a sssom:Mapping ;
@@ -101411,7 +101596,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Støtte til å tilpasse seg funksjonshemming er habiliterende og rehabiliterende; en del av målet." .
 <http://psi.udir.no/kl06/KM5448> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/eacac7e2-4e88-4bd3-9797-1dd1922cd10a> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5448/a28e8141-89ee-4b24-a3bb-1aebcc56c72d> a sssom:Mapping ;
@@ -101422,7 +101608,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Langvarig pleie er en del av habiliterende og rehabiliterende tiltak." .
 <http://psi.udir.no/kl06/KM5448> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5448/a46743b7-ff8c-49b6-99f7-7fa5bc241771> a sssom:Mapping ;
@@ -101433,7 +101620,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Dokumentere» skjer i pasientjournalen; en del av målet." .
 <http://psi.udir.no/kl06/KM5448> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/a46743b7-ff8c-49b6-99f7-7fa5bc241771> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5448/097098fc-6d89-44e9-9305-98ac5c0a78ac> a sssom:Mapping ;
@@ -101444,7 +101632,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Opplæring om forebygging er ett forebyggende tiltak; en del av målet." .
 <http://psi.udir.no/kl06/KM5448> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/097098fc-6d89-44e9-9305-98ac5c0a78ac> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5449/ce0d6a42-59c1-433e-ab62-adfc969c46bb> a sssom:Mapping ;
@@ -101455,7 +101644,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å avdekke omsorgssvikt og overgrep handler om sikkerheten til brukerne; beslektet." .
 <http://psi.udir.no/kl06/KM5449> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/ce0d6a42-59c1-433e-ab62-adfc969c46bb> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5450/e6bf6e73-230a-434c-97b2-a0c042a8b7ac> a sssom:Mapping ;
@@ -101466,7 +101656,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Miljøbevisste valg i yrkesutøvelsen er omtrent det samme som bærekraftsprinsipper i helsevesenet." .
 <http://psi.udir.no/kl06/KM5450> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/e6bf6e73-230a-434c-97b2-a0c042a8b7ac> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5450/a992f345-7c06-4982-8fc9-5fab55e316af> a sssom:Mapping ;
@@ -101501,7 +101692,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Personsentrert behandling forutsetter brukermedvirkning; en del av målet." .
 <http://psi.udir.no/kl06/KM5452> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/7a63f944-6948-4ae4-9c1f-d08e492535c9> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5452/8168333b-8257-48f6-82c5-6b5128c21ecc> a sssom:Mapping ;
@@ -101512,7 +101704,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om personsentrert pleie er bakgrunn for brukermedvirkning; beslektet." .
 <http://psi.udir.no/kl06/KM5452> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/8168333b-8257-48f6-82c5-6b5128c21ecc> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5452/8232979d-6aa4-40c9-a12b-5152a52a76b8> a sssom:Mapping ;
@@ -101523,7 +101716,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Informert samtykke er en del av pasientmedvirkningen." .
 <http://psi.udir.no/kl06/KM5452> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5452/c65aa043-98da-4136-9877-494e72d9e4cf> a sssom:Mapping ;
@@ -101546,7 +101740,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Gjennomføre grunnleggende sykepleie» er omtrent det samme som å utføre sykepleie." .
 <http://psi.udir.no/kl06/KM5453> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/f98e06f5-a09a-4356-b6a8-d55a7d3c5356> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5453/1023ac61-250f-4eef-b7a9-238cf071685f> a sssom:Mapping ;
@@ -101557,7 +101752,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Profesjonell omsorg er en del av sykepleien til akutt og kronisk syke." .
 <http://psi.udir.no/kl06/KM5453> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/1023ac61-250f-4eef-b7a9-238cf071685f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5453/8b3aefd2-5021-418f-b069-828fb7abc598> a sssom:Mapping ;
@@ -101568,7 +101764,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sykepleieprinsippene er kunnskapsgrunnlaget; beslektet." .
 <http://psi.udir.no/kl06/KM5453> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/8b3aefd2-5021-418f-b069-828fb7abc598> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5453/a28e8141-89ee-4b24-a3bb-1aebcc56c72d> a sssom:Mapping ;
@@ -101579,7 +101776,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sykepleie til kronisk syke er langvarig behandling; en del av målet." .
 <http://psi.udir.no/kl06/KM5453> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/a28e8141-89ee-4b24-a3bb-1aebcc56c72d> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5453/51e79cb4-fab3-404c-88f3-cd4a1bd5879e> a sssom:Mapping ;
@@ -101590,7 +101788,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sykepleie til akutt syke omfatter akutte situasjoner; en del av målet." .
 <http://psi.udir.no/kl06/KM5453> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5454/b5a8ce01-a4ae-43c1-b4e4-c44be6804691> a sssom:Mapping ;
@@ -101601,7 +101800,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å dele ut måltider er en del av arbeidet med måltider etter kostrådene; en del av målet." .
 <http://psi.udir.no/kl06/KM5454> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b5a8ce01-a4ae-43c1-b4e4-c44be6804691> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5454/634865e0-2ec2-4b7f-bb7f-c196637f0f7b> a sssom:Mapping ;
@@ -101612,7 +101812,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Eldres behov er relevant for kartlegging av ernæringsbehov; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM5454> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/634865e0-2ec2-4b7f-bb7f-c196637f0f7b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5455/2475cd27-8d6c-4318-a364-21395b23acba> a sssom:Mapping ;
@@ -101623,7 +101824,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å imøtekomme brukerens behov er beslektet med tiltak for trivsel, men bredere." .
 <http://psi.udir.no/kl06/KM5455> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2475cd27-8d6c-4318-a364-21395b23acba> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5455/bcd2ce08-ba12-4d66-865f-f4ba36419707> a sssom:Mapping ;
@@ -101634,7 +101836,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Inkludering bidrar til trivsel og livskvalitet; beslektet." .
 <http://psi.udir.no/kl06/KM5455> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/bcd2ce08-ba12-4d66-865f-f4ba36419707> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5455/7a63f944-6948-4ae4-9c1f-d08e492535c9> a sssom:Mapping ;
@@ -101645,7 +101848,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Personsentrert behandling fremmer trivsel; beslektet." .
 <http://psi.udir.no/kl06/KM5455> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/7a63f944-6948-4ae4-9c1f-d08e492535c9> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5456/d3b74d50-7fc9-4051-9335-58d129a4a064> a sssom:Mapping ;
@@ -101656,7 +101860,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å overvåke vitale tegn er en del av den systematiske observasjonen." .
 <http://psi.udir.no/kl06/KM5456> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5456/2e90ef65-646a-4b1d-8597-26ca88aa1c6b> a sssom:Mapping ;
@@ -101667,7 +101872,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å identifisere avvik er en del av å vurdere endringer i tilstanden." .
 <http://psi.udir.no/kl06/KM5456> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2e90ef65-646a-4b1d-8597-26ca88aa1c6b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5456/a46743b7-ff8c-49b6-99f7-7fa5bc241771> a sssom:Mapping ;
@@ -101678,7 +101884,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Dokumentere i digitale journalsystemer» er en del av målet." .
 <http://psi.udir.no/kl06/KM5456> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/a46743b7-ff8c-49b6-99f7-7fa5bc241771> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5456/4d614c92-0c48-4a11-a5ed-416b34fd50d2> a sssom:Mapping ;
@@ -101689,7 +101896,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Dokumentasjon i journal er håndtering av brukerdata; en del av målet." .
 <http://psi.udir.no/kl06/KM5456> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5457/4d614c92-0c48-4a11-a5ed-416b34fd50d2> a sssom:Mapping ;
@@ -101700,7 +101908,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Taushetsplikt og personvern gjelder håndteringen av brukerdata; en del av målet." .
 <http://psi.udir.no/kl06/KM5457> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/4d614c92-0c48-4a11-a5ed-416b34fd50d2> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5457/9fcf9918-fdef-49c3-aedc-518eb1e7e1f5> a sssom:Mapping ;
@@ -101711,7 +101920,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å overholde regelverket om taushetsplikt er en del av å overholde helselovgivningen; en del av målet." .
 <http://psi.udir.no/kl06/KM5457> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/9fcf9918-fdef-49c3-aedc-518eb1e7e1f5> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5457/1709f408-9965-489b-9805-8e1e5d9e483b> a sssom:Mapping ;
@@ -101722,7 +101932,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Helselovgivningen er bredt kunnskapsområde bak taushetsplikt og personvern; beslektet." .
 <http://psi.udir.no/kl06/KM5457> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5457/e37d64dc-0f05-4ee8-b065-bf76f70d8f5c> a sssom:Mapping ;
@@ -101769,7 +101980,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Digitale kommunikasjonsverktøy i helsetjenesten er e-helse; en del av målet." .
 <http://psi.udir.no/kl06/KM5458> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5458/d15ce60f-ddab-41ce-ba56-398451b77b60> a sssom:Mapping ;
@@ -101780,7 +101992,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Grunnleggende datakunnskap er forutsetning for digitale verktøy; beslektet." .
 <http://psi.udir.no/kl06/KM5458> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5458/b080a008-a35d-4bd0-92e9-edf3773bb2b7> a sssom:Mapping ;
@@ -101815,7 +102028,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å identifisere avvik er beslektet med å observere symptomer, men målet gjelder psykisk helse og rus." .
 <http://psi.udir.no/kl06/KM5460> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/2e90ef65-646a-4b1d-8597-26ca88aa1c6b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5461/eba85523-6ad2-4cd9-9b27-a0b6a39b8cfa> a sssom:Mapping ;
@@ -101826,7 +102040,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Tverrfaglig samarbeid» i helseteam er en del av målet." .
 <http://psi.udir.no/kl06/KM5461> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/eba85523-6ad2-4cd9-9b27-a0b6a39b8cfa> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5461/13724e7d-b946-4773-915e-9621340237bc> a sssom:Mapping ;
@@ -101837,7 +102052,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Helhetlige pasientforløp er kontinuitet i helsevesenet; en del av målet." .
 <http://psi.udir.no/kl06/KM5461> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/13724e7d-b946-4773-915e-9621340237bc> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5461/68088afb-3afd-4538-8e25-377a63f09666> a sssom:Mapping ;
@@ -101848,7 +102064,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kommunikasjon med sykepleiere er ett eksempel på tverrfaglig samarbeid; beslektet." .
 <http://psi.udir.no/kl06/KM5461> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/68088afb-3afd-4538-8e25-377a63f09666> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5461/bccafecc-4d80-43d3-8c9f-aef382c3926f> a sssom:Mapping ;
@@ -101859,7 +102076,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Samarbeid med pleiepersonell er ett eksempel på tverrfaglig samarbeid; beslektet." .
 <http://psi.udir.no/kl06/KM5461> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/bccafecc-4d80-43d3-8c9f-aef382c3926f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5461/60c78287-22eb-4103-9c8c-28deaa460da0> a sssom:Mapping ;
@@ -101882,7 +102100,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Regelverket om tvang er en del av helselovgivningen; beslektet, fordi målet også gjelder refleksjon over makt." .
 <http://psi.udir.no/kl06/KM5462> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/9fcf9918-fdef-49c3-aedc-518eb1e7e1f5> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5462/1709f408-9965-489b-9805-8e1e5d9e483b> a sssom:Mapping ;
@@ -101893,7 +102112,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Helselovgivningen er bredt kunnskapsområde bak reglene om tvang; beslektet." .
 <http://psi.udir.no/kl06/KM5462> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5462/409a0245-0e6c-4aac-ba16-0920ecb76a8d> a sssom:Mapping ;
@@ -101928,7 +102148,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om palliativ pleie er grunnlaget for omsorg til døende; beslektet." .
 <http://psi.udir.no/kl06/KM5463> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/c5a80bb0-31e6-4de0-868c-00a0f9b88b47> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5463/1023ac61-250f-4eef-b7a9-238cf071685f> a sssom:Mapping ;
@@ -101939,7 +102160,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Profesjonell omsorg til alvorlig syke er en del av målet." .
 <http://psi.udir.no/kl06/KM5463> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/1023ac61-250f-4eef-b7a9-238cf071685f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5463/77b636e8-fab3-41a8-8022-1e0a354059dc> a sssom:Mapping ;
@@ -101962,7 +102184,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kartlegging av funksjonsnivå omfatter å vurdere evnen til egenomsorg; en del av målet." .
 <http://psi.udir.no/kl06/KM5464> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b4910ea9-578d-4767-bd68-00a315a64e09> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5464/f98e06f5-a09a-4356-b6a8-d55a7d3c5356> a sssom:Mapping ;
@@ -101973,7 +102196,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Utføre grunnleggende sykepleie» er en del av målet." .
 <http://psi.udir.no/kl06/KM5464> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f98e06f5-a09a-4356-b6a8-d55a7d3c5356> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5464/516e324b-03fc-4d3b-9986-e46e9834cd43> a sssom:Mapping ;
@@ -101984,7 +102208,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Grunnleggende omsorgsprinsipper ligger i grunnleggende sykepleie; en del av målet." .
 <http://psi.udir.no/kl06/KM5464> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/516e324b-03fc-4d3b-9986-e46e9834cd43> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5464/54411e8e-d62f-46d8-b87b-fce23f8e3bc8> a sssom:Mapping ;
@@ -101995,7 +102220,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Pleie av uføre er ett tilfelle av sykepleie tilpasset brukeren; beslektet." .
 <http://psi.udir.no/kl06/KM5464> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/54411e8e-d62f-46d8-b87b-fce23f8e3bc8> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5464/6b28bb69-a6ef-42d4-84df-46e498f09297> a sssom:Mapping ;
@@ -102006,7 +102232,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om ulike typer uførhet er bakgrunn for kartleggingen; beslektet." .
 <http://psi.udir.no/kl06/KM5464> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/6b28bb69-a6ef-42d4-84df-46e498f09297> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5465/f90d4810-8bac-4e5e-b870-3e35a4138ff7> a sssom:Mapping ;
@@ -102017,7 +102244,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å ta ansvar for egen yrkesutøvelse er en del av profesjonaliteten i målet." .
 <http://psi.udir.no/kl06/KM5465> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f90d4810-8bac-4e5e-b870-3e35a4138ff7> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5465/65a1c226-5d93-4fec-8a15-cb1b2ec4379f> a sssom:Mapping ;
@@ -102028,7 +102256,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å arbeide under veiledning er beslektet med profesjonell yrkesutøvelse." .
 <http://psi.udir.no/kl06/KM5465> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/65a1c226-5d93-4fec-8a15-cb1b2ec4379f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5465/1b3370df-c280-470c-ac35-951f42ca8b19> a sssom:Mapping ;
@@ -102039,7 +102268,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å fremme et positivt bilde av yrket er beslektet med å være profesjonell." .
 <http://psi.udir.no/kl06/KM5465> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1b3370df-c280-470c-ac35-951f42ca8b19> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5465/409a0245-0e6c-4aac-ba16-0920ecb76a8d> a sssom:Mapping ;
@@ -102074,7 +102304,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Kontinuerlig kvalitetsforbedring» omfatter å overholde kvalitetsstandarder; en del av målet." .
 <http://psi.udir.no/kl06/KM5466> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/98eb1f3b-3480-416b-bd4b-811946f7e347> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5466/ce0d6a42-59c1-433e-ab62-adfc969c46bb> a sssom:Mapping ;
@@ -102085,7 +102316,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). HMS og rutiner for uønskede hendelser ivaretar brukernes sikkerhet; en del av målet." .
 <http://psi.udir.no/kl06/KM5466> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/ce0d6a42-59c1-433e-ab62-adfc969c46bb> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5466/aa238394-8126-4ada-be2f-9dfe065cf314> a sssom:Mapping ;
@@ -102096,7 +102328,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Rutiner og internkontroll er organisatoriske retningslinjer; en del av målet." .
 <http://psi.udir.no/kl06/KM5466> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5466/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4> a sssom:Mapping ;
@@ -102107,7 +102340,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kliniske retningslinjer er beslektet med kvalitetsarbeidet, men målet gjelder HMS og internkontroll." .
 <http://psi.udir.no/kl06/KM5466> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5466/35ebe444-9ece-4fbc-a55d-e99ea37267ae> a sssom:Mapping ;
@@ -102142,7 +102376,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om førstehjelp er en del av å utføre førstehjelp." .
 <http://psi.udir.no/kl06/KM5467> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/f7464f30-662b-4177-85a0-3df9693e9e58> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5467/51e79cb4-fab3-404c-88f3-cd4a1bd5879e> a sssom:Mapping ;
@@ -102153,7 +102388,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Førstehjelp er håndtering av akutte situasjoner; en del av målet." .
 <http://psi.udir.no/kl06/KM5467> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/51e79cb4-fab3-404c-88f3-cd4a1bd5879e> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5467/8bd49d04-ab2f-4333-b5d9-12d716e4e2f6> a sssom:Mapping ;
@@ -102164,7 +102400,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Gjenoppliving er en del av førstehjelpen." .
 <http://psi.udir.no/kl06/KM5467> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/8bd49d04-ab2f-4333-b5d9-12d716e4e2f6> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5467/9b9244b4-6f62-4834-839b-19e9eba0a407> a sssom:Mapping ;
@@ -102175,7 +102412,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Akuttbehandling er bredere enn førstehjelp; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM5467> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/9b9244b4-6f62-4834-839b-19e9eba0a407> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5467/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4> a sssom:Mapping ;
@@ -102210,7 +102448,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å bistå ved legemiddelhåndtering er en del av målet." .
 <http://psi.udir.no/kl06/KM5468> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d2f78372-c23b-41ef-bce3-2874f587579c> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5468/2d6904db-9e16-42a5-bc12-c5acb8bfab18> a sssom:Mapping ;
@@ -102221,7 +102460,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sikker håndtering av legemidler er en del av regelverket for legemiddelhåndtering; en del av målet." .
 <http://psi.udir.no/kl06/KM5468> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/2d6904db-9e16-42a5-bc12-c5acb8bfab18> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5468/1236128d-9bb4-4d94-bc1e-40fd14824280> a sssom:Mapping ;
@@ -102232,7 +102472,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om legemidler er grunnlag for å observere virkninger; beslektet." .
 <http://psi.udir.no/kl06/KM5468> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1236128d-9bb4-4d94-bc1e-40fd14824280> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5468/60c544c9-0815-479c-bcec-93c7891815ea> a sssom:Mapping ;
@@ -102243,7 +102484,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Farmakologi er kunnskapsgrunnlaget for virkninger og bivirkninger; beslektet." .
 <http://psi.udir.no/kl06/KM5468> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/60c544c9-0815-479c-bcec-93c7891815ea> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5471/0450eaee-1a00-4622-8f4e-5356fce816d2> a sssom:Mapping ;
@@ -102254,7 +102496,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kunnskap om hygiene i helsevesenet er en del av å arbeide etter hygieneretningslinjene." .
 <http://psi.udir.no/kl06/KM5471> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/0450eaee-1a00-4622-8f4e-5356fce816d2> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5471/6d13053b-ee35-492c-8976-8178420df398> a sssom:Mapping ;
@@ -102265,7 +102508,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Gjennomføre smitteverntiltak» forutsetter kunnskap om smittevern; en del av målet." .
 <http://psi.udir.no/kl06/KM5471> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/6d13053b-ee35-492c-8976-8178420df398> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5471/6f46a3bb-eb18-4c3e-b05b-8b073fceb4fb> a sssom:Mapping ;
@@ -102276,7 +102520,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Sterilisering er ett smitteverntiltak, men ikke det helsefagarbeideren vanligvis gjør; beslektet." .
 <http://psi.udir.no/kl06/KM5471> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/6f46a3bb-eb18-4c3e-b05b-8b073fceb4fb> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5471/82b6f3bc-5dc3-4c8b-a814-9b471df42e02> a sssom:Mapping ;
@@ -102287,7 +102532,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Steriliseringsutstyr er beslektet med smittevern, men utenfor det vanlige arbeidet." .
 <http://psi.udir.no/kl06/KM5471> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/82b6f3bc-5dc3-4c8b-a814-9b471df42e02> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5471/d9449998-c1f5-478c-a103-2255398cf0b6> a sssom:Mapping ;
@@ -102322,7 +102568,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Råd om informert samtykke er beslektet med å orientere om rettigheter." .
 <http://psi.udir.no/kl06/KM5472> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/8232979d-6aa4-40c9-a12b-5152a52a76b8> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5472/1709f408-9965-489b-9805-8e1e5d9e483b> a sssom:Mapping ;
@@ -102333,7 +102580,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Rettighetene følger av helselovgivningen; beslektet kunnskap." .
 <http://psi.udir.no/kl06/KM5472> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5472/b34a15fe-dc14-43eb-9eb3-c227238a029c> a sssom:Mapping ;
@@ -102344,7 +102592,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Å orientere om rettigheter er beslektet med å formidle rutinemessig informasjon." .
 <http://psi.udir.no/kl06/KM5472> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/b34a15fe-dc14-43eb-9eb3-c227238a029c> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5472/c65aa043-98da-4136-9877-494e72d9e4cf> a sssom:Mapping ;
@@ -102379,7 +102628,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Kommunikasjon og samhandling med pasienter og pårørende er omtrent det samme som å kommunisere innen helsepleie." .
 <http://psi.udir.no/kl06/KM5473> <http://www.w3.org/2004/02/skos/core#closeMatch> <http://data.europa.eu/esco/skill/7110bf9f-b245-4adc-9159-5081013fd64d> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5473/b55f61a4-5f9e-4741-ba95-9ac04b64119b> a sssom:Mapping ;
@@ -102390,7 +102640,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Fra ulike kulturer» er en del av målet." .
 <http://psi.udir.no/kl06/KM5473> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/b55f61a4-5f9e-4741-ba95-9ac04b64119b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5473/a17286c5-238d-4f0b-bc24-29e9121345de> a sssom:Mapping ;
@@ -102401,7 +102652,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Aktiv lytting er en del av kommunikasjonen." .
 <http://psi.udir.no/kl06/KM5473> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/a17286c5-238d-4f0b-bc24-29e9121345de> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5473/d93f9e29-9740-4231-8486-13d377b99f05> a sssom:Mapping ;
@@ -102412,7 +102664,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «Bruke relasjonskompetanse» er å bygge en terapeutisk relasjon; en del av målet." .
 <http://psi.udir.no/kl06/KM5473> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d93f9e29-9740-4231-8486-13d377b99f05> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5473/c65aa043-98da-4136-9877-494e72d9e4cf> a sssom:Mapping ;
@@ -102423,7 +102676,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Samhandling med brukere er en del av målet." .
 <http://psi.udir.no/kl06/KM5473> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/c65aa043-98da-4136-9877-494e72d9e4cf> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5473/e724205b-6b9a-45b4-b629-cd32a6c80b4f> a sssom:Mapping ;
@@ -102434,7 +102688,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Fremmedspråk er én måte å møte ulik mulighet til å kommunisere på; beslektet." .
 <http://psi.udir.no/kl06/KM5473> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/e724205b-6b9a-45b4-b629-cd32a6c80b4f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5473/c10d5d87-36cf-42f5-8a12-e560fb5f4af8> a sssom:Mapping ;
@@ -102481,7 +102736,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Velferdsteknologi er e-helse og mobil helseteknologi; en del av målet." .
 <http://psi.udir.no/kl06/KM5474> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/16636767-c215-4cf0-b126-e144fea20926> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5474/eacac7e2-4e88-4bd3-9797-1dd1922cd10a> a sssom:Mapping ;
@@ -102492,7 +102748,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Hjelpemidler støtter tilpasning til funksjonshemming; beslektet." .
 <http://psi.udir.no/kl06/KM5474> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/eacac7e2-4e88-4bd3-9797-1dd1922cd10a> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5475/9fcf9918-fdef-49c3-aedc-518eb1e7e1f5> a sssom:Mapping ;
@@ -102503,7 +102760,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). «I tråd med gjeldende regelverk» er en del av målet." .
 <http://psi.udir.no/kl06/KM5475> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/9fcf9918-fdef-49c3-aedc-518eb1e7e1f5> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5475/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4> a sssom:Mapping ;
@@ -102514,7 +102772,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Faglig forsvarlig helsehjelp følger kliniske retningslinjer; en del av målet." .
 <http://psi.udir.no/kl06/KM5475> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/76395873-7fe2-4f9a-b4b6-9932f8cbd0b4> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5475/1023ac61-250f-4eef-b7a9-238cf071685f> a sssom:Mapping ;
@@ -102525,7 +102784,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Faglig forsvarlig helsehjelp er profesjonell omsorg; en del av målet." .
 <http://psi.udir.no/kl06/KM5475> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/1023ac61-250f-4eef-b7a9-238cf071685f> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5475/1709f408-9965-489b-9805-8e1e5d9e483b> a sssom:Mapping ;
@@ -102536,7 +102796,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Helselovgivningen er kunnskapsgrunnlaget for regelverket; beslektet." .
 <http://psi.udir.no/kl06/KM5475> <http://www.w3.org/2004/02/skos/core#relatedMatch> <http://data.europa.eu/esco/skill/1709f408-9965-489b-9805-8e1e5d9e483b> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5475/b2f925ed-3ebd-4f78-b98e-d5d4678e83b5> a sssom:Mapping ;
@@ -102559,7 +102820,8 @@
     sssom:mapping_justification <https://w3id.org/semapv/vocab/ManualMappingCuration> ;
     sssom:author_label "Claude (språkmodell, forslag)" ;
     sssom:reviewer_label "Are Mjølsnes" ;
-    sssom:mapping_tool "Claude (Anthropic)" .
+    sssom:mapping_tool "Claude (Anthropic)" ;
+    sssom:comment "Forslag i piloten (2026-11-10). Medisinsk utstyr brukes til å overvåke vitale tegn; en del av målet." .
 <http://psi.udir.no/kl06/KM5476> <http://www.w3.org/2004/02/skos/core#narrowMatch> <http://data.europa.eu/esco/skill/d3b74d50-7fc9-4051-9335-58d129a4a064> .
 
 <http://psi.udir.no/kl06/kobling/km-esco/HEA03-03/KM5459/7110bf9f-b245-4adc-9159-5081013fd64d> a sssom:Mapping ;
