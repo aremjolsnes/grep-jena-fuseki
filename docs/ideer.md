@@ -17,6 +17,7 @@ Status: 🔜 påbegynt · 💡 idé · ✅ gjort
 | 8 | [Inverse egenskaper (R6)](#8-inverse-egenskaper-r6) | 💡 |
 | 9 | [Demo for AI: fra fagkode til prompt](#9-demo-for-ai-fra-fagkode-til-prompt) | ✅ |
 | 10 | [Grunnlag for en veiledning om koblinger](#10-grunnlag-for-en-veiledning-om-koblinger) | 💡 |
+| 11 | [Udirs nettsider mot Grep](#11-udirs-nettsider-mot-grep) | 🔜 verneverdige tradisjonshåndverksfag ✅ |
 
 Prioritert 2026-11-10: NUS (under 4, ✅ samme dag), så 9, så 10, så SHACL (5). Småting: R6 (8) og de 9 programområdene uten STYRK-kobling.
 
@@ -272,3 +273,29 @@ Et utkast til en dypere veiledning om koblingene til andre kunnskapsgrafer:
 Med i veiledningen: at «Høyskoleyrker» (hovedgruppe 3 i STYRK-08) beskriver arbeidsoppgavene i yrket, ikke at
 yrket krever høyskole.
 
+## 11. Udirs nettsider mot Grep
+
+Noe av det Grep sier om fagene, står også som lister på udir.no, vedlikeholdt for hånd. De kan skli fra hverandre.
+Sandkassen kan skrape listene hver natt og melde forskjellene som avvik, så et menneske kan avgjøre hvilken side
+som skal rettes.
+
+✅ 2026-11-20, verneverdige tradisjonshåndverksfag: `scripts/sjekk-verneverdige.py` henter tabellen «Liste over
+verneverdige tradisjonshåndverksfag» fra
+[udir.no](https://www.udir.no/om-udir/tilskudd-og-prosjektmidler/retningslinjer-tilskudd-larebedrifter/sma-verneverdige-fag-vgo/)
+og sammenligner med de publiserte programområdene som har merkelappen `d:verneverdig_tradisjonshaandverk`.
+Sammenligningen er på bokmålstittel. Første kjøring fant seks avvik:
+
+| Fag | Programområde | Avvik |
+|---|---|---|
+| Bilsalmakerfaget | DTBSM3---- | Står på udir.no uten merkelappen i Grep |
+| Garverfaget | DTGAF3---- | Står på udir.no uten merkelappen i Grep (lagt til på udir.no 05.01.2026) |
+| Glassliperfaget | DTGSF3---- | Står på udir.no uten merkelappen i Grep (lagt til på udir.no 05.01.2026) |
+| Gullsmedfaget | DTGUL3---- | Står på udir.no uten merkelappen i Grep (lagt til på udir.no 05.01.2026) |
+| Modellbyggerfaget | TPMOB3---- | Har merkelappen i Grep uten å stå på udir.no |
+| Optronikerfaget | ELOPT3---- | Har merkelappen i Grep uten å stå på udir.no |
+
+Merkelappen i Grep ble sist endret 24.08.2021, og lista på udir.no ble justert i 2022 og i januar 2026. Det er
+altså Grep som henger etter: de fagansvarlige hadde ikke varslet om endringene. Rettet i Grep samme dag (merkelappen
+fjernet fra Modellbygger og Optroniker, lagt til på de fire andre), så avviket forsvinner etter neste innlasting.
+Foreslått at udir.no henter lista fra Grep, slik at den bare vedlikeholdes ett sted. Andre lister på udir.no som kan sjekkes på samme måte: 💡 tilbudsstrukturen
+(programområder per utdanningsprogram) og fag med særskilte tilskuddssatser.

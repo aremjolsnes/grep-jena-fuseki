@@ -360,6 +360,12 @@ avvik "Ny ESCO-versjon" \
   "ESCO har publisert en nyere versjon enn den sandkassen bygger på. Last ned (classification, ttl), og kjør scripts/lag-esco-ferdigheter-ttl.py og lag-esco-ttl.py på nytt. Skriptet viser hva som er endret." \
   "Ny versjon,Sandkassen bruker,Nedlasting" "$("${PYTHON:-python3}" "$REPO/scripts/sjekk-koblinger.py" esco-versjon)"
 
+# Udirs liste over verneverdige tradisjonshåndverksfag på udir.no mot merkelappen i Grep (scripts/sjekk-verneverdige.py).
+# Sammenligner på tittel blant publiserte programområder. 20.11.2026: 4 fag manglet merkelappen, 2 hadde den uten å stå på lista.
+avvik "Verneverdige tradisjonshåndverksfag: udir.no og Grep er ulike" \
+  "Udir avgjør hvilke fag som er verneverdige tradisjonshåndverksfag, og lista står på udir.no (Små verneverdige fag, tilskudd lærebedrifter). I Grep skal de samme programområdene ha merkelappen d:verneverdig_tradisjonshaandverk. Et menneske bør avgjøre om lista eller Grep skal rettes." \
+  "Fag,Programområde,Avvik" "$(FUSEKI_URL="$BASE" DATASET="$DATASET" "${PYTHON:-python3}" "$REPO/scripts/sjekk-verneverdige.py")"
+
 # u:bygger-paa fra en læreplan som gjelder i dag, til mål i en læreplan som ikke gjelder lenger.
 # «Gjelder» = et opplæringsfag har læreplanen som laereplan-referanse med gyldighet (N1) som omfatter dagens dato.
 # Én rad per par av læreplaner, med antall mål og ett eksempel. Tok 43 s i prod 12.11.2026.

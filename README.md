@@ -66,6 +66,8 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
 | `scripts/nattlig-innlasting.sh` | Innlastingen, som kan testes lokalt (se under) |
 | `scripts/komprimer.sh` | Komprimerer TDB2-databasen i prod via `flyctl ssh` (admin-API-et er bare åpent fra localhost) |
 | `scripts/rapporter-avvik.sh` | Gjør avvik i dataene om til en GitHub-issue og et sammendrag for kjøringen |
+| `scripts/sjekk-koblinger.py` | Avvikskontroller for koblingene: koder SSB har tatt ut, programområder som ikke er vurdert, ny ESCO-versjon |
+| `scripts/sjekk-verneverdige.py` | Avvikskontroll: lista over verneverdige tradisjonshåndverksfag på udir.no mot merkelappen i Grep |
 | `sparql/normalisering/*.ru` | Normaliseringsreglene (fase 2), kjøres i alfabetisk rekkefølge: `01-gyldighet` (N1), `02-datatyper` (N3), `03-perioder` (N4), `04-titler` (N5) |
 | `sparql/utledning/*.ru` | Utledningsreglene (fase 3), kjøres etter normaliseringen: `01-typer` (R1), `02-egenskaper` (R2), `03-revisjon` (R3), `04-skos` (R4), `05-spraak` (R5) |
 | `ontologi/grep.ttl` | Grep-ontologien (`u:`) slik den gjelder i dag: klassene (stor forbokstav) med koblingen til typen i dataene (liten forbokstav), og alle egenskapene som brukes i dataene. Skrives for hånd. |
@@ -97,7 +99,8 @@ named graphs. Den lagrede default graph er usynlig og skal være tom.
   alle læreplaner og det som hører til dem, og `schema:validFrom`/`schema:validThrough`.
 - **Avvik i dataene** stopper ikke jobben, men skal ses av et menneske. Kontrollene er datoer med årstall før 1990
   eller etter 2100, gyldighet uten kobling, verdier N3 ikke kunne gjøre om, koblinger til STYRK-08, NUS og ESCO
-  som må oppdateres, kompetansemål som bygger på læreplaner som ikke gjelder, og tre kontroller av ontologien mot
+  som må oppdateres, kompetansemål som bygger på læreplaner som ikke gjelder, lista over verneverdige
+  tradisjonshåndverksfag på udir.no mot merkelappen i Grep, og tre kontroller av ontologien mot
   dataene: egenskaper som mangler i `ontologi/grep.ttl`, nye typer uten klasse, og koblinger uten motpart for
   egenskaper merket `owl:inverseOf`. De tre siste forteller når Grep har endret seg og ontologien må følge etter. `nattlig-innlasting.sh` skriver dem
   til `AVVIK_FIL`, og `scripts/rapporter-avvik.sh` lager issuen **«Avvik i Grep-dataene»**. Den tildeles
